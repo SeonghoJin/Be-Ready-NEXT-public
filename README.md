@@ -1,1 +1,1 @@
-- inspector pull request 기여
+- inspector pull request 기여용 repository
