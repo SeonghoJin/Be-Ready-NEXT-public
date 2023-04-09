@@ -1,1 +1,1 @@
-- 기술 블로그 모음 사이트
+- inspector pull request 기여
