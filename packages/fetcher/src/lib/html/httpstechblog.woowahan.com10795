@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="ko-KR"
+	prefix="og: https://ogp.me/ns#" >
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<title>프로모션 시스템 엿보기: 파일럿 프로젝트 | 우아한형제들 기술블로그 </title>
+
+		<!-- All in One SEO 4.1.7 -->
+		<meta name="robots" content="max-image-preview:large" />
+		<link rel="canonical" href="https://techblog.woowahan.com/10795/" />
+		<meta property="og:locale" content="ko_KR" />
+		<meta property="og:site_name" content="우아한형제들 기술블로그  |" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="프로모션 시스템 엿보기: 파일럿 프로젝트 | 우아한형제들 기술블로그 " />
+		<meta property="og:url" content="https://techblog.woowahan.com/10795/" />
+		<meta property="og:image" content="https://techblog.woowahan.com/wp-content/uploads/2021/06/screenshot.jpg" />
+		<meta property="og:image:secure_url" content="https://techblog.woowahan.com/wp-content/uploads/2021/06/screenshot.jpg" />
+		<meta property="og:image:width" content="1640" />
+		<meta property="og:image:height" content="856" />
+		<meta property="article:published_time" content="2023-03-21T05:00:07+00:00" />
+		<meta property="article:modified_time" content="2023-03-21T04:04:53+00:00" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="프로모션 시스템 엿보기: 파일럿 프로젝트 | 우아한형제들 기술블로그 " />
+		<meta name="twitter:image" content="https://techblog.woowahan.com/wp-content/uploads/2021/06/screenshot.jpg" />
+		<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/techblog.woowahan.com\/#website","url":"https:\/\/techblog.woowahan.com\/","name":"\uc6b0\uc544\ud55c\ud615\uc81c\ub4e4 \uae30\uc220\ube14\ub85c\uadf8","inLanguage":"ko-KR","publisher":{"@id":"https:\/\/techblog.woowahan.com\/#organization"}},{"@type":"Organization","@id":"https:\/\/techblog.woowahan.com\/#organization","name":"\uc6b0\uc544\ud55c\ud615\uc81c\ub4e4 \uae30\uc220\ube14\ub85c\uadf8","url":"https:\/\/techblog.woowahan.com\/","logo":{"@type":"ImageObject","@id":"https:\/\/techblog.woowahan.com\/#organizationLogo","url":"https:\/\/techblog.woowa.in\/wp-content\/uploads\/2021\/06\/screenshot.jpg"},"image":{"@id":"https:\/\/techblog.woowahan.com\/#organizationLogo"}},{"@type":"BreadcrumbList","@id":"https:\/\/techblog.woowahan.com\/10795\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/techblog.woowahan.com\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/techblog.woowahan.com\/","name":"\ud648","description":"\uc6b0\uc544\ud55c\ud615\uc81c\ub4e4\uc758 \uae30\uc220, \uc11c\ube44\uc2a4, \ube44\uc804, \uac00\uce58\ub97c \ub4e4\ub824 \ub4dc\ub9bd\ub2c8\ub2e4.","url":"https:\/\/techblog.woowahan.com\/"}}]},{"@type":"Person","@id":"https:\/\/techblog.woowahan.com\/author\/gyu\/#author","url":"https:\/\/techblog.woowahan.com\/author\/gyu\/","name":"\uae40\ub3d9\uaddc","image":{"@type":"ImageObject","@id":"https:\/\/techblog.woowahan.com\/10795\/#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/aad37e511ae57e56d8c223929dc5cf77?s=96&d=mm&r=g","width":96,"height":96,"caption":"\uae40\ub3d9\uaddc"}},{"@type":"WebPage","@id":"https:\/\/techblog.woowahan.com\/10795\/#webpage","url":"https:\/\/techblog.woowahan.com\/10795\/","name":"\ud504\ub85c\ubaa8\uc158 \uc2dc\uc2a4\ud15c \uc5ff\ubcf4\uae30: \ud30c\uc77c\ub7ff \ud504\ub85c\uc81d\ud2b8 | \uc6b0\uc544\ud55c\ud615\uc81c\ub4e4 \uae30\uc220\ube14\ub85c\uadf8","inLanguage":"ko-KR","isPartOf":{"@id":"https:\/\/techblog.woowahan.com\/#website"},"breadcrumb":{"@id":"https:\/\/techblog.woowahan.com\/10795\/#breadcrumblist"},"author":"https:\/\/techblog.woowahan.com\/author\/gyu\/#author","creator":"https:\/\/techblog.woowahan.com\/author\/gyu\/#author","datePublished":"2023-03-21T05:00:07+09:00","dateModified":"2023-03-21T04:04:53+09:00"},{"@type":"Article","@id":"https:\/\/techblog.woowahan.com\/10795\/#article","name":"\ud504\ub85c\ubaa8\uc158 \uc2dc\uc2a4\ud15c \uc5ff\ubcf4\uae30: \ud30c\uc77c\ub7ff \ud504\ub85c\uc81d\ud2b8 | \uc6b0\uc544\ud55c\ud615\uc81c\ub4e4 \uae30\uc220\ube14\ub85c\uadf8","inLanguage":"ko-KR","headline":"\ud504\ub85c\ubaa8\uc158 \uc2dc\uc2a4\ud15c \uc5ff\ubcf4\uae30: \ud30c\uc77c\ub7ff \ud504\ub85c\uc81d\ud2b8","author":{"@id":"https:\/\/techblog.woowahan.com\/author\/gyu\/#author"},"publisher":{"@id":"https:\/\/techblog.woowahan.com\/#organization"},"datePublished":"2023-03-21T05:00:07+09:00","dateModified":"2023-03-21T04:04:53+09:00","articleSection":"Backend, Culture, Backend, webflux, \ubc30\ubbfc\uc11c\ube44\uc2a4\uac1c\ubc1c\ud300, \uc628\ubcf4\ub529, \ud30c\uc77c\ub7ff, \ud30c\uc77c\ub7ff \ud504\ub85c\uc81d\ud2b8","mainEntityOfPage":{"@id":"https:\/\/techblog.woowahan.com\/10795\/#webpage"},"isPartOf":{"@id":"https:\/\/techblog.woowahan.com\/10795\/#webpage"},"image":{"@type":"ImageObject","@id":"https:\/\/techblog.woowahan.com\/#articleImage","url":"https:\/\/techblog.woowahan.com\/wp-content\/uploads\/2023\/03\/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%BF%A0%ED%8F%B0%EC%84%9C%EB%B9%84%EC%8A%A4.jpeg"}}]}
+		</script>
+		<!-- All in One SEO -->
+
+<script>                function apbct_attach_event_handler__backend(elem, event, callback) {                    if(typeof window.addEventListener === "function") elem.addEventListener(event, callback);                    else                                                elem.attachEvent(event, callback);                }                apbct_attach_event_handler__backend(document, 'DOMContentLoaded', function(){                    if (typeof apbctLocalStorage === "object" && ctPublic.data__key_is_ok) {                        apbctLocalStorage.set('ct_checkjs', '5d875f8195a8fbeb9689c586b508ec17aa4dd9c79b3ca1d436d4f6c8c1ab01ad', true );                    } else {                        console.log('APBCT ERROR: apbctLocalStorage object is not loaded.');                    }                  });    </script><link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="우아한형제들 기술블로그 &raquo; 피드" href="https://techblog.woowahan.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="우아한형제들 기술블로그 &raquo; 댓글 피드" href="https://techblog.woowahan.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="우아한형제들 기술블로그 &raquo; 프로모션 시스템 엿보기: 파일럿 프로젝트 댓글 피드" href="https://techblog.woowahan.com/10795/feed/" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/techblog.woowahan.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.5"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://techblog.woowahan.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.5' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='ct_public_css-css'  href='https://techblog.woowahan.com/wp-content/plugins/cleantalk-spam-protect/css/cleantalk-public.min.css?ver=6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='post_hit_counter-frontend-css'  href='https://techblog.woowahan.com/wp-content/plugins/post-hit-counter/assets/css/frontend.css?ver=1.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='less-style-css'  href='https://techblog.woowahan.com/wp-content/uploads/wp-less/updater-0W9NMo/assets/css/style-989b48800d.css' type='text/css' media='all' />
+<link rel='stylesheet' id='content-style-css'  href='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/assets/css/style-content.css?ver=5.9.5' type='text/css' media='all' />
+<link rel='stylesheet' id='swiper-style-css'  href='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/assets/css/swiper-bundle.css?ver=5.9.5' type='text/css' media='all' />
+<link rel='stylesheet' id='post_hit_counter-widget-css'  href='https://techblog.woowahan.com/wp-content/plugins/post-hit-counter/assets/css/widget.css?ver=1.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='sab-font-css'  href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&#038;subset=latin' type='text/css' media='all' />
+<link rel='stylesheet' id='prism-css-0-css'  href='https://techblog.woowahan.com/wp-content/plugins/wp-githuber-md/assets/vendor/prism/themes/prism.min.css?ver=1.15.0' type='text/css' media='all' />
+<link rel='stylesheet' id='prism-css-1-css'  href='https://techblog.woowahan.com/wp-content/plugins/wp-githuber-md/assets/vendor/prism/plugins/line-numbers/prism-line-numbers.css?ver=1.15.0' type='text/css' media='all' />
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='ct_public_functions-js-extra'>
+/* <![CDATA[ */
+var ctPublicFunctions = {"_ajax_nonce":"f989b12a4e","_rest_nonce":"93614f95ce","_ajax_url":"\/wp-admin\/admin-ajax.php","_rest_url":"https:\/\/techblog.woowahan.com\/wp-json\/","data__cookies_type":"none","data__ajax_type":"rest","text__wait_for_decoding":"Decoding the contact data, let us a few seconds to finish. Anti-Spam by CleanTalk.","cookiePrefix":""};
+var ctPublic = {"settings__forms__check_internal":"0","settings__forms__check_external":"0","blog_home":"https:\/\/techblog.woowahan.com\/","pixel__setting":"3","pixel__enabled":"1","pixel__url":"https:\/\/moderate2.cleantalk.org\/pixel\/86071727e0fe330bd800deb37d6f4a5d.gif","data__email_check_before_post":"1","data__cookies_type":"none","data__key_is_ok":"1","data__visible_fields_required":"1","data__to_local_storage":{"apbct_cookies_test":"%7B%22cookies_names%22%3A%5B%22apbct_timestamp%22%2C%22apbct_site_landing_ts%22%2C%22apbct_page_hits%22%5D%2C%22check_value%22%3A%2251631ebfad25ee7e40f3b57659640156%22%7D","apbct_page_hits":"24","apbct_site_referer":"UNKNOWN","apbct_timestamp":"1679492530","apbct_urls":"{\"techblog.woowahan.com\/10430\/\":[1679487345],\"techblog.woowahan.com\/10538\/\":[1679487345],\"techblog.woowahan.com\/10504\/\":[1679487346],\"techblog.woowahan.com\/\":[1679492530],\"techblog.woowahan.com\/11045\/\":[1679492530]}"}};
+/* ]]> */
+</script>
+<script type='text/javascript' data-pagespeed-no-defer src='https://techblog.woowahan.com/wp-content/plugins/cleantalk-spam-protect/js/apbct-public-bundle.min.js?ver=6.1' id='ct_public_functions-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/assets/js/sticky.min.js?ver=5.9.5' id='sticky-js-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/assets/js/swiper-bundle.min.js?ver=5.9.5' id='swiper-js-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/build/vue.min.js?ver=5.9.5' id='vuejs-js'></script>
+<link rel="https://api.w.org/" href="https://techblog.woowahan.com/wp-json/" /><link rel="alternate" type="application/json" href="https://techblog.woowahan.com/wp-json/wp/v2/posts/10795" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://techblog.woowahan.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://techblog.woowahan.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.9.5" />
+<link rel='shortlink' href='https://techblog.woowahan.com/?p=10795' />
+<link rel="alternate" type="application/json+oembed" href="https://techblog.woowahan.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftechblog.woowahan.com%2F10795%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://techblog.woowahan.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftechblog.woowahan.com%2F10795%2F&#038;format=xml" />
+        <script type="text/javascript">
+            var StrCPVisits_page_data = {
+                'abort' : 'false',
+                'title' : '프로모션 시스템 엿보기: 파일럿 프로젝트',
+            };
+
+        </script>
+        <!-- This website uses the Ultimate Social Comments plugin v2.0.0 - https://wordpress.org/plugins/ultimate-facebook-comments/ -->
+<meta property="fb:app_id" content="596588250503455"/>
+<style type="text/css">.fb-comments, .fb-comments span, .fb-comments span iframe[style] { min-width:100% !important; width:100% !important }</style>
+<style type="text/css">.saboxplugin-wrap{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;border:1px solid #eee;width:100%;clear:both;display:block;overflow:hidden;word-wrap:break-word;position:relative}.saboxplugin-wrap .saboxplugin-gravatar{float:left;padding:0 20px 20px 20px}.saboxplugin-wrap .saboxplugin-gravatar img{max-width:100px;height:auto;border-radius:0;}.saboxplugin-wrap .saboxplugin-authorname{font-size:18px;line-height:1;margin:20px 0 0 20px;display:block}.saboxplugin-wrap .saboxplugin-authorname a{text-decoration:none}.saboxplugin-wrap .saboxplugin-authorname a:focus{outline:0}.saboxplugin-wrap .saboxplugin-desc{display:block;margin:5px 20px}.saboxplugin-wrap .saboxplugin-desc a{text-decoration:underline}.saboxplugin-wrap .saboxplugin-desc p{margin:5px 0 12px}.saboxplugin-wrap .saboxplugin-web{margin:0 20px 15px;text-align:left}.saboxplugin-wrap .sab-web-position{text-align:right}.saboxplugin-wrap .saboxplugin-web a{color:#ccc;text-decoration:none}.saboxplugin-wrap .saboxplugin-socials{position:relative;display:block;background:#fcfcfc;padding:5px;border-top:1px solid #eee}.saboxplugin-wrap .saboxplugin-socials a svg{width:20px;height:20px}.saboxplugin-wrap .saboxplugin-socials a svg .st2{fill:#fff; transform-origin:center center;}.saboxplugin-wrap .saboxplugin-socials a svg .st1{fill:rgba(0,0,0,.3)}.saboxplugin-wrap .saboxplugin-socials a:hover{opacity:.8;-webkit-transition:opacity .4s;-moz-transition:opacity .4s;-o-transition:opacity .4s;transition:opacity .4s;box-shadow:none!important;-webkit-box-shadow:none!important}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-color{box-shadow:none;padding:0;border:0;-webkit-transition:opacity .4s;-moz-transition:opacity .4s;-o-transition:opacity .4s;transition:opacity .4s;display:inline-block;color:#fff;font-size:0;text-decoration:inherit;margin:5px;-webkit-border-radius:0;-moz-border-radius:0;-ms-border-radius:0;-o-border-radius:0;border-radius:0;overflow:hidden}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-grey{text-decoration:inherit;box-shadow:none;position:relative;display:-moz-inline-stack;display:inline-block;vertical-align:middle;zoom:1;margin:10px 5px;color:#444;fill:#444}.clearfix:after,.clearfix:before{content:' ';display:table;line-height:0;clear:both}.ie7 .clearfix{zoom:1}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-twitch{border-color:#38245c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-addthis{border-color:#e91c00}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-behance{border-color:#003eb0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-delicious{border-color:#06c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-deviantart{border-color:#036824}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-digg{border-color:#00327c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-dribbble{border-color:#ba1655}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-facebook{border-color:#1e2e4f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-flickr{border-color:#003576}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-github{border-color:#264874}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-google{border-color:#0b51c5}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-googleplus{border-color:#96271a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-html5{border-color:#902e13}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-instagram{border-color:#1630aa}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-linkedin{border-color:#00344f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-pinterest{border-color:#5b040e}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-reddit{border-color:#992900}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-rss{border-color:#a43b0a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-sharethis{border-color:#5d8420}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-skype{border-color:#00658a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-soundcloud{border-color:#995200}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-spotify{border-color:#0f612c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-stackoverflow{border-color:#a95009}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-steam{border-color:#006388}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-user_email{border-color:#b84e05}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-stumbleUpon{border-color:#9b280e}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-tumblr{border-color:#10151b}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-twitter{border-color:#0967a0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-vimeo{border-color:#0d7091}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-windows{border-color:#003f71}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-whatsapp{border-color:#003f71}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-wordpress{border-color:#0f3647}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-yahoo{border-color:#14002d}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-youtube{border-color:#900}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-xing{border-color:#000202}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-mixcloud{border-color:#2475a0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-vk{border-color:#243549}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-medium{border-color:#00452c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-quora{border-color:#420e00}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-meetup{border-color:#9b181c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-goodreads{border-color:#000}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-snapchat{border-color:#999700}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-500px{border-color:#00557f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-mastodont{border-color:#185886}.sabox-plus-item{margin-bottom:20px}@media screen and (max-width:480px){.saboxplugin-wrap{text-align:center}.saboxplugin-wrap .saboxplugin-gravatar{float:none;padding:20px 0;text-align:center;margin:0 auto;display:block}.saboxplugin-wrap .saboxplugin-gravatar img{float:none;display:inline-block;display:-moz-inline-stack;vertical-align:middle;zoom:1}.saboxplugin-wrap .saboxplugin-desc{margin:0 10px 20px;text-align:center}.saboxplugin-wrap .saboxplugin-authorname{text-align:center;margin:10px 0 20px}}body .saboxplugin-authorname a,body .saboxplugin-authorname a:hover{box-shadow:none;-webkit-box-shadow:none}a.sab-profile-edit{font-size:16px!important;line-height:1!important}.sab-edit-settings a,a.sab-profile-edit{color:#0073aa!important;box-shadow:none!important;-webkit-box-shadow:none!important}.sab-edit-settings{margin-right:15px;position:absolute;right:0;z-index:2;bottom:10px;line-height:20px}.sab-edit-settings i{margin-left:5px}.saboxplugin-socials{line-height:1!important}.rtl .saboxplugin-wrap .saboxplugin-gravatar{float:right}.rtl .saboxplugin-wrap .saboxplugin-authorname{display:flex;align-items:center}.rtl .saboxplugin-wrap .saboxplugin-authorname .sab-profile-edit{margin-right:10px}.rtl .sab-edit-settings{right:auto;left:0}img.sab-custom-avatar{max-width:75px;}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-color .st1 {display: none;}.saboxplugin-wrap .saboxplugin-authorname {font-family:"Noto Sans";}.saboxplugin-wrap .saboxplugin-desc {font-family:Noto Sans;}.saboxplugin-wrap {margin-top:40px; margin-bottom:0px; padding: 0px 0px }.saboxplugin-wrap .saboxplugin-authorname {font-size:14px; line-height:21px;}.saboxplugin-wrap .saboxplugin-desc p, .saboxplugin-wrap .saboxplugin-desc {font-size:14px !important; line-height:21px !important;}.saboxplugin-wrap .saboxplugin-web {font-size:14px;}.saboxplugin-wrap .saboxplugin-socials a svg {width:36px;height:36px;}</style><link rel="icon" href="https://techblog.woowahan.com/wp-content/uploads/2020/08/favicon.ico" sizes="32x32" />
+<link rel="icon" href="https://techblog.woowahan.com/wp-content/uploads/2020/08/favicon.ico" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://techblog.woowahan.com/wp-content/uploads/2020/08/favicon.ico" />
+<meta name="msapplication-TileImage" content="https://techblog.woowahan.com/wp-content/uploads/2020/08/favicon.ico" />
+
+	<script type="text/javascript">
+		var ajaxurl = "https://techblog.woowahan.com/wp-admin/admin-ajax.php";
+	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQ34XQDGNB"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'G-JQ34XQDGNB');
+	</script>
+	<!-- Naver -->
+	<meta name="naver-site-verification" content="4b53b1e487890e94c3d0f88804669d2f565d1eb0" />
+</head>
+
+<body data-rsssl=1 class="post-template-default single single-post postid-10795 single-format-standard wp-embed-responsive" data-barba="wrapper">
+	<header>
+		<!--헤더-->
+		<div class="gnb pc">
+			<div>
+				<a href="/" class="title">
+					<span class="logo">
+						<img src="/wp-content/uploads/2021/04/logo-e1619937994625.png" />
+					</span>
+					<span class="sub-logo">기술블로그</span>
+				</a>
+			</div>
+			<div class="menu">
+				<div class="menu-2">
+					<img class="search" src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/search.svg" />
+					<a href="https://www.facebook.com/woowahanTech" name="facebook" target="_blank">
+						<img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/1.svg" />
+					</a>
+					<a href="https://www.youtube.com/%EC%9A%B0%EC%95%84%ED%95%9CTech" name="youtube" target="_blank">
+						<img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/2.svg" />
+					</a>
+				</div>
+				<div class="txt">
+					<a href="https://career.woowahan.com/?utm_source=techblog&utm_medium=display&utm_campaign=2022_1h_developer_recuiting_da&utm_content=techhr&jobCodes&employmentTypeCodes=&serviceSectionCodes=&careerPeriod=&keyword=&category=jobGroupCodes%3ABA005001&fbclid=IwAR1SDMBF6WjfUZ1WV-JrCYxYyAGBf92r-Au1TQ0seGgOuT0ZuAT7XUilsGg#recruit-list" target="_blank">개발자 채용</a>
+					<a href="https://docs.google.com/forms/d/e/1FAIpQLSe5HMoawj5-lsjcOLvF5BtxWWr7D_uZXYChkWse1bgQs58C4w/viewform" target="_blank">뉴스레터 신청</a>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="gnb mob">
+			<div>
+				<a href="/" class="title">
+					<span class="logo">
+						<img src="/wp-content/uploads/2021/04/logo-e1619937994625.png" />
+					</span>
+					<span class="sub-logo">기술블로그</span>
+				</a>
+			</div>
+			<div class="right">
+
+				<div class="hambug_btn">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="search">
+					<img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/search.svg" />
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="search_wrap">
+		<span class="search_inner">
+			<form role="search" method="get" id="searchform" class="searchform" action="/">
+				<input class="searchbar" type="text" name="s" id="s" placeholder="검색어를 입력해주세요." />
+				<input type="submit" id="searchsubmit" value="">
+			</form>
+			<br>
+			<a href="#" class="search">돌아가기</a>
+		</span>
+	</div>
+
+		<div class="content vuejs">
+		<div class="hambug_menu">
+			<div class="top"></div>
+			<div class="inner">
+				<div class="menu-wrap">
+					<a v-for="item in categories" v-bind:href="'/category/'+item.slug" class="item link"
+						v-bind:data-id="item.cat_ID">
+						<!-- <input v-bind:id="'cat-'+item.slug" type="checkbox" v-bind:value="item.slug"
+							v-model="vcategory" /> -->
+						<label>{{item.name}}</label>
+					</a>
+				</div>
+				<div class="menu-wrap extra">
+					<p class="item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSe5HMoawj5-lsjcOLvF5BtxWWr7D_uZXYChkWse1bgQs58C4w/viewform">우아한Tech에 문의하기</a></p>
+					<p class="item"><a href="https://career.woowahan.com/?utm_source=techblog&utm_medium=display&utm_campaign=2022_1h_developer_recuiting_da&utm_content=techhr&jobCodes&employmentTypeCodes=&serviceSectionCodes=&careerPeriod=&keyword=&category=jobGroupCodes%3ABA005001&fbclid=IwAR1SDMBF6WjfUZ1WV-JrCYxYyAGBf92r-Au1TQ0seGgOuT0ZuAT7XUilsGg#recruit-list" target="_blank">개발자 채용</a></p>
+				</div>
+				<div class="menu-wrap extra">
+					<p>
+						<a class="sns" href="/" target="_blank">
+							<img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/1.svg" />
+						</a>
+						<a class="sns" href="/" target="_blank">
+							<img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/2.svg" />
+						</a>
+					</p>
+				</div>
+			</div>
+			<div class="bottom">
+
+			</div>
+		</div>
+		<!-- page content -->
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><div class="content-wrap">
+    <div class="post-content">
+    <div class="cont-header">
+    <h1>프로모션 시스템 엿보기: 파일럿 프로젝트</h1>
+        <div class="col col-2">
+            <div class="author">
+        <span>
+            Mar.21.2023        </span>
+        <span>
+            김동규        </span>
+            </div>
+        <div class="sns">
+        <img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/link.svg" alt="clipboard" onclick="SNS('clipboard')">
+        <img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/facebook.svg" alt="facebook" onclick="SNS('facebook')">
+        <img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/twitter.svg" alt="twitter" onclick="SNS('twitter')">
+    </div>
+    </div>
+    <p>
+        <span class="cats">
+                <a class="cat-tag" href="/?pcat=backend" data-slug="backend">
+            Backend        </a>
+                    <a class="cat-tag" href="/?pcat=culture" data-slug="culture">
+            Culture        </a>
+                </span>
+        </p>
+    </div>
+    <div class="post-content-inner">
+    <div class="toc">
+        <ul>
+            <li v-for="item in tocs">
+                <a class="item" v-bind:href="'#'+item.link">{{item.name}}</a>
+                <ul v-if="item.sub && item.sub.length > 0">
+                    <li v-for="sub in item.sub">
+                        <a v-bind:href="'#'+sub.link">{{sub.name}}</a>
+                    </li>
+                </ul>
+            </li>
+    </div>
+    <p>안녕하세요. 1월 3일, 2023년 새해를 맞아 배민푸드서비스개발팀 신입 개발자로 합류하게 된 김동규입니다.</p>
+<p>“우아한형제들 기술블로그&quot;를 보면서 언젠가 제 이름으로 된 글을 올리겠다는 꿈을 가지고 있었는데요! 오늘 파일럿 프로젝트 글을 통해 그 꿈을 이루게 되어 너무 감격스럽습니다.</p>
+<p>오늘은 신입으로서 파일럿 프로젝트를 통해 팀에 어떻게 적응해나갔는지 이야기를 풀어보려고 합니다.</p>
+<h2>프로모션 시스템 구현하기</h2>
+<p>파일럿 프로젝트로 프로모션 시스템 API 서버 구현하기를 진행하게 되었습니다.<br />
+프로모션 시스템은 배달의 민족 사용자에게 다양한 이벤트의 노출 및 참여를 지원하는 시스템을 말하는데요!</p>
+<p align="center">
+<img src="https://techblog.woowahan.com/wp-content/uploads/2023/03/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%BF%A0%ED%8F%B0%EC%84%9C%EB%B9%84%EC%8A%A4-323x600.jpeg"></p>
+<p>실제로는 위와 같이 많은 요구사항에 대응해야 하겠지만, 저는 다음과 같은 두 마케터의 요구사항을 만족하도록 하는 프로모션 API 서버를 구현하는 것이 목표였습니다. (지면 관계상 최대한 간략하게 작성해 보았습니다.)</p>
+<p><strong>A 마케터</strong></p>
+<ul>
+<li>매일 1회씩 1번만 발급 가능합니다.</li>
+<li>신규 회원(주문이 없는 회원)에게는 10,000원의 쿠폰을 주고 싶어요.</li>
+<li>그리고 기존 회원 중 마지막 주문일이 4개월 이상 경과된 회원은 3,000원, 5,000원, 7,000원 중 랜덤으로 쿠폰을 지급하고 싶어요.</li>
+<li>마지막 주문일이 4개월 미만인 회원은 1,000원, 2,000원 쿠폰을 랜덤으로 지급하고 싶어요.</li>
+<li>아! 각각의 쿠폰은 발급 수량이 정해져 있으며 만약 지급하려는 쿠폰이 모두 소진됐다면 다른 쿠폰을 발급해 주세요.</li>
+</ul>
+<p align="center">
+<img loading="lazy" src="https://techblog.woowahan.com/wp-content/uploads/2023/03/eventPage.gif" height="30%" width="30%"></p>
+<p><strong>B 마케터</strong></p>
+<ul>
+<li>이벤트 기간 동안 1번만 발급 가능합니다.</li>
+<li>회원이 전달에 주문한 주문수 별로 다른 쿠폰이 노출되어야 합니다.
+<ul>
+<li>5번 주문했으면 쿠폰 1개, 10번 주문했으면 쿠폰 2개, 20번 주문했으면 쿠폰 3개를 지급해야 합니다.</li>
+</ul>
+</li>
+<li>회원의 닉네임과 누적 주문수를 노출해야 합니다.</li>
+<li>쿠폰을 받은 경우 받았다는 표시가 나야 합니다.</li>
+</ul>
+<p align="center">
+<img src="https://techblog.woowahan.com/wp-content/uploads/2023/03/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2023-03-07-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-10.49.53.png"></p>
+<p><strong>그리고 생각보다 많이 중요했던 공통 요구사항!!</strong></p>
+<ul>
+<li>A, B 마케터가 기획한 프로모션을 원활히 진행할 수 있도록 구현해 주세요.</li>
+<li>공통적으로 이벤트 참여가 불가능한 회원이라면 에러 응답을 내려야 합니다.</li>
+<li><strong>중요! 구현한 스펙을 재활용하여 프로모션을 하는 경우가 많습니다. 구현한 기능을 재사용 할 수 있도록 구현해 주세요.</strong></li>
+<li>프로모션 참여에는 수많은 이슈가 있을 수 있습니다. 따라서 프로모션 참여에 대한 이력을 남겨주세요.</li>
+</ul>
+<p><strong>기술 요구사항은 아래와 같이 정해졌습니다.</strong></p>
+<ul>
+<li>Spring Webflux</li>
+<li>OOP &amp; Clean Code</li>
+<li>Spring Boot 2.x &amp; JDK 17 &amp; Gradle</li>
+<li>Git Flow 브랜치 전략</li>
+<li>단위 테스트 &amp; 통합 테스트</li>
+<li>테이블 설계 ERD</li>
+</ul>
+<h2>요구사항 분석</h2>
+<p>제일 먼저 진행한 작업은 요구사항 분석이었습니다. 요구사항을 분석하며 해당 요구사항을 풀기 위한 정보가 무엇이고, 요구사항에서 핵심이 될 부분을 고려하며 분석을 진행하였습니다.</p>
+<p>각 마케터 분들의 요구사항을 토대로 정리한 핵심 내용은 다음과 같습니다.</p>
+<p><strong>A 마케터 : 특정 회원이 마지막으로 주문한 날짜를 조회할 수 있어야 한다. 예를 들어, A 회원이 “언제” 마지막 주문을 하였는지를 확인하고 이에 따라 다른 쿠폰을 지급해야 한다.</strong></p>
+<p><strong>B 마케터: 특정 기간을 범위로 주문수를 조회할 수 있어야 한다. 또한 쿠폰의 발급 여부를 저장할 수 있어야 한다.</strong></p>
+<p>그리고 이를 위해서 필요한 정보(데이터)는 다음과 같습니다.</p>
+<ul>
+<li>마지막 주문일 정보 (회원이 마지막으로 주문한 일시)</li>
+<li>특정 기간에 주문한 주문수</li>
+<li>회원의 닉네임 정보</li>
+</ul>
+<p>여기서 <strong>마지막 주문일 정보</strong>의 경우 직접 제공하는 API 가 없어 &quot;2016-01-01&quot; 을 기준으로 <code>startDate</code>를 지정하고, 오늘 날짜로 <code>endDate</code>를 지정하여 주문수를 조회함으로써 전체 기간 주문수, 그리고 4개월간의 주문수를 확인하는 방식으로 마지막 주문일 정보를 간접적으로 알 수 있도록 하였습니다.</p>
+<p>이후 확실하게 이해되지 않았거나 애매하다고 생각되는 요구사항들이 있어 이에 대해서도 질문하고, 나름대로 정리를 진행하였습니다.</p>
+<p><strong>1. 랜덤 지급</strong></p>
+<p>“쿠폰이 모두 소진되었다면 다른 쿠폰을 발급해 주세요.” 라는 요구사항이 3000원 쿠폰이 모두 소진되면 1000원 쿠폰 3장을 발급해야 하는 것인지 혹은 5,000원 혹은 7,000원을 발급해야 하는 것인지 요구사항이 애매하여 이에 대한 구체화를 진행하였습니다. 이 부분은 후자가 맞는 경우로 3,000원에 당첨되었어도 해당 쿠폰이 모두 소진되었다면 5,000원 혹은 7,000원 쿠폰을 지급하여야 하는 요구사항이었습니다.</p>
+<p><strong>2. 쿠폰 수량</strong></p>
+<p>쿠폰의 수량은 프로모션에서 별도로 관리하여야 하는지 혹은 쿠폰을 발급해 주는 서버에서 수량에 대한 관리를 하고, 이에 대한 응답을 함께 주는지 궁금하였습니다. 쿠폰 쪽 API 응답을 확인해 보니 쿠폰이 소진되었는지를 포함하고 있지 않아 프로모션 쪽에서 별도로 쿠폰 수량에 대해서 관리하는 것으로 이해하고 진행하였습니다.</p>
+<p><strong>3. 쿠폰 그룹 시퀀스와 쿠폰 시퀀스</strong></p>
+<p>&quot;쿠폰 그룹 시퀀스&quot;, &quot;쿠폰 시퀀스&quot;라는 용어가 처음이었고, 어떤 의미인지 쉽게 와닿지 않았습니다.</p>
+<p>예를 들어, 배민1 3,000원 쿠폰도 있을 것이고, 5,000원 쿠폰도 있을 것입니다. 이러한 쿠폰들에 대한 하나의 id 값이 <code>쿠폰 그룹 시퀀스</code>입니다. 그리고 “배민1 3,000원” 쿠폰이라고 해도 정말 많은 쿠폰을 발급하게 될 텐데요, 그 각각의 쿠폰에 해당하는 id를 <code>쿠폰 시퀀스</code>라고 합니다.</p>
+<p>이렇게 애매하다고 생각되는 요구사항에 대해서 구체화하고, 모르는 부분에 대해서 질문하여 요구사항을 분석한 것을 바탕으로 프로모션 히스토리 저장 및 쿠폰 발급 여부 저장을 위한 ERD를 설계하였습니다.</p>
+<h3>ERD (Entity Relationship Diagram)</h3>
+<p>코드리뷰 이후, ERD에 많은 변화가 있지만 코드리뷰 이전 ERD는 다음과 같습니다.</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/03/스크린샷-2023-02-27-오후-2.36.12-1.png" alt="" /></p>
+<p>한눈에 들어오는 정말 간단한 테이블 구조이면서 어떻게 보면 중복되는 데이터도 많아보입니다.. 큰 의미를 찾기 힘든 테이블들도 보이구요..</p>
+<p>이 테이블 구조에서 가장 중심이 되는 테이블은 <code>프로모션 이력(promotion_history)</code> 테이블입니다. 요구사항에 맞게 프로모션에 어떤 회원(member_number)이 언제(participate_date) 어떤 프로모션(promotion_id)에 참여하고 어떤 쿠폰(coupon_id) 을 발급받았었는지를 저장할 수 있도록 테이블을 설계하였습니다. 또한 쿠폰 발급 여부를 저장해 주어야 하기에 <code>쿠폰(coupon)</code> 테이블도 함께 두었으며, 어떤 쿠폰 그룹의 쿠폰을 발급해 주어야 할지 결정하기 위해 <code>쿠폰 그룹(coupon_group)</code> 테이블도 두었습니다.</p>
+<p>쿠폰의 수량은 쿠폰 그룹(coupon_group) 테이블의 수량(quantity)과 쿠폰(coupon) 테이블을 쿠폰 그룹 식별자(coupon_group_id)로 그룹핑해서 count한 값을 통해 얻도록 하였습니다.</p>
+<p>여기서 특히 주목해서 봐주실 점은 마케터 B의 회원 등급별 요구사항에 따른 <code>등급(grade)</code> 테이블을 별도로 관리한다는 점입니다. 마케터 B 요구사항을 만족하기 위해서 등급 테이블을 두고 등급에 따라 쿠폰 그룹 식별자를 가지도록 설계하였습니다. 하지만 각 프로모션 조건별로 이러한 테이블이 생긴다면 관리할 부분이 많아지겠죠..🥲 코드리뷰 이후 테이블은 이러한 재사용성과 중복 데이터 제거를 중점으로 두고 설계를 하였습니다.</p>
+<h3>Webflux + R2DBC</h3>
+<p>기술 요구사항을 보면 <code>Webflux</code>라는 키워드를 발견하실 수 있습니다.</p>
+<p>Webflux는 스프링5에서 추가된 모듈로 reactive 스타일의 애플리케이션 개발을 지원해 주는 모듈입니다.</p>
+<p>Spring MVC와 같은 서블릿 기반의 웹 프레임워크는 스레드 블로킹과 다중 스레드로 요청을 처리합니다. 즉, 요청이 처리될 때 스레드 풀에서 작업 스레드를 가져와서 해당 요청을 처리하며 작업이 종료될 때까지 요청 스레드는 블로킹됩니다. 이렇듯 MVC의 경우에는 특정 작업이 완료될 때까지 스레드는 차단되며 아무것도 할 수 없는 상태가 됩니다. 하지만 Webflux에서  제공하는 reactive 프로그래밍은 함수적이고 선언적이며 각각의 작업 단계를 나타내기보다는 데이터가 흘러가는 파이프라인 혹은 스트림을 나타내어 데이터 전체를 사용할 수 있을 때까지 기다리지 않고 가능한 데이터가 있을 때마다 처리를 진행합니다. Webflux는 이렇게 비동기 처리를 수행함으로써 적은 스레드 양으로 많은 요청을 처리할 수 있게 해줍니다.</p>
+<p>이러한 Webflux의 특징을 몇 가지 짚고 넘어가자면 다음과 같습니다.</p>
+<ul>
+<li>@Controller, @RequestMapping과 같이 MVC 와 같은  Spring MVC의 핵심 컴포넌트를 공유한다.</li>
+<li>Servlet 이 아닌 Netty 서버를 기반으로 하며 비동기식 이벤트 드리븐 아키텍처를 사용한다.</li>
+<li>외부 네트워크, 데이터베이스 연동 또한 비동기로 수행되어야 의미가 있다.</li>
+</ul>
+<p>배민 프로모션 시스템의 경우, 많은 사용자가 한 번에 몰리는 경우에 효율적으로 요청을 처리하기 위해서 이렇게 Webflux를 이용해 구성되어 있습니다.</p>
+<p>그런데 앞서 Webflux의 특징을 이야기하며 외부 네트워크나 데이터베이스 연동의 경우에도 비동기로 수행되어야 의미가 있다고 언급하였습니다. 즉, 특정 요청을 수행하는 중에 DB와의 연동이 필요해 DB에 요청을 보내는데 결국 해당 스레드가 blocking 된다면 Webflux를 사용하는 의미가 무색합니다. 오히려 비용이 더 많이 소모될 수 있습니다.</p>
+<p>따라서 쿠폰 API 서버, 회원 API 서버 등 연관된 서버들과의 통신에는 RestTemplate 이 아닌 <code>WebClient</code>를 사용했습니다.</p>
+<p>또한 DB와의 연동을 위해 익숙하게 사용하던 JPA 가 아닌 <code>R2DBC</code>를 webflux 와 함께 사용했습니다.</p>
+<h3>R2DBC란?</h3>
+<p>WebClient에 대한 내용은 한 번쯤 들어보거나 사용해 보셨을 것 같습니다. 그런데 R2DBC는 용어도 생소하고 처음 들어보시는 분들도 많을 것 같습니다.</p>
+<p>우선 용어를 살펴봅시다! R2DBC는 <strong>Reactive Relational Database Connectivity</strong>의 약자입니다. 단어를 하나씩 파헤쳐 보면 그 의미를 파악할 수 있습니다! 즉, &quot;관계형 데이터베이스에서 reactive promogramming 이 가능하도록 지원해 주는 것&quot;을 우리는 R2DBC라고 합니다. (<a href="http://r2dbc.io">r2dbc.io</a> 에서도 “reactive programming APIs to relational databases.”라고 소개되어 있습니다.)</p>
+<p>그럼 JDBC와는 어떤 점이 다를까요??</p>
+<p>기존의 JDBC는 동기식으로 구현되어서 DB에서 쿼리를 실행하는 동안 애플리케이션 스레드는 블로킹됩니다. 하지만 R2DBC는 기존의 JDBC를 통해서 데이터베이스 접근하던 것과는 달리 쿼리를 실행하는 동안 애플리케이션 스레드를 블로킹하지 않고도 결과를 받아올 수 있도록 해줍니다.</p>
+<p>그리고 JDBC와 공통되게 기존의 JDBC처럼 데이터베이스 벤더에 독립적인 API로 구현되어 여러 데이터베이스 벤더에서 R2DBC를 지원해줄 수 있습니다.</p>
+<p>이렇게 장점만 있는 것처럼 보이는 R2DBC를 사용하며 느낀 점은 아직은 지원되지 않는 기능이 많다는 것이었습니다. 우선 익숙하게 사용한 OneToXXX 와 같은 연관관계를 지정해 줄 수 없었습니다. 또한 Id 어노테이션에 대해서도 여러 가지 전략을 제공하지 않는 것으로 보입니다. 그리고 <code>Embedded</code>를 지원하지 않습니다. 하지만 Spring Data JPA 와 같이 Spring Data R2DBC 또한 간단하게 인터페이스만 우리가 정의해 주면 쉽게 Repository 계층의 구현체를 만들어주며 Embedded 나 연관관계 등을 사용하지 않는 간단한 경우에 대해서는 JPA 와 크게 차이가 없으므로 JPA에 익숙하다면 쉽게 데이터베이스와 연동할 수 있습니다.</p>
+<p>그런데 이렇게 R2DBC를 사용하다 보니 “비동기 환경에서 트랜잭션을 어떻게 보장해 주는 것일까?” 하는 의문이 들었습니다. 트랜잭션을 보장해 줄 수 없다면 현재 프로모션 조회나 각 프로모션 참여 로직 수행 중 예외가 발생하게 된다면 롤백을 해주었어야 하는데, 즉 트랜잭션 하나가 원자적으로 커밋되거나 롤백되는 것을 보장해 주어야 하는데 그렇지 못할 테니 R2DBC를 사용하지 못하게 됩니다.ㅠㅠ</p>
+<h3>비동기환경에서의 트랜잭션</h3>
+<p>앞서 Webflux는 기존 스프링에서 사용하던 여러 컴포넌트를 공유한다고 하였습니다. 따라서 Webflux 에서도 @Controller나 @Transactional 등을 기존과 동일하게 사용할 수 있습니다.</p>
+<p>그런데, Webflux + R2DBC 환경에서의 <code>@Transactional</code> 을 통한 트랜잭션 보장은 기존의 방식과 차이가 있습니다.</p>
+<p>Webflux + R2DBC 환경에서의 <code>@Transactional</code> 은 기존의 MVC + JPA에서 <code>ThreadLocal</code>을 이용해 각 스레드만의 고유 공간을 통해서 트랜잭션을 보장하는 방법과는 달리 비동기 방식이기 때문에 <code>Context</code>라고 하는 별도의 객체를 통해서 트랜잭션을 보장해 줍니다. 즉, R2DBC 환경에서는 비동기적인 특성 때문에 ThreadLocal 객체를 사용할 수 없고, <strong>Reactor Context</strong>를 사용합니다.</p>
+<p>Reactor Context는 Reactor 라이브러리에서 제공하는 기능으로, Publisher 및 Subscriber 사이에서 데이터를 공유할 수 있는 맵 형태의 데이터 저장소입니다. (Reactive Seuqnece 상에서 공유) 따라서 트랜잭션 정보를 Reactor Context에 저장하고, R2DBC 연결에서 트랜잭션 정보를 검색해 사용합니다.</p>
+<p>그리고 이를 위해서 Spring에서는 R2DBC Connection을 생성할 때, ConnectionFactory를 사용합니다. 이 ConnectionFactory는 트랜잭션 정보를 Reactor Context에 저장하고, Connection이 생성될 때마다 해당 정보를 Connection에 설정합니다. 따라서 R2DBC를 사용하는 애플리케이션에서는 Reactor Context를 사용해 트랜잭션을 관리하고, 이를 통해 비동기적인 환경에서도 안전하게 트랜잭션을 처리할 수 있게 해줍니다.</p>
+<p>아래와 같은 간단한 테스트를 통해서 Context에 대해서  확인해 볼 수 있습니다.</p>
+<pre><code class="language-java">class ContextTest {
+
+    @Test
+    void contextTest() {
+        final Flux&lt;String&gt; result = Flux.deferContextual(contextView -&gt;
+                Flux.just(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;)
+                        .parallel(3)
+                            .runOn(Schedulers.newParallel(&quot;Thread&quot;, 3))
+                        .map(value -&gt; {
+                            final String transactionId = contextView.getOrDefault(&quot;transactionId&quot;, &quot;&quot;);
+                            return Thread.currentThread().getName() + &quot; - &quot; + value + &quot; - &quot; + transactionId;
+                        })
+        );
+
+        result.contextWrite(Context.of(&quot;transactionId&quot;, &quot;tx-1&quot;))
+                .subscribe(System.out::println);
+    }
+</code></pre>
+<p><code>deferContextual()</code> 메소드를 통해서 Reactor Context를 추출하고 각각의 값을 생성합니다. ContextView는 Context를 읽기만 할 수 있는 전용 뷰입니다. <code>getOrDefault()</code>를 통해서 각 key에 해당하는 value를 가져오며 존재하지 않는 경우, 두 번째 인자인 defaultValue를 사용합니다.</p>
+<p><code>Context.of()</code>를 통해서 새로운 Reactor Context를 생성하고, <code>contextWrite()</code>를 통해 Flux에 전달합니다.</p>
+<p>각각의 데이터 A, B, C는 <code>Flux.parallel()</code>에 의해서 RR으로 신호를 나누어 runOn() 메소드에 다중 스레드를 사용하는 스케줄러를 전달해 각 레일에서 별도의 스레드로 신호를 처리하게 됩니다.</p>
+<p align="center">
+<img src="https://techblog.woowahan.com/wp-content/uploads/2023/03/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2023-02-27-%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE-4.33.14.png"></p>
+<p>위 결과를 보면 각각의 스레드에서 데이터를 처리하지만 Conext를 통해서 전달되는 transactionId 값은 동일한 것을 확인할 수 있습니다.</p>
+<p>이렇게 Reactor Context를 통해서 여러 스레드에서 실행되는 동안 하나의 체인 안에서 데이터를 공유함으로써 우리는 트랜잭션을 보장받을 수 있게 됩니다.</p>
+<h2>코드리뷰</h2>
+<p>온라인 코드리뷰는 <a href="https://woowacourse.github.io/" title="우아한테크코스">우아한테크코스</a> 과정을 통해서도 많이 받아보았지만 오프라인으로 많은 사람들 앞에서 코드리뷰를 받는 경험은 처음이라 많이 떨렸습니다. 또한 팀원분들에게 저를 처음 보여주는 자리이다 보니..🥲 많이 긴장된 상태로 리뷰 시간을 보냈습니다.</p>
+<p>제가 파일럿 프로젝트를 진행하며 어떤 고민들을 하였고, 집중적으로 리뷰 받고 싶은 부분이 무엇인지 고민하고 공유해 주면 좋겠다고 하셔서 구현한 내용들과 함께 고민했던 것들 그리고 리뷰 받고 싶은 부분에 대해서 발표하는 시간을 짧게 먼저 가졌습니다.</p>
+<p>이후 본격적으로 리뷰가 시작되었습니다. (고민했던 내용들은 생략하고 리뷰 위주로 내용을 이어가겠습니다.)</p>
+<h3>쿠폰을 받은 경우 받았다는 표시 (N+1)</h3>
+<pre><code class="language-java">    @Transactional(readOnly = true)
+    public Mono&lt;CouponBookResponse&gt; getCouponBook(final String memberNumber) {
+        final Mono&lt;CouponGroupWithOrderResponse&gt; couponGroupResponse = couponGroupService.getCouponGroupsForCouponBook(memberNumber);
+
+        return couponGroupResponse
+                .flatMap(it -&gt; {
+                    final List&lt;CouponGroupWithReceivedResponse&gt; couponGroups = it.getCouponGroups();
+                    final Mono&lt;MemberResponse&gt; memberResponse = memberClient.inquireMemberInfo(new MemberRequest(memberNumber));
+                    return memberResponse.map(member -&gt; new CouponBookResponse(member.getNickName(), it.getOrderCount(), couponGroups));
+                });
+    }</code></pre>
+<pre><code class="language-java">    public Mono&lt;CouponGroupWithOrderResponse&gt; getCouponGroupsForCouponBook(final String memberNumber) {
+        final Mono&lt;Integer&gt; orderCount = queryOrderCount(new OrderCountRequest(memberNumber, MONTHLY.getBaseDate()));
+        final Mono&lt;Integer&gt; currentMonthOrderCount = queryOrderCount(new OrderCountRequest(memberNumber, LocalDate.now().with(firstDayOfMonth())));
+
+        final Mono&lt;List&lt;CouponGroupWithReceivedResponse&gt;&gt; couponGroups = getCouponGroups(memberNumber, orderCount);
+        return Mono.zip(couponGroups, currentMonthOrderCount)
+                .map(it -&gt; new CouponGroupWithOrderResponse(it.getT1(), it.getT2()));
+    }</code></pre>
+<p>마케터 B 요구사항에서 쿠폰북을 조회할 때 쿠폰을 이미 발급받았는지 여부를 함께 표시해야 합니다. 또한 회원의 닉네임 정보도 함께 표시해 주어야 합니다. 따라서 멤버 정보를 조회해오는 로직과 함께 쿠폰 그룹을 조회(getCouponGroupsForCouponBook)해 오는 로직이 필요합니다.</p>
+<p>여기서 <code>getCouponGroups()</code> 내부에서 CouponGroupRepository의 <code>findByGradeNameAndMemberNumber()</code> 메소드를 사용하며 다음과 같은 쿼리가 존재합니다.</p>
+<pre><code class="language-java">    @Query(&quot;SELECT coupon_group.id as id, coupon_group.coupon_group_seq as couponGroupSequence, &quot;
+            + &quot;coupon_group.coupon_amount as couponAmount, &quot;
+            + &quot;coupon_group.coupon_group_seq = (SELECT coupon_group.coupon_group_seq &quot;
+            + &quot;FROM coupon_group &quot;
+            + &quot;JOIN coupon_group_grade ON coupon_group.id = coupon_group_grade.coupon_group_id &quot;
+            + &quot;JOIN grade ON coupon_group_grade.grade_id = grade.id &quot;
+            + &quot;JOIN coupon ON coupon_group.id = coupon.coupon_group_id &quot;
+            + &quot;WHERE grade.grade_name = :gradeName &quot;
+            + &quot;AND coupon.member_number = :memberNumber &quot;
+            + &quot;AND coupon_group.coupon_group_seq = coupon.coupon_group_id) as received &quot;
+            + &quot;FROM coupon_group &quot;
+            + &quot;JOIN coupon_group_grade ON coupon_group.id = coupon_group_grade.coupon_group_id &quot;
+            + &quot;JOIN grade ON coupon_group_grade.grade_id = grade.id &quot;
+            + &quot;WHERE grade.grade_name = :gradeName&quot;)
+    Flux&lt;CouponGroupResponse&gt; findByGradeNameAndMemberNumber(final GradeName gradeName, final String memberNumber);</code></pre>
+<p>한눈에 알아보기 힘든 쿼리이며 굉장히 많은 테이블들 간의 조인이 발생합니다.</p>
+<p>하지만 이렇게 작성한 이유는 아래의 쿼리를 사용하면 N + 1 문제가 발생하기 때문입니다.</p>
+<pre><code class="language-java">@Query(&quot;SELECT * FROM coupon_group &quot;
+            + &quot;JOIN coupon_group_grade ON coupon_group.id = coupon_group_grade.coupon_group_id &quot;
+            + &quot;JOIN grade ON coupon_group_grade.grade_id = grade.id &quot;
+            + &quot;WHERE grade.grade_name = :gradeName&quot;)
+Flux&lt;CouponGroup&gt; findByGradeName(final GradeName gradeName);</code></pre>
+<p>위 쿼리를 활용하여 먼저 CouponGroup만을 조회해오고, 조회해온 CouponGroup N 개에 대해서 <strong>사용 여부(발급 여부)</strong>를 판단하기 위해 추가적인 쿼리를 N 번 호출할 수 있습니다.</p>
+<p>하지만 <code>findByGradeNameAndMemberNumber()</code> 와 같이 <strong>sub query</strong>를 활용하여 CouponGroup을 조회하면서 발급 여부를 함께 조회하면 한 번의 쿼리로 원하는 데이터를 모두 조회해 올 수 있게 됩니다. (반환형도 CouponGroup이 아닌 발급 여부를 포함한 DTO인 CouponGroupResponse를 사용해 주었습니다.)</p>
+<p>이에 대해서 고민 포인트로 발표도 하고 리뷰도 받았습니다. 우선 쿼리가 매우 복잡하고 길기 때문에 유지 보수하는 관점에서 적절한 쿼리인지 고민해 볼 필요가 있습니다. 즉, 여기서 만약에 &quot;coupon_group_seq&quot;를 &quot;coupon_group_sequence&quot;로 변경하게 되면 어떻게 될까요?? @Query에 작성된 문자열에서 &quot;coupon_group_seq&quot;를 모두 찾아 수정을 진행해 주어야 합니다. 또한 많은 테이블들을 조인해서 연산해야 한다는 것도 DB에 부담이 될 수 있습니다.</p>
+<p>하지만 이렇게 한 번에 필요한 데이터를 조회해오는 방법은 네트워크를 여러 번 타며 DB에 부하를 주는 것에 비하면 훨씬 DB의 부담은 적을 것입니다.</p>
+<p>따라서 많은 조회가 이루어지는 쿼리인지 유지 보수가 많이 필요한 쿼리인지를 적절히 판단해서 사용하는 것이 좋을 것 같다는 의견을 받을 수 있었습니다. 저는 쿠폰북에 대한 조회는 참여와는 별개로 빈번하게 조회가 가능하기 때문에 많은 조회가 이루어지는 쿼리라고 판단하였고, 그럴 때마다 N + 1 번의 쿼리가 나가는 것은 비효율적이라고 판단하였습니다. 수정 또한 많이 일어나지 않을 것으로 예상하여 결론적으로 <code>findByGradeNameAndMemberNumber()</code> 를 사용하도록 해주었습니다.</p>
+<h3>동시성</h3>
+<p>사용자의 이벤트와 관련된 서비스이다 보니 “<strong>동시성</strong>” 문제 또한 고려하지 않을 수 없었습니다.</p>
+<p>사용자가 같은 이벤트에 대해서 1회 참여 제한인 경우, 여러 번 동시에 API를 호출한다고 해서 여러 번 참여가 가능하면 안 되기 때문입니다!</p>
+<p>동시성 문제가 발생할 수 있는 부분은 사용자가 이벤트에 참여하기 위해 이전 참여 이력을 조회하는 부분!(코드리뷰를 통해 프로모션 참여 이력을 조회하는 곳에서도 동시성 문제가 발생할 수 있음을 인지할 수 있었습니다.)과 쿠폰 수량이 감소하는 곳입니다.</p>
+<p>프로모션의 참여 이력이 아직 저장되지 않은 시점에 프로모션 참여 신청을 하여 중복 참여가 되는 문제가 발생하면 안됩니다!</p>
+<p>또한 쿠폰이 마지막 1개 남아 있는 시점에서 동시에 두 명의 유저가 요청을 하게 되었을 때 둘 모두 성공하는 것이 아니라 한 명만이 성공해야 합니다!</p>
+<p>이러한 동시성 문제를 해결하기 위해서 1차적으로 <code>synchronized</code> 키워드를 통해서 해결하는 것을 고려해 볼 수 있습니다. 하지만 이는 동시성 문제를 완벽히 해결하기 어렵습니다.</p>
+<p>일반적으로 <code>synchronized</code>를 붙이는 코드는 <code>@Transactional</code>로 감싸진 메소드입니다. 즉, <strong>AOP</strong> 를 통해서 해당 메소드 앞뒤로 트랜잭션 시작과 트랜잭션 커밋 또는 롤백을 수행해 줍니다. 즉 다음과 같은 형태입니다.</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/03/스크린샷-2023-03-14-오전-4.06.33.png" alt="" /></p>
+<p>우선 트랜잭션 시작은 동시에 요청이 온 두 트랜잭션 모두가 시작을 할 수 있게 됩니다. 트랜잭션 프록시를 호출하게 되면 트랜잭션 프록시는 데이터 소스를 찾아서 사용하게 되면서 이때 커넥션 풀에서 커넥션을 획득하게 됩니다. 따라서 동시에 온 두 요청 모두가 각각의 커넥션을 소유할 수 있게 됩니다. 이렇게 커넥션을 맺은 이후에 실제 Target Method에 대해서는 <code>synchronized</code>를 걸었기에 순차적으로 진행됩니다.</p>
+<p>하지만 <strong>커밋하는 시점</strong>, 즉 하나의 스레드가 Target Method를 처리하고 나오는 순간 다른 트랜잭션에서 해당 메소드에 진입이 가능하게 됩니다.(아직 첫 번째 트랜잭션 커밋 X인 시점) 앞선 트랜잭션에서는 커밋이 완료되지 않았고 두 번째 실행된 트랜잭션에서 쿠폰을 발급받게 되면 둘 모두 성공하게 됩니다. 즉, 처음 트랜잭션이 아직 커밋 되지 않은 시점에 두 번째 트랜잭션이 DB로부터 데이터를 조회할 수 있게 되고 해당 데이터를 통해서 검증을 수행하게 되면 여전히 동시성 문제가 존재합니다.</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/03/스크린샷-2023-03-14-오전-4.01.50.png" alt="" /></p>
+<p>그리고 이러한 방식은 근본적으로 <strong>하나의 서버(Application Server)</strong>를 고려하였을 때 생각해 볼 수 있는 방법으로 여러 대의 서버가 존재한다고 하면 진입점이 여러 개가 되므로 결국 동일한 문제가 발생합니다.<br />
+예를 들어, 각각의 서버에서 quantity를 조회해올 수 있고 이때 만약 A, B 서버 모두 “<strong>quantity = 1</strong>” 을 조회해온다면 둘 다 reduce 시키는 문제가 발생할 수 있습니다.</p>
+<p>이를 해결하기 위한 방법으로 메시지 큐나 Redis를 이용한 글로벌 락과 같은 방법도 있겠지만 파일럿 프로젝트이기에 WAS, DB 이외에 추가적인 인프라 리소스를 활용하지 않고, 코드 레벨 혹은 DB만을 가지고 해결이 가능한 비관적 락, 낙관적 락 2가지 방법을 고려하였습니다.</p>
+<p>결론적으로는 <strong>비관적 락</strong>을 사용하여 공유되는 데이터인 DB 데이터 row에 직접 <strong>Exclusive Lock</strong> 을 거는 방법을 택하였습니다. 따라서 여러 요청이 왔을 때 한 번에 하나의 요청만이 해당 row에 접근할 수 있게 되고 순차적으로 처리되는 효과를 얻을 수 있습니다. 이러한 비관적 락은 DB row에 Exclusive Lock 을 걸기에 속도가 많이 저하되는 문제가 있지만, 낙관적 락을 사용하지 않은 이유는 다음과 같습니다.</p>
+<p>개인적으로 낙관적 락은 “선착순 1명”과 같이 여러 요청 중 하나의 요청만을 성공시켜야 할 때 적절한 방법이라고 생각합니다.(혹은 인원수가 고정적으로 제한된 상황이나..) 낙관적 락은 실패 시에 개발자가 직접 재시도를 해주어야 하는데 특정 예외가 발생했을 때 해당 메소드를 재시도하는 Spring에서 제공해 주는 <code>@Retryable</code> 어노테이션을 함께 사용하는 것을 고려해 볼 수 있습니다. 하지만 이 경우 몇 번 재시도를 하는 것이 적절한지 명확하지 않은 요구사항에서는 조금 어려운 문제가 될 수 있습니다.</p>
+<p>특히 지금과 같이 쿠폰의 수량은 어떤 경우엔 10개 어떤 경우엔 1,000개, 5,000개 와 같이 제각각일 수 있으므로 적절한 방법이 아니라고 판단했습니다.</p>
+<pre><code class="language-java">    @Transactional
+    public Mono&lt;Integer&gt; reduceQuantity(final Long couponGroupId) {
+        return couponGroupRepository.findByIdForUpdate(couponGroupId)
+                .flatMap(couponGroup -&gt; {
+                    couponGroup.reduceQuantity();
+                    return couponGroupRepository.updateQuantity(couponGroup.getQuantity(), couponGroup.getId());
+                });
+    }</code></pre>
+<pre><code class="language-java">    @Lock(PESSIMISTIC_WRITE)
+    @Query(&quot;SELECT * FROM coupon_group WHERE coupon_group.id = :couponGroupId FOR UPDATE&quot;)
+    Mono&lt;CouponGroup&gt; findByIdForUpdate(Long couponGroupId);</code></pre>
+<p>동시성 테스트는 아래와 같이 <code>CountDownLatch</code>를 이용했습니다.</p>
+<pre><code class="language-java">public class ConcurrentHttpRequester {
+
+    private final ExecutorService executorService;
+    private final CountDownLatch start;
+    private final CountDownLatch end;
+    private final AtomicInteger successCount;
+    private final AtomicInteger failCount;
+
+    public ConcurrentHttpRequester(final int poolSize) {
+        this.executorService = Executors.newFixedThreadPool(poolSize);
+        this.start = new CountDownLatch(poolSize);
+        this.end = new CountDownLatch(poolSize);
+        this.successCount = new AtomicInteger(0);
+        this.failCount = new AtomicInteger(0);
+    }
+
+    public void submit(HttpRequestExecutor executor) {
+        executorService.submit(() -&gt; {
+            try {
+                start.countDown();
+                start.await();
+                final HttpStatus status = executor.execute();
+                if (status.is2xxSuccessful()) {
+                    successCount.incrementAndGet();
+                } else if (status.is4xxClientError()) {
+                    failCount.incrementAndGet();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                end.countDown();
+            }
+        });
+    }
+
+    ...
+}</code></pre>
+<p>ConcurrentHttpRequest는 <strong>CountDownLatch</strong>를 이용해 인자로 주어진 HttpRequesetExecutor(Functional Interface) 을 수행합니다.</p>
+<p><code>execute()</code>를 실행하기 전에 <code>countDown()</code> 을 호출해 값을 1씩 감소시키며 <code>await()</code>으로 해당 <strong>CountDownLatch</strong>의 값이 0 이 될 때까지 대기합니다. 즉, 모든 요청이 한 번에 수행되기 이전에 출발선에 멈춰서 있다고 생각해 주시면 좋습니다.</p>
+<p>그리고 모든 요청이 출발선에 도착해 시작할 준비가 되면 <code>execute()</code>를 통해서 동작을 수행하게 되고 이때 응답이 <strong>2xx</strong> 인지 <strong>4xx</strong> 인지에 따라 AtomicInteger의 값을 증가시킵니다.</p>
+<pre><code class="language-java">    @DisplayName(&quot;동시에 다수의 사용자가 쿠폰을 발급해도 순차적으로 처리되어 수량이 정상적으로 감소해야한다.&quot;)
+    @Test
+    void concurrentReduceQuantity() {
+        // given
+        final ConcurrentHttpRequester requester = new ConcurrentHttpRequester(POOL_SIZE);
+
+        // when
+        for (int i = 0; i &lt; POOL_SIZE; i++) {
+            final String memberNumber = String.valueOf(i);
+            requester.submit(() -&gt; tryReduceQuantity(new PromotionRequest(memberNumber)));
+        }
+        requester.await();
+
+        // then
+        assertThat(requester.getSuccessCount()).isEqualTo(COUPON_QUANTITY);
+        assertThat(requester.getFailCount()).isEqualTo(POOL_SIZE - COUPON_QUANTITY);
+    }</code></pre>
+<pre><code class="language-java">    @DisplayName(&quot;동시에 요청을 해도 프로모션 내역 조회는 순차적으로 처리되며 여러번 참여가 불가능하다.&quot;)
+    @Test
+    void concurrentGetPromotion() {
+        // given
+        final ConcurrentHttpRequester requester = new ConcurrentHttpRequester(POOL_SIZE);
+
+        // when
+        for (int i = 0; i &lt; POOL_SIZE; i++) {
+            requester.submit(() -&gt; tryParticipate(new PromotionRequest(MEMBER_NUMBER)));
+        }
+        requester.await();
+
+        // then
+        assertThat(requester.getSuccessCount()).isEqualTo(SUCCESS);
+        assertThat(requester.getFailCount()).isEqualTo(POOL_SIZE - SUCCESS);
+    }</code></pre>
+<p>이렇게 CountDownLatch를 이용하면 실제 사용자 환경과 비슷하게 동시에 하나의 동일한 요청을 보낼 수 있게 되고 성공한 횟수와 실패한 횟수를 통해서 우리가 의도한 대로 동시성이 제대로 제어되는지, 즉 정말 쿠폰의 수만큼만 통과하고, 프로모션 참여 또한 한 번만 참여가 되는지를 확인해 줄 수 있습니다.</p>
+<h3>subscribe 명시적 호출</h3>
+<p>기존에 아래와 같이 프로모션 참여 이력을 저장하는 로직에서 명시적으로 <code>subscribe()</code> 을 호출해 주고 있었습니다.</p>
+<pre><code class="language-java">    private PromotionResponse savePromotionHistory(final CouponResponse coupon, final String memberNumber, final Promotion promotion) {
+        final PromotionHistory promotionHistory = new PromotionHistory(memberNumber, promotion.getId(), coupon.getCouponId());
+        promotionHistoryRepository.save(promotionHistory).subscribe();
+        return new PromotionResponse(coupon.getMemberCouponSequence(), coupon.getCouponAmount(), coupon.getIssuedDate());
+    }</code></pre>
+<p>그리고 이 부분에 대해서 리뷰를 받았는데, 명시적으로 <code>subscribe()</code>을 호출하지 말고 Mono로 이어서 반환을 하라는 내용이었습니다.</p>
+<p>여기서 명시적으로 <code>subscribe()</code> 을 호출한 이유는 <code>promotionHistoryRepository.save()</code>에서 반환되는 Mono를 <code>savePromotionHistory()</code>에서 반환하는 <strong>PromotionResponse</strong> 을 만드는 데 있어 필요하지 않았기 때문이었습니다.</p>
+<p>그래서 “<strong>왜 명시적으로 <code>subscribe()</code> 을 호출하지 않고, Mono 혹은 Flux로 넘겨야 하는 것일까??</strong>&quot; 하는 의문이 들었습니다.</p>
+<p>나름대로 생각해 본 근거는 다음과 같습니다. 우선 실제로 해당 private 메소드를 호출하는 public 메소드인 <code>participate()</code> 메소드가 <code>subscribe()</code> 되지 않을 수 있습니다.</p>
+<pre><code class="language-java">    public Mono&lt;PromotionResponse&gt; participate(final PromotionType promotionType, final String memberNumber) {
+        return promotionHistoryRepository.findPromotionHistory(promotionType, memberNumber)
+                .map(Optional::of)
+                .defaultIfEmpty(Optional.empty())
+                .flatMap(promotionHistory -&gt; {
+                    if (promotionHistory.isPresent()) {
+                        return Mono.error(new AlreadyParticipationException(promotionHistory.get().getId()));
+                    }
+                    final Mono&lt;Promotion&gt; promotion = promotionRepository.findByPromotionType(promotionType);
+                    final Mono&lt;CouponGroupResponse&gt; couponGroup = couponGroupService.getCouponGroup(memberNumber, promotionType);
+                    return participatePromotion(memberNumber, promotion, couponGroup);
+                });
+    }</code></pre>
+<p>즉 실질적인 참여에 대한 응답이 사용자에게 전달되지 않고, 참여 이력만 저장될 수도 있다는 것입니다.</p>
+<p>명시적인 <code>subscribe()</code> 호출은 실제 public 한 메소드가 구독되지 않았음에도(subscribe() 되지 않았음에도) 실행되는 문제를 마주할 수 있습니다.</p>
+<p>추가적으로 이러한 발행 &#8211; 구독 패턴은 비동기 메시징 패러다임 중 하나인데, 특정한 수신자가 정해져 있지 않고, 정해진 범주에 따라서 구독을 신청한 수신자에게 메시지가 전달되는 방식입니다. 즉, webflux에서는 subscribe을 하지 않으면 결국 아무 일도 일어나지 않아야 합니다. 하지만 <strong>명시적인 subscribe()의 호출은 이를 방해하는 요소</strong>가 됩니다.</p>
+<p>하지만 이러한 이론적인 측면뿐 아니라 실질적으로 Webflux를 사용하는 측면에서도 문제가 될 수 있습니다. WebFlux에서 Mono나 Flux에 대한 <code>subscribe()</code> 을 직접 수행하면 <strong>비동기 및 논 블로킹 방식의 이점을 상실</strong>하게 됩니다. 저의 코드와 같이 <code>subscribe()</code> 을 명시적으로 호출하게 되면 현재 스레드는 차단되게 됩니다. 따라서 성능적인 측면에서 당연히 단점이 될 수 있습니다.</p>
+<p>그럼 <code>subscribe()</code> 을 우리가 직접 호출하지 않으면 어디서 호출해 줄까요?? 어디선가는 <code>subscribe()</code> 을 호출해주어야 구독이 발행되어 처리가 이루어질 것입니다. 스프링 내부적으로 Controller에서 return 되는 publisher를 subscribe 해줍니다. 특히 Netty를 사용중일 경우, HttpServerHandle 클래스의 onStateChange 메소드에서 <code>subscribe()</code> 을 호출해 줍니다. Servlet의 경우에는 ServletHttphandlerAdapter 클래스의 service 메소드에서 <code>subscribe()</code> 을 호출해 줍니다.’</p>
+<p>다음의 코드는 <strong>HttpServer</strong>의 inner static class인 <strong>HttpServerHandle</strong>의 <code>onStateChange()</code> 부분입니다.</p>
+<p>여기서 <code>subscribe()</code> 메소드는 Mono 또는 Flux 형태의 Http 응답으로 클라이언트에 전송될 데이터 스트림을 실제 응답 데이터로 클라이언트에 보내는 역할을 하게 되는 것이고, <code>disposeSubscriber()</code> 메소드는 응답이 완전히 전송된 후 응답과 관련된 모든 리소스(네트워크 연결 해제, 버퍼 리소스 해제 등)를 해제하는 역할을 수행합니다.</p>
+<pre><code class="language-java">        @Override
+        @SuppressWarnings(&quot;FutureReturnValueIgnored&quot;)
+        public void onStateChange(Connection connection, State newState) {
+            if (newState == HttpServerState.REQUEST_RECEIVED) {
+                try {
+                    if (log.isDebugEnabled()) {
+                        log.debug(format(connection.channel(), &quot;Handler is being applied: {}&quot;), handler);
+                    }
+                    HttpServerOperations ops = (HttpServerOperations) connection;
+                    Publisher&lt;Void&gt; publisher = handler.apply(ops, ops);
+                    Mono&lt;Void&gt; mono = Mono.deferContextual(ctx -&gt; {
+                        ops.currentContext = Context.of(ctx);
+                        return Mono.fromDirect(publisher);
+                    });
+                    if (ops.mapHandle != null) {
+                        mono = ops.mapHandle.apply(mono, connection);
+                    }
+                    mono.subscribe(ops.disposeSubscriber());
+                }
+                catch (Throwable t) {
+                    ...
+                }
+            }
+        }</code></pre>
+<p>정리하면 우리는 Controller를 통해서 publisher만 반환해 주면 스프링에서 <code>subscribe()</code> 을 호출해 줌으로써 <strong>비동기 및 논 블로킹</strong> 방식의 이점을 누릴 수 있는 것이고, 명시적인 <code>subscribe()</code> 을 호출하면 현재 스레드가 차단되므로 webflux의 이점을 상실하게 됩니다.</p>
+<p>따라서 위의 코드를 아래와 같이 변경을 해주었습니다.</p>
+<pre><code class="language-java">    private Mono&lt;PromotionResponse&gt; savePromotionHistory(final CouponResponse coupon, final String memberNumber, final Promotion promotion) {
+        final PromotionHistory promotionHistory = new PromotionHistory(memberNumber, promotion.getId(), coupon.getCouponId());
+        return promotionHistoryRepository.save(promotionHistory)
+                .map(it -&gt; new PromotionResponse(coupon.getMemberCouponSequence(), coupon.getCouponAmount(), coupon.getIssuedDate()));
+    }</code></pre>
+<pre><code class="language-java">    private Mono&lt;PromotionResponse&gt; participatePromotion(final String memberNumber, final Mono&lt;Promotion&gt; promotion,
+                                                         final Mono&lt;CouponGroupResponse&gt; couponGroup) {
+        return Mono.zip(couponGroup, promotion)
+                .flatMap(tuple -&gt; {
+                    final Mono&lt;CouponResponse&gt; coupon = issueCoupon(memberNumber, tuple.getT1());
+                    return coupon.flatMap(it -&gt; savePromotionHistory(it, memberNumber, tuple.getT2()));
+                });
+    }</code></pre>
+<p><code>savePromotionHistory()</code>는 <code>promotionHistoryResponse.save()</code> 호출 이후 <code>map()</code> 을 통해서 Mono를 반환해 줍니다. 그리고 이를 호출하는 <code>participatePromotion()</code>에서는 flatMap 을 호출하도록 수정해 주었습니다.</p>
+<p>여기서 flatMap() 을 사용해 준 이유는 Mono&lt;Mono&gt; 를 flat 하게 펴주기 위함도 있지만 DB 에 대한 접근(save 호출) 을 별도의 스레드에서 수행시키기 위함도 있습니다.</p>
+<p>하지만 여전히 궁금한 점이 남아있습니다. 지금 현재 <code>promotionHistoryRepository.save()</code>의 결과를 이용하지 않고 PromotionResponse로 <code>map()</code> 을 통해 변환한 후 반환하고 있는데 과연 이것이 적절한가 하는 생각이 듭니다. save() 결과로 나온 PromotionHistory(map 안에서 “it”)를 함께 사용해서 map 변환이 이루어져야 한다고 생각하기 때문입니다.</p>
+<p><code>map()</code> 메소드의 목적은 원본 데이터를 다른 데이터의 형태로 변환하는 것인데, 이 경우 원본 데이터를 사용하고 있지 않습니다. 단순히 새로운 데이터를 생성한다고 보여집니다. 하지만 현재는 반드시 원본 데이터를 사용해 다른 형태로 변환해야 하는 이유에 대한 명확한 답을 스스로 찾지 못했습니다. 또한 그렇게 하지 않고 사용하였을 때 발생하는 문제가 없다고 판단하여 위와 같이 리팩터링을 진행하였습니다.</p>
+<h3>Opgional.of vs Optional.ofNullable</h3>
+<p>아래와 같은 코드를 통해서 프로모션 참여 이력(PromotionHistory)을 한 번 조회하고 참여 이력이 있는지 확인해 주고 있습니다.</p>
+<p>그런데 여기서 <code>Optional.of()</code>를 사용해도 <strong>NPE</strong> 이 발생하지 않는 이유가 무엇인지 질문을 받았습니다.</p>
+<p>리뷰 당시에는 해당 코드에 대해서 깊이 있기 고민해 보지 못했었고, webflux 가 처음이었어서 돌아가게끔 작성하는데 급급해 제대로 된 답변을 하지 못했었습니다. 단순히 조회된 데이터가 없는 경우에 complete 나는 것을 방지해 주기 위해 이러한 코드를 작성하였던 것만을 이야기할 수 있었습니다.</p>
+<pre><code class="language-java">    public Mono&lt;PromotionResponse&gt; participate(final PromotionType promotionType, final String memberNumber) {
+        return promotionHistoryRepository.findPromotionHistory(promotionType, memberNumber)
+                .map(Optional::of)
+                .defaultIfEmpty(Optional.empty())
+                .flatMap(promotionHistory -&gt; {
+                    if (promotionHistory.isPresent()) {
+                        return Mono.error(new AlreadyParticipationException(promotionHistory.get().getId()));
+                    }
+                    final Mono&lt;Promotion&gt; promotion = promotionRepository.findByPromotionType(promotionType);
+                    final Mono&lt;CouponGroupResponse&gt; couponGroup = couponGroupService.getCouponGroup(memberNumber, promotionType);
+                    return participatePromotion(memberNumber, promotion, couponGroup);
+                });
+    }</code></pre>
+<p>위의 코드는 <code>findPromotionHisotry()</code> 호출 이후에 반환되는 값을 <code>map()</code> 을 이용해 Optional로 변환해 주고 있습니다.</p>
+<p>이렇게 해준 이유는 앞서 잠깐 언급한 대로 만약 위와 같은 과정 없는 채로 <code>findPromotionHistory()</code>로 조회를 하게 되면 결과가 없는 경우 바로 complete가 나서 이후 로직이 수행되지 않기 때문입니다. 실제로 Optional로 한 번 감싸는 것과 감싸지 않은 상태인 아래와 같은 로직을 구성해서 조회되지 않는 경우에 대해서 테스트 코드를 실행해 보면 그 차이를 알 수 있습니다.</p>
+<pre><code class="language-java">public Mono&lt;PromotionResponse&gt; participate(final PromotionType promotionType, final String memberNumber) {
+    return promotionHistoryRepository.findPromotionHisotry(promotionType, memberNumber)
+                .flatMap(promotionHistory -&gt; {
+                            ...
+                });
+}</code></pre>
+<p>여기서 문제는 Repository에서 반환하는 데이터가 없어 null이 반환된다면, <code>Optional.of()</code>의 경우 <strong>NPE</strong> 이 발생한다는 것입니다. 따라서 Repository에서 데이터가 없는 경우 null을 반환한다면 <code>Optional.ofNullable()</code> 을 사용하는 것이 적절합니다.</p>
+<p><code>Optioanl.of()</code> 와 <code>Optional.ofNullable()</code> 모두 객체를 담은 Optional 객체를 만들어 반환하지만 <code>of()</code> 메소드는 null 이 들어오지 않는다는 것을 확신할 수 있을 때, 그리고 <code>ofNullable()</code>는 null 여부를 확신할 수 없을 때 사용하는 것이 적절합니다.</p>
+<p>하지만 실제로 Repository에서 조회하는 데이터인 PromotionHistory 가 없어도 NPE 이 발생하지 않습니다. 그 이유는 R2DBC를 이용한 PromotionHistoryRepository에서 데이터가 없는 경우 Mono.empty()를 통해서 결과를 반환해 주기 때문입니다. 실제 Mono.empty()에 대한 설명을 보면 emitting 하지 않고 완료되는(complete 되는) Mono를 만들어 반환한다고 명시되어 있습니다.</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/03/스크린샷-2023-02-01-오전-9.51.27.png" alt="" /></p>
+<p>그렇기에 Mono.empty() 도 null이 아닌 하나의 객체이므로 NPE 이 발생하지 않았던 것이고, Mono.empty()는 complete 되는 Mono이기에 Optional로 감싸주는 작업을 수행해 주지 않으면 complete 가 나서 이후 로직이 실행되지 않았던 것입니다.</p>
+<p>위의 로직을 다시 설명해 보면 findPrmotionHistory의 결과가 Mono.empty() 로 넘어올 수 있기에 <code>Optional.of()</code>로 감싸준 후 (NPE 발생 X), Mono.empty라면 <code>defaultIfEmpty()</code>에서 걸려 Optional.empty()로 변환을 해주고 이후 isPresent()로 분기를 수행합니다.</p>
+<p>따라서 findPromotionHistory의 결과가 없는 경우에 대해서 ofNullable()로 감싸줄 필요없이 of()를 사용해서 NPE 이 발생하지 않고 이후 로직이 수행할 수 있습니다.</p>
+<h3>기능의 재활용성</h3>
+<p>공통 요구사항에 보면 <strong>“구현한 기능을 재사용 할 수 있도록 구현해주세요.”</strong>라는 요구사항이 있습니다. 기능 요구사항에만 집중하다 보니 1차 코드리뷰까지 깊게 고민하지 못한 부분이었습니다. 그리고 이 부분이 핵심이었음을 리뷰를 받으며 깨달았습니다.🥲</p>
+<p>프로모션(이벤트)의 요구사항은 계속해서 들어옵니다. 요구사항에 포함되어 있는 추석 이벤트뿐 아니라 새해맞이 이벤트, 새 학기 이벤트 등등 굉장히 많은 이벤트 요구사항이 들어오게 되고, 대부분 이러한 요구사항은 마감기한이 정해져있습니다. (추석 이벤트를 추석 한참 지나서 하면 의미가 없겠죠..😅) 그렇다고 이러한 요구사항이 들어올 때마다 새로운 기능을 구현하고 테스트하고 QA를 진행한 후 배포하는 것은 너무 많은 비용이며 일정에 맞추지 못할 가능성도 높아집니다. 따라서 기존에 만들어놓은 기능을<strong> 재활용</strong>해서 최대한 새로운 기능 개발에 대한 비용을 줄이는 것이 프로모션 시스템의 핵심입니다!!</p>
+<p>하지만 기존의 제가 작성한 코드는 새로운 프로모션이 추가되거나 수정될 때마다 전체적으로 손을 봐주어야 합니다.ㅠㅠ 따라서 기능을 재활용할 수 있는 부분이 없거나 극히 드뭅니다. 리뷰 과정에서 “주문수 확인(조건 확인), 쿠폰 (1개, 2개, 3개) 발급 등 각각을 하나의 기능으로 보고 이를 조립하여 기능을 완성”이라는 힌트를 주셨고, 이전에 프로모션 하위 개념으로 &quot;<strong>퀘스트</strong>&quot;라고 하는 단위를 둔다는 힌트도 받았었기에 이를 참고해서 다시 한번 설계를 진행 해보았습니다.</p>
+<p>아래와 같이 <strong>프로모션 조회</strong>와 <strong>프로모션 참여</strong>를 구분하여 큰 틀을 정해놓고 구현하면 코드를 재활용할 수 있을 것이라 생각했습니다.</p>
+<blockquote>
+<p><strong>프로모션 조회 (GET)</strong><br />
+request : memberNumber(회원번호) + 특정 promotion (pathVariable)<br />
+response : [questId + 참여 여부] + optional(쿠폰 금액, 닉네임, 이번달 주문수)<br />
+<strong>프로모션 참여(쿠폰 발급) (POST)</strong><br />
+request : questId(pathVariable)<br />
+response : couponAmount(쿠폰 금액), memberCouponSequence(쿠폰 번호), IssuedDate(발급날짜)</p>
+</blockquote>
+<p>여기서 <strong>퀘스트는 프로모션의 하위 단위</strong>로 프로모션마다 여러 개의 퀘스트를 가진다고 이해하시면 됩니다. 예를 들어 마케터 A의 경우 최근 주문 O, 최근 주문 X, 첫 주문 각각에 대해서 퀘스트가 존재합니다. 그리고 프로모션 조회 시 어떤 퀘스트를 수행하게 될지를 응답으로 받게 되고, 그 퀘스트의 id를 가지고 프로모션 참여라는 요청을 수행하게 됩니다.</p>
+<p>우선 위에서 정리한 내용을 바탕으로 보면  프로모션 조회와 쿠폰 발급(프로모션 참여)이라는 두 개의 개념으로 구분한 것을 확인하실 수 있습니다.<br />
+이전에는 &quot;쿠폰북 조회&quot;, &quot;프로모션 A 참여&quot;, &quot;프로모션 B 참여&quot;와 같이 각 프로모션에 필요한 API를 각각 만들어주었습니다. 심지어는 프로모션 A에 대한 조회 API를 구현하지 않고, 바로 참여가 되도록 하였었습니다..😅</p>
+<p>하지만 이렇게 되면 계속해서 새로운 프로모션마다 API 가 추가되게 되므로, 모든 프로모션은 공통되게 프로모션 상태에 대한 조회(참여 여부 등)와 프로모션 참여 두 개로 이뤄진다고 생각했습니다.</p>
+<p>예를 들어 VIP 쿠폰북 페이지와 같이 처음 프로모션 페이지에 접근하면 프로모션 조회 API 가 호출됩니다. client는 이때 요청에 memberNumber 와 함께 어떤 프로모션인지에 해당하는 정보를 넘겨주게 됩니다. 그리고 응답으로서 퀘스트와 함께 참여 여부를 반환해줍니다. 여기서 퀘스트는 이후 쿠폰을 실제로 발급받을 때(프로모션에 참여할 때) 요청 값으로 사용됩니다. 그리고 어떤 퀘스트냐에 따라서 optional 하게 &quot;쿠폰 금액 + 닉네임 + 이번 달 주문수 정보&quot;를 반환해 줍니다. (프로모션 B의 경우에는 최대 3개의 quesetId를 넘겨받게 됩니다.)</p>
+<p>프로모션 참여(쿠폰 발급) 요청에는 questId를 포함해서 요청을 보내게 됩니다. 그러면 questId를 가지고 프로모션 A의 경우에는 랜덤하게 memberCouponSequence를 반환하고, 프로모션 B의 경우에도 마찬가지로 memberCouponSequence를 반환해주게 됩니다.</p>
+<p>위의 기본적인 흐름에 따라 ERD 도 아래와 같이 수정했습니다. 중간에 많은 시행착오를 겪었었지만 생략하고 결론적으로 도출된 ERD입니다!!😄</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/03/스크린샷-2023-02-28-오전-8.41.06.png" alt="" /></p>
+<p>우선 기존의 재활용성에 가장 큰 장애물이 되었다고 생각되는 promotion_type 을 제거하는 것으로 시작하였습니다.</p>
+<p>새롭게 quest 테이블을 추가하고 coupon_group 테이블에 quest_id를 추가해 주었습니다. 그리고 각각의 쿠폰 그룹 시퀀스(coupon_group_seq)들은 하나의 quest 와 연관을 가집니다.</p>
+<p>또한 기존에는 promotion_history에 coupon에 대한 정보를 함께 저장해 주고 있었습니다. 하지만 현재는 <strong>“어떤 사용자가 언제 어떤 quest를 통해서 어떤 쿠폰을 발급받았는지”</strong>에 대한 정보를 promotion_hisotry &#8211; coupon_group의 quest_id를 통한 조인으로 확인할 수 있으므로 중복해서 데이터를 저장할 필요가 없어 제거해 주었습니다.</p>
+<p>마지막으로 핵심이 될 수 있는 부분은 프로모션 참여 조건뿐 아니라 출력해야 하는 데이터들에 대한 정보를 DB에 저장해둔다는 점입니다. 이전에는 프로덕션 코드에서 promotion_type에 따른 분기를 수행해 주었습니다. 하지만 어떤 값을 보여줄지(display), 어떻게 참여할지(condition), 참여 기간(date_unit) 등의 조합에 따라 굉장히 많은 경우의 수가 존재하게 되고 그렇게 되면 promotion_type 이 굉장히 많아지고 그에 따른 분기 코드를 작성하는 등 수정이 따릅니다.</p>
+<p>따라서 프로모션에는 날짜 단위나 프로모션 조건, 디스플레이와 같이 프로모션 단위의 조건들을 연관시켜 두고, 프로모션 하위의 참여 단위라고 볼 수 있는 퀘스트에서는 조건에 따른 옵션들 그리고 쿠폰 그룹과 같은 보상과 연관을 가지도록 설계하였습니다. 이를 통해서 새로운 프로모션이 추가되더라도 date_unit, promotion_condition, condition_option, display 등을 조합한 새로운 promotion, quest 그리고 그에 따른 보상(coupon_group)만 추가해 주면 코드에는 변경 없이 동작을 수행할 수 있게 됩니다.</p>
+<p>간단하게 지금까지 다시 설계한 내용을 정리해 보면 다음과 같습니다.</p>
+<ul>
+<li>
+<p>프로모션은 여러 개의 퀘스트와 연관을 가집니다.</p>
+<ul>
+<li>예를 들어, 3,000원, 5,000원, 7,000원 쿠폰 발급과 연관된 퀘스트, 1,000원, 2,000원과 연관된 퀘스트와 같이 하나의 프로모션은 여러 개의 퀘스트와 연관될 수 있습니다.</li>
+<li>
+<p>퀘스트 개념을 파악하기 위해 다음과 같이 참고할 수 있습니다.</p>
+<ul>
+<li>
+<p><strong>Promotion A</strong></p>
+<ul>
+<li>
+<p>마지막 주문 일자에 따라서 크게 3개의 questId로 나뉩니다. (신규, 최근 주문 X, 최근 주문 O)</p>
+</li>
+<li>
+<p>사용자가 “프로모션 조회 시” 조건에 따라 하나의 questId를 받습니다.</p>
+</li>
+<li>
+<p>실제 프로모션 참여 시에 questId를 가지고 요청을 보내게 되고, 조회되는 여러 coupon_group 중 랜덤하게 하나의 쿠폰 시퀀스를 발급합니다.</p>
+</li>
+<li>
+<p>퀘스트 참여 이후에는 참여 이력을 저장합니다.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Promotion B</strong></p>
+<ul>
+<li>
+<p>회원 등급에 따라 questId를 발급합니다.</p>
+</li>
+<li>
+<p>귀한분 – 1개, 더귀한분 – 2개, 천생연분 – 3개</p>
+</li>
+<li>
+<p>각각의 퀘스트 별로 참여하게 되면 쿠폰 시퀀스를 발급하고 이후 참여 이력을 저장합니다.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>하나의 퀘스트는 여러 개의 쿠폰 그룹과 연관이 있을 수 있으므로 쿠폰 그룹은 연관된 퀘스트에 대한 id를 가집니다.</p>
+<ul>
+<li>예를 들어 3000원, 5000원, 7000원 각각은 하나의 쿠폰 그룹 시퀀스를 가지게 됩니다. 그리고 이러한 쿠폰들은 모두 동일한 하나의 퀘스트와 연관되는 다대일 연관관계입니다.</li>
+</ul>
+</li>
+<li>
+<p>기존과는 다르게 promotion 테이블은 프로모션에 대한 정보를 저장합니다.</p>
+<ul>
+<li>기존의 프로모션 테이블은 큰 의미가 없는 테이블이었습니다. 하지만 프로모션에 대한 정보들, 여기서는 참여 단위나 프로모션의 조건, 디스플레이하는 조건 등에 대한 정보를 담고 있습니다. (추가적으로 프로모션에 대한 설명과 같은 것들을 저장할 수도 있을 것입니다.)</li>
+</ul>
+</li>
+<li>
+<p>promotion_history는 각각의 quest에 대한 참여 여부를 저장합니다.</p>
+<ul>
+<li>말 그대로 프로모션에 대한 참여를 저장하는데 프로모션 하위 개념인 quest의 id (식별자)를 저장합니다.</li>
+<li>한 프로모션에 여러 퀘스트가 존재하다 보니 어떤 퀘스트에 참여하였는지를 저장하는 것이 필요하고 promotion에 대한 정보가 필요하다면 join 해서 결과를 얻어올 수 있기에 quest_id만 가지도록 하였습니다.</li>
+</ul>
+</li>
+<li>
+<p>기존의 coupon 테이블은 불필요하므로 제거하였습니다.</p>
+</li>
+<li>
+<p>프로모션은 참여 단위와 같은 프로모션에 대한 조건을 가집니다. 따라서 promotion 은 date_unit 과의 연관을 가집니다.</p>
+</li>
+<li>
+<p>프로모션은 마찬가지로 출력하는 내용에 대한 조건을 가지도록 하였습니다. display에 따라 예를 들어 프로모션 B는 회원의 닉네임이나 이번 달 주문수와 같은 정보를 노출하게 됩니다.</p>
+</li>
+<li>
+<p>각 quest는 연관된 condition_option을 가집니다. 이 condition_option은 어떤 정보를 퀘스트에 대한 참여 조건으로 사용할지와 연관됩니다. 예를 들어 첫주문, 직전 달 주문수 와 같은 조건입니다.</p>
+</li>
+</ul>
+<p>그리고 이러한 ERD 설계와 함께 <strong>사용자 요청에 따른 흐름</strong>은 다음과 같이 정리할 수 있습니다.</p>
+<ul>
+<li><strong>프로모션 조회</strong>
+<ul>
+<li>promotionId를 통해서 특정 questId를 응답해 준다.
+<ul>
+<li>promotionId에 따른 promotion_condition.conditions의 값을 조회한다.</li>
+<li>conditions를 이용해서 condition_option을 구체화한다. (ex. 실버등급, 3,000 or 5,000 or 7,000 원)</li>
+<li>condition_option을 가지고 특정 quest를 구해 반환한다. (Flux)</li>
+</ul>
+</li>
+<li>참여 여부를 함께 반환한다.
+<ul>
+<li>date_unit에 따라 참여 여부를 결정한다. (DAILY인 경우 어제 참여한 것은 무관)</li>
+</ul>
+</li>
+<li>응답 데이터 형태에 따라 응답한다. (Promotion 테이블에 응답 형태와 관련된 부분도 필요해 보임)</li>
+</ul>
+</li>
+<li><strong>프로모션 참여</strong>
+<ul>
+<li>앞선 프로모션 조회를 통해 발급받은 questId를 포함해 요청한다.</li>
+<li>quest에 따라 발급 조건을 수행한다. (ex. 3,000 or 5,000 or 7,000 인 경우 랜덤하게, 실버등급과 같이 프로모션 B의 경우 특별한 조건 X)</li>
+<li>주요 응답 데이터: couponGroupSequence</li>
+</ul>
+</li>
+</ul>
+<p>그리고 여기서 <strong>프로모션마다 달라지는 부분과 공통된 부분</strong>을 나눠보면 아래 그림과 같습니다. (달라지는 부분은 마름모 모양으로 구분해 주었습니다.)</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/03/스크린샷-2023-03-13-오후-3.14.56.png" alt="" /></p>
+<p>프로모션 조회에서는 조건 옵션에 따라서 questId를 구하는 부분과 출력 형태를 정하는 부분을 제외하고는 모두 동일합니다.</p>
+<p>예를 들어, 마케터 A의 경우에는 전체 주문수(totalOrderCount)와 4달간의 주문수(fourMonthOrderCount) 를 가지고 조건 옵션(ConditionOption)이 결정되어 그에 따른 questId 가 하나 반환되지만 마케터 B의 경우에는 직전달 주문수(lastMonthOrderCount)를 가지고 그에 따른 questId 가 하나가 아닌 여러 개 반환 가능합니다. 또한 출력 형태의 경우 마케터 A는 회원의 닉네임 정보등이 불필요하지만 마케터 B는 필요합니다.</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/03/스크린샷-2023-03-13-오후-3.15.04.png" alt="" /></p>
+<p>다음으로 프로모션 참여의 경우에는 참여 여부를 판단하는 것과 쿠폰 그룹을 구하는 부분이 다릅니다.</p>
+<p>예를 들어, 마케터A는 랜덤하게 쿠폰을 1,000원 혹은 2,000원과 같이 발급하여야 하지만, 마케터B는 퀘스트와 쿠폰 그룹이 일대일로 대응하므로 랜덤과 같은 사항 없어 바로 조회해서 발급해 주면 됩니다.</p>
+<p>따라서 이렇게 달라지는 부분을 Strategy (전략)으로 분리하고 열거형에 따라서 적절한 전략을 선택해 로직을 수행하도록 수정하였습니다.</p>
+<h4>프로모션 조회</h4>
+<p><strong>[프로모션 조회: promotionId 를 이용해 특정 questId 를 응답해준다.]</strong></p>
+<ul>
+<li>promotionId에 따른 <strong>promotion_condition.conditions</strong>의 값을 DB로부터 조회해 적절한 PromotionCondition을 찾는다.</li>
+<li>promotionId를 통해서 적절한 DisplayCondition 와 함께 DateUnit 을 찾는다.</li>
+<li>conditions를 이용해서 <strong>condition_option</strong>을 구체화한다. (ex. 실버등급, 3,000 or 5,000 or 7,000 원)</li>
+<li>condition_option을 가지고 <strong>특정 quest</strong>를 구해 반환한다. (Flux)</li>
+</ul>
+<p>요청에 포함된 promotionId를 가지고 각 프로모션 별로 조건(최근 4개월 혹은 직전달 주문수)을 구하고, 각 조건을 지원하는 전략(strategy)에 따라서 주문수를 조회해오고 적절한 조건 옵션(Gold, Recently …)을 구해줍니다. 이렇게 얻은 각 옵션은 quest 와 연관을 가지는데 이때 여러 개의 quest와 연관을 가질 수 있고, 이를 Flux 형태로 응답을 반환해 줍니다. (예: Gold  등급의 경우 총 3개의 quest와 연관)</p>
+<p>위에서 설명한 전체적인 내용이 <code>PromotionService</code>의 아래 두  메소드로 구성됩니다.</p>
+<pre><code class="language-java">    @Transactional(readOnly = true)
+    public Mono&lt;PromotionInquiryResponse&gt; getPromotion(final Long promotionId, final String memberNumber) {
+        final Mono&lt;PromotionCondition&gt; promotionCondition = promotionRepository.findCondition(promotionId)
+                .map(PromotionCondition::of);
+        final Mono&lt;DisplayCondition&gt; displayCondition = promotionRepository.findDisplay(promotionId)
+                .map(DisplayCondition::of);
+        final Mono&lt;DateUnit&gt; dateUnit = promotionRepository.findDateUnitByPromotionId(promotionId).map(DateUnit::of);
+
+        return Mono.zip(promotionCondition, displayCondition, dateUnit)
+                .flatMap(tuple -&gt; getPromotionDisplay(memberNumber, tuple));
+    }</code></pre>
+<pre><code class="language-java">    private Mono&lt;PromotionInquiryResponse&gt; getPromotionDisplay(final String memberNumber,
+                                                               final Tuple3&lt;PromotionCondition, DisplayCondition, DateUnit&gt; tuple) {
+        final ConditionStrategy conditionStrategy = conditionOptionFinder.find(tuple.getT1());
+        final DisplayStrategy displayStrategy = displayFinder.find(tuple.getT2());
+        final Flux&lt;Long&gt; questIds = conditionStrategy.getConditionOption(memberNumber)
+                .flatMapMany(questRepository::findByOption);
+        return displayStrategy.getPromotionDisplay(questIds, tuple.getT3().getUnit(), memberNumber);
+    }</code></pre>
+<p>먼저 각 프로모션 조건에 따라 전략(ConditionStrategy)를 구하는 ConditionOptionFinder 을 위의 코드에서 확인하실 수 있는데요!</p>
+<p><strong>ConditionOptionFinder</strong>는 다음과 같습니다.</p>
+<pre><code class="language-java">@Component
+public class ConditionOptionFinder {
+
+    public final List&lt;ConditionStrategy&gt; conditionStrategies;
+
+    public ConditionOptionFinder(final List&lt;ConditionStrategy&gt; conditionStrategies) {
+        this.conditionStrategies = conditionStrategies;
+    }
+
+    public ConditionStrategy find(final PromotionCondition promotionCondition) {
+        return conditionStrategies.stream()
+                .filter(it -&gt; it.isSupport(promotionCondition))
+                .findAny()
+                .orElseThrow(() -&gt; new NotSupportConditionOptionException(promotionCondition.name()));
+    }
+}</code></pre>
+<p>여기서 DB로부터 조회해온 promotion_condition.conditions에 따라 적절한 PromotionCondition을 찾고, 그에 따른 전략을 구하게 됩니다.</p>
+<pre><code class="language-java">public interface ConditionStrategy {
+
+    Mono&lt;ConditionOption&gt; getConditionOption(final String memberNumber);
+    boolean isSupport(PromotionCondition promotionCondition);
+}</code></pre>
+<p>ConditionStrategy는 옵션을 구하는 각 전략의 상위 인터페이스이고, 각 전략들은 이 인터페이스를 구현(implements) 합니다.</p>
+<p>크게 2가지 메소드를 제공합니다. PromotionCondition 열거형 상수를 받아서 지원하는 전략인지를 확인한 후 적절한 옵션을 반환해 주는 메소드를 가지고 있습니다.</p>
+<p>여기서 <code>isSupport()</code> 메소드는 ConditionOptionFinder에서 수행하여 적절한 ConditionStrategy를 찾는데 사용됩니다.</p>
+<p><strong>[RecentlyStrategy]</strong></p>
+<p>ConditionStrategy를 구현하는 구체(concrete) 클래스의 예시로 프로모션 A를 위한 <strong>RecentlyStrategy</strong>를 볼 수 있을 것 같습니다.</p>
+<p>전체 주문수와 최근 4개월 동안의 주문수를 OrderClient를 통해서 구해오고 적절한 option을 생성해 반환하는 것을 확인하실 수 있습니다.</p>
+<pre><code class="language-java">@Component
+@RequiredArgsConstructor
+public class RecentlyStrategy implements ConditionStrategy {
+
+    private static final LocalDate RECENTLY_BASE_DATE = LocalDate.now().minusMonths(4).with(firstDayOfMonth());
+
+    private final OrderClient orderClient;
+
+    @Value(&quot;${SERVER.URI.ORDER}&quot;)
+    private String orderCountUri;
+
+    @Override
+    public Mono&lt;ConditionOption&gt; getConditionOption(final String memberNumber) {
+        final Mono&lt;Integer&gt; totalOrderCount = queryOrderCount(new OrderClientRequeset(memberNumber));
+        final Mono&lt;Integer&gt; fourMonthOrderCount = queryOrderCount(new OrderClientRequeset(memberNumber, RECENTLY_BASE_DATE));
+
+        return Mono.zip(totalOrderCount, fourMonthOrderCount)
+                .map(orderCount -&gt; ConditionOption.of(orderCount.getT1(), orderCount.getT2()));
+    }
+
+    @Override
+    public boolean isSupport(final PromotionCondition promotionCondition) {
+        return promotionCondition.equals(RECENTLY_ORDER_COUNT);
+    }
+
+    private Mono&lt;Integer&gt; queryOrderCount(final OrderClientRequeset request) {
+        return orderClient.inquireRequest(request, orderCountUri)
+                .map(OrderClientResponse::getData);
+    }
+}</code></pre>
+<p>프로모션 B와 연관된 구체(concrete) 클래스에서는 직전 달 주문수만을 OrderClient를 통해서 조회해오고, 적절한 option을 찾아서 반환해 주게 될 것입니다.</p>
+<p>이처럼 프로모션 조건에 따른 조건 옵션(ConditionOption) 을 구하는 로직은 프로모션마다 달라지게 될 것입니다. 예를 들어, 현재는 주문수와만 연관이 있지만 평균 주문 금액 등이 조건이 될 수도 있습니다.</p>
+<p>하지만 현재와 같은 구조를 유지한다면 요구사항에 따른 ConditionStrategy만 추가로 구현해 주면 되고, <code>PromotionService</code>의 로직, 즉 프로모션 조회에 대한 전체적인 틀은 유지된 채로 새로운 프로모션을 지원해 줄 수 있게 됩니다. 👍</p>
+<p><strong>[프로모션 조회 응답에 quest 참여 여부 함께 반환]</strong></p>
+<p>프로모션 조회 시에 참여 여부를 함께 반환해 주어야 합니다. 이때 각 프로모션 별로 DateUnit에 따라 이미 참여하였는지를 판단하고 응답에 포함해 주는 작업을 DisplayStrategy에서 진행해 주도록 하였습니다.</p>
+<p>퀘스트 별로 참여 여부를 조회해와야 하므로 quest를 조회하면서 참여 여부를 함께 조회하여 DTO로 반환하도록 구현하였습니다. 또한 <code>@Query</code> 어노테이션을 이용해 쿼리를 직접 작성하고 있기 때문에 테스트 코드에서 사용하는 H2와 실제 사용되는 DBMS인 Mysql, 양쪽 모두에서 지원되는 <code>CASE WHEN THEN</code> 구문을 활용해 boolean 값을 받아오도록 쿼리를 구성하였습니다.</p>
+<p>여기서 참여 여부에 해당하는 서브 쿼리 부분을 별도의 쿼리로 조회해와도 되겠지만, N + 1 쿼리 문제가 발행하기에 아래와 같이 한 번의 쿼리로 조회해오도록 해주었습니다.</p>
+<pre><code class="language-java">    @Query(&quot;SELECT quest.id, (CASE WHEN (SELECT COUNT(*) FROM promotion_history &quot;
+            + &quot;JOIN quest ON quest.id = promotion_history.quest_id &quot;
+            + &quot;WHERE promotion_history.participate_date &gt;= :dateUnit &quot;
+            + &quot;AND promotion_history.member_number = :memberNumber &quot;
+            + &quot;AND promotion_history.quest_id = :questId LIMIT 1) = 1 THEN &#039;true&#039; ELSE &#039;false&#039; END) as participation, &quot;
+            + &quot;(SELECT coupon_group.coupon_amount FROM coupon_group &quot;
+            + &quot;JOIN quest ON coupon_group.quest_id = quest.id WHERE quest.id = :questId LIMIT 1) as coupon_amount &quot;
+            + &quot;FROM quest WHERE quest.id = :questId&quot;)
+    Mono&lt;QuestDto&gt; findQuestWithParticipationAndAmount(final Long questId, final LocalDate dateUnit, final String memberNumber);
+
+    @Query(&quot;SELECT quest.id, (CASE WHEN (SELECT COUNT(*) FROM promotion_history &quot;
+            + &quot;JOIN quest ON quest.id = promotion_history.quest_id &quot;
+            + &quot;WHERE promotion_history.participate_date &gt;= :dateUnit &quot;
+            + &quot;AND promotion_history.member_number = :memberNumber &quot;
+            + &quot;AND promotion_history.quest_id = :questId LIMIT 1) = 1 THEN &#039;true&#039; ELSE &#039;false&#039; END) as participation &quot;
+            + &quot;FROM quest WHERE quest.id = :questId&quot;)
+    Mono&lt;QuestDto&gt; findQuestWithParticipation(final Long questId, final LocalDate dateUnit, final String memberNumber);</code></pre>
+<p><strong>[프로모션B의 경우 회원의 닉네임과 주문수, 금액을 함께 응답한다.]</strong></p>
+<p>프로모션 B의 경우에만 “회원의 닉네임”, “이번 달 주문수”, “쿠폰 금액” 을 함께 응답하도록 구현해 주어야 합니다. 이 부분 또한 DisplayStrategy를 활용해 주었습니다.</p>
+<p>공통적으로 “프로모션 조회”의 경우 <code>promotionId 와 memberNumber 가 요청으로 들어오게 되고, 그에 따른 적절한 questId(List 형태 가능)를 응답</code>해준다는 틀 안에서 출력 결과에 대한 전략 패턴 적용과 적절한 quest를 찾는 과정에서의 전략 패턴 적용을 통해서 프로모션에 따른 서로 다른 로직을 수행하고 응답을 내뱉어줄 수 있도록 구현해 주었습니다.</p>
+<p>만약 새로운 프로모션 요구사항이 추가된다면 기존의 PromotionService 쪽의 코드에는 변경이 없이 새로운 조건과 전략만 추가해 주면 되므로 기존 기능을 <code>재활용</code>할 수 있게 됩니다.</p>
+<p>“<strong>프로모션 B의 경우에만 회원의 닉네임과 주문수, 금액을 함께 응답한다.”</strong> 부분에 대한 DisplayStrategy 코드는 아래와 같습니다.</p>
+<pre><code class="language-java">@Component
+@RequiredArgsConstructor
+public class GradeDisplayStrategy implements DisplayStrategy {
+
+    private static final LocalDate CURRENT_MONTH = LocalDate.now().with(firstDayOfMonth());
+
+    private final QuestRepository questRepository;
+    private final MemberClient memberClient;
+    private final OrderClient orderClient;
+
+    @Value(&quot;${SERVER.URI.MEMBER}&quot;)
+    private String memberInfoUri;
+
+    @Value(&quot;${SERVER.URI.ORDER}&quot;)
+    private String orderCountUri;
+
+    @Override
+    public Mono&lt;PromotionInquiryResponse&gt; getPromotionDisplay(final Flux&lt;Long&gt; questIds, final LocalDate dateUnit,
+                                                              final String memberNumber) {
+        final Mono&lt;List&lt;QuestDto&gt;&gt; questResponses = questIds
+                .flatMap(it -&gt; questRepository.findQuestWithParticipationAndAmount(it, dateUnit, memberNumber))
+                .collectList();
+        final Mono&lt;MemberClientResponse&gt; memberClientResponse = memberClient
+                .inquireRequest(new MemberClientRequest(memberNumber), memberInfoUri);
+        final Mono&lt;Integer&gt; currentMonthOrderCount = queryOrderCount(new OrderClientRequeset(memberNumber, CURRENT_MONTH));
+
+        return Mono.zip(memberClientResponse, currentMonthOrderCount, questResponses)
+                .map(it -&gt; new PromotionInquiryResponse(it.getT1().getNickName(), it.getT2(), it.getT3()));
+    }
+
+    @Override
+    public boolean isSupport(final DisplayCondition displayCondition) {
+        return displayCondition.equals(GRADE);
+    }
+
+    private Mono&lt;Integer&gt; queryOrderCount(final OrderClientRequeset request) {
+        return orderClient.inquireRequest(request, orderCountUri)
+                .map(OrderClientResponse::getData);
+    }
+}</code></pre>
+<p>프로모션 B와 달리 프로모션 A는 단순히 questId만을 응답으로 내리면 되므로 아래와 같이 간단하게 DisplayStrategy 구현해 주었습니다.</p>
+<pre><code class="language-java">@Component
+@RequiredArgsConstructor
+public class OnlyQuestDisplayStrategy implements DisplayStrategy {
+
+    private final QuestRepository questRepository;
+
+    @Override
+    public Mono&lt;PromotionInquiryResponse&gt; getPromotionDisplay(final Flux&lt;Long&gt; questIds, final LocalDate dateUnit,
+                                                              final String memberNumber) {
+        return questIds
+                .flatMap(it -&gt; questRepository.findQuestWithParticipation(it, dateUnit, memberNumber))
+                .collectList()
+                .map(PromotionInquiryResponse::new);
+    }
+
+    @Override
+    public boolean isSupport(final DisplayCondition displayCondition) {
+        return displayCondition.equals(ONLY_QUEST);
+    }
+}</code></pre>
+<h4>프로모션 참여</h4>
+<p>앞서 조회에서와 비슷하게 프로모션 참여 이후 발급되는 쿠폰의 조건이 다양하므로(Random 등등) 이 또한 전략 패턴을 활용하여 기존 틀에서 전략만 추가하여 새롭게 추가되는 프로모션에 대응할 수 있도록 구현하려고 합니다.</p>
+<p>코드 구성은 아래와 같습니다.</p>
+<pre><code class="language-java">    public Mono&lt;PromotionResponse&gt; participate(final Long questId, final String memberNumber) {
+        return promotionRepository.findDateUnitByQuestId(questId)
+                .map(DateUnit::valueOf)
+                .flatMap(dateUnit -&gt; getPromotionHistoryByDateUnit(questId, memberNumber, dateUnit.getUnit()))
+                .flatMap(promotionHistory -&gt; participateIfNotPresent(questId, memberNumber, promotionHistory));
+    }</code></pre>
+<p>PromotionHistory와 함께 DateUnit을 가지고, 날짜 단위로 참여한 여부가 있는지를 먼저 확인합니다.</p>
+<p>이때 프로모션 히스토리에 대한 조회는 동시성 문제를 해결하기 위해 <code>for update</code> 쿼리를 활용하였습니다.</p>
+<p>이후 만약 참여한 이력이 없다면 questId를 가지고 해당 퀘스트에 대해서 참여를 수행하고 결과로서 쿠폰에 대한 쿠폰 시퀀스와 함께 쿠폰 금액 그리고 참여 날짜를 반환해 주며, promotionHistory를 저장하게 됩니다.</p>
+<p>아래는 questId 와 ConditionOption을 통해 적절한 쿠폰 그룹을 찾는 CouponGroupStrategy 인터페이스입니다.</p>
+<pre><code class="language-java">public interface CouponGroupStrategy {
+
+    Mono&lt;CouponGroup&gt; findCouponGroup(final Long questId, final ConditionOption conditionOption);
+    boolean isSupport(PromotionCondition promotionCondition);
+}</code></pre>
+<p>추석 프로모션의 경우에는 1,000원 혹은 2,000원과 같이 랜덤하게 발급해야 하는 요구사항이 있었는데, 그 부분을 Strategy 안쪽으로 밀어 넣어주었습니다. 여기서 남은 수량이 없는 경우 같은 금액 그룹 안에서 랜덤하게 발급하는 부분도 구현해 주고 있습니다.</p>
+<pre><code class="language-java">@Component
+@RequiredArgsConstructor
+public class ChuseokCouponGroupStrategy implements CouponGroupStrategy {
+
+    private static final NumberGenerator NUMBER_GENERATOR = new RandomNumberGenerator();
+
+    private final CouponGroupRepository couponGroupRepository;
+
+    @Override
+    public Mono&lt;CouponGroup&gt; findCouponGroup(final Long questId, final ConditionOption conditionOption) {
+        final Flux&lt;CouponGroup&gt; couponGroup = couponGroupRepository.findByQuestId(questId);
+
+        return couponGroup
+                .map(CouponGroup::getCouponAmount)
+                .collectList()
+                .flatMap(it -&gt; getLeftQuantityCouponGroups(
+                        CouponAmount.of(conditionOption, NUMBER_GENERATOR), couponGroup, it)
+                );
+    }
+
+    @Override
+    public boolean isSupport(final PromotionCondition promotionCondition) {
+        return promotionCondition.equals(RECENTLY_ORDER_COUNT);
+    }
+
+    private Mono&lt;CouponGroup&gt; getLeftQuantityCouponGroups(final CouponAmount couponAmount,
+                                                          final Flux&lt;CouponGroup&gt; couponGroups,
+                                                          final List&lt;Integer&gt; amountGroup) {
+        Collections.shuffle(amountGroup);
+        return couponGroups.filter(it -&gt; !it.isExhaustion())
+                .filter(it -&gt; it.getCouponAmount() == couponAmount.getAmount())
+                .switchIfEmpty(couponGroups
+                        .filter(it -&gt; !it.isExhaustion())
+                        .filter(it -&gt; amountGroup.contains(it.getCouponAmount()))
+                        .single()
+                )
+                .single();
+    }
+}</code></pre>
+<p>여기서 같은 금액 그룹인지는 CouponAmount의 predicate 조건에서 ConditionOption 을 통해 판단하도록 해주었습니다.</p>
+<pre><code class="language-java">public enum CouponAmount {
+
+    ONE_THOUSAND(1_000, (option, percentage) -&gt; option.equals(RECENTLY) &amp;&amp; percentage &lt;= 70),
+    TWO_THOUSAND(2_000, (option, percentage) -&gt; option.equals(RECENTLY) &amp;&amp; (70 &lt; percentage &amp;&amp; percentage &lt;= 100)),
+    THREE_THOUSAND(3_000, (option, percentage) -&gt; option.equals(NOT_RECENTLY) &amp;&amp; percentage &lt;= 50),
+    FIVE_THOUSAND(5_000, (option, percentage) -&gt; option.equals(NOT_RECENTLY) &amp;&amp; (50 &lt; percentage &amp;&amp; percentage &lt;= 85)),
+    SEVEN_THOUSAND(7_000, (option, percentage) -&gt; option.equals(NOT_RECENTLY) &amp;&amp; (85 &lt; percentage &amp;&amp; percentage &lt;= 100)),
+    TEN_THOUSAND(10_000, (option, percentage) -&gt; option.equals(NEW));
+
+    private final int amount;
+    private final BiPredicate&lt;ConditionOption, Integer&gt; biPredicate;
+
+    CouponAmount(final int amount, final BiPredicate&lt;ConditionOption, Integer&gt; biPredicate) {
+        this.amount = amount;
+        this.biPredicate = biPredicate;
+    }
+
+    public static CouponAmount of(final ConditionOption option, final NumberGenerator generator) {
+        final int percentage = generator.generate();
+        return Arrays.stream(values())
+                .filter(it -&gt; it.biPredicate.test(option, percentage))
+                .findAny()
+                .orElseThrow(InvalidAmountException::new);
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+}</code></pre>
+<p>회원 등급에 따른 프로모션은 퀘스트와 연관된 couponGroupSequence를 가지고 새로운 쿠폰 시퀀스를 발급하도록 구현해 주었습니다.</p>
+<pre><code class="language-java">@Component
+@RequiredArgsConstructor
+public class GradeCouponGroupStrategy implements CouponGroupStrategy {
+
+    private final CouponGroupRepository couponGroupRepository;
+
+    @Override
+    public Mono&lt;CouponGroup&gt; findCouponGroup(final Long questId, final ConditionOption conditionOption) {
+        return couponGroupRepository.findByQuestId(questId).single();
+    }
+
+    @Override
+    public boolean isSupport(final PromotionCondition promotionCondition) {
+        return promotionCondition.equals(PromotionCondition.LAST_MONTH_ORDER_COUNT);
+    }
+}</code></pre>
+<h2>마무리</h2>
+<p>이렇게 해서 약 한 달간 짧다면 짧고, 길다면 긴 파일럿 프로젝트를 마무리하게 되었습니다. (<del>이제 실무 투입 준비 끝</del>)</p>
+<p><a href="https://woowacourse.github.io/" title="우아한테크코스">우아한테크코스</a>를 하며 페어 프로그래밍이나 팀으로 활동하는 시간이 많아지며 정말 순수하게 혼자서 처음부터 끝까지 개발하는 것이 정말 오랜만이라 어색하기도 하고, 쓸쓸하기도 했습니다.🥲</p>
+<p>하지만 이렇게 혼자서 개발하는 시간을 가지다 보니 이제까지는 팀으로 함께하며 감춰졌던 스스로 부족한 점을 다시 한번 인지할 수 있었고, 함께하는 소중함을 깨닫는 의미 있는 시간이 되었습니다.</p>
+<p>특히 파일럿을 진행하며 ERD부터 설계까지 여러 번 새롭게 하는 과정을 거치면서 확장성 있게 그리고 재활용성을 고려하며 설계하는 것이 아직 많이 힘들다는 것을 느꼈고, 앞으로 많이 배워나갈 부분이라는 생각이 들었습니다.</p>
+<p>앞으로 팀원들과 함께 좋은 인사이트를 주는 팀원으로서 성장해나가려고 합니다!!<br />
+긴 글 읽어주셔서 감사합니다.😄</p>
+    </div>
+    </div>
+    <p class="tags">
+                    <a href="/?ptag=backend" class="tag-tag">
+                #Backend            </a>
+                        <a href="/?ptag=webflux" class="tag-tag">
+                #webflux            </a>
+                        <a href="/?ptag=%eb%b0%b0%eb%af%bc%ec%84%9c%eb%b9%84%ec%8a%a4%ea%b0%9c%eb%b0%9c%ed%8c%80" class="tag-tag">
+                #배민서비스개발팀            </a>
+                        <a href="/?ptag=onboarding" class="tag-tag">
+                #온보딩            </a>
+                        <a href="/?ptag=%ed%8c%8c%ec%9d%bc%eb%9f%bf" class="tag-tag">
+                #파일럿            </a>
+                        <a href="/?ptag=%ed%8c%8c%ec%9d%bc%eb%9f%bf-%ed%94%84%eb%a1%9c%ec%a0%9d%ed%8a%b8" class="tag-tag">
+                #파일럿 프로젝트            </a>
+                </p>
+        <div class="fb_comment_wrap">
+    <div id="" class="ufc-comments ufc-comments-area" style="width:100%;"><div id="ufc-button-div" style="text-align: center; display: none;"><button id="ufc-button" class="btn button">Leave a Comment</button></div><div id="fbc-comments-div" class="fb-comments" data-notify="true" data-colorscheme="light" data-href="https://techblog.woowahan.com/10795/" data-numposts="10" data-order-by="social" data-width="100%"></div></div>
+<!-- Facebook SDK is added by Ultimate Social Comments v2.0.0 plugin -->
+<div id="fb-root"></div><script type="text/javascript">(function() {(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.async = true;
+        js.src = '//connect.facebook.net/ko_KR/sdk.js#xfbml=1&autoLogAppEvents=1&version=v7.0&appId=596588250503455';
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        })();</script>
+<!-- / End of Facebook SDK -->
+    </div>
+    <div class="col col-1 post-bottom">
+        <a href="/" class="toback">
+            목록으로 돌아가기
+        </a>
+        <div class="col col-2">
+            <div class="prev">
+                <a href="https://techblog.woowahan.com/10774/" rel="prev">병아리 개발자의 첫 웹뷰 개발기: 파일럿 프로젝트</a>            </div>
+            <div class="next">
+                <a href="https://techblog.woowahan.com/11045/" rel="next">[신청 시작] 3월 우아한테크세미나: 테크 리더 3인이 전하는 &#8220;개발자 원칙&#8221;</a>            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<footer>
+<!-- 푸터내용 -->
+</footer>
+		<script type='text/javascript' id='StrCPVisits_js_frontend-js-extra'>
+/* <![CDATA[ */
+var STR_CPVISITS = {"security":"e18ee58976","ajax_url":"https:\/\/techblog.woowahan.com\/wp-admin\/admin-ajax.php","text_page_name":"PAGE NAME","text_cannot_access_page_name":"Cannot access page name - try to flush server cache...","text_message":"MESSAGE","text_total_page_visits":"TOTAL PAGE VISITS","text_total_website_visits":"TOTAL WEBSITE VISITS"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/plugins/page-visits-counter-lite/assets/frontend/page-visits-counter-lite-ajax.js?ver=1669164996' id='StrCPVisits_js_frontend-js'></script>
+<script type='text/javascript' id='ufc-frontend-script-js-extra'>
+/* <![CDATA[ */
+var ufc_frontend_ajax_data = {"ajaxurl":"https:\/\/techblog.woowahan.com\/wp-admin\/admin-ajax.php","permalink":"https:\/\/techblog.woowahan.com\/10795\/","title":"\ud504\ub85c\ubaa8\uc158 \uc2dc\uc2a4\ud15c \uc5ff\ubcf4\uae30: \ud30c\uc77c\ub7ff \ud504\ub85c\uc81d\ud2b8","postid":"10795","security":"e78fb10bfe","version":"2.0.0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/plugins/ultimate-facebook-comments-2/public/js/frontend.min.js?ver=2.0.0' id='ufc-frontend-script-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/assets/js/main.js?ver=5.9.5' id='main-js-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/plugins/wp-githuber-md/assets/vendor/prism/components/prism-core.min.js?ver=1.15.0' id='prism-js-0-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/plugins/wp-githuber-md/assets/vendor/prism/prism.min.js?ver=1.15.0' id='prism-js-1-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/plugins/wp-githuber-md/assets/vendor/prism/plugins/line-numbers/prism-line-numbers.min.js?ver=1.15.0' id='prism-js-2-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/plugins/wp-githuber-md/assets/vendor/prism/plugins/autoloader/prism-autoloader.min.js?ver=1.15.0' id='prism-js-3-js'></script>
+ <script id="auto_loader_config_scripts"> Prism.plugins.autoloader.languages_path = "https://techblog.woowahan.com/wp-content/plugins/wp-githuber-md/assets/vendor/prism/components/"; </script>  <script id="module-prism-line-number"> (function($) { $(function() { $("code").each(function() { var parent_div = $(this).parent("pre"); var pre_css = $(this).attr("class"); if (typeof pre_css !== "undefined" && -1 !== pre_css.indexOf("language-")) { parent_div.addClass("line-numbers"); } }); }); })(jQuery); </script> 	</body>
+</html>
+<!-- Page supported by LiteSpeed Cache 3.6.4 on 2023-03-22 22:42:11 -->

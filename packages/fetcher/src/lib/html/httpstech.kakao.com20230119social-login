@@ -1,0 +1,971 @@
+<!doctype html>
+<html lang="ko-KR" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head><style>img.lazy{min-height:1px}</style><link rel="preload" href="https://tech.kakao.com/wp-content/plugins/w3-total-cache/pub/js/lazyload.min.js" as="script">
+	<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<title>주니어 개발자의 우여곡절 소셜로그인 도입 과정 &#8211; tech.kakao.com</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="tech.kakao.com &raquo; 피드" href="https://tech.kakao.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="tech.kakao.com &raquo; 댓글 피드" href="https://tech.kakao.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="tech.kakao.com &raquo; 주니어 개발자의 우여곡절 소셜로그인 도입 과정 댓글 피드" href="https://tech.kakao.com/2023/01/19/social-login/feed/" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/tech.kakao.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://tech.kakao.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.2' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='ppress-frontend-css'  href='https://tech.kakao.com/wp-content/plugins/wp-user-avatar/assets/css/frontend.min.css?ver=3.2.8' type='text/css' media='all' />
+<link rel='stylesheet' id='ppress-flatpickr-css'  href='https://tech.kakao.com/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.css?ver=3.2.8' type='text/css' media='all' />
+<link rel='stylesheet' id='ppress-select2-css'  href='https://tech.kakao.com/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.css?ver=5.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='hello-elementor-css'  href='https://tech.kakao.com/wp-content/themes/hello-elementor/style.min.css?ver=2.5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='hello-elementor-theme-style-css'  href='https://tech.kakao.com/wp-content/themes/hello-elementor/theme.min.css?ver=2.5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-css'  href='https://tech.kakao.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.14.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-legacy-css'  href='https://tech.kakao.com/wp-content/plugins/elementor/assets/css/frontend-legacy.min.css?ver=3.5.5' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css'  href='https://tech.kakao.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.5.5' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-14036-css'  href='https://tech.kakao.com/wp-content/uploads/elementor/css/post-14036.css?ver=1657501530' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-pro-css'  href='https://tech.kakao.com/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-5-all-css'  href='https://tech.kakao.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=3.5.5' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-4-shim-css'  href='https://tech.kakao.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.5.5' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-14067-css'  href='https://tech.kakao.com/wp-content/uploads/elementor/css/post-14067.css?ver=1657501530' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-14125-css'  href='https://tech.kakao.com/wp-content/uploads/elementor/css/post-14125.css?ver=1669610496' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-14069-css'  href='https://tech.kakao.com/wp-content/uploads/elementor/css/post-14069.css?ver=1673229877' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='https://tech.kakao.com/wp-content/plugins/tablepress/css/default.min.css?ver=1.14' type='text/css' media='all' />
+<link rel='stylesheet' id='eael-general-css'  href='https://tech.kakao.com/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/css/view/general.min.css?ver=5.5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CMontserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRubik%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=5.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css'  href='https://tech.kakao.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-solid-css'  href='https://tech.kakao.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.15.3' type='text/css' media='all' />
+<script type='text/javascript' src='https://tech.kakao.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.js?ver=5.9.2' id='ppress-flatpickr-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.js?ver=5.9.2' id='ppress-select2-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=3.5.5' id='font-awesome-4-shim-js'></script>
+<link rel="https://api.w.org/" href="https://tech.kakao.com/wp-json/" /><link rel="alternate" type="application/json" href="https://tech.kakao.com/wp-json/wp/v2/posts/21351" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://tech.kakao.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tech.kakao.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.9.2" />
+<link rel="canonical" href="https://tech.kakao.com/2023/01/19/social-login/" />
+<link rel='shortlink' href='https://tech.kakao.com/?p=21351' />
+<link rel="alternate" type="application/json+oembed" href="https://tech.kakao.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftech.kakao.com%2F2023%2F01%2F19%2Fsocial-login%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://tech.kakao.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftech.kakao.com%2F2023%2F01%2F19%2Fsocial-login%2F&#038;format=xml" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72007721-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72007721-1');
+</script>
+
+
+<!-- START - Open Graph and Twitter Card Tags 3.1.2 -->
+ <!-- Facebook Open Graph -->
+  <meta property="og:locale" content="ko_KR"/>
+  <meta property="og:site_name" content="tech.kakao.com"/>
+  <meta property="og:title" content="주니어 개발자의 우여곡절 소셜로그인 도입 과정"/>
+  <meta property="og:url" content="https://tech.kakao.com/2023/01/19/social-login/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="안녕하세요, 오픈소스 기술파트에서 근무하고 있는 rogers라고 합니다. 오픈소스 기술파트에서는 오픈소스 관리 서비스인 OLIVE Platform을 제공하고 있습니다. 이번에 더 많은 사용자에게 OLIVE Platform을 제공하기 위해 구글, 깃허브, 페이스북 소셜로그인을 도입하게 되었습니다. 이 글에서는 앱 등록부터 소셜로그인을 구현하는 과정뿐만 아니라 소셜로그인 연동을 해제하는 방법도 설명합니다. 그리고, 프락시 문제, API 사용 제한사항(요청수 제한, 로고 추가로 인한 앱 검수) 등 적용 과정에서 겪은 시행착오와 해결 방법"/>
+  <meta property="og:image" content="https://tech.kakao.com/wp-content/uploads/2023/01/featured.png"/>
+  <meta property="og:image:url" content="https://tech.kakao.com/wp-content/uploads/2023/01/featured.png"/>
+  <meta property="og:image:secure_url" content="https://tech.kakao.com/wp-content/uploads/2023/01/featured.png"/>
+  <meta property="article:published_time" content="2023-01-19T11:53:21+09:00"/>
+  <meta property="article:modified_time" content="2023-01-19T13:27:48+09:00" />
+  <meta property="og:updated_time" content="2023-01-19T13:27:48+09:00" />
+  <meta property="article:section" content="blog"/>
+  <meta property="article:publisher" content="https://www.facebook.com/kakaotech/"/>
+ <!-- Google+ / Schema.org -->
+  <meta itemprop="name" content="주니어 개발자의 우여곡절 소셜로그인 도입 과정"/>
+  <meta itemprop="headline" content="주니어 개발자의 우여곡절 소셜로그인 도입 과정"/>
+  <meta itemprop="description" content="안녕하세요, 오픈소스 기술파트에서 근무하고 있는 rogers라고 합니다. 오픈소스 기술파트에서는 오픈소스 관리 서비스인 OLIVE Platform을 제공하고 있습니다. 이번에 더 많은 사용자에게 OLIVE Platform을 제공하기 위해 구글, 깃허브, 페이스북 소셜로그인을 도입하게 되었습니다. 이 글에서는 앱 등록부터 소셜로그인을 구현하는 과정뿐만 아니라 소셜로그인 연동을 해제하는 방법도 설명합니다. 그리고, 프락시 문제, API 사용 제한사항(요청수 제한, 로고 추가로 인한 앱 검수) 등 적용 과정에서 겪은 시행착오와 해결 방법"/>
+  <meta itemprop="image" content="https://tech.kakao.com/wp-content/uploads/2023/01/featured.png"/>
+  <meta itemprop="datePublished" content="2023-01-19"/>
+  <meta itemprop="dateModified" content="2023-01-19T13:27:48+09:00" />
+  <meta itemprop="author" content="rogers.t"/>
+  <!--<meta itemprop="publisher" content="tech.kakao.com"/>--> <!-- To solve: The attribute publisher.itemtype has an invalid value -->
+ <!-- Twitter Cards -->
+  <meta name="twitter:title" content="주니어 개발자의 우여곡절 소셜로그인 도입 과정"/>
+  <meta name="twitter:url" content="https://tech.kakao.com/2023/01/19/social-login/"/>
+  <meta name="twitter:description" content="안녕하세요, 오픈소스 기술파트에서 근무하고 있는 rogers라고 합니다. 오픈소스 기술파트에서는 오픈소스 관리 서비스인 OLIVE Platform을 제공하고 있습니다. 이번에 더 많은 사용자에게 OLIVE Platform을 제공하기 위해 구글, 깃허브, 페이스북 소셜로그인을 도입하게 되었습니다. 이 글에서는 앱 등록부터 소셜로그인을 구현하는 과정뿐만 아니라 소셜로그인 연동을 해제하는 방법도 설명합니다. 그리고, 프락시 문제, API 사용 제한사항(요청수 제한, 로고 추가로 인한 앱 검수) 등 적용 과정에서 겪은 시행착오와 해결 방법"/>
+  <meta name="twitter:image" content="https://tech.kakao.com/wp-content/uploads/2023/01/featured.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+ <!-- SEO -->
+ <!-- Misc. tags -->
+ <!-- is_singular -->
+<!-- END - Open Graph and Twitter Card Tags 3.1.2 -->
+	
+</head>
+<body class="post-template-default single single-post postid-21351 single-format-standard wp-custom-logo elementor-default elementor-kit-14036 elementor-page elementor-page-21351 elementor-page-14069">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>		<div data-elementor-type="header" data-elementor-id="14067" class="elementor elementor-14067 elementor-location-header" data-elementor-settings="[]">
+					<div class="elementor-section-wrap">
+								<section class="elementor-section elementor-top-section elementor-element elementor-element-6c1adf98 elementor-section-full_width elementor-section-height-min-height elementor-section-items-stretch elementor-section-height-default" data-id="6c1adf98" data-element_type="section" data-settings="{&quot;sticky&quot;:&quot;top&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-229f3ddd" data-id="229f3ddd" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-2dbb6b2 elementor-widget elementor-widget-theme-site-logo elementor-widget-image" data-id="2dbb6b2" data-element_type="widget" data-widget_type="theme-site-logo.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="https://tech.kakao.com">
+							<img class="lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%2037'%3E%3C/svg%3E" data-src="https://tech.kakao.com/wp-content/uploads/2022/02/kakao-tech-logo-1-e1649831117387.png" title="kakao-tech-logo" alt="kakao-tech-logo" />								</a>
+														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-59ac0e16" data-id="59ac0e16" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-5415ee3 elementor-nav-menu__align-right elementor-nav-menu--stretch elementor-nav-menu__text-align-center elementor-nav-menu--dropdown-tablet elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="5415ee3" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+				<div class="elementor-widget-container">
+						<nav migration_allowed="1" migrated="0" role="navigation" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-text e--animation-sink">
+				<ul id="menu-1-5415ee3" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15768"><a href="https://tech.kakao.com/blog/" class="elementor-item">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15767"><a href="https://tech.kakao.com/events/" class="elementor-item">Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15766"><a href="https://tech.kakao.com/careers/" class="elementor-item">Careers</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16081"><a href="https://developers.kakao.com/" class="elementor-item">Kakao Developers</a></li>
+</ul>			</nav>
+					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
+			<i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close eicon-close"></i>			<span class="elementor-screen-only">Menu</span>
+		</div>
+			<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" role="navigation" aria-hidden="true">
+				<ul id="menu-2-5415ee3" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15768"><a href="https://tech.kakao.com/blog/" class="elementor-item" tabindex="-1">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15767"><a href="https://tech.kakao.com/events/" class="elementor-item" tabindex="-1">Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15766"><a href="https://tech.kakao.com/careers/" class="elementor-item" tabindex="-1">Careers</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16081"><a href="https://developers.kakao.com/" class="elementor-item" tabindex="-1">Kakao Developers</a></li>
+</ul>			</nav>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-919f6e1 elementor-hidden-mobile" data-id="919f6e1" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-093b07c elementor-search-form--skin-minimal elementor-widget elementor-widget-search-form" data-id="093b07c" data-element_type="widget" data-settings="{&quot;skin&quot;:&quot;minimal&quot;}" data-widget_type="search-form.default">
+				<div class="elementor-widget-container">
+					<form class="elementor-search-form" role="search" action="https://tech.kakao.com" method="get">
+									<div class="elementor-search-form__container">
+									<div class="elementor-search-form__icon">
+						<i aria-hidden="true" class="fas fa-arrow-right"></i>						<span class="elementor-screen-only">Search</span>
+					</div>
+								<input placeholder="검색하기" class="elementor-search-form__input" type="search" name="s" title="Search" value="">
+															</div>
+		</form>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+							</div>
+				</div>
+				<div data-elementor-type="single-post" data-elementor-id="14069" class="elementor elementor-14069 elementor-location-single post-21351 post type-post status-publish format-standard has-post-thumbnail hentry category-blog tag-compliance tag-dependency tag-facebook tag-frontend tag-github tag-google tag-kakao tag-license tag-oauth2 tag-olive tag-opensource tag-oss tag-social-login tag-819 tag-820 tag-612 tag-817 tag-611 tag-610 tag-613 tag-818 tag-821" data-elementor-settings="[]">
+					<div class="elementor-section-wrap">
+								<section class="elementor-section elementor-top-section elementor-element elementor-element-2509fe18 elementor-reverse-mobile elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="2509fe18" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-f693fc6 elementor-hidden-mobile" data-id="f693fc6" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-1875eb1 elementor-widget elementor-widget-spacer" data-id="1875eb1" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-247fe1c7 elementor-author-box--layout-image-above elementor-author-box--align-left exclude-from-toc elementor-author-box--avatar-yes elementor-author-box--name-yes elementor-author-box--biography-yes elementor-author-box--link-no elementor-widget elementor-widget-author-box" data-id="247fe1c7" data-element_type="widget" data-widget_type="author-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-author-box">
+							<div  class="elementor-author-box__avatar">
+					<img class="lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3C/svg%3E" data-src="https://tech.kakao.com/wp-content/uploads/2023/01/profile-rogers.png" alt="rogers.t">
+				</div>
+			
+			<div class="elementor-author-box__text">
+									<div >
+						<h4 class="elementor-author-box__name">
+							rogers.t						</h4>
+					</div>
+				
+									<div class="elementor-author-box__bio">
+						카카오 오픈소스 기술파트에서 근무하고 있는 로저스입니다. 더 좋은 개발자가 되기 위해 노력하고 있습니다.					</div>
+				
+							</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-8946f87 elementor-widget elementor-widget-spacer" data-id="8946f87" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-2979eb19 exclude-from-toc elementor-widget elementor-widget-wp-widget-tag_cloud" data-id="2979eb19" data-element_type="widget" data-widget_type="wp-widget-tag_cloud.default">
+				<div class="elementor-widget-container">
+			<h5>태그</h5><div class="tagcloud"><a href="https://tech.kakao.com/tag/2022_blind/" class="tag-cloud-link tag-link-772 tag-link-position-1" style="font-size: 10.854368932039pt;" aria-label="2022_blind (12 아이템)">2022_blind</a>
+<a href="https://tech.kakao.com/tag/agile/" class="tag-cloud-link tag-link-536 tag-link-position-2" style="font-size: 8pt;" aria-label="agile (7 아이템)">agile</a>
+<a href="https://tech.kakao.com/tag/ai/" class="tag-cloud-link tag-link-9 tag-link-position-3" style="font-size: 11.398058252427pt;" aria-label="ai (13 아이템)">ai</a>
+<a href="https://tech.kakao.com/tag/android/" class="tag-cloud-link tag-link-529 tag-link-position-4" style="font-size: 8.6796116504854pt;" aria-label="android (8 아이템)">android</a>
+<a href="https://tech.kakao.com/tag/blind-recruitment/" class="tag-cloud-link tag-link-16 tag-link-position-5" style="font-size: 13.436893203883pt;" aria-label="blind-recruitment (19 아이템)">blind-recruitment</a>
+<a href="https://tech.kakao.com/tag/career/" class="tag-cloud-link tag-link-710 tag-link-position-6" style="font-size: 20.912621359223pt;" aria-label="career (69 아이템)">career</a>
+<a href="https://tech.kakao.com/tag/client/" class="tag-cloud-link tag-link-541 tag-link-position-7" style="font-size: 8.6796116504854pt;" aria-label="client (8 아이템)">client</a>
+<a href="https://tech.kakao.com/tag/cloud/" class="tag-cloud-link tag-link-437 tag-link-position-8" style="font-size: 10.446601941748pt;" aria-label="cloud (11 아이템)">cloud</a>
+<a href="https://tech.kakao.com/tag/coding/" class="tag-cloud-link tag-link-29 tag-link-position-9" style="font-size: 13.436893203883pt;" aria-label="coding (19 아이템)">coding</a>
+<a href="https://tech.kakao.com/tag/coding-test/" class="tag-cloud-link tag-link-483 tag-link-position-10" style="font-size: 8pt;" aria-label="coding test (7 아이템)">coding test</a>
+<a href="https://tech.kakao.com/tag/conference/" class="tag-cloud-link tag-link-30 tag-link-position-11" style="font-size: 13.980582524272pt;" aria-label="conference (21 아이템)">conference</a>
+<a href="https://tech.kakao.com/tag/data/" class="tag-cloud-link tag-link-387 tag-link-position-12" style="font-size: 8.6796116504854pt;" aria-label="Data (8 아이템)">Data</a>
+<a href="https://tech.kakao.com/tag/developer/" class="tag-cloud-link tag-link-443 tag-link-position-13" style="font-size: 11.398058252427pt;" aria-label="developer (13 아이템)">developer</a>
+<a href="https://tech.kakao.com/tag/developer-relations/" class="tag-cloud-link tag-link-559 tag-link-position-14" style="font-size: 9.3592233009709pt;" aria-label="developer relations (9 아이템)">developer relations</a>
+<a href="https://tech.kakao.com/tag/devops/" class="tag-cloud-link tag-link-36 tag-link-position-15" style="font-size: 9.9029126213592pt;" aria-label="devops (10 아이템)">devops</a>
+<a href="https://tech.kakao.com/tag/front-end/" class="tag-cloud-link tag-link-459 tag-link-position-16" style="font-size: 16.019417475728pt;" aria-label="front-end (30 아이템)">front-end</a>
+<a href="https://tech.kakao.com/tag/frontend/" class="tag-cloud-link tag-link-548 tag-link-position-17" style="font-size: 14.252427184466pt;" aria-label="frontend (22 아이템)">frontend</a>
+<a href="https://tech.kakao.com/tag/get-server/" class="tag-cloud-link tag-link-779 tag-link-position-18" style="font-size: 10.854368932039pt;" aria-label="get-server (12 아이템)">get-server</a>
+<a href="https://tech.kakao.com/tag/get-server-10/" class="tag-cloud-link tag-link-780 tag-link-position-19" style="font-size: 8pt;" aria-label="get-server-10 (7 아이템)">get-server-10</a>
+<a href="https://tech.kakao.com/tag/growth/" class="tag-cloud-link tag-link-472 tag-link-position-20" style="font-size: 9.9029126213592pt;" aria-label="growth (10 아이템)">growth</a>
+<a href="https://tech.kakao.com/tag/hadoop/" class="tag-cloud-link tag-link-48 tag-link-position-21" style="font-size: 8pt;" aria-label="hadoop (7 아이템)">hadoop</a>
+<a href="https://tech.kakao.com/tag/ifkakao/" class="tag-cloud-link tag-link-442 tag-link-position-22" style="font-size: 13.980582524272pt;" aria-label="ifkakao (21 아이템)">ifkakao</a>
+<a href="https://tech.kakao.com/tag/internship/" class="tag-cloud-link tag-link-484 tag-link-position-23" style="font-size: 13.436893203883pt;" aria-label="internship (19 아이템)">internship</a>
+<a href="https://tech.kakao.com/tag/ios/" class="tag-cloud-link tag-link-528 tag-link-position-24" style="font-size: 8pt;" aria-label="ios (7 아이템)">ios</a>
+<a href="https://tech.kakao.com/tag/javascript/" class="tag-cloud-link tag-link-469 tag-link-position-25" style="font-size: 10.446601941748pt;" aria-label="javascript (11 아이템)">javascript</a>
+<a href="https://tech.kakao.com/tag/kafka/" class="tag-cloud-link tag-link-59 tag-link-position-26" style="font-size: 8pt;" aria-label="kafka (7 아이템)">kafka</a>
+<a href="https://tech.kakao.com/tag/kakao/" class="tag-cloud-link tag-link-60 tag-link-position-27" style="font-size: 20.368932038835pt;" aria-label="kakao (64 아이템)">kakao</a>
+<a href="https://tech.kakao.com/tag/kakaokrew/" class="tag-cloud-link tag-link-495 tag-link-position-28" style="font-size: 11.805825242718pt;" aria-label="kakaokrew (14 아이템)">kakaokrew</a>
+<a href="https://tech.kakao.com/tag/kakaotalk/" class="tag-cloud-link tag-link-534 tag-link-position-29" style="font-size: 8pt;" aria-label="kakaotalk (7 아이템)">kakaotalk</a>
+<a href="https://tech.kakao.com/tag/kubernetes/" class="tag-cloud-link tag-link-62 tag-link-position-30" style="font-size: 11.805825242718pt;" aria-label="kubernetes (14 아이템)">kubernetes</a>
+<a href="https://tech.kakao.com/tag/machine-learning/" class="tag-cloud-link tag-link-445 tag-link-position-31" style="font-size: 9.9029126213592pt;" aria-label="machine-learning (10 아이템)">machine-learning</a>
+<a href="https://tech.kakao.com/tag/meetup/" class="tag-cloud-link tag-link-450 tag-link-position-32" style="font-size: 8.6796116504854pt;" aria-label="meetup (8 아이템)">meetup</a>
+<a href="https://tech.kakao.com/tag/new-krew/" class="tag-cloud-link tag-link-456 tag-link-position-33" style="font-size: 19.417475728155pt;" aria-label="new-krew (54 아이템)">new-krew</a>
+<a href="https://tech.kakao.com/tag/onboarding/" class="tag-cloud-link tag-link-619 tag-link-position-34" style="font-size: 9.3592233009709pt;" aria-label="onboarding (9 아이템)">onboarding</a>
+<a href="https://tech.kakao.com/tag/opensource/" class="tag-cloud-link tag-link-80 tag-link-position-35" style="font-size: 13.165048543689pt;" aria-label="opensource (18 아이템)">opensource</a>
+<a href="https://tech.kakao.com/tag/post-server/" class="tag-cloud-link tag-link-781 tag-link-position-36" style="font-size: 8pt;" aria-label="post-server (7 아이템)">post-server</a>
+<a href="https://tech.kakao.com/tag/preview/" class="tag-cloud-link tag-link-675 tag-link-position-37" style="font-size: 9.3592233009709pt;" aria-label="preview (9 아이템)">preview</a>
+<a href="https://tech.kakao.com/tag/recap/" class="tag-cloud-link tag-link-582 tag-link-position-38" style="font-size: 10.446601941748pt;" aria-label="recap (11 아이템)">recap</a>
+<a href="https://tech.kakao.com/tag/recommendation-system/" class="tag-cloud-link tag-link-618 tag-link-position-39" style="font-size: 8pt;" aria-label="recommendation system (7 아이템)">recommendation system</a>
+<a href="https://tech.kakao.com/tag/recruitment/" class="tag-cloud-link tag-link-91 tag-link-position-40" style="font-size: 21.592233009709pt;" aria-label="recruitment (78 아이템)">recruitment</a>
+<a href="https://tech.kakao.com/tag/seminar/" class="tag-cloud-link tag-link-622 tag-link-position-41" style="font-size: 9.3592233009709pt;" aria-label="seminar (9 아이템)">seminar</a>
+<a href="https://tech.kakao.com/tag/server/" class="tag-cloud-link tag-link-489 tag-link-position-42" style="font-size: 9.3592233009709pt;" aria-label="server (9 아이템)">server</a>
+<a href="https://tech.kakao.com/tag/tech/" class="tag-cloud-link tag-link-448 tag-link-position-43" style="font-size: 22pt;" aria-label="tech (85 아이템)">tech</a>
+<a href="https://tech.kakao.com/tag/techtalk/" class="tag-cloud-link tag-link-621 tag-link-position-44" style="font-size: 11.398058252427pt;" aria-label="Techtalk (13 아이템)">Techtalk</a>
+<a href="https://tech.kakao.com/tag/test/" class="tag-cloud-link tag-link-452 tag-link-position-45" style="font-size: 10.446601941748pt;" aria-label="test (11 아이템)">test</a></div>
+		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-5adebe32" data-id="5adebe32" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-392d0d3 elementor-widget elementor-widget-post-info" data-id="392d0d3" data-element_type="widget" data-widget_type="post-info.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-inline-items elementor-icon-list-items elementor-post-info">
+								<li class="elementor-icon-list-item elementor-repeater-item-a475e37 elementor-inline-item" itemprop="datePublished">
+						<a href="https://tech.kakao.com/2023/01/19/">
+											<span class="elementor-icon-list-icon">
+								<i aria-hidden="true" class="fas fa-calendar"></i>							</span>
+									<span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-date">
+										2023-01-19					</span>
+									</a>
+				</li>
+				<li class="elementor-icon-list-item elementor-repeater-item-025fbcc elementor-inline-item" itemprop="author">
+						<a href="https://tech.kakao.com/author/rogers-t/">
+											<span class="elementor-icon-list-icon">
+								<i aria-hidden="true" class="far fa-user-circle"></i>							</span>
+									<span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-author">
+										rogers.t					</span>
+									</a>
+				</li>
+				<li class="elementor-icon-list-item elementor-repeater-item-57cbeeb elementor-inline-item" itemprop="about">
+										<span class="elementor-icon-list-icon">
+								<i aria-hidden="true" class="fas fa-tags"></i>							</span>
+									<span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-terms">
+										<span class="elementor-post-info__terms-list">
+				<a href="https://tech.kakao.com/tag/compliance/" class="elementor-post-info__terms-list-item">Compliance</a>, <a href="https://tech.kakao.com/tag/dependency/" class="elementor-post-info__terms-list-item">Dependency</a>, <a href="https://tech.kakao.com/tag/facebook/" class="elementor-post-info__terms-list-item">facebook</a>, <a href="https://tech.kakao.com/tag/frontend/" class="elementor-post-info__terms-list-item">frontend</a>, <a href="https://tech.kakao.com/tag/github/" class="elementor-post-info__terms-list-item">github</a>, <a href="https://tech.kakao.com/tag/google/" class="elementor-post-info__terms-list-item">google</a>, <a href="https://tech.kakao.com/tag/kakao/" class="elementor-post-info__terms-list-item">kakao</a>, <a href="https://tech.kakao.com/tag/license/" class="elementor-post-info__terms-list-item">License</a>, <a href="https://tech.kakao.com/tag/oauth2/" class="elementor-post-info__terms-list-item">oauth2</a>, <a href="https://tech.kakao.com/tag/olive/" class="elementor-post-info__terms-list-item">olive</a>, <a href="https://tech.kakao.com/tag/opensource/" class="elementor-post-info__terms-list-item">opensource</a>, <a href="https://tech.kakao.com/tag/oss/" class="elementor-post-info__terms-list-item">OSS</a>, <a href="https://tech.kakao.com/tag/social-login/" class="elementor-post-info__terms-list-item">social-login</a>, <a href="https://tech.kakao.com/tag/%ea%b5%ac%ea%b8%80/" class="elementor-post-info__terms-list-item">구글</a>, <a href="https://tech.kakao.com/tag/%ea%b9%83%ed%97%88%eb%b8%8c/" class="elementor-post-info__terms-list-item">깃허브</a>, <a href="https://tech.kakao.com/tag/%eb%9d%bc%ec%9d%b4%ec%84%a0%ec%8a%a4/" class="elementor-post-info__terms-list-item">라이선스</a>, <a href="https://tech.kakao.com/tag/%ec%86%8c%ec%85%9c%eb%a1%9c%ea%b7%b8%ec%9d%b8/" class="elementor-post-info__terms-list-item">소셜로그인</a>, <a href="https://tech.kakao.com/tag/%ec%98%a4%ed%94%88%ec%86%8c%ec%8a%a4/" class="elementor-post-info__terms-list-item">오픈소스</a>, <a href="https://tech.kakao.com/tag/%ec%98%a4%ed%94%88%ec%86%8c%ec%8a%a4%ea%b2%80%ec%a6%9d/" class="elementor-post-info__terms-list-item">오픈소스검증</a>, <a href="https://tech.kakao.com/tag/%ec%9d%98%ec%a1%b4%ec%84%b1%eb%b6%84%ec%84%9d/" class="elementor-post-info__terms-list-item">의존성분석</a>, <a href="https://tech.kakao.com/tag/%ec%b9%b4%ec%b9%b4%ec%98%a4/" class="elementor-post-info__terms-list-item">카카오</a>, <a href="https://tech.kakao.com/tag/%ed%8e%98%ec%9d%b4%ec%8a%a4%eb%b6%81/" class="elementor-post-info__terms-list-item">페이스북</a>				</span>
+					</span>
+								</li>
+				</ul>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-7cf889a1 elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="7cf889a1" data-element_type="widget" data-widget_type="theme-post-title.default">
+				<div class="elementor-widget-container">
+			<h1 class="elementor-heading-title elementor-size-default">주니어 개발자의 우여곡절 소셜로그인 도입 과정</h1>		</div>
+				</div>
+				<div class="elementor-element elementor-element-60ad788b elementor-widget elementor-widget-theme-post-content" data-id="60ad788b" data-element_type="widget" data-widget_type="theme-post-content.default">
+				<div class="elementor-widget-container">
+			<style></style>		<div data-elementor-type="wp-post" data-elementor-id="21351" class="elementor elementor-21351" data-elementor-settings="[]">
+						<div class="elementor-inner">
+							<div class="elementor-section-wrap">
+							<section class="elementor-section elementor-top-section elementor-element elementor-element-1da8d4c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1da8d4c" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-108cfda" data-id="108cfda" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-f89e1fe elementor-widget elementor-widget-text-editor" data-id="f89e1fe" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="font-weight: 400;">안녕하세요, 오픈소스 기술파트에서 근무하고 있는 rogers라고 합니다. 오픈소스 기술파트에서는 오픈소스 관리 서비스인 </span><span style="color: #3366ff;"><a style="color: #3366ff;" href="https://olive.kakao.com/intro"><span style="font-weight: 400;">OLIVE Platform</span></a></span><span style="font-weight: 400;">을 제공하고 있습니다. 이번에 더 많은 사용자에게 OLIVE Platform을 제공하기 위해 구글, 깃허브, 페이스북 소셜로그인을 도입하게 되었습니다. </span></p><p><span style="font-weight: 400;">이 글에서는 앱 등록부터 소셜로그인을 구현하는 과정뿐만 아니라 소셜로그인 연동을 해제하는 방법도 설명합니다. 그리고, 프락시 문제, API 사용 제한사항(요청수 제한, 로고 추가로 인한 앱 검수) 등 적용 과정에서 겪은 시행착오와 해결 방법도 확인하실 수 있습니다.</span></p><h2><span style="font-weight: 400;">용어 설명부터 드릴게요!</span></h2><p><span style="font-weight: 400;">구글, 깃허브, 페이스북은 OAuth2 프로토콜 기반의 인증방식을 지원하는데요. OAuth2 주요 용어에 대해 먼저 설명해 드리고 소셜로그인 적용 과정에 대해 말씀드리겠습니다.</span></p><table><tbody><tr><td><p><strong>용어</strong></p></td><td><p><strong>설명</strong></p></td></tr><tr><td><p><strong>클라이언트(Client)</strong></p></td><td><p><span style="font-weight: 400;">리소스에 접근하려는 애플리케이션에 해당합니다. OLIVE Platform에서는 Spring 서버에 해당합니다.</span></p></td></tr><tr><td><p><strong>인증 서버(Authorization Server)</strong></p></td><td><p><span style="font-weight: 400;">인증 및 인가를 수행하는 서버로 리소스에 대한 액세스 토큰을 발행합니다.</span></p></td></tr><tr><td><p><strong>리소스 서버(Resource Server)</strong></p></td><td><p><span style="font-weight: 400;">리소스를 호스팅하는 서버로 액세스 토큰의 유효 여부를 확인하고 해당 리소스에 대한 접근을 허용합니다.</span></p></td></tr><tr><td><p><strong>인증 코드(Authorization Code)</strong></p></td><td><p><span style="font-weight: 400;">사용자가 로그인에 성공하고 나서 받는 코드이며 이후 액세스 토큰을 발행할 때 필요합니다.</span></p></td></tr><tr><td><p><strong>액세스 토큰(Access Token)</strong></p></td><td><p><span style="font-weight: 400;">리소스에 접근할 때 필요한 토큰입니다.</span></p></td></tr><tr><td><p><strong>클라이언트 ID(Client ID), </strong></p><p><strong>클라이언트 보안 비밀번호(Client Secret Password)</strong></p></td><td><p><span style="font-weight: 400;">등록된 클라이언트에게 발급하는 정보로 인증하는 데 사용됩니다.</span></p></td></tr><tr><td><p><strong>권한 범위(Scope)</strong></p></td><td><p><span style="font-weight: 400;">리소스 접근 범위를 의미합니다.</span></p></td></tr><tr><td><p><strong>리다이렉트 URI(Redirect URI)</strong></p></td><td><p><span style="font-weight: 400;">인증 서버가 인증 후 응답을 보낼 클라이언트 URI에 해당합니다.</span></p></td></tr></tbody></table><p> </p><h2><span style="font-weight: 400;">앱 등록</span></h2><p><span style="font-weight: 400;">앱 등록이란 앱에 대한 정보를 입력하고 클라이언트 ID 및 클라이언트 보안 비밀번호(Client Secret Password)를 얻는 과정을 말합니다. 여기에서 앱 등록 과정은 페이스북으로 진행하며, 플랫폼별로 방식은 조금씩 다르므로 이 부분은 참고 부탁드립니다. </span></p><blockquote><p><i><span style="font-weight: 400;">메타(이하, “페이스북”으로 통칭)에서 앱 등록을 하기 위해서는 페이스북 계정과 Meta for Developers 계정, 그리고 앱의 페이스북 페이지가 필요합니다. 다음에서는 </span></i><span style="color: #3366ff;"><a style="color: #3366ff;" href="https://developers.facebook.com/"><i><span style="font-weight: 400;">Meta for Developers</span></i></a></span><i><span style="font-weight: 400;"> 계정에 로그인한 이후의 앱 등록 절차를 소개하고 있습니다.</span></i></p></blockquote><p style="padding-left: 40px;">1. <a href="https://developers.facebook.com/apps/?show_reminder=true"><span style="color: #3366ff;"><span style="font-weight: 400;">Meta for Developers</span><span style="font-weight: 400;">의 </span></span><b><span style="color: #3366ff;">내 앱</span></b></a><span style="font-weight: 400;">에 접속한 후 </span><b>앱 만들기</b><span style="font-weight: 400;"> 버튼을 눌러줍니다.</span></p><p style="padding-left: 40px;"><span style="font-weight: 400;">2. 앱 유형을 </span><b>비즈니스</b><span style="font-weight: 400;">로 선택합니다.</span><span style="font-weight: 400;"><br /></span></p><p style="padding-left: 40px;"><img class="alignnone size-full wp-image-21355 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201808%201614'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_01.png" alt="" width="1808" height="1614" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_01.png 1808w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_01-394x352.png 394w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_01-373x333.png 373w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_01-175x156.png 175w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_01-768x686.png 768w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_01-1536x1371.png 1536w" data-sizes="(max-width: 1808px) 100vw, 1808px" /></p><p style="padding-left: 40px;">3.<b> 앱 이름</b><span style="font-weight: 400;"> 및 </span><b>이메일</b><span style="font-weight: 400;">을 입력합니다.</span><span style="font-weight: 400;"><br /></span></p><p style="padding-left: 40px;"><img class="alignnone size-full wp-image-21356 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201794%20792'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_02.png" alt="" width="1794" height="792" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_02.png 1794w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_02-624x275.png 624w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_02-754x333.png 754w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_02-353x156.png 353w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_02-768x339.png 768w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_02-1536x678.png 1536w" data-sizes="(max-width: 1794px) 100vw, 1794px" /></p><p style="padding-left: 40px;">4. <b>설정 &gt; 기본 설정</b><span style="font-weight: 400;">에서 추가 정보를 입력합니다.</span><span style="font-weight: 400;"><br /></span></p><p style="padding-left: 40px;"><img class="alignnone size-full wp-image-21357 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201836%201132'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_03.png" alt="" width="1836" height="1132" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_03.png 1836w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_03-571x352.png 571w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_03-540x333.png 540w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_03-253x156.png 253w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_03-768x474.png 768w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_03-1536x947.png 1536w" data-sizes="(max-width: 1836px) 100vw, 1836px" /></p><p style="padding-left: 40px;">5. <b>대시보드</b><span style="font-weight: 400;"> 탭으로 이동한 후 </span><b>Facebook 로그인</b><span style="font-weight: 400;">의 설정을 클릭합니다.</span><span style="font-weight: 400;"><br /></span></p><p style="padding-left: 40px;"><img class="alignnone size-full wp-image-21358 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%203540%201634'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_04.png" alt="" width="3540" height="1634" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_04.png 3540w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_04-624x288.png 624w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_04-721x333.png 721w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_04-338x156.png 338w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_04-768x354.png 768w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_04-1536x709.png 1536w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_04-2048x945.png 2048w" data-sizes="(max-width: 3540px) 100vw, 3540px" /></p><p style="padding-left: 40px;">6. <b>웹</b><span style="font-weight: 400;">을 선택합니다.</span><span style="font-weight: 400;"><br /></span></p><p style="padding-left: 40px;"><img class="alignnone size-full wp-image-21373 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202116%20648'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_05.png" alt="" width="2116" height="648" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_05.png 2116w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_05-624x191.png 624w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_05-802x246.png 802w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_05-376x115.png 376w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_05-768x235.png 768w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_05-1536x470.png 1536w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_05-2048x627.png 2048w" data-sizes="(max-width: 2116px) 100vw, 2116px" /></p><p style="padding-left: 40px;"><span style="font-weight: 400;">7. 웹사이트 정보를 입력 후 계속 </span><b>다음하기</b><span style="font-weight: 400;">를 눌러 마지막 장까지 갑니다. 웹사이트 정보 입력란 외의 나머지 페이지들은 구현 가이드입니다.</span></p><p style="padding-left: 40px;">8. <b>Facebook 로그인</b><span style="font-weight: 400;"> 탭의 설정에 들어갑니다. </span><b>유효한 OAuth 리디렉션 URI</b><span style="font-weight: 400;">를 입력합니다. 이 URI는 인증 서버로부터 </span><span style="font-weight: 400;">응답을 받는 주소가 됩니다.</span></p><p style="padding-left: 40px;"><img class="alignnone size-full wp-image-21359 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201922%20974'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_06.png" alt="" width="1922" height="974" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_06.png 1922w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_06-624x316.png 624w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_06-657x333.png 657w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_06-308x156.png 308w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_06-768x389.png 768w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_06-1536x778.png 1536w" data-sizes="(max-width: 1922px) 100vw, 1922px" /></p><p style="padding-left: 40px;">9. <b>앱 검수</b><span style="font-weight: 400;"> 탭의 </span><b>권한 및 기능</b><span style="font-weight: 400;">으로 들어갑니다. 필요한 권한(Scope)이 있다면 </span><b>고급 액세스 이용하기</b><span style="font-weight: 400;">를 눌러 권한을 얻습니다.</span></p><p style="padding-left: 40px;"><img class="alignnone size-full wp-image-21360 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%203780%201668'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_07.png" alt="" width="3780" height="1668" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_07.png 3780w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_07-624x275.png 624w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_07-755x333.png 755w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_07-354x156.png 354w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_07-768x339.png 768w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_07-1536x678.png 1536w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_07-2048x904.png 2048w" data-sizes="(max-width: 3780px) 100vw, 3780px" /></p><p style="padding-left: 40px;">10.<b> 설정</b><span style="font-weight: 400;"> 탭의 </span><b>기본 설정</b><span style="font-weight: 400;">에 들어가서 </span><b>앱 ID</b><span style="font-weight: 400;">와 </span><b>앱 시크릿 코드</b><span style="font-weight: 400;">를 복사합니다. 앱 ID와 앱 시크릿 코드는 </span><span style="font-weight: 400;">이후 인증과정에서 필요한 정보입니다.</span></p><h2><span style="font-weight: 400;">Spring Framework 라이브러리 설정</span></h2><p><span style="font-weight: 400;">OLIVE Platform의 Spring 서버에</span> <span style="font-weight: 400;">OAuth2 인증 과정을 쉽게 처리해주는 </span><b>spring-boot-starter-oauth2-clien</b><span style="font-weight: 400;">t </span><span style="font-weight: 400;">라이브러리를 도입하여 서버 단의 소셜로그인을 구현했습니다.</span></p><h3>의존성 추가</h3><p><span style="font-weight: 400;">spring-boot-starter-oauth2-client</span><span style="font-weight: 400;">를 사용하기 위해서는 의존성을 추가해줘야 합니다.</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-8c89286 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8c89286" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-74bdeb4" data-id="74bdeb4" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-24ef8db elementor-widget elementor-widget-code-highlight" data-id="24ef8db" data-element_type="widget" data-widget_type="code-highlight.default">
+				<div class="elementor-widget-container">
+					<div class="prismjs-default copy-to-clipboard ">
+			<pre data-line="" class="highlight-height language-javascript line-numbers">
+				<code readonly="true" class="language-javascript">
+					<xmp> implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
+</xmp>
+				</code>
+			</pre>
+		</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-46e9b60 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="46e9b60" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-552bcd5" data-id="552bcd5" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-4bc298b elementor-widget elementor-widget-text-editor" data-id="4bc298b" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<h3><span style="font-weight: 400;">Client Registration 및 Provider 주요 설정</span></h3><p><span style="font-weight: 400;">의존성을 추가한 후 아래 사진과 같이 Client Registration 및 Provider 설정을 추가해줘야 합니다.</span></p><p><span style="font-weight: 400;">Client Registration 부분에서는 클라이언트</span><span style="font-weight: 400;">의 정보를, </span><span style="font-weight: 400;">Provider 부분에서는</span><span style="font-weight: 400;"> 인증 서버와 리소스 서버에 대한 정보를 추가합니다.</span><span style="font-weight: 400;"> </span></p><p><img class="alignnone size-full wp-image-21361 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201196%201192'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_08.png" alt="" width="1196" height="1192" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_08.png 1196w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_08-353x352.png 353w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_08-334x333.png 334w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_08-157x156.png 157w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_08-768x765.png 768w" data-sizes="(max-width: 1196px) 100vw, 1196px" /></p><p><span style="font-weight: 400;">구글, 깃허브, 페이스북의 경우 기본 설정들이 미리 정의되어 있어 </span><span style="font-weight: 400;">clientId, clientSecret, scope</span><span style="font-weight: 400;"> 설정만 추가해주면 됩니다. </span></p><p><span style="font-weight: 400;">OLIVE Platform에서는 Spring의 각종 설정을 사내 키 관리 서비스에 보관해서 사용하고 있습니다. 따라서 직접 빈(Bean)으로 등록할 필요성이 있었습니다. </span><span style="color: #3366ff;"><a style="color: #3366ff;" href="https://docs.spring.io/spring-security/reference/servlet/oauth2/login/core.html#oauth2login-register-clientregistrationrepository-bean"><span style="font-weight: 400;">공식 가이드</span></a></span><span style="font-weight: 400;">를 참고하여 빈으로 등록할 수 있었습니다.</span></p><p> </p><h3><span style="font-weight: 400;">Oauth2 설정 커스터마이징</span></h3><p><span style="font-weight: 400;">아래 코드처럼 OAuth 2.0 로그인 설정(Configuration)에 대해 커스터마이징할 수 있는데요. 직접 커스터마이징한 설정들에 대해 설명해 드리도록 하겠습니다.</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-d5493f9 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d5493f9" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bed4627" data-id="bed4627" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-fa58d32 elementor-widget elementor-widget-code-highlight" data-id="fa58d32" data-element_type="widget" data-widget_type="code-highlight.default">
+				<div class="elementor-widget-container">
+					<div class="prismjs-default copy-to-clipboard ">
+			<pre data-line="" class="highlight-height language-java line-numbers">
+				<code readonly="true" class="language-java">
+					<xmp>@Configuration
+
+@EnableWebSecurity
+
+public class OAuth2LoginSecurityConfig {
+
+@Bean
+
+public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
+http
+
+.oauth2Login(oauth2 -> oauth2
+
+    .authorizationEndpoint(authorization -> authorization
+
+    .baseUri("/oauth2/authorization")
+
+.authorizationRequestRepository(this.authorizationRequestRepository())
+
+  )
+
+.redirectionEndpoint(redirection -> redirection
+
+.baseUri("/*/oauth2/code/*")
+
+)
+
+.userInfoEndpoint(userInfo -> userInfo
+
+.userService(this.oauth2UserService())
+
+)                         
+
+.successHandler(oAuth2AuthenticationSuccessHandler())
+
+.failureHandler(oAuth2AuthenticationFailureHandler())
+
+);
+
+return http.build();
+
+}
+
+}
+</xmp>
+				</code>
+			</pre>
+		</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-f002a16 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f002a16" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-50ddf88" data-id="50ddf88" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-0f07f75 elementor-widget elementor-widget-text-editor" data-id="0f07f75" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="font-weight: 400;">다음의 5가지 설정을 커스터마이징했습니다.</span></p><ol><li style="font-weight: 400;" aria-level="1"><strong>authorizationEndpoint</strong><span style="font-weight: 400;">: 사용자가 호출하는 클라이언트의 인증 시작 API에 대한 설정입니다. 사용자가 이 API를 호출하면 소셜로그인 페이지로 사용자를 리다이렉트합니다.</span><ul><li style="font-weight: 400;" aria-level="2"><strong>authorizationRequestRepository</strong><span style="font-weight: 400;">: 사용자의 인증 요청을 임시로 보관하는 리포지토리에 대한 설정입니다. 이 요청에는 인증 과정을 모두 마친 후 리다이렉트할 프론트의 URI가 담겨있습니다. </span></li></ul></li><li style="font-weight: 400;" aria-level="1"><strong>redirectionEndpoint</strong><span style="font-weight: 400;">: 인증 서버가 응답을 반환하는 클라이언트의 URI에 대한 설정입니다. /login/oauth2/code/facebook처럼 매칭됩니다.</span></li><li style="font-weight: 400;" aria-level="1"><strong>userInfoEndpoint</strong><span style="font-weight: 400;">: 리소스 서버로부터 유저 정보를 가져올 때 사용되는 설정입니다.</span></li><li style="font-weight: 400;" aria-level="1"><strong>successHandler</strong><span style="font-weight: 400;">: 인증 및 유저 정보를 가져오는 것까지 성공했을 때 호출되는 핸들러를 설정합니다.</span></li><li style="font-weight: 400;" aria-level="1"><strong>failureHandler</strong><span style="font-weight: 400;">: 인증 또는 유저 정보를 가져오는 데 실패했을 때 호출되는 핸들러를 설정합니다.</span></li></ol><p> </p><h2><span style="font-weight: 400;">JWT 도입</span></h2><p><span style="font-weight: 400;">OLIVE Platform에서는 마이 페이지, 내 프로젝트 등 로그인 및 권한이 있는 상태에서 이용할 수 있는 기능들이 있는데요. 이런 기능들을 제공하기 위해 로그인 상태를 유지할 필요가 있습니다. 로그인 상태를 유지하기 위해 JWT(JSON Web Token) 토큰을 이용하였습니다.</span></p><p><span style="font-weight: 400;">서버에는 다음의 두 가지 로직을 구현하였습니다.</span></p><ol><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">소셜로그인 인증 및 유저 정보를 가져오는 데 성공하면 </span><span style="font-weight: 400;">successHandler</span><span style="font-weight: 400;">로 진입하는데요. 이 핸들러에 JWT 토큰을 발급하고 이를 포함시켜 프론트로 리다이렉트하도록 했습니다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">JWT 토큰을 받은 프론트는 다음 API 요청부터 토큰을 포함시켜 보내는데요. 필터에서 해당 토큰이 유효한지와 해당 사용자가 존재하는지 확인합니다. 확인에 성공하면 </span><span style="font-weight: 400;">SecurityContextHolder</span><span style="font-weight: 400;">에</span><span style="font-weight: 400;"> UserPrincipal</span><span style="font-weight: 400;">을 저장했습니다. 저장된 </span><span style="font-weight: 400;">UserPrincipal</span><span style="font-weight: 400;">은 이후 로그인 여부 파악 등에 사용됩니다.</span></li></ol><p> </p><h2><span style="font-weight: 400;">프론트 작업</span></h2><p><span style="font-weight: 400;">이렇게 서버 구현을 하고 나서 프론트 작업을 추가로 진행해줘야 하는데요. 크게 2가지를 구현했습니다.</span></p><p style="padding-left: 40px;"><span style="font-weight: 400;">1. 먼저 클릭했을 때 인증 시작 API로 이동하는 로그인 버튼을 추가했습니다. 링크는 “{client url}/oauth2/authorization/facebook?redirect_uri=’프론트의 콜백 URI’”로 작성했습니다.</span><span style="font-weight: 400;"><br /></span></p><p style="padding-left: 40px;"><img class="alignnone size-full wp-image-21362 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20395%20640'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_09.png" alt="" width="395" height="640" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_09.png 395w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_09-217x352.png 217w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_09-206x333.png 206w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_09-96x156.png 96w" data-sizes="(max-width: 395px) 100vw, 395px" /></p><p style="padding-left: 40px;"><span style="font-weight: 400;">2. 클라이언트에서 인증과정을 모두 마치면 1번 과정에서 파라미터로 넘긴 </span><span style="font-weight: 400;">redirect_uri</span><span style="font-weight: 400;">로 리다이렉트해 라우팅 등의 추가 구현을 합니다.</span></p><ul><li style="list-style-type: none;"><ul><li><span style="font-weight: 400;">로그인에 실패하면 로그인 실패 페이지로 이동합니다.</span></li><li><span style="font-weight: 400;">로그인에 성공하면 서버로부터 받은 JWT 토큰을 저장합니다. 이후 클라이언트 API를 호출할 때 이 토큰을 함께 보내게 됩니다.</span></li><li><span style="font-weight: 400;">신규 유저면 회원가입 페이지로, 기존 유저면 내 프로젝트 페이지로 이동합니다.</span></li></ul></li></ul><p> </p><p><span style="font-weight: 400;">이렇게 프론트 구현까지 마치게 되면 OAuth2를 이용한 소셜로그인 구현은 끝나게 됩니다.</span></p><p> </p><h2><span style="font-weight: 400;">전체 시퀀스 다이어그램</span></h2><p><span style="font-weight: 400;">지금까지 구현한 OAuth2 소셜로그인에 대한  전체 시퀀스 다이어그램입니다.</span></p><p> </p><p><img class="alignnone size-full wp-image-21363 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202196%201932'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_10.png" alt="" width="2196" height="1932" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_10.png 2196w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_10-400x352.png 400w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_10-379x333.png 379w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_10-177x156.png 177w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_10-768x676.png 768w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_10-1536x1351.png 1536w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_10-2048x1802.png 2048w" data-sizes="(max-width: 2196px) 100vw, 2196px" /></p><p> </p><ol><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">사용자의 유저 에이전트(User Agent)가 클라이언트(Client)의 인증 시작 API를 호출합니다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">클라이언트는 유저 에이전트를 페이스북의 인증 URI(Authorization URI)로 리다이렉트합니다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">사용자는 로그인을 수행합니다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">인증 서버(Authorization Server)가 인증 성공 여부를 클라이언트로 전달합니다. 성공 시 인증 코드(Authorization Code)가 전달됩니다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">클라이언트는 액세스 토큰(Access Token)을 요청합니다. 이전에 전달받은 인증 코드를 파라미터로 포함합니다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">인증 서버는 클라이언트의 요청이 유효하다면  액세스 토큰을 반환합니다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">클라이언트는 사용자의 프로필 정보를 요청합니다. 이전에 반환받은 액세스 토큰을 파라미터로 포함합니다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">인증 서버는 클라이언트의 요청이 유효하다면 유저 프로필 정보를 반환합니다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">클라이언트는 JWT 토큰을 발행하고 이 토큰을 포함시켜 프론트 콜백 URI(Front Callback URI)로 리다이렉트합니다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">프론트(Front)는 JWT 토큰을 저장하고 이후 작업을 수행합니다. 로그인 성공 시 OLIVE Platform의 My Project로 라우팅합니다.</span></li></ol><p> </p><h2><span style="font-weight: 400;">아직 끝이 아니다!</span></h2><p><span style="font-weight: 400;">소셜로그인 구현은 되었지만, 적용과정에서 다양한 시행착오를 겪었는데요. 이를 해결하는 과정이 다른 분들께 도움이 되길 바라며 자세히 설명하겠습니다. </span></p><p> </p><h3><span style="font-weight: 400;">소셜로그인 연동 해제</span></h3><p><span style="font-weight: 400;">OLIVE  Platform은 회원 탈퇴 시 해당 정보를 모두 삭제하는 정책을 따르고 있는데요. 이때 소셜로그인 연동도 같이 해제되어야 합니다. 하지만 </span><span style="font-weight: 400;">spring-boot-starter-oauth2-client</span><span style="font-weight: 400;"> 라이브러리는 이 기능을 따로 제공하고 있지 않는데요. 따라서 직접 구현할 필요가 있었습니다.</span></p><p><span style="font-weight: 400;">소셜로그인을 제공하는 서비스들은 권한을 회수하는 API를 제공하고 있습니다. 이 API를 직접 호출하여 소셜로그인 연동 해제를 구현하였습니다.</span></p><p><img class="alignnone size-full wp-image-21364 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201650%20346'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_11.png" alt="" width="1650" height="346" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_11.png 1650w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_11-624x131.png 624w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_11-802x168.png 802w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_11-376x79.png 376w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_11-768x161.png 768w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_11-1536x322.png 1536w" data-sizes="(max-width: 1650px) 100vw, 1650px" /></p><p> </p><h3><span style="font-weight: 400;">사진을 못 가져오고 있어요! </span></h3><p><span style="font-weight: 400;">로컬 환경에서 개발한 작업을 샌드박스 환경으로 배포해 테스트를 진행했는데요. 페이스북 로그인의 경우 프로필 사진을 못 가져오는 이슈가 있었습니다. 로컬 환경에서는 프로필 사진을 잘 가져오고 샌드박스 환경에서도 로그인 및 닉네임을 가져오는 부분은 잘 동작하여 원인을 찾는 데 어려움을 겪었습니다. </span></p><p><span style="font-weight: 400;">그렇게 원인을 찾아보다가 페이스북의 프로필 사진 API를 호출하면 자동으로 리다이렉트한다는 사실을 알게 되었습니다. </span><span style="font-weight: 400;">redirect</span><span style="font-weight: 400;"> 값을</span><span style="font-weight: 400;"> false</span><span style="font-weight: 400;">로 하여 API를 호출해보았습니다. </span><span style="font-weight: 400;">redirect </span><span style="font-weight: 400;">값을 </span><span style="font-weight: 400;">false</span><span style="font-weight: 400;">로 하면 아래 사진처럼 실제 사진이 저장되어 있는 URL이 나오게 됩니다.</span></p><p><img class="alignnone size-full wp-image-21354 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201408%201178'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_12.png" alt="" width="1408" height="1178" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_12.png 1408w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_12-421x352.png 421w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_12-398x333.png 398w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_12-186x156.png 186w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_12-768x643.png 768w" data-sizes="(max-width: 1408px) 100vw, 1408px" /></p><p><span style="font-weight: 400;"><br /></span><span style="font-weight: 400;">이 URL은 접근이 거부된 외부 API의 URL과 일치했습니다.</span></p><p><img class="alignnone size-full wp-image-21365 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201748%2088'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_13.png" alt="" width="1748" height="88" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_13.png 1748w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_13-624x31.png 624w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_13-802x40.png 802w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_13-376x19.png 376w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_13-768x39.png 768w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_13-1536x77.png 1536w" data-sizes="(max-width: 1748px) 100vw, 1748px" /></p><p><span style="font-weight: 400;">해당 도메인에 대한 접근을 허용하도록 프락시 정책을 수정하였고 이후 성공적으로 프로필 사진을 가져오는 것을 확인할 수 있었습니다.</span></p><p> </p><h3><span style="font-weight: 400;">페이스북 API 요청수 제한(Rate Limit) 문제</span></h3><p><span style="font-weight: 400;">샌드박스 환경에서 테스트를 진행하던 중 갑자기 페이스북 로그인 및 회원가입이 되지 않는 문제가 발생했습니다. 다른 소셜로그인은 정상적으로 수행되고 페이스북 로그인만 문제가 되는 상황이었습니다. </span></p><p><span style="font-weight: 400;">로컬 환경에서 디버깅 및 페이스북 앱 설정을 확인해봐도 문제가 없어 보여 원인 파악에 애를 먹었는데요. 좀 더 명확하게 로깅을 찍도록 설정하고 나서 원인을 파악할 수 있었습니다.</span></p><p><img class="alignnone size-full wp-image-21366 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201134%2058'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_14.png" alt="" width="1134" height="58" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_14.png 1134w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_14-624x32.png 624w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_14-802x41.png 802w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_14-376x19.png 376w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_14-768x39.png 768w" data-sizes="(max-width: 1134px) 100vw, 1134px" /></p><p><span style="font-weight: 400;">페이스북은 최대 1시간 동안 앱의 전체 사용자 수 * 200 만큼의 API 요청을 허용하고 있습니다. 기존에는 사용자의 정보를 얻기 위해 로그인 및 회원가입 외에 다른 기능을 수행할 때도 페이스북 API를 호출하고 있었는데요. 계속 테스트를 진행하며 이 한계를 넘어 API 접근이 제한되었던 것이었습니다. 로그인 및 회원 가입할 때만 페이스북 API를 호출하도록 변경하여 문제를 해결할 수 있었습니다.</span></p><p><img class="alignnone size-full wp-image-21367 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201650%20382'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_15.png" alt="" width="1650" height="382" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_15.png 1650w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_15-624x144.png 624w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_15-802x186.png 802w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_15-376x87.png 376w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_15-768x178.png 768w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_15-1536x356.png 1536w" data-sizes="(max-width: 1650px) 100vw, 1650px" /></p><p> </p><h3><span style="font-weight: 400;">프로덕션 모드로 전환</span></h3><p><span style="font-weight: 400;">보통 소셜로그인 서비스들은 개발자 모드 및 프로덕션 모드 2가지 모드를 제공합니다. 개발자 모드에서는 테스트 계정만 소셜로그인 기능을 사용할 수 있으므로 실제 유저가 사용하기 위해서는 프로덕션 모드로 전환은 꼭 필요한 작업입니다.</span></p><p><span style="font-weight: 400;">OLIVE Platform은</span><span style="font-weight: 400;"> 프로덕션 모드로 먼저 전환하여 테스트를 진행하고 있었지만, 앱 로고를 추가하면서 구글 앱 검수가 추가로 필요했습니다. 이에 앱 검수 절차를 밟아나가기 시작했습니다.</span></p><p style="padding-left: 40px;">1. <b>OAuth 동의 화면</b><span style="font-weight: 400;">의 정보를 채웠습니다. 이 정보들은 사용자가 구글 로그인을 했을 때 나오는 정보들입니다.</span></p><p style="padding-left: 40px;"><img class="alignnone size-full wp-image-21368 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201262%201834'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_16.png" alt="" width="1262" height="1834" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_16.png 1262w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_16-242x352.png 242w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_16-229x333.png 229w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_16-107x156.png 107w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_16-768x1116.png 768w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_16-1057x1536.png 1057w" data-sizes="(max-width: 1262px) 100vw, 1262px" /></p><p style="padding-left: 40px;"><span style="font-weight: 400;">2. 다음 페이지로 이동하여 필요한 범위(Scope)를 확인하고 선택적 정보를 입력한 후 계속합니다.</span></p><p style="padding-left: 40px;"><span style="font-weight: 400;">3. 최종 검토 페이지에서 정보가 제대로 입력되었는지 확인 후 제출합니다. 제출을 완료하면 다음과 같이 접수되었다는 안내가 나옵니다.</span></p><p style="padding-left: 40px;"><img class="alignnone size-full wp-image-21369 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201246%20554'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_17.png" alt="" width="1246" height="554" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_17.png 1246w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_17-624x277.png 624w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_17-749x333.png 749w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_17-351x156.png 351w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_17-768x341.png 768w" data-sizes="(max-width: 1246px) 100vw, 1246px" /></p><p style="padding-left: 40px;"><span style="font-weight: 400;">4. 검토 절차가 진행되면서 필요한 조치가 있으면 3번에서 본 화면에 나오게 되는데요. 도메인 소유권 확인이 필요하다고 나와 이를 진행하게 되었습니다.</span></p><p style="padding-left: 40px;">5. <a href="https://search.google.com/search-console/welcome?utm_source=about-page"><span style="font-weight: 400;"><span style="color: #3366ff;">구글 서치콘솔 사이트</span></span></a><span style="font-weight: 400;">로 이동하여 1번 과정에서 입력한 도메인을 입력합니다.</span></p><p style="padding-left: 40px;"><span style="font-weight: 400;">6. 도메인이 인증되지 않았다면 다음과 같은 팝업창이 뜨게 됩니다. TXT 레코드를 복사하여 DNS 설정에 추가한 후 다시 인증을 시도합니다.</span></p><p style="padding-left: 40px;"><img class="alignnone size-full wp-image-21370 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201296%201172'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_18.png" alt="" width="1296" height="1172" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_18.png 1296w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_18-389x352.png 389w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_18-368x333.png 368w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_18-173x156.png 173w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_18-768x695.png 768w" data-sizes="(max-width: 1296px) 100vw, 1296px" /></p><p style="padding-left: 40px;"><span style="font-weight: 400;">7. 이후 검토 절차를 모두 완료하여 안내 메일과 함께 다음처럼 화면이 변경되었습니다.</span></p><p style="padding-left: 40px;"><img class="alignnone size-full wp-image-21371 lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201652%20566'%3E%3C/svg%3E" data-src="http://tech.kakao.com/wp-content/uploads/2023/01/social-login_19.png" alt="" width="1652" height="566" data-srcset="https://tech.kakao.com/wp-content/uploads/2023/01/social-login_19.png 1652w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_19-624x214.png 624w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_19-802x275.png 802w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_19-376x129.png 376w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_19-768x263.png 768w, https://tech.kakao.com/wp-content/uploads/2023/01/social-login_19-1536x526.png 1536w" data-sizes="(max-width: 1652px) 100vw, 1652px" /></p><p style="padding-left: 40px;"><span style="font-weight: 400;">8. 구글 로그인 화면에서도 정상적으로 입력한 정보들이 나오는 것을 확인할 수 있었습니다.</span></p><p> </p><h2><span style="font-weight: 400;">후기</span></h2><p><span style="font-weight: 400;">이런 과정을 거쳐 OLIVE Platform은 카카오, 구글, 깃허브, 페이스북의 총 4가지 로그인을 제공하게 되었습니다. 기획부터 시작해서 실제 서비스 배포까지 한 사이클을 과정을 겪었던 좋은 경험이었습니다. 이 과정에서 제가 얻을 수 있었던 점은 다음과 같습니다.</span></p><ul><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">개발 문서와 좀 더 친해졌습니다. 영어 공부를 해야겠다는 생각도 많이 들었습니다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">버그를 재현하고 원인을 파악하는 능력이 향상되었습니다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">개발을 진행할 때 좀 더 세세한 계획을 수립하는 습관을 들일 수 있었습니다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">작은 단위로 개발, 배포하는 것이 중요하다는 것을 깨달았습니다.</span></li></ul><p><span style="font-weight: 400;">물론 아쉬웠던 점들도 있었는데요. 다음과 같습니다.</span></p><ul><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">리팩토링하는 과정에서 기존 테스트를 보완하거나 추가하는 것이 필요하다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">개발하고 테스트하고 수정하는 과정에서 놓치는 부분이 있었다. 놓치지 않도록 계속 체크리스트를 업데이트할 필요가 있었다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">개발 문서를 처음 접할 때 놓치는 부분이 있었다. 놓치는 부분이 없도록 여러 번 정독하는 습관이 필요하다.</span></li><li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">프로덕션 모드를 적용할 때 앱 로고 등을 좀 더 빨리 적용해야 했다. </span></li></ul><p> </p><p><span style="font-weight: 400;">이번 프로젝트를 수행하면서 많은 것들을 경험하고 성장할 수 있었습니다. 소셜로그인을 도입하기 위해 이 글을 읽는 분들께 도움이 되었으면 좋겠습니다. 긴 글 읽어주셔서 감사합니다.</span></p><p><span style="font-weight: 400;">마지막으로 꼼꼼하게 테스트해 주시고 피드백과 도움을 주신 파트원들, 그리고 같이 프로젝트를 진행하며 많은 가르침을 주신 yally에게 감사드립니다.</span></p><p> </p><hr /><h2><span style="font-weight: 400;">참고</span></h2><ul><li style="font-weight: 400;" aria-level="1"><span style="color: #3366ff;"><a style="color: #3366ff;" href="https://docs.spring.io/spring-security/reference/servlet/oauth2/index.html"><span style="font-weight: 400;">https://docs.spring.io/spring-security/reference/servlet/oauth2/index.html</span></a><span style="font-weight: 400;"> </span></span></li><li style="font-weight: 400;" aria-level="1"><span style="color: #3366ff;"><a style="color: #3366ff;" href="https://docs.spring.io/spring-security/reference/servlet/oauth2/login/core.html#oauth2login-register-clientregistrationrepository-bean"><span style="font-weight: 400;">https://docs.spring.io/spring-security/reference/servlet/oauth2/login/core.html#oauth2login-register-clientregistrationrepository-bean</span></a><span style="font-weight: 400;"> </span></span></li><li style="font-weight: 400;" aria-level="1"><span style="color: #3366ff;"><a style="color: #3366ff;" href="https://www.rfc-editor.org/rfc/rfc6749"><span style="font-weight: 400;">https://www.rfc-editor.org/rfc/rfc6749</span></a><span style="font-weight: 400;"> </span></span></li><li style="font-weight: 400;" aria-level="1"><span style="color: #3366ff;"><a style="color: #3366ff;" href="https://developers.facebook.com/docs/facebook-login/guides/advanced/manual-flow"><span style="font-weight: 400;">https://developers.facebook.com/docs/facebook-login/guides/advanced/manual-flow</span></a></span></li></ul>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-67bc690 elementor-widget elementor-widget-post-info" data-id="67bc690" data-element_type="widget" data-widget_type="post-info.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-inline-items elementor-icon-list-items elementor-post-info">
+								<li class="elementor-icon-list-item elementor-repeater-item-b03d463 elementor-inline-item" itemprop="about">
+										<span class="elementor-icon-list-icon">
+								<i aria-hidden="true" class="fas fa-tags"></i>							</span>
+									<span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-terms">
+										<span class="elementor-post-info__terms-list">
+				<a href="https://tech.kakao.com/tag/compliance/" class="elementor-post-info__terms-list-item">Compliance</a>, <a href="https://tech.kakao.com/tag/dependency/" class="elementor-post-info__terms-list-item">Dependency</a>, <a href="https://tech.kakao.com/tag/facebook/" class="elementor-post-info__terms-list-item">facebook</a>, <a href="https://tech.kakao.com/tag/frontend/" class="elementor-post-info__terms-list-item">frontend</a>, <a href="https://tech.kakao.com/tag/github/" class="elementor-post-info__terms-list-item">github</a>, <a href="https://tech.kakao.com/tag/google/" class="elementor-post-info__terms-list-item">google</a>, <a href="https://tech.kakao.com/tag/kakao/" class="elementor-post-info__terms-list-item">kakao</a>, <a href="https://tech.kakao.com/tag/license/" class="elementor-post-info__terms-list-item">License</a>, <a href="https://tech.kakao.com/tag/oauth2/" class="elementor-post-info__terms-list-item">oauth2</a>, <a href="https://tech.kakao.com/tag/olive/" class="elementor-post-info__terms-list-item">olive</a>, <a href="https://tech.kakao.com/tag/opensource/" class="elementor-post-info__terms-list-item">opensource</a>, <a href="https://tech.kakao.com/tag/oss/" class="elementor-post-info__terms-list-item">OSS</a>, <a href="https://tech.kakao.com/tag/social-login/" class="elementor-post-info__terms-list-item">social-login</a>, <a href="https://tech.kakao.com/tag/%ea%b5%ac%ea%b8%80/" class="elementor-post-info__terms-list-item">구글</a>, <a href="https://tech.kakao.com/tag/%ea%b9%83%ed%97%88%eb%b8%8c/" class="elementor-post-info__terms-list-item">깃허브</a>, <a href="https://tech.kakao.com/tag/%eb%9d%bc%ec%9d%b4%ec%84%a0%ec%8a%a4/" class="elementor-post-info__terms-list-item">라이선스</a>, <a href="https://tech.kakao.com/tag/%ec%86%8c%ec%85%9c%eb%a1%9c%ea%b7%b8%ec%9d%b8/" class="elementor-post-info__terms-list-item">소셜로그인</a>, <a href="https://tech.kakao.com/tag/%ec%98%a4%ed%94%88%ec%86%8c%ec%8a%a4/" class="elementor-post-info__terms-list-item">오픈소스</a>, <a href="https://tech.kakao.com/tag/%ec%98%a4%ed%94%88%ec%86%8c%ec%8a%a4%ea%b2%80%ec%a6%9d/" class="elementor-post-info__terms-list-item">오픈소스검증</a>, <a href="https://tech.kakao.com/tag/%ec%9d%98%ec%a1%b4%ec%84%b1%eb%b6%84%ec%84%9d/" class="elementor-post-info__terms-list-item">의존성분석</a>, <a href="https://tech.kakao.com/tag/%ec%b9%b4%ec%b9%b4%ec%98%a4/" class="elementor-post-info__terms-list-item">카카오</a>, <a href="https://tech.kakao.com/tag/%ed%8e%98%ec%9d%b4%ec%8a%a4%eb%b6%81/" class="elementor-post-info__terms-list-item">페이스북</a>				</span>
+					</span>
+								</li>
+				</ul>
+				</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-69a4092 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="69a4092" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-54a6ddb" data-id="54a6ddb" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-34310fd elementor-widget elementor-widget-html" data-id="34310fd" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+			<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.0/kakao.min.js"
+  integrity="sha384-PFHeU/4gvSH8kpvhrigAPfZGBDPs372JceJq3jAXce11bVA6rMvGWzvP4fMQuBGL" crossorigin="anonymous"></script>
+<script>
+  Kakao.init('d58279b0803c5d1b067371afb956d61d'); // 사용하려는 앱의 JavaScript 키 입력
+</script>
+
+<a id="kakaotalk-sharing-btn" href="javascript:;">
+  <img class="lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" data-src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_small.png"
+    alt="카카오톡 공유 보내기 버튼" />
+</a>
+
+<script type="text/javascript">
+
+
+//   const currentUrl = encodeURIComponent(document.URL);
+  const currentUrl = document.URL;
+//   console.log('DEBUG>>>', window.elementorFrontendConfig.post);
+  
+document.addEventListener("DOMContentLoaded", function(){
+
+  let config = document.getElementById('elementor-frontend-js-before');
+  
+  let ef_str = config.innerHTML.split('var elementorFrontendConfig = ')[1].trim().slice(0,-1);
+  const ef = JSON.parse(ef_str);
+  
+  console.log(ef);
+  
+  console.log(ef.post.featuredImage)
+  
+  Kakao.Share.createDefaultButton({
+    container: '#kakaotalk-sharing-btn',
+    objectType: 'feed',
+    content: {
+      title: 'tech.kakao.com',
+      description: '#tech #blog #event #career #support',
+      imageUrl:
+        ef.post.featuredImage,
+      link: {
+        mobileWebUrl: currentUrl,
+        webUrl: currentUrl,
+      },
+    },
+    buttons: [
+      {
+        title: '웹으로 보기',
+        link: {
+          mobileWebUrl: currentUrl,
+          webUrl: currentUrl,
+        },
+      }
+    ],
+  });
+});
+</script>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-f54bcd9" data-id="f54bcd9" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-64bb048 exclude-from-toc elementor-widget elementor-widget-facebook-button" data-id="64bb048" data-element_type="widget" data-widget_type="facebook-button.default">
+				<div class="elementor-widget-container">
+					<div data-layout="button_count" data-colorscheme="light" data-size="small" data-show-faces="true" class="elementor-facebook-widget fb-like" data-href="https://tech.kakao.com?p=21351" data-share="true" data-action="like"></div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<div class="elementor-element elementor-element-10310c7 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="10310c7" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-5882176a exclude-from-toc elementor-widget elementor-widget-heading" data-id="5882176a" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h4 class="elementor-heading-title elementor-size-default">Latest Posts</h4>		</div>
+				</div>
+				<div class="elementor-element elementor-element-73179f98 elementor-grid-1 elementor-posts--thumbnail-left elementor-grid-tablet-1 exclude-from-toc elementor-grid-mobile-1 elementor-widget elementor-widget-posts" data-id="73179f98" data-element_type="widget" data-settings="{&quot;classic_columns&quot;:&quot;1&quot;,&quot;classic_row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;classic_columns_tablet&quot;:&quot;1&quot;,&quot;classic_columns_mobile&quot;:&quot;1&quot;,&quot;classic_row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;classic_row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="posts.classic">
+				<div class="elementor-widget-container">
+					<div class="elementor-posts-container elementor-posts elementor-posts--skin-classic elementor-grid">
+				<article class="elementor-post elementor-grid-item post-21704 post type-post status-publish format-standard has-post-thumbnail hentry category-blog tag-programming tag-python tag-rust">
+				<a class="elementor-post__thumbnail__link" href="https://tech.kakao.com/2023/03/02/python-and-rust/" >
+			<div class="elementor-post__thumbnail"><img width="624" height="352" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20624%20352'%3E%3C/svg%3E" data-src="https://tech.kakao.com/wp-content/uploads/2023/03/Monosnap-2023-03-02-13-18-41-624x352.png" class="attachment-medium size-medium lazy" alt="" /></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://tech.kakao.com/2023/03/02/python-and-rust/" >
+				파이썬과 러스트			</a>
+		</h3>
+				<div class="elementor-post__meta-data">
+					<span class="elementor-post-date">
+			2023.03.02		</span>
+				</div>
+				<div class="elementor-post__excerpt">
+			<p>안녕하세요, 추천팀 제이입니다. 저는 팀 내 프로젝트에 새롭게 러스트(Rust)를 도입하는 과정에서 동일한 애플리케이션을 파이썬(Python)과 러스트로 각각 개발하여, 비교 및 분석하는 과정을 경험했습니다.</p>
+		</div>
+				</div>
+				</article>
+				<article class="elementor-post elementor-grid-item post-21608 post type-post status-publish format-standard has-post-thumbnail hentry category-blog tag-cloud tag-ifkakao-2022 tag-kakao tag-kubernetes tag-kubespray tag-opensource tag-provisioning">
+				<a class="elementor-post__thumbnail__link" href="https://tech.kakao.com/2023/02/10/making-of-kubernetes-provisioning-tool/" >
+			<div class="elementor-post__thumbnail"><img width="622" height="352" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20622%20352'%3E%3C/svg%3E" data-src="https://tech.kakao.com/wp-content/uploads/2023/02/Provision_11_2023-02-10-042916-0000-622x352.jpg" class="attachment-medium size-medium lazy" alt="" /></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://tech.kakao.com/2023/02/10/making-of-kubernetes-provisioning-tool/" >
+				쿠버네티스 프로비저닝 툴과의 만남부터 헤어짐까지 . . .			</a>
+		</h3>
+				<div class="elementor-post__meta-data">
+					<span class="elementor-post-date">
+			2023.02.10		</span>
+				</div>
+				<div class="elementor-post__excerpt">
+			<p>들어가며 안녕하세요, 카카오 클라우드 네이티브 파트에서 DKOS의 개발을 맡고 있는 우주, 후니, 존, 루키입니다. DKOS는 카카오 사내 개발자들을 위한 KaaS (Kubernetes as</p>
+		</div>
+				</div>
+				</article>
+				<article class="elementor-post elementor-grid-item post-21546 post type-post status-publish format-standard has-post-thumbnail hentry category-blog tag-835 tag-481 tag-836">
+				<a class="elementor-post__thumbnail__link" href="https://tech.kakao.com/2023/02/01/university-student-mentoring-get-out-from-the-well/" >
+			<div class="elementor-post__thumbnail"><img width="569" height="352" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20569%20352'%3E%3C/svg%3E" data-src="https://tech.kakao.com/wp-content/uploads/2023/01/university-student-mentoring-03-569x352.png" class="attachment-medium size-medium lazy" alt="" /></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://tech.kakao.com/2023/02/01/university-student-mentoring-get-out-from-the-well/" >
+				대학생 멘토링: 우물 밖 내다보기			</a>
+		</h3>
+				<div class="elementor-post__meta-data">
+					<span class="elementor-post-date">
+			2023.02.01		</span>
+				</div>
+				<div class="elementor-post__excerpt">
+			<p>https://www.youtube.com/watch?v=LGdb4Q5t-gw 안녕하세요. 저는 카카오톡 톡플랫폼개발팀에서 백엔드 서버 개발자로 일하고 있는 nano.son(손은호)입니다. 2023년 1월 16일, 제 모교인 경북대학교의 학생들과 판교 아지트에서 멘토링을 진행했습니다.</p>
+		</div>
+				</div>
+				</article>
+				</div>
+
+
+		
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-68edd718 elementor-hidden-mobile" data-id="68edd718" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-5d8c877 elementor-widget elementor-widget-spacer" data-id="5d8c877" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-580a6c62 elementor-toc--minimized-on-tablet elementor-widget elementor-widget-table-of-contents" data-id="580a6c62" data-element_type="widget" data-settings="{&quot;exclude_headings_by_selector&quot;:&quot;.exclude-from-toc&quot;,&quot;marker_view&quot;:&quot;bullets&quot;,&quot;icon&quot;:{&quot;value&quot;:&quot;&quot;,&quot;library&quot;:&quot;&quot;},&quot;collapse_subitems&quot;:&quot;yes&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;headings_by_tags&quot;:[&quot;h2&quot;,&quot;h3&quot;,&quot;h4&quot;,&quot;h5&quot;,&quot;h6&quot;],&quot;minimize_box&quot;:&quot;yes&quot;,&quot;minimized_on&quot;:&quot;tablet&quot;,&quot;hierarchical_view&quot;:&quot;yes&quot;,&quot;min_height&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;min_height_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;min_height_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}" data-widget_type="table-of-contents.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-toc__header">
+			<h4 class="elementor-toc__header-title">
+							</h4>
+							<div class="elementor-toc__toggle-button elementor-toc__toggle-button--expand"><i class="fas fa-chevron-down"></i></div>
+				<div class="elementor-toc__toggle-button elementor-toc__toggle-button--collapse"><i class="fas fa-chevron-up"></i></div>
+					</div>
+		<div class="elementor-toc__body elementor-toc__list-items--collapsible">
+			<div class="elementor-toc__spinner-container">
+				<i class="elementor-toc__spinner eicon-animation-spin eicon-loading" aria-hidden="true"></i>			</div>
+		</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-149f816 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="149f816" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4a9f6ba5" data-id="4a9f6ba5" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-44505fd elementor-widget elementor-widget-spacer" data-id="44505fd" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-2e71e609 elementor-post-navigation-borders-yes elementor-widget elementor-widget-post-navigation" data-id="2e71e609" data-element_type="widget" data-widget_type="post-navigation.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-post-navigation">
+			<div class="elementor-post-navigation__prev elementor-post-navigation__link">
+				<a href="https://tech.kakao.com/2023/01/12/introduce-kafka-sink-connector/" rel="prev"><span class="post-navigation__arrow-wrapper post-navigation__arrow-prev"><i class="fa fa-angle-double-left" aria-hidden="true"></i><span class="elementor-screen-only">Prev</span></span><span class="elementor-post-navigation__link__prev"><span class="post-navigation__prev--label">이전 글</span><span class="post-navigation__prev--title">카프카 커넥트를 데이터 파이프라인으로 사용하는 이유? kafka-sink-connector 오픈소스 언빡싱!</span></span></a>			</div>
+							<div class="elementor-post-navigation__separator-wrapper">
+					<div class="elementor-post-navigation__separator"></div>
+				</div>
+						<div class="elementor-post-navigation__next elementor-post-navigation__link">
+				<a href="https://tech.kakao.com/2023/01/19/kakaotalk-java-app-server-refactoring/" rel="next"><span class="elementor-post-navigation__link__next"><span class="post-navigation__next--label">다음 글</span><span class="post-navigation__next--title">카카오톡 Java App Server Refactoring 후기</span></span><span class="post-navigation__arrow-wrapper post-navigation__arrow-next"><i class="fa fa-angle-double-right" aria-hidden="true"></i><span class="elementor-screen-only">Next</span></span></a>			</div>
+		</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-798148b" data-id="798148b" data-element_type="column">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-cad5079 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="cad5079" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d8d0415" data-id="d8d0415" data-element_type="column">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+							</div>
+				</div>
+				<div data-elementor-type="footer" data-elementor-id="14125" class="elementor elementor-14125 elementor-location-footer" data-elementor-settings="[]">
+					<div class="elementor-section-wrap">
+								<section class="elementor-section elementor-top-section elementor-element elementor-element-2305d50 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="2305d50" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-2d2fad3b" data-id="2d2fad3b" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-6a55f389 elementor-widget elementor-widget-text-editor" data-id="6a55f389" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<h4 class="tit_g">Connect with Kakao Tech</h4>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-177f593c" data-id="177f593c" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-13f07bb8 elementor-widget elementor-widget-heading" data-id="13f07bb8" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">About Tech</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-2c5c0689 elementor-align-left elementor-mobile-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="2c5c0689" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<a href="https://developers.kakao.com/">
+
+											<span class="elementor-icon-list-text">Kakao Developers</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://devtalk.kakao.com/">
+
+											<span class="elementor-icon-list-text">Kakao Dev Talk</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://if.kakao.com/">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">if(kakao)2022</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-705ecb1 elementor-widget elementor-widget-spacer" data-id="705ecb1" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-24b7ab77" data-id="24b7ab77" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-e2b291d elementor-widget elementor-widget-heading" data-id="e2b291d" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">About Channels</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-3471c34b elementor-align-left elementor-mobile-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="3471c34b" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<a href="https://github.com/kakao">
+
+											<span class="elementor-icon-list-text">GitHub</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://tv.kakao.com/channel/3693125/cliplink/423963887?metaObjectType=Channel">
+
+											<span class="elementor-icon-list-text">Kakao TV</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://www.facebook.com/kakaotech">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-check"></i>						</span>
+										<span class="elementor-icon-list-text">Facebook</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-9b43eba elementor-widget elementor-widget-spacer" data-id="9b43eba" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-1bc7e691" data-id="1bc7e691" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-56bd13cb elementor-widget elementor-widget-heading" data-id="56bd13cb" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Family Sites</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-68b38b99 elementor-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="68b38b99" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<a href="https://www.kakaocorp.com/page/">
+
+											<span class="elementor-icon-list-text">Kakao Corp</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://careers.kakao.com/index">
+
+											<span class="elementor-icon-list-text">Kakao Career</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://www.kakao.com/ko/privacy">
+
+											<span class="elementor-icon-list-text">Kakao Privacy</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<footer class="elementor-section elementor-top-section elementor-element elementor-element-238b0f63 elementor-section-height-min-height elementor-section-content-middle elementor-section-full_width elementor-section-height-default elementor-section-items-middle" data-id="238b0f63" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-6daca4ab" data-id="6daca4ab" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-16a4876e elementor-widget elementor-widget-heading" data-id="16a4876e" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h3 class="elementor-heading-title elementor-size-default">Copyright © Kakao Corp. All rights reserved.</h3>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-a38f34f" data-id="a38f34f" data-element_type="column">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</footer>
+							</div>
+				</div>
+		
+<link rel='stylesheet' id='elementor-icons-fa-regular-css'  href='https://tech.kakao.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min.css?ver=5.15.3' type='text/css' media='all' />
+<link rel='stylesheet' id='prismjs_style-css'  href='https://tech.kakao.com/wp-content/plugins/elementor-pro/assets/css/modules/code-highlight.min.css?ver=1.23.0' type='text/css' media='' />
+<link rel='stylesheet' id='e-animations-css'  href='https://tech.kakao.com/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.5.5' type='text/css' media='all' />
+<script type='text/javascript' id='ppress-frontend-script-js-extra'>
+/* <![CDATA[ */
+var pp_ajax_form = {"ajaxurl":"https:\/\/tech.kakao.com\/wp-admin\/admin-ajax.php","confirm_delete":"Are you sure?","deleting_text":"Deleting...","deleting_error":"An error occurred. Please try again.","nonce":"c7b8c5bded","disable_ajax_form":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/wp-user-avatar/assets/js/frontend.min.js?ver=3.2.8' id='ppress-frontend-script-js'></script>
+<script type='text/javascript' id='eael-general-js-extra'>
+/* <![CDATA[ */
+var localize = {"ajaxurl":"https:\/\/tech.kakao.com\/wp-admin\/admin-ajax.php","nonce":"7799b6d084","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"page_permalink":"https:\/\/tech.kakao.com\/2023\/01\/19\/social-login\/","cart_redirectition":"no","cart_page_url":"","el_breakpoints":{"mobile":{"label":"\ubaa8\ubc14\uc77c","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"\ud0dc\ube14\ub9bf","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/js/view/general.min.js?ver=5.5.0' id='eael-general-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.0.1' id='smartmenus-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-core.min.js?ver=1.23.0' id='prismjs_core-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js?ver=1.23.0' id='prismjs_loader-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js?ver=1.23.0' id='prismjs_normalize-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/line-numbers/prism-line-numbers.min.js?ver=1.23.0' id='prismjs_line_numbers-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.js?ver=1.23.0' id='prismjs_toolbar-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js?ver=1.23.0' id='prismjs_copy_to_clipboard-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.6.2' id='elementor-pro-webpack-runtime-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.5.5' id='elementor-webpack-runtime-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.5.5' id='elementor-frontend-modules-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-includes/js/dist/hooks.min.js?ver=1e58c8c5a32b2e97491080c5b10dc71c' id='wp-hooks-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-includes/js/dist/i18n.min.js?ver=30fcecb428a0e8383d3776bcdd3a7834' id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' id='elementor-pro-frontend-js-translations'>
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "elementor-pro", { "locale_data": { "messages": { "": {} } } } );
+</script>
+<script type='text/javascript' id='elementor-pro-frontend-js-before'>
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/tech.kakao.com\/wp-admin\/admin-ajax.php","nonce":"b3df245ef4","urls":{"assets":"https:\/\/tech.kakao.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/tech.kakao.com\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"ko_KR","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/tech.kakao.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.6.2' id='elementor-pro-frontend-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2' id='elementor-waypoints-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6' id='swiper-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=3.5.5' id='share-link-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.9.0' id='elementor-dialog-js'></script>
+<script type='text/javascript' id='elementor-frontend-js-before'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"\ud398\uc774\uc2a4\ubd81 \uacf5\uc720","shareOnTwitter":"\ud2b8\uc704\ud130 \uacf5\uc720","pinIt":"\uace0\uc815\ud558\uae30","download":"Download","downloadImage":"\uc774\ubbf8\uc9c0 \ub2e4\uc6b4\ub85c\ub4dc","fullscreen":"\uc804\uccb4\ud654\uba74","zoom":"\uc90c","share":"\uacf5\uc720","playVideo":"\ube44\ub514\uc624 \uc7ac\uc0dd","previous":"\uc774\uc804","next":"\ub2e4\uc74c","close":"\ub2eb\uae30"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"\ubaa8\ubc14\uc77c","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"\ud0dc\ube14\ub9bf","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.5.5","is_static":false,"experimentalFeatures":{"e_import_export":true,"e_hidden_wordpress_widgets":true,"theme_builder_v2":true,"landing-pages":true,"elements-color-picker":true,"favorite-widgets":true,"admin-top-bar":true,"page-transitions":true,"form-submissions":true,"e_scroll_snap":true},"urls":{"assets":"https:\/\/tech.kakao.com\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":21351,"title":"%EC%A3%BC%EB%8B%88%EC%96%B4%20%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98%20%EC%9A%B0%EC%97%AC%EA%B3%A1%EC%A0%88%20%EC%86%8C%EC%85%9C%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EB%8F%84%EC%9E%85%20%EA%B3%BC%EC%A0%95%20%E2%80%93%20tech.kakao.com","excerpt":"","featuredImage":"https:\/\/tech.kakao.com\/wp-content\/uploads\/2023\/01\/featured-593x333.png"}};
+</script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.5.5' id='elementor-frontend-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/elementor-pro/assets/js/preloaded-elements-handlers.min.js?ver=3.6.2' id='pro-preloaded-elements-handlers-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/elementor/assets/js/preloaded-modules.min.js?ver=3.5.5' id='preloaded-modules-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.6.2' id='e-sticky-js'></script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-includes/js/underscore.min.js?ver=1.13.1' id='underscore-js'></script>
+<script type='text/javascript' id='wp-util-js-extra'>
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-includes/js/wp-util.min.js?ver=5.9.2' id='wp-util-js'></script>
+<script type='text/javascript' id='wpforms-elementor-js-extra'>
+/* <![CDATA[ */
+var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://tech.kakao.com/wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.min.js?ver=1.7.8' id='wpforms-elementor-js'></script>
+
+<script>window.w3tc_lazyload=1,window.lazyLoadOptions={elements_selector:".lazy",callback_loaded:function(t){var e;try{e=new CustomEvent("w3tc_lazyload_loaded",{detail:{e:t}})}catch(a){(e=document.createEvent("CustomEvent")).initCustomEvent("w3tc_lazyload_loaded",!1,!1,{e:t})}window.dispatchEvent(e)}}</script><script async src="https://tech.kakao.com/wp-content/plugins/w3-total-cache/pub/js/lazyload.min.js"></script></body>
+</html>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/
+
+Lazy Loading
+Database Caching using disk (Request-wide modification query)
+
+Served from: tech.kakao.com @ 2023-03-14 22:11:44 by W3 Total Cache
+-->

@@ -1,0 +1,696 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="https://static.toss.im/tds-pc/3.232.0/main.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/rss+xml" href="/rss.xml"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/atom+xml" href="/atom.xml"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/main.css"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/others.css"/><link rel="stylesheet" href="https://static.toss.im/tossface-font/tossface.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/activitystream+json" href="/feed.json"/><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"/><meta name="author" content="Viva Republica"/><link rel="preconnect" href="https://static.toss.im"/><link rel="shortcut icon" href="https://static.toss.im/tds/favicon/favicon.ico"/><link rel="icon" type="image/png" sizes="16x16" href="https://static.toss.im/tds/favicon/favicon-16x16.png"/><link rel="icon" type="image/png" sizes="32x32" href="https://static.toss.im/tds/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="48x48" href="https://static.toss.im/tds/favicon/favicon-48x48.png"/><link rel="icon" type="image/png" sizes="196x196" href="https://static.toss.im/tds/favicon/favicon-196x196.png"/><link rel="apple-touch-icon" sizes="57x57" href="https://static.toss.im/tds/favicon/apple-touch-icon-57x57.png"/><link rel="apple-touch-icon" sizes="72x72" href="https://static.toss.im/tds/favicon/apple-touch-icon-72x72.png"/><link rel="apple-touch-icon" sizes="114x114" href="https://static.toss.im/tds/favicon/apple-touch-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="https://static.toss.im/tds/favicon/apple-touch-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="https://static.toss.im/tds/favicon/apple-touch-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="https://static.toss.im/tds/favicon/apple-touch-icon-152x152.png"/><meta name="msapplication-TileImage" content="https://static.toss.im/tds/favicon/mstile-144x144.png"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PQ5NV18TH1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-PQ5NV18TH1');</script><script>(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:2399367,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script><title>Template Literal Types로 타입 안전하게 코딩하기</title><meta name="twitter:creator" content="Viva Republica"/><meta name="twitter:site" content="@Toss_service"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:title" content="Template Literal Types로 타입 안전하게 코딩하기"/><meta name="twitter:title" content="Template Literal Types로 타입 안전하게 코딩하기"/><meta property="og:description" content="TypeScript 코드베이스의 타입 안전성을 한 단계 올려줄 수 있는 Template Literal Type의 뜻과 응용에 대해 알아봅니다.
+"/><meta name="twitter:description" content="TypeScript 코드베이스의 타입 안전성을 한 단계 올려줄 수 있는 Template Literal Type의 뜻과 응용에 대해 알아봅니다.
+"/><meta property="og:image" content="https://static.toss.im/assets/tech-blog/og-image:/techblog-05-template-literal-og.png?v=2"/><meta name="twitter:image" content="https://static.toss.im/assets/tech-blog/og-image:/techblog-05-template-literal-og.png?v=2"/><meta name="next-head-count" content="36"/><meta name="next-font-preconnect"/><link rel="preload" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" as="style"/><link rel="stylesheet" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/webpack-a37367524f3d9e47.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/framework-5201cf011975c339.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/main-4ffd67ad72332dfe.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/_app-02461bb4136bedab.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/821-c2f4db054c6f6b42.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/935-149f2da2961c2b08.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/article/%5Bslug%5D-bf5a24035d1301de.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_buildManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_ssgManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_middlewareManifest.js" defer=""></script></head><body><div id="__next"><style data-emotion="css-global ubpbb5">html,body{padding:0;margin:0;font-family:'Toss Product Sans';}button{font-family:'Toss Product Sans';}p{margin:0;}</style><style data-emotion="css kcwxxw">.css-kcwxxw{position:-webkit-sticky;position:sticky;top:0;height:59px;}</style><nav class="p-navbar p-navbar--bottom-border css-kcwxxw"><div class="p-container p-container--default"><div class="p-container__inner p-navbar__inner-container"><div class="p-navbar__logo-container"><a class="p-navbar__logo-icon" href="/tech"><span class="icon p-icon" aria-hidden="true" role="presentation" style="height:auto;width:auto;min-width:24px"></span></a></div><div class="p-navbar__right-on-mobile"></div><div class="p-navbar__content" aria-expanded="false" aria-hidden="true"><ul class="p-navbar__menu"></ul><ul class="p-navbar__menu"><li class="p-navbar__item"><a>디자인</a></li><li class="p-navbar__item"><a>개발</a></li><li class="p-navbar__item p-navbar__button-item"><button class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s p-navbar__button" type="button" aria-disabled="false">채용 바로가기</button></li></ul></div></div></div></nav><style data-emotion="css 1nquki8">.css-1nquki8{max-width:700px;margin-bottom:80px;}.css-1nquki8 .has-extra-large-font-size{font-size:20px;}.css-1nquki8 .has-large-font-size{font-size:18px;}.css-1nquki8 .has-small-font-size{font-size:14px;}.css-1nquki8 .has-extra-small-font-size{font-size:12px;}@media (max-width: 700px){.css-1nquki8{margin-bottom:64px;}}</style><div class="p-container p-container--default css-1nquki8"><div class="p-container__inner"><style data-emotion="css gtmad4">.css-gtmad4>*:not(style)~*:not(style){margin-top:54px;}@media (max-width: 700px){.css-gtmad4>*:not(style)~*:not(style){margin-top:48px;}}</style><article class="css-gtmad4"><style data-emotion="css 1095auh">.css-1095auh>*:not(style)~*:not(style){margin-top:20px;}</style><header class="css-1095auh"><style data-emotion="css iffq4o">.css-iffq4o{width:100%;margin-top:36px;border-radius:12px;}</style><img srcSet="https://toss.tech/wp-content/uploads/2021/05/techblog-05-template-literal-300x150.png 300w, https://toss.tech/wp-content/uploads/2021/05/techblog-05-template-literal-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2021/05/techblog-05-template-literal-768x384.png 768w, https://toss.tech/wp-content/uploads/2021/05/techblog-05-template-literal.png 1200w" alt="Template Literal Types로 타입 안전하게 코딩하기" class="css-iffq4o e132k2574"/><style data-emotion="css 117sh4z">.css-117sh4z{margin-top:36px;margin-bottom:0;font-size:48px;font-weight:700;line-height:1.25;color:#333d4b;word-break:keep-all;overflow-wrap:break-word;}@media (max-width: 700px){.css-117sh4z{margin-top:28px;font-size:32px;}}</style><h1 class="css-117sh4z e132k2573">Template Literal Types로 타입 안전하게 코딩하기</h1><style data-emotion="css s5xdrg">.css-s5xdrg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><section class="css-s5xdrg e2c667z4"><style data-emotion="css 1hdebld">.css-1hdebld{grid-area:image;width:48px;height:48px;border-radius:156px;margin-right:14px;}</style><img src="https://wp.toss.tech/wp-content/uploads/2021/06/E01JAGTHP8R-U01K6L12VSL-0974fc35250c-512-312x312.png" alt="" class="css-1hdebld e2c667z3"/><div><style data-emotion="css 14d9k6d">.css-14d9k6d{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;grid-area:outline;-webkit-align-items:flex-end;-webkit-box-align:flex-end;-ms-flex-align:flex-end;align-items:flex-end;padding-top:8px;font-size:17px;margin-bottom:2px;}@media (max-width: 700px){.css-14d9k6d>*+*{margin-top:4px;margin-left:0;}}</style><div class="css-14d9k6d e2c667z2"><style data-emotion="css 9krnkp">.css-9krnkp{grid-area:name;margin:0;font-size:17px;font-weight:600;color:#4e5968;white-space:nowrap;}</style><h3 class="css-9krnkp e2c667z1">박서진</h3><h3 class="css-9krnkp e2c667z1">ㆍ<!-- -->Frontend Developer</h3></div><style data-emotion="css 154r2lc">.css-154r2lc{font-size:14px;line-height:1.5;color:#8b95a1;}</style><div class="css-154r2lc e2c667z0">2021. 5. 14</div></div></section></header><style data-emotion="css 1k1kkv6">.css-1k1kkv6{font-size:18px;line-height:1.7;color:var(--grey700);font-size:18px;word-break:keep-all;overflow-wrap:break-word;counter-reset:p-post-ol 0;}.css-1k1kkv6 h2{margin:2.2em 0 0.6em 0;font-size:25px;font-weight:600;line-height:1.4;color:var(--grey900);}.css-1k1kkv6 h3{margin:2.2em 0 0.6em 0;font-size:22px;font-weight:600;line-height:1.6;color:var(--grey900);}.css-1k1kkv6 h4{margin:2.2em 0 0.3em 0;font-size:19px;font-weight:600;line-height:1.6;color:var(--grey700);}.css-1k1kkv6 p{margin:1em 0;}.css-1k1kkv6 p code,.css-1k1kkv6 li code{font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:3px;}.css-1k1kkv6 a{color:var(--blue700);}.css-1k1kkv6 pre{margin:2em -24px;}@media (max-width: 700px){.css-1k1kkv6 pre{margin:2em 0;}}.css-1k1kkv6 pre code{display:block;padding:16px 24px;overflow-x:auto;font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;line-height:1.5;word-wrap:normal;white-space:pre;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:12px;}.css-1k1kkv6 figure{margin:2em 0;overflow:hidden;border-radius:12px;width:100%;}.css-1k1kkv6 figure.aligncenter{text-align:center;}.css-1k1kkv6 ol,.css-1k1kkv6 ul{margin:0 0 16px;list-style:none;}.css-1k1kkv6 ol li,.css-1k1kkv6 ul li{position:relative;margin-bottom:8px;}.css-1k1kkv6 ol li:before,.css-1k1kkv6 ul li:before{position:absolute;left:0;}.css-1k1kkv6 ol li ol,.css-1k1kkv6 ul li ol{padding-left:0;margin:8px 0 0 -16px;}.css-1k1kkv6 ol li ul,.css-1k1kkv6 ul li ul{padding-left:0;margin-top:8px;}.css-1k1kkv6 ol li p,.css-1k1kkv6 ul li p{margin:0;}.css-1k1kkv6 ol{padding-left:16px;counter-reset:p-post-ol;}.css-1k1kkv6 ol>li{padding-left:32px;counter-increment:p-post-ol;}.css-1k1kkv6 ol>li:before{font-weight:700;font-weight:var(--font-weight-bold);content:counter(p-post-ol) '.';}.css-1k1kkv6 ul{padding-left:16px;}.css-1k1kkv6 ul>li{padding-left:24px;}.css-1k1kkv6 ul>li:before{width:16px;text-align:center;content:'•';}.css-1k1kkv6 figcaption{font-size:0.9em;color:var(--grey600);}.css-1k1kkv6 .wp-block-pullquote{margin:0;}.css-1k1kkv6 blockquote{padding:32px;background:var(--greyOpacity100);border-radius:12px;text-align:left;margin:16px 0 16px 0;}.css-1k1kkv6 blockquote p{color:#333d4b;font-weight:600;margin:0;}.css-1k1kkv6 blockquote cite{font-style:normal;}@media (max-width: 700px){.css-1k1kkv6 blockquote{padding:24px;}}.css-1k1kkv6 .wp-block-embed-youtube iframe{width:100%;border-radius:12px;}.css-1k1kkv6 ol{counter-reset:none;}.css-1k1kkv6 hr{border-top:1px solid #e5e8eb;border-right-style:none;border-left-style:none;border-bottom-style:none;margin:2.5rem 0;}.css-1k1kkv6 figure{display:table;text-align:center;}@media (max-width: 700px){.css-1k1kkv6 figure{width:100%;}}.css-1k1kkv6 figure img,.css-1k1kkv6 figure video{max-width:100%;height:auto;border:1px solid rgba(2,32,71,0.05);border-radius:12px;}.css-1k1kkv6 figure.alignright{float:right;margin:0 0 8px 24px;}@media (max-width: 700px){.css-1k1kkv6 figure.alignright{float:none;margin:0;}}.css-1k1kkv6 figcaption{display:table-caption;text-align:center;white-space:pre-wrap;caption-side:bottom;}.css-1k1kkv6 p:empty::before{content:'';}</style><div class="css-1k1kkv6 e132k2572"><div>
+<p>2020년 11월 <a href="https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/">TypeScript 4.1</a>이 출시되면서 “Template Literal Type”을 사용할 수 있게 되었습니다. TypeScript로 JSON Parser를 만들거나, <code>document.querySelector</code> 의 결과 타입을 추론할 수 있게 되어 화제가 되었는데요. 이번 아티클에서는 Template Literal Type이란 무엇인지, 이를 바탕으로 어떻게 그런 결과물을 만들 수 있었는지 간단히 예시로 소개드리고자 합니다.</p>
+
+
+
+<h2>Template Literal Type이란?</h2>
+
+
+
+<p>간단히 말해, Template Literal Type이란 기존 TypeScript의 String Literal Type을 기반으로 새로운 타입을 만드는 도구입니다. 구체적인 예시로 Template Literal Type에 대해 자세히 살펴보겠습니다.</p>
+
+
+
+<h3>예시 1: 가장 간단한 형태</h3>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"/><style>.wp-block-code {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-code > div {
+	overflow: auto;
+}
+
+.shcb-language {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+.hljs {
+	box-sizing: border-box;
+}
+
+.hljs.shcb-code-table {
+	display: table;
+	width: 100%;
+}
+
+.hljs.shcb-code-table > .shcb-loc {
+	color: inherit;
+	display: table-row;
+	width: 100%;
+}
+
+.hljs.shcb-code-table .shcb-loc > span {
+	display: table-cell;
+}
+
+.wp-block-code code.hljs:not(.shcb-wrap-lines) {
+	white-space: pre;
+}
+
+.wp-block-code code.hljs.shcb-wrap-lines {
+	white-space: pre-wrap;
+}
+
+.hljs.shcb-line-numbers {
+	border-spacing: 0;
+	counter-reset: line;
+}
+
+.hljs.shcb-line-numbers > .shcb-loc {
+	counter-increment: line;
+}
+
+.hljs.shcb-line-numbers .shcb-loc > span {
+	padding-left: 0.75em;
+}
+
+.hljs.shcb-line-numbers .shcb-loc::before {
+	border-right: 1px solid #ddd;
+	content: counter(line);
+	display: table-cell;
+	padding: 0 0.75em;
+	text-align: right;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: 1%;
+}
+</style><div><code class="hljs language-typescript"><span class="hljs-keyword">type</span> Toss = <span class="hljs-string">&#x27;toss&#x27;</span>;
+
+<span class="hljs-comment">// type TossPayments = &#x27;toss payments&#x27;;</span>
+<span class="hljs-keyword">type</span> TossPayments = <span class="hljs-string">`<span class="hljs-subst">${Toss}</span> payments`</span>;</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><a href="https://www.typescriptlang.org/play?#code/C4TwDgpgBAKg9gZwVAvFA5MRD0G4BQ+A9EVKJLNgAoCGIAthAHbDJqbZRh2Ms4Hlo8JLQbNWqKAAMAJAG9hCAL5ce4hFNxA">TypeScript Playground</a></p>
+
+
+
+<p>가장 간단한 형태로, 원래 있던 <code>&#x27;toss&#x27;</code> 라고 하는 타입을 바탕으로 <code>&#x27;toss payments&#x27;</code> 라고 하는 타입을 만드는 경우를 생각할 수 있습니다.</p>
+
+
+
+<p>TypeScript 4.1 이전에는 이런 문자열 작업이 불가능했지만, Template Literal Type을 이용함으로써 보다 넓은 타입 연산이 가능해졌습니다.</p>
+
+
+
+<p></p>
+
+
+
+<h3>예시 2: 하나의 Union Type</h3>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">type</span> Toss = <span class="hljs-string">&#x27;toss&#x27;</span>;
+<span class="hljs-keyword">type</span> Companies = <span class="hljs-string">&#x27;core&#x27;</span> | <span class="hljs-string">&#x27;bank&#x27;</span> | <span class="hljs-string">&#x27;securities&#x27;</span> | <span class="hljs-string">&#x27;payments&#x27;</span> | <span class="hljs-string">&#x27;insurance&#x27;</span>;
+
+<span class="hljs-comment">// type TossCompanies = &#x27;toss core&#x27; | &#x27;toss bank&#x27; | &#x27;toss securities&#x27; | ...;</span>
+<span class="hljs-keyword">type</span> TossCompanies = <span class="hljs-string">`<span class="hljs-subst">${Toss}</span> <span class="hljs-subst">${Companies}</span>`</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><a href="https://www.typescriptlang.org/play?#code/C4TwDgpgBAKg9gZwVAvFA5MRD0G4BQokUAwnALZgCGAdgJYTJroDGcAThOlAD4YBGtANbc+6BBBYBXdnWAMcvDNRDkINYIrF0aCGbRZcC+APQmoRaPCRlKtBagxYkUNp1FPsUQTRFLMXhLSsvKMHgB0kQSWsNi21PSMjgAGACQA3tYIAL5QGfH2jNnJQA">TypeScript Playground</a></p>
+
+
+
+<p>Template Literal Type을 Union type(합 타입)과 함께하면, 결과물도 Union Type이 됩니다.</p>
+
+
+
+<p>예를 들어, 위 예시에서 <code>&#x27;toss&#x27;</code> 타입과 <code>&#x27;core&#x27; | &#x27;bank&#x27; | &#x27;securities&#x27; | ...</code> 타입을 Template Literal Type으로 연결하면 <code>&#x27;toss core&#x27; | &#x27;toss bank&#x27; | &#x27;toss securities&#x27; | ...</code> 와 같이 확장되는 것을 확인할 수 있습니다.</p>
+
+
+
+<p></p>
+
+
+
+<h3>예시 3: 여러 개의 Union Type</h3>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">type</span> VerticalAlignment = <span class="hljs-string">&quot;top&quot;</span> | <span class="hljs-string">&quot;middle&quot;</span> | <span class="hljs-string">&quot;bottom&quot;</span>;
+<span class="hljs-keyword">type</span> HorizontalAlignment = <span class="hljs-string">&quot;left&quot;</span> | <span class="hljs-string">&quot;center&quot;</span> | <span class="hljs-string">&quot;right&quot;</span>;
+
+<span class="hljs-comment">// type Alignment =</span>
+<span class="hljs-comment">//   | &quot;top-left&quot;    | &quot;top-center&quot;    | &quot;top-right&quot;</span>
+<span class="hljs-comment">//   | &quot;middle-left&quot; | &quot;middle-center&quot; | &quot;middle-right&quot;</span>
+<span class="hljs-comment">//   | &quot;bottom-left&quot; | &quot;bottom-center&quot; | &quot;bottom-right&quot;</span>
+<span class="hljs-keyword">type</span> Alignment = <span class="hljs-string">`<span class="hljs-subst">${VerticalAlignment}</span>-<span class="hljs-subst">${HorizontalAlignment}</span>`</span>;</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><a href="https://www.typescriptlang.org/play?ts=4.1.0-dev.20200920#code/C4TwDgpgBAahBOwCWBjAhgGwIIaQcwDsBbCA4KAXigCJgB7MaqAHxqKQBMOMInXqARnWD0i1ANwAoUJCgAJOvCQAvOmUw58xUuSrUeAM2B8aKHQhPUleABbGpkgPSOoM6JsIkylJy6gsaejAAWkNjf39+IOCzMgsIgNoGYOs7al8I-nYuHlCII0ts7ggY83hCzmKU-DSMyJohEToiPILExtFSuPL24U7U42lwd1xPHUooAAMAEgBvOERUDVHtMgBfYLmFJVV1bBWvYDXJ8SA">TypeScript Playground</a></p>
+
+
+
+<p>여러 개의 Union Type을 연결할 수도 있습니다.</p>
+
+
+
+<p>예를 들어, 위에서는 <code>VerticalAlignment</code> 타입과 <code>HorizontalAlignment</code> 타입을 연결하여, <code>${VerticalAlignment}-${HorizontalAlignment}</code> 타입을 만들었습니다.</p>
+
+
+
+<p>원래라면 중복해서 Alignment 타입을 다시 정의해야 했겠지만, Template Literal Type을 사용함으로써 중복 없이 더욱 간결히 타입을 표현할 수 있게 되었습니다.</p>
+
+
+
+<p></p>
+
+
+
+<h3>예시 4: 반복되는 타입 정의 없애기</h3>
+
+
+
+<p><strong>문제 상황</strong></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// 이벤트 이름이 하나 추가될 때마다....</span>
+<span class="hljs-keyword">type</span> EventNames = <span class="hljs-string">&#x27;click&#x27;</span> | <span class="hljs-string">&#x27;doubleClick&#x27;</span> | <span class="hljs-string">&#x27;mouseDown&#x27;</span> | <span class="hljs-string">&#x27;mouseUp&#x27;</span>;
+
+<span class="hljs-keyword">type</span> MyElement = {
+    addEventListener(eventName: EventNames, handler: <span class="hljs-function">(<span class="hljs-params"><span class="hljs-params">e</span>: <span class="hljs-params">Event</span></span>) =&gt;</span> <span class="hljs-built_in">void</span>): <span class="hljs-built_in">void</span>;
+
+    <span class="hljs-comment">// onEvent() 도 하나씩 추가해줘야 한다</span>
+    onClick(e: Event): <span class="hljs-built_in">void</span>;
+    onDoubleClick(e: Event): <span class="hljs-built_in">void</span>;
+    onMouseDown(e: Event): <span class="hljs-built_in">void</span>;
+    onMouseUp(e: Event): <span class="hljs-built_in">void</span>;
+};</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>이벤트에 대한 핸들러를 등록할 때, <code>addEventListener(&#x27;event&#x27;, handler)</code> 와 <code>onEvent = handler</code> 의 두 가지 형식을 모두 사용할 수 있는 <code>MyElement</code> 타입을 생각해봅시다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// 두 가지 방법 모두 사용할 수 있는 경우</span>
+element.addEventListener(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> alert(<span class="hljs-string">&#x27;I am clicked!&#x27;</span>));
+element.onClick = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> alert(<span class="hljs-string">&#x27;I am clicked!&#x27;</span>);</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>예를 들어, <code>click</code> 이벤트를 구독할 때, 위의 두 가지 방법을 모두 사용할 수 있는 것입니다.</p>
+
+
+
+<p></p>
+
+
+
+<p>요소에 추가할 수 있는 이벤트의 종류는 자주 변경되고는 합니다. 예를 들어, 브라우저 API가 바뀌면서 <code>&#x27;pointerDown&#x27;</code> 과 같은 이벤트가 새로 추가될 수 있습니다.</p>
+
+
+
+<p>이런 경우, TypeScript 4.1 이전에는 매번 수동으로 여러 곳의 타입을 수정해야 했습니다. 우선 <code>addEventListener</code>의 인자로 사용되는 이벤트 이름 <code>EventNames</code> 타입에 <code>&#x27;pointerDown&#x27;</code> 을 넣어야 했습니다. 또 <code>onPointerDown</code> 메서드를 명시해야 했습니다. 잊지 않고 두 곳을 수정해야 했기 때문에, 실수하기 쉬웠습니다.</p>
+
+
+
+<p></p>
+
+
+
+<p>하지만 Template Literal Type을 이용하면 한 곳만 수정해도 모두에 반영되도록 할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">type</span> EventNames = <span class="hljs-string">&#x27;click&#x27;</span> | <span class="hljs-string">&#x27;doubleClick&#x27;</span> | <span class="hljs-string">&#x27;mouseDown&#x27;</span> | <span class="hljs-string">&#x27;mouseUp&#x27;</span>;
+
+<span class="hljs-comment">// CapitalizedEventNames = &#x27;Click&#x27; | &#x27;DoubleClick&#x27; | ...;</span>
+<span class="hljs-keyword">type</span> CapitalizedEventNames = Capitalize&lt;EventNames&gt;;
+
+<span class="hljs-comment">// type HandlerNames = &#x27;onClick&#x27; | &#x27;onDoubleClick&#x27; | &#x27;onMouseDown&#x27; | &#x27;onMouseUp&#x27;;</span>
+<span class="hljs-keyword">type</span> HandlerNames = <span class="hljs-string">`on<span class="hljs-subst">${CapitalizedEventNames}</span>`</span>;
+
+<span class="hljs-keyword">type</span> Handlers = {
+  [H <span class="hljs-keyword">in</span> HandlerNames]: <span class="hljs-function">(<span class="hljs-params"><span class="hljs-params">event</span>: <span class="hljs-params">Event</span></span>) =&gt;</span> <span class="hljs-built_in">void</span>;
+};
+
+<span class="hljs-comment">// 원래 MyElement 그대로 작동!</span>
+<span class="hljs-keyword">type</span> MyElement = Handlers &amp; {
+  addEventListener: <span class="hljs-function">(<span class="hljs-params"><span class="hljs-params">eventName</span>: <span class="hljs-params">EventNames</span>, <span class="hljs-params">handler</span>: (<span class="hljs-params">event</span>: <span class="hljs-params">Event</span></span>) =&gt;</span> <span class="hljs-built_in">void</span>) =&gt; <span class="hljs-built_in">void</span>;
+};</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>위 코드를 한번 자세히 살펴봅시다.</p>
+
+
+
+<ol><li><code>CapitalizedEventNames</code> 타입을 정의할 때, TypeScript 4.1에서 추가된 <code>Capitalize&lt;T&gt;</code> 타입을 이용하여 <code>EventNames</code>의 첫 글자를 대문자로 만들었습니다.</li><li><code>HandlerNames</code> 타입을 만들 때, Template Literal Type으로 <code>onClick</code> 과 같이 <code>on</code> 접두사를 붙였습니다.</li><li><code>Handlers</code> 타입에서는 기존의 <code>onClick</code>, <code>onMouseDown</code> 과 같은 이벤트 핸들러를 메서드로 가지도록 했고,</li><li>마지막으로 <code>MyElement</code> 에서는 <code>addEventListener</code> 메서드를 가지는 객체와 연결하여 원래와 동일한 동작을 하는 타입을 만들 수 있었습니다.</li></ol>
+
+
+
+<p>이제 <code>EventNames</code> 만 수정하면 <code>MyElement</code><span style="font-size:inherit;font-weight:inherit;line-height:inherit;color:inherit"> 에서 이벤트를 구독하는 양쪽 모두 대응이 되므로, 코드가 깔끔해지고 실수의 여지가 적어졌습니다. </span><span>✨</span></p>
+
+
+
+<p></p>
+
+
+
+<h2>Conditional Type과 더 강력한 추론하기</h2>
+
+
+
+<p>Template Literal Type은 Conditional Type과 함께 더욱 강력하게 사용할 수 있습니다.</p>
+
+
+
+<h3>Conditional Type 되짚어보기</h3>
+
+
+
+<p>Conditional Type은 JavaScript의 삼항 연산자와 비슷하게 분기를 수행하면서, 타입을 추론하는 방법인데요. 고급 TypeScript 사용에서 강력한 타입 연산을 하기 위해서 빠지지 않습니다.</p>
+
+
+
+<p>Template Literal Type을 더 잘 다루기 위해 반드시 필요한 개념이므로, 간단한 예시로 Conditional Type을 사용하는 방법에 대해 살펴보겠습니다.</p>
+
+
+
+<p></p>
+
+
+
+<p><strong>예시 1: 제네릭 타입 인자 꺼내오기</strong></p>
+
+
+
+<p>Conditional Type을 가장 자주 사용하는 경우로,  <code>Promise&lt;number&gt;</code>와 같은 타입에서 <code>number</code> 를 꺼내오고 싶은 상황을 생각해봅시다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">type</span> PromiseType&lt;T&gt; = T <span class="hljs-keyword">extends</span> <span class="hljs-built_in">Promise</span>&lt;infer U&gt; ? U : never;
+
+<span class="hljs-comment">// type A = number</span>
+<span class="hljs-keyword">type</span> A = PromiseType&lt;<span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">number</span>&gt;&gt;;
+
+<span class="hljs-comment">// type B = string | boolean</span>
+<span class="hljs-keyword">type</span> B = PromiseType&lt;<span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">string</span> | <span class="hljs-built_in">boolean</span>&gt;&gt;;
+
+<span class="hljs-comment">// type C = never</span>
+<span class="hljs-keyword">type</span> C = PromiseType&lt;<span class="hljs-built_in">number</span>&gt;;</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><a href="https://www.typescriptlang.org/play?ts=4.1.5#code/C4TwDgpgBACgTgewLYEsDOEAq4IB5MB8UAvFJlBAB7AQB2AJmrIqhrirQGYRxQCqRAPz8oALii0IANx4BuAFDyA9EqihIUAIIkJAVyQAjHvPXRtpeMnRYcuS6zy19RuAQKKVanFABCOtMBwHADmUAA+UAYICAA2EACGtCbefhYs1tiQdulsAUG0oRFRsQm0bh6qplAAwjqSMnDJGrVpVhiZjs48BEA">TypeScript Playground</a></p>
+
+
+
+<p>위 코드를 살펴보면, <code>PromiseType&lt;T&gt;</code> 타입에 <code>Promise&lt;number&gt;</code> 타입을 인자로 넘기면 <code>number</code> 타입을 얻고 있습니다.</p>
+
+
+
+<p>Conditional Type이 동작하는 방식을 간단히 알아봅시다.</p>
+
+
+
+<p>삼항 연산자처럼 생긴 부분 가운데 <code>X extends Y</code> 와 같이 생긴 조건 부분은 <code>X</code> 타입의 변수가 <code>Y</code> 타입에 할당될 수 있는지에 따라 참값이 평가됩니다.</p>
+
+
+
+<p><strong>예시:</strong></p>
+
+
+
+<ul><li><code>true extends boolean</code>: <code>true</code> 는 <code>boolean</code> 에 할당될 수 있으므로 참으로 평가됩니다.</li><li><code>&#x27;toss&#x27; extends string</code>: <code>&#x27;toss&#x27;</code> 는 <code>string</code> 에 할당될 수 있으므로 참으로 평가됩니다.</li><li><code>Array&lt;{ foo: string }&gt; extends Array&lt;unknown&gt;</code>: 마찬가지로 참으로 평가됩니다.</li><li><code>string extends number</code>: 문자열은 숫자 타입에 할당될 수 없으므로 거짓입니다.</li><li><code>boolean extends true</code>: <code>boolean</code> 타입 가운데 <code>false</code> 는 <code>true</code> 에 할당될 수 없으므로 거짓입니다.</li></ul>
+
+
+
+<p></p>
+
+
+
+<p>조건식이 참으로 평가될 때에는 <code>infer</code> 키워드를 사용할 수 있습니다. 예를 들어, <code>Promise&lt;number&gt; extends Promise&lt;infer U&gt;</code> 와 같은 타입을 작성하면, <code>U</code> 타입은 <code>number</code> 타입으로 추론됩니다. 이후 참인 경우에 대응되는 식에서 추론된 <code>U</code> 타입을 사용할 수 있습니다.</p>
+
+
+
+<p>예를 들어, <code>Promise&lt;number&gt; extends Promise&lt;infer U&gt; ? U : never</code> 에서는 조건식이 참이고 <code>U</code> 타입이 <code>number</code>로 추론되므로, 이를 평가한 타입의 결과는 <code>number</code> 가 됩니다.</p>
+
+
+
+<p>반대로 <code>number extends Promise&lt;infer U&gt; ? U : never</code> 에서는 조건식이 거짓이므로 이를 평가한 결과는 <code>never</code>가 됩니다.</p>
+
+
+
+<p></p>
+
+
+
+<p><strong>예시 2: Tuple 다루기</strong></p>
+
+
+
+<p><code>[string, number, boolean]</code> 과 같은 TypeScript의 <a href="https://www.typescriptlang.org/docs/handbook/2/objects.html#tuple-types">Tuple Type</a>에서 그 꼬리 부분인 <code>[number, boolean]</code> 과 같은 부분만 가져오고 싶은 상황을 생각해봅시다.</p>
+
+
+
+<p>Conditional Type과 <a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#variadic-tuple-types">Variadic Tuple Type</a>을 활용함으로써 이를 간단히 구현할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">type</span> TailOf&lt;T&gt; = T <span class="hljs-keyword">extends</span> [unknown, ...infer U] ? U : [];
+
+<span class="hljs-comment">// type A = [boolean, number];</span>
+<span class="hljs-keyword">type</span> A = TailOf&lt;[<span class="hljs-built_in">string</span>, <span class="hljs-built_in">boolean</span>, <span class="hljs-built_in">number</span>]&gt;;</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><a href="https://www.typescriptlang.org/play?ts=4.1.5#code/C4TwDgpgBAKghgSwDYHkBmAeGA+KBeWKCAD2AgDsATAZygG0BXcga3IHsB3cgGigDoBCcmggAnKAFUAulAD8kqAC56UgNwAodQHotUUJCgBBfPQBGbNkghweUcgwC2psWvX7oxgvGToMdasCiQgDmvOaW1rb2Ti7YQA">TypeScript Playground</a></p>
+
+
+
+<p>첫 요소를 제외하고 <code>...infer U</code> 구문을 이용하여 뒤의 요소들을 모두 선택한 것을 확인할 수 있습니다.</p>
+
+
+
+<p>이 외에 간단한 형태로 특정한 튜플이 비어 있는지 검사하기 위해서, 아래와 같은 <code>IsEmpty&lt;T&gt;</code> 타입을 정의할 수도 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">type</span> IsEmpty&lt;T <span class="hljs-keyword">extends</span> <span class="hljs-built_in">any</span>[]&gt; = T <span class="hljs-keyword">extends</span> [] ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>;
+
+<span class="hljs-comment">// type B = true</span>
+<span class="hljs-keyword">type</span> B = IsEmpty&lt;[]&gt;;
+
+<span class="hljs-comment">// type C = false</span>
+<span class="hljs-keyword">type</span> C = IsEmpty&lt;[<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>]&gt;;</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><a href="https://www.typescriptlang.org/play?ts=4.1.5#code/C4TwDgpgBAkgzgUQLZlAHgCpQgD2BAOwBM4oBDAkAbQF0A+KAXii132NNqgH4pgAnAK7QAXFABmZADZwIAbgBQCgPTK+4aACEmfIRAWhIUbc3jJUINLTpLV6owGEdkmfsPQnpxCnRUCgpAAjCH4AGig4AQBLAgBzeiA">TypeScript Playground</a></p>
+
+
+
+<p>Conditional Type에 대해 더 궁금하신 분은 <a href="https://www.typescriptlang.org/docs/handbook/2/conditional-types.html">TypeScript 공식 문서</a>를 참고하시기 바랍니다.</p>
+
+
+
+<p>이제 Conditional Type과 Template Literal Type을 함께 사용했을 때 어떤 결과를 얻을 수 있는지 살펴봅시다.</p>
+
+
+
+<p></p>
+
+
+
+<h3>초급 예시 1: 간단한 추론</h3>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">type</span> InOrOut&lt;T&gt; = T <span class="hljs-keyword">extends</span> <span class="hljs-string">`fade<span class="hljs-subst">${infer R}</span>`</span> ? R : never;
+
+<span class="hljs-comment">// type I = &quot;In&quot;</span>
+<span class="hljs-keyword">type</span> I = InOrOut&lt;<span class="hljs-string">&quot;fadeIn&quot;</span>&gt;;  
+<span class="hljs-comment">// type O = &quot;Out&quot;</span>
+<span class="hljs-keyword">type</span> O = InOrOut&lt;<span class="hljs-string">&quot;fadeOut&quot;</span>&gt;;</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>가장 간단한 예시로, <code>&#x27;fadeIn&#x27; | &#x27;fadeOut&#x27;</code> 과 같은 타입에서 앞의 <code>fade</code> 접두사를 버리고 <code>&#x27;In&#x27; | &#x27;Out&#x27;</code> 만 가져오고 싶은 상황을 생각해봅시다.</p>
+
+
+
+<p><code>Promise&lt;number&gt;</code> 에서 <code>number</code> 를 가져오는 것과 유사하게, Conditional Type을 이용하여 접두사를 제외할 수 있습니다.</p>
+
+
+
+<p></p>
+
+
+
+<h3>중급 예시 1: 문자열에서 공백 없애기</h3>
+
+
+
+<p>위의 예시를 응용하면 문자열의 공백을 없애는 타입을 정의할 수 있습니다. 예를 들어, 아래와 같이 오른쪽의 공백을 모두 제거한 타입을 만들 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// type T = &quot;Toss&quot;</span>
+<span class="hljs-keyword">type</span> T = TrimRight&lt;<span class="hljs-string">&quot;Toss      &quot;</span>&gt;;</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><code>TrimRight&lt;T&gt;</code> 타입은 재귀적 타입 선언을 활용합니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">type</span> TrimRight&lt;T <span class="hljs-keyword">extends</span> <span class="hljs-built_in">string</span>&gt; = 
+  T <span class="hljs-keyword">extends</span> <span class="hljs-string">`<span class="hljs-subst">${infer R}</span> `</span> 
+    ? TrimRight&lt;R&gt; 
+    : T;</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><a href="https://www.typescriptlang.org/play?ts=4.1.5#code/C4TwDgpgBAKgTgSwLYCUEHMAWwA8MoQAewEAdgCYDOUlwip6AfFALxQBQUsBxZVUAAwAkAbwSkAZhDhQUAX0EcuXAPyxEqDNhwpmnZQC5YAbnbsA9OaihI3NgCIYAe0qV77G9Hxt4yNFlxHF2plLntGIA">TypeScript Playground</a></p>
+
+
+
+<p>위 코드를 살펴보시면, <code>infer R</code> 문 뒤에 하나의 공백이 있는 것을 확인하실 수 있습니다.</p>
+
+
+
+<p>즉, <code>T</code> 타입의 오른쪽에 공백이 하나 있다면, 공백을 하나 빠뜨린 것을 <code>R</code> 타입으로 추론하고, 다시 <code>TrimRight&lt;R&gt;</code> 을 호출합니다.</p>
+
+
+
+<p>만약 공백이 더 이상 존재하지 않는다면, 원래 주어진 타입 그대로를 반환합니다.</p>
+
+
+
+<p>TypeScript에는 <code>if</code> 문이 존재하지 않지만, 만약 존재한다고 가정했을 때 아래와 같이 작성해볼 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">type</span> TrimRight&lt;T <span class="hljs-keyword">extends</span> <span class="hljs-built_in">string</span>&gt; =
+  <span class="hljs-keyword">if</span> (T <span class="hljs-keyword">extends</span> <span class="hljs-string">`<span class="hljs-subst">${infer R}</span> `</span>) {
+    <span class="hljs-keyword">return</span> TrimRight&lt;R&gt;;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> T;
+  }</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>보다 재귀적인 구조를 잘 확인할 수 있습니다.</p>
+
+
+
+<p></p>
+
+
+
+<h3>중급 예시 2: 점으로 연결된 문자열 Split하기</h3>
+
+
+
+<p>재귀적 타입 정의를 활용하면 <code>&#x27;foo.bar.baz&#x27;</code> 와 같은 타입을 <code>[&#x27;foo&#x27;, &#x27;bar&#x27;, &#x27;baz&#x27;]</code> 로 나누는 타입을 정의할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">type</span> Split&lt;S <span class="hljs-keyword">extends</span> <span class="hljs-built_in">string</span>&gt; = 
+  S <span class="hljs-keyword">extends</span> <span class="hljs-string">`<span class="hljs-subst">${infer T}</span>.<span class="hljs-subst">${infer U}</span>`</span> 
+    ? [T, ...Split&lt;U&gt;] 
+    : [S];
+
+<span class="hljs-comment">// type S = [&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;];</span>
+<span class="hljs-keyword">type</span> S = Split&lt;<span class="hljs-string">&quot;foo.bar.baz&quot;</span>&gt;;</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><a href="https://www.typescriptlang.org/play?ts=4.1.5&amp;ssl=1&amp;ssc=1&amp;pln=7&amp;pc=30#code/C4TwDgpgBAymA2BLYAeGUIA9gQHYBMBnKQ4AJ0VwHMA+KAXigCgpYNs8ioADAEgG9KAMwhkoAFQC+AOgHDRUAKqTuzVqwD8UANriANFGlG4SVIpoBdNeoBcOmBYDcTJgHpXUUJDaNtAIiEAe0C-Az8AIwBDMlCoCMiALz8nJi9odEYTZBQA4OkosnzEvxogA">TypeScript Playground</a></p>
+
+
+
+<p>주어진 <code>S</code> 타입에서 첫번째 점(<code>.</code>) 을 찾고, 그 앞 부분을 <code>T</code>, 뒷 부분을 <code>U</code> 로 추론합니다. 이후 이를 <code>[T, ...Split&lt;U&gt;]</code>와 같이 재귀적으로 하나씩 값을 이어 나가면서 원하는 결과 타입을 만들어 나갑니다.</p>
+
+
+
+<p>이 경우에도 <code>if</code> 문이 있다는 가정 하에 pseudo-code로 정리해볼 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">type</span> Split&lt;S <span class="hljs-keyword">extends</span> <span class="hljs-built_in">string</span>&gt; =
+  <span class="hljs-keyword">if</span> (S <span class="hljs-keyword">extends</span> <span class="hljs-string">`<span class="hljs-subst">${infer T}</span>.<span class="hljs-subst">${infer U}</span>`</span>) {
+    <span class="hljs-keyword">return</span> [T, ...Split&lt;infer U&gt;];
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> [S];
+  }</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p></p>
+
+
+
+<h3>고급 예시: lodash.set() 함수 타입 추론하기</h3>
+
+
+
+<p><code>lodash.set()</code>는 아래와 같이 문자열로 된 접근자를 이용하여 객체의 깊은 프로퍼티까지 수정할 수 있는 함수입니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> someObject = {
+  toss: {
+    core: {
+      client: {
+        platform: <span class="hljs-string">&quot;foo&quot;</span>
+      }
+    }
+  }
+};
+
+<span class="hljs-comment">// OK!</span>
+lodashSet(someObject, <span class="hljs-string">&quot;toss.core.client&quot;</span>, { platform: <span class="hljs-string">&#x27;bar&#x27;</span> });
+
+<span class="hljs-comment">// Error: &#x27;bar&#x27; is not assignable to type &#x27;{ platform: string }&#x27;;</span>
+lodashSet(someObject, <span class="hljs-string">&#x27;toss.core.client&#x27;</span>, <span class="hljs-string">&#x27;bar&#x27;</span>);</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Template Literal Type이 있기 전, 이런 함수는 타입 안전하게 사용할 수 없어 세 번째 인자를 <code>any</code> 로 규정해야 했습니다. 그러나 위에서 살펴본 타입 정의를 조합하면 <code>lodash.set()</code><span style="font-size:inherit;font-weight:inherit;line-height:inherit;color:inherit"> 를 더욱 안전하게 타이핑할 수 있습니다. </span><span>💯</span></p>
+
+
+
+<p><code>lodash.set()</code> 함수를 정확하게 타이핑하기 위해서는 아래의 <code>ValueOf&lt;T, P&gt;</code> 타입이 필요합니다. <code>ValueOf&lt;T, P&gt;</code> 타입은 객체 <code>T</code> 와 접근 경로 <code>P</code>가 주어졌을 때, <code>T</code> 를 <code>P</code> 경로로 순서대로 접근했을 때 결과로 나오는 타입을 나타냅니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Foo {
+  foo: {
+    bar: {
+      baz: <span class="hljs-built_in">string</span>;
+    }
+  }
+}
+
+<span class="hljs-comment">// type A = { bar: { baz: string } };</span>
+<span class="hljs-keyword">type</span> A = ValueOf&lt;Foo, [<span class="hljs-string">&#x27;foo&#x27;</span>]&gt;;
+
+<span class="hljs-comment">// type B = { baz: string };</span>
+<span class="hljs-keyword">type</span> B = ValueOf&lt;Foo, [<span class="hljs-string">&#x27;foo&#x27;</span>, <span class="hljs-string">&#x27;bar&#x27;</span>]&gt;;
+
+<span class="hljs-comment">// type C = string;</span>
+<span class="hljs-keyword">type</span> C = ValueOf&lt;Foo, [<span class="hljs-string">&#x27;foo&#x27;</span>, <span class="hljs-string">&#x27;bar&#x27;</span>, <span class="hljs-string">&#x27;baz&#x27;</span>]&gt;;</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>만약에 위와 같은 <code>ValueOf&lt;T, P&gt;</code> 이 있다면, 위에서 만들었던 <code>Split&lt;S&gt;</code> 과 조합하여 쉽게 lodash.set() 함수에 타입을 부여할 수 있을 것입니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">lodashSet</span>&lt;<span class="hljs-title">Type</span>, <span class="hljs-title">Path</span>&gt;(<span class="hljs-params">
+  obj: Type, 
+  path: Path, 
+  value: ValueOf&lt;Type, Split&lt;Path&gt;&gt;
+</span>): <span class="hljs-title">void</span></span>;</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>이제 <code>ValueOf&lt;T, P&gt;</code> 타입을 만들어봅시다. <code>if</code> 문과 내부 타입 선언이 있는 pseudo-code로 나타낸다면, 아래와 같이 코드를 작성할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">type</span> ValueOf&lt;Type, Paths&gt; =
+  <span class="hljs-keyword">type</span> Head = Paths[<span class="hljs-number">0</span>];
+  <span class="hljs-keyword">type</span> Tail = TailOf&lt;Paths&gt;;
+
+  <span class="hljs-keyword">if</span> (<span class="hljs-comment">/* Tail의 길이가 0이다 */</span>) {
+    <span class="hljs-keyword">return</span> Type[Head];
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> ValueOf&lt;Type[Head], Tail&gt;;
+  }</code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><code>ValueOf&lt;T, P&gt;</code> 타입이 그렇게 동작한다면, 위의 <code>Foo</code> 예시에서는 아래와 같이 차례대로 값이 계산될 것입니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript">ValueOf&lt;Foo, [<span class="hljs-string">&#x27;foo&#x27;</span>, <span class="hljs-string">&#x27;bar&#x27;</span>]&gt;
+== ValueOf&lt;Foo[<span class="hljs-string">&#x27;foo&#x27;</span>], [<span class="hljs-string">&#x27;bar&#x27;</span>]&gt;
+== ValueOf&lt;Foo[<span class="hljs-string">&#x27;foo&#x27;</span>][<span class="hljs-string">&#x27;bar&#x27;</span>], []&gt;
+== Foo[<span class="hljs-string">&#x27;foo&#x27;</span>][<span class="hljs-string">&#x27;bar&#x27;</span>]</code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p></p>
+
+
+
+<p>작성했던 의사 코드를 유효한 TypeScript 코드로 나타내면 다음과 같습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-21" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">type</span> ValueOf&lt;Type, Paths <span class="hljs-keyword">extends</span> <span class="hljs-built_in">any</span>[]&gt; = 
+  <span class="hljs-comment">/* 
+   * IsEmpty&lt;TailOf&lt;Paths&gt;&gt;가 참이면
+   * == TailOf&lt;Paths&gt;가 빈 Tuple이면
+   */</span>
+  IsEmpty&lt;TailOf&lt;Paths&gt;&gt; <span class="hljs-keyword">extends</span> <span class="hljs-literal">true</span>
+    ? Type[HeadOf&lt;Paths&gt;]
+    : ValueOf&lt;Type[HeadOf&lt;Paths&gt;], TailOf&lt;Paths&gt;&gt;;</code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>위 내용을 모두 조합하면 lodash.set()을 안전하게 다룰 수 있는데요. 실제로 동작하는 방식을 <a href="https://www.typescriptlang.org/play?ts=4.1.5#code/C4TwDgpgBAEhCGATA8gMwDwBUB8UC8UmUEAHsBAHaIDOU8FIA2gLpQD8hjADKwFxQUIANwgAnANwAoUJELwAlgBs0WXASKlyVWo3ogANFAB0J+RVRioAVVYcrUfiymSA9C6gzoAQXxRGAIwB7QMUECkMKAFcAW38xZilPKB91BWUMRmpgUTMAc0MgkLCImLjRZmxJaXBoAElqAFFosFAsYjJKGjoGFjVCdq0ulnYPUUjoflR4RWoIZySAZTBFeWB0BYHO2iycily+ySgoDc0tqAADABIAbzMLUUIAXyMbu8srR-OoQ6ORxkxDCYjEsVmsrNhWD8jo4FgkqkkAGrTcYqTA1QwABXgwAAFrRTtpukwKr4fvUmi0QFg0iosbjqNhcASutlxlCRmjIIw4Ehadi8RD2fwkYoURhORBuQgUBg6QLmIZMDTZfyGdhnGZyKIpgBjaAAMWCUGuP1QwX4Jt+UH88FEFvZRxtAC9+Ds8lIrY8fl6vZJEBAdYpbdBUJEKDrgPJAhQoIpAoh4NQcQsIGsJZj+ZtCW69tgABQ-QL+ABW-HT3yOYH5-Dlhh+QmREGFjdR6OOy1W6DljMkAEp+EJAvJEM4ddGslBqIFohBkCWA8BfJaPIFqNR7Vax6Im8aHVBA-JKMAN1bfstsWbRNF+AAiM2BG97r2e72SR7ONxQZAAaQAhJI4wTJMU2APMpxnOdiwXQwb2AVdqCMLcIEQlYjxvQxrigc9gEva8oAAchtUR8KgR5ew-dwGlEURAjtAiiJI+RaAoQJF0Tah5FyCh4H8UIVw8GoCMw7DcNdbI8lI-CpEAxNk1TMDp1necI0MfC4LXRDaOQg8j3w1SGPIqogA">TypeScript Playground</a><span style="font-size:inherit;font-weight:inherit;line-height:inherit;color:inherit">에서 확인해보실 수 있습니다. </span><span>😉</span></p>
+
+
+
+<p></p>
+
+
+
+<h2>Template Literal Type의 응용</h2>
+
+
+
+<p>위에서 살펴본 바와 같이, Template Literal Type을 Conditional Type과 사용하면 더욱 많은 코드를 안전하게 사용할 수 있습니다. <a href="https://github.com/ghoullier/awesome-template-literal-types">awesome-template-literal-types</a> 레포지토리에는 상상력을 자극하는 Template Literal Type의 사용 예시들이 모여 있습니다.</p>
+
+
+
+<p>대표적으로 화제가 되었던 예시들에 대한 링크를 남기고 글을 맺습니다.</p>
+
+
+
+<p></p>
+
+
+
+<p>1. <a href="https://twitter.com/buildsghost/status/1301976526603206657">TypeScript로 JSON 파서 만들기</a></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-22" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-comment">// type Json = { key1: [&#x27;value1&#x27;, null]; key2: &#x27;value2&#x27; };</span>
+<span class="hljs-keyword">type</span> Json = ParseJson&lt;<span class="hljs-string">&#x27;{ &quot;key1&quot;: [&quot;value1&quot;, null], &quot;key2&quot;: &quot;value2&quot; }&#x27;</span>&gt;;</code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>코드와 같이 JSON 문자열을 바로 TypeScript 타입으로 옮길 수 있다는 Proof-of-concept로 화제가 되었습니다.</p>
+
+
+
+<p></p>
+
+
+
+<p>2. <a href="https://twitter.com/MikeRyanDev/status/1308472279010025477">document.querySelector를 타입 안전하게 사용하기</a></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-23" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> a = querySelector(<span class="hljs-string">&#x27;div.banner &gt; a.call-to-action&#x27;</span>); <span class="hljs-comment">//-&gt; HTMLAnchorElement</span>
+<span class="hljs-keyword">const</span> b = querySelector(<span class="hljs-string">&#x27;input, div&#x27;</span>); <span class="hljs-comment">//-&gt; HTMLInputElement | HTMLDivElement </span>
+<span class="hljs-keyword">const</span> c = querySelector(<span class="hljs-string">&#x27;circle[cx=&quot;150&quot;]&#x27;</span>) <span class="hljs-comment">//-&gt; SVGCircleElement</span>
+<span class="hljs-keyword">const</span> d = querySelector(<span class="hljs-string">&#x27;button#buy-now&#x27;</span>); <span class="hljs-comment">//-&gt; HTMLButtonElement</span>
+<span class="hljs-keyword">const</span> e = querySelector(<span class="hljs-string">&#x27;section p:first-of-type&#x27;</span>); <span class="hljs-comment">//-&gt; HTMLParagraphElement</span></code></div><small class="shcb-language" id="shcb-language-23"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>a 태그를 선택했을 때 결괏값이 <code>HTMLAnchorElement</code>가 되는 것을 확인하실 수 있습니다.</p>
+
+
+
+<p></p>
+
+
+
+<p>3. <a href="https://twitter.com/danvdk/status/1301707026507198464">Express의 Route Parameter로부터 타입 추론하기</a></p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="880" height="226" src="https://wp.toss.tech/wp-content/uploads/2021/05/Untitled-1.png" alt="" class="wp-image-42" srcSet="https://toss.tech/wp-content/uploads/2021/05/Untitled-1.png 880w, https://toss.tech/wp-content/uploads/2021/05/Untitled-1-300x77.png 300w, https://toss.tech/wp-content/uploads/2021/05/Untitled-1-768x197.png 768w" sizes="(max-width: 880px) 100vw, 880px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<p>Express에서 사용하는 경로 문자열에서 Route Parameter의 타입을 추론할 수 있습니다.</p>
+</div></div><style data-emotion="css auig7l">.css-auig7l{margin-top:96px;}</style><style data-emotion="css x7fajo">.css-x7fajo{margin-top:96px;}.css-x7fajo>*:not(style)~*:not(style){margin-left:24px;}</style><style data-emotion="css 6rfvv8">.css-6rfvv8{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;margin-top:96px;}.css-6rfvv8>*:not(style)~*:not(style){margin-left:24px;}</style><div class="css-6rfvv8"><style data-emotion="css 1n0u3h">.css-1n0u3h{background-color:#f9fafb;width:100%;height:auto;border-radius:12px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:48px;}@media (max-width: 700px){.css-1n0u3h{padding:32px;}}</style><div class="css-1n0u3h e1t1xt3a7"><style data-emotion="css 6cc9f0">.css-6cc9f0{font-size:24px;font-weight:700;margin-bottom:16px;color:#4e5968;}</style><h2 class="css-6cc9f0 e1t1xt3a6">재미있게 읽으셨나요?</h2><style data-emotion="css 1wmgpcn">.css-1wmgpcn{font-size:16px;line-height:1.5;font-weight:600;color:#6b7684;margin-bottom:4px;}</style><p class="css-1wmgpcn e1t1xt3a5">좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.</p><style data-emotion="css 4qu8li">.css-4qu8li{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:16px;}</style><div class="css-4qu8li e1t1xt3a3"><style data-emotion="css 1fmr5ax">.css-1fmr5ax{display:block;font-family:'tossface';font-size:40px;cursor:pointer;margin:0 12px;-webkit-transition:0.15s ease-in-out all;transition:0.15s ease-in-out all;}.css-1fmr5ax a{-webkit-text-decoration:none;text-decoration:none;}.css-1fmr5ax:hover{-webkit-transform:scale(1.2);-moz-transform:scale(1.2);-ms-transform:scale(1.2);transform:scale(1.2);}</style><div class="css-1fmr5ax e1t1xt3a1">😍</div><div class="css-1fmr5ax e1t1xt3a1">🤔</div></div><style data-emotion="css 1p3zmjw">.css-1p3zmjw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;margin-top:16px;}.css-1p3zmjw button,.css-1p3zmjw a{margin:0 12px;}@media (max-width: 700px){.css-1p3zmjw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;}.css-1p3zmjw button,.css-1p3zmjw a{width:100%;margin:8px 0;}}</style><div class="css-1p3zmjw e1t1xt3a0"><style data-emotion="css 1u8jkqx">.css-1u8jkqx{display:grid;grid-template-columns:min-content auto;grid-column-gap:8px;}</style><button class="p-button p-button--primary p-button--inline p-button--weak p-button--default p-button--has-icon padding--base css-1u8jkqx" type="button" aria-disabled="false"><span class="icon p-icon icon--colored p-icon--colored" aria-hidden="true" role="presentation" style="height:16px;width:16px;min-width:16px;color:#3182f6"></span>아티클 공유하기</button></div></div></div></article><style data-emotion="css 1lsuzal">.css-1lsuzal{margin-top:100px;}.css-1lsuzal::before{content:'';position:absolute;width:100%;height:1px;left:0;border-bottom:1px solid #e5e8eb;}</style><div class="css-1lsuzal e132k2571"><style data-emotion="css 1ympfnp">.css-1ympfnp{display:inline-block;width:100%;font-size:20px;margin:34px 0 40px 0;}</style><span class="typography typography--h3 typography--bold color--grey800 css-1ympfnp e132k2570">이어지는 글</span><style data-emotion="css vivlm7">.css-vivlm7{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer;margin-bottom:40px;}.css-vivlm7:last-of-type{margin-bottom:0px;}.css-vivlm7:hover .egyklng4{color:#3182f6;}</style><div class="css-vivlm7 egyklng3"><style data-emotion="css bc0lqn">.css-bc0lqn{width:80px;height:80px;margin-right:20px;border-radius:12px;object-fit:cover;}@media (max-width: 700px){.css-bc0lqn{width:64px;height:64px;}}</style><img srcSet="https://toss.tech/wp-content/uploads/2023/04/00009-889461687-300x300.png 300w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687-150x150.png 150w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687.png 512w" class="css-bc0lqn egyklng2"/><style data-emotion="css 1fttcpj">.css-1fttcpj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}</style><div class="css-1fttcpj egyklng1"><style data-emotion="css p4blj2">.css-p4blj2{font-size:24px;margin-bottom:4px;word-break:keep-all;line-height:1.4;overflow-wrap:break-word;-webkit-transition:color 0.3s ease;transition:color 0.3s ease;-webkit-line-clamp:2;display:block;}@media (max-width: 700px){.css-p4blj2{font-size:18px;-webkit-line-clamp:2;}}</style><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">무지성으로 사용한 헬스 체크가 불러일으킬 수 있는 참사</span><style data-emotion="css 1jxhn1e">.css-1jxhn1e{color:#8b95a1;}</style><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 04. 01</span></div></div><div class="css-vivlm7 egyklng3"><img srcSet="https://toss.tech/wp-content/uploads/2023/03/center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/center.png 1200w" class="css-bc0lqn egyklng2"/><div class="css-1fttcpj egyklng1"><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">ESLint와 AST로 코드 퀄리티 높이기</span><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 03. 31</span></div></div></div></div></div><style data-emotion="css 1d2vuhc">.css-1d2vuhc{padding:60px 24px;word-break:keep-all;overflow-wrap:break-word;background:rgba(2,9,19,0.91);}@media (max-width: 700px){.css-1d2vuhc{padding-top:24px;}}</style><section class="css-1d2vuhc eqrolup4"><style data-emotion="css yf0lpd">.css-yf0lpd{display:grid;grid-template-columns:3fr 7fr;grid-column-gap:20px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:640px;margin:0 auto;content-visibility:auto;}@media (max-width: 700px){.css-yf0lpd{grid-template-rows:min-content auto;grid-template-columns:1fr;grid-row-gap:24px;}}</style><div class="css-yf0lpd eqrolup2"><style data-emotion="css 1d33yk5">.css-1d33yk5{width:100%;}@media (max-width: 700px){.css-1d33yk5{width:90px;}}</style><img src="https://static.toss.im/3d/website_code_blue_alpha.png" alt="" class="css-1d33yk5 eqrolup3"/><style data-emotion="css 1gb2pj4">.css-1gb2pj4>*:not(style)~*:not(style){margin-top:24px;}</style><style data-emotion="css 7xmgw5">.css-7xmgw5{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-7xmgw5>*:not(style)~*:not(style){margin-top:24px;}</style><div class="css-7xmgw5"><style data-emotion="css 1pbuvpm">.css-1pbuvpm>*:not(style)~*:not(style){margin-top:8px;}</style><style data-emotion="css nbpfuv">.css-nbpfuv{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-nbpfuv>*:not(style)~*:not(style){margin-top:8px;}</style><div class="css-nbpfuv"><style data-emotion="css 19gu4b8">.css-19gu4b8{margin:0;font-size:26px;line-height:1.4;color:#ffffff;}@media (max-width: 700px){.css-19gu4b8{font-size:20px;}}</style><h3 class="css-19gu4b8 eqrolup1">토스팀이 만드는 수많은 혁신의 순간들</h3><style data-emotion="css shfxsq">.css-shfxsq{font-size:17px;line-height:1.5;color:#e5e8eb;}@media (max-width: 700px){.css-shfxsq{font-size:16px;}}</style><div class="css-shfxsq eqrolup0">당신과 함께 만들고 싶습니다.<br/>지금, 토스팀에 합류하세요.</div></div><a class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s" aria-disabled="false" href="https://toss.im/career/jobs?gh_src=38b73b7a3us">채용 중인 공고 보기</a></div></div></section><footer class="p-footer p-footer--light"><div class="p-footer__inner"><div class="p-footer__site-group-list"><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스테크</div></li><li class="p-footer__site-group-item"><a href="mailto:techblog@toss.im">의견 보내기</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스</div></li><li class="p-footer__site-group-item"><a href="https://toss.im">홈페이지</a></li><li class="p-footer__site-group-item"><a href="https://team.toss.im">회사 소개</a></li><li class="p-footer__site-group-item"><a href="https://toss.im/career">채용</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">고객센터</div></li><li class="p-footer__site-group-item"><a href="tel:1599-4905">전화: 1599-4905 (24시간 연중무휴)</a></li><li class="p-footer__site-group-item"><a href="mailto:support.toss.im">이메일: support@toss.im</a></li><li class="p-footer__site-group-item"><a href="https://goto.kakao.com/@toss">카카오톡: @toss</a></li></ul></div><address class="p-footer__address"><strong class="p-footer__address__company-name">㈜비바리퍼블리카</strong>Copyright © Viva Republica, Inc. All Rights Reserved.</address><ul class="p-footer__term-wrapper"></ul><ul class="p-footer__social-list"><li class="p-footer__social-list-item"><a aria-label="Toss Facebook" target="_blank" href="https://www.facebook.com/toss.revolution"><img src="https://static.toss.im/assets/homepage/safety/icn-facebook.svg" alt="Toss Facebook"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss blog" target="_blank" href="https://blog.toss.im"><img src="https://static.toss.im/assets/homepage/safety/icn-blog.svg" alt="Toss blog"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Naver Post" target="_blank" href="https://post.naver.com/tossblog"><img src="https://static.toss.im/assets/homepage/safety/icn-naver.svg" alt="Toss Naver Post"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Twitter" target="_blank" href="https://twitter.com/toss__official"><img src="https://static.toss.im/assets/homepage/safety/icn-twitter.svg" alt="Toss Twitter"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Instagram" target="_blank" href="https://www.instagram.com/toss.im/"><img src="https://static.toss.im/assets/homepage/safety/icn-instagram.svg" alt="Toss Instagram"/></a></li></ul></div></footer><div id="tds-pc__portal-container"></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"article":{"title":"Template Literal Types로 타입 안전하게 코딩하기","content":"\n\u003cp\u003e2020년 11월\u0026nbsp;\u003ca href=\"https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/\"\u003eTypeScript 4.1\u003c/a\u003e이 출시되면서 \u0026#8220;Template Literal Type\u0026#8221;을 사용할 수 있게 되었습니다. TypeScript로 JSON Parser를 만들거나,\u0026nbsp;\u003ccode\u003edocument.querySelector\u003c/code\u003e\u0026nbsp;의 결과 타입을 추론할 수 있게 되어 화제가 되었는데요. 이번 아티클에서는 Template Literal Type이란 무엇인지, 이를 바탕으로 어떻게 그런 결과물을 만들 수 있었는지 간단히 예시로 소개드리고자 합니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003eTemplate Literal Type이란?\u003c/h2\u003e\n\n\n\n\u003cp\u003e간단히 말해, Template Literal Type이란 기존 TypeScript의 String Literal Type을 기반으로 새로운 타입을 만드는 도구입니다. 구체적인 예시로 Template Literal Type에 대해 자세히 살펴보겠습니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e예시 1: 가장 간단한 형태\u003c/h3\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-1\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003clink rel='stylesheet' id='syntax-highlighting-code-block-css'  href='https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1' media='all' /\u003e\u003cstyle\u003e.wp-block-code {\n\tborder: 0;\n\tpadding: 0;\n}\n\n.wp-block-code \u003e div {\n\toverflow: auto;\n}\n\n.shcb-language {\n\tborder: 0;\n\tclip: rect(1px, 1px, 1px, 1px);\n\t-webkit-clip-path: inset(50%);\n\tclip-path: inset(50%);\n\theight: 1px;\n\tmargin: -1px;\n\toverflow: hidden;\n\tpadding: 0;\n\tposition: absolute;\n\twidth: 1px;\n\tword-wrap: normal;\n\tword-break: normal;\n}\n\n.hljs {\n\tbox-sizing: border-box;\n}\n\n.hljs.shcb-code-table {\n\tdisplay: table;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table \u003e .shcb-loc {\n\tcolor: inherit;\n\tdisplay: table-row;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table .shcb-loc \u003e span {\n\tdisplay: table-cell;\n}\n\n.wp-block-code code.hljs:not(.shcb-wrap-lines) {\n\twhite-space: pre;\n}\n\n.wp-block-code code.hljs.shcb-wrap-lines {\n\twhite-space: pre-wrap;\n}\n\n.hljs.shcb-line-numbers {\n\tborder-spacing: 0;\n\tcounter-reset: line;\n}\n\n.hljs.shcb-line-numbers \u003e .shcb-loc {\n\tcounter-increment: line;\n}\n\n.hljs.shcb-line-numbers .shcb-loc \u003e span {\n\tpadding-left: 0.75em;\n}\n\n.hljs.shcb-line-numbers .shcb-loc::before {\n\tborder-right: 1px solid #ddd;\n\tcontent: counter(line);\n\tdisplay: table-cell;\n\tpadding: 0 0.75em;\n\ttext-align: right;\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\tuser-select: none;\n\twhite-space: nowrap;\n\twidth: 1%;\n}\n\u003c/style\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e Toss = \u003cspan class=\"hljs-string\"\u003e'toss'\u003c/span\u003e;\n\n\u003cspan class=\"hljs-comment\"\u003e// type TossPayments = 'toss payments';\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e TossPayments = \u003cspan class=\"hljs-string\"\u003e`\u003cspan class=\"hljs-subst\"\u003e${Toss}\u003c/span\u003e payments`\u003c/span\u003e;\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-1\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ca href=\"https://www.typescriptlang.org/play?#code/C4TwDgpgBAKg9gZwVAvFA5MRD0G4BQ+A9EVKJLNgAoCGIAthAHbDJqbZRh2Ms4Hlo8JLQbNWqKAAMAJAG9hCAL5ce4hFNxA\"\u003eTypeScript Playground\u003c/a\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e가장 간단한 형태로, 원래 있던\u0026nbsp;\u003ccode\u003e'toss'\u003c/code\u003e\u0026nbsp;라고 하는 타입을 바탕으로\u0026nbsp;\u003ccode\u003e'toss payments'\u003c/code\u003e\u0026nbsp;라고 하는 타입을 만드는 경우를 생각할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003eTypeScript 4.1 이전에는 이런 문자열 작업이 불가능했지만, Template Literal Type을 이용함으로써 보다 넓은 타입 연산이 가능해졌습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e예시 2: 하나의 Union Type\u003c/h3\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-2\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e Toss = \u003cspan class=\"hljs-string\"\u003e'toss'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e Companies = \u003cspan class=\"hljs-string\"\u003e'core'\u003c/span\u003e | \u003cspan class=\"hljs-string\"\u003e'bank'\u003c/span\u003e | \u003cspan class=\"hljs-string\"\u003e'securities'\u003c/span\u003e | \u003cspan class=\"hljs-string\"\u003e'payments'\u003c/span\u003e | \u003cspan class=\"hljs-string\"\u003e'insurance'\u003c/span\u003e;\n\n\u003cspan class=\"hljs-comment\"\u003e// type TossCompanies = 'toss core' | 'toss bank' | 'toss securities' | ...;\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e TossCompanies = \u003cspan class=\"hljs-string\"\u003e`\u003cspan class=\"hljs-subst\"\u003e${Toss}\u003c/span\u003e \u003cspan class=\"hljs-subst\"\u003e${Companies}\u003c/span\u003e`\u003c/span\u003e\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-2\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ca href=\"https://www.typescriptlang.org/play?#code/C4TwDgpgBAKg9gZwVAvFA5MRD0G4BQokUAwnALZgCGAdgJYTJroDGcAThOlAD4YBGtANbc+6BBBYBXdnWAMcvDNRDkINYIrF0aCGbRZcC+APQmoRaPCRlKtBagxYkUNp1FPsUQTRFLMXhLSsvKMHgB0kQSWsNi21PSMjgAGACQA3tYIAL5QGfH2jNnJQA\"\u003eTypeScript Playground\u003c/a\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003eTemplate Literal Type을 Union type(합 타입)과 함께하면, 결과물도 Union Type이 됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e예를 들어, 위 예시에서\u0026nbsp;\u003ccode\u003e'toss'\u003c/code\u003e\u0026nbsp;타입과\u0026nbsp;\u003ccode\u003e'core' | 'bank' | 'securities' | ...\u003c/code\u003e\u0026nbsp;타입을 Template Literal Type으로 연결하면\u0026nbsp;\u003ccode\u003e'toss core' | 'toss bank' | 'toss securities' | ...\u003c/code\u003e\u0026nbsp;와 같이 확장되는 것을 확인할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e예시 3: 여러 개의 Union Type\u003c/h3\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-3\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e VerticalAlignment = \u003cspan class=\"hljs-string\"\u003e\"top\"\u003c/span\u003e | \u003cspan class=\"hljs-string\"\u003e\"middle\"\u003c/span\u003e | \u003cspan class=\"hljs-string\"\u003e\"bottom\"\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e HorizontalAlignment = \u003cspan class=\"hljs-string\"\u003e\"left\"\u003c/span\u003e | \u003cspan class=\"hljs-string\"\u003e\"center\"\u003c/span\u003e | \u003cspan class=\"hljs-string\"\u003e\"right\"\u003c/span\u003e;\n\n\u003cspan class=\"hljs-comment\"\u003e// type Alignment =\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e//   | \"top-left\"    | \"top-center\"    | \"top-right\"\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e//   | \"middle-left\" | \"middle-center\" | \"middle-right\"\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e//   | \"bottom-left\" | \"bottom-center\" | \"bottom-right\"\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e Alignment = \u003cspan class=\"hljs-string\"\u003e`\u003cspan class=\"hljs-subst\"\u003e${VerticalAlignment}\u003c/span\u003e-\u003cspan class=\"hljs-subst\"\u003e${HorizontalAlignment}\u003c/span\u003e`\u003c/span\u003e;\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-3\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ca href=\"https://www.typescriptlang.org/play?ts=4.1.0-dev.20200920#code/C4TwDgpgBAahBOwCWBjAhgGwIIaQcwDsBbCA4KAXigCJgB7MaqAHxqKQBMOMInXqARnWD0i1ANwAoUJCgAJOvCQAvOmUw58xUuSrUeAM2B8aKHQhPUleABbGpkgPSOoM6JsIkylJy6gsaejAAWkNjf39+IOCzMgsIgNoGYOs7al8I-nYuHlCII0ts7ggY83hCzmKU-DSMyJohEToiPILExtFSuPL24U7U42lwd1xPHUooAAMAEgBvOERUDVHtMgBfYLmFJVV1bBWvYDXJ8SA\"\u003eTypeScript Playground\u003c/a\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e여러 개의 Union Type을 연결할 수도 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e예를 들어, 위에서는\u0026nbsp;\u003ccode\u003eVerticalAlignment\u003c/code\u003e\u0026nbsp;타입과\u0026nbsp;\u003ccode\u003eHorizontalAlignment\u003c/code\u003e\u0026nbsp;타입을 연결하여,\u0026nbsp;\u003ccode\u003e${VerticalAlignment}-${HorizontalAlignment}\u003c/code\u003e\u0026nbsp;타입을 만들었습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e원래라면 중복해서 Alignment 타입을 다시 정의해야 했겠지만, Template Literal Type을 사용함으로써 중복 없이 더욱 간결히 타입을 표현할 수 있게 되었습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e예시 4: 반복되는 타입 정의 없애기\u003c/h3\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003e문제 상황\u003c/strong\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-4\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-comment\"\u003e// 이벤트 이름이 하나 추가될 때마다....\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e EventNames = \u003cspan class=\"hljs-string\"\u003e'click'\u003c/span\u003e | \u003cspan class=\"hljs-string\"\u003e'doubleClick'\u003c/span\u003e | \u003cspan class=\"hljs-string\"\u003e'mouseDown'\u003c/span\u003e | \u003cspan class=\"hljs-string\"\u003e'mouseUp'\u003c/span\u003e;\n\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e MyElement = {\n    addEventListener(eventName: EventNames, handler: \u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003e\u003cspan class=\"hljs-params\"\u003ee\u003c/span\u003e: \u003cspan class=\"hljs-params\"\u003eEvent\u003c/span\u003e\u003c/span\u003e) =\u0026gt;\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003evoid\u003c/span\u003e): \u003cspan class=\"hljs-built_in\"\u003evoid\u003c/span\u003e;\n\n    \u003cspan class=\"hljs-comment\"\u003e// onEvent() 도 하나씩 추가해줘야 한다\u003c/span\u003e\n    onClick(e: Event): \u003cspan class=\"hljs-built_in\"\u003evoid\u003c/span\u003e;\n    onDoubleClick(e: Event): \u003cspan class=\"hljs-built_in\"\u003evoid\u003c/span\u003e;\n    onMouseDown(e: Event): \u003cspan class=\"hljs-built_in\"\u003evoid\u003c/span\u003e;\n    onMouseUp(e: Event): \u003cspan class=\"hljs-built_in\"\u003evoid\u003c/span\u003e;\n};\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-4\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e이벤트에 대한 핸들러를 등록할 때,\u0026nbsp;\u003ccode\u003eaddEventListener('event', handler)\u003c/code\u003e\u0026nbsp;와\u0026nbsp;\u003ccode\u003eonEvent = handler\u003c/code\u003e\u0026nbsp;의 두 가지 형식을 모두 사용할 수 있는\u0026nbsp;\u003ccode\u003eMyElement\u003c/code\u003e\u0026nbsp;타입을 생각해봅시다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-5\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-comment\"\u003e// 두 가지 방법 모두 사용할 수 있는 경우\u003c/span\u003e\nelement.addEventListener(\u003cspan class=\"hljs-string\"\u003e'click'\u003c/span\u003e, \u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-params\"\u003e()\u003c/span\u003e =\u0026gt;\u003c/span\u003e alert(\u003cspan class=\"hljs-string\"\u003e'I am clicked!'\u003c/span\u003e));\nelement.onClick = \u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-params\"\u003e()\u003c/span\u003e =\u0026gt;\u003c/span\u003e alert(\u003cspan class=\"hljs-string\"\u003e'I am clicked!'\u003c/span\u003e);\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-5\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e예를 들어,\u0026nbsp;\u003ccode\u003eclick\u003c/code\u003e\u0026nbsp;이벤트를 구독할 때, 위의 두 가지 방법을 모두 사용할 수 있는 것입니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e요소에 추가할 수 있는 이벤트의 종류는 자주 변경되고는 합니다. 예를 들어, 브라우저 API가 바뀌면서\u0026nbsp;\u003ccode\u003e'pointerDown'\u003c/code\u003e\u0026nbsp;과 같은 이벤트가 새로 추가될 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이런 경우, TypeScript 4.1 이전에는 매번 수동으로 여러 곳의 타입을 수정해야 했습니다. 우선\u0026nbsp;\u003ccode\u003eaddEventListener\u003c/code\u003e의 인자로 사용되는 이벤트 이름\u0026nbsp;\u003ccode\u003eEventNames\u003c/code\u003e\u0026nbsp;타입에\u0026nbsp;\u003ccode\u003e'pointerDown'\u003c/code\u003e\u0026nbsp;을 넣어야 했습니다. 또\u0026nbsp;\u003ccode\u003eonPointerDown\u003c/code\u003e\u0026nbsp;메서드를 명시해야 했습니다. 잊지 않고 두 곳을 수정해야 했기 때문에, 실수하기 쉬웠습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e하지만 Template Literal Type을 이용하면 한 곳만 수정해도 모두에 반영되도록 할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-6\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e EventNames = \u003cspan class=\"hljs-string\"\u003e'click'\u003c/span\u003e | \u003cspan class=\"hljs-string\"\u003e'doubleClick'\u003c/span\u003e | \u003cspan class=\"hljs-string\"\u003e'mouseDown'\u003c/span\u003e | \u003cspan class=\"hljs-string\"\u003e'mouseUp'\u003c/span\u003e;\n\n\u003cspan class=\"hljs-comment\"\u003e// CapitalizedEventNames = 'Click' | 'DoubleClick' | ...;\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e CapitalizedEventNames = Capitalize\u0026lt;EventNames\u0026gt;;\n\n\u003cspan class=\"hljs-comment\"\u003e// type HandlerNames = 'onClick' | 'onDoubleClick' | 'onMouseDown' | 'onMouseUp';\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e HandlerNames = \u003cspan class=\"hljs-string\"\u003e`on\u003cspan class=\"hljs-subst\"\u003e${CapitalizedEventNames}\u003c/span\u003e`\u003c/span\u003e;\n\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e Handlers = {\n  [H \u003cspan class=\"hljs-keyword\"\u003ein\u003c/span\u003e HandlerNames]: \u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003e\u003cspan class=\"hljs-params\"\u003eevent\u003c/span\u003e: \u003cspan class=\"hljs-params\"\u003eEvent\u003c/span\u003e\u003c/span\u003e) =\u0026gt;\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003evoid\u003c/span\u003e;\n};\n\n\u003cspan class=\"hljs-comment\"\u003e// 원래 MyElement 그대로 작동!\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e MyElement = Handlers \u0026amp; {\n  addEventListener: \u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003e\u003cspan class=\"hljs-params\"\u003eeventName\u003c/span\u003e: \u003cspan class=\"hljs-params\"\u003eEventNames\u003c/span\u003e, \u003cspan class=\"hljs-params\"\u003ehandler\u003c/span\u003e: (\u003cspan class=\"hljs-params\"\u003eevent\u003c/span\u003e: \u003cspan class=\"hljs-params\"\u003eEvent\u003c/span\u003e\u003c/span\u003e) =\u0026gt;\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003evoid\u003c/span\u003e) =\u0026gt; \u003cspan class=\"hljs-built_in\"\u003evoid\u003c/span\u003e;\n};\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-6\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e위 코드를 한번 자세히 살펴봅시다.\u003c/p\u003e\n\n\n\n\u003col\u003e\u003cli\u003e\u003ccode\u003eCapitalizedEventNames\u003c/code\u003e 타입을 정의할 때, TypeScript 4.1에서 추가된\u0026nbsp;\u003ccode\u003eCapitalize\u0026lt;T\u0026gt;\u003c/code\u003e\u0026nbsp;타입을 이용하여\u0026nbsp;\u003ccode\u003eEventNames\u003c/code\u003e의 첫 글자를 대문자로 만들었습니다.\u003c/li\u003e\u003cli\u003e\u003ccode\u003eHandlerNames\u003c/code\u003e\u0026nbsp;타입을 만들 때, Template Literal Type으로 \u003ccode\u003eonClick\u003c/code\u003e 과 같이\u0026nbsp;\u003ccode\u003eon\u003c/code\u003e\u0026nbsp;접두사를 붙였습니다.\u003c/li\u003e\u003cli\u003e\u003ccode\u003eHandlers\u003c/code\u003e\u0026nbsp;타입에서는 기존의\u0026nbsp;\u003ccode\u003eonClick\u003c/code\u003e,\u0026nbsp;\u003ccode\u003eonMouseDown\u003c/code\u003e\u0026nbsp;과 같은 이벤트 핸들러를 메서드로 가지도록 했고,\u003c/li\u003e\u003cli\u003e마지막으로 \u003ccode\u003eMyElement\u003c/code\u003e\u0026nbsp;에서는\u0026nbsp;\u003ccode\u003eaddEventListener\u003c/code\u003e\u0026nbsp;메서드를 가지는 객체와 연결하여 원래와 동일한 동작을 하는 타입을 만들 수 있었습니다.\u003c/li\u003e\u003c/ol\u003e\n\n\n\n\u003cp\u003e이제\u0026nbsp;\u003ccode\u003eEventNames\u003c/code\u003e\u0026nbsp;만 수정하면\u0026nbsp;\u003ccode\u003eMyElement\u003c/code\u003e\u0026nbsp;에서 이벤트를 구독하는 양쪽 모두 대응이 되므로, 코드가 깔끔해지고 실수의 여지가 적어졌습니다. ✨\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch2\u003eConditional Type과 더 강력한 추론하기\u003c/h2\u003e\n\n\n\n\u003cp\u003eTemplate Literal Type은 Conditional Type과 함께 더욱 강력하게 사용할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003eConditional Type 되짚어보기\u003c/h3\u003e\n\n\n\n\u003cp\u003eConditional Type은 JavaScript의 삼항 연산자와 비슷하게 분기를 수행하면서, 타입을 추론하는 방법인데요. 고급 TypeScript 사용에서 강력한 타입 연산을 하기 위해서 빠지지 않습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003eTemplate Literal Type을 더 잘 다루기 위해 반드시 필요한 개념이므로, 간단한 예시로 Conditional Type을 사용하는 방법에 대해 살펴보겠습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003e예시 1: 제네릭 타입 인자 꺼내오기\u003c/strong\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003eConditional Type을 가장 자주 사용하는 경우로,\u0026nbsp;\u0026nbsp;\u003ccode\u003ePromise\u0026lt;number\u0026gt;\u003c/code\u003e와 같은 타입에서\u0026nbsp;\u003ccode\u003enumber\u003c/code\u003e\u0026nbsp;를 꺼내오고 싶은 상황을 생각해봅시다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-7\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e PromiseType\u0026lt;T\u0026gt; = T \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003ePromise\u003c/span\u003e\u0026lt;infer U\u0026gt; ? U : never;\n\n\u003cspan class=\"hljs-comment\"\u003e// type A = number\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e A = PromiseType\u0026lt;\u003cspan class=\"hljs-built_in\"\u003ePromise\u003c/span\u003e\u0026lt;\u003cspan class=\"hljs-built_in\"\u003enumber\u003c/span\u003e\u0026gt;\u0026gt;;\n\n\u003cspan class=\"hljs-comment\"\u003e// type B = string | boolean\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e B = PromiseType\u0026lt;\u003cspan class=\"hljs-built_in\"\u003ePromise\u003c/span\u003e\u0026lt;\u003cspan class=\"hljs-built_in\"\u003estring\u003c/span\u003e | \u003cspan class=\"hljs-built_in\"\u003eboolean\u003c/span\u003e\u0026gt;\u0026gt;;\n\n\u003cspan class=\"hljs-comment\"\u003e// type C = never\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e C = PromiseType\u0026lt;\u003cspan class=\"hljs-built_in\"\u003enumber\u003c/span\u003e\u0026gt;;\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-7\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ca href=\"https://www.typescriptlang.org/play?ts=4.1.5#code/C4TwDgpgBACgTgewLYEsDOEAq4IB5MB8UAvFJlBAB7AQB2AJmrIqhrirQGYRxQCqRAPz8oALii0IANx4BuAFDyA9EqihIUAIIkJAVyQAjHvPXRtpeMnRYcuS6zy19RuAQKKVanFABCOtMBwHADmUAA+UAYICAA2EACGtCbefhYs1tiQdulsAUG0oRFRsQm0bh6qplAAwjqSMnDJGrVpVhiZjs48BEA\"\u003eTypeScript Playground\u003c/a\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e위 코드를 살펴보면,\u0026nbsp;\u003ccode\u003ePromiseType\u0026lt;T\u0026gt;\u003c/code\u003e\u0026nbsp;타입에\u0026nbsp;\u003ccode\u003ePromise\u0026lt;number\u0026gt;\u003c/code\u003e\u0026nbsp;타입을 인자로 넘기면\u0026nbsp;\u003ccode\u003enumber\u003c/code\u003e\u0026nbsp;타입을 얻고 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003eConditional Type이 동작하는 방식을 간단히 알아봅시다.\u003c/p\u003e\n\n\n\n\u003cp\u003e삼항 연산자처럼 생긴 부분 가운데\u0026nbsp;\u003ccode\u003eX extends Y\u003c/code\u003e\u0026nbsp;와 같이 생긴 조건 부분은\u0026nbsp;\u003ccode\u003eX\u003c/code\u003e\u0026nbsp;타입의 변수가\u0026nbsp;\u003ccode\u003eY\u003c/code\u003e\u0026nbsp;타입에 할당될 수 있는지에 따라 참값이 평가됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003e예시:\u003c/strong\u003e\u003c/p\u003e\n\n\n\n\u003cul\u003e\u003cli\u003e\u003ccode\u003etrue extends boolean\u003c/code\u003e:\u0026nbsp;\u003ccode\u003etrue\u003c/code\u003e\u0026nbsp;는\u0026nbsp;\u003ccode\u003eboolean\u003c/code\u003e\u0026nbsp;에 할당될 수 있으므로 참으로 평가됩니다.\u003c/li\u003e\u003cli\u003e\u003ccode\u003e'toss' extends string\u003c/code\u003e:\u0026nbsp;\u003ccode\u003e'toss'\u003c/code\u003e\u0026nbsp;는\u0026nbsp;\u003ccode\u003estring\u003c/code\u003e\u0026nbsp;에 할당될 수 있으므로 참으로 평가됩니다.\u003c/li\u003e\u003cli\u003e\u003ccode\u003eArray\u0026lt;{ foo: string }\u0026gt; extends Array\u0026lt;unknown\u0026gt;\u003c/code\u003e: 마찬가지로 참으로 평가됩니다.\u003c/li\u003e\u003cli\u003e\u003ccode\u003estring extends number\u003c/code\u003e: 문자열은 숫자 타입에 할당될 수 없으므로 거짓입니다.\u003c/li\u003e\u003cli\u003e\u003ccode\u003eboolean extends true\u003c/code\u003e:\u0026nbsp;\u003ccode\u003eboolean\u003c/code\u003e\u0026nbsp;타입 가운데\u0026nbsp;\u003ccode\u003efalse\u003c/code\u003e\u0026nbsp;는\u0026nbsp;\u003ccode\u003etrue\u003c/code\u003e\u0026nbsp;에 할당될 수 없으므로 거짓입니다.\u003c/li\u003e\u003c/ul\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e조건식이 참으로 평가될 때에는\u0026nbsp;\u003ccode\u003einfer\u003c/code\u003e\u0026nbsp;키워드를 사용할 수 있습니다. 예를 들어,\u0026nbsp;\u003ccode\u003ePromise\u0026lt;number\u0026gt; extends Promise\u0026lt;infer U\u0026gt;\u003c/code\u003e\u0026nbsp;와 같은 타입을 작성하면,\u0026nbsp;\u003ccode\u003eU\u003c/code\u003e\u0026nbsp;타입은\u0026nbsp;\u003ccode\u003enumber\u003c/code\u003e\u0026nbsp;타입으로 추론됩니다. 이후 참인 경우에 대응되는 식에서 추론된\u0026nbsp;\u003ccode\u003eU\u003c/code\u003e\u0026nbsp;타입을 사용할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e예를 들어,\u0026nbsp;\u003ccode\u003ePromise\u0026lt;number\u0026gt; extends Promise\u0026lt;infer U\u0026gt; ? U : never\u003c/code\u003e\u0026nbsp;에서는 조건식이 참이고\u0026nbsp;\u003ccode\u003eU\u003c/code\u003e\u0026nbsp;타입이\u0026nbsp;\u003ccode\u003enumber\u003c/code\u003e로 추론되므로, 이를 평가한 타입의 결과는\u0026nbsp;\u003ccode\u003enumber\u003c/code\u003e\u0026nbsp;가 됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e반대로\u0026nbsp;\u003ccode\u003enumber extends Promise\u0026lt;infer U\u0026gt; ? U : never\u003c/code\u003e\u0026nbsp;에서는 조건식이 거짓이므로 이를 평가한 결과는\u0026nbsp;\u003ccode\u003enever\u003c/code\u003e가 됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003e예시 2: Tuple 다루기\u003c/strong\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003e[string, number, boolean]\u003c/code\u003e\u0026nbsp;과 같은 TypeScript의\u0026nbsp;\u003ca href=\"https://www.typescriptlang.org/docs/handbook/2/objects.html#tuple-types\"\u003eTuple Type\u003c/a\u003e에서 그 꼬리 부분인\u0026nbsp;\u003ccode\u003e[number, boolean]\u003c/code\u003e\u0026nbsp;과 같은 부분만 가져오고 싶은 상황을 생각해봅시다.\u003c/p\u003e\n\n\n\n\u003cp\u003eConditional Type과\u0026nbsp;\u003ca href=\"https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#variadic-tuple-types\"\u003eVariadic Tuple Type\u003c/a\u003e을 활용함으로써 이를 간단히 구현할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-8\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e TailOf\u0026lt;T\u0026gt; = T \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e [unknown, ...infer U] ? U : [];\n\n\u003cspan class=\"hljs-comment\"\u003e// type A = [boolean, number];\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e A = TailOf\u0026lt;[\u003cspan class=\"hljs-built_in\"\u003estring\u003c/span\u003e, \u003cspan class=\"hljs-built_in\"\u003eboolean\u003c/span\u003e, \u003cspan class=\"hljs-built_in\"\u003enumber\u003c/span\u003e]\u0026gt;;\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-8\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ca href=\"https://www.typescriptlang.org/play?ts=4.1.5#code/C4TwDgpgBAKghgSwDYHkBmAeGA+KBeWKCAD2AgDsATAZygG0BXcga3IHsB3cgGigDoBCcmggAnKAFUAulAD8kqAC56UgNwAodQHotUUJCgBBfPQBGbNkghweUcgwC2psWvX7oxgvGToMdasCiQgDmvOaW1rb2Ti7YQA\"\u003eTypeScript Playground\u003c/a\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e첫 요소를 제외하고\u0026nbsp;\u003ccode\u003e...infer U\u003c/code\u003e\u0026nbsp;구문을 이용하여 뒤의 요소들을 모두 선택한 것을 확인할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이 외에 간단한 형태로 특정한 튜플이 비어 있는지 검사하기 위해서, 아래와 같은\u0026nbsp;\u003ccode\u003eIsEmpty\u0026lt;T\u0026gt;\u003c/code\u003e\u0026nbsp;타입을 정의할 수도 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-9\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e IsEmpty\u0026lt;T \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003eany\u003c/span\u003e[]\u0026gt; = T \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e [] ? \u003cspan class=\"hljs-literal\"\u003etrue\u003c/span\u003e : \u003cspan class=\"hljs-literal\"\u003efalse\u003c/span\u003e;\n\n\u003cspan class=\"hljs-comment\"\u003e// type B = true\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e B = IsEmpty\u0026lt;[]\u0026gt;;\n\n\u003cspan class=\"hljs-comment\"\u003e// type C = false\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e C = IsEmpty\u0026lt;[\u003cspan class=\"hljs-built_in\"\u003enumber\u003c/span\u003e, \u003cspan class=\"hljs-built_in\"\u003estring\u003c/span\u003e]\u0026gt;;\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-9\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ca href=\"https://www.typescriptlang.org/play?ts=4.1.5#code/C4TwDgpgBAkgzgUQLZlAHgCpQgD2BAOwBM4oBDAkAbQF0A+KAXii132NNqgH4pgAnAK7QAXFABmZADZwIAbgBQCgPTK+4aACEmfIRAWhIUbc3jJUINLTpLV6owGEdkmfsPQnpxCnRUCgpAAjCH4AGig4AQBLAgBzeiA\"\u003eTypeScript Playground\u003c/a\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003eConditional Type에 대해 더 궁금하신 분은\u0026nbsp;\u003ca href=\"https://www.typescriptlang.org/docs/handbook/2/conditional-types.html\"\u003eTypeScript 공식 문서\u003c/a\u003e를 참고하시기 바랍니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이제 Conditional Type과 Template Literal Type을 함께 사용했을 때 어떤 결과를 얻을 수 있는지 살펴봅시다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e초급 예시 1: 간단한 추론\u003c/h3\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-10\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e InOrOut\u0026lt;T\u0026gt; = T \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e`fade\u003cspan class=\"hljs-subst\"\u003e${infer R}\u003c/span\u003e`\u003c/span\u003e ? R : never;\n\n\u003cspan class=\"hljs-comment\"\u003e// type I = \"In\"\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e I = InOrOut\u0026lt;\u003cspan class=\"hljs-string\"\u003e\"fadeIn\"\u003c/span\u003e\u0026gt;;  \n\u003cspan class=\"hljs-comment\"\u003e// type O = \"Out\"\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e O = InOrOut\u0026lt;\u003cspan class=\"hljs-string\"\u003e\"fadeOut\"\u003c/span\u003e\u0026gt;;\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-10\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e가장 간단한 예시로,\u0026nbsp;\u003ccode\u003e'fadeIn' | 'fadeOut'\u003c/code\u003e\u0026nbsp;과 같은 타입에서 앞의\u0026nbsp;\u003ccode\u003efade\u003c/code\u003e\u0026nbsp;접두사를 버리고\u0026nbsp;\u003ccode\u003e'In' | 'Out'\u003c/code\u003e\u0026nbsp;만 가져오고 싶은 상황을 생각해봅시다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003ePromise\u0026lt;number\u0026gt;\u003c/code\u003e\u0026nbsp;에서\u0026nbsp;\u003ccode\u003enumber\u003c/code\u003e\u0026nbsp;를 가져오는 것과 유사하게, Conditional Type을 이용하여 접두사를 제외할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e중급 예시 1: 문자열에서 공백 없애기\u003c/h3\u003e\n\n\n\n\u003cp\u003e위의 예시를 응용하면 문자열의 공백을 없애는 타입을 정의할 수 있습니다. 예를 들어, 아래와 같이 오른쪽의 공백을 모두 제거한 타입을 만들 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-11\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-comment\"\u003e// type T = \"Toss\"\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e T = TrimRight\u0026lt;\u003cspan class=\"hljs-string\"\u003e\"Toss      \"\u003c/span\u003e\u0026gt;;\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-11\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ccode\u003eTrimRight\u0026lt;T\u0026gt;\u003c/code\u003e\u0026nbsp;타입은 재귀적 타입 선언을 활용합니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-12\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e TrimRight\u0026lt;T \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003estring\u003c/span\u003e\u0026gt; = \n  T \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e`\u003cspan class=\"hljs-subst\"\u003e${infer R}\u003c/span\u003e `\u003c/span\u003e \n    ? TrimRight\u0026lt;R\u0026gt; \n    : T;\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-12\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ca href=\"https://www.typescriptlang.org/play?ts=4.1.5#code/C4TwDgpgBAKgTgSwLYCUEHMAWwA8MoQAewEAdgCYDOUlwip6AfFALxQBQUsBxZVUAAwAkAbwSkAZhDhQUAX0EcuXAPyxEqDNhwpmnZQC5YAbnbsA9OaihI3NgCIYAe0qV77G9Hxt4yNFlxHF2plLntGIA\"\u003eTypeScript Playground\u003c/a\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e위 코드를 살펴보시면,\u0026nbsp;\u003ccode\u003einfer R\u003c/code\u003e\u0026nbsp;문 뒤에 하나의 공백이 있는 것을 확인하실 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e즉,\u0026nbsp;\u003ccode\u003eT\u003c/code\u003e\u0026nbsp;타입의 오른쪽에 공백이 하나 있다면, 공백을 하나 빠뜨린 것을\u0026nbsp;\u003ccode\u003eR\u003c/code\u003e\u0026nbsp;타입으로 추론하고, 다시\u0026nbsp;\u003ccode\u003eTrimRight\u0026lt;R\u0026gt;\u003c/code\u003e\u0026nbsp;을 호출합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e만약 공백이 더 이상 존재하지 않는다면, 원래 주어진 타입 그대로를 반환합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003eTypeScript에는\u0026nbsp;\u003ccode\u003eif\u003c/code\u003e\u0026nbsp;문이 존재하지 않지만, 만약 존재한다고 가정했을 때 아래와 같이 작성해볼 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-13\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e TrimRight\u0026lt;T \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003estring\u003c/span\u003e\u0026gt; =\n  \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (T \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e`\u003cspan class=\"hljs-subst\"\u003e${infer R}\u003c/span\u003e `\u003c/span\u003e) {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e TrimRight\u0026lt;R\u0026gt;;\n  } \u003cspan class=\"hljs-keyword\"\u003eelse\u003c/span\u003e {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e T;\n  }\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-13\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e보다 재귀적인 구조를 잘 확인할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e중급 예시 2: 점으로 연결된 문자열 Split하기\u003c/h3\u003e\n\n\n\n\u003cp\u003e재귀적 타입 정의를 활용하면\u0026nbsp;\u003ccode\u003e'foo.bar.baz'\u003c/code\u003e\u0026nbsp;와 같은 타입을\u0026nbsp;\u003ccode\u003e['foo', 'bar', 'baz']\u003c/code\u003e\u0026nbsp;로 나누는 타입을 정의할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-14\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e Split\u0026lt;S \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003estring\u003c/span\u003e\u0026gt; = \n  S \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e`\u003cspan class=\"hljs-subst\"\u003e${infer T}\u003c/span\u003e.\u003cspan class=\"hljs-subst\"\u003e${infer U}\u003c/span\u003e`\u003c/span\u003e \n    ? [T, ...Split\u0026lt;U\u0026gt;] \n    : [S];\n\n\u003cspan class=\"hljs-comment\"\u003e// type S = [\"foo\", \"bar\", \"baz\"];\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e S = Split\u0026lt;\u003cspan class=\"hljs-string\"\u003e\"foo.bar.baz\"\u003c/span\u003e\u0026gt;;\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-14\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ca href=\"https://www.typescriptlang.org/play?ts=4.1.5\u0026amp;ssl=1\u0026amp;ssc=1\u0026amp;pln=7\u0026amp;pc=30#code/C4TwDgpgBAymA2BLYAeGUIA9gQHYBMBnKQ4AJ0VwHMA+KAXigCgpYNs8ioADAEgG9KAMwhkoAFQC+AOgHDRUAKqTuzVqwD8UANriANFGlG4SVIpoBdNeoBcOmBYDcTJgHpXUUJDaNtAIiEAe0C-Az8AIwBDMlCoCMiALz8nJi9odEYTZBQA4OkosnzEvxogA\"\u003eTypeScript Playground\u003c/a\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e주어진\u0026nbsp;\u003ccode\u003eS\u003c/code\u003e\u0026nbsp;타입에서 첫번째 점(\u003ccode\u003e.\u003c/code\u003e) 을 찾고, 그 앞 부분을\u0026nbsp;\u003ccode\u003eT\u003c/code\u003e, 뒷 부분을\u0026nbsp;\u003ccode\u003eU\u003c/code\u003e\u0026nbsp;로 추론합니다. 이후 이를\u0026nbsp;\u003ccode\u003e[T, ...Split\u0026lt;U\u0026gt;]\u003c/code\u003e와 같이 재귀적으로 하나씩 값을 이어 나가면서 원하는 결과 타입을 만들어 나갑니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이 경우에도\u0026nbsp;\u003ccode\u003eif\u003c/code\u003e\u0026nbsp;문이 있다는 가정 하에 pseudo-code로 정리해볼 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-15\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e Split\u0026lt;S \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003estring\u003c/span\u003e\u0026gt; =\n  \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (S \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e`\u003cspan class=\"hljs-subst\"\u003e${infer T}\u003c/span\u003e.\u003cspan class=\"hljs-subst\"\u003e${infer U}\u003c/span\u003e`\u003c/span\u003e) {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e [T, ...Split\u0026lt;infer U\u0026gt;];\n  } \u003cspan class=\"hljs-keyword\"\u003eelse\u003c/span\u003e {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e [S];\n  }\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-15\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e고급 예시: lodash.set() 함수 타입 추론하기\u003c/h3\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003elodash.set()\u003c/code\u003e는 아래와 같이 문자열로 된 접근자를 이용하여 객체의 깊은 프로퍼티까지 수정할 수 있는 함수입니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-16\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e someObject = {\n  toss: {\n    core: {\n      client: {\n        platform: \u003cspan class=\"hljs-string\"\u003e\"foo\"\u003c/span\u003e\n      }\n    }\n  }\n};\n\n\u003cspan class=\"hljs-comment\"\u003e// OK!\u003c/span\u003e\nlodashSet(someObject, \u003cspan class=\"hljs-string\"\u003e\"toss.core.client\"\u003c/span\u003e, { platform: \u003cspan class=\"hljs-string\"\u003e'bar'\u003c/span\u003e });\n\n\u003cspan class=\"hljs-comment\"\u003e// Error: 'bar' is not assignable to type '{ platform: string }';\u003c/span\u003e\nlodashSet(someObject, \u003cspan class=\"hljs-string\"\u003e'toss.core.client'\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e'bar'\u003c/span\u003e);\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-16\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003eTemplate Literal Type이 있기 전, 이런 함수는 타입 안전하게 사용할 수 없어 세 번째 인자를\u0026nbsp;\u003ccode\u003eany\u003c/code\u003e\u0026nbsp;로 규정해야 했습니다. 그러나 위에서 살펴본 타입 정의를 조합하면\u0026nbsp;\u003ccode\u003elodash.set()\u003c/code\u003e\u0026nbsp;를 더욱 안전하게 타이핑할 수 있습니다. 💯\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003elodash.set()\u003c/code\u003e\u0026nbsp;함수를 정확하게 타이핑하기 위해서는 아래의\u0026nbsp;\u003ccode\u003eValueOf\u0026lt;T, P\u0026gt;\u003c/code\u003e\u0026nbsp;타입이 필요합니다.\u0026nbsp;\u003ccode\u003eValueOf\u0026lt;T, P\u0026gt;\u003c/code\u003e 타입은 객체\u0026nbsp;\u003ccode\u003eT\u003c/code\u003e\u0026nbsp;와 접근 경로\u0026nbsp;\u003ccode\u003eP\u003c/code\u003e가 주어졌을 때,\u0026nbsp;\u003ccode\u003eT\u003c/code\u003e\u0026nbsp;를\u0026nbsp;\u003ccode\u003eP\u003c/code\u003e\u0026nbsp;경로로 순서대로 접근했을 때 결과로 나오는 타입을 나타냅니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-17\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003einterface\u003c/span\u003e Foo {\n  foo: {\n    bar: {\n      baz: \u003cspan class=\"hljs-built_in\"\u003estring\u003c/span\u003e;\n    }\n  }\n}\n\n\u003cspan class=\"hljs-comment\"\u003e// type A = { bar: { baz: string } };\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e A = ValueOf\u0026lt;Foo, [\u003cspan class=\"hljs-string\"\u003e'foo'\u003c/span\u003e]\u0026gt;;\n\n\u003cspan class=\"hljs-comment\"\u003e// type B = { baz: string };\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e B = ValueOf\u0026lt;Foo, [\u003cspan class=\"hljs-string\"\u003e'foo'\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e'bar'\u003c/span\u003e]\u0026gt;;\n\n\u003cspan class=\"hljs-comment\"\u003e// type C = string;\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e C = ValueOf\u0026lt;Foo, [\u003cspan class=\"hljs-string\"\u003e'foo'\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e'bar'\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e'baz'\u003c/span\u003e]\u0026gt;;\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-17\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e만약에 위와 같은\u0026nbsp;\u003ccode\u003eValueOf\u0026lt;T, P\u0026gt;\u003c/code\u003e\u0026nbsp;이 있다면, 위에서 만들었던\u0026nbsp;\u003ccode\u003eSplit\u0026lt;S\u0026gt;\u003c/code\u003e\u0026nbsp;과 조합하여 쉽게 lodash.set() 함수에 타입을 부여할 수 있을 것입니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-18\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003elodashSet\u003c/span\u003e\u0026lt;\u003cspan class=\"hljs-title\"\u003eType\u003c/span\u003e, \u003cspan class=\"hljs-title\"\u003ePath\u003c/span\u003e\u0026gt;(\u003cspan class=\"hljs-params\"\u003e\n  obj: Type, \n  path: Path, \n  value: ValueOf\u0026lt;Type, Split\u0026lt;Path\u0026gt;\u0026gt;\n\u003c/span\u003e): \u003cspan class=\"hljs-title\"\u003evoid\u003c/span\u003e\u003c/span\u003e;\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-18\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e이제\u0026nbsp;\u003ccode\u003eValueOf\u0026lt;T, P\u0026gt;\u003c/code\u003e\u0026nbsp;타입을 만들어봅시다.\u0026nbsp;\u003ccode\u003eif\u003c/code\u003e\u0026nbsp;문과 내부 타입 선언이 있는 pseudo-code로 나타낸다면, 아래와 같이 코드를 작성할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-19\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e ValueOf\u0026lt;Type, Paths\u0026gt; =\n  \u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e Head = Paths[\u003cspan class=\"hljs-number\"\u003e0\u003c/span\u003e];\n  \u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e Tail = TailOf\u0026lt;Paths\u0026gt;;\n\n  \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (\u003cspan class=\"hljs-comment\"\u003e/* Tail의 길이가 0이다 */\u003c/span\u003e) {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e Type[Head];\n  } \u003cspan class=\"hljs-keyword\"\u003eelse\u003c/span\u003e {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e ValueOf\u0026lt;Type[Head], Tail\u0026gt;;\n  }\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-19\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ccode\u003eValueOf\u0026lt;T, P\u0026gt;\u003c/code\u003e 타입이 그렇게 동작한다면, 위의\u0026nbsp;\u003ccode\u003eFoo\u003c/code\u003e\u0026nbsp;예시에서는 아래와 같이 차례대로 값이 계산될 것입니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-20\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003eValueOf\u0026lt;Foo, [\u003cspan class=\"hljs-string\"\u003e'foo'\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e'bar'\u003c/span\u003e]\u0026gt;\n== ValueOf\u0026lt;Foo[\u003cspan class=\"hljs-string\"\u003e'foo'\u003c/span\u003e], [\u003cspan class=\"hljs-string\"\u003e'bar'\u003c/span\u003e]\u0026gt;\n== ValueOf\u0026lt;Foo[\u003cspan class=\"hljs-string\"\u003e'foo'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'bar'\u003c/span\u003e], []\u0026gt;\n== Foo[\u003cspan class=\"hljs-string\"\u003e'foo'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'bar'\u003c/span\u003e]\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-20\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e작성했던 의사 코드를 유효한 TypeScript 코드로 나타내면 다음과 같습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-21\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e ValueOf\u0026lt;Type, Paths \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003eany\u003c/span\u003e[]\u0026gt; = \n  \u003cspan class=\"hljs-comment\"\u003e/* \n   * IsEmpty\u0026lt;TailOf\u0026lt;Paths\u0026gt;\u0026gt;가 참이면\n   * == TailOf\u0026lt;Paths\u0026gt;가 빈 Tuple이면\n   */\u003c/span\u003e\n  IsEmpty\u0026lt;TailOf\u0026lt;Paths\u0026gt;\u0026gt; \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-literal\"\u003etrue\u003c/span\u003e\n    ? Type[HeadOf\u0026lt;Paths\u0026gt;]\n    : ValueOf\u0026lt;Type[HeadOf\u0026lt;Paths\u0026gt;], TailOf\u0026lt;Paths\u0026gt;\u0026gt;;\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-21\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e위 내용을 모두 조합하면 lodash.set()을 안전하게 다룰 수 있는데요. 실제로 동작하는 방식을\u0026nbsp;\u003ca href=\"https://www.typescriptlang.org/play?ts=4.1.5#code/C4TwDgpgBAEhCGATA8gMwDwBUB8UC8UmUEAHsBAHaIDOU8FIA2gLpQD8hjADKwFxQUIANwgAnANwAoUJELwAlgBs0WXASKlyVWo3ogANFAB0J+RVRioAVVYcrUfiymSA9C6gzoAQXxRGAIwB7QMUECkMKAFcAW38xZilPKB91BWUMRmpgUTMAc0MgkLCImLjRZmxJaXBoAElqAFFosFAsYjJKGjoGFjVCdq0ulnYPUUjoflR4RWoIZySAZTBFeWB0BYHO2iycily+ySgoDc0tqAADABIAbzMLUUIAXyMbu8srR-OoQ6ORxkxDCYjEsVmsrNhWD8jo4FgkqkkAGrTcYqTA1QwABXgwAAFrRTtpukwKr4fvUmi0QFg0iosbjqNhcASutlxlCRmjIIw4Ehadi8RD2fwkYoURhORBuQgUBg6QLmIZMDTZfyGdhnGZyKIpgBjaAAMWCUGuP1QwX4Jt+UH88FEFvZRxtAC9+Ds8lIrY8fl6vZJEBAdYpbdBUJEKDrgPJAhQoIpAoh4NQcQsIGsJZj+ZtCW69tgABQ-QL+ABW-HT3yOYH5-Dlhh+QmREGFjdR6OOy1W6DljMkAEp+EJAvJEM4ddGslBqIFohBkCWA8BfJaPIFqNR7Vax6Im8aHVBA-JKMAN1bfstsWbRNF+AAiM2BG97r2e72SR7ONxQZAAaQAhJI4wTJMU2APMpxnOdiwXQwb2AVdqCMLcIEQlYjxvQxrigc9gEva8oAAchtUR8KgR5ew-dwGlEURAjtAiiJI+RaAoQJF0Tah5FyCh4H8UIVw8GoCMw7DcNdbI8lI-CpEAxNk1TMDp1necI0MfC4LXRDaOQg8j3w1SGPIqogA\"\u003eTypeScript Playground\u003c/a\u003e에서 확인해보실 수 있습니다. 😉\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch2\u003eTemplate Literal Type의 응용\u003c/h2\u003e\n\n\n\n\u003cp\u003e위에서 살펴본 바와 같이, Template Literal Type을 Conditional Type과 사용하면 더욱 많은 코드를 안전하게 사용할 수 있습니다.\u0026nbsp;\u003ca href=\"https://github.com/ghoullier/awesome-template-literal-types\"\u003eawesome-template-literal-types\u003c/a\u003e\u0026nbsp;레포지토리에는 상상력을 자극하는 Template Literal Type의 사용 예시들이 모여 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e대표적으로 화제가 되었던 예시들에 대한 링크를 남기고 글을 맺습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e1. \u003ca href=\"https://twitter.com/buildsghost/status/1301976526603206657\"\u003eTypeScript로 JSON 파서 만들기\u003c/a\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-22\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-comment\"\u003e// type Json = { key1: ['value1', null]; key2: 'value2' };\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003etype\u003c/span\u003e Json = ParseJson\u0026lt;\u003cspan class=\"hljs-string\"\u003e'{ \"key1\": [\"value1\", null], \"key2\": \"value2\" }'\u003c/span\u003e\u0026gt;;\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-22\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e코드와 같이 JSON 문자열을 바로 TypeScript 타입으로 옮길 수 있다는 Proof-of-concept로 화제가 되었습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e2. \u003ca href=\"https://twitter.com/MikeRyanDev/status/1308472279010025477\"\u003edocument.querySelector를 타입 안전하게 사용하기\u003c/a\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-23\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e a = querySelector(\u003cspan class=\"hljs-string\"\u003e'div.banner \u0026gt; a.call-to-action'\u003c/span\u003e); \u003cspan class=\"hljs-comment\"\u003e//-\u0026gt; HTMLAnchorElement\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e b = querySelector(\u003cspan class=\"hljs-string\"\u003e'input, div'\u003c/span\u003e); \u003cspan class=\"hljs-comment\"\u003e//-\u0026gt; HTMLInputElement | HTMLDivElement \u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e c = querySelector(\u003cspan class=\"hljs-string\"\u003e'circle[cx=\"150\"]'\u003c/span\u003e) \u003cspan class=\"hljs-comment\"\u003e//-\u0026gt; SVGCircleElement\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e d = querySelector(\u003cspan class=\"hljs-string\"\u003e'button#buy-now'\u003c/span\u003e); \u003cspan class=\"hljs-comment\"\u003e//-\u0026gt; HTMLButtonElement\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e e = querySelector(\u003cspan class=\"hljs-string\"\u003e'section p:first-of-type'\u003c/span\u003e); \u003cspan class=\"hljs-comment\"\u003e//-\u0026gt; HTMLParagraphElement\u003c/span\u003e\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-23\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003ea 태그를 선택했을 때 결괏값이 \u003ccode\u003eHTMLAnchorElement\u003c/code\u003e가 되는 것을 확인하실 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e3. \u003ca href=\"https://twitter.com/danvdk/status/1301707026507198464\"\u003eExpress의 Route Parameter로부터 타입 추론하기\u003c/a\u003e\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"880\" height=\"226\" src=\"https://wp.toss.tech/wp-content/uploads/2021/05/Untitled-1.png\" alt=\"\" class=\"wp-image-42\" srcset=\"https://toss.tech/wp-content/uploads/2021/05/Untitled-1.png 880w, https://toss.tech/wp-content/uploads/2021/05/Untitled-1-300x77.png 300w, https://toss.tech/wp-content/uploads/2021/05/Untitled-1-768x197.png 768w\" sizes=\"(max-width: 880px) 100vw, 880px\" /\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003eExpress에서 사용하는 경로 문자열에서 Route Parameter의 타입을 추론할 수 있습니다.\u003c/p\u003e\n","date":"2021-05-14T15:26:37","excerpt":"\u003cp\u003eTypeScript 코드베이스의 타입 안전성을 한 단계 올려줄 수 있는 Template Literal Type의 뜻과 응용에 대해 알아봅니다.\u003c/p\u003e\n","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2021/05/techblog-05-template-literal-300x150.png 300w, https://toss.tech/wp-content/uploads/2021/05/techblog-05-template-literal-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2021/05/techblog-05-template-literal-768x384.png 768w, https://toss.tech/wp-content/uploads/2021/05/techblog-05-template-literal.png 1200w"}},"metadata":{"ogBackground":"https://static.toss.im/assets/tech-blog/og-image:/techblog-05-template-literal-og.png","ogImageTitle":"Template Literal\r\nTypes로 타입 \r\n안전하게 코딩하기","ogGenerateImage":null,"recruitTitle":"재미있게 읽으셨나요?","recruitUrl":null,"form1Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=040\u0026title=Template_Literal_Types로_타입_안전하게_코딩하기\u0026reaction=good","form2Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=040\u0026title=Template_Literal_Types로_타입_안전하게_코딩하기\u0026reaction=bad","formDescription":"좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.","form1Label":"😍","form2Label":"🤔","recruitDescription":null},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}},{"node":{"id":"dGVybTox","name":"Uncategorized"}}]},"author":{"node":{"id":"dXNlcjoy","firstName":"서진","lastName":"박","description":"토스코어 Client Platform에서 개발자 경험과 웹 성능을 개선하고 있습니다.","avatar":{"url":"https://wp.toss.tech/wp-content/uploads/2021/06/E01JAGTHP8R-U01K6L12VSL-0974fc35250c-512-312x312.png"},"role":{"role":"Frontend Developer"}}}},"relatedArticles":[{"title":"무지성으로 사용한 헬스 체크가 불러일으킬 수 있는 참사","slug":"how-to-work-health-check-in-spring-boot-actuaotr","date":"2023-04-01T15:38:57","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/04/00009-889461687-300x300.png 300w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687-150x150.png 150w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687.png 512w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}},{"node":{"id":"dGVybTox","name":"Uncategorized"}}]}},{"title":"ESLint와 AST로 코드 퀄리티 높이기","slug":"improving-code-quality-via-eslint-and-ast","date":"2023-03-31T15:47:53","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/03/center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/center.png 1200w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}}]}}]},"__N_SSP":true},"page":"/article/[slug]","query":{"slug":"template-literal-types"},"buildId":"QqBxegmptuUDYc8oCREsD","assetPrefix":"https://static.toss.im/frontend/toss-tech","runtimeConfig":{"ENV":"live","NODE_ENV":"production","PORT":"3000","ASSET_PREFIX":"https://static.toss.im/frontend/toss-tech","SERVICE":"toss-tech","SENTRY":{"DSN":"https://5eff657ed6ef486fb8af2dc5f9508abd@sentry.io/1242586","PUBLIC_KEY":"5eff657ed6ef486fb8af2dc5f9508abd","RELEASE":"toss-tech_1.0.103","SERVICE":"toss-tech","SERVICE_VERSION":"1.0.103"},"RENDER_TYPE":"ssr"},"isFallback":false,"gssp":true,"customServer":true,"scriptLoader":[]}</script></body></html>

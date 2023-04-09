@@ -1,0 +1,503 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="https://static.toss.im/tds-pc/3.232.0/main.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/rss+xml" href="/rss.xml"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/atom+xml" href="/atom.xml"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/main.css"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/others.css"/><link rel="stylesheet" href="https://static.toss.im/tossface-font/tossface.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/activitystream+json" href="/feed.json"/><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"/><meta name="author" content="Viva Republica"/><link rel="preconnect" href="https://static.toss.im"/><link rel="shortcut icon" href="https://static.toss.im/tds/favicon/favicon.ico"/><link rel="icon" type="image/png" sizes="16x16" href="https://static.toss.im/tds/favicon/favicon-16x16.png"/><link rel="icon" type="image/png" sizes="32x32" href="https://static.toss.im/tds/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="48x48" href="https://static.toss.im/tds/favicon/favicon-48x48.png"/><link rel="icon" type="image/png" sizes="196x196" href="https://static.toss.im/tds/favicon/favicon-196x196.png"/><link rel="apple-touch-icon" sizes="57x57" href="https://static.toss.im/tds/favicon/apple-touch-icon-57x57.png"/><link rel="apple-touch-icon" sizes="72x72" href="https://static.toss.im/tds/favicon/apple-touch-icon-72x72.png"/><link rel="apple-touch-icon" sizes="114x114" href="https://static.toss.im/tds/favicon/apple-touch-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="https://static.toss.im/tds/favicon/apple-touch-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="https://static.toss.im/tds/favicon/apple-touch-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="https://static.toss.im/tds/favicon/apple-touch-icon-152x152.png"/><meta name="msapplication-TileImage" content="https://static.toss.im/tds/favicon/mstile-144x144.png"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PQ5NV18TH1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-PQ5NV18TH1');</script><script>(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:2399367,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script><title>node_modules로부터 우리를 구원해 줄 Yarn Berry</title><meta name="twitter:creator" content="Viva Republica"/><meta name="twitter:site" content="@Toss_service"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:title" content="node_modules로부터 우리를 구원해 줄 Yarn Berry"/><meta name="twitter:title" content="node_modules로부터 우리를 구원해 줄 Yarn Berry"/><meta property="og:description" content="토스 프론트엔드 레포지토리 대부분에서 사용하고 있는 패키지 매니저 Yarn Berry. 채택하게 된 배경과 사용하면서 좋았던 점을 공유합니다.
+"/><meta name="twitter:description" content="토스 프론트엔드 레포지토리 대부분에서 사용하고 있는 패키지 매니저 Yarn Berry. 채택하게 된 배경과 사용하면서 좋았던 점을 공유합니다.
+"/><meta property="og:image" content="https://static.toss.im/assets/tech-blog/og-image:/techblog-04-yarn-berry-og.png?v=2"/><meta name="twitter:image" content="https://static.toss.im/assets/tech-blog/og-image:/techblog-04-yarn-berry-og.png?v=2"/><meta name="next-head-count" content="36"/><meta name="next-font-preconnect"/><link rel="preload" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" as="style"/><link rel="stylesheet" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/webpack-a37367524f3d9e47.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/framework-5201cf011975c339.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/main-4ffd67ad72332dfe.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/_app-02461bb4136bedab.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/821-c2f4db054c6f6b42.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/935-149f2da2961c2b08.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/article/%5Bslug%5D-bf5a24035d1301de.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_buildManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_ssgManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_middlewareManifest.js" defer=""></script></head><body><div id="__next"><style data-emotion="css-global ubpbb5">html,body{padding:0;margin:0;font-family:'Toss Product Sans';}button{font-family:'Toss Product Sans';}p{margin:0;}</style><style data-emotion="css kcwxxw">.css-kcwxxw{position:-webkit-sticky;position:sticky;top:0;height:59px;}</style><nav class="p-navbar p-navbar--bottom-border css-kcwxxw"><div class="p-container p-container--default"><div class="p-container__inner p-navbar__inner-container"><div class="p-navbar__logo-container"><a class="p-navbar__logo-icon" href="/tech"><span class="icon p-icon" aria-hidden="true" role="presentation" style="height:auto;width:auto;min-width:24px"></span></a></div><div class="p-navbar__right-on-mobile"></div><div class="p-navbar__content" aria-expanded="false" aria-hidden="true"><ul class="p-navbar__menu"></ul><ul class="p-navbar__menu"><li class="p-navbar__item"><a>디자인</a></li><li class="p-navbar__item"><a>개발</a></li><li class="p-navbar__item p-navbar__button-item"><button class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s p-navbar__button" type="button" aria-disabled="false">채용 바로가기</button></li></ul></div></div></div></nav><style data-emotion="css 1nquki8">.css-1nquki8{max-width:700px;margin-bottom:80px;}.css-1nquki8 .has-extra-large-font-size{font-size:20px;}.css-1nquki8 .has-large-font-size{font-size:18px;}.css-1nquki8 .has-small-font-size{font-size:14px;}.css-1nquki8 .has-extra-small-font-size{font-size:12px;}@media (max-width: 700px){.css-1nquki8{margin-bottom:64px;}}</style><div class="p-container p-container--default css-1nquki8"><div class="p-container__inner"><style data-emotion="css gtmad4">.css-gtmad4>*:not(style)~*:not(style){margin-top:54px;}@media (max-width: 700px){.css-gtmad4>*:not(style)~*:not(style){margin-top:48px;}}</style><article class="css-gtmad4"><style data-emotion="css 1095auh">.css-1095auh>*:not(style)~*:not(style){margin-top:20px;}</style><header class="css-1095auh"><style data-emotion="css iffq4o">.css-iffq4o{width:100%;margin-top:36px;border-radius:12px;}</style><img srcSet="https://toss.tech/wp-content/uploads/2021/05/techblog-04-yarn-berry-300x150.png 300w, https://toss.tech/wp-content/uploads/2021/05/techblog-04-yarn-berry-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2021/05/techblog-04-yarn-berry-768x384.png 768w, https://toss.tech/wp-content/uploads/2021/05/techblog-04-yarn-berry.png 1200w" alt="node_modules로부터 우리를 구원해 줄 Yarn Berry" class="css-iffq4o e132k2574"/><style data-emotion="css 117sh4z">.css-117sh4z{margin-top:36px;margin-bottom:0;font-size:48px;font-weight:700;line-height:1.25;color:#333d4b;word-break:keep-all;overflow-wrap:break-word;}@media (max-width: 700px){.css-117sh4z{margin-top:28px;font-size:32px;}}</style><h1 class="css-117sh4z e132k2573">node_modules로부터 우리를 구원해 줄 Yarn Berry</h1><style data-emotion="css s5xdrg">.css-s5xdrg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><section class="css-s5xdrg e2c667z4"><style data-emotion="css 1hdebld">.css-1hdebld{grid-area:image;width:48px;height:48px;border-radius:156px;margin-right:14px;}</style><img src="https://wp.toss.tech/wp-content/uploads/2021/06/E01JAGTHP8R-U01K6L12VSL-0974fc35250c-512-312x312.png" alt="" class="css-1hdebld e2c667z3"/><div><style data-emotion="css 14d9k6d">.css-14d9k6d{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;grid-area:outline;-webkit-align-items:flex-end;-webkit-box-align:flex-end;-ms-flex-align:flex-end;align-items:flex-end;padding-top:8px;font-size:17px;margin-bottom:2px;}@media (max-width: 700px){.css-14d9k6d>*+*{margin-top:4px;margin-left:0;}}</style><div class="css-14d9k6d e2c667z2"><style data-emotion="css 9krnkp">.css-9krnkp{grid-area:name;margin:0;font-size:17px;font-weight:600;color:#4e5968;white-space:nowrap;}</style><h3 class="css-9krnkp e2c667z1">박서진</h3><h3 class="css-9krnkp e2c667z1">ㆍ<!-- -->Frontend Developer</h3></div><style data-emotion="css 154r2lc">.css-154r2lc{font-size:14px;line-height:1.5;color:#8b95a1;}</style><div class="css-154r2lc e2c667z0">2021. 5. 7</div></div></section></header><style data-emotion="css 1k1kkv6">.css-1k1kkv6{font-size:18px;line-height:1.7;color:var(--grey700);font-size:18px;word-break:keep-all;overflow-wrap:break-word;counter-reset:p-post-ol 0;}.css-1k1kkv6 h2{margin:2.2em 0 0.6em 0;font-size:25px;font-weight:600;line-height:1.4;color:var(--grey900);}.css-1k1kkv6 h3{margin:2.2em 0 0.6em 0;font-size:22px;font-weight:600;line-height:1.6;color:var(--grey900);}.css-1k1kkv6 h4{margin:2.2em 0 0.3em 0;font-size:19px;font-weight:600;line-height:1.6;color:var(--grey700);}.css-1k1kkv6 p{margin:1em 0;}.css-1k1kkv6 p code,.css-1k1kkv6 li code{font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:3px;}.css-1k1kkv6 a{color:var(--blue700);}.css-1k1kkv6 pre{margin:2em -24px;}@media (max-width: 700px){.css-1k1kkv6 pre{margin:2em 0;}}.css-1k1kkv6 pre code{display:block;padding:16px 24px;overflow-x:auto;font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;line-height:1.5;word-wrap:normal;white-space:pre;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:12px;}.css-1k1kkv6 figure{margin:2em 0;overflow:hidden;border-radius:12px;width:100%;}.css-1k1kkv6 figure.aligncenter{text-align:center;}.css-1k1kkv6 ol,.css-1k1kkv6 ul{margin:0 0 16px;list-style:none;}.css-1k1kkv6 ol li,.css-1k1kkv6 ul li{position:relative;margin-bottom:8px;}.css-1k1kkv6 ol li:before,.css-1k1kkv6 ul li:before{position:absolute;left:0;}.css-1k1kkv6 ol li ol,.css-1k1kkv6 ul li ol{padding-left:0;margin:8px 0 0 -16px;}.css-1k1kkv6 ol li ul,.css-1k1kkv6 ul li ul{padding-left:0;margin-top:8px;}.css-1k1kkv6 ol li p,.css-1k1kkv6 ul li p{margin:0;}.css-1k1kkv6 ol{padding-left:16px;counter-reset:p-post-ol;}.css-1k1kkv6 ol>li{padding-left:32px;counter-increment:p-post-ol;}.css-1k1kkv6 ol>li:before{font-weight:700;font-weight:var(--font-weight-bold);content:counter(p-post-ol) '.';}.css-1k1kkv6 ul{padding-left:16px;}.css-1k1kkv6 ul>li{padding-left:24px;}.css-1k1kkv6 ul>li:before{width:16px;text-align:center;content:'•';}.css-1k1kkv6 figcaption{font-size:0.9em;color:var(--grey600);}.css-1k1kkv6 .wp-block-pullquote{margin:0;}.css-1k1kkv6 blockquote{padding:32px;background:var(--greyOpacity100);border-radius:12px;text-align:left;margin:16px 0 16px 0;}.css-1k1kkv6 blockquote p{color:#333d4b;font-weight:600;margin:0;}.css-1k1kkv6 blockquote cite{font-style:normal;}@media (max-width: 700px){.css-1k1kkv6 blockquote{padding:24px;}}.css-1k1kkv6 .wp-block-embed-youtube iframe{width:100%;border-radius:12px;}.css-1k1kkv6 ol{counter-reset:none;}.css-1k1kkv6 hr{border-top:1px solid #e5e8eb;border-right-style:none;border-left-style:none;border-bottom-style:none;margin:2.5rem 0;}.css-1k1kkv6 figure{display:table;text-align:center;}@media (max-width: 700px){.css-1k1kkv6 figure{width:100%;}}.css-1k1kkv6 figure img,.css-1k1kkv6 figure video{max-width:100%;height:auto;border:1px solid rgba(2,32,71,0.05);border-radius:12px;}.css-1k1kkv6 figure.alignright{float:right;margin:0 0 8px 24px;}@media (max-width: 700px){.css-1k1kkv6 figure.alignright{float:none;margin:0;}}.css-1k1kkv6 figcaption{display:table-caption;text-align:center;white-space:pre-wrap;caption-side:bottom;}.css-1k1kkv6 p:empty::before{content:'';}</style><div class="css-1k1kkv6 e132k2572"><div>
+<p>토스 프론트엔드 챕터에서는 지난해부터 의존성을 관리하기 위해 Yarn Berry(v2)를 도입했습니다. 처음에는 일부 레포지토리부터 시작하여, 현재는 대부분의 레포지토리에 Yarn Berry가 적용되어 있는데요. 토스팀이 새로운 패키지 관리 시스템을 도입하게 된 배경과 사용하면서 좋았던 점을 테크 블로그를 통해 공유합니다.</p>
+
+
+
+<h2>Yarn Berry란?</h2>
+
+
+
+<p>Yarn Berry는 Node.js를 위한 새로운 패키지 관리 시스템으로, Yarn v1의 주요 개발자인 <a href="https://github.com/arcanis/">Maël Nison</a> 씨가 만들었습니다. 2020년 1월 25일부터 정식 버전(v2)가 출시되어, 현재는 <a href="https://github.com/babel/babel/">Babel</a>과 같은 큰 오픈소스 레포지토리에서도 채택하고 있습니다. Yarn Berry는 GitHub <a href="https://github.com/yarnpkg/berry">yarnpkg/berry</a> 레포지토리에서 소스코드가 관리되고 있습니다.</p>
+
+
+
+<p>Yarn Berry는 기존의 “깨져 있는” NPM 패키지 관리 시스템을 혁신적으로 개선합니다.</p>
+
+
+
+<h2>NPM의 문제점</h2>
+
+
+
+<p>NPM은 Node.js 설치 시에 기본으로 제공되어 범용적으로 사용되고 있으나, 비효율적이거나 깨져 있는 부분이 많습니다.</p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img src="https://static.toss.im/assets/toss-tech/yarn-berry-1.png" alt="" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<p></p>
+
+
+
+<h3>비효율적인 의존성 검색</h3>
+
+
+
+<p>NPM은 파일 시스템을 이용하여 의존성을 관리합니다. 익숙한 node_modules 폴더를 이용하는 것이 특징인데요. 이렇게 관리했을 때 의존성 검색은 비효율적으로 동작합니다.</p>
+
+
+
+<p>예를 들어, <code>/Users/toss/dev/toss-frontend-libraries</code> 폴더에서 <code>require()</code> 문을 이용하여 <code>react</code> 패키지를 불러오는 상황을 가정합시다.</p>
+
+
+
+<p>라이브러리를 찾기 위해 순회하는 디렉토리의 목록을 확인하려고 할 때, Node.js에서 제공하는 <code><a href="https://nodejs.org/api/modules.html#modules_require_resolve_paths_request)">require.resolve.paths()</a></code> 함수를 사용할 수 있습니다. 이 함수는 NPM이 검색하는 디렉토리의 목록을 반환합니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="Shell Session" data-shcb-language-slug="shell"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"/><style>.wp-block-code {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-code > div {
+	overflow: auto;
+}
+
+.shcb-language {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+.hljs {
+	box-sizing: border-box;
+}
+
+.hljs.shcb-code-table {
+	display: table;
+	width: 100%;
+}
+
+.hljs.shcb-code-table > .shcb-loc {
+	color: inherit;
+	display: table-row;
+	width: 100%;
+}
+
+.hljs.shcb-code-table .shcb-loc > span {
+	display: table-cell;
+}
+
+.wp-block-code code.hljs:not(.shcb-wrap-lines) {
+	white-space: pre;
+}
+
+.wp-block-code code.hljs.shcb-wrap-lines {
+	white-space: pre-wrap;
+}
+
+.hljs.shcb-line-numbers {
+	border-spacing: 0;
+	counter-reset: line;
+}
+
+.hljs.shcb-line-numbers > .shcb-loc {
+	counter-increment: line;
+}
+
+.hljs.shcb-line-numbers .shcb-loc > span {
+	padding-left: 0.75em;
+}
+
+.hljs.shcb-line-numbers .shcb-loc::before {
+	border-right: 1px solid #ddd;
+	content: counter(line);
+	display: table-cell;
+	padding: 0 0.75em;
+	text-align: right;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: 1%;
+}
+</style><div><code class="hljs language-shell"><span class="hljs-meta">$</span><span class="bash"> node</span>
+Welcome to Node.js v12.16.3.
+Type &quot;.help&quot; for more information.
+<span class="hljs-meta">&gt;</span><span class="bash"> require.resolve.paths(<span class="hljs-string">&#x27;react&#x27;</span>)</span>
+[
+  &#x27;/Users/toss/dev/toss-frontend-libraries/repl/node_modules&#x27;,
+  &#x27;/Users/toss/dev/toss-frontend-libraries/node_modules&#x27;,
+  &#x27;/Users/toss/node_modules&#x27;,
+  &#x27;/Users/node_modules&#x27;,
+  &#x27;/node_modules&#x27;,
+  &#x27;/Users/toss/.node_modules&#x27;,
+  &#x27;/Users/toss/.node_libraries&#x27;,
+  &#x27;/Users/toss/.nvm/versions/node/v12.16.3/lib/node&#x27;,
+  &#x27;/Users/toss/.node_modules&#x27;,
+  &#x27;/Users/toss/.node_libraries&#x27;,
+  &#x27;/Users/toss/.nvm/versions/node/v12.16.3/lib/node&#x27;
+]
+</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Shell Session</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">shell</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>목록에서 확인할 수 있는 것처럼, NPM은 패키지를 찾기 위해서 계속 상위 디렉토리의 node_modules 폴더를 탐색합니다. 따라서 패키지를 바로 찾지 못할수록 readdir, stat과 같은 느린 I/O 호출이 반복됩니다. 경우에 따라서는 I/O 호출이 중간에 실패하기도 합니다.</p>
+
+
+
+<p>TypeScript 4.0까지는 node_modules를 이용한 패키지 탐색이 너무 비효율적인 나머지, 패키지를 처음으로 import 하기 전까지는 node_modules 내부의 타입 정보를 찾아보지 않기도 했습니다. (<a href="https://devblogs.microsoft.com/typescript/announcing-typescript-4-0-beta/#smarter-auto-imports">TS 4.0 Changelog</a>)</p>
+
+
+
+<h3>환경에 따라 달라지는 동작</h3>
+
+
+
+<p>NPM은 패키지를 찾지 못하면 상위 디렉토리의 node_modules 폴더를 계속 검색합니다. 이 특성 때문에 어떤 의존성을 찾을 수 있는지는 해당 패키지의 상위 디렉토리 환경에 따라 달라집니다.</p>
+
+
+
+<p>예를 들어, 상위 디렉토리가 어떤 node_modules를 포함하고 있는지에 따라 의존성을 불러올 수 있기도 하고, 없기도 합니다. 다른 버전의 의존성을 잘못 불러올 수 있는 여지도 존재합니다.</p>
+
+
+
+<p>이렇게 환경에 따라 동작이 변하는 것은 나쁜 징조입니다. 해당 상황을 재현하기 까다로워지기 때문입니다.</p>
+
+
+
+<h3>비효율적인 설치</h3>
+
+
+
+<p>NPM에서 구성하는 node_modules 디렉토리 구조는 매우 큰 공간을 차지합니다. 일반적으로 간단한 CLI 프로젝트도 수백 메가바이트의 node_modules 폴더가 필요합니다. 용량만 많이 차지할 뿐 아니라, 큰 node_modules 디렉토리 구조를 만들기 위해서는 많은 I/O 작업이 필요합니다.</p>
+
+
+
+<p>node_modules 폴더는 복잡하기 때문에 설치가 유효한지 검증하기 어렵습니다. 예를 들어, 수백 개의 패키지가 서로를 의존하는 복잡한 의존성 트리에서 node_modules 디렉토리 구조는 깊어집니다.</p>
+
+
+
+<p>이렇게 깊은 트리 구조에서 의존성이 잘 설치되어 있는지 검증하려면 많은 수의 I/O 호출이 필요합니다. 일반적으로 디스크 I/O 호출은 메모리의 자료구조를 다루는 것보다 훨씬 느립니다. 이런 문제로 인해 Yarn v1이나 NPM은 기본적인 의존성 트리의 유효성까지만 검증하고, 각 패키지의 내용이 올바른지는 확인하지 않습니다.</p>
+
+
+
+<h3>유령 의존성 (Phantom Dependency)</h3>
+
+
+
+<p>NPM 및 Yarn v1에서는 중복해서 설치되는 node_modules를 아끼기 위해 끌어올리기(Hoisting) 기법을 사용합니다.</p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img src="https://static.toss.im/assets/toss-tech/yarn-berry-2.png" alt="" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<p>예를 들어, 의존성 트리가 왼쪽의 모습을 하고 있다고 가정합시다.</p>
+
+
+
+<p>왼쪽 트리에서 <strong>[A (1.0)]</strong>과 <strong>[B (1.0)]</strong> 패키지는 두 번 설치되므로 디스크 공간을 낭비합니다. NPM과 Yarn v1에서는 디스크 공간을 아끼기 위해 원래 트리의 모양을 오른쪽 트리처럼 바꿉니다.</p>
+
+
+
+<p>오른쪽 트리로 의존성 트리가 바뀌면서 package-1 에서는 원래 require() 할 수 없었던 <strong>[B (1.0)]</strong> 라이브러리를 불러올 수 있게 되었습니다.</p>
+
+
+
+<p></p>
+
+
+
+<div class="wp-block-image"><figure class="alignright size-large is-resized"><div data-rmiz-wrap="visible"><img loading="lazy" src="https://static.toss.im/assets/toss-tech/yarn-berry-3.png" alt="" width="116" height="227" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure></div>
+
+
+
+<p>이렇게 끌어올리기에 따라 직접 의존하고 있지 않은 라이브러리를 require() 할 수 있는 현상을 유령 의존성(Phantom Dependency)이라고 부릅니다.</p>
+
+
+
+<p>유령 의존성 현상이 발생할 때, package.json에 명시하지 않은 라이브러리를 조용히 사용할 수 있게 됩니다. 다른 의존성을 package.json 에서 제거했을 때 소리없이 같이 사라지기도 합니다. 이런 특성은 의존성 관리 시스템을 혼란스럽게 만듭니다.</p>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<h2>Plug’n’Play (PnP)</h2>
+
+
+
+<p>Yarn Berry는 위에서 언급한 문제를 새로운 Plug’n’Play 전략을 이용하여 해결합니다.</p>
+
+
+
+<h3>Plug’n’Play의 배경</h3>
+
+
+
+<p>Yarn v1은 package.json 파일을 기반으로 의존성 트리를 생성하고, 디스크에 node_modules 디렉토리 구조를 만듭니다. 이미 패키지의 의존성 구조를 완전히 알고 있는 것입니다.</p>
+
+
+
+<p>node_modules 파일 시스템을 이용한 의존성 관리는 깨지기 쉽습니다. 모든 패키지 매니저가 실수하기 쉬운 Node 내장 의존성 관리 시스템을 사용해야 할까요? 패키지 매니저들이 node_modules 디렉토리 구조를 만드는 것에 그치지 않고, 보다 근본적으로 안전하게 의존성을 관리하면 어떨까요?</p>
+
+
+
+<p>Plug’n’Play는 이런 생각에서 출발했습니다.</p>
+
+
+
+<h3>Plug’n’Play 켜기</h3>
+
+
+
+<p>NPM에서 최신 버전의 Yarn을 내려받고, 버전을 Berry로 설정하면 Yarn Berry를 사용할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="Shell Session" data-shcb-language-slug="shell"><div><code class="hljs language-shell"><span class="hljs-meta">$</span><span class="bash"> npm install -g yarn</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> ../path/to/some-package</span>
+<span class="hljs-meta">$</span><span class="bash"> yarn <span class="hljs-built_in">set</span> version berry</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Shell Session</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">shell</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Yarn Berry는 기존 Node.js 의존성 관리 시스템과 많이 다르기 때문에 하위호환을 위해 패키지 단위로만 도입할 수 있습니다.</p>
+
+
+
+<h3>Plug’n’Play의 동작 방법</h3>
+
+
+
+<p>Plug’n’Play 설치 모드에서 <code>yarn install</code> 로 의존성을 설치했을 때, 기존과 다른 모습을 볼 수 있습니다.</p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img src="https://static.toss.im/assets/toss-tech/yarn-berry-4.png" alt="" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<p>Yarn Berry는 node_modules를 생성하지 않습니다. 대신 <code>.yarn/cache</code> 폴더에 의존성의 정보가 저장되고, <code>.pnp.cjs</code> 파일에 의존성을 찾을 수 있는 정보가 기록됩니다. <code>.pnp.cjs</code>를 이용하면 디스크 I/O 없이 어떤 패키지가 어떤 라이브러리에 의존하는지, 각 라이브러리는 어디에 위치하는지를 바로 알 수 있습니다.</p>
+
+
+
+<p></p>
+
+
+
+<p>예를 들어, <code>react</code> 패키지는 <code>.pnp.cjs</code> 파일에서 다음과 같이 나타납니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">/* react 패키지 중에서 */</span>
+[<span class="hljs-string">&quot;react&quot;</span>, [
+  <span class="hljs-comment">/* npm:17.0.1 버전은 */</span>
+  [<span class="hljs-string">&quot;npm:17.0.1&quot;</span>, {
+    <span class="hljs-comment">/* 이 위치에 있고 */</span>
+    <span class="hljs-string">&quot;packageLocation&quot;</span>: <span class="hljs-string">&quot;./.yarn/cache/react-npm-17.0.1-98658812fc-a76d86ec97.zip/node_modules/react/&quot;</span>,
+    <span class="hljs-comment">/* 이 의존성들을 참조한다. */</span>
+    <span class="hljs-string">&quot;packageDependencies&quot;</span>: [
+      [<span class="hljs-string">&quot;loose-envify&quot;</span>, <span class="hljs-string">&quot;npm:1.4.0&quot;</span>],
+      [<span class="hljs-string">&quot;object-assign&quot;</span>, <span class="hljs-string">&quot;npm:4.1.1&quot;</span>]
+    ],
+  }]
+]],
+</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>react 17.0.1 버전 패키지의 위치와 의존성의 목록을 완전하게 기술하고 있는 것을 확인할 수 있습니다. 이로부터 특정 패키지와 의존성에 대한 정보가 필요할 때 바로 알 수 있습니다.</p>
+
+
+
+<p></p>
+
+
+
+<p>Yarn은 Node.js가 제공하는 <code>require()</code> 문의 동작을 덮어씀으로써 효율적으로 패키지를 찾을 수 있도록 합니다. 이 때문에 PnP API를 이용하여 의존성 관리를 하고 있을 때에는 <code>node</code> 명령어 대신 <code>yarn node</code> 명령어를 사용해야 합니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="Shell Session" data-shcb-language-slug="shell"><div><code class="hljs language-shell"><span class="hljs-meta">$</span><span class="bash"> yarn node</span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Shell Session</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">shell</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>일반적으로 Node.js 앱을 실행할 때에는 package.json의 <code>scripts</code> 에 실행 스크립트를 등록하여 사용하게 됩니다. 이때 Yarn v1에서 사용하던 것처럼 Yarn으로 스크립트를 실행하기만 하면 자동으로 PnP로 의존성을 불러옵니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="Shell Session" data-shcb-language-slug="shell"><div><code class="hljs language-shell"><span class="hljs-meta">$</span><span class="bash"> yarn dev</span></code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Shell Session</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">shell</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3>ZipFS (Zip Filesystem)</h3>
+
+
+
+<div class="wp-block-image"><figure class="alignright size-large is-resized"><div data-rmiz-wrap="visible"><img loading="lazy" src="https://static.toss.im/assets/toss-tech/yarn-berry-5.png" alt="" width="154" height="253" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div><figcaption>zip으로 묶인 라이브러리가 저장된 .yarn/cache 폴더</figcaption></figure></div>
+
+
+
+<p>Yarn PnP 시스템에서 각 의존성은 Zip 아카이브로 관리됩니다. 예를 들어, Recoil 0.1.2 버전은 <code>recoil-npm-0.1.2-9a0edbd2b9-c69105dd7d.zip</code>과 같은 압축 파일로 관리됩니다.</p>
+
+
+
+<p>이후 .pnp.cjs 파일이 지정하는 바에 따라 동적으로 Zip 아카이브의 내용이 참조됩니다.</p>
+
+
+
+<p></p>
+
+
+
+<p>Zip 아카이브로 의존성을 관리하면 다음과 같은 장점이 생깁니다.</p>
+
+
+
+<ol><li>더 이상 node_modules 디렉토리 구조를 생성할 필요가 없기 때문에 설치가 신속히 완료됩니다.</li><li>각 패키지는 버전마다 하나의 Zip 아카이브만을 가지기 때문에 중복해서 설치되지 않습니다. 각 Zip 아카이브가 압축되어 있음을 고려할 때, 스토리지 용량을 크게 아낄 수 있습니다.<ul><li>실제로 토스팀에서 의존성이 차지하는 크기를 대폭 감축할 수 있었습니다.</li><li>한 서비스의 경우 NPM을 이용했을 때 node_modules 디렉토리가 약 400MB를 차지했지만, Yarn PnP를 사용했을 때 의존성 디렉토리의 크기는 120MB에 불과했습니다.</li></ul></li><li>의존성을 구성하는 파일의 수가 많지 않으므로, 변경 사항을 감지하거나 전체 의존성을 삭제하는 작업이 빠릅니다.<ul><li>없는 의존성이나 더 이상 필요 없는 의존성을 쉽게 찾을 수 있습니다.</li><li>Zip 파일의 내용이 변경되었을 때에는 체크섬과 비교하여 쉽게 변경 여부를 감지할 수 있습니다.</li></ul></li></ol>
+
+
+
+<p></p>
+
+
+
+<h2>Plug’n’Play 도입 결과</h2>
+
+
+
+<p>토스 프론트엔드 챕터가 Plug’n’Play를 도입한 결과, 다양한 장점을 느낄 수 있었습니다.</p>
+
+
+
+<h3>의존성을 검색할 때</h3>
+
+
+
+<p>의존성을 검색할 때, 더 이상 node_modules 폴더를 순회할 필요가 없습니다. .pnp.cjs 파일이 제공하는 자료구조를 이용하여 바로 의존성의 위치를 찾기 때문입니다. 이로써 require()에 걸리는 시간이 크게 단축되었습니다.</p>
+
+
+
+<h3>재현 가능성</h3>
+
+
+
+<p>패키지의 모든 의존성은 .pnp.cjs 파일을 이용하여 관리되기 때문에 더 이상 외부 환경에 영향받지 않습니다. 이로써 다양한 기기 및 CI 환경에서 require() 또는 import 문의 동작이 동일할 것임을 보장할 수 있게 되었습니다.</p>
+
+
+
+<h3>의존성을 설치할 때</h3>
+
+
+
+<p>더 이상 설치를 위해 깊은 node_modules 디렉토리를 생성하지 않아도 됩니다. 또 NPM이 설치하는 것처럼 같은 버전의 패키지가 여러 번 복사되어 설치 시간을 극단적으로 단축할 수 있습니다. 이에 더해 Zero-install을 사용하면 대부분 라이브러리를 설치 없이 사용할 수 있습니다.</p>
+
+
+
+<p>이를 이용하면 CI와 같이 반복적으로 의존성 설치 작업이 이루어지는 곳에서 시간을 크게 절약할 수 있습니다. 토스팀에서는 원래 CI에서 60초씩 걸리던 설치 작업을 Yarn PnP를 도입함으로써 수 초 이내로 단축했습니다.</p>
+
+
+
+<h3>엄격한 의존성 관리</h3>
+
+
+
+<p>Yarn PnP는 node_modules에서와 같이 의존성을 끌어올리지 않습니다. 이로써 각 패키지들은 자신이 package.json에 기술하는 의존성에만 접근할 수 있습니다. 기존에 환경에 따라 우연히 작동할 수 있었던 코드들이 보다 엄격히 관리되는 것입니다. 이로써 예기치 못한 버그를 쉽게 일으키던 유령 의존성 현상을 근본적으로 막을 수 있었습니다.</p>
+
+
+
+<h3>의존성 검증</h3>
+
+
+
+<p>node_modules를 사용하여 의존성을 관리했을 때에는 올바르게 의존성이 설치되지 못해서 의존성 폴더 전체를 지우고 다시 설치해야 하는 경우가 발생하고는 했습니다. node_modules 폴더를 검증하기 어려웠기 때문입니다. 전체 재설치를 수행할 때 node_modules 디렉토리 구조를 다시 만드느라 1분 이상의 시간이 허비되기도 했습니다.</p>
+
+
+
+<p>Yarn PnP에서는 Zip 파일을 이용하여 패키지를 관리하기 때문에 빠진 의존성을 찾거나 의존성 파일이 변경되었음을 찾기 쉽습니다. 이로써 의존성이 잘못되었을 때 쉽게 바로잡을 수 있습니다. 이로써 올바르게 의존성이 설치되는 것을 100%에 가깝게 보장할 수 있습니다.</p>
+
+
+
+<p></p>
+
+
+
+<h2>Zero-Install</h2>
+
+
+
+<p>위에서 Yarn Berry의 PnP를 도입함으로써 얻을 수 있는 다양한 장점들을 살펴보았습니다. 여기에서 한 발 더 나아간 생각을 해 볼 수 있습니다. 바로 의존성도 Git 등을 이용하여 버전 관리를 하면 어떨까? 라고 하는 생각인데요.</p>
+
+
+
+<p>Yarn PnP은 의존성을 압축 파일로 관리하기 때문에 의존성의 용량이 작습니다. 또한 각 의존성은 하나의 Zip 파일로만 표현되기 때문에 의존성을 구성하는 파일의 숫자가 NPM만큼 많지 않습니다. 예를 들어, 일반적인 node_modules 는 1.2GB 크기이고 13만 5천개의 파일로 구성되어 있는 반면, Yarn PnP의 의존성은 139MB 크기의 2천개의 압축 파일로 구성됩니다.</p>
+
+
+
+<p>이처럼 용량과 파일의 숫자가 적기 때문에 Yarn Berry를 사용하면 의존성을 Git으로 관리할 수 있습니다. 그리고 이렇게 의존성의 버전을 관리할 때 더욱 큰 장점들을 발견할 수 있습니다.</p>
+
+
+
+<p>이렇게 Yarn Berry에서 의존성을 버전 관리에 포함하는 것을 <strong>Zero-Install</strong>이라고 합니다.</p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img src="https://static.toss.im/assets/toss-tech/yarn-berry-6.png" alt="" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div><figcaption>Yarn Berry Git 레포지토리에서 사용하는 Zero-install</figcaption></figure>
+
+
+
+<p>의존성을 버전 관리에 포함하면 많은 장점들이 생깁니다.</p>
+
+
+
+<ol><li><strong>새로 저장소를 복제하거나 브랜치를 바꾸었다고 해서 yarn install을 실행하지 않아도 됩니다.</strong> 일반적으로 다른 의존성을 사용하는 곳으로 브랜치를 변경했을 때, 잊지 않고 의존성을 설치해주어야 했습니다. 경우에 따라서는 잘못된 의존성 버전이 사용됨으로써 웹 서비스가 알 수 없는 이유로 오동작하기도 했습니다. Zero-Install을 사용했을 때 이런 문제는 완전히 해결됩니다. 더해서 네트워크가 끊어진 곳에서는 오프라인 캐시 기능을 해주기도 합니다.</li><li><strong>CI에서 의존성 설치하는 시간을 크게 절약할 수 있습니다.</strong> 토스에서는 일반적으로 캐시가 존재하지 않을 때 의존성을 설치하기 위해서 60초~90초의 시간이 필요했습니다. Zero-Install을 사용하면 Git Clone으로 저장소를 복제했을 때 의존성들이 바로 사용 가능한 상태가 되어, 의존성을 설치할 필요가 없습니다. 이로써 CI 시간을 크게 절약할 수 있었습니다.</li></ol>
+
+
+
+<p></p>
+
+
+
+<p>토스 프론트엔드 챕터에서는 Zero-install 기능을 적극적으로 레포지토리에 도입함으로써 빌드와 배포 시간을 크게 단축할 수 있었습니다.</p>
+
+
+
+<p></p>
+
+
+
+<h2>그 외 Yarn Berry에서 좋았던 점</h2>
+
+
+
+<p>이 외에 Yarn Berry는 다양한 개발자 친화적인 기능을 제공합니다.</p>
+
+
+
+<ol><li><strong>플러그인 시스템</strong>: Yarn Berry는 핵심 기능도 플러그인을 이용하여 개발되어 있을 만큼 플러그인 친화적인 환경을 자랑합니다. 필요한 만큼 Yarn의 기능을 확장하여 손쉽게 CLI로 사용할 수 있습니다.<br/><br/>토스 프론트엔드 챕터에서는 이현섭님께서 <a href="https://github.com/toss/yarn-workspace-plugin-since">변경된 워크스페이스를 계산하는 플러그인</a>을 며칠만에 만들어주시기도 하셨습니다. 이처럼 Yarn Berry의 기능이 부족하다면 손쉽게 플러그인을 만들 수 있습니다.<br/></li><li><strong>워크스페이스</strong>: Yarn Berry는 Yarn v1와 비교할 수 없을 정도로 높은 완성도의 워크스페이스 기능을 제공합니다. Yarn Berry의 <a href="https://github.com/yarnpkg/berry">Git 레포지토리</a>에서 대표적으로 사용하는 모습을 확인할 수 있습니다. TypeScript를 사용함에도 한 패키지의 소스 코드의 변경사항이 즉시 다른 패키지에 반영되는 모습이 인상적입니다.<br/><br/>토스 프론트엔드 챕터에서도 적극적으로 워크스페이스 기능을 사용하고 있습니다.<br/></li><li><strong>패치 명령어 기본 지원:</strong> 경우에 따라서 NPM에 배포된 라이브러리의 일부분만 수정해서 사용하고 싶은 니즈가 있습니다. Yarn Berry는 <a href="https://yarnpkg.com/cli/patch">yarn patch</a> 명령어를 제공함으로써 쉽게 라이브러리의 일부분을 수정해서 사용할 수 있도록 합니다. 이렇게 만든 패치 파일은 <a href="https://yarnpkg.com/features/protocols">patch: 프로토콜</a>을 이용해서 쉽게 의존성 설치에 사용할 수 있습니다.</li></ol>
+
+
+
+<p></p>
+
+
+
+<p>토스팀은 이렇게 Yarn Berry를 도입함으로써 JavaScript 의존성을 효율적이고 안전하게 다룰 수 있었습니다. 오래 걸리던 CI 속도를 60초 이상 단축하기도 했습니다.</p>
+
+
+
+<p>다음 Yarn Berry 아티클에서는 실제로 거대한 서비스 모노레포를 Yarn Berry로 이전한 경험을 소개드리면서 실사용에서 주의할 점에 대해 보다 자세히 소개드리겠습니다.</p>
+</div></div><style data-emotion="css auig7l">.css-auig7l{margin-top:96px;}</style><style data-emotion="css x7fajo">.css-x7fajo{margin-top:96px;}.css-x7fajo>*:not(style)~*:not(style){margin-left:24px;}</style><style data-emotion="css 6rfvv8">.css-6rfvv8{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;margin-top:96px;}.css-6rfvv8>*:not(style)~*:not(style){margin-left:24px;}</style><div class="css-6rfvv8"><style data-emotion="css 1n0u3h">.css-1n0u3h{background-color:#f9fafb;width:100%;height:auto;border-radius:12px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:48px;}@media (max-width: 700px){.css-1n0u3h{padding:32px;}}</style><div class="css-1n0u3h e1t1xt3a7"><style data-emotion="css 6cc9f0">.css-6cc9f0{font-size:24px;font-weight:700;margin-bottom:16px;color:#4e5968;}</style><h2 class="css-6cc9f0 e1t1xt3a6">재미있게 읽으셨나요?</h2><style data-emotion="css 1wmgpcn">.css-1wmgpcn{font-size:16px;line-height:1.5;font-weight:600;color:#6b7684;margin-bottom:4px;}</style><p class="css-1wmgpcn e1t1xt3a5">좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.</p><style data-emotion="css 4qu8li">.css-4qu8li{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:16px;}</style><div class="css-4qu8li e1t1xt3a3"><style data-emotion="css 1fmr5ax">.css-1fmr5ax{display:block;font-family:'tossface';font-size:40px;cursor:pointer;margin:0 12px;-webkit-transition:0.15s ease-in-out all;transition:0.15s ease-in-out all;}.css-1fmr5ax a{-webkit-text-decoration:none;text-decoration:none;}.css-1fmr5ax:hover{-webkit-transform:scale(1.2);-moz-transform:scale(1.2);-ms-transform:scale(1.2);transform:scale(1.2);}</style><div class="css-1fmr5ax e1t1xt3a1">😍</div><div class="css-1fmr5ax e1t1xt3a1">🤔</div></div><style data-emotion="css 1p3zmjw">.css-1p3zmjw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;margin-top:16px;}.css-1p3zmjw button,.css-1p3zmjw a{margin:0 12px;}@media (max-width: 700px){.css-1p3zmjw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;}.css-1p3zmjw button,.css-1p3zmjw a{width:100%;margin:8px 0;}}</style><div class="css-1p3zmjw e1t1xt3a0"><style data-emotion="css 1u8jkqx">.css-1u8jkqx{display:grid;grid-template-columns:min-content auto;grid-column-gap:8px;}</style><button class="p-button p-button--primary p-button--inline p-button--weak p-button--default p-button--has-icon padding--base css-1u8jkqx" type="button" aria-disabled="false"><span class="icon p-icon icon--colored p-icon--colored" aria-hidden="true" role="presentation" style="height:16px;width:16px;min-width:16px;color:#3182f6"></span>아티클 공유하기</button></div></div></div></article><style data-emotion="css 1lsuzal">.css-1lsuzal{margin-top:100px;}.css-1lsuzal::before{content:'';position:absolute;width:100%;height:1px;left:0;border-bottom:1px solid #e5e8eb;}</style><div class="css-1lsuzal e132k2571"><style data-emotion="css 1ympfnp">.css-1ympfnp{display:inline-block;width:100%;font-size:20px;margin:34px 0 40px 0;}</style><span class="typography typography--h3 typography--bold color--grey800 css-1ympfnp e132k2570">이어지는 글</span><style data-emotion="css vivlm7">.css-vivlm7{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer;margin-bottom:40px;}.css-vivlm7:last-of-type{margin-bottom:0px;}.css-vivlm7:hover .egyklng4{color:#3182f6;}</style><div class="css-vivlm7 egyklng3"><style data-emotion="css bc0lqn">.css-bc0lqn{width:80px;height:80px;margin-right:20px;border-radius:12px;object-fit:cover;}@media (max-width: 700px){.css-bc0lqn{width:64px;height:64px;}}</style><img srcSet="https://toss.tech/wp-content/uploads/2023/04/00009-889461687-300x300.png 300w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687-150x150.png 150w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687.png 512w" class="css-bc0lqn egyklng2"/><style data-emotion="css 1fttcpj">.css-1fttcpj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}</style><div class="css-1fttcpj egyklng1"><style data-emotion="css p4blj2">.css-p4blj2{font-size:24px;margin-bottom:4px;word-break:keep-all;line-height:1.4;overflow-wrap:break-word;-webkit-transition:color 0.3s ease;transition:color 0.3s ease;-webkit-line-clamp:2;display:block;}@media (max-width: 700px){.css-p4blj2{font-size:18px;-webkit-line-clamp:2;}}</style><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">무지성으로 사용한 헬스 체크가 불러일으킬 수 있는 참사</span><style data-emotion="css 1jxhn1e">.css-1jxhn1e{color:#8b95a1;}</style><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 04. 01</span></div></div><div class="css-vivlm7 egyklng3"><img srcSet="https://toss.tech/wp-content/uploads/2023/03/center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/center.png 1200w" class="css-bc0lqn egyklng2"/><div class="css-1fttcpj egyklng1"><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">ESLint와 AST로 코드 퀄리티 높이기</span><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 03. 31</span></div></div></div></div></div><style data-emotion="css 1d2vuhc">.css-1d2vuhc{padding:60px 24px;word-break:keep-all;overflow-wrap:break-word;background:rgba(2,9,19,0.91);}@media (max-width: 700px){.css-1d2vuhc{padding-top:24px;}}</style><section class="css-1d2vuhc eqrolup4"><style data-emotion="css yf0lpd">.css-yf0lpd{display:grid;grid-template-columns:3fr 7fr;grid-column-gap:20px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:640px;margin:0 auto;content-visibility:auto;}@media (max-width: 700px){.css-yf0lpd{grid-template-rows:min-content auto;grid-template-columns:1fr;grid-row-gap:24px;}}</style><div class="css-yf0lpd eqrolup2"><style data-emotion="css 1d33yk5">.css-1d33yk5{width:100%;}@media (max-width: 700px){.css-1d33yk5{width:90px;}}</style><img src="https://static.toss.im/3d/website_code_blue_alpha.png" alt="" class="css-1d33yk5 eqrolup3"/><style data-emotion="css 1gb2pj4">.css-1gb2pj4>*:not(style)~*:not(style){margin-top:24px;}</style><style data-emotion="css 7xmgw5">.css-7xmgw5{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-7xmgw5>*:not(style)~*:not(style){margin-top:24px;}</style><div class="css-7xmgw5"><style data-emotion="css 1pbuvpm">.css-1pbuvpm>*:not(style)~*:not(style){margin-top:8px;}</style><style data-emotion="css nbpfuv">.css-nbpfuv{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-nbpfuv>*:not(style)~*:not(style){margin-top:8px;}</style><div class="css-nbpfuv"><style data-emotion="css 19gu4b8">.css-19gu4b8{margin:0;font-size:26px;line-height:1.4;color:#ffffff;}@media (max-width: 700px){.css-19gu4b8{font-size:20px;}}</style><h3 class="css-19gu4b8 eqrolup1">토스팀이 만드는 수많은 혁신의 순간들</h3><style data-emotion="css shfxsq">.css-shfxsq{font-size:17px;line-height:1.5;color:#e5e8eb;}@media (max-width: 700px){.css-shfxsq{font-size:16px;}}</style><div class="css-shfxsq eqrolup0">당신과 함께 만들고 싶습니다.<br/>지금, 토스팀에 합류하세요.</div></div><a class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s" aria-disabled="false" href="https://toss.im/career/jobs?gh_src=38b73b7a3us">채용 중인 공고 보기</a></div></div></section><footer class="p-footer p-footer--light"><div class="p-footer__inner"><div class="p-footer__site-group-list"><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스테크</div></li><li class="p-footer__site-group-item"><a href="mailto:techblog@toss.im">의견 보내기</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스</div></li><li class="p-footer__site-group-item"><a href="https://toss.im">홈페이지</a></li><li class="p-footer__site-group-item"><a href="https://team.toss.im">회사 소개</a></li><li class="p-footer__site-group-item"><a href="https://toss.im/career">채용</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">고객센터</div></li><li class="p-footer__site-group-item"><a href="tel:1599-4905">전화: 1599-4905 (24시간 연중무휴)</a></li><li class="p-footer__site-group-item"><a href="mailto:support.toss.im">이메일: support@toss.im</a></li><li class="p-footer__site-group-item"><a href="https://goto.kakao.com/@toss">카카오톡: @toss</a></li></ul></div><address class="p-footer__address"><strong class="p-footer__address__company-name">㈜비바리퍼블리카</strong>Copyright © Viva Republica, Inc. All Rights Reserved.</address><ul class="p-footer__term-wrapper"></ul><ul class="p-footer__social-list"><li class="p-footer__social-list-item"><a aria-label="Toss Facebook" target="_blank" href="https://www.facebook.com/toss.revolution"><img src="https://static.toss.im/assets/homepage/safety/icn-facebook.svg" alt="Toss Facebook"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss blog" target="_blank" href="https://blog.toss.im"><img src="https://static.toss.im/assets/homepage/safety/icn-blog.svg" alt="Toss blog"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Naver Post" target="_blank" href="https://post.naver.com/tossblog"><img src="https://static.toss.im/assets/homepage/safety/icn-naver.svg" alt="Toss Naver Post"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Twitter" target="_blank" href="https://twitter.com/toss__official"><img src="https://static.toss.im/assets/homepage/safety/icn-twitter.svg" alt="Toss Twitter"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Instagram" target="_blank" href="https://www.instagram.com/toss.im/"><img src="https://static.toss.im/assets/homepage/safety/icn-instagram.svg" alt="Toss Instagram"/></a></li></ul></div></footer><div id="tds-pc__portal-container"></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"article":{"title":"node_modules로부터 우리를 구원해 줄 Yarn Berry","content":"\n\u003cp\u003e토스\u0026nbsp;프론트엔드 챕터에서는 지난해부터 의존성을 관리하기 위해 Yarn Berry(v2)를 도입했습니다. 처음에는 일부 레포지토리부터 시작하여, 현재는 대부분의 레포지토리에 Yarn Berry가 적용되어 있는데요. 토스팀이 새로운 패키지 관리 시스템을 도입하게 된 배경과 사용하면서 좋았던 점을 테크 블로그를 통해 공유합니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003eYarn Berry란?\u003c/h2\u003e\n\n\n\n\u003cp\u003eYarn Berry는 Node.js를 위한 새로운 패키지 관리 시스템으로,\u0026nbsp;Yarn v1의 주요 개발자인 \u003ca href=\"https://github.com/arcanis/\"\u003eMaël Nison\u003c/a\u003e 씨가 만들었습니다.\u0026nbsp;2020년 1월 25일부터 정식 버전(v2)가 출시되어, 현재는 \u003ca href=\"https://github.com/babel/babel/\"\u003eBabel\u003c/a\u003e과 같은 큰 오픈소스 레포지토리에서도 채택하고 있습니다. Yarn Berry는 GitHub \u003ca href=\"https://github.com/yarnpkg/berry\"\u003eyarnpkg/berry\u003c/a\u003e 레포지토리에서 소스코드가 관리되고 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003eYarn Berry는 기존의 \u0026#8220;깨져 있는\u0026#8221; NPM 패키지 관리 시스템을 혁신적으로 개선합니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003eNPM의 문제점\u003c/h2\u003e\n\n\n\n\u003cp\u003eNPM은 Node.js 설치 시에 기본으로 제공되어 범용적으로 사용되고 있으나, 비효율적이거나 깨져 있는 부분이 많습니다.\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg src=\"https://static.toss.im/assets/toss-tech/yarn-berry-1.png\" alt=\"\"/\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e비효율적인 의존성 검색\u003c/h3\u003e\n\n\n\n\u003cp\u003eNPM은 파일 시스템을 이용하여 의존성을 관리합니다. 익숙한 node_modules 폴더를 이용하는 것이 특징인데요. 이렇게 관리했을 때 의존성\u0026nbsp;검색은 비효율적으로 동작합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e예를 들어, \u003ccode\u003e/Users/toss/dev/toss-frontend-libraries\u003c/code\u003e 폴더에서 \u003ccode\u003erequire()\u003c/code\u003e 문을 이용하여 \u003ccode\u003ereact\u003c/code\u003e 패키지를 불러오는 상황을 가정합시다.\u003c/p\u003e\n\n\n\n\u003cp\u003e라이브러리를 찾기 위해 순회하는 디렉토리의 목록을 확인하려고\u0026nbsp;할 때,\u0026nbsp;Node.js에서 제공하는 \u003ccode\u003e\u003ca href=\"https://nodejs.org/api/modules.html#modules_require_resolve_paths_request)\"\u003erequire.resolve.paths()\u003c/a\u003e\u003c/code\u003e 함수를 사용할 수 있습니다.\u0026nbsp;이 함수는 NPM이 검색하는 디렉토리의 목록을 반환합니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-1\" data-shcb-language-name=\"Shell Session\" data-shcb-language-slug=\"shell\"\u003e\u003clink rel='stylesheet' id='syntax-highlighting-code-block-css'  href='https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1' media='all' /\u003e\u003cstyle\u003e.wp-block-code {\n\tborder: 0;\n\tpadding: 0;\n}\n\n.wp-block-code \u003e div {\n\toverflow: auto;\n}\n\n.shcb-language {\n\tborder: 0;\n\tclip: rect(1px, 1px, 1px, 1px);\n\t-webkit-clip-path: inset(50%);\n\tclip-path: inset(50%);\n\theight: 1px;\n\tmargin: -1px;\n\toverflow: hidden;\n\tpadding: 0;\n\tposition: absolute;\n\twidth: 1px;\n\tword-wrap: normal;\n\tword-break: normal;\n}\n\n.hljs {\n\tbox-sizing: border-box;\n}\n\n.hljs.shcb-code-table {\n\tdisplay: table;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table \u003e .shcb-loc {\n\tcolor: inherit;\n\tdisplay: table-row;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table .shcb-loc \u003e span {\n\tdisplay: table-cell;\n}\n\n.wp-block-code code.hljs:not(.shcb-wrap-lines) {\n\twhite-space: pre;\n}\n\n.wp-block-code code.hljs.shcb-wrap-lines {\n\twhite-space: pre-wrap;\n}\n\n.hljs.shcb-line-numbers {\n\tborder-spacing: 0;\n\tcounter-reset: line;\n}\n\n.hljs.shcb-line-numbers \u003e .shcb-loc {\n\tcounter-increment: line;\n}\n\n.hljs.shcb-line-numbers .shcb-loc \u003e span {\n\tpadding-left: 0.75em;\n}\n\n.hljs.shcb-line-numbers .shcb-loc::before {\n\tborder-right: 1px solid #ddd;\n\tcontent: counter(line);\n\tdisplay: table-cell;\n\tpadding: 0 0.75em;\n\ttext-align: right;\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\tuser-select: none;\n\twhite-space: nowrap;\n\twidth: 1%;\n}\n\u003c/style\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-shell\"\u003e\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e node\u003c/span\u003e\nWelcome to Node.js v12.16.3.\nType \".help\" for more information.\n\u003cspan class=\"hljs-meta\"\u003e\u0026gt;\u003c/span\u003e\u003cspan class=\"bash\"\u003e require.resolve.paths(\u003cspan class=\"hljs-string\"\u003e'react'\u003c/span\u003e)\u003c/span\u003e\n[\n  '/Users/toss/dev/toss-frontend-libraries/repl/node_modules',\n  '/Users/toss/dev/toss-frontend-libraries/node_modules',\n  '/Users/toss/node_modules',\n  '/Users/node_modules',\n  '/node_modules',\n  '/Users/toss/.node_modules',\n  '/Users/toss/.node_libraries',\n  '/Users/toss/.nvm/versions/node/v12.16.3/lib/node',\n  '/Users/toss/.node_modules',\n  '/Users/toss/.node_libraries',\n  '/Users/toss/.nvm/versions/node/v12.16.3/lib/node'\n]\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-1\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eShell Session\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003eshell\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e목록에서 확인할 수 있는 것처럼, NPM은 패키지를 찾기 위해서 계속 상위 디렉토리의 node_modules 폴더를 탐색합니다. 따라서 패키지를 바로 찾지 못할수록 readdir, stat과 같은 느린 I/O 호출이 반복됩니다. 경우에 따라서는 I/O 호출이 중간에 실패하기도 합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003eTypeScript 4.0까지는 node_modules를 이용한 패키지 탐색이 너무 비효율적인 나머지, 패키지를 처음으로 import 하기 전까지는 node_modules 내부의 타입 정보를 찾아보지 않기도 했습니다. (\u003ca href=\"https://devblogs.microsoft.com/typescript/announcing-typescript-4-0-beta/#smarter-auto-imports\"\u003eTS 4.0 Changelog\u003c/a\u003e)\u003c/p\u003e\n\n\n\n\u003ch3\u003e환경에 따라 달라지는 동작\u003c/h3\u003e\n\n\n\n\u003cp\u003eNPM은 패키지를 찾지 못하면 상위 디렉토리의 node_modules 폴더를 계속 검색합니다. 이 특성 때문에 어떤 의존성을 찾을 수 있는지는 해당 패키지의 상위 디렉토리\u0026nbsp;환경에 따라 달라집니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e예를 들어, 상위 디렉토리가 어떤 node_modules를 포함하고 있는지에 따라 의존성을 불러올 수 있기도 하고, 없기도 합니다. 다른 버전의 의존성을 잘못 불러올 수 있는 여지도 존재합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이렇게 환경에 따라 동작이 변하는 것은 나쁜 징조입니다. 해당 상황을 재현하기 까다로워지기 때문입니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e비효율적인 설치\u003c/h3\u003e\n\n\n\n\u003cp\u003eNPM에서 구성하는 node_modules 디렉토리 구조는 매우 큰 공간을 차지합니다. 일반적으로 간단한 CLI 프로젝트도 수백 메가바이트의 node_modules 폴더가 필요합니다. 용량만 많이 차지할 뿐 아니라,\u0026nbsp;큰 node_modules 디렉토리 구조를 만들기 위해서는 많은 I/O 작업이 필요합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003enode_modules 폴더는 복잡하기 때문에 설치가 유효한지 검증하기 어렵습니다. 예를 들어, 수백 개의 패키지가 서로를 의존하는 복잡한 의존성 트리에서 node_modules 디렉토리 구조는 깊어집니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이렇게 깊은 트리 구조에서 의존성이 잘 설치되어 있는지 검증하려면\u0026nbsp;많은 수의 I/O 호출이 필요합니다. 일반적으로 디스크 I/O 호출은 메모리의 자료구조를 다루는 것보다 훨씬 느립니다. 이런 문제로 인해 Yarn v1이나 NPM은 기본적인 의존성 트리의 유효성까지만 검증하고, 각 패키지의 내용이 올바른지는 확인하지 않습니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e유령 의존성 (Phantom Dependency)\u003c/h3\u003e\n\n\n\n\u003cp\u003eNPM 및 Yarn v1에서는 중복해서 설치되는 node_modules를 아끼기 위해 끌어올리기(Hoisting) 기법을 사용합니다.\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg src=\"https://static.toss.im/assets/toss-tech/yarn-berry-2.png\" alt=\"\"/\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e예를 들어, 의존성 트리가 왼쪽의 모습을 하고 있다고 가정합시다.\u003c/p\u003e\n\n\n\n\u003cp\u003e왼쪽 트리에서 \u003cstrong\u003e[A (1.0)]\u003c/strong\u003e과 \u003cstrong\u003e[B (1.0)]\u003c/strong\u003e 패키지는 두 번 설치되므로 디스크 공간을 낭비합니다. NPM과 Yarn v1에서는 디스크 공간을 아끼기 위해 원래 트리의 모양을 오른쪽 트리처럼 바꿉니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e오른쪽 트리로 의존성 트리가 바뀌면서 package-1 에서는 원래 require() 할 수 없었던 \u003cstrong\u003e[B (1.0)]\u003c/strong\u003e 라이브러리를 불러올 수 있게 되었습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cdiv class=\"wp-block-image\"\u003e\u003cfigure class=\"alignright size-large is-resized\"\u003e\u003cimg loading=\"lazy\" src=\"https://static.toss.im/assets/toss-tech/yarn-berry-3.png\" alt=\"\" width=\"116\" height=\"227\"/\u003e\u003c/figure\u003e\u003c/div\u003e\n\n\n\n\u003cp\u003e이렇게 끌어올리기에 따라 직접 의존하고 있지 않은 라이브러리를 require() 할 수 있는 현상을 유령 의존성(Phantom Dependency)이라고 부릅니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e유령 의존성 현상이 발생할 때, package.json에 명시하지 않은 라이브러리를 조용히 사용할 수 있게 됩니다. 다른 의존성을 package.json 에서 제거했을 때 소리없이 같이 사라지기도 합니다. 이런 특성은 의존성 관리 시스템을 혼란스럽게 만듭니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch2\u003ePlug\u0026#8217;n\u0026#8217;Play (PnP)\u003c/h2\u003e\n\n\n\n\u003cp\u003eYarn Berry는 위에서 언급한 문제를 새로운 Plug\u0026#8217;n\u0026#8217;Play 전략을 이용하여 해결합니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003ePlug\u0026#8217;n\u0026#8217;Play의 배경\u003c/h3\u003e\n\n\n\n\u003cp\u003eYarn\u0026nbsp;v1은 package.json 파일을 기반으로 의존성 트리를 생성하고, 디스크에 node_modules 디렉토리 구조를 만듭니다. 이미 패키지의 의존성 구조를 완전히 알고 있는 것입니다.\u003c/p\u003e\n\n\n\n\u003cp\u003enode_modules\u0026nbsp;파일 시스템을 이용한 의존성 관리는 깨지기 쉽습니다.\u0026nbsp;모든 패키지 매니저가 실수하기 쉬운 Node 내장 의존성 관리 시스템을 사용해야 할까요?\u0026nbsp;패키지 매니저들이 node_modules 디렉토리 구조를 만드는\u0026nbsp;것에 그치지 않고,\u0026nbsp;보다 근본적으로 안전하게 의존성을 관리하면 어떨까요?\u003c/p\u003e\n\n\n\n\u003cp\u003ePlug\u0026#8217;n\u0026#8217;Play는 이런 생각에서 출발했습니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003ePlug\u0026#8217;n\u0026#8217;Play 켜기\u003c/h3\u003e\n\n\n\n\u003cp\u003eNPM에서 최신 버전의 Yarn을 내려받고, 버전을 Berry로 설정하면 Yarn Berry를 사용할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-2\" data-shcb-language-name=\"Shell Session\" data-shcb-language-slug=\"shell\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-shell\"\u003e\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e npm install -g yarn\u003c/span\u003e\n\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e \u003cspan class=\"hljs-built_in\"\u003ecd\u003c/span\u003e ../path/to/some-package\u003c/span\u003e\n\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e yarn \u003cspan class=\"hljs-built_in\"\u003eset\u003c/span\u003e version berry\u003c/span\u003e\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-2\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eShell Session\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003eshell\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003eYarn Berry는 기존 Node.js 의존성 관리 시스템과 많이 다르기 때문에 하위호환을 위해 패키지 단위로만 도입할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003ePlug\u0026#8217;n\u0026#8217;Play의 동작 방법\u003c/h3\u003e\n\n\n\n\u003cp\u003ePlug\u0026#8217;n\u0026#8217;Play 설치 모드에서 \u003ccode\u003eyarn install\u003c/code\u003e 로 의존성을 설치했을 때, 기존과 다른 모습을 볼 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg src=\"https://static.toss.im/assets/toss-tech/yarn-berry-4.png\" alt=\"\"/\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003eYarn Berry는 node_modules를 생성하지 않습니다. 대신 \u003ccode\u003e.yarn/cache\u003c/code\u003e 폴더에 의존성의 정보가 저장되고, \u003ccode\u003e.pnp.cjs\u003c/code\u003e 파일에 의존성을 찾을 수 있는 정보가 기록됩니다. \u003ccode\u003e.pnp.cjs\u003c/code\u003e를 이용하면 디스크 I/O 없이 어떤 패키지가 어떤 라이브러리에 의존하는지, 각 라이브러리는 어디에 위치하는지를 바로 알 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e예를 들어, \u003ccode\u003ereact\u003c/code\u003e 패키지는 \u003ccode\u003e.pnp.cjs\u003c/code\u003e 파일에서 다음과 같이 나타납니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-3\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-comment\"\u003e/* react 패키지 중에서 */\u003c/span\u003e\n[\u003cspan class=\"hljs-string\"\u003e\"react\"\u003c/span\u003e, [\n  \u003cspan class=\"hljs-comment\"\u003e/* npm:17.0.1 버전은 */\u003c/span\u003e\n  [\u003cspan class=\"hljs-string\"\u003e\"npm:17.0.1\"\u003c/span\u003e, {\n    \u003cspan class=\"hljs-comment\"\u003e/* 이 위치에 있고 */\u003c/span\u003e\n    \u003cspan class=\"hljs-string\"\u003e\"packageLocation\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./.yarn/cache/react-npm-17.0.1-98658812fc-a76d86ec97.zip/node_modules/react/\"\u003c/span\u003e,\n    \u003cspan class=\"hljs-comment\"\u003e/* 이 의존성들을 참조한다. */\u003c/span\u003e\n    \u003cspan class=\"hljs-string\"\u003e\"packageDependencies\"\u003c/span\u003e: [\n      [\u003cspan class=\"hljs-string\"\u003e\"loose-envify\"\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e\"npm:1.4.0\"\u003c/span\u003e],\n      [\u003cspan class=\"hljs-string\"\u003e\"object-assign\"\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e\"npm:4.1.1\"\u003c/span\u003e]\n    ],\n  }]\n]],\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-3\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003ereact\u0026nbsp;17.0.1\u0026nbsp;버전\u0026nbsp;패키지의 위치와 의존성의 목록을 완전하게 기술하고 있는 것을 확인할 수 있습니다. 이로부터 특정 패키지와 의존성에 대한 정보가 필요할 때 바로 알\u0026nbsp;수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003eYarn은 Node.js가 제공하는 \u003ccode\u003erequire()\u003c/code\u003e 문의 동작을 덮어씀으로써 효율적으로 패키지를 찾을 수 있도록 합니다. 이 때문에 PnP API를 이용하여 의존성\u0026nbsp;관리를 하고 있을 때에는 \u003ccode\u003enode\u003c/code\u003e 명령어 대신 \u003ccode\u003eyarn node\u003c/code\u003e 명령어를 사용해야 합니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-4\" data-shcb-language-name=\"Shell Session\" data-shcb-language-slug=\"shell\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-shell\"\u003e\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e yarn node\u003c/span\u003e\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-4\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eShell Session\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003eshell\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e일반적으로 Node.js 앱을 실행할 때에는 package.json의 \u003ccode\u003escripts\u003c/code\u003e 에 실행 스크립트를 등록하여 사용하게 됩니다. 이때 Yarn v1에서 사용하던 것처럼 Yarn으로 스크립트를 실행하기만 하면 자동으로 PnP로 의존성을 불러옵니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-5\" data-shcb-language-name=\"Shell Session\" data-shcb-language-slug=\"shell\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-shell\"\u003e\u003cspan class=\"hljs-meta\"\u003e$\u003c/span\u003e\u003cspan class=\"bash\"\u003e yarn dev\u003c/span\u003e\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-5\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eShell Session\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003eshell\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003ch3\u003eZipFS (Zip Filesystem)\u003c/h3\u003e\n\n\n\n\u003cdiv class=\"wp-block-image\"\u003e\u003cfigure class=\"alignright size-large is-resized\"\u003e\u003cimg loading=\"lazy\" src=\"https://static.toss.im/assets/toss-tech/yarn-berry-5.png\" alt=\"\" width=\"154\" height=\"253\"/\u003e\u003cfigcaption\u003ezip으로 묶인 라이브러리가 저장된 .yarn/cache 폴더\u003c/figcaption\u003e\u003c/figure\u003e\u003c/div\u003e\n\n\n\n\u003cp\u003eYarn PnP 시스템에서 각 의존성은 Zip 아카이브로 관리됩니다. 예를 들어, Recoil 0.1.2 버전은 \u003ccode\u003erecoil-npm-0.1.2-9a0edbd2b9-c69105dd7d.zip\u003c/code\u003e과 같은 압축 파일로 관리됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이후 .pnp.cjs 파일이 지정하는 바에 따라 동적으로 Zip 아카이브의 내용이 참조됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003eZip 아카이브로 의존성을 관리하면 다음과 같은 장점이 생깁니다.\u003c/p\u003e\n\n\n\n\u003col\u003e\u003cli\u003e더 이상 node_modules 디렉토리 구조를 생성할 필요가 없기 때문에\u0026nbsp;설치가 신속히 완료됩니다.\u003c/li\u003e\u003cli\u003e각 패키지는 버전마다 하나의 Zip 아카이브만을\u0026nbsp;가지기 때문에 중복해서 설치되지 않습니다. 각 Zip 아카이브가 압축되어 있음을 고려할 때, 스토리지 용량을 크게 아낄 수 있습니다.\u003cul\u003e\u003cli\u003e실제로 토스팀에서 의존성이 차지하는 크기를 대폭 감축할 수 있었습니다.\u003c/li\u003e\u003cli\u003e한 서비스의 경우 NPM을 이용했을 때 node_modules 디렉토리가 약 400MB를 차지했지만, Yarn PnP를 사용했을 때 의존성 디렉토리의 크기는 120MB에 불과했습니다.\u003c/li\u003e\u003c/ul\u003e\u003c/li\u003e\u003cli\u003e의존성을 구성하는 파일의 수가 많지 않으므로, 변경 사항을 감지하거나 전체 의존성을 삭제하는 작업이 빠릅니다.\u003cul\u003e\u003cli\u003e없는 의존성이나 더 이상 필요 없는 의존성을 쉽게 찾을 수 있습니다.\u003c/li\u003e\u003cli\u003eZip 파일의 내용이 변경되었을 때에는 체크섬과 비교하여 쉽게 변경 여부를 감지할 수 있습니다.\u003c/li\u003e\u003c/ul\u003e\u003c/li\u003e\u003c/ol\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch2\u003ePlug\u0026#8217;n\u0026#8217;Play 도입 결과\u003c/h2\u003e\n\n\n\n\u003cp\u003e토스 프론트엔드 챕터가 Plug\u0026#8217;n\u0026#8217;Play를 도입한 결과, 다양한 장점을 느낄 수 있었습니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e의존성을 검색할 때\u003c/h3\u003e\n\n\n\n\u003cp\u003e의존성을 검색할 때, 더 이상 node_modules 폴더를 순회할 필요가 없습니다. .pnp.cjs 파일이 제공하는 자료구조를 이용하여 바로 의존성의 위치를 찾기 때문입니다. 이로써 require()에 걸리는 시간이 크게 단축되었습니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e재현 가능성\u003c/h3\u003e\n\n\n\n\u003cp\u003e패키지의 모든 의존성은 .pnp.cjs 파일을 이용하여 관리되기 때문에 더 이상 외부 환경에 영향받지 않습니다. 이로써 다양한 기기 및 CI 환경에서 require() 또는 import 문의 동작이 동일할 것임을 보장할 수 있게 되었습니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e의존성을 설치할 때\u003c/h3\u003e\n\n\n\n\u003cp\u003e더 이상 설치를 위해 깊은 node_modules 디렉토리를 생성하지 않아도 됩니다. 또 NPM이 설치하는 것처럼 같은 버전의 패키지가 여러 번 복사되어 설치 시간을 극단적으로 단축할 수 있습니다. 이에 더해 Zero-install을 사용하면 대부분 라이브러리를 설치 없이 사용할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이를 이용하면 CI와 같이 반복적으로 의존성 설치 작업이 이루어지는 곳에서 시간을 크게 절약할 수 있습니다. 토스팀에서는 원래 CI에서 60초씩 걸리던 설치 작업을 Yarn PnP를 도입함으로써 수 초 이내로 단축했습니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e엄격한 의존성 관리\u003c/h3\u003e\n\n\n\n\u003cp\u003eYarn PnP는 node_modules에서와 같이 의존성을 끌어올리지 않습니다. 이로써 각 패키지들은 자신이 package.json에 기술하는 의존성에만 접근할 수 있습니다. 기존에 환경에 따라 우연히 작동할 수 있었던 코드들이 보다 엄격히 관리되는 것입니다. 이로써 예기치 못한 버그를 쉽게 일으키던 유령 의존성 현상을 근본적으로 막을 수 있었습니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e의존성 검증\u003c/h3\u003e\n\n\n\n\u003cp\u003enode_modules를 사용하여 의존성을 관리했을 때에는 올바르게 의존성이 설치되지 못해서 의존성 폴더 전체를 지우고 다시 설치해야 하는 경우가 발생하고는 했습니다. node_modules 폴더를 검증하기 어려웠기 때문입니다. 전체 재설치를 수행할 때 node_modules 디렉토리 구조를 다시 만드느라 1분 이상의 시간이 허비되기도 했습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003eYarn PnP에서는 Zip 파일을 이용하여 패키지를 관리하기 때문에 빠진 의존성을 찾거나 의존성 파일이 변경되었음을 찾기 쉽습니다. 이로써 의존성이 잘못되었을 때 쉽게 바로잡을 수 있습니다. 이로써 올바르게 의존성이 설치되는 것을 100%에 가깝게 보장할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch2\u003eZero-Install\u003c/h2\u003e\n\n\n\n\u003cp\u003e위에서 Yarn Berry의 PnP를 도입함으로써 얻을 수 있는 다양한 장점들을 살펴보았습니다. 여기에서 한 발 더 나아간 생각을 해 볼 수 있습니다. 바로 의존성도 Git 등을 이용하여 버전 관리를 하면 어떨까? 라고 하는 생각인데요.\u003c/p\u003e\n\n\n\n\u003cp\u003eYarn PnP은 의존성을 압축 파일로 관리하기 때문에 의존성의 용량이 작습니다. 또한 각 의존성은 하나의 Zip 파일로만 표현되기 때문에 의존성을 구성하는 파일의 숫자가 NPM만큼 많지 않습니다. 예를 들어,\u0026nbsp;일반적인 node_modules\u0026nbsp;는 1.2GB 크기이고 13만 5천개의 파일로 구성되어 있는 반면,\u0026nbsp;Yarn PnP의 의존성은 139MB\u0026nbsp;크기의 2천개의 압축 파일로 구성됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이처럼 용량과 파일의 숫자가 적기 때문에 Yarn Berry를 사용하면 의존성을 Git으로 관리할 수 있습니다. 그리고 이렇게 의존성의 버전을 관리할 때 더욱 큰 장점들을 발견할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이렇게 Yarn Berry에서 의존성을 버전 관리에 포함하는 것을\u0026nbsp;\u003cstrong\u003eZero-Install\u003c/strong\u003e이라고 합니다.\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg src=\"https://static.toss.im/assets/toss-tech/yarn-berry-6.png\" alt=\"\"/\u003e\u003cfigcaption\u003eYarn Berry Git 레포지토리에서 사용하는 Zero-install\u003c/figcaption\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e의존성을 버전 관리에 포함하면 많은 장점들이 생깁니다.\u003c/p\u003e\n\n\n\n\u003col\u003e\u003cli\u003e\u003cstrong\u003e새로 저장소를 복제하거나 브랜치를 바꾸었다고 해서 yarn install을 실행하지 않아도 됩니다.\u003c/strong\u003e\u0026nbsp;일반적으로 다른 의존성을 사용하는 곳으로 브랜치를 변경했을 때, 잊지 않고 의존성을 설치해주어야 했습니다. 경우에 따라서는 잘못된 의존성 버전이 사용됨으로써 웹 서비스가 알 수 없는 이유로 오동작하기도 했습니다. Zero-Install을 사용했을 때 이런 문제는 완전히 해결됩니다. 더해서 네트워크가 끊어진 곳에서는 오프라인 캐시 기능을 해주기도 합니다.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eCI에서 의존성 설치하는 시간을 크게 절약할 수 있습니다.\u003c/strong\u003e\u0026nbsp;토스에서는 일반적으로 캐시가 존재하지 않을 때 의존성을 설치하기 위해서 60초~90초의 시간이 필요했습니다. Zero-Install을 사용하면 Git Clone으로 저장소를 복제했을 때 의존성들이 바로 사용 가능한 상태가 되어, 의존성을 설치할 필요가 없습니다. 이로써 CI 시간을 크게 절약할 수 있었습니다.\u003c/li\u003e\u003c/ol\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e토스 프론트엔드 챕터에서는 Zero-install 기능을 적극적으로 레포지토리에 도입함으로써 빌드와 배포 시간을 크게 단축할 수 있었습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch2\u003e그 외 Yarn Berry에서 좋았던 점\u003c/h2\u003e\n\n\n\n\u003cp\u003e이 외에 Yarn Berry는 다양한 개발자 친화적인 기능을 제공합니다.\u003c/p\u003e\n\n\n\n\u003col\u003e\u003cli\u003e\u003cstrong\u003e플러그인 시스템\u003c/strong\u003e: Yarn Berry는 핵심 기능도 플러그인을 이용하여 개발되어 있을 만큼 플러그인 친화적인 환경을 자랑합니다. 필요한 만큼 Yarn의 기능을 확장하여 손쉽게 CLI로 사용할 수 있습니다.\u003cbr\u003e\u003cbr\u003e토스 프론트엔드 챕터에서는 이현섭님께서\u0026nbsp;\u003ca href=\"https://github.com/toss/yarn-workspace-plugin-since\"\u003e변경된 워크스페이스를 계산하는 플러그인\u003c/a\u003e을 며칠만에 만들어주시기도 하셨습니다. 이처럼 Yarn Berry의 기능이 부족하다면 손쉽게 플러그인을 만들 수 있습니다.\u003cbr\u003e\u003c/li\u003e\u003cli\u003e\u003cstrong\u003e워크스페이스\u003c/strong\u003e: Yarn Berry는 Yarn v1와 비교할 수 없을 정도로 높은 완성도의 워크스페이스 기능을 제공합니다. Yarn Berry의\u0026nbsp;\u003ca href=\"https://github.com/yarnpkg/berry\"\u003eGit 레포지토리\u003c/a\u003e에서 대표적으로 사용하는 모습을 확인할 수 있습니다. TypeScript를 사용함에도 한 패키지의 소스 코드의 변경사항이 즉시 다른 패키지에 반영되는 모습이 인상적입니다.\u003cbr\u003e\u003cbr\u003e토스 프론트엔드 챕터에서도 적극적으로 워크스페이스 기능을 사용하고 있습니다.\u003cbr\u003e\u003c/li\u003e\u003cli\u003e\u003cstrong\u003e패치 명령어 기본 지원:\u003c/strong\u003e\u0026nbsp;경우에 따라서 NPM에 배포된 라이브러리의 일부분만 수정해서 사용하고 싶은 니즈가 있습니다. Yarn Berry는\u0026nbsp;\u003ca href=\"https://yarnpkg.com/cli/patch\"\u003eyarn patch\u003c/a\u003e\u0026nbsp;명령어를 제공함으로써 쉽게 라이브러리의 일부분을 수정해서 사용할 수 있도록 합니다. 이렇게 만든 패치 파일은\u0026nbsp;\u003ca href=\"https://yarnpkg.com/features/protocols\"\u003epatch: 프로토콜\u003c/a\u003e을 이용해서 쉽게 의존성 설치에 사용할 수 있습니다.\u003c/li\u003e\u003c/ol\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e토스팀은 이렇게 Yarn Berry를 도입함으로써 JavaScript 의존성을 효율적이고 안전하게 다룰 수 있었습니다. 오래 걸리던 CI 속도를 60초 이상 단축하기도 했습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e다음 Yarn Berry 아티클에서는 실제로 거대한 서비스 모노레포를 Yarn Berry로 이전한 경험을 소개드리면서 실사용에서 주의할 점에 대해 보다 자세히 소개드리겠습니다.\u003c/p\u003e\n","date":"2021-05-07T17:18:00","excerpt":"\u003cp\u003e토스 프론트엔드 레포지토리 대부분에서 사용하고 있는 패키지 매니저 Yarn Berry. 채택하게 된 배경과 사용하면서 좋았던 점을 공유합니다.\u003c/p\u003e\n","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2021/05/techblog-04-yarn-berry-300x150.png 300w, https://toss.tech/wp-content/uploads/2021/05/techblog-04-yarn-berry-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2021/05/techblog-04-yarn-berry-768x384.png 768w, https://toss.tech/wp-content/uploads/2021/05/techblog-04-yarn-berry.png 1200w"}},"metadata":{"ogBackground":"https://static.toss.im/assets/tech-blog/og-image:/techblog-04-yarn-berry-og.png","ogImageTitle":"node_modules로\r\n부터 우리를 구원해 줄\r\nYarn Berry","ogGenerateImage":null,"recruitTitle":"재미있게 읽으셨나요?","recruitUrl":null,"form1Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=027\u0026title=node_modules_and_yarn_berry\u0026reaction=good","form2Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=027\u0026title=node_modules_and_yarn_berry\u0026reaction=bad","formDescription":"좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.","form1Label":"😍","form2Label":"🤔","recruitDescription":null},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}},{"node":{"id":"dGVybTox","name":"Uncategorized"}}]},"author":{"node":{"id":"dXNlcjoy","firstName":"서진","lastName":"박","description":"토스코어 Client Platform에서 개발자 경험과 웹 성능을 개선하고 있습니다.","avatar":{"url":"https://wp.toss.tech/wp-content/uploads/2021/06/E01JAGTHP8R-U01K6L12VSL-0974fc35250c-512-312x312.png"},"role":{"role":"Frontend Developer"}}}},"relatedArticles":[{"title":"무지성으로 사용한 헬스 체크가 불러일으킬 수 있는 참사","slug":"how-to-work-health-check-in-spring-boot-actuaotr","date":"2023-04-01T15:38:57","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/04/00009-889461687-300x300.png 300w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687-150x150.png 150w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687.png 512w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}},{"node":{"id":"dGVybTox","name":"Uncategorized"}}]}},{"title":"ESLint와 AST로 코드 퀄리티 높이기","slug":"improving-code-quality-via-eslint-and-ast","date":"2023-03-31T15:47:53","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/03/center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/center.png 1200w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}}]}}]},"__N_SSP":true},"page":"/article/[slug]","query":{"slug":"node-modules-and-yarn-berry"},"buildId":"QqBxegmptuUDYc8oCREsD","assetPrefix":"https://static.toss.im/frontend/toss-tech","runtimeConfig":{"ENV":"live","NODE_ENV":"production","PORT":"3000","ASSET_PREFIX":"https://static.toss.im/frontend/toss-tech","SERVICE":"toss-tech","SENTRY":{"DSN":"https://5eff657ed6ef486fb8af2dc5f9508abd@sentry.io/1242586","PUBLIC_KEY":"5eff657ed6ef486fb8af2dc5f9508abd","RELEASE":"toss-tech_1.0.103","SERVICE":"toss-tech","SERVICE_VERSION":"1.0.103"},"RENDER_TYPE":"ssr"},"isFallback":false,"gssp":true,"customServer":true,"scriptLoader":[]}</script></body></html>

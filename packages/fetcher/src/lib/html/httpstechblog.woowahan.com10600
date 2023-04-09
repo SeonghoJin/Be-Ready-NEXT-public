@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="ko-KR"
+	prefix="og: https://ogp.me/ns#" >
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<title>리뷰프로덕트팀 신입 개발자의 파일럿 프로젝트 | 우아한형제들 기술블로그</title>
+
+		<!-- All in One SEO 4.1.7 -->
+		<meta name="robots" content="max-image-preview:large" />
+		<link rel="canonical" href="https://techblog.woowahan.com/10600/" />
+		<meta property="og:locale" content="ko_KR" />
+		<meta property="og:site_name" content="우아한형제들 기술블로그  |" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="리뷰프로덕트팀 신입 개발자의 파일럿 프로젝트 | 우아한형제들 기술블로그" />
+		<meta property="og:url" content="https://techblog.woowahan.com/10600/" />
+		<meta property="og:image" content="https://techblog.woowahan.com/wp-content/uploads/2021/06/screenshot.jpg" />
+		<meta property="og:image:secure_url" content="https://techblog.woowahan.com/wp-content/uploads/2021/06/screenshot.jpg" />
+		<meta property="og:image:width" content="1640" />
+		<meta property="og:image:height" content="856" />
+		<meta property="article:published_time" content="2023-03-02T06:00:10+00:00" />
+		<meta property="article:modified_time" content="2023-03-16T04:25:07+00:00" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="리뷰프로덕트팀 신입 개발자의 파일럿 프로젝트 | 우아한형제들 기술블로그" />
+		<meta name="twitter:image" content="https://techblog.woowahan.com/wp-content/uploads/2021/06/screenshot.jpg" />
+		<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/techblog.woowahan.com\/#website","url":"https:\/\/techblog.woowahan.com\/","name":"\uc6b0\uc544\ud55c\ud615\uc81c\ub4e4 \uae30\uc220\ube14\ub85c\uadf8","inLanguage":"ko-KR","publisher":{"@id":"https:\/\/techblog.woowahan.com\/#organization"}},{"@type":"Organization","@id":"https:\/\/techblog.woowahan.com\/#organization","name":"\uc6b0\uc544\ud55c\ud615\uc81c\ub4e4 \uae30\uc220\ube14\ub85c\uadf8","url":"https:\/\/techblog.woowahan.com\/","logo":{"@type":"ImageObject","@id":"https:\/\/techblog.woowahan.com\/#organizationLogo","url":"https:\/\/techblog.woowa.in\/wp-content\/uploads\/2021\/06\/screenshot.jpg"},"image":{"@id":"https:\/\/techblog.woowahan.com\/#organizationLogo"}},{"@type":"BreadcrumbList","@id":"https:\/\/techblog.woowahan.com\/10600\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/techblog.woowahan.com\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/techblog.woowahan.com\/","name":"\ud648","description":"\uc6b0\uc544\ud55c\ud615\uc81c\ub4e4\uc758 \uae30\uc220, \uc11c\ube44\uc2a4, \ube44\uc804, \uac00\uce58\ub97c \ub4e4\ub824 \ub4dc\ub9bd\ub2c8\ub2e4.","url":"https:\/\/techblog.woowahan.com\/"}}]},{"@type":"Person","@id":"https:\/\/techblog.woowahan.com\/author\/jaeseo\/#author","url":"https:\/\/techblog.woowahan.com\/author\/jaeseo\/","name":"\uc720\uc7ac\uc11c","image":{"@type":"ImageObject","@id":"https:\/\/techblog.woowahan.com\/10600\/#authorImage","url":"https:\/\/techblog.woowahan.com\/wp-content\/uploads\/2023\/03\/\ube14\ub85c\uadf8_\uc720\uc7ac\uc11c\ub2d8.jpg","width":96,"height":96,"caption":"\uc720\uc7ac\uc11c"}},{"@type":"WebPage","@id":"https:\/\/techblog.woowahan.com\/10600\/#webpage","url":"https:\/\/techblog.woowahan.com\/10600\/","name":"\ub9ac\ubdf0\ud504\ub85c\ub355\ud2b8\ud300 \uc2e0\uc785 \uac1c\ubc1c\uc790\uc758 \ud30c\uc77c\ub7ff \ud504\ub85c\uc81d\ud2b8 | \uc6b0\uc544\ud55c\ud615\uc81c\ub4e4 \uae30\uc220\ube14\ub85c\uadf8","inLanguage":"ko-KR","isPartOf":{"@id":"https:\/\/techblog.woowahan.com\/#website"},"breadcrumb":{"@id":"https:\/\/techblog.woowahan.com\/10600\/#breadcrumblist"},"author":"https:\/\/techblog.woowahan.com\/author\/jaeseo\/#author","creator":"https:\/\/techblog.woowahan.com\/author\/jaeseo\/#author","datePublished":"2023-03-02T06:00:10+09:00","dateModified":"2023-03-16T04:25:07+09:00"},{"@type":"Article","@id":"https:\/\/techblog.woowahan.com\/10600\/#article","name":"\ub9ac\ubdf0\ud504\ub85c\ub355\ud2b8\ud300 \uc2e0\uc785 \uac1c\ubc1c\uc790\uc758 \ud30c\uc77c\ub7ff \ud504\ub85c\uc81d\ud2b8 | \uc6b0\uc544\ud55c\ud615\uc81c\ub4e4 \uae30\uc220\ube14\ub85c\uadf8","inLanguage":"ko-KR","headline":"\ub9ac\ubdf0\ud504\ub85c\ub355\ud2b8\ud300 \uc2e0\uc785 \uac1c\ubc1c\uc790\uc758 \ud30c\uc77c\ub7ff \ud504\ub85c\uc81d\ud2b8","author":{"@id":"https:\/\/techblog.woowahan.com\/author\/jaeseo\/#author"},"publisher":{"@id":"https:\/\/techblog.woowahan.com\/#organization"},"datePublished":"2023-03-02T06:00:10+09:00","dateModified":"2023-03-16T04:25:07+09:00","articleSection":"Backend, Culture, \uc628\ubcf4\ub529","mainEntityOfPage":{"@id":"https:\/\/techblog.woowahan.com\/10600\/#webpage"},"isPartOf":{"@id":"https:\/\/techblog.woowahan.com\/10600\/#webpage"},"image":{"@type":"ImageObject","@id":"https:\/\/techblog.woowahan.com\/#articleImage","url":"https:\/\/techblog.woowahan.com\/wp-content\/uploads\/2023\/02\/\u110e\u116c\u110c\u1169\u11bc-\u1103\u1169\u1106\u1166\u110b\u1175\u11ab.png","width":1255,"height":581}}]}
+		</script>
+		<!-- All in One SEO -->
+
+<script>                function apbct_attach_event_handler__backend(elem, event, callback) {                    if(typeof window.addEventListener === "function") elem.addEventListener(event, callback);                    else                                                elem.attachEvent(event, callback);                }                apbct_attach_event_handler__backend(document, 'DOMContentLoaded', function(){                    if (typeof apbctLocalStorage === "object" && ctPublic.data__key_is_ok) {                        apbctLocalStorage.set('ct_checkjs', '5d875f8195a8fbeb9689c586b508ec17aa4dd9c79b3ca1d436d4f6c8c1ab01ad', true );                    } else {                        console.log('APBCT ERROR: apbctLocalStorage object is not loaded.');                    }                  });    </script><link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="우아한형제들 기술블로그 &raquo; 피드" href="https://techblog.woowahan.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="우아한형제들 기술블로그 &raquo; 댓글 피드" href="https://techblog.woowahan.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="우아한형제들 기술블로그 &raquo; 리뷰프로덕트팀 신입 개발자의 파일럿 프로젝트 댓글 피드" href="https://techblog.woowahan.com/10600/feed/" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/techblog.woowahan.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.5"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://techblog.woowahan.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.5' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='ct_public_css-css'  href='https://techblog.woowahan.com/wp-content/plugins/cleantalk-spam-protect/css/cleantalk-public.min.css?ver=6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='post_hit_counter-frontend-css'  href='https://techblog.woowahan.com/wp-content/plugins/post-hit-counter/assets/css/frontend.css?ver=1.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='less-style-css'  href='https://techblog.woowahan.com/wp-content/uploads/wp-less/updater-0W9NMo/assets/css/style-989b48800d.css' type='text/css' media='all' />
+<link rel='stylesheet' id='content-style-css'  href='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/assets/css/style-content.css?ver=5.9.5' type='text/css' media='all' />
+<link rel='stylesheet' id='swiper-style-css'  href='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/assets/css/swiper-bundle.css?ver=5.9.5' type='text/css' media='all' />
+<link rel='stylesheet' id='post_hit_counter-widget-css'  href='https://techblog.woowahan.com/wp-content/plugins/post-hit-counter/assets/css/widget.css?ver=1.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='sab-font-css'  href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&#038;subset=latin' type='text/css' media='all' />
+<link rel='stylesheet' id='prism-css-0-css'  href='https://techblog.woowahan.com/wp-content/plugins/wp-githuber-md/assets/vendor/prism/themes/prism.min.css?ver=1.15.0' type='text/css' media='all' />
+<link rel='stylesheet' id='prism-css-1-css'  href='https://techblog.woowahan.com/wp-content/plugins/wp-githuber-md/assets/vendor/prism/plugins/line-numbers/prism-line-numbers.css?ver=1.15.0' type='text/css' media='all' />
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='ct_public_functions-js-extra'>
+/* <![CDATA[ */
+var ctPublicFunctions = {"_ajax_nonce":"f989b12a4e","_rest_nonce":"93614f95ce","_ajax_url":"\/wp-admin\/admin-ajax.php","_rest_url":"https:\/\/techblog.woowahan.com\/wp-json\/","data__cookies_type":"none","data__ajax_type":"rest","text__wait_for_decoding":"Decoding the contact data, let us a few seconds to finish. Anti-Spam by CleanTalk.","cookiePrefix":""};
+var ctPublic = {"settings__forms__check_internal":"0","settings__forms__check_external":"0","blog_home":"https:\/\/techblog.woowahan.com\/","pixel__setting":"3","pixel__enabled":"1","pixel__url":"https:\/\/moderate2.cleantalk.org\/pixel\/86071727e0fe330bd800deb37d6f4a5d.gif","data__email_check_before_post":"1","data__cookies_type":"none","data__key_is_ok":"1","data__visible_fields_required":"1","data__to_local_storage":{"apbct_cookies_test":"%7B%22cookies_names%22%3A%5B%22apbct_timestamp%22%2C%22apbct_site_landing_ts%22%2C%22apbct_page_hits%22%5D%2C%22check_value%22%3A%225730e68cfa669552a91a23d1a441d5b4%22%7D","apbct_page_hits":"26","apbct_site_referer":"UNKNOWN","apbct_timestamp":"1679492531","apbct_urls":"{\"techblog.woowahan.com\/10504\/\":[1679487346],\"techblog.woowahan.com\/\":[1679492530],\"techblog.woowahan.com\/11045\/\":[1679492530],\"techblog.woowahan.com\/10795\/\":[1679492530],\"techblog.woowahan.com\/10774\/\":[1679492531]}"}};
+/* ]]> */
+</script>
+<script type='text/javascript' data-pagespeed-no-defer src='https://techblog.woowahan.com/wp-content/plugins/cleantalk-spam-protect/js/apbct-public-bundle.min.js?ver=6.1' id='ct_public_functions-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/assets/js/sticky.min.js?ver=5.9.5' id='sticky-js-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/assets/js/swiper-bundle.min.js?ver=5.9.5' id='swiper-js-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/build/vue.min.js?ver=5.9.5' id='vuejs-js'></script>
+<link rel="https://api.w.org/" href="https://techblog.woowahan.com/wp-json/" /><link rel="alternate" type="application/json" href="https://techblog.woowahan.com/wp-json/wp/v2/posts/10600" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://techblog.woowahan.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://techblog.woowahan.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.9.5" />
+<link rel='shortlink' href='https://techblog.woowahan.com/?p=10600' />
+<link rel="alternate" type="application/json+oembed" href="https://techblog.woowahan.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftechblog.woowahan.com%2F10600%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://techblog.woowahan.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftechblog.woowahan.com%2F10600%2F&#038;format=xml" />
+        <script type="text/javascript">
+            var StrCPVisits_page_data = {
+                'abort' : 'false',
+                'title' : '리뷰프로덕트팀 신입 개발자의 파일럿 프로젝트',
+            };
+
+        </script>
+        <!-- This website uses the Ultimate Social Comments plugin v2.0.0 - https://wordpress.org/plugins/ultimate-facebook-comments/ -->
+<meta property="fb:app_id" content="596588250503455"/>
+<style type="text/css">.fb-comments, .fb-comments span, .fb-comments span iframe[style] { min-width:100% !important; width:100% !important }</style>
+<style type="text/css">.saboxplugin-wrap{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;border:1px solid #eee;width:100%;clear:both;display:block;overflow:hidden;word-wrap:break-word;position:relative}.saboxplugin-wrap .saboxplugin-gravatar{float:left;padding:0 20px 20px 20px}.saboxplugin-wrap .saboxplugin-gravatar img{max-width:100px;height:auto;border-radius:0;}.saboxplugin-wrap .saboxplugin-authorname{font-size:18px;line-height:1;margin:20px 0 0 20px;display:block}.saboxplugin-wrap .saboxplugin-authorname a{text-decoration:none}.saboxplugin-wrap .saboxplugin-authorname a:focus{outline:0}.saboxplugin-wrap .saboxplugin-desc{display:block;margin:5px 20px}.saboxplugin-wrap .saboxplugin-desc a{text-decoration:underline}.saboxplugin-wrap .saboxplugin-desc p{margin:5px 0 12px}.saboxplugin-wrap .saboxplugin-web{margin:0 20px 15px;text-align:left}.saboxplugin-wrap .sab-web-position{text-align:right}.saboxplugin-wrap .saboxplugin-web a{color:#ccc;text-decoration:none}.saboxplugin-wrap .saboxplugin-socials{position:relative;display:block;background:#fcfcfc;padding:5px;border-top:1px solid #eee}.saboxplugin-wrap .saboxplugin-socials a svg{width:20px;height:20px}.saboxplugin-wrap .saboxplugin-socials a svg .st2{fill:#fff; transform-origin:center center;}.saboxplugin-wrap .saboxplugin-socials a svg .st1{fill:rgba(0,0,0,.3)}.saboxplugin-wrap .saboxplugin-socials a:hover{opacity:.8;-webkit-transition:opacity .4s;-moz-transition:opacity .4s;-o-transition:opacity .4s;transition:opacity .4s;box-shadow:none!important;-webkit-box-shadow:none!important}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-color{box-shadow:none;padding:0;border:0;-webkit-transition:opacity .4s;-moz-transition:opacity .4s;-o-transition:opacity .4s;transition:opacity .4s;display:inline-block;color:#fff;font-size:0;text-decoration:inherit;margin:5px;-webkit-border-radius:0;-moz-border-radius:0;-ms-border-radius:0;-o-border-radius:0;border-radius:0;overflow:hidden}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-grey{text-decoration:inherit;box-shadow:none;position:relative;display:-moz-inline-stack;display:inline-block;vertical-align:middle;zoom:1;margin:10px 5px;color:#444;fill:#444}.clearfix:after,.clearfix:before{content:' ';display:table;line-height:0;clear:both}.ie7 .clearfix{zoom:1}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-twitch{border-color:#38245c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-addthis{border-color:#e91c00}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-behance{border-color:#003eb0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-delicious{border-color:#06c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-deviantart{border-color:#036824}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-digg{border-color:#00327c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-dribbble{border-color:#ba1655}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-facebook{border-color:#1e2e4f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-flickr{border-color:#003576}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-github{border-color:#264874}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-google{border-color:#0b51c5}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-googleplus{border-color:#96271a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-html5{border-color:#902e13}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-instagram{border-color:#1630aa}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-linkedin{border-color:#00344f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-pinterest{border-color:#5b040e}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-reddit{border-color:#992900}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-rss{border-color:#a43b0a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-sharethis{border-color:#5d8420}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-skype{border-color:#00658a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-soundcloud{border-color:#995200}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-spotify{border-color:#0f612c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-stackoverflow{border-color:#a95009}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-steam{border-color:#006388}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-user_email{border-color:#b84e05}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-stumbleUpon{border-color:#9b280e}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-tumblr{border-color:#10151b}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-twitter{border-color:#0967a0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-vimeo{border-color:#0d7091}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-windows{border-color:#003f71}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-whatsapp{border-color:#003f71}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-wordpress{border-color:#0f3647}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-yahoo{border-color:#14002d}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-youtube{border-color:#900}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-xing{border-color:#000202}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-mixcloud{border-color:#2475a0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-vk{border-color:#243549}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-medium{border-color:#00452c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-quora{border-color:#420e00}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-meetup{border-color:#9b181c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-goodreads{border-color:#000}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-snapchat{border-color:#999700}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-500px{border-color:#00557f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-mastodont{border-color:#185886}.sabox-plus-item{margin-bottom:20px}@media screen and (max-width:480px){.saboxplugin-wrap{text-align:center}.saboxplugin-wrap .saboxplugin-gravatar{float:none;padding:20px 0;text-align:center;margin:0 auto;display:block}.saboxplugin-wrap .saboxplugin-gravatar img{float:none;display:inline-block;display:-moz-inline-stack;vertical-align:middle;zoom:1}.saboxplugin-wrap .saboxplugin-desc{margin:0 10px 20px;text-align:center}.saboxplugin-wrap .saboxplugin-authorname{text-align:center;margin:10px 0 20px}}body .saboxplugin-authorname a,body .saboxplugin-authorname a:hover{box-shadow:none;-webkit-box-shadow:none}a.sab-profile-edit{font-size:16px!important;line-height:1!important}.sab-edit-settings a,a.sab-profile-edit{color:#0073aa!important;box-shadow:none!important;-webkit-box-shadow:none!important}.sab-edit-settings{margin-right:15px;position:absolute;right:0;z-index:2;bottom:10px;line-height:20px}.sab-edit-settings i{margin-left:5px}.saboxplugin-socials{line-height:1!important}.rtl .saboxplugin-wrap .saboxplugin-gravatar{float:right}.rtl .saboxplugin-wrap .saboxplugin-authorname{display:flex;align-items:center}.rtl .saboxplugin-wrap .saboxplugin-authorname .sab-profile-edit{margin-right:10px}.rtl .sab-edit-settings{right:auto;left:0}img.sab-custom-avatar{max-width:75px;}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-color .st1 {display: none;}.saboxplugin-wrap .saboxplugin-authorname {font-family:"Noto Sans";}.saboxplugin-wrap .saboxplugin-desc {font-family:Noto Sans;}.saboxplugin-wrap {margin-top:40px; margin-bottom:0px; padding: 0px 0px }.saboxplugin-wrap .saboxplugin-authorname {font-size:14px; line-height:21px;}.saboxplugin-wrap .saboxplugin-desc p, .saboxplugin-wrap .saboxplugin-desc {font-size:14px !important; line-height:21px !important;}.saboxplugin-wrap .saboxplugin-web {font-size:14px;}.saboxplugin-wrap .saboxplugin-socials a svg {width:36px;height:36px;}</style><link rel="icon" href="https://techblog.woowahan.com/wp-content/uploads/2020/08/favicon.ico" sizes="32x32" />
+<link rel="icon" href="https://techblog.woowahan.com/wp-content/uploads/2020/08/favicon.ico" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://techblog.woowahan.com/wp-content/uploads/2020/08/favicon.ico" />
+<meta name="msapplication-TileImage" content="https://techblog.woowahan.com/wp-content/uploads/2020/08/favicon.ico" />
+
+	<script type="text/javascript">
+		var ajaxurl = "https://techblog.woowahan.com/wp-admin/admin-ajax.php";
+	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQ34XQDGNB"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'G-JQ34XQDGNB');
+	</script>
+	<!-- Naver -->
+	<meta name="naver-site-verification" content="4b53b1e487890e94c3d0f88804669d2f565d1eb0" />
+</head>
+
+<body data-rsssl=1 class="post-template-default single single-post postid-10600 single-format-standard wp-embed-responsive" data-barba="wrapper">
+	<header>
+		<!--헤더-->
+		<div class="gnb pc">
+			<div>
+				<a href="/" class="title">
+					<span class="logo">
+						<img src="/wp-content/uploads/2021/04/logo-e1619937994625.png" />
+					</span>
+					<span class="sub-logo">기술블로그</span>
+				</a>
+			</div>
+			<div class="menu">
+				<div class="menu-2">
+					<img class="search" src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/search.svg" />
+					<a href="https://www.facebook.com/woowahanTech" name="facebook" target="_blank">
+						<img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/1.svg" />
+					</a>
+					<a href="https://www.youtube.com/%EC%9A%B0%EC%95%84%ED%95%9CTech" name="youtube" target="_blank">
+						<img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/2.svg" />
+					</a>
+				</div>
+				<div class="txt">
+					<a href="https://career.woowahan.com/?utm_source=techblog&utm_medium=display&utm_campaign=2022_1h_developer_recuiting_da&utm_content=techhr&jobCodes&employmentTypeCodes=&serviceSectionCodes=&careerPeriod=&keyword=&category=jobGroupCodes%3ABA005001&fbclid=IwAR1SDMBF6WjfUZ1WV-JrCYxYyAGBf92r-Au1TQ0seGgOuT0ZuAT7XUilsGg#recruit-list" target="_blank">개발자 채용</a>
+					<a href="https://docs.google.com/forms/d/e/1FAIpQLSe5HMoawj5-lsjcOLvF5BtxWWr7D_uZXYChkWse1bgQs58C4w/viewform" target="_blank">뉴스레터 신청</a>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="gnb mob">
+			<div>
+				<a href="/" class="title">
+					<span class="logo">
+						<img src="/wp-content/uploads/2021/04/logo-e1619937994625.png" />
+					</span>
+					<span class="sub-logo">기술블로그</span>
+				</a>
+			</div>
+			<div class="right">
+
+				<div class="hambug_btn">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="search">
+					<img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/search.svg" />
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="search_wrap">
+		<span class="search_inner">
+			<form role="search" method="get" id="searchform" class="searchform" action="/">
+				<input class="searchbar" type="text" name="s" id="s" placeholder="검색어를 입력해주세요." />
+				<input type="submit" id="searchsubmit" value="">
+			</form>
+			<br>
+			<a href="#" class="search">돌아가기</a>
+		</span>
+	</div>
+
+		<div class="content vuejs">
+		<div class="hambug_menu">
+			<div class="top"></div>
+			<div class="inner">
+				<div class="menu-wrap">
+					<a v-for="item in categories" v-bind:href="'/category/'+item.slug" class="item link"
+						v-bind:data-id="item.cat_ID">
+						<!-- <input v-bind:id="'cat-'+item.slug" type="checkbox" v-bind:value="item.slug"
+							v-model="vcategory" /> -->
+						<label>{{item.name}}</label>
+					</a>
+				</div>
+				<div class="menu-wrap extra">
+					<p class="item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSe5HMoawj5-lsjcOLvF5BtxWWr7D_uZXYChkWse1bgQs58C4w/viewform">우아한Tech에 문의하기</a></p>
+					<p class="item"><a href="https://career.woowahan.com/?utm_source=techblog&utm_medium=display&utm_campaign=2022_1h_developer_recuiting_da&utm_content=techhr&jobCodes&employmentTypeCodes=&serviceSectionCodes=&careerPeriod=&keyword=&category=jobGroupCodes%3ABA005001&fbclid=IwAR1SDMBF6WjfUZ1WV-JrCYxYyAGBf92r-Au1TQ0seGgOuT0ZuAT7XUilsGg#recruit-list" target="_blank">개발자 채용</a></p>
+				</div>
+				<div class="menu-wrap extra">
+					<p>
+						<a class="sns" href="/" target="_blank">
+							<img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/1.svg" />
+						</a>
+						<a class="sns" href="/" target="_blank">
+							<img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/2.svg" />
+						</a>
+					</p>
+				</div>
+			</div>
+			<div class="bottom">
+
+			</div>
+		</div>
+		<!-- page content -->
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><div class="content-wrap">
+    <div class="post-content">
+    <div class="cont-header">
+    <h1>리뷰프로덕트팀 신입 개발자의 파일럿 프로젝트</h1>
+        <div class="col col-2">
+            <div class="author">
+        <span>
+            Mar.02.2023        </span>
+        <span>
+            유재서        </span>
+            </div>
+        <div class="sns">
+        <img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/link.svg" alt="clipboard" onclick="SNS('clipboard')">
+        <img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/facebook.svg" alt="facebook" onclick="SNS('facebook')">
+        <img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/twitter.svg" alt="twitter" onclick="SNS('twitter')">
+    </div>
+    </div>
+    <p>
+        <span class="cats">
+                <a class="cat-tag" href="/?pcat=backend" data-slug="backend">
+            Backend        </a>
+                    <a class="cat-tag" href="/?pcat=culture" data-slug="culture">
+            Culture        </a>
+                </span>
+        </p>
+    </div>
+    <div class="post-content-inner">
+    <div class="toc">
+        <ul>
+            <li v-for="item in tocs">
+                <a class="item" v-bind:href="'#'+item.link">{{item.name}}</a>
+                <ul v-if="item.sub && item.sub.length > 0">
+                    <li v-for="sub in item.sub">
+                        <a v-bind:href="'#'+sub.link">{{sub.name}}</a>
+                    </li>
+                </ul>
+            </li>
+    </div>
+    <p>안녕하세요!</p>
+<p>우아한테크코스 교육을 수료하고 리뷰프로덕트팀에 입사한 신입 개발자 유재서입니다. 😃</p>
+<p>교육받을 때 우아한형제들 기술 블로그에서 많은 도움을 받았었는데, 블로그에 글을 기재할 수 있게 되어서 너무 영광입니다. ㅎㅎ</p>
+<p>새로운 지식과 방법들을 학습하며 진행한 프로젝트이다 보니 부족한 부분이 많은데, 성장 일기로 봐주시면 감사하겠습니다! 🙂</p>
+<hr />
+<h2>미니 리뷰 프로젝트 구현하기</h2>
+<p>파일럿의 주제는 미니 리뷰 프로젝트를 구현해 보는 것이었는데요. </p>
+<p>요구사항을 간략하게 정리해 보았습니다.</p>
+<ol>
+<li>
+<p>리뷰 등록, 수정, 삭제</p>
+<ul>
+<li>리뷰는 배달 리뷰, 메뉴 리뷰, 리뷰 이미지, 리뷰 내용, 별점으로 구성됩니다.</li>
+<li>리뷰 C/U/D가 발생하면 리뷰 변경 이벤트를 발행합니다.</li>
+<li>모든 리뷰 데이터는 히스토리가 관리되어야 합니다.</li>
+</ul>
+</li>
+<li>
+<p>리뷰 조회</p>
+<ul>
+<li>정렬 조건(최신, 좋아요순)</li>
+<li>필터 조건(사진이 있는 리뷰, 좋아요가 있는 리뷰)</li>
+</ul>
+</li>
+<li>
+<p>리뷰 좋아요 등록/ 취소</p>
+</li>
+<li>
+<p>가게 리뷰 통계</p>
+<ul>
+<li>리뷰 C/U/D로 이벤트가 발생했을 때, 이를 수신하여 가게 리뷰 통계를 집계합니다.</li>
+</ul>
+</li>
+<li>
+<p>모든 기능 화면 제공</p>
+</li>
+<li>
+<p>CI, 로깅 설정, 배포</p>
+</li>
+</ol>
+<p>사용한 <strong>기술 스택</strong>은 다음과 같습니다.</p>
+<ul>
+<li>Spring Boot 2.x, Gradle</li>
+<li>Spring Data JPA</li>
+<li>QueryDSL</li>
+<li>Aurora(MySQL), H2</li>
+<li>Vue.js</li>
+<li>amazon S3, amazon SNS, amazon SQS</li>
+</ul>
+<h3><strong>엔티티 관계도</strong></h3>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/02/최종-도메인.png" alt="" /></p>
+<p>본격적인 개발을 진행하기 앞서 설계를 먼저 진행하였는데요. 그 과정에서 고민했던 내용들을 공유하고자 합니다.</p>
+<p>설계 과정에서 신경 썼던 부분은 엔티티 간의 연관관계였습니다. JPA를 사용하면서 겪는 대표적인 문제 중 하나는 N+1문제인데요.<br />
+이전의 개발 경험을 비추었을 때 객체 간의 연관이 있다고 모든 관계를 객체 참조로 설정하다 보면, 특정 엔티티를 조회했을 때 어디까지 조회되는지에 대한 경계가 없어 N+1문제를 비롯해 모든 연관된 엔티티가 조회되는 성능적인 이슈들을 마주쳤었습니다.</p>
+<p>이번 파일럿에서는 해당 부분을 더욱 신경 써서 고민했었습니다. 그 과정에서 세운 규칙은 <strong>생성, 수정, 삭제를 함께 하는 같은 라이프사이클을 갖는 엔티티들끼리는 객체 참조를 하고, 이외의 다른 엔티티들 간의 관계는 Id로 간접 참조</strong>를 거는 것이었습니다.</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/02/최종-패키지-상세.png" alt="" /></p>
+<p>위 그림에서 같은 패키지에 있는 엔티티들은 같은 라이프사이클을 가지고 있다고봐주시면 될 것 같습니다. 같은 패키지안에서는 객체 참조를 하고 있고, 다른 패키지 간에는 Id로 참조하고 있습니다.</p>
+<p>이렇게 구성하게 되면 리뷰를 조회할 때는 배달 리뷰, 리뷰 이미지, 리뷰 메뉴들은 함께 조회되지만, Id로 참조하고 있는 가게 엔티티는 조회되지 않고 경계가 끊기게 됩니다.</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/02/최종-패키지-구조-간략.png" alt="" /></p>
+<p>더불어 패키지 간의 순환 참조는 없는지 확인하며, 설계에서 어색한 부분이 없는지 검증했습니다.</p>
+<p>해당 내용을 의식하며 코드를 작성한 후, 코드 리뷰를 요청드렸습니다.</p>
+<pre><code class="language-java">@Service
+@Transactional
+@RequiredArgsConstructor
+public class ReviewRegisterService {
+
+    private final ReviewRepository reviewRepository;
+    private final ReviewDeliveryRepository reviewDeliveryRepository;
+    private final ReviewMenuRepository reviewMenuRepository;
+    private final ReviewImageRepository reviewImageRepository;
+
+    ...
+
+    public void register(ReviewRegisterCommand registerCommand) {
+        Order order = orderRepository.findById(registerCommand.getOrderId())
+                .orElseThrow(() -&gt; new NoSuchElementException(&quot;주문이 존재하지 않습니다.&quot;));
+        ...
+
+        Review review = new Review(registerCommand.getMemberNumber(), order, registerCommand.getShopId(),
+                registerCommand.getContent(), registerCommand.getRating());
+
+        Review savedReview = reviewRepository.save(review);
+        saveDeliveryReview(registerCommand, savedReview);
+        saveReviewMenus(registerCommand, savedReview);
+        saveReviewImages(registerCommand, savedReview);
+    }
+
+    private void saveDeliveryReview(ReviewRegisterCommand registerCommand, Review savedReview) {
+        ...
+        reviewDeliveryRepository.save(reviewDelivery);
+    }
+
+    private void saveReviewMenus(ReviewRegisterCommand registerCommand, Review savedReview) {
+        ...
+        for (ReviewMenuCommand reviewMenuCommand : registerCommand.getReviewMenus()) {
+            ...
+            ReviewMenu reviewMenu = new ReviewMenu(reviewMenuCommand.getMenuName(), reviewMenuCommand.getMenuReviewType(), reviewMenuCommand.getContent());
+            reviewMenuRepository.save(reviewMenu);
+        }
+    }
+
+    private void saveReviewImages(ReviewRegisterCommand registerCommand, Review savedReview) {
+        if (registerCommand.getReviewImages() != null) {
+            ...
+            saveReviewImage(savedReview, imageInfos);
+        }
+    }
+
+    private void saveReviewImage(Review savedReview, Map&lt;String, String&gt; imageInfos) {
+        for (String name : imageInfos.keySet()) {
+            reviewImageRepository.save(new ReviewImage(savedReview.getId(), imageInfos.get(name)));
+        }
+    }
+}</code></pre>
+<p>위 코드에서 <strong>애그리거트 루트</strong>에 대한 리뷰를 남겨주셨습니다.</p>
+<p><code>Review 1) reviewMenu나 Delivery도 동일할 것 같은데 같은 라이프사이클을 갖는 애그리거트안에서는 루트 애그리거트를 통해서만 변경이나 조회가 가능하도록 수정하면 좋을 것 같아요.</code></p>
+<p><code>Review 2) 같이 저장된다는 건 같은 Aggregate 내에 있다고 생각해도 좋을 것 같아요.</code></p>
+<p>그동안 조회의 관점에서만 고민하고 있었다는 것을 깨닫는 순간이었습니다.</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/02/1676391480491-0-266x500.jpg" alt="" /> <img src="https://techblog.woowahan.com/wp-content/uploads/2023/02/1676391480491-1-262x500.jpg" alt="" /></p>
+<p>배달의민족 앱에서 리뷰를 작성하실 때를 떠올리시면, 배달 리뷰와 별점을 기록하고, 리뷰 이미지와 추천 메뉴를 작성하는 하나의 플로우가 떠오르실 겁니다. 리뷰를 수정할 때도 이미지와 메뉴에 대한 기록을 함께 수정하고 저장됩니다.</p>
+<p>즉, 같이 생성되고 같이 수정, 삭제되는 사이클을 가지고 있는데요. 같은 라이프사이클을 갖는 엔티티를 각각의 repository(reviewRepository, reviewDeliveryRepository, reviewMenuRepository, reviewImageRepository)로 관리하게 되면, 외부에서 엔티티에 직접 접근하여 데이터를 변경할 수 있게 되고, 데이터 일관성이 깨질 수 있다는 것을 알게 되었습니다. 각각의 repository를 통해 데이터가 어디서 변경될지 모르니 프로젝트가 커질수록 불안한 마음이 커질 것이라고 생각했습니다.</p>
+<p>따라서 Review를 애그리거트 루트로 설정하여 전체 애그리거트를 관리할 수 있도록 개선했습니다.</p>
+<pre><code class="language-java">@Service
+@RequiredArgsConstructor
+public class ReviewRegisterService {
+
+    private final ReviewRepository reviewRepository;
+
+    ...
+
+    @Transactional
+    public void register(ReviewRegisterCommand registerCommand) {
+        ...
+
+        try {
+            Order order = orderRepository.findById(registerCommand.getOrderId())
+                    .orElseThrow(() -&gt; new NoSuchElementException(&quot;주문이 존재하지 않습니다.&quot;));
+
+            ...
+
+            Review review = Review.builder()
+                    .memberNumber(registerCommand.getMemberNumber())
+                    .reviewDelivery(registerCommand.toReviewDelivery())
+                    .order(order)
+                    .menus(saveReviewMenus(registerCommand))
+                    .images(saveReviewImages(registerCommand))
+                    .shopId(registerCommand.getShopId())
+                    .content(registerCommand.getContent())
+                    .rating(registerCommand.getRating())
+                    .build();
+
+            reviewRepository.save(review);
+
+            ...
+        } catch (Exception exception) {
+            ReviewExceptionHandler.handleException(exception);
+            throw exception;
+        }
+    }
+}</code></pre>
+<p>위 코드에서 아실 수 있듯이 <strong>리뷰와 관련된 엔티티들은 애그리거트 루트인 리뷰를 통해서만 변경</strong>할 수 있습니다.<br />
+해당 리뷰를 남겨 주셔서 더 넒은 시야로 유지 보수의 관점에서도 고민해 볼 수 있었습니다. 😃</p>
+<h3>멀티 모듈 적용</h3>
+<p>사용자가 리뷰를 등록, 수정, 삭제했을 때 Amazon SNS에 리뷰 변경에 대한 이벤트를 발송해야 했습니다.</p>
+<p>이 과정에서 멀티 모듈을 적용해야겠다는 생각을 했는데요.<br />
+리뷰 변경 이벤트를 수신하여, 가게별로 리뷰 통계 값을 집계해야 했기 때문입니다. 따라서 해당 기능은 리뷰 API와 독립된 별도의 기능이라 생각했습니다.</p>
+<p>처음에는 review-api와 review-core라는 두 개의 모듈로 분리했었습니다. 멀티 모듈을 처음 적용해 보다 보니 기준도 모호했고, yml에 선언한 환경 변수들 또한 중복되고 있었습니다. </p>
+<p>이후 기술 블로그에 기고된 <a href="https://techblog.woowahan.com/2637/">멀티모듈 글</a>을 참고하여 아래와 같은 기준으로 다시 나눌 수 있었는데요.</p>
+<p><strong>review-api</strong></p>
+<ul>
+<li>다른 모듈들과 협력하여 애플리케이션 비즈니스 로직들을 처리하는 모듈<br />
+예) service, controller</li>
+</ul>
+<p><strong>review-core</strong></p>
+<ul>
+<li>도메인을 관리하는 모듈<br />
+예) domain, repository</li>
+</ul>
+<p><strong>review-worker</strong></p>
+<ul>
+<li>이벤트가 발생했을 때, 이벤트를 발신하고 수신하는 모듈</li>
+<li>리뷰 변경 이벤트 발송(피드백 이후 해당 로직 review-api로 이동)</li>
+<li>리뷰 변경 이벤트 수신 및 통계 업데이트</li>
+</ul>
+<p><strong>review-client</strong></p>
+<ul>
+<li>외부 시스템과 통신하는 모듈<br />
+예) 회원 API 통신</li>
+</ul>
+<p><strong>review-common</strong></p>
+<ul>
+<li>모든 모듈에서 필요한 클래스<br />
+예) custom exception</li>
+</ul>
+<p>해당 작업을 통해 review-api와 review-worker에서 review-core 도메인 모듈을 사용할 수 있게 되었고, 각각의 역할에 맡게 나누어 build.gradle 의존성들과 yml에 선언한 환경 변수들의 중복 또한 없앨 수 있었습니다.</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/02/멀티-모듈-초기-600x295.png" alt="" /></p>
+<p>초기에 설계한 멀티 모듈 간의 의존성인데요. </p>
+<p>여기서 이상한 부분은 review-api와 review-worker의 관계였습니다. review-api와 review-worker의 모듈을 나누었지만 review-worker에서 이벤트를 발송하고 수신하는 모든 로직이 있었기 때문에, review-api에서 review-worker를 의존하고 있었습니다.</p>
+<p>즉, review-worker가 별도의 애플리케이션으로 분리되지 않고 모듈만 나누어진 구조였습니다.</p>
+<p>해당 설계 내용을 공유드렸더니 팀원분께서 <code>review-api와 review-worker를 같이 두게 되면, api 기능과 통계를 집계하는 로직이 같이 처리되다 보니 애플리케이션에 부하가 많이 올 수 있다. review-api는 api 기능에만 집중해야 한다.</code> 고 말씀 해 주셨습니다.<br />
+추후 생각해 보니 당연한 부분이었는데, 역할을 분리하는 것에만 집중하고 궁극적으로 모듈을 왜 분리해야 했는지에 대한 고민이 부족했다는 것을 깨달을 수 있었습니다.</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/02/멀티-모듈-최종-600x319.png" alt="" /></p>
+<p>팀원분들이 주신 피드백을 통해 위와 같이 모듈 분리를 개선할 수 있었습니다. </p>
+<p>review-worker에서는 이벤트를 수신하여 통계를 업데이트하는 기능만 수행할 수 있도록 하였고, review-worker와 review-api의 관계를 끊어내서 각각의 애플리케이션으로 동작하도록 수정하여 배포를 진행했습니다.</p>
+<h3>가게 리뷰 통계 집계</h3>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/02/통계-워커-흐름-600x282.png" alt="" /></p>
+<p>리뷰 생성, 수정, 삭제 작업을 발생하면 SNS에 리뷰가 변경되었다는 이벤트가 발행됩니다. 그러면 해당 SNS를 구독하고 있던 SQS 큐에서 이벤트를 Pull 하고, 해당 이벤트를 애플리케이션에서 수신하여 가게 리뷰 통계를 업데이트하는 흐름으로 구성했습니다.</p>
+<p>현재는 하나의 SQS에서만 SNS를 구독하고 있지만, 리뷰 변경 이벤트가 필요한 여러 곳에서 구독할 수도 있습니다.</p>
+<p>메시지 큐를 사용하는 아키텍처는 이번 파일럿에서 처음 경험해 볼 수 있었는데요.<br />
+메시지 큐를 사용하면 안정적인 서비스를 구성할 수 있습니다. review-worker에 문제가 생기더라도 review-api에서는 리뷰 변경 이벤트를 발행할 수 있고, review-worker에서는 review-api에서 문제가 생기더라도 큐에서 이벤트를 수신할 수 있게 됩니다. 만약 API를 통해 통신한다면, 둘 중 한 곳에서라도 문제가 발생하더라도 이벤트가 유실될 것입니다.</p>
+<pre><code class="language-java">@Component
+@RequiredArgsConstructor
+public class ReviewUpdatingSQSMessagingConsumer {
+
+    ...
+
+    @Async
+    @SqsListener(value = &quot;${client.event.sqs-queue-name}&quot;, deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)
+    public void subscribe(SQSResponseMessage sqsResponseMessage) throws JsonProcessingException {
+        ...
+    }
+}</code></pre>
+<p>실제로 테스트하는 과정에서도 애플리케이션에 문제가 생겨서 뜨지 못하는 경우가 많았는데, 큐에 이벤트가 보관되어 있어서 추후 문제가 해결되었을 때 통계 집계 작업을 정상적으로 처리할 수 있습니다.</p>
+<p>위 코드처럼 deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS 옵션으로 설정하면, 리스너 메서드가 성공적으로 수행됐을 경우(예외 없이) 큐에서 이벤트가 삭제됩니다.</p>
+<h3>가게별 리뷰 통계 집계 로직의 문제점 및 개선 방법</h3>
+<p>리뷰 변경 이벤트를 수신하여 통계 값을 업데이트하는 로직은 다음과 같았습니다.</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/02/초기-리뷰-통계-1000x498.png" alt="" /></p>
+<p>리뷰 변경 타입에 따라서 다르게 동작하도록 로직을 구성했었는데요. </p>
+<p>그림에서도 느껴지시겠지만 분기 처리도 많고 필요 이상으로 복잡하게 구현된 로직이었습니다.</p>
+<p>팀원분들께서 <code>업데이트 타입을 나누지 않고 통계 값을 집계할 수 있었으면 좋겠다.</code>는 피드백을 주셔서, 로직을 간단하게 수행할 수 있는 방향으로 개선해야 했습니다.</p>
+<p>더불어 Spring Cloud AWS docs를 읽던 중 해당 글을 보게 됩니다.</p>
+<div id="attachment_10610" style="width: 949px" class="wp-caption alignnone"><img aria-describedby="caption-attachment-10610" loading="lazy" src="https://techblog.woowahan.com/wp-content/uploads/2023/02/SQS.png" alt="" width="939" height="76" class="size-full wp-image-10610" srcset="https://techblog.woowahan.com/wp-content/uploads/2023/02/SQS.png 939w, https://techblog.woowahan.com/wp-content/uploads/2023/02/SQS-600x49.png 600w, https://techblog.woowahan.com/wp-content/uploads/2023/02/SQS-768x62.png 768w" sizes="(max-width: 939px) 100vw, 939px" /><p id="caption-attachment-10610" class="wp-caption-text">https://docs.awspring.io/spring-cloud-aws/docs/current/reference/html/index.html#messaging</p></div>
+<p>😱 .. 위에서 알 수 있듯이 현재 로직은 <strong>멱등성</strong>이 보장되고 있지 않았습니다. 같은 이벤트가 여러 번 오면 검증 없이 데이터를 증가시키거나 감소시킵니다. 같은 이벤트를 여러 번 받더라도 통계 집계에는 이상이 없도록 개선해야 했습니다.</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/02/최종-리뷰-통계.png" alt="" /></p>
+<p>따라서 리뷰 변경 이벤트가 발행되면, 리뷰 변경이 발생한 가게에 작성된 리뷰들 중 리뷰의 상태가 <strong>노출 상태</strong>인 리뷰들을 <strong>별점별로 그룹핑</strong>해서 가게 리뷰 통계를 업데이트하도록 개선했습니다.<br />
+추가적인 연산 없이 리뷰 테이블에서 직접 조회하여 업데이트하기 때문에 멱등성도 보장할 수 있었고, 분기 처리도 모두 제거할 수 있어서 더 이해하기 좋은 코드로 개선할 수 있었습니다.</p>
+<p>로직을 작성할 때 현재의 방법이 적절한 방법인지, 더 효율적이고 쉬운 방법은 없는지에 대해 더 고민하는 습관을 가져야 한다는 것을 깨달을 수 있었습니다.</p>
+<h3>히스토리 쉽게 관리하기</h3>
+<p>히스토리와 관련된 요구사항은 <code>1) 리뷰 데이터는 히스토리가 관리되어야 한다.</code> 와  <code>2) 어떤 필드의 값이 변경되었는지 알 수 있어야 한다.</code>는 두 가지가 있었습니다.</p>
+<p>따라서 각각의 1) History(ReviewHistory, ReviewImageHistory, ReviewMenuHistory, ReviewDeliveryHistory, LikeReviewHistory) 엔티티를 새롭게 생성하고,<br />
+2) 현재 엔티티의 값과 요청이 온 값(변경하려는 값)을 비교해서 이전과 데이터가 변경되었는지를 나타내는 boolean 타입 필드를 추가하여 해결해야겠다고 생각했습니다.</p>
+<p>하지만 해당 방법은 5개의 새로운 엔티티를 일일이 생성해야 하는 비슷한 반복 작업을 해야 했습니다. 지금은 파일럿이기 때문에 5개의 엔티티지만, 실제 프로젝트의 모든 엔티티 변경 이력을 관리해야 한다면 많은 비용이 드는 작업일 것입니다.</p>
+<p>고민하던 중 팀원분께서 <strong>Spring Data Envers</strong>라는 키워드를 알려주셨습니다.</p>
+<p>Envers는 엔티티에 감사(auditing) 기능을 추가할 수 있는 하이버네이트 모듈인데요. 엔티티의 변경 이력을 자동으로 관리해 줍니다. Spring Data Envers는 하이버네이트 Envers를 편리하게 사용할 수 있는 Spring Data JPA의 확장 모듈입니다.</p>
+<p>자세한 내용은 Review 엔티티를 보며 설명드리겠습니다.</p>
+<pre><code class="language-java">@Entity
+@Table(name = &quot;review&quot;, indexes = {
+        @Index(name = &quot;id&quot;, columnList = &quot;id&quot;)
+})
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
+public class Review {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Audited(withModifiedFlag = true)
+    private Long id;
+
+    @Column(nullable = false)
+    private String memberNumber;
+
+    @OneToOne(mappedBy = &quot;review&quot;, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private ReviewDelivery reviewDelivery;
+
+    @Column(nullable = false, unique = true)
+    private Long orderId;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = &quot;review&quot;)
+    List&lt;ReviewImage&gt; images = new ArrayList&lt;&gt;();
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = &quot;review&quot;)
+    List&lt;ReviewMenu&gt; menus = new ArrayList&lt;&gt;();
+
+    @Column(nullable = false)
+    private Long shopId;
+
+    @Audited(withModifiedFlag = true)
+    private String content;
+
+    @Column(nullable = false)
+    @Audited(withModifiedFlag = true)
+    private Integer rating;
+
+    @Enumerated(EnumType.STRING)
+    @Audited(withModifiedFlag = true)
+    private ExposureStatus exposureStatus;
+
+    @CreatedDate
+    @Column(nullable = false)
+    protected LocalDateTime createdDate;
+
+    @LastModifiedDate
+    @Column(nullable = false)
+    protected LocalDateTime lastModifiedDate;
+
+    ...
+
+}</code></pre>
+<p>여기서 주의 깊게 보셔할 부분은 <strong>@Audited(withModifiedFlag = true)</strong>입니다. @Audited를 선언하면 자동으로 변경 이력이 관리되는데요. 테이블 상단에 선언하면 모든 필드에 대한 변경 이력을 관리하게 됩니다. 관리하고 싶은 대상을 특정하고 싶으시면, 위의 예시처럼 각각의 필드에 별도로 선언하시면 됩니다.</p>
+<p>또한 withModifiedFlag를 true로 주면 어떤 필드가 수정되었는지 데이터베이스에 boolean 값으로 기록됩니다.</p>
+<p>그럼 실제 데이터베이스 테이블에는 어떻게 저장되는지 확인해 보겠습니다.</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/02/envers-적용-테이블-1200x141.png" alt="" /></p>
+<p>revision_type에서 0은 등록, 1은 수정, 2는 삭제를 나타냅니다. xxx_mod 칼럼은 값이 수정되었는지를 boolean 값으로 나타냅니다.</p>
+<p><img src="https://techblog.woowahan.com/wp-content/uploads/2023/02/envers-적용-테이블2-1-1200x112.png" alt="" /></p>
+<p>또한 revision_id를 통해서는 같은 트랜잭션에서 함께 변경된 모든 이력들을 알 수 있고, revision_id는 revinfo라는 테이블에서 관리됩니다.<br />
+위 테이블에서 review_history와 review_menu_history 테이블에서 같은 revision_id를 가지고 있는 것을 확인해 볼 수 있는데요. 이는 같은 트랜잭션에서 함께 저장되었다는 것을 나타냅니다.</p>
+<p>해당 기능을 통해 리뷰 히스토리를 관리하는 기능을 빠르게 구현할 수 있었고, 구현하는 과정에서 히스토리를 통해 많은 도움을 받을 수 있었습니다. </p>
+<p>참고로 위의 예시에서는 기본으로 설정되는 이름들을 변경했습니다. 밑의 속성들을 찾아보시면 도움이 될 것 같습니다.</p>
+<pre><code class="language-java">spring:
+  jpa:
+    properties:
+      org:
+        hibernate:
+          envers:
+            audit_table_suffix: _history
+            revision_field_name: revision_id
+            revision_type_field_name: revision_type
+    ...</code></pre>
+<p>더 자세한 내용을 알고 싶으시면 <a href="https://www.youtube.com/watch?v=fGPaj-rlN5w">영한님 발표</a>가 많은 도움이 되실 것 같습니다.</p>
+<h3>외부 시스템과 연동하는 기능 &#8211; 테스트 코드 작성의 어려움</h3>
+<p>테스트 코드에 대한 고민도 많았는데요. 진행한 테스트 전략은 다음과 같았습니다.</p>
+<pre><code> Acceptance Test - API 접점을 검증하는 E2E 테스트
+ Service Test - 통합 테스트 
+ Domain Test - 단위 테스트
+ Controller Test - MockMvc를 활용한 컨트롤러 요청 DTO 검증 테스트 (컨트롤러 레이어 슬라이스 테스트)</code></pre>
+<p>해당 테스트 전략 덕분에 사전에 많은 오류를 발견하여 해결할 수 있었고, 적절한 범위에서 테스트를 진행할 수 있었습니다.</p>
+<p>테스트 코드 작성에서 가장 어려웠고 아직도 적절한 방법이었는지 의문이 드는 부분은, 외부 API나 인프라에 의존하고 있는 부분을 테스트하는 방법이었는데요. 실제와 조금이라도 더 유사하게 동작할 수 있도록 다양한 자료를 찾아보았지만 결국 Mock 대역을 사용하는 방식을 사용했습니다.</p>
+<pre><code class="language-java">example 1)
+class ReviewQueryServiceTest extends IntegrationTest {
+
+    //S3에 이미지 업로드
+    @Autowired
+    private ImageManager imageManager;
+
+        ...
+
+    @BeforeEach
+    void setUpMockImage() {
+        image = new MockMultipartFile(&quot;files&quot;, &quot;image-file.jpeg&quot;, &quot;image/jpeg&quot;, &quot;&lt;&lt;jpeg data&gt;&gt;&quot;.getBytes());
+
+        when(imageManager.upload(List.of(image))).thenReturn(Map.of(&quot;image/9cbc1ee6-bfe1-40c6-840a-2fa2f804a9df.jpg&quot;,
+                &quot;https://bucketname.s3.ap-northeast-2.amazonaws.com/image/9cbc1ee6-bfe1-40c6-840a-2fa2f804a9df.jpg&quot;));
+    }
+    ...
+
+example.2)
+@Component
+public class MemberMockServer {
+
+    // 회원 API 통신
+    @Mock
+    protected final MemberClient memberClient;
+
+    private MultipartFile image;
+
+    ...
+
+    public void findMemberNumbersByCI(String memberNumber)
+    {
+        when(memberClient.findMemberNumbersByCI(memberNumber)).thenReturn(
+                List.of(
+                        new MemberNumberQuery(BETA_MEMBER_NUMBER),
+                        new MemberNumberQuery(FAKE_MEMBER_NUMBER)
+                )
+        );
+    }
+
+    ...
+}</code></pre>
+<p>아무래도 Mock은 제가 기대하는 값을 직접 세팅을 해주다 보니, ‘실제 프로덕션 환경에서 잘 동작하지 않으면 어쩌지..?‘라는 불안감이 있었고, 실제로 애플리케이션을 구동했을 때도 외부와 관련되어 있는 부분에서 문제가 많이 발생했습니다.</p>
+<p>이 부분은 앞으로도 계속 고민해 나아가며, 최대한 프로덕션 환경과 가깝게 테스트하는 방법을 학습할 필요가 있다고 생각합니다.</p>
+<h3>다시 생각해 보는 테스트 코드의 목적</h3>
+<p>처음에 작성했던 리뷰 조회 테스트인데요. 리뷰는 주문이 존재해야 작성할 수 있습니다. 따라서 사용자 등록과 주문 생성 등은 리뷰 작성에 초점을 맞췄을 때는 부수적인 대상이라고 생각했고, 테스트 가독성을 위해 초기 세팅 부분들은 모두 @BeforEach로 넣어 중복을 줄이고자 했습니다.</p>
+<pre><code class="language-java">class ReviewQueryServiceTest extends IntegrationTest {
+
+    ...
+
+    //s3 이미지 업로더
+    @Autowired
+    private ImageManager imageManager;
+
+        ...
+
+    private Member meiBaedari;
+
+    private Shop bunsik;
+
+    private Order bunsikOrder;
+    private Order hotdogOrder;
+    private Order cokeOrder;
+
+    private MultipartFile image;
+
+    @BeforeEach
+    void setUp() {
+        meiBaedari = memberRepository.save(new Member(BETA_MEMBER_NUMBER));
+
+        bunsik = shopRepository.save(new Shop(&quot;357910&quot;, &quot;맛있는 떡볶이&quot;));
+
+        bunsikOrder = orderRepository.save(new Order(meiBaedari.getMemberNumber(), bunsik.getId(), OrderStatus.COMPLETED_DELIVERY));
+        orderMenuRepository.save(new OrderMenu(bunsikOrder, &quot;떡볶이&quot;));
+
+        hotdogOrder = orderRepository.save(new Order(meiBaedari.getMemberNumber(), bunsik.getId(), OrderStatus.COMPLETED_DELIVERY));
+        orderMenuRepository.save(new OrderMenu(hotdogOrder, &quot;핫도그&quot;));
+
+        cokeOrder = orderRepository.save(new Order(meiBaedari.getMemberNumber(), bunsik.getId(), OrderStatus.COMPLETED_DELIVERY));
+        orderMenuRepository.save(new OrderMenu(cokeOrder, &quot;콜라&quot;));
+
+        reviewRegisterService = new ReviewRegisterService(reviewRepository, orderRepository, orderMenuRepository, imageManager, memberMockServer.getMemberClient());
+    }
+
+    @BeforeEach
+    void setUpMockImage() {
+        image = new MockMultipartFile(&quot;files&quot;, &quot;image-file.jpeg&quot;, &quot;image/jpeg&quot;, &quot;&lt;&lt;jpeg data&gt;&gt;&quot;.getBytes());
+
+        when(imageManager.upload(List.of(image))).thenReturn(Map.of(&quot;image/9cbc1ee6-bfe1-40c6-840a-2fa2f804a9df.jpg&quot;,
+                &quot;https://bucketname.s3.ap-northeast-2.amazonaws.com/image/9cbc1ee6-bfe1-40c6-840a-2fa2f804a9df.jpg&quot;));
+                ...
+    }
+
+    @DisplayName(&quot;리뷰를 조회한다.&quot;)
+    @Test
+    void findReview() {
+        //given
+        reviewRepository.save(new Review(meiBaedari.getMemberNumber(), new ReviewDelivery(DeliveryReviewType.DIFFERENT_ADDRESS, &quot;배달이 늦었어요.&quot;), bunsikOrder, List.of(new ReviewMenu(&quot;떡볶이&quot;, MenuReviewType.RECOMMEND, &quot;맛있어요&quot;)), image, bunsik.getId(), &quot;맛있어요 ~&quot;, 5));
+        reviewRepository.save(new Review(meiBaedari.getMemberNumber(), new ReviewDelivery(DeliveryReviewType.LIKE, &quot;&quot;), hotdogOrder, List.of(new ReviewMenu(&quot;핫도그&quot;, MenuReviewType.RECOMMEND, &quot;굿!&quot;)), null, bunsik.getId(), &quot;핫도그 너무 맛있어요. 추천해요!&quot;, 5));
+        reviewRepository.save(new Review(meiBaedari.getMemberNumber(), new ReviewDelivery(DeliveryReviewType.LIKE, &quot;&quot;), cokeOrder, List.of(new ReviewMenu(&quot;콜라&quot;, MenuReviewType.RECOMMEND, &quot;&quot;)), null, bunsik.getId(), &quot;맛있어요.&quot;, 4));
+
+        ...
+    }
+}</code></pre>
+<p><code>Review) ... 재서님은 given 을 BeforeEach 로 테스트 반복을 피해주신 것처럼 보여요!! 그런데 새로운 테스트를 추가할 때마다 given 이 달라질 수 있고 그렇게 되면 beforeEach 에 값이 바뀌어야 되는데 기존 테스트까지 영향이 갈 수 있을 것 같다고 생각했어요! 또한 각 테스트(유즈케이스)마다 필요한 최소의 given 값이 있을 텐데 공통으로 세팅을 해주게 되면 해당 메서드 파악이 힘들 것 같아 보이긴 해요! (테스트 목적은 테스트도 있지만 해당 로직 파악도 저는 있다고 생각해요!) 관련해서 재서님은 어떻게 생각하시는지 궁금합니다~</code></p>
+<p>해당 리뷰를 받고 모든 중복을 무조건 없애려 했던 생각을 되돌아볼 수 있었고, <strong>테스트 코드의 목적</strong>에 대해 다시 생각해 볼 수 있었습니다.</p>
+<p>저 또한 코드 리뷰를 할 때 테스트를 통해 로직의 흐름을 파악할 때가 많았고, 그럴 때마다 @BeforEach로 초기화하는 부분을 보기 위해 위로 올라가야 하는 것에 불편함을 느끼고 있었습니다. 또한 초깃값 세팅을 변경하거나 잘못 설정하면 해당 클래스의 모든 테스트에 문제가 생겨, @BeforEach로 초기화된 값을 사용하는 테스트가 늘어날수록 부담이 되었습니다.</p>
+<pre><code class="language-java">class ReviewQueryServiceTest extends IntegrationTest {
+
+    ...
+
+    @BeforeEach
+    void setUp() {
+        reviewRegisterService = new ReviewRegisterService(reviewRepository, orderRepository, orderMenuRepository, imageManager, memberMockServer.getMemberClient());
+    }
+
+    @BeforeEach
+    void setUpMockImage() {
+        image = new MockMultipartFile(&quot;files&quot;, &quot;image-file.jpeg&quot;, &quot;image/jpeg&quot;, &quot;&lt;&lt;jpeg data&gt;&gt;&quot;.getBytes());
+
+        when(imageManager.upload(List.of(image))).thenReturn(Map.of(&quot;image/9cbc1ee6-bfe1-40c6-840a-2fa2f804a9df.jpg&quot;,
+                &quot;https://bucketname.s3.ap-northeast-2.amazonaws.com/image/9cbc1ee6-bfe1-40c6-840a-2fa2f804a9df.jpg&quot;));
+    }
+
+    @DisplayName(&quot;리뷰를 조회한다.&quot;)
+    @Test
+    void findReview() {
+        //given
+        Member meiBaedari = memberRepository.save(new Member(BETA_MEMBER_NUMBER));
+
+        Shop bunsik = shopRepository.save(new Shop(&quot;357910&quot;, &quot;맛있는 떡볶이&quot;));
+
+        Order bunsikOrder = orderRepository.save(new Order(meiBaedari.getMemberNumber(), bunsik.getId(), OrderStatus.COMPLETED_DELIVERY));
+        orderMenuRepository.save(new OrderMenu(bunsikOrder, &quot;떡볶이&quot;));
+
+        Order hotdogOrder = orderRepository.save(new Order(meiBaedari.getMemberNumber(), bunsik.getId(), OrderStatus.COMPLETED_DELIVERY));
+        orderMenuRepository.save(new OrderMenu(hotdogOrder, &quot;핫도그&quot;));
+
+        Order cokeOrder = orderRepository.save(new Order(meiBaedari.getMemberNumber(), bunsik.getId(), OrderStatus.COMPLETED_DELIVERY));
+        orderMenuRepository.save(new OrderMenu(cokeOrder, &quot;콜라&quot;));
+
+        reviewRepository.save(new Review(meiBaedari.getMemberNumber(), new ReviewDelivery(DeliveryReviewType.DIFFERENT_ADDRESS, &quot;배달이 늦었어요.&quot;), bunsikOrder, List.of(new ReviewMenu(&quot;떡볶이&quot;, MenuReviewType.RECOMMEND, &quot;맛있어요&quot;)), image, bunsik.getId(), &quot;맛있어요 ~&quot;, 5));
+        reviewRepository.save(new Review(meiBaedari.getMemberNumber(), new ReviewDelivery(DeliveryReviewType.LIKE, &quot;&quot;), hotdogOrder, List.of(new ReviewMenu(&quot;핫도그&quot;, MenuReviewType.RECOMMEND, &quot;굿&quot;)), null, bunsik.getId(), &quot;핫도그 너무 맛있어요. 추천해요!&quot;, 5));
+        reviewRepository.save(new Review(meiBaedari.getMemberNumber(), new ReviewDelivery(DeliveryReviewType.LIKE, &quot;&quot;), cokeOrder, List.of(new ReviewMenu(&quot;콜라&quot;, MenuReviewType.RECOMMEND, &quot;&quot;)), null, bunsik.getId(), &quot;맛있어요.&quot;, 4));
+
+        ...
+    }
+}</code></pre>
+<p>따라서 각각의 테스트마다 given 값을 설정하는 방식으로 개선하였는데요. 예전부터 고민해 왔던 주제인데, 해당 방법을 적용하니 오히려 가독성을 해치지 않고 로직의 의도를 명확하게 이해하는데 많은 도움이 된다는 것을 깨달을 수 있었습니다.</p>
+<hr />
+<h3>파일럿을 마치며</h3>
+<p>처음 입사했을 때는 팀 프로젝트의 도메인과 코드 모두 이해하기 어려웠는데, 지금은 하나씩 찾아가다 보면 이해할 수 있을 정도로(아직 많이 부족하지만..) 파일럿이 많은 도움이 되었습니다.</p>
+<p>또한 사내의 여러 플랫폼들도 사용해 볼 수 있었는데요. AWS 놀이터를 사용하며 AWS에서 여러 테스트를 시도해 볼 수 있어서 정말 좋았습니다. </p>
+<p>파일럿 프로젝트를 구성해 주시고 팀에 적응할 수 있도록 배려해 주신 모든 팀원분들께 정말 감사드립니다. 🥺</p>
+<p>파일럿을 진행하며 느낀 점과 깨달은 점이 많은데요. </p>
+<ul>
+<li><strong>일정 관리</strong>는 정말x100 중요하다.</li>
+</ul>
+<p>사실 처음 구성해 주신 파일럿 프로젝트는 글에 언급된 요구사항보다 기능이 많았습니다. 진행하는 도중 몇 개의 기능을 제거하게 되었는데요. 프로젝트를 진행하며 공유드렸던 계획대로 진행이 되지 않아 일정이 밀리게 되었습니다. 처음 접하게 된 기술과 방법들이 꽤 있었는데 이를 학습하고 테스트하는 일정을 잘 고려하지 못했었습니다. 더불어 이슈를 겪고 있는 부분이나 현재 진행하고 있는 부분에 대해서 지속적으로 공유드리며 중간 조정을 했어야 했는데, 이 부분을 잘 못한 것 같아 스스로 아쉬움이 남습니다. 이번 일을 통해 일정을 관리하는 것이 정말 중요하다는 것을 깨달을 수 있었고, 지속적으로 일정을 확인하며 팀에 공유해야 하는 것의 중요성을 깨달을 수 있었습니다.</p>
+<ul>
+<li>시간에 쫓기며 개발하다 막바지에 급하게 배포를 하는 과정에서 화면단과 인프라 에러를 만나게 되었습니다. 개발을 진행하면서 조금 더 신경 쓰고 꼼꼼했더라면 막을 수 있었던 에러였다고 생각했습니다. 앞의 이야기와 연결되는 내용인 것 같지만, 일정을 잘 관리하면서 더x100 <strong>꼼꼼하게 개발</strong>해야겠다고 다짐했습니다.</li>
+</ul>
+<p>파일럿을 진행하면서 라이브 리뷰, 코드 리뷰를 요청드릴 때마다 많은 질문과 피드백을 주셨는데요. 제가 생각하지 못했던 부분에 대해 많이 알려주셔서, 다양한 관점에서 고민할 수 있었던 정말 소중한x100 시간이었습니다. 기획자분들께서 배민 리뷰 프로젝트의 전반적인 부분에 대한 교육을 해주셔서 도메인에 대한 이해를 높일 수 있었습니다. </p>
+<p>파일럿 기간 동안 어려움도 많았고, 미숙한 부분 또한 정말 많았는데 팀원분들이 도와주셔서 잘 마칠 수 있었습니다. 우아한테크코스 1년간의 과정도 정말 많은 도움이 되었습니다. 감사한 분들이 너무 많네요!! 🥺</p>
+<p>긴 글 읽어주셔서 감사드리며, 팀에 기여할 수 있는 구성원으로 열심히 성장하겠습니다! 🙂</p>
+    </div>
+    </div>
+    <p class="tags">
+                    <a href="/?ptag=%ec%98%a8%eb%b3%b4%eb%94%a9" class="tag-tag">
+                #온보딩            </a>
+                </p>
+        <div class="fb_comment_wrap">
+    <div id="" class="ufc-comments ufc-comments-area" style="width:100%;"><div id="ufc-button-div" style="text-align: center; display: none;"><button id="ufc-button" class="btn button">Leave a Comment</button></div><div id="fbc-comments-div" class="fb-comments" data-notify="true" data-colorscheme="light" data-href="https://techblog.woowahan.com/10600/" data-numposts="10" data-order-by="social" data-width="100%"></div></div>
+<!-- Facebook SDK is added by Ultimate Social Comments v2.0.0 plugin -->
+<div id="fb-root"></div><script type="text/javascript">(function() {(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.async = true;
+        js.src = '//connect.facebook.net/ko_KR/sdk.js#xfbml=1&autoLogAppEvents=1&version=v7.0&appId=596588250503455';
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        })();</script>
+<!-- / End of Facebook SDK -->
+    </div>
+    <div class="col col-1 post-bottom">
+        <a href="/" class="toback">
+            목록으로 돌아가기
+        </a>
+        <div class="col col-2">
+            <div class="prev">
+                <a href="https://techblog.woowahan.com/10567/" rel="prev">뭐 이런 것도 다 픽업 되나요? (배민스토어 픽업 고객 서비스편)</a>            </div>
+            <div class="next">
+                <a href="https://techblog.woowahan.com/10593/" rel="next">뭐 이런 것도 다 픽업 됩니다!(배민스토어 픽업 플랫폼 및 셀러서비스편)</a>            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<footer>
+<!-- 푸터내용 -->
+</footer>
+		<script type='text/javascript' id='StrCPVisits_js_frontend-js-extra'>
+/* <![CDATA[ */
+var STR_CPVISITS = {"security":"e18ee58976","ajax_url":"https:\/\/techblog.woowahan.com\/wp-admin\/admin-ajax.php","text_page_name":"PAGE NAME","text_cannot_access_page_name":"Cannot access page name - try to flush server cache...","text_message":"MESSAGE","text_total_page_visits":"TOTAL PAGE VISITS","text_total_website_visits":"TOTAL WEBSITE VISITS"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/plugins/page-visits-counter-lite/assets/frontend/page-visits-counter-lite-ajax.js?ver=1669164996' id='StrCPVisits_js_frontend-js'></script>
+<script type='text/javascript' id='ufc-frontend-script-js-extra'>
+/* <![CDATA[ */
+var ufc_frontend_ajax_data = {"ajaxurl":"https:\/\/techblog.woowahan.com\/wp-admin\/admin-ajax.php","permalink":"https:\/\/techblog.woowahan.com\/10600\/","title":"\ub9ac\ubdf0\ud504\ub85c\ub355\ud2b8\ud300 \uc2e0\uc785 \uac1c\ubc1c\uc790\uc758 \ud30c\uc77c\ub7ff \ud504\ub85c\uc81d\ud2b8","postid":"10600","security":"e78fb10bfe","version":"2.0.0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/plugins/ultimate-facebook-comments-2/public/js/frontend.min.js?ver=2.0.0' id='ufc-frontend-script-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/assets/js/main.js?ver=5.9.5' id='main-js-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/plugins/wp-githuber-md/assets/vendor/prism/components/prism-core.min.js?ver=1.15.0' id='prism-js-0-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/plugins/wp-githuber-md/assets/vendor/prism/prism.min.js?ver=1.15.0' id='prism-js-1-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/plugins/wp-githuber-md/assets/vendor/prism/plugins/line-numbers/prism-line-numbers.min.js?ver=1.15.0' id='prism-js-2-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/plugins/wp-githuber-md/assets/vendor/prism/plugins/autoloader/prism-autoloader.min.js?ver=1.15.0' id='prism-js-3-js'></script>
+ <script id="auto_loader_config_scripts"> Prism.plugins.autoloader.languages_path = "https://techblog.woowahan.com/wp-content/plugins/wp-githuber-md/assets/vendor/prism/components/"; </script>  <script id="module-prism-line-number"> (function($) { $(function() { $("code").each(function() { var parent_div = $(this).parent("pre"); var pre_css = $(this).attr("class"); if (typeof pre_css !== "undefined" && -1 !== pre_css.indexOf("language-")) { parent_div.addClass("line-numbers"); } }); }); })(jQuery); </script> 	</body>
+</html>
+<!-- Page supported by LiteSpeed Cache 3.6.4 on 2023-03-22 22:42:12 -->

@@ -1,0 +1,1 @@
+{"company":{"basePath":"https://toss.tech","rssUrl":"","href":"https://toss.tech/tech","name":"토스","imageUrl":"","id":"Toss"},"title":"에러 핸들링을 다른 클래스에게 위임하기 (Kotlin 100% 활용)","createdAt":"","description":"Kotlin의 Result로 MSA에서 에러가 전파되지 않는 안전한 환경을 만드는 방법을 알아봅니다.\n","rawText":"","href":"https://toss.tech/article/kotlin-result"}

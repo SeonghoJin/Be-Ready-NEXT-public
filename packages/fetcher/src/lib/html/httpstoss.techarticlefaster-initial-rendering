@@ -1,0 +1,417 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="https://static.toss.im/tds-pc/3.232.0/main.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/rss+xml" href="/rss.xml"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/atom+xml" href="/atom.xml"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/main.css"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/others.css"/><link rel="stylesheet" href="https://static.toss.im/tossface-font/tossface.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/activitystream+json" href="/feed.json"/><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"/><meta name="author" content="Viva Republica"/><link rel="preconnect" href="https://static.toss.im"/><link rel="shortcut icon" href="https://static.toss.im/tds/favicon/favicon.ico"/><link rel="icon" type="image/png" sizes="16x16" href="https://static.toss.im/tds/favicon/favicon-16x16.png"/><link rel="icon" type="image/png" sizes="32x32" href="https://static.toss.im/tds/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="48x48" href="https://static.toss.im/tds/favicon/favicon-48x48.png"/><link rel="icon" type="image/png" sizes="196x196" href="https://static.toss.im/tds/favicon/favicon-196x196.png"/><link rel="apple-touch-icon" sizes="57x57" href="https://static.toss.im/tds/favicon/apple-touch-icon-57x57.png"/><link rel="apple-touch-icon" sizes="72x72" href="https://static.toss.im/tds/favicon/apple-touch-icon-72x72.png"/><link rel="apple-touch-icon" sizes="114x114" href="https://static.toss.im/tds/favicon/apple-touch-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="https://static.toss.im/tds/favicon/apple-touch-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="https://static.toss.im/tds/favicon/apple-touch-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="https://static.toss.im/tds/favicon/apple-touch-icon-152x152.png"/><meta name="msapplication-TileImage" content="https://static.toss.im/tds/favicon/mstile-144x144.png"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PQ5NV18TH1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-PQ5NV18TH1');</script><script>(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:2399367,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script><title>조금만 신경써서 초기 렌더링 빠르게 하기 (feat. JAM Stack)</title><meta name="twitter:creator" content="Viva Republica"/><meta name="twitter:site" content="@Toss_service"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:title" content="조금만 신경써서 초기 렌더링 빠르게 하기 (feat. JAM Stack)"/><meta name="twitter:title" content="조금만 신경써서 초기 렌더링 빠르게 하기 (feat. JAM Stack)"/><meta property="og:description" content="SPA(Single Page Application) 구조로 웹 프론트엔드 애플리케이션이 개발되면서 초기 렌더링 속도는 프런트엔드 개발자에게 중요한 과제 중 하나가 되었습니다. 사용자 경험에 영향을 줄 수 있는 가장 큰 요소 중 하나가 바로 속도이기 때문입니다.
+"/><meta name="twitter:description" content="SPA(Single Page Application) 구조로 웹 프론트엔드 애플리케이션이 개발되면서 초기 렌더링 속도는 프런트엔드 개발자에게 중요한 과제 중 하나가 되었습니다. 사용자 경험에 영향을 줄 수 있는 가장 큰 요소 중 하나가 바로 속도이기 때문입니다.
+"/><meta property="og:image" content="https://static.toss.im/assets/tech-blog/og-image:/techblog-07-jam-stack-og.png?v=2"/><meta name="twitter:image" content="https://static.toss.im/assets/tech-blog/og-image:/techblog-07-jam-stack-og.png?v=2"/><meta name="next-head-count" content="36"/><meta name="next-font-preconnect"/><link rel="preload" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" as="style"/><link rel="stylesheet" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/webpack-a37367524f3d9e47.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/framework-5201cf011975c339.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/main-4ffd67ad72332dfe.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/_app-02461bb4136bedab.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/821-c2f4db054c6f6b42.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/935-149f2da2961c2b08.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/article/%5Bslug%5D-bf5a24035d1301de.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_buildManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_ssgManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_middlewareManifest.js" defer=""></script></head><body><div id="__next"><style data-emotion="css-global ubpbb5">html,body{padding:0;margin:0;font-family:'Toss Product Sans';}button{font-family:'Toss Product Sans';}p{margin:0;}</style><style data-emotion="css kcwxxw">.css-kcwxxw{position:-webkit-sticky;position:sticky;top:0;height:59px;}</style><nav class="p-navbar p-navbar--bottom-border css-kcwxxw"><div class="p-container p-container--default"><div class="p-container__inner p-navbar__inner-container"><div class="p-navbar__logo-container"><a class="p-navbar__logo-icon" href="/tech"><span class="icon p-icon" aria-hidden="true" role="presentation" style="height:auto;width:auto;min-width:24px"></span></a></div><div class="p-navbar__right-on-mobile"></div><div class="p-navbar__content" aria-expanded="false" aria-hidden="true"><ul class="p-navbar__menu"></ul><ul class="p-navbar__menu"><li class="p-navbar__item"><a>디자인</a></li><li class="p-navbar__item"><a>개발</a></li><li class="p-navbar__item p-navbar__button-item"><button class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s p-navbar__button" type="button" aria-disabled="false">채용 바로가기</button></li></ul></div></div></div></nav><style data-emotion="css 1nquki8">.css-1nquki8{max-width:700px;margin-bottom:80px;}.css-1nquki8 .has-extra-large-font-size{font-size:20px;}.css-1nquki8 .has-large-font-size{font-size:18px;}.css-1nquki8 .has-small-font-size{font-size:14px;}.css-1nquki8 .has-extra-small-font-size{font-size:12px;}@media (max-width: 700px){.css-1nquki8{margin-bottom:64px;}}</style><div class="p-container p-container--default css-1nquki8"><div class="p-container__inner"><style data-emotion="css gtmad4">.css-gtmad4>*:not(style)~*:not(style){margin-top:54px;}@media (max-width: 700px){.css-gtmad4>*:not(style)~*:not(style){margin-top:48px;}}</style><article class="css-gtmad4"><style data-emotion="css 1095auh">.css-1095auh>*:not(style)~*:not(style){margin-top:20px;}</style><header class="css-1095auh"><style data-emotion="css iffq4o">.css-iffq4o{width:100%;margin-top:36px;border-radius:12px;}</style><img srcSet="https://toss.tech/wp-content/uploads/2022/02/techblog-07-jam-stack-300x150.png 300w, https://toss.tech/wp-content/uploads/2022/02/techblog-07-jam-stack-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2022/02/techblog-07-jam-stack-768x384.png 768w, https://toss.tech/wp-content/uploads/2022/02/techblog-07-jam-stack.png 1200w" alt="조금만 신경써서 초기 렌더링 빠르게 하기 (feat. JAM Stack)" class="css-iffq4o e132k2574"/><style data-emotion="css 117sh4z">.css-117sh4z{margin-top:36px;margin-bottom:0;font-size:48px;font-weight:700;line-height:1.25;color:#333d4b;word-break:keep-all;overflow-wrap:break-word;}@media (max-width: 700px){.css-117sh4z{margin-top:28px;font-size:32px;}}</style><h1 class="css-117sh4z e132k2573">조금만 신경써서 초기 렌더링 빠르게 하기 (feat. JAM Stack)</h1><style data-emotion="css s5xdrg">.css-s5xdrg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><section class="css-s5xdrg e2c667z4"><style data-emotion="css 1hdebld">.css-1hdebld{grid-area:image;width:48px;height:48px;border-radius:156px;margin-right:14px;}</style><img src="https://toss.tech/wp-content/uploads/2021/10/profile-312x312.jpg" alt="" class="css-1hdebld e2c667z3"/><div><style data-emotion="css 14d9k6d">.css-14d9k6d{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;grid-area:outline;-webkit-align-items:flex-end;-webkit-box-align:flex-end;-ms-flex-align:flex-end;align-items:flex-end;padding-top:8px;font-size:17px;margin-bottom:2px;}@media (max-width: 700px){.css-14d9k6d>*+*{margin-top:4px;margin-left:0;}}</style><div class="css-14d9k6d e2c667z2"><style data-emotion="css 9krnkp">.css-9krnkp{grid-area:name;margin:0;font-size:17px;font-weight:600;color:#4e5968;white-space:nowrap;}</style><h3 class="css-9krnkp e2c667z1">한재엽</h3><h3 class="css-9krnkp e2c667z1">ㆍ<!-- -->Frontend Developer</h3></div><style data-emotion="css 154r2lc">.css-154r2lc{font-size:14px;line-height:1.5;color:#8b95a1;}</style><div class="css-154r2lc e2c667z0">2022. 2. 9</div></div></section></header><style data-emotion="css 1k1kkv6">.css-1k1kkv6{font-size:18px;line-height:1.7;color:var(--grey700);font-size:18px;word-break:keep-all;overflow-wrap:break-word;counter-reset:p-post-ol 0;}.css-1k1kkv6 h2{margin:2.2em 0 0.6em 0;font-size:25px;font-weight:600;line-height:1.4;color:var(--grey900);}.css-1k1kkv6 h3{margin:2.2em 0 0.6em 0;font-size:22px;font-weight:600;line-height:1.6;color:var(--grey900);}.css-1k1kkv6 h4{margin:2.2em 0 0.3em 0;font-size:19px;font-weight:600;line-height:1.6;color:var(--grey700);}.css-1k1kkv6 p{margin:1em 0;}.css-1k1kkv6 p code,.css-1k1kkv6 li code{font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:3px;}.css-1k1kkv6 a{color:var(--blue700);}.css-1k1kkv6 pre{margin:2em -24px;}@media (max-width: 700px){.css-1k1kkv6 pre{margin:2em 0;}}.css-1k1kkv6 pre code{display:block;padding:16px 24px;overflow-x:auto;font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;line-height:1.5;word-wrap:normal;white-space:pre;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:12px;}.css-1k1kkv6 figure{margin:2em 0;overflow:hidden;border-radius:12px;width:100%;}.css-1k1kkv6 figure.aligncenter{text-align:center;}.css-1k1kkv6 ol,.css-1k1kkv6 ul{margin:0 0 16px;list-style:none;}.css-1k1kkv6 ol li,.css-1k1kkv6 ul li{position:relative;margin-bottom:8px;}.css-1k1kkv6 ol li:before,.css-1k1kkv6 ul li:before{position:absolute;left:0;}.css-1k1kkv6 ol li ol,.css-1k1kkv6 ul li ol{padding-left:0;margin:8px 0 0 -16px;}.css-1k1kkv6 ol li ul,.css-1k1kkv6 ul li ul{padding-left:0;margin-top:8px;}.css-1k1kkv6 ol li p,.css-1k1kkv6 ul li p{margin:0;}.css-1k1kkv6 ol{padding-left:16px;counter-reset:p-post-ol;}.css-1k1kkv6 ol>li{padding-left:32px;counter-increment:p-post-ol;}.css-1k1kkv6 ol>li:before{font-weight:700;font-weight:var(--font-weight-bold);content:counter(p-post-ol) '.';}.css-1k1kkv6 ul{padding-left:16px;}.css-1k1kkv6 ul>li{padding-left:24px;}.css-1k1kkv6 ul>li:before{width:16px;text-align:center;content:'•';}.css-1k1kkv6 figcaption{font-size:0.9em;color:var(--grey600);}.css-1k1kkv6 .wp-block-pullquote{margin:0;}.css-1k1kkv6 blockquote{padding:32px;background:var(--greyOpacity100);border-radius:12px;text-align:left;margin:16px 0 16px 0;}.css-1k1kkv6 blockquote p{color:#333d4b;font-weight:600;margin:0;}.css-1k1kkv6 blockquote cite{font-style:normal;}@media (max-width: 700px){.css-1k1kkv6 blockquote{padding:24px;}}.css-1k1kkv6 .wp-block-embed-youtube iframe{width:100%;border-radius:12px;}.css-1k1kkv6 ol{counter-reset:none;}.css-1k1kkv6 hr{border-top:1px solid #e5e8eb;border-right-style:none;border-left-style:none;border-bottom-style:none;margin:2.5rem 0;}.css-1k1kkv6 figure{display:table;text-align:center;}@media (max-width: 700px){.css-1k1kkv6 figure{width:100%;}}.css-1k1kkv6 figure img,.css-1k1kkv6 figure video{max-width:100%;height:auto;border:1px solid rgba(2,32,71,0.05);border-radius:12px;}.css-1k1kkv6 figure.alignright{float:right;margin:0 0 8px 24px;}@media (max-width: 700px){.css-1k1kkv6 figure.alignright{float:none;margin:0;}}.css-1k1kkv6 figcaption{display:table-caption;text-align:center;white-space:pre-wrap;caption-side:bottom;}.css-1k1kkv6 p:empty::before{content:'';}</style><div class="css-1k1kkv6 e132k2572"><div>
+<h2>들어가면서</h2>
+
+
+
+<p>SPA(Single Page Application) 구조로 웹 프론트엔드 애플리케이션이 개발되면서 초기 렌더링 속도는 프런트엔드 개발자에게 중요한 과제 중 하나가 되었습니다. 사용자 경험에 영향을 줄 수 있는 가장 큰 요소 중 하나가 바로 속도이기 때문입니다. 이번 개선은 <a href="https://web.dev/vitals/">Web Vitals</a> 지표를 중심으로 측정했습니다.</p>
+
+
+
+<h2>주어진 과제들</h2>
+
+
+
+<h3>과제 1. 번들 사이즈</h3>
+
+
+
+<p>애플리케이션에 기능이 추가되면서 번들 사이즈가 커졌고 이로 인해 초기 렌더링이 늦어지는 문제가 발생하게 됩니다. 네트워크 비용을 줄이기 위해 Webpack으로 번들링했던 소스코드를 다시 적절한 단위로 코드 스플리팅(Code Splitting)을 하기도 하고 사용되지 않는 코드, 불필요한 코드들을 덜어내기 위한 트리 세이킹(Tree Shaking)을 위한 작업을 하기도 합니다.</p>
+
+
+
+<p>→ <a rel="noreferrer noopener" href="https://www.youtube.com/watch?v=EP7g5R-7zwM" target="_blank">[SLASH 21] 이한 – JavaScript Bundle Diet</a></p>
+
+
+
+<p>이러한 노력을 하더라도 개선할 수 있는 부분엔 한계가 존재했습니다. 초기에 렌더링되는 index.html 자체가 비어있는 문서(Document)이기 때문에 스크립트가 실행되어 실제로 렌더링이 되기까지의 시간이 존재하기 때문입니다.</p>
+
+
+
+<h3>과제 2. 렌더링 시점</h3>
+
+
+
+<p>그렇다면 이제 렌더링 시점을 어떻게 앞당길 것인가에 대한 문제를 해결해야 됩니다. 사용자가 <a href="http://tosspayments.com">tosspayments.com</a> 에 접근했을 때, 사용자가 최종적으로 볼 수 있는 화면을 서버에서 미리 그리고 그 화면을 브라우저에 전달해주면 초기 렌더링 시점이 앞당겨지지 않을까요?</p>
+
+
+
+<p>물론 인터랙션이 가능해지기 까지는 하이드레이트(Hydrate) 시간이 필요하지만, 사용자 입장에서는 우선 화면이 보여지는 것이 중요합니다. 초기에 렌더링 되는 index.html이 비어있는 문서가 아니라 무언가 렌더링되어 있는 문서라면 <a href="https://web.dev/i18n/ko/lcp/">LCP(Largest Contentful Paint)</a> 시점을 크게 앞당길 수 있을 것입니다.</p>
+
+
+
+<h2>JAM Stack</h2>
+
+
+
+<p>서론이 길었는데요, 토스페이먼츠에서 만들고 있는 일부 제품에서 SSR(Server Side Rendering)없이 초기 렌더링 속도를 개선해 보았습니다. 어떤 결과를 낳았으며 어떻게 개선했는지 이야기하고자 합니다.</p>
+
+
+
+<p>JAM Stack이란 JavaScript와 Markup에 해당하는 HTML, CSS 정적 리소스들을 활용하여 웹 애플리케이션을 구성하는 스택을 말합니다. 그리고 이 정적 리소스들을 CDN(Content Delivery Network)에 배포하여 서버 관리를 최소화 할 수 있습니다.</p>
+
+
+
+<p>토스페이먼츠에서는 AWS S3, CloundFront, Lambda@edge 를 사용하여 인프라를 운영하고 있습니다.</p>
+
+
+
+<p>→ <a href="https://jbee.io/web/jam-stack/">JAM Stack에 대해 더 알아보기</a></p>
+
+
+
+<h3>SSG</h3>
+
+
+
+<p>Static Site Generation이라는 개념인데요, 앱을 빌드하는 시점에 미리 그려두고 이를 서빙(serving)하는 방식을 말합니다. JAM Stack에서 정적 리소스를 생성하는 용도로 사용합니다.</p>
+
+
+
+<p>컴파일 단계에서 <strong>미리 그릴 수 있는 </strong>부분을 최대한 그려서 사용자에게 도달하는 최초 index.html 파일이 비어있지 않도록 합니다.</p>
+
+
+
+<p>미리 그릴 수 있다는 것은 말 그대로 컴파일 단계에서 리액트 코드를 읽어 HTML로 렌더링 할 수 있는 부분을 말합니다. 정적인 부분을 포함하여 인증이 필요하지 않은 데이터 또한 서버로부터 가져와 미리 그릴 수 있습니다.</p>
+
+
+
+<h3>결과 (지표)</h3>
+
+
+
+<p>구체적인 내용을 다루기에 앞서 어느 정도의 개선이 있었는지 먼저 소개하고자 합니다. 기대한 것 이상의 결과가 나와서 매우 즐거웠던 경험이었습니다.</p>
+
+
+
+<figure class="wp-block-video"><video controls="" src="https://wp.toss.tech/wp-content/uploads/2022/02/대시보드_초기로딩.mov"></video><figcaption>토스페이먼츠 상점관리자 초기 로딩 화면</figcaption></figure>
+
+
+
+<h3>Lighthouse 지표</h3>
+
+
+
+<p><strong>before</strong></p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="745" height="328" src="https://wp.toss.tech/wp-content/uploads/2022/02/lighthouse__before.png" alt="" class="wp-image-192" srcSet="https://toss.tech/wp-content/uploads/2022/02/lighthouse__before.png 745w, https://toss.tech/wp-content/uploads/2022/02/lighthouse__before-300x132.png 300w" sizes="(max-width: 745px) 100vw, 745px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div><figcaption>개선 하기 전 지표</figcaption></figure>
+
+
+
+<p><strong>After</strong></p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="763" height="322" src="https://wp.toss.tech/wp-content/uploads/2022/02/lighthouse_after.png" alt="" class="wp-image-193" srcSet="https://toss.tech/wp-content/uploads/2022/02/lighthouse_after.png 763w, https://toss.tech/wp-content/uploads/2022/02/lighthouse_after-300x127.png 300w" sizes="(max-width: 763px) 100vw, 763px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div><figcaption>개선 후 지표</figcaption></figure>
+
+
+
+<p></p>
+
+
+
+<h3>구체적인 지표 측정</h3>
+
+
+
+<p>Chrome Browser에서 FP(First Paint)부터 LCP(Largest Contentful Paint)까지 걸린 시간을 측정해봤습니다.</p>
+
+
+
+<p><strong>before(FP → LCP: 484ms)</strong></p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="958" height="461" src="https://wp.toss.tech/wp-content/uploads/2022/02/ssg_detail_before.png" alt="" class="wp-image-194" srcSet="https://toss.tech/wp-content/uploads/2022/02/ssg_detail_before.png 958w, https://toss.tech/wp-content/uploads/2022/02/ssg_detail_before-300x144.png 300w, https://toss.tech/wp-content/uploads/2022/02/ssg_detail_before-768x370.png 768w" sizes="(max-width: 958px) 100vw, 958px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<p><strong>after(FP → LCP: 0ms)</strong></p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="789" height="392" src="https://wp.toss.tech/wp-content/uploads/2022/02/ssg_detail_after.png" alt="" class="wp-image-195" srcSet="https://toss.tech/wp-content/uploads/2022/02/ssg_detail_after.png 789w, https://toss.tech/wp-content/uploads/2022/02/ssg_detail_after-300x149.png 300w, https://toss.tech/wp-content/uploads/2022/02/ssg_detail_after-768x382.png 768w" sizes="(max-width: 789px) 100vw, 789px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<blockquote class="wp-block-quote"><p>Large Contents에 해당하는 것을 일단 그려버리고 시작하니 0ms입니다.</p></blockquote>
+
+
+
+<p>최대한 그릴 수 있는 영역을 미리 그림으로써 사용자는 흰 화면을 마주하지 않고 바로 제품을 만나는 것과 같은 느낌을 받을 수 있습니다.</p>
+
+
+
+<h2>How?</h2>
+
+
+
+<h3><a href="https://github.com/vercel/next.js/">Next.js</a></h3>
+
+
+
+<p>토스페이먼츠의 프런트엔드 애플리케이션은 Next.js 라는 프레임워크를 사용하고 있습니다. Next.js는 서버 사이드 렌더링은 물론이고 앞서 설명드린 Static Site Generate 또한 지원합니다. (<a href="https://nextjs.org/docs/advanced-features/automatic-static-optimization">Next.js Automiatic Static Optimization</a>)</p>
+
+
+
+<h3><a href="https://ko.reactjs.org/docs/concurrent-mode-suspense.html">Suspense</a></h3>
+
+
+
+<p>우선 토스 대부분의 프런트엔드 애플리케이션 제품은 React의 Suspense를 통해 비동기를 제어하고 있으며 토스페이먼츠 제품 또한 예외가 아니었습니다. 이와 동시에 에러 핸들링 또한 <a href="https://ko.reactjs.org/docs/error-boundaries.html#gatsby-focus-wrapper">ErrorBoundary</a>를 통해 제어하면서 비동기 상황을 제어하고 있습니다.</p>
+
+
+
+<p>→ <a href="https://www.youtube.com/watch?v=FvRtoViujGg">[SLASH 21] 박서진 – 프론트엔드 웹 서비스에서 우아하게 비동기 처리하기</a></p>
+
+
+
+<p>→ <a href="https://jbee.io/react/error-declarative-handling-3/">선언적으로 에러 상황 제어하기</a></p>
+
+
+
+<p>이 Suspense를 Next.js와 함께 사용하기 위해선 약간의 추가 작업이 필요한데요, 앞서 설명드렸다시피 Next.js는 서버사이드 렌더링 또한 지원하는 프레임워크이기 때문에 Isomophic한 코드를 작성해야 합니다. 아쉽게도 Suspense는 서버사이드 렌더링이 지원되지 않습니다. (글을 작성하는 시점에 <a href="https://github.com/reactwg/react-18">알파로 공개되어 있는 React 18</a>에서 <a href="https://github.com/reactwg/react-18/discussions/22">개선</a>될 예정)</p>
+
+
+
+<p>그래서 다음과 같이 Suspense를 한번 감싸서 사용해줄 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"/><style>.wp-block-code {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-code > div {
+	overflow: auto;
+}
+
+.shcb-language {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+.hljs {
+	box-sizing: border-box;
+}
+
+.hljs.shcb-code-table {
+	display: table;
+	width: 100%;
+}
+
+.hljs.shcb-code-table > .shcb-loc {
+	color: inherit;
+	display: table-row;
+	width: 100%;
+}
+
+.hljs.shcb-code-table .shcb-loc > span {
+	display: table-cell;
+}
+
+.wp-block-code code.hljs:not(.shcb-wrap-lines) {
+	white-space: pre;
+}
+
+.wp-block-code code.hljs.shcb-wrap-lines {
+	white-space: pre-wrap;
+}
+
+.hljs.shcb-line-numbers {
+	border-spacing: 0;
+	counter-reset: line;
+}
+
+.hljs.shcb-line-numbers > .shcb-loc {
+	counter-increment: line;
+}
+
+.hljs.shcb-line-numbers .shcb-loc > span {
+	padding-left: 0.75em;
+}
+
+.hljs.shcb-line-numbers .shcb-loc::before {
+	border-right: 1px solid #ddd;
+	content: counter(line);
+	display: table-cell;
+	padding: 0 0.75em;
+	text-align: right;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: 1%;
+}
+</style><div><code class="hljs language-javascript"><span class="hljs-keyword">import</span> { useState, useEffect, Suspense <span class="hljs-keyword">as</span> ReactSuspense } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Suspense</span>(<span class="hljs-params">{ fallback, children }: ComponentProps&lt;typeof ReactSuspense&gt;</span>) </span>{
+  <span class="hljs-keyword">const</span> [mounted, setMounted] = useState(<span class="hljs-literal">false</span>);
+
+  useEffect(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    setMounted(<span class="hljs-literal">true</span>);
+  }, []);
+
+  <span class="hljs-keyword">if</span> (mounted) {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ReactSuspense</span> <span class="hljs-attr">fallback</span>=<span class="hljs-string">{fallback}</span>&gt;</span>{children}<span class="hljs-tag">&lt;/<span class="hljs-name">ReactSuspense</span>&gt;</span></span>;
+  }
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;&gt;</span>{fallback}<span class="hljs-tag">&lt;/&gt;</span></span>;
+}
+</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>이렇게 수정된 Suspense로 제어하고 있는 컴포넌트를 SSG로 빌드하게 되면 <code>fallback</code>이 렌더링됩니다.</p>
+
+
+
+<p>다음과 같은 코드일 경우, SSG 시점엔 <code>&lt;Loading /&gt;</code> 컴포넌트만 그려지게 됩니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">UserPage</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Suspense</span> <span class="hljs-attr">fallback</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">Loading</span> /&gt;</span>}&gt; // <span class="hljs-tag">&lt;<span class="hljs-name">-</span> <span class="hljs-attr">Render</span>!
+      &lt;<span class="hljs-attr">UserProfile</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">UserDetailInfo</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Suspense</span>&gt;</span>
+  )
+}
+</span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>즉, 빌드 단계에서 SSG로 미리 그려주고자 했던 UserPage에는 Loading 컴포넌트만 렌더링 될 뿐, <code>UserProfile</code> , <code>UserDetailInfo</code> 컴포넌트는 전혀 렌더링 되지 않습니다. 미리 렌더링하는 것에 대한 이점을 전혀 얻지 못하게 되는 것입니다.</p>
+
+
+
+<p>번들 사이즈를 아무리 줄여도 사용자는 일단 로딩만 돌고 있는 흰 화면을 마주하게 되는 것입니다.</p>
+
+
+
+<p></p>
+
+
+
+<h3>컴포넌트 배치 되돌아보기</h3>
+
+
+
+<p>우선 Suspense가 정말 필요한 컴포넌트인지, 레이아웃 영역인지 되돌아 볼 필요가 있습니다.</p>
+
+
+
+<p>정말 Suspense가 필요한 영역이라면 <code>fallback</code> 컴포넌트를 정의해줄 때 로딩 컴포넌트만 정의해주지 않는다면 어떨까요? API 응답이 돌아오고 결국 그려질 컴포넌트와 응답이 오지 않았을 경우 보여줄 이 <code>fallback</code> 컴포넌트를 최대한 비슷하게 구성해주는 겁니다. 그렇다면 컴파일 시점에 그릴 수 있는 영역이 늘어나지 않을까요?</p>
+
+
+
+<p>즉, 위와 같이 Loading 컴포넌트만 렌더링하지 않으려면 API 응답이 돌아왔을 때 그려져야 할 컴포넌트와 응답이 아직 돌아오지 않았을 때 보여줄 컴포넌트 두 벌이 최대한 비슷하게 구성되어 있어야 합니다.</p>
+
+
+
+<p></p>
+
+
+
+<h3>컴포넌트와 API를 가깝게</h3>
+
+
+
+<p>처음 보셨던 화면에서는 총 16개의 API call이 존재합니다. 너무나 당연하게도 이 모든 API 응답은 제각각으로 올 것이고 모든 응답이 돌아오기를 기다렸다가 그려주는 것은 정말 낭비입니다.</p>
+
+
+
+<ul><li>각각의 API들을 따로 격리시켜 서로의 렌더링을 block하지 않도록 합니다.</li><li>데이터가 필요한 곳에서 가장 <strong>가까운 곳</strong>에서 API를 호출합니다. client caching이 이젠 너무나도 자연스럽기 때문에 이를 최대한 활용해줍니다.</li></ul>
+
+
+
+<p><code>UserPage</code> 컴포넌트의 구조를 다음과 같이 변경해 볼 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">UserPage</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Layout</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>사용자 정보<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">dl</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>이름<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Suspense</span> <span class="hljs-attr">fallback</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">dd</span>&gt;</span>Loading<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>}&gt;
+          <span class="hljs-tag">&lt;<span class="hljs-name">UserName</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Suspense</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>사용자 상세 정보<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Suspense</span> <span class="hljs-attr">fallback</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">div</span>&gt;</span>Loading<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>}&gt;
+        <span class="hljs-tag">&lt;<span class="hljs-name">UserDetailInfo</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Suspense</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Layout</span>&gt;</span></span>
+  )
+}</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>페이지 컴포넌트(<code>UserPage</code>) 전체를 감싸고 있던 <code>Suspense</code> 컴포넌트가 사라지고 비동기로 처리되는 영역이 좁게 정의가 되었습니다. 또한 비동기 처리 과정 중 노출되는 컴포넌트의 모습도 원래 보여질 컴포넌트와 비슷하게 정의해줬습니다.</p>
+
+
+
+<p>디자인이 필요한 영역이 늘었어요. API를 호출하고 기다리는 순간에 대해서도 디자인이 필요해요. 그대로 컴포넌트도 만들어줘야 하고 그만큼 손도 많이 갑니다. 하지만 서버 관리하는 비용보다 더 신경써줄 필요는 없다고 생각합니다.</p>
+
+
+
+<p>조금만 신경쓰더라도 많은 개선을 볼 수 있는 방법입니다.</p>
+
+
+
+<h3>더 나아가기</h3>
+
+
+
+<p>지난 Next.js Conf에서 공식적으로 <a href="https://ko.reactjs.org/blog/2020/12/21/data-fetching-with-react-server-components.html">React의 Server Component</a>를 사용한 렌더링 방식이 공개되었습니다. React 18도 알파 단계이니 프런트엔드 애플리케이션을 개발하면서 성능 상 이점을 많이 챙길 수 있는 환경으로 뒤바꿈 될 것 같습니다. <a href="https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration">ISR 방식</a>과 컴포넌트 단위의 캐싱이 적용되어 웹이 더 빨라질 수 있을 것이라 기대합니다.</p>
+
+
+
+<p></p>
+
+
+
+<h3>마무리</h3>
+
+
+
+<p>초기 로딩 속도가 중요한 것은 비즈니스에도 영향을 미치기 때문입니다. web.dev에서 초기 로딩 속도를 개선하여 성과가 개선된 사례가 소개된 바 있습니다.(<a href="https://web.dev/vitals-business-impact/">https://web.dev/vitals-business-impact/</a>)</p>
+
+
+
+<p>당장에 SSR 도입이 쉽지 않은 상황이라면 SSG를 통한 초기 렌더링을 최적화 할 수 있습니다.</p>
+
+
+
+<p>토스 팀은 계속해서 초기 로딩 속도를 계속해서 개선 중입니다. 곧 있을 SLASH22에서는 ‘매달, 유저가 기다리는 시간을 2.3년씩 아낄 수 있는 초기 렌더링 개선기 (feat. SSR)’라는 제목으로 초기 렌더링 개선 경험을 공유할 예정이니 많은 관심 부탁드립니다.</p>
+
+
+
+<p><span>👉</span><span style="font-size:inherit;font-weight:inherit;line-height:inherit;color:inherit"> </span><a href="https://tosspayments-dev.oopy.io/chapters/frontend/about">토스페이먼츠 프런트엔드 챕터에 대해 더 알아보기</a></p>
+
+
+
+<p>감사합니다.</p>
+</div></div><style data-emotion="css auig7l">.css-auig7l{margin-top:96px;}</style><style data-emotion="css x7fajo">.css-x7fajo{margin-top:96px;}.css-x7fajo>*:not(style)~*:not(style){margin-left:24px;}</style><style data-emotion="css 6rfvv8">.css-6rfvv8{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;margin-top:96px;}.css-6rfvv8>*:not(style)~*:not(style){margin-left:24px;}</style><div class="css-6rfvv8"><style data-emotion="css 1n0u3h">.css-1n0u3h{background-color:#f9fafb;width:100%;height:auto;border-radius:12px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:48px;}@media (max-width: 700px){.css-1n0u3h{padding:32px;}}</style><div class="css-1n0u3h e1t1xt3a7"><style data-emotion="css 6cc9f0">.css-6cc9f0{font-size:24px;font-weight:700;margin-bottom:16px;color:#4e5968;}</style><h2 class="css-6cc9f0 e1t1xt3a6">재미있게 읽으셨나요?</h2><style data-emotion="css 1wmgpcn">.css-1wmgpcn{font-size:16px;line-height:1.5;font-weight:600;color:#6b7684;margin-bottom:4px;}</style><p class="css-1wmgpcn e1t1xt3a5">좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.</p><style data-emotion="css 4qu8li">.css-4qu8li{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:16px;}</style><div class="css-4qu8li e1t1xt3a3"><style data-emotion="css 1fmr5ax">.css-1fmr5ax{display:block;font-family:'tossface';font-size:40px;cursor:pointer;margin:0 12px;-webkit-transition:0.15s ease-in-out all;transition:0.15s ease-in-out all;}.css-1fmr5ax a{-webkit-text-decoration:none;text-decoration:none;}.css-1fmr5ax:hover{-webkit-transform:scale(1.2);-moz-transform:scale(1.2);-ms-transform:scale(1.2);transform:scale(1.2);}</style><div class="css-1fmr5ax e1t1xt3a1">😍</div><div class="css-1fmr5ax e1t1xt3a1">🤔</div></div><style data-emotion="css 1p3zmjw">.css-1p3zmjw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;margin-top:16px;}.css-1p3zmjw button,.css-1p3zmjw a{margin:0 12px;}@media (max-width: 700px){.css-1p3zmjw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;}.css-1p3zmjw button,.css-1p3zmjw a{width:100%;margin:8px 0;}}</style><div class="css-1p3zmjw e1t1xt3a0"><style data-emotion="css 1u8jkqx">.css-1u8jkqx{display:grid;grid-template-columns:min-content auto;grid-column-gap:8px;}</style><button class="p-button p-button--primary p-button--inline p-button--weak p-button--default p-button--has-icon padding--base css-1u8jkqx" type="button" aria-disabled="false"><span class="icon p-icon icon--colored p-icon--colored" aria-hidden="true" role="presentation" style="height:16px;width:16px;min-width:16px;color:#3182f6"></span>아티클 공유하기</button></div></div></div></article><style data-emotion="css 1lsuzal">.css-1lsuzal{margin-top:100px;}.css-1lsuzal::before{content:'';position:absolute;width:100%;height:1px;left:0;border-bottom:1px solid #e5e8eb;}</style><div class="css-1lsuzal e132k2571"><style data-emotion="css 1ympfnp">.css-1ympfnp{display:inline-block;width:100%;font-size:20px;margin:34px 0 40px 0;}</style><span class="typography typography--h3 typography--bold color--grey800 css-1ympfnp e132k2570">이어지는 글</span><style data-emotion="css vivlm7">.css-vivlm7{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer;margin-bottom:40px;}.css-vivlm7:last-of-type{margin-bottom:0px;}.css-vivlm7:hover .egyklng4{color:#3182f6;}</style><div class="css-vivlm7 egyklng3"><style data-emotion="css bc0lqn">.css-bc0lqn{width:80px;height:80px;margin-right:20px;border-radius:12px;object-fit:cover;}@media (max-width: 700px){.css-bc0lqn{width:64px;height:64px;}}</style><img srcSet="https://toss.tech/wp-content/uploads/2023/04/00009-889461687-300x300.png 300w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687-150x150.png 150w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687.png 512w" class="css-bc0lqn egyklng2"/><style data-emotion="css 1fttcpj">.css-1fttcpj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}</style><div class="css-1fttcpj egyklng1"><style data-emotion="css p4blj2">.css-p4blj2{font-size:24px;margin-bottom:4px;word-break:keep-all;line-height:1.4;overflow-wrap:break-word;-webkit-transition:color 0.3s ease;transition:color 0.3s ease;-webkit-line-clamp:2;display:block;}@media (max-width: 700px){.css-p4blj2{font-size:18px;-webkit-line-clamp:2;}}</style><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">무지성으로 사용한 헬스 체크가 불러일으킬 수 있는 참사</span><style data-emotion="css 1jxhn1e">.css-1jxhn1e{color:#8b95a1;}</style><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 04. 01</span></div></div><div class="css-vivlm7 egyklng3"><img srcSet="https://toss.tech/wp-content/uploads/2023/03/center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/center.png 1200w" class="css-bc0lqn egyklng2"/><div class="css-1fttcpj egyklng1"><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">ESLint와 AST로 코드 퀄리티 높이기</span><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 03. 31</span></div></div></div></div></div><style data-emotion="css 1d2vuhc">.css-1d2vuhc{padding:60px 24px;word-break:keep-all;overflow-wrap:break-word;background:rgba(2,9,19,0.91);}@media (max-width: 700px){.css-1d2vuhc{padding-top:24px;}}</style><section class="css-1d2vuhc eqrolup4"><style data-emotion="css yf0lpd">.css-yf0lpd{display:grid;grid-template-columns:3fr 7fr;grid-column-gap:20px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:640px;margin:0 auto;content-visibility:auto;}@media (max-width: 700px){.css-yf0lpd{grid-template-rows:min-content auto;grid-template-columns:1fr;grid-row-gap:24px;}}</style><div class="css-yf0lpd eqrolup2"><style data-emotion="css 1d33yk5">.css-1d33yk5{width:100%;}@media (max-width: 700px){.css-1d33yk5{width:90px;}}</style><img src="https://static.toss.im/3d/website_code_blue_alpha.png" alt="" class="css-1d33yk5 eqrolup3"/><style data-emotion="css 1gb2pj4">.css-1gb2pj4>*:not(style)~*:not(style){margin-top:24px;}</style><style data-emotion="css 7xmgw5">.css-7xmgw5{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-7xmgw5>*:not(style)~*:not(style){margin-top:24px;}</style><div class="css-7xmgw5"><style data-emotion="css 1pbuvpm">.css-1pbuvpm>*:not(style)~*:not(style){margin-top:8px;}</style><style data-emotion="css nbpfuv">.css-nbpfuv{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-nbpfuv>*:not(style)~*:not(style){margin-top:8px;}</style><div class="css-nbpfuv"><style data-emotion="css 19gu4b8">.css-19gu4b8{margin:0;font-size:26px;line-height:1.4;color:#ffffff;}@media (max-width: 700px){.css-19gu4b8{font-size:20px;}}</style><h3 class="css-19gu4b8 eqrolup1">토스팀이 만드는 수많은 혁신의 순간들</h3><style data-emotion="css shfxsq">.css-shfxsq{font-size:17px;line-height:1.5;color:#e5e8eb;}@media (max-width: 700px){.css-shfxsq{font-size:16px;}}</style><div class="css-shfxsq eqrolup0">당신과 함께 만들고 싶습니다.<br/>지금, 토스팀에 합류하세요.</div></div><a class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s" aria-disabled="false" href="https://toss.im/career/jobs?gh_src=38b73b7a3us">채용 중인 공고 보기</a></div></div></section><footer class="p-footer p-footer--light"><div class="p-footer__inner"><div class="p-footer__site-group-list"><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스테크</div></li><li class="p-footer__site-group-item"><a href="mailto:techblog@toss.im">의견 보내기</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스</div></li><li class="p-footer__site-group-item"><a href="https://toss.im">홈페이지</a></li><li class="p-footer__site-group-item"><a href="https://team.toss.im">회사 소개</a></li><li class="p-footer__site-group-item"><a href="https://toss.im/career">채용</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">고객센터</div></li><li class="p-footer__site-group-item"><a href="tel:1599-4905">전화: 1599-4905 (24시간 연중무휴)</a></li><li class="p-footer__site-group-item"><a href="mailto:support.toss.im">이메일: support@toss.im</a></li><li class="p-footer__site-group-item"><a href="https://goto.kakao.com/@toss">카카오톡: @toss</a></li></ul></div><address class="p-footer__address"><strong class="p-footer__address__company-name">㈜비바리퍼블리카</strong>Copyright © Viva Republica, Inc. All Rights Reserved.</address><ul class="p-footer__term-wrapper"></ul><ul class="p-footer__social-list"><li class="p-footer__social-list-item"><a aria-label="Toss Facebook" target="_blank" href="https://www.facebook.com/toss.revolution"><img src="https://static.toss.im/assets/homepage/safety/icn-facebook.svg" alt="Toss Facebook"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss blog" target="_blank" href="https://blog.toss.im"><img src="https://static.toss.im/assets/homepage/safety/icn-blog.svg" alt="Toss blog"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Naver Post" target="_blank" href="https://post.naver.com/tossblog"><img src="https://static.toss.im/assets/homepage/safety/icn-naver.svg" alt="Toss Naver Post"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Twitter" target="_blank" href="https://twitter.com/toss__official"><img src="https://static.toss.im/assets/homepage/safety/icn-twitter.svg" alt="Toss Twitter"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Instagram" target="_blank" href="https://www.instagram.com/toss.im/"><img src="https://static.toss.im/assets/homepage/safety/icn-instagram.svg" alt="Toss Instagram"/></a></li></ul></div></footer><div id="tds-pc__portal-container"></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"article":{"title":"조금만 신경써서 초기 렌더링 빠르게 하기 (feat. JAM Stack)","content":"\n\u003ch2\u003e들어가면서\u003c/h2\u003e\n\n\n\n\u003cp\u003eSPA(Single Page Application) 구조로 웹 프론트엔드 애플리케이션이 개발되면서 초기 렌더링 속도는 프런트엔드 개발자에게 중요한 과제 중 하나가 되었습니다. 사용자 경험에 영향을 줄 수 있는 가장 큰 요소 중 하나가 바로 속도이기 때문입니다. 이번 개선은 \u003ca href=\"https://web.dev/vitals/\"\u003eWeb Vitals\u003c/a\u003e 지표를 중심으로 측정했습니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003e주어진 과제들\u003c/h2\u003e\n\n\n\n\u003ch3\u003e과제 1. 번들 사이즈\u003c/h3\u003e\n\n\n\n\u003cp\u003e애플리케이션에 기능이 추가되면서 번들 사이즈가 커졌고 이로 인해 초기 렌더링이 늦어지는 문제가 발생하게 됩니다. 네트워크 비용을 줄이기 위해 Webpack으로 번들링했던 소스코드를 다시 적절한 단위로 코드 스플리팅(Code Splitting)을 하기도 하고 사용되지 않는 코드, 불필요한 코드들을 덜어내기 위한 트리 세이킹(Tree Shaking)을 위한 작업을 하기도 합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e→ \u003ca rel=\"noreferrer noopener\" href=\"https://www.youtube.com/watch?v=EP7g5R-7zwM\" target=\"_blank\"\u003e[SLASH 21] 이한 \u0026#8211; JavaScript Bundle Diet\u003c/a\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e이러한 노력을 하더라도 개선할 수 있는 부분엔 한계가 존재했습니다. 초기에 렌더링되는 index.html 자체가 비어있는 문서(Document)이기 때문에 스크립트가 실행되어 실제로 렌더링이 되기까지의 시간이 존재하기 때문입니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e과제 2. 렌더링 시점\u003c/h3\u003e\n\n\n\n\u003cp\u003e그렇다면 이제 렌더링 시점을 어떻게 앞당길 것인가에 대한 문제를 해결해야 됩니다. 사용자가 \u003ca href=\"http://tosspayments.com\"\u003etosspayments.com\u003c/a\u003e 에 접근했을 때, 사용자가 최종적으로 볼 수 있는 화면을 서버에서 미리 그리고 그 화면을 브라우저에 전달해주면 초기 렌더링 시점이 앞당겨지지 않을까요?\u003c/p\u003e\n\n\n\n\u003cp\u003e물론 인터랙션이 가능해지기 까지는 하이드레이트(Hydrate) 시간이 필요하지만, 사용자 입장에서는 우선 화면이 보여지는 것이 중요합니다. 초기에 렌더링 되는 index.html이 비어있는 문서가 아니라 무언가 렌더링되어 있는 문서라면 \u003ca href=\"https://web.dev/i18n/ko/lcp/\"\u003eLCP(Largest Contentful Paint)\u003c/a\u003e 시점을 크게 앞당길 수 있을 것입니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003eJAM Stack\u003c/h2\u003e\n\n\n\n\u003cp\u003e서론이 길었는데요, 토스페이먼츠에서 만들고 있는 일부 제품에서 SSR(Server Side Rendering)없이 초기 렌더링 속도를 개선해 보았습니다. 어떤 결과를 낳았으며 어떻게 개선했는지 이야기하고자 합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003eJAM Stack이란 JavaScript와 Markup에 해당하는 HTML, CSS 정적 리소스들을 활용하여 웹 애플리케이션을 구성하는 스택을 말합니다. 그리고 이 정적 리소스들을 CDN(Content Delivery Network)에 배포하여 서버 관리를 최소화 할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e토스페이먼츠에서는 AWS S3, CloundFront, Lambda@edge 를 사용하여 인프라를 운영하고 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e→ \u003ca href=\"https://jbee.io/web/jam-stack/\"\u003eJAM Stack에 대해 더 알아보기\u003c/a\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003eSSG\u003c/h3\u003e\n\n\n\n\u003cp\u003eStatic Site Generation이라는 개념인데요, 앱을 빌드하는 시점에 미리 그려두고 이를 서빙(serving)하는 방식을 말합니다. JAM Stack에서 정적 리소스를 생성하는 용도로 사용합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e컴파일 단계에서 \u003cstrong\u003e미리 그릴 수 있는 \u003c/strong\u003e부분을 최대한 그려서 사용자에게 도달하는 최초 index.html 파일이 비어있지 않도록 합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e미리 그릴 수 있다는 것은 말 그대로 컴파일 단계에서 리액트 코드를 읽어 HTML로 렌더링 할 수 있는 부분을 말합니다. 정적인 부분을 포함하여 인증이 필요하지 않은 데이터 또한 서버로부터 가져와 미리 그릴 수 있습니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e결과 (지표)\u003c/h3\u003e\n\n\n\n\u003cp\u003e구체적인 내용을 다루기에 앞서 어느 정도의 개선이 있었는지 먼저 소개하고자 합니다. 기대한 것 이상의 결과가 나와서 매우 즐거웠던 경험이었습니다.\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-video\"\u003e\u003cvideo controls src=\"https://wp.toss.tech/wp-content/uploads/2022/02/대시보드_초기로딩.mov\"\u003e\u003c/video\u003e\u003cfigcaption\u003e토스페이먼츠 상점관리자 초기 로딩 화면\u003c/figcaption\u003e\u003c/figure\u003e\n\n\n\n\u003ch3\u003eLighthouse 지표\u003c/h3\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003ebefore\u003c/strong\u003e\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"745\" height=\"328\" src=\"https://wp.toss.tech/wp-content/uploads/2022/02/lighthouse__before.png\" alt=\"\" class=\"wp-image-192\" srcset=\"https://toss.tech/wp-content/uploads/2022/02/lighthouse__before.png 745w, https://toss.tech/wp-content/uploads/2022/02/lighthouse__before-300x132.png 300w\" sizes=\"(max-width: 745px) 100vw, 745px\" /\u003e\u003cfigcaption\u003e개선 하기 전 지표\u003c/figcaption\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eAfter\u003c/strong\u003e\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"763\" height=\"322\" src=\"https://wp.toss.tech/wp-content/uploads/2022/02/lighthouse_after.png\" alt=\"\" class=\"wp-image-193\" srcset=\"https://toss.tech/wp-content/uploads/2022/02/lighthouse_after.png 763w, https://toss.tech/wp-content/uploads/2022/02/lighthouse_after-300x127.png 300w\" sizes=\"(max-width: 763px) 100vw, 763px\" /\u003e\u003cfigcaption\u003e개선 후 지표\u003c/figcaption\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e구체적인 지표 측정\u003c/h3\u003e\n\n\n\n\u003cp\u003eChrome Browser에서 FP(First Paint)부터 LCP(Largest Contentful Paint)까지 걸린 시간을 측정해봤습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003ebefore(FP → LCP: 484ms)\u003c/strong\u003e\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"958\" height=\"461\" src=\"https://wp.toss.tech/wp-content/uploads/2022/02/ssg_detail_before.png\" alt=\"\" class=\"wp-image-194\" srcset=\"https://toss.tech/wp-content/uploads/2022/02/ssg_detail_before.png 958w, https://toss.tech/wp-content/uploads/2022/02/ssg_detail_before-300x144.png 300w, https://toss.tech/wp-content/uploads/2022/02/ssg_detail_before-768x370.png 768w\" sizes=\"(max-width: 958px) 100vw, 958px\" /\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eafter(FP → LCP: 0ms)\u003c/strong\u003e\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"789\" height=\"392\" src=\"https://wp.toss.tech/wp-content/uploads/2022/02/ssg_detail_after.png\" alt=\"\" class=\"wp-image-195\" srcset=\"https://toss.tech/wp-content/uploads/2022/02/ssg_detail_after.png 789w, https://toss.tech/wp-content/uploads/2022/02/ssg_detail_after-300x149.png 300w, https://toss.tech/wp-content/uploads/2022/02/ssg_detail_after-768x382.png 768w\" sizes=\"(max-width: 789px) 100vw, 789px\" /\u003e\u003c/figure\u003e\n\n\n\n\u003cblockquote class=\"wp-block-quote\"\u003e\u003cp\u003eLarge Contents에 해당하는 것을 일단 그려버리고 시작하니 0ms입니다.\u003c/p\u003e\u003c/blockquote\u003e\n\n\n\n\u003cp\u003e최대한 그릴 수 있는 영역을 미리 그림으로써 사용자는 흰 화면을 마주하지 않고 바로 제품을 만나는 것과 같은 느낌을 받을 수 있습니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003eHow?\u003c/h2\u003e\n\n\n\n\u003ch3\u003e\u003ca href=\"https://github.com/vercel/next.js/\"\u003eNext.js\u003c/a\u003e\u003c/h3\u003e\n\n\n\n\u003cp\u003e토스페이먼츠의 프런트엔드 애플리케이션은 Next.js 라는 프레임워크를 사용하고 있습니다. Next.js는 서버 사이드 렌더링은 물론이고 앞서 설명드린 Static Site Generate 또한 지원합니다. (\u003ca href=\"https://nextjs.org/docs/advanced-features/automatic-static-optimization\"\u003eNext.js Automiatic Static Optimization\u003c/a\u003e)\u003c/p\u003e\n\n\n\n\u003ch3\u003e\u003ca href=\"https://ko.reactjs.org/docs/concurrent-mode-suspense.html\"\u003eSuspense\u003c/a\u003e\u003c/h3\u003e\n\n\n\n\u003cp\u003e우선 토스 대부분의 프런트엔드 애플리케이션 제품은 React의 Suspense를 통해 비동기를 제어하고 있으며 토스페이먼츠 제품 또한 예외가 아니었습니다. 이와 동시에 에러 핸들링 또한 \u003ca href=\"https://ko.reactjs.org/docs/error-boundaries.html#gatsby-focus-wrapper\"\u003eErrorBoundary\u003c/a\u003e를 통해 제어하면서 비동기 상황을 제어하고 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e→ \u003ca href=\"https://www.youtube.com/watch?v=FvRtoViujGg\"\u003e[SLASH 21] 박서진 \u0026#8211; 프론트엔드 웹 서비스에서 우아하게 비동기 처리하기\u003c/a\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e→ \u003ca href=\"https://jbee.io/react/error-declarative-handling-3/\"\u003e선언적으로 에러 상황 제어하기\u003c/a\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e이 Suspense를 Next.js와 함께 사용하기 위해선 약간의 추가 작업이 필요한데요, 앞서 설명드렸다시피 Next.js는 서버사이드 렌더링 또한 지원하는 프레임워크이기 때문에 Isomophic한 코드를 작성해야 합니다. 아쉽게도 Suspense는 서버사이드 렌더링이 지원되지 않습니다. (글을 작성하는 시점에 \u003ca href=\"https://github.com/reactwg/react-18\"\u003e알파로 공개되어 있는 React 18\u003c/a\u003e에서 \u003ca href=\"https://github.com/reactwg/react-18/discussions/22\"\u003e개선\u003c/a\u003e될 예정)\u003c/p\u003e\n\n\n\n\u003cp\u003e그래서 다음과 같이 Suspense를 한번 감싸서 사용해줄 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-1\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003clink rel='stylesheet' id='syntax-highlighting-code-block-css'  href='https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1' media='all' /\u003e\u003cstyle\u003e.wp-block-code {\n\tborder: 0;\n\tpadding: 0;\n}\n\n.wp-block-code \u003e div {\n\toverflow: auto;\n}\n\n.shcb-language {\n\tborder: 0;\n\tclip: rect(1px, 1px, 1px, 1px);\n\t-webkit-clip-path: inset(50%);\n\tclip-path: inset(50%);\n\theight: 1px;\n\tmargin: -1px;\n\toverflow: hidden;\n\tpadding: 0;\n\tposition: absolute;\n\twidth: 1px;\n\tword-wrap: normal;\n\tword-break: normal;\n}\n\n.hljs {\n\tbox-sizing: border-box;\n}\n\n.hljs.shcb-code-table {\n\tdisplay: table;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table \u003e .shcb-loc {\n\tcolor: inherit;\n\tdisplay: table-row;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table .shcb-loc \u003e span {\n\tdisplay: table-cell;\n}\n\n.wp-block-code code.hljs:not(.shcb-wrap-lines) {\n\twhite-space: pre;\n}\n\n.wp-block-code code.hljs.shcb-wrap-lines {\n\twhite-space: pre-wrap;\n}\n\n.hljs.shcb-line-numbers {\n\tborder-spacing: 0;\n\tcounter-reset: line;\n}\n\n.hljs.shcb-line-numbers \u003e .shcb-loc {\n\tcounter-increment: line;\n}\n\n.hljs.shcb-line-numbers .shcb-loc \u003e span {\n\tpadding-left: 0.75em;\n}\n\n.hljs.shcb-line-numbers .shcb-loc::before {\n\tborder-right: 1px solid #ddd;\n\tcontent: counter(line);\n\tdisplay: table-cell;\n\tpadding: 0 0.75em;\n\ttext-align: right;\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\tuser-select: none;\n\twhite-space: nowrap;\n\twidth: 1%;\n}\n\u003c/style\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e { useState, useEffect, Suspense \u003cspan class=\"hljs-keyword\"\u003eas\u003c/span\u003e ReactSuspense } \u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'react'\u003c/span\u003e;\n\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eSuspense\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003e{ fallback, children }: ComponentProps\u0026lt;typeof ReactSuspense\u0026gt;\u003c/span\u003e) \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e [mounted, setMounted] = useState(\u003cspan class=\"hljs-literal\"\u003efalse\u003c/span\u003e);\n\n  useEffect(\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-params\"\u003e()\u003c/span\u003e =\u0026gt;\u003c/span\u003e {\n    setMounted(\u003cspan class=\"hljs-literal\"\u003etrue\u003c/span\u003e);\n  }, []);\n\n  \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (mounted) {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u003cspan class=\"xml\"\u003e\u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003eReactSuspense\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003efallback\u003c/span\u003e=\u003cspan class=\"hljs-string\"\u003e{fallback}\u003c/span\u003e\u0026gt;\u003c/span\u003e{children}\u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u003cspan class=\"hljs-name\"\u003eReactSuspense\u003c/span\u003e\u0026gt;\u003c/span\u003e\u003c/span\u003e;\n  }\n  \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u003cspan class=\"xml\"\u003e\u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u0026gt;\u003c/span\u003e{fallback}\u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u0026gt;\u003c/span\u003e\u003c/span\u003e;\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-1\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e이렇게 수정된 Suspense로 제어하고 있는 컴포넌트를 SSG로 빌드하게 되면 \u003ccode\u003efallback\u003c/code\u003e이 렌더링됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e다음과 같은 코드일 경우, SSG 시점엔 \u003ccode\u003e\u0026lt;Loading /\u0026gt;\u003c/code\u003e 컴포넌트만 그려지게 됩니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-2\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eUserPage\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003e\u003c/span\u003e) \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e (\n    \u003cspan class=\"xml\"\u003e\u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003eSuspense\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003efallback\u003c/span\u003e=\u003cspan class=\"hljs-string\"\u003e{\u003c/span\u003e\u0026lt;\u003cspan class=\"hljs-attr\"\u003eLoading\u003c/span\u003e /\u0026gt;\u003c/span\u003e}\u0026gt; // \u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eRender\u003c/span\u003e!\n      \u0026lt;\u003cspan class=\"hljs-attr\"\u003eUserProfile\u003c/span\u003e /\u0026gt;\u003c/span\u003e\n      \u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003eUserDetailInfo\u003c/span\u003e /\u0026gt;\u003c/span\u003e\n    \u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u003cspan class=\"hljs-name\"\u003eSuspense\u003c/span\u003e\u0026gt;\u003c/span\u003e\n  )\n}\n\u003c/span\u003e\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-2\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e즉, 빌드 단계에서 SSG로 미리 그려주고자 했던 UserPage에는 Loading 컴포넌트만 렌더링 될 뿐, \u003ccode\u003eUserProfile\u003c/code\u003e , \u003ccode\u003eUserDetailInfo\u003c/code\u003e 컴포넌트는 전혀 렌더링 되지 않습니다. 미리 렌더링하는 것에 대한 이점을 전혀 얻지 못하게 되는 것입니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e번들 사이즈를 아무리 줄여도 사용자는 일단 로딩만 돌고 있는 흰 화면을 마주하게 되는 것입니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e컴포넌트 배치 되돌아보기\u003c/h3\u003e\n\n\n\n\u003cp\u003e우선 Suspense가 정말 필요한 컴포넌트인지, 레이아웃 영역인지 되돌아 볼 필요가 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e정말 Suspense가 필요한 영역이라면 \u003ccode\u003efallback\u003c/code\u003e 컴포넌트를 정의해줄 때 로딩 컴포넌트만 정의해주지 않는다면 어떨까요? API 응답이 돌아오고 결국 그려질 컴포넌트와 응답이 오지 않았을 경우 보여줄 이 \u003ccode\u003efallback\u003c/code\u003e 컴포넌트를 최대한 비슷하게 구성해주는 겁니다. 그렇다면 컴파일 시점에 그릴 수 있는 영역이 늘어나지 않을까요?\u003c/p\u003e\n\n\n\n\u003cp\u003e즉, 위와 같이 Loading 컴포넌트만 렌더링하지 않으려면 API 응답이 돌아왔을 때 그려져야 할 컴포넌트와 응답이 아직 돌아오지 않았을 때 보여줄 컴포넌트 두 벌이 최대한 비슷하게 구성되어 있어야 합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e컴포넌트와 API를 가깝게\u003c/h3\u003e\n\n\n\n\u003cp\u003e처음 보셨던 화면에서는 총 16개의 API call이 존재합니다. 너무나 당연하게도 이 모든 API 응답은 제각각으로 올 것이고 모든 응답이 돌아오기를 기다렸다가 그려주는 것은 정말 낭비입니다.\u003c/p\u003e\n\n\n\n\u003cul\u003e\u003cli\u003e각각의 API들을 따로 격리시켜 서로의 렌더링을 block하지 않도록 합니다.\u003c/li\u003e\u003cli\u003e데이터가 필요한 곳에서 가장 \u003cstrong\u003e가까운 곳\u003c/strong\u003e에서 API를 호출합니다. client caching이 이젠 너무나도 자연스럽기 때문에 이를 최대한 활용해줍니다.\u003c/li\u003e\u003c/ul\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003eUserPage\u003c/code\u003e 컴포넌트의 구조를 다음과 같이 변경해 볼 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-3\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eUserPage\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003e\u003c/span\u003e) \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e (\n    \u003cspan class=\"xml\"\u003e\u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003eLayout\u003c/span\u003e\u0026gt;\u003c/span\u003e\n      \u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003eh1\u003c/span\u003e\u0026gt;\u003c/span\u003e사용자 정보\u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u003cspan class=\"hljs-name\"\u003eh1\u003c/span\u003e\u0026gt;\u003c/span\u003e\n      \u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003edl\u003c/span\u003e\u0026gt;\u003c/span\u003e\n        \u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003edt\u003c/span\u003e\u0026gt;\u003c/span\u003e이름\u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u003cspan class=\"hljs-name\"\u003edt\u003c/span\u003e\u0026gt;\u003c/span\u003e\n        \u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003eSuspense\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003efallback\u003c/span\u003e=\u003cspan class=\"hljs-string\"\u003e{\u003c/span\u003e\u0026lt;\u003cspan class=\"hljs-attr\"\u003edd\u003c/span\u003e\u0026gt;\u003c/span\u003eLoading\u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u003cspan class=\"hljs-name\"\u003edd\u003c/span\u003e\u0026gt;\u003c/span\u003e}\u0026gt;\n          \u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003eUserName\u003c/span\u003e /\u0026gt;\u003c/span\u003e\n        \u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u003cspan class=\"hljs-name\"\u003eSuspense\u003c/span\u003e\u0026gt;\u003c/span\u003e\n      \u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u003cspan class=\"hljs-name\"\u003edl\u003c/span\u003e\u0026gt;\u003c/span\u003e\n      \u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003eh2\u003c/span\u003e\u0026gt;\u003c/span\u003e사용자 상세 정보\u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u003cspan class=\"hljs-name\"\u003eh2\u003c/span\u003e\u0026gt;\u003c/span\u003e\n      \u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003eSuspense\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003efallback\u003c/span\u003e=\u003cspan class=\"hljs-string\"\u003e{\u003c/span\u003e\u0026lt;\u003cspan class=\"hljs-attr\"\u003ediv\u003c/span\u003e\u0026gt;\u003c/span\u003eLoading\u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u003cspan class=\"hljs-name\"\u003ediv\u003c/span\u003e\u0026gt;\u003c/span\u003e}\u0026gt;\n        \u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003eUserDetailInfo\u003c/span\u003e /\u0026gt;\u003c/span\u003e\n      \u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u003cspan class=\"hljs-name\"\u003eSuspense\u003c/span\u003e\u0026gt;\u003c/span\u003e\n    \u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u003cspan class=\"hljs-name\"\u003eLayout\u003c/span\u003e\u0026gt;\u003c/span\u003e\u003c/span\u003e\n  )\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-3\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e페이지 컴포넌트(\u003ccode\u003eUserPage\u003c/code\u003e) 전체를 감싸고 있던 \u003ccode\u003eSuspense\u003c/code\u003e 컴포넌트가 사라지고 비동기로 처리되는 영역이 좁게 정의가 되었습니다. 또한 비동기 처리 과정 중 노출되는 컴포넌트의 모습도 원래 보여질 컴포넌트와 비슷하게 정의해줬습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e디자인이 필요한 영역이 늘었어요. API를 호출하고 기다리는 순간에 대해서도 디자인이 필요해요. 그대로 컴포넌트도 만들어줘야 하고 그만큼 손도 많이 갑니다. 하지만 서버 관리하는 비용보다 더 신경써줄 필요는 없다고 생각합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e조금만 신경쓰더라도 많은 개선을 볼 수 있는 방법입니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e더 나아가기\u003c/h3\u003e\n\n\n\n\u003cp\u003e지난 Next.js Conf에서 공식적으로 \u003ca href=\"https://ko.reactjs.org/blog/2020/12/21/data-fetching-with-react-server-components.html\"\u003eReact의 Server Component\u003c/a\u003e를 사용한 렌더링 방식이 공개되었습니다. React 18도 알파 단계이니 프런트엔드 애플리케이션을 개발하면서 성능 상 이점을 많이 챙길 수 있는 환경으로 뒤바꿈 될 것 같습니다. \u003ca href=\"https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration\"\u003eISR 방식\u003c/a\u003e과 컴포넌트 단위의 캐싱이 적용되어 웹이 더 빨라질 수 있을 것이라 기대합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e마무리\u003c/h3\u003e\n\n\n\n\u003cp\u003e초기 로딩 속도가 중요한 것은 비즈니스에도 영향을 미치기 때문입니다. web.dev에서 초기 로딩 속도를 개선하여 성과가 개선된 사례가 소개된 바 있습니다.(\u003ca href=\"https://web.dev/vitals-business-impact/\"\u003ehttps://web.dev/vitals-business-impact/\u003c/a\u003e)\u003c/p\u003e\n\n\n\n\u003cp\u003e당장에 SSR 도입이 쉽지 않은 상황이라면 SSG를 통한 초기 렌더링을 최적화 할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e토스 팀은 계속해서 초기 로딩 속도를 계속해서 개선 중입니다. 곧 있을 SLASH22에서는 \u0026#8216;매달, 유저가 기다리는 시간을 2.3년씩 아낄 수 있는 초기 렌더링 개선기 (feat. SSR)\u0026#8217;라는 제목으로 초기 렌더링 개선 경험을 공유할 예정이니 많은 관심 부탁드립니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e👉 \u003ca href=\"https://tosspayments-dev.oopy.io/chapters/frontend/about\"\u003e토스페이먼츠 프런트엔드 챕터에 대해 더 알아보기\u003c/a\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e감사합니다.\u003c/p\u003e\n","date":"2022-02-09T14:25:46","excerpt":"\u003cp\u003eSPA(Single Page Application) 구조로 웹 프론트엔드 애플리케이션이 개발되면서 초기 렌더링 속도는 프런트엔드 개발자에게 중요한 과제 중 하나가 되었습니다. 사용자 경험에 영향을 줄 수 있는 가장 큰 요소 중 하나가 바로 속도이기 때문입니다.\u003c/p\u003e\n","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2022/02/techblog-07-jam-stack-300x150.png 300w, https://toss.tech/wp-content/uploads/2022/02/techblog-07-jam-stack-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2022/02/techblog-07-jam-stack-768x384.png 768w, https://toss.tech/wp-content/uploads/2022/02/techblog-07-jam-stack.png 1200w"}},"metadata":{"ogBackground":"https://static.toss.im/assets/tech-blog/og-image:/techblog-07-jam-stack-og.png","ogImageTitle":"조금만 신경써서\r\n초기 렌더링 빠르게 하기","ogGenerateImage":null,"recruitTitle":"재미있게 읽으셨나요?","recruitUrl":null,"form1Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=186\u0026title=조금만_신경써서_초기_렌더링_빠르게_하기\u0026reaction=good","form2Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=186\u0026title=조금만_신경써서_초기_렌더링_빠르게_하기\u0026reaction=bad","formDescription":"좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.","form1Label":"😍","form2Label":"🤔","recruitDescription":null},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}},{"node":{"id":"dGVybTox","name":"Uncategorized"}}]},"author":{"node":{"id":"dXNlcjoxMg==","firstName":"재엽","lastName":"한","description":"복잡한 사용자 인터페이스를 간결하고 빠르게 만드는 것에 관심이 많습니다. 개방과 공유하는 문화를 좋아하여 기술 블로그를 운영하고 있고 프런트엔드 컨퍼런스 FEConf를 운영하고 있습니다. 최근엔 내가 가진 기술로 어떤 임팩트를 낼 수 있을지 고민하고 있습니다.","avatar":{"url":"https://toss.tech/wp-content/uploads/2021/10/profile-312x312.jpg"},"role":{"role":"Frontend Developer"}}}},"relatedArticles":[{"title":"무지성으로 사용한 헬스 체크가 불러일으킬 수 있는 참사","slug":"how-to-work-health-check-in-spring-boot-actuaotr","date":"2023-04-01T15:38:57","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/04/00009-889461687-300x300.png 300w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687-150x150.png 150w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687.png 512w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}},{"node":{"id":"dGVybTox","name":"Uncategorized"}}]}},{"title":"ESLint와 AST로 코드 퀄리티 높이기","slug":"improving-code-quality-via-eslint-and-ast","date":"2023-03-31T15:47:53","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/03/center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/center.png 1200w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}}]}}]},"__N_SSP":true},"page":"/article/[slug]","query":{"slug":"faster-initial-rendering"},"buildId":"QqBxegmptuUDYc8oCREsD","assetPrefix":"https://static.toss.im/frontend/toss-tech","runtimeConfig":{"ENV":"live","NODE_ENV":"production","PORT":"3000","ASSET_PREFIX":"https://static.toss.im/frontend/toss-tech","SERVICE":"toss-tech","SENTRY":{"DSN":"https://5eff657ed6ef486fb8af2dc5f9508abd@sentry.io/1242586","PUBLIC_KEY":"5eff657ed6ef486fb8af2dc5f9508abd","RELEASE":"toss-tech_1.0.103","SERVICE":"toss-tech","SERVICE_VERSION":"1.0.103"},"RENDER_TYPE":"ssr"},"isFallback":false,"gssp":true,"customServer":true,"scriptLoader":[]}</script></body></html>

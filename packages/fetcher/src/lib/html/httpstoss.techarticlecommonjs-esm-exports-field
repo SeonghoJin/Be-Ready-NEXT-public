@@ -1,0 +1,583 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="https://static.toss.im/tds-pc/3.232.0/main.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/rss+xml" href="/rss.xml"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/atom+xml" href="/atom.xml"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/main.css"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/others.css"/><link rel="stylesheet" href="https://static.toss.im/tossface-font/tossface.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/activitystream+json" href="/feed.json"/><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"/><meta name="author" content="Viva Republica"/><link rel="preconnect" href="https://static.toss.im"/><link rel="shortcut icon" href="https://static.toss.im/tds/favicon/favicon.ico"/><link rel="icon" type="image/png" sizes="16x16" href="https://static.toss.im/tds/favicon/favicon-16x16.png"/><link rel="icon" type="image/png" sizes="32x32" href="https://static.toss.im/tds/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="48x48" href="https://static.toss.im/tds/favicon/favicon-48x48.png"/><link rel="icon" type="image/png" sizes="196x196" href="https://static.toss.im/tds/favicon/favicon-196x196.png"/><link rel="apple-touch-icon" sizes="57x57" href="https://static.toss.im/tds/favicon/apple-touch-icon-57x57.png"/><link rel="apple-touch-icon" sizes="72x72" href="https://static.toss.im/tds/favicon/apple-touch-icon-72x72.png"/><link rel="apple-touch-icon" sizes="114x114" href="https://static.toss.im/tds/favicon/apple-touch-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="https://static.toss.im/tds/favicon/apple-touch-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="https://static.toss.im/tds/favicon/apple-touch-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="https://static.toss.im/tds/favicon/apple-touch-icon-152x152.png"/><meta name="msapplication-TileImage" content="https://static.toss.im/tds/favicon/mstile-144x144.png"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PQ5NV18TH1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-PQ5NV18TH1');</script><script>(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:2399367,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script><title>CommonJS와 ESM에 모두 대응하는 라이브러리 개발하기: exports field</title><meta name="twitter:creator" content="Viva Republica"/><meta name="twitter:site" content="@Toss_service"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:title" content="CommonJS와 ESM에 모두 대응하는 라이브러리 개발하기: exports field"/><meta name="twitter:title" content="CommonJS와 ESM에 모두 대응하는 라이브러리 개발하기: exports field"/><meta property="og:description" content="Node.js에는 두 가지 Module System이 존재합니다. 토스 프론트엔드 챕터에서 운영하는 100개가 넘는 라이브러리들은 그것에 어떻게 대응하고 있을까요?
+"/><meta name="twitter:description" content="Node.js에는 두 가지 Module System이 존재합니다. 토스 프론트엔드 챕터에서 운영하는 100개가 넘는 라이브러리들은 그것에 어떻게 대응하고 있을까요?
+"/><meta property="og:image" content="https://og.toss.tech?title=CommonJS%EC%99%80%20ESM%EC%97%90%20%EB%AA%A8%EB%91%90%20%EB%8C%80%EC%9D%91%ED%95%98%EB%8A%94%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%20%EA%B0%9C%EB%B0%9C%ED%95%98%EA%B8%B0%3A%20exports%20field&amp;imageUrl=https%3A%2F%2Fstatic.toss.im%2Fassets%2Fhomepage%2Ftosstech%2Fog%2Ftechblog-11-node-js-og.png&amp;v=2"/><meta name="twitter:image" content="https://og.toss.tech?title=CommonJS%EC%99%80%20ESM%EC%97%90%20%EB%AA%A8%EB%91%90%20%EB%8C%80%EC%9D%91%ED%95%98%EB%8A%94%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%20%EA%B0%9C%EB%B0%9C%ED%95%98%EA%B8%B0%3A%20exports%20field&amp;imageUrl=https%3A%2F%2Fstatic.toss.im%2Fassets%2Fhomepage%2Ftosstech%2Fog%2Ftechblog-11-node-js-og.png&amp;v=2"/><meta name="next-head-count" content="36"/><meta name="next-font-preconnect"/><link rel="preload" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" as="style"/><link rel="stylesheet" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/webpack-a37367524f3d9e47.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/framework-5201cf011975c339.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/main-4ffd67ad72332dfe.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/_app-02461bb4136bedab.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/821-c2f4db054c6f6b42.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/935-149f2da2961c2b08.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/article/%5Bslug%5D-bf5a24035d1301de.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_buildManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_ssgManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_middlewareManifest.js" defer=""></script></head><body><div id="__next"><style data-emotion="css-global ubpbb5">html,body{padding:0;margin:0;font-family:'Toss Product Sans';}button{font-family:'Toss Product Sans';}p{margin:0;}</style><style data-emotion="css kcwxxw">.css-kcwxxw{position:-webkit-sticky;position:sticky;top:0;height:59px;}</style><nav class="p-navbar p-navbar--bottom-border css-kcwxxw"><div class="p-container p-container--default"><div class="p-container__inner p-navbar__inner-container"><div class="p-navbar__logo-container"><a class="p-navbar__logo-icon" href="/tech"><span class="icon p-icon" aria-hidden="true" role="presentation" style="height:auto;width:auto;min-width:24px"></span></a></div><div class="p-navbar__right-on-mobile"></div><div class="p-navbar__content" aria-expanded="false" aria-hidden="true"><ul class="p-navbar__menu"></ul><ul class="p-navbar__menu"><li class="p-navbar__item"><a>디자인</a></li><li class="p-navbar__item"><a>개발</a></li><li class="p-navbar__item p-navbar__button-item"><button class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s p-navbar__button" type="button" aria-disabled="false">채용 바로가기</button></li></ul></div></div></div></nav><style data-emotion="css 1nquki8">.css-1nquki8{max-width:700px;margin-bottom:80px;}.css-1nquki8 .has-extra-large-font-size{font-size:20px;}.css-1nquki8 .has-large-font-size{font-size:18px;}.css-1nquki8 .has-small-font-size{font-size:14px;}.css-1nquki8 .has-extra-small-font-size{font-size:12px;}@media (max-width: 700px){.css-1nquki8{margin-bottom:64px;}}</style><div class="p-container p-container--default css-1nquki8"><div class="p-container__inner"><style data-emotion="css gtmad4">.css-gtmad4>*:not(style)~*:not(style){margin-top:54px;}@media (max-width: 700px){.css-gtmad4>*:not(style)~*:not(style){margin-top:48px;}}</style><article class="css-gtmad4"><style data-emotion="css 1095auh">.css-1095auh>*:not(style)~*:not(style){margin-top:20px;}</style><header class="css-1095auh"><style data-emotion="css iffq4o">.css-iffq4o{width:100%;margin-top:36px;border-radius:12px;}</style><img srcSet="https://toss.tech/wp-content/uploads/2022/10/techblog-11-node-js-300x150.png 300w, https://toss.tech/wp-content/uploads/2022/10/techblog-11-node-js-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2022/10/techblog-11-node-js-768x384.png 768w, https://toss.tech/wp-content/uploads/2022/10/techblog-11-node-js.png 1200w" alt="CommonJS와 ESM에 모두 대응하는 라이브러리 개발하기: exports field" class="css-iffq4o e132k2574"/><style data-emotion="css 117sh4z">.css-117sh4z{margin-top:36px;margin-bottom:0;font-size:48px;font-weight:700;line-height:1.25;color:#333d4b;word-break:keep-all;overflow-wrap:break-word;}@media (max-width: 700px){.css-117sh4z{margin-top:28px;font-size:32px;}}</style><h1 class="css-117sh4z e132k2573">CommonJS와 ESM에 모두 대응하는 라이브러리 개발하기: exports field</h1><style data-emotion="css s5xdrg">.css-s5xdrg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><section class="css-s5xdrg e2c667z4"><style data-emotion="css 1hdebld">.css-1hdebld{grid-area:image;width:48px;height:48px;border-radius:156px;margin-right:14px;}</style><img src="https://toss.tech/wp-content/uploads/2022/10/IMG_6487-scaled-312x312.jpg" alt="" class="css-1hdebld e2c667z3"/><div><style data-emotion="css 14d9k6d">.css-14d9k6d{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;grid-area:outline;-webkit-align-items:flex-end;-webkit-box-align:flex-end;-ms-flex-align:flex-end;align-items:flex-end;padding-top:8px;font-size:17px;margin-bottom:2px;}@media (max-width: 700px){.css-14d9k6d>*+*{margin-top:4px;margin-left:0;}}</style><div class="css-14d9k6d e2c667z2"><style data-emotion="css 9krnkp">.css-9krnkp{grid-area:name;margin:0;font-size:17px;font-weight:600;color:#4e5968;white-space:nowrap;}</style><h3 class="css-9krnkp e2c667z1">장호승</h3><h3 class="css-9krnkp e2c667z1">ㆍ<!-- -->Frontend Developer</h3></div><style data-emotion="css 154r2lc">.css-154r2lc{font-size:14px;line-height:1.5;color:#8b95a1;}</style><div class="css-154r2lc e2c667z0">2022. 10. 4</div></div></section></header><style data-emotion="css 1k1kkv6">.css-1k1kkv6{font-size:18px;line-height:1.7;color:var(--grey700);font-size:18px;word-break:keep-all;overflow-wrap:break-word;counter-reset:p-post-ol 0;}.css-1k1kkv6 h2{margin:2.2em 0 0.6em 0;font-size:25px;font-weight:600;line-height:1.4;color:var(--grey900);}.css-1k1kkv6 h3{margin:2.2em 0 0.6em 0;font-size:22px;font-weight:600;line-height:1.6;color:var(--grey900);}.css-1k1kkv6 h4{margin:2.2em 0 0.3em 0;font-size:19px;font-weight:600;line-height:1.6;color:var(--grey700);}.css-1k1kkv6 p{margin:1em 0;}.css-1k1kkv6 p code,.css-1k1kkv6 li code{font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:3px;}.css-1k1kkv6 a{color:var(--blue700);}.css-1k1kkv6 pre{margin:2em -24px;}@media (max-width: 700px){.css-1k1kkv6 pre{margin:2em 0;}}.css-1k1kkv6 pre code{display:block;padding:16px 24px;overflow-x:auto;font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;line-height:1.5;word-wrap:normal;white-space:pre;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:12px;}.css-1k1kkv6 figure{margin:2em 0;overflow:hidden;border-radius:12px;width:100%;}.css-1k1kkv6 figure.aligncenter{text-align:center;}.css-1k1kkv6 ol,.css-1k1kkv6 ul{margin:0 0 16px;list-style:none;}.css-1k1kkv6 ol li,.css-1k1kkv6 ul li{position:relative;margin-bottom:8px;}.css-1k1kkv6 ol li:before,.css-1k1kkv6 ul li:before{position:absolute;left:0;}.css-1k1kkv6 ol li ol,.css-1k1kkv6 ul li ol{padding-left:0;margin:8px 0 0 -16px;}.css-1k1kkv6 ol li ul,.css-1k1kkv6 ul li ul{padding-left:0;margin-top:8px;}.css-1k1kkv6 ol li p,.css-1k1kkv6 ul li p{margin:0;}.css-1k1kkv6 ol{padding-left:16px;counter-reset:p-post-ol;}.css-1k1kkv6 ol>li{padding-left:32px;counter-increment:p-post-ol;}.css-1k1kkv6 ol>li:before{font-weight:700;font-weight:var(--font-weight-bold);content:counter(p-post-ol) '.';}.css-1k1kkv6 ul{padding-left:16px;}.css-1k1kkv6 ul>li{padding-left:24px;}.css-1k1kkv6 ul>li:before{width:16px;text-align:center;content:'•';}.css-1k1kkv6 figcaption{font-size:0.9em;color:var(--grey600);}.css-1k1kkv6 .wp-block-pullquote{margin:0;}.css-1k1kkv6 blockquote{padding:32px;background:var(--greyOpacity100);border-radius:12px;text-align:left;margin:16px 0 16px 0;}.css-1k1kkv6 blockquote p{color:#333d4b;font-weight:600;margin:0;}.css-1k1kkv6 blockquote cite{font-style:normal;}@media (max-width: 700px){.css-1k1kkv6 blockquote{padding:24px;}}.css-1k1kkv6 .wp-block-embed-youtube iframe{width:100%;border-radius:12px;}.css-1k1kkv6 ol{counter-reset:none;}.css-1k1kkv6 hr{border-top:1px solid #e5e8eb;border-right-style:none;border-left-style:none;border-bottom-style:none;margin:2.5rem 0;}.css-1k1kkv6 figure{display:table;text-align:center;}@media (max-width: 700px){.css-1k1kkv6 figure{width:100%;}}.css-1k1kkv6 figure img,.css-1k1kkv6 figure video{max-width:100%;height:auto;border:1px solid rgba(2,32,71,0.05);border-radius:12px;}.css-1k1kkv6 figure.alignright{float:right;margin:0 0 8px 24px;}@media (max-width: 700px){.css-1k1kkv6 figure.alignright{float:none;margin:0;}}.css-1k1kkv6 figcaption{display:table-caption;text-align:center;white-space:pre-wrap;caption-side:bottom;}.css-1k1kkv6 p:empty::before{content:'';}</style><div class="css-1k1kkv6 e132k2572"><div>
+<h1>들어가며</h1>
+
+
+
+<p>토스 프론트엔드 챕터에서는 개발 생산성을 극대화하기 위해 코드를 지속적으로 라이브러리로 만들고 있습니다. 그 결과 지금은 100개가 넘는 라이브러리를 운영하고 있습니다.</p>
+
+
+
+<p>Node.js 12부터 ECMAScript Modules라는 새로운 Module System이 추가되면서, 기존의 CommonJS라는 Module System까지, 라이브러리는 두 가지 Module System을 지원해야 하게 되었습니다.</p>
+
+
+
+<p>토스팀에서는 그것을 package.json의 exports field를 통해 지원하고 있습니다. 각각의 모듈 시스템과 exports field에 대해 자세히 알아봅시다.</p>
+
+
+
+<h1>Node.js의 두 가지 Module System</h1>
+
+
+
+<p>Node.js에는 CommonJS, ECMAScript Modules(이하 CJS, ESM)라는 두 가지 모듈 시스템이 존재합니다.</p>
+
+
+
+<h2>CommonJS (CJS)</h2>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"/><style>.wp-block-code {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-code > div {
+	overflow: auto;
+}
+
+.shcb-language {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+.hljs {
+	box-sizing: border-box;
+}
+
+.hljs.shcb-code-table {
+	display: table;
+	width: 100%;
+}
+
+.hljs.shcb-code-table > .shcb-loc {
+	color: inherit;
+	display: table-row;
+	width: 100%;
+}
+
+.hljs.shcb-code-table .shcb-loc > span {
+	display: table-cell;
+}
+
+.wp-block-code code.hljs:not(.shcb-wrap-lines) {
+	white-space: pre;
+}
+
+.wp-block-code code.hljs.shcb-wrap-lines {
+	white-space: pre-wrap;
+}
+
+.hljs.shcb-line-numbers {
+	border-spacing: 0;
+	counter-reset: line;
+}
+
+.hljs.shcb-line-numbers > .shcb-loc {
+	counter-increment: line;
+}
+
+.hljs.shcb-line-numbers .shcb-loc > span {
+	padding-left: 0.75em;
+}
+
+.hljs.shcb-line-numbers .shcb-loc::before {
+	border-right: 1px solid #ddd;
+	content: counter(line);
+	display: table-cell;
+	padding: 0 0.75em;
+	text-align: right;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: 1%;
+}
+</style><div><code class="hljs language-javascript"><span class="hljs-comment">// add.js</span>
+<span class="hljs-built_in">module</span>.exports.add = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y;
+
+<span class="hljs-comment">// main.js</span>
+<span class="hljs-keyword">const</span> { add } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./add&#x27;</span>);
+
+add(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h2>ECMAScript Modules (ESM)</h2>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// add.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>{
+  <span class="hljs-keyword">return</span> x + y
+}
+
+<span class="hljs-comment">// main.js</span>
+<span class="hljs-keyword">import</span> { add } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./add.js&#x27;</span>;
+
+add(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<ul><li>CJS는 <code>require</code> / <code>module.exports</code> 를 사용하고, ESM은 <code>import</code> / <code>export</code> 문을 사용합니다.</li><li>CJS module loader는 동기적으로 작동하고, ESM module loader는 비동기적으로 작동합니다.<ul><li>ESM은 <a href="https://nodejs.org/api/esm.html#top-level-await">Top-level Await</a>을 지원하기 때문에 비동기적으로 동작합니다.</li></ul></li><li>따라서 ESM에서 CJS를 <code>import</code> 할 수는 있지만, CJS에서 ESM을 <code>require</code> 할 수는 없습니다. 왜냐하면 CJS는 Top-level Await을 지원하지 않기 때문입니다.</li><li>이 외에도 두 Module System은 기본적으로 동작이 다릅니다.</li><li>따라서 두 Module System은 서로 호환되기 어렵습니다.</li></ul>
+
+
+
+<h2>왜 두 Module System을 지원해야해요?</h2>
+
+
+
+<p>서로 호환되기 어려운 두 Module System을 지원해야하는 이유는 뭘까요? 그냥 하나로 통일하면 안될까요? 토스팀에서는 왜 그것을 중요하게 생각할까요?</p>
+
+
+
+<p>토스팀에서는 Server-side Rendering(이하 SSR)을 적극적으로 사용하고 있기 때문에, Node.js의 CJS를 지원하는 것이 중요했습니다.</p>
+
+
+
+<p>그리고 Module System의 지원은 브라우저 환경에서의 퍼포먼스와도 관련이 있습니다. 브라우저 환경에서는 페이지 렌더링을 빠르게 하는 것이 중요한데, 이 때 JavaScript는 로딩되어 실행되는 동안 페이지 렌더링을 중단시키는 리소스들 중 하나 입니다.</p>
+
+
+
+<p>따라서 JavaScript 번들의 사이즈를 줄여서 렌더링이 중단되는 시간을 최소화 하는 것이 중요합니다. 이를 위해 필요한 것이 바로 Tree-shaking입니다. Tree-shaking이란 필요하지 않은 코드와 사용되지 않는 코드를 삭제하여 JavaScript 번들의 크기를 가볍게 만드는 것을 말합니다.</p>
+
+
+
+<p>이 때, CJS는 Tree-shaking이 어렵고, ESM은 쉽게 가능합니다.</p>
+
+
+
+<p>왜냐하면 CJS는 기본적으로 <code>require</code> / <code>module.exports</code> 를 동적으로 하는 것에 아무런 제약이 없습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// require</span>
+<span class="hljs-keyword">const</span> utilName = <span class="hljs-comment">/* 동적인 값 */</span>
+<span class="hljs-keyword">const</span> util = <span class="hljs-built_in">require</span>(<span class="hljs-string">`./utils/<span class="hljs-subst">${utilName}</span>`</span>);
+
+<span class="hljs-comment">// module.exports</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-comment">/* 동적인 조건 */</span>) {
+    <span class="hljs-built_in">module</span>.exports = <span class="hljs-comment">/* ... */</span>;
+  }
+}
+foo();
+</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>따라서 CJS는 빌드 타임에 정적 분석을 적용하기가 어렵고, 런타임에서만 모듈 관계를 파악할 수 있습니다.</p>
+
+
+
+<p>하지만 ESM은 정적인 구조로 모듈끼리 의존하도록 강제합니다. import path에 동적인 값을 사용할 수 없고, export는 항상 최상위 스코프에서만 사용할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">import</span> util <span class="hljs-keyword">from</span> <span class="hljs-string">`./utils/<span class="hljs-subst">${utilName}</span>.js`</span>; <span class="hljs-comment">// 불가능</span>
+
+<span class="hljs-keyword">import</span> { add } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./utils/math.js&quot;</span>; <span class="hljs-comment">// 가능</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> value = <span class="hljs-string">&quot;foo&quot;</span>; <span class="hljs-comment">// 불가능</span>
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> value = <span class="hljs-string">&quot;foo&quot;</span>; <span class="hljs-comment">// 가능</span>
+</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>따라서 ESM은 빌드 단계에서 정적 분석을 통해 모듈 간의 의존 관계를 파악할 수 있고, Tree-shaking을 쉽게 할 수 있습니다.</p>
+
+
+
+<p>위와 같은 배경으로 토스팀에서는 CJS/ESM 모두 지원하는 라이브러리를 운영하게 되었습니다.</p>
+
+
+
+<h2>파일이 CJS인지 ESM인지 어떻게 알아요?</h2>
+
+
+
+<p>Module System이 두 개가 존재하며 둘 다 지원해야할 필요성은 알겠는데, <code>.js</code> 파일이 CJS인지 ESM인지 어떻게 알 수 있을까요? package.json의 <code>type</code> field 또는 확장자를 보고 알 수 있습니다.</p>
+
+
+
+<ul><li><code>.js</code> 파일의 Module System은 package.json의 <code>type</code> field에 따라 결정됩니다.<ul><li><code>type</code> field의 기본값은 <code>&quot;commonjs&quot;</code> 이고, 이 때 <code>.js</code> 는 CJS로 해석됩니다.</li><li>다른 하나는 <code>&quot;module&quot;</code> 입니다. 이 때 <code>.js</code> 는 ESM으로 해석됩니다.</li></ul></li><li><code>.cjs</code> 는 항상 CJS로 해석됩니다.</li><li><code>.mjs</code> 는 항상 ESM으로 해석됩니다.</li></ul>
+
+
+
+<p>TypeScript도 4.7부터 <code>tsconfig.json</code> 의 <code>moduleResolution</code> 이 <code>nodenext</code> 또는 <code>node16</code> 으로 설정된 경우, 위 규칙이 똑같이 적용됩니다.</p>
+
+
+
+<ul><li><code>type</code> field가 <code>&quot;commonjs&quot;</code> 인 경우, <code>.ts</code> 는 CJS로 해석됩니다.</li><li><code>type</code> field가 <code>&quot;module&quot;</code> 인 경우, <code>.ts</code> 는 ESM으로 해석됩니다.</li><li><code>.cts</code> 는 항상 CJS로 해석됩니다.</li><li><code>.mts</code> 는 항상 ESM으로 해석됩니다.</li></ul>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<h1>package.json의 exports field</h1>
+
+
+
+<p>CJS와 ESM의 차이, 패키지의 기본 Module System을 설정하는 방법과 확장자 모두 알아봤는데, 그래서 어떻게 하면 하나의 패키지가 CJS/ESM을 동시에 매끄럽게 제공할 수 있을까요?</p>
+
+
+
+<p>정답은 <code>exports</code> field입니다. <code>exports</code> field는 무슨 문제를 해결해줄까요? 어떤 역할을 할까요?</p>
+
+
+
+<h2>패키지 entry point 지정</h2>
+
+
+
+<p>기본적으로는 package.json의 <code>main</code> field와 같은 역할을 합니다. 패키지의 entry point를 지정할 수 있습니다.</p>
+
+
+
+<h2>subpath exports 지원</h2>
+
+
+
+<p>기존에는 filesystem 기반으로 동작했기 때문에, 패키지 내부의 임의의 JS 파일에 접근할 수 있었고, 또한 실제 filesystem 상의 위치와 import path를 다르게 둘 수 없었습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// 디렉토리 구조</span>
+/modules
+  a.js
+  b.js
+  c.js
+index.js
+
+<span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;package/a&quot;</span>); <span class="hljs-comment">// 불가능</span>
+<span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;package/modules/a&quot;</span>); <span class="hljs-comment">// 가능</span>
+</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>이 때, <code>exports</code> field를 사용해 subpath exports를 사용하면, 명시된 subpath 외에는 사용할 수 없고, filesystem 상의 위치와 import path를 다르게 지정할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json"><span class="hljs-comment">// CJS 패키지</span>
+{
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;cjs-package&quot;</span>,
+  <span class="hljs-attr">&quot;exports&quot;</span>: {
+    <span class="hljs-attr">&quot;.&quot;</span>: <span class="hljs-string">&quot;./index.js&quot;</span>,
+    <span class="hljs-attr">&quot;./a&quot;</span>: <span class="hljs-string">&quot;./modules/a.js&quot;</span>,
+  },
+}
+</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// ./a.js가 아니라</span>
+<span class="hljs-comment">// ./modules/a.js를 불러온다.</span>
+<span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;cjs-package/a&quot;</span>);
+
+<span class="hljs-comment">// 에러</span>
+<span class="hljs-comment">// ./b는 exports field에 명시하지 않은 subpath이다.</span>
+<span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;cjs-package/b&quot;</span>);
+</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h2>conditional exports 지원</h2>
+
+
+
+<p>기존에는 filesystem 기반으로 동작했기 때문에, Dual CJS/ESM 패키지를 자연스럽게 운영하기가 어려웠습니다.</p>
+
+
+
+<p><code>exports</code> field를 사용하면, 똑같은 import path에 대해 특정 조건에 따라 다른 모듈을 제공할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;cjs-package&quot;</span>,
+  <span class="hljs-attr">&quot;exports&quot;</span>: {
+    <span class="hljs-attr">&quot;.&quot;</span>: {
+      <span class="hljs-attr">&quot;require&quot;</span>: <span class="hljs-string">&quot;./dist/index.cjs&quot;</span>,
+      <span class="hljs-attr">&quot;import&quot;</span>: <span class="hljs-string">&quot;./esm/index.mjs&quot;</span>
+    }
+  }
+}
+</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// CJS 환경</span>
+<span class="hljs-comment">// ./dist/index.cjs를 불러온다.</span>
+<span class="hljs-keyword">const</span> pkg = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;cjs-package&quot;</span>);
+
+<span class="hljs-comment">// ESM 환경</span>
+<span class="hljs-comment">// ./esm/index.mjs를 불러온다.</span>
+<span class="hljs-keyword">import</span> pkg <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;cjs-package&quot;</span>;
+</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h2>올바른 exports field</h2>
+
+
+
+<p>Dual CJS/ESM 패키지의 <code>exports</code> field를 올바르게 작성하기 위해 주의해야할 점을 알아봅시다.</p>
+
+
+
+<h3>상대 경로로 표시하기</h3>
+
+
+
+<p><code>exports</code> field는 모두 <code>.</code> 으로 시작하는 상대 경로로 작성되어야 합니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json"><span class="hljs-comment">// X</span>
+{
+  <span class="hljs-attr">&quot;exports&quot;</span>: {
+    <span class="hljs-attr">&quot;sub-module&quot;</span>: <span class="hljs-string">&quot;dist/modules/sub-module.js&quot;</span>
+  }
+}
+
+<span class="hljs-comment">// O</span>
+{
+  <span class="hljs-attr">&quot;exports&quot;</span>: {
+    <span class="hljs-attr">&quot;.&quot;</span>: <span class="hljs-string">&quot;./dist/index.js&quot;</span>,
+    <span class="hljs-attr">&quot;./sub-module&quot;</span>: <span class="hljs-string">&quot;./dist/modules/sub-module.js&quot;</span>
+  }
+}
+</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3>Module System에 따라 올바른 확장자 사용하기</h3>
+
+
+
+<p>conditional exports를 사용할 때, 패키지가 따르는 Module System에 따라, 즉 package.json의 <code>type</code> field에 따라 올바른 JS 확장자를 사용해야 합니다.</p>
+
+
+
+<ul><li>CJS 패키지일 때</li></ul>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json"><span class="hljs-comment">// ESM은 .mjs로 명시해야함</span>
+{
+  <span class="hljs-attr">&quot;exports&quot;</span>: {
+    <span class="hljs-attr">&quot;.&quot;</span>: {
+      <span class="hljs-attr">&quot;require&quot;</span>: <span class="hljs-string">&quot;./dist/index.js&quot;</span>,
+      <span class="hljs-attr">&quot;import&quot;</span>: <span class="hljs-string">&quot;./dist/index.mjs&quot;</span>
+    }
+  }
+}
+</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<ul><li>ESM 패키지일 때</li></ul>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json"><span class="hljs-comment">// CJS는 .cjs로 명시해야함</span>
+{
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;module&quot;</span>
+  <span class="hljs-string">&quot;exports&quot;</span>: {
+    <span class="hljs-attr">&quot;.&quot;</span>: {
+      <span class="hljs-attr">&quot;require&quot;</span>: <span class="hljs-string">&quot;./dist/index.cjs&quot;</span>,
+      <span class="hljs-attr">&quot;import&quot;</span>: <span class="hljs-string">&quot;./dist/index.js&quot;</span>
+    }
+  }
+}
+</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>이 규칙을 지키지 않고 전부 <code>.js</code> 확장자를 사용했을 때는 어떤 일이 발생할까요? 아래와 같이 상황을 가정하겠습니다.</p>
+
+
+
+<ul><li><code>cjs-package</code> 는 CJS 패키지이다.<ul><li><code>type</code> field가 <code>&quot;commonjs&quot;</code> 이기 때문이다.</li></ul></li><li><code>./dist/index.js</code> 는 CJS 문법(<code>require</code> / <code>module.exports</code>)으로 작성된 모듈이다.</li><li><code>./esm/index.js</code> 는 ESM 문법(<code>import</code> / <code>export</code>)으로 작성된 모듈이다.</li></ul>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;cjs-package&quot;</span>,
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;commonjs&quot;</span>,
+  <span class="hljs-attr">&quot;exports&quot;</span>: {
+    <span class="hljs-attr">&quot;.&quot;</span>: {
+      <span class="hljs-attr">&quot;require&quot;</span>: <span class="hljs-string">&quot;./dist/index.js&quot;</span>,
+      <span class="hljs-attr">&quot;import&quot;</span>: <span class="hljs-string">&quot;./esm/index.js&quot;</span>
+    }
+  }
+}
+</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>CJS 환경에서 <code>cjs-package</code> 를 <code>require</code> 했을 땐 잘 동작합니다. <code>./dist/index.js</code> 는 CJS 모듈이고, 확장자가 <code>.js</code> 이므로, 가장 가까운 package.json의 <code>type</code> field를 따라 CJS Module Loader가 사용될 것이기 때문입니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// 잘 동작한다.</span>
+<span class="hljs-comment">// ./dist/index.js를  CommonJS Module Loader로 불러온다.</span>
+<span class="hljs-keyword">const</span> pkg = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;cjs-package&quot;</span>);
+</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>하지만 ESM 환경에서 <code>cjs-package</code> 를 <code>import</code> 했을 땐 에러가 발생합니다. <code>./esm/index.js</code> 는 ESM 모듈이지만, 확장자가 <code>.js</code> 이므로 가장 가까운 package.json의 <code>type</code> field를 따라 CJS Module Loader가 사용됩니다.</p>
+
+
+
+<p>ESM 문법으로 작성된 JavaScript를 CJS Module Loader로 읽기 때문에 당연히 에러가 발생합니다.</p>
+
+
+
+<p>(예시: <code>import</code> 문은 ESM에서만 사용 가능하다는 에러가 발생)</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// 에러가 발생한다.</span>
+<span class="hljs-comment">// ./esm/index.js를 CJS Module Loader로 읽었다.</span>
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> pkg <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;cjs-package&quot;</span>;
+</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3>TypeScript 지원하기</h3>
+
+
+
+<p>TypeScript에서 module import시, 항상 Type Definition을 찾게 되는데요. 기존에는 filesystem 기반으로 Type Definition을 탐색했습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// ./sub-module.d.ts를 찾는다.</span>
+<span class="hljs-keyword">import</span> subModule <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;package/sub-module&quot;</span>;
+</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>하지만 TypeScript 4.7부터 <code>moduleResolution</code> 옵션에 <code>node16</code> 과 <code>nodenext</code> 가 정식으로 추가되었고, <code>node16</code> 과 <code>nodenext</code> 는 filesystem 기반이 아닌 <code>exports</code> field로부터 Type Definition을 탐색합니다. 또한, CJS TypeScript( <code>.cts</code> )와 ESM TypeScript( <code>.mts</code> )를 구분합니다.</p>
+
+
+
+<p>TypeScript는 conditional import의 조건 중 <code>types</code> 를 참조하며, 이 때 JavaScript와 마찬가지로 package.json의 <code>type</code> field에 따라 알맞은 확장자 ( <code>.cts</code> / <code>.mts</code> )를 사용해야 합니다.</p>
+
+
+
+<ul><li>CJS 패키지</li></ul>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json"><span class="hljs-comment">// ESM TS는 mts로 명시해야함</span>
+{
+  <span class="hljs-attr">&quot;exports&quot;</span>: {
+    <span class="hljs-attr">&quot;.&quot;</span>: {
+      <span class="hljs-attr">&quot;require&quot;</span>: {
+        <span class="hljs-attr">&quot;types&quot;</span>: <span class="hljs-string">&quot;./index.d.ts&quot;</span>,
+        <span class="hljs-attr">&quot;default&quot;</span>: <span class="hljs-string">&quot;./index.js&quot;</span>
+      },
+      <span class="hljs-attr">&quot;import&quot;</span>: {
+        <span class="hljs-attr">&quot;types&quot;</span>: <span class="hljs-string">&quot;./index.d.mts&quot;</span>,
+        <span class="hljs-attr">&quot;default&quot;</span>: <span class="hljs-string">&quot;./index.mjs&quot;</span>
+      }
+    }
+  }
+}
+</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<ul><li>ESM 패키지</li></ul>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json"><span class="hljs-comment">// CJS TS는 cts로 명시해야함</span>
+{
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;module&quot;</span>,
+  <span class="hljs-attr">&quot;exports&quot;</span>: {
+    <span class="hljs-attr">&quot;.&quot;</span>: {
+      <span class="hljs-attr">&quot;require&quot;</span>: {
+        <span class="hljs-attr">&quot;types&quot;</span>: <span class="hljs-string">&quot;./index.d.cts&quot;</span>,
+        <span class="hljs-attr">&quot;default&quot;</span>: <span class="hljs-string">&quot;./index.cjs&quot;</span>
+      },
+      <span class="hljs-attr">&quot;import&quot;</span>: {
+        <span class="hljs-attr">&quot;types&quot;</span>: <span class="hljs-string">&quot;./index.d.ts&quot;</span>,
+        <span class="hljs-attr">&quot;default&quot;</span>: <span class="hljs-string">&quot;./index.js&quot;</span>
+      }
+    }
+  }
+}
+</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>그럼 TypeScript의 경우에는 위 규칙을 지키지 않으면 어떻게 될까요? 아래와 같이 상황을 가정하겠습니다.</p>
+
+
+
+<ul><li><code>esm-package</code> 는 ESM 패키지이다.<ul><li><code>type</code> field가 <code>&quot;module&quot;</code> 이기 때문이다.</li></ul></li><li><code>.cts</code> (CJS TypeScript)에서 <code>esm-package</code> 를 사용한다.</li></ul>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="JSON / JSON with Comments" data-shcb-language-slug="json"><div><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;esm-package&quot;</span>,
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;module&quot;</span>,
+  <span class="hljs-attr">&quot;exports&quot;</span>: {
+    <span class="hljs-attr">&quot;.&quot;</span>: {
+      <span class="hljs-attr">&quot;types&quot;</span>: <span class="hljs-string">&quot;./index.d.ts&quot;</span>,
+      <span class="hljs-attr">&quot;require&quot;</span>: <span class="hljs-string">&quot;./index.cjs&quot;</span>,
+      <span class="hljs-attr">&quot;import&quot;</span>: <span class="hljs-string">&quot;./index.js&quot;</span>
+    }
+  }
+}
+</code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JSON / JSON with Comments</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">json</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>이 때 <code>.cts</code> (CJS TypeScript)에서 <code>esm-package</code> 를 require하면 타입 에러가 발생합니다.</p>
+
+
+
+<p><code>esm-package</code> 는 Type Definition을 <code>./index.d.ts</code> 만 지원합니다. 즉, ESM/CJS TypeScript 모두 <code>./index.d.ts</code> 를 바라보게 됩니다.</p>
+
+
+
+<p>이 때, <code>esm-package</code> 는 ESM 패키지이기 때문에 <code>index.d.ts</code> 는 ESM TypeScript로써 해석됩니다.</p>
+
+
+
+<p>따라서 <code>esm-package</code> 는 CJS TypeScript 입장에서 Pure ESM Module이고, CJS는 ESM을 불러올 수 없기 때문에 <code>esm-package</code> 가 순수 ESM으로만 확인된다는 타입 에러가 발생합니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">// index.cts</span>
+
+<span class="hljs-comment">// Type Error: esm-package는 동기적으로 가져올 수 없는 ES 모듈로만 확인됩니다.</span>
+<span class="hljs-comment">// CJS TypeScript를 위한 .d.cts를 지원하지 않았기 때문에 발생하는 에러</span>
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> esmPkg <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;esm-package&quot;</span>;
+</code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<h1>마치며</h1>
+
+
+
+<p>최근 토스팀 내부 라이브러리들은 위처럼 올바르게 <code>exports</code> field를 작성하여 배포되고 있습니다. CJS/ESM JavaScript는 물론 TypeScript 지원까지 잘 되있습니다.</p>
+
+
+
+<p>JavaScript/TypeScript 생태계는 계속해서 발전하고 있지만, TypeScript까지 잘 지원하는 라이브러리는 정말 유명한 라이브러리들 중에서도 찾아보기가 많이 힘듭니다.</p>
+
+
+
+<p>그렇다면 우리가 그 시작점이 되면 어떨까요? 토스팀에서는 이런 기술적인 문제를 함께 풀어가고 싶으신 분들을 언제나 환영합니다. 함께 좋은 생태계를 만들어 나가고 싶어요.</p>
+
+
+
+<h1>레퍼런스</h1>
+
+
+
+<ul><li>Node.js의 CJS/ESM에 대해<ul><li><a href="https://nodejs.org/api/modules.html">CJS</a></li><li><a href="https://nodejs.org/api/esm.html">ESM</a></li><li><a href="https://nodejs.org/api/packages.html#determining-module-system">Determining Module System</a></li></ul></li><li><code>exports</code> field에 대해<ul><li><a href="https://nodejs.org/api/packages.html#exports">package.json export field</a></li><li><a href="https://nodejs.org/api/packages.html#subpath-exports">Subpath exports</a></li><li><a href="https://nodejs.org/api/packages.html#conditional-exports">Conditional exports</a></li></ul></li><li>TypeScript의 CJS/ESM 지원에 대해<ul><li><a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-7.html">4.7 릴리즈 노트</a></li></ul></li></ul>
+</div></div><style data-emotion="css auig7l">.css-auig7l{margin-top:96px;}</style><style data-emotion="css x7fajo">.css-x7fajo{margin-top:96px;}.css-x7fajo>*:not(style)~*:not(style){margin-left:24px;}</style><style data-emotion="css 6rfvv8">.css-6rfvv8{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;margin-top:96px;}.css-6rfvv8>*:not(style)~*:not(style){margin-left:24px;}</style><div class="css-6rfvv8"><style data-emotion="css 1n0u3h">.css-1n0u3h{background-color:#f9fafb;width:100%;height:auto;border-radius:12px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:48px;}@media (max-width: 700px){.css-1n0u3h{padding:32px;}}</style><div class="css-1n0u3h e1t1xt3a7"><style data-emotion="css 6cc9f0">.css-6cc9f0{font-size:24px;font-weight:700;margin-bottom:16px;color:#4e5968;}</style><h2 class="css-6cc9f0 e1t1xt3a6">재미있게 읽으셨나요?</h2><style data-emotion="css 1wmgpcn">.css-1wmgpcn{font-size:16px;line-height:1.5;font-weight:600;color:#6b7684;margin-bottom:4px;}</style><p class="css-1wmgpcn e1t1xt3a5">좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.</p><style data-emotion="css 4qu8li">.css-4qu8li{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:16px;}</style><div class="css-4qu8li e1t1xt3a3"><style data-emotion="css 1fmr5ax">.css-1fmr5ax{display:block;font-family:'tossface';font-size:40px;cursor:pointer;margin:0 12px;-webkit-transition:0.15s ease-in-out all;transition:0.15s ease-in-out all;}.css-1fmr5ax a{-webkit-text-decoration:none;text-decoration:none;}.css-1fmr5ax:hover{-webkit-transform:scale(1.2);-moz-transform:scale(1.2);-ms-transform:scale(1.2);transform:scale(1.2);}</style><div class="css-1fmr5ax e1t1xt3a1">😍</div><div class="css-1fmr5ax e1t1xt3a1">🤔</div></div><style data-emotion="css 1p3zmjw">.css-1p3zmjw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;margin-top:16px;}.css-1p3zmjw button,.css-1p3zmjw a{margin:0 12px;}@media (max-width: 700px){.css-1p3zmjw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;}.css-1p3zmjw button,.css-1p3zmjw a{width:100%;margin:8px 0;}}</style><div class="css-1p3zmjw e1t1xt3a0"><style data-emotion="css 1u8jkqx">.css-1u8jkqx{display:grid;grid-template-columns:min-content auto;grid-column-gap:8px;}</style><button class="p-button p-button--primary p-button--inline p-button--weak p-button--default p-button--has-icon padding--base css-1u8jkqx" type="button" aria-disabled="false"><span class="icon p-icon icon--colored p-icon--colored" aria-hidden="true" role="presentation" style="height:16px;width:16px;min-width:16px;color:#3182f6"></span>아티클 공유하기</button></div></div></div></article><style data-emotion="css 1lsuzal">.css-1lsuzal{margin-top:100px;}.css-1lsuzal::before{content:'';position:absolute;width:100%;height:1px;left:0;border-bottom:1px solid #e5e8eb;}</style><div class="css-1lsuzal e132k2571"><style data-emotion="css 1ympfnp">.css-1ympfnp{display:inline-block;width:100%;font-size:20px;margin:34px 0 40px 0;}</style><span class="typography typography--h3 typography--bold color--grey800 css-1ympfnp e132k2570">이어지는 글</span><style data-emotion="css vivlm7">.css-vivlm7{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer;margin-bottom:40px;}.css-vivlm7:last-of-type{margin-bottom:0px;}.css-vivlm7:hover .egyklng4{color:#3182f6;}</style><div class="css-vivlm7 egyklng3"><style data-emotion="css bc0lqn">.css-bc0lqn{width:80px;height:80px;margin-right:20px;border-radius:12px;object-fit:cover;}@media (max-width: 700px){.css-bc0lqn{width:64px;height:64px;}}</style><img srcSet="https://toss.tech/wp-content/uploads/2023/04/00009-889461687-300x300.png 300w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687-150x150.png 150w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687.png 512w" class="css-bc0lqn egyklng2"/><style data-emotion="css 1fttcpj">.css-1fttcpj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}</style><div class="css-1fttcpj egyklng1"><style data-emotion="css p4blj2">.css-p4blj2{font-size:24px;margin-bottom:4px;word-break:keep-all;line-height:1.4;overflow-wrap:break-word;-webkit-transition:color 0.3s ease;transition:color 0.3s ease;-webkit-line-clamp:2;display:block;}@media (max-width: 700px){.css-p4blj2{font-size:18px;-webkit-line-clamp:2;}}</style><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">무지성으로 사용한 헬스 체크가 불러일으킬 수 있는 참사</span><style data-emotion="css 1jxhn1e">.css-1jxhn1e{color:#8b95a1;}</style><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 04. 01</span></div></div><div class="css-vivlm7 egyklng3"><img srcSet="https://toss.tech/wp-content/uploads/2023/03/center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/center.png 1200w" class="css-bc0lqn egyklng2"/><div class="css-1fttcpj egyklng1"><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">ESLint와 AST로 코드 퀄리티 높이기</span><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 03. 31</span></div></div></div></div></div><style data-emotion="css 1d2vuhc">.css-1d2vuhc{padding:60px 24px;word-break:keep-all;overflow-wrap:break-word;background:rgba(2,9,19,0.91);}@media (max-width: 700px){.css-1d2vuhc{padding-top:24px;}}</style><section class="css-1d2vuhc eqrolup4"><style data-emotion="css yf0lpd">.css-yf0lpd{display:grid;grid-template-columns:3fr 7fr;grid-column-gap:20px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:640px;margin:0 auto;content-visibility:auto;}@media (max-width: 700px){.css-yf0lpd{grid-template-rows:min-content auto;grid-template-columns:1fr;grid-row-gap:24px;}}</style><div class="css-yf0lpd eqrolup2"><style data-emotion="css 1d33yk5">.css-1d33yk5{width:100%;}@media (max-width: 700px){.css-1d33yk5{width:90px;}}</style><img src="https://static.toss.im/3d/website_code_blue_alpha.png" alt="" class="css-1d33yk5 eqrolup3"/><style data-emotion="css 1gb2pj4">.css-1gb2pj4>*:not(style)~*:not(style){margin-top:24px;}</style><style data-emotion="css 7xmgw5">.css-7xmgw5{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-7xmgw5>*:not(style)~*:not(style){margin-top:24px;}</style><div class="css-7xmgw5"><style data-emotion="css 1pbuvpm">.css-1pbuvpm>*:not(style)~*:not(style){margin-top:8px;}</style><style data-emotion="css nbpfuv">.css-nbpfuv{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-nbpfuv>*:not(style)~*:not(style){margin-top:8px;}</style><div class="css-nbpfuv"><style data-emotion="css 19gu4b8">.css-19gu4b8{margin:0;font-size:26px;line-height:1.4;color:#ffffff;}@media (max-width: 700px){.css-19gu4b8{font-size:20px;}}</style><h3 class="css-19gu4b8 eqrolup1">토스팀이 만드는 수많은 혁신의 순간들</h3><style data-emotion="css shfxsq">.css-shfxsq{font-size:17px;line-height:1.5;color:#e5e8eb;}@media (max-width: 700px){.css-shfxsq{font-size:16px;}}</style><div class="css-shfxsq eqrolup0">당신과 함께 만들고 싶습니다.<br/>지금, 토스팀에 합류하세요.</div></div><a class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s" aria-disabled="false" href="https://toss.im/career/jobs?gh_src=38b73b7a3us">채용 중인 공고 보기</a></div></div></section><footer class="p-footer p-footer--light"><div class="p-footer__inner"><div class="p-footer__site-group-list"><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스테크</div></li><li class="p-footer__site-group-item"><a href="mailto:techblog@toss.im">의견 보내기</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스</div></li><li class="p-footer__site-group-item"><a href="https://toss.im">홈페이지</a></li><li class="p-footer__site-group-item"><a href="https://team.toss.im">회사 소개</a></li><li class="p-footer__site-group-item"><a href="https://toss.im/career">채용</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">고객센터</div></li><li class="p-footer__site-group-item"><a href="tel:1599-4905">전화: 1599-4905 (24시간 연중무휴)</a></li><li class="p-footer__site-group-item"><a href="mailto:support.toss.im">이메일: support@toss.im</a></li><li class="p-footer__site-group-item"><a href="https://goto.kakao.com/@toss">카카오톡: @toss</a></li></ul></div><address class="p-footer__address"><strong class="p-footer__address__company-name">㈜비바리퍼블리카</strong>Copyright © Viva Republica, Inc. All Rights Reserved.</address><ul class="p-footer__term-wrapper"></ul><ul class="p-footer__social-list"><li class="p-footer__social-list-item"><a aria-label="Toss Facebook" target="_blank" href="https://www.facebook.com/toss.revolution"><img src="https://static.toss.im/assets/homepage/safety/icn-facebook.svg" alt="Toss Facebook"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss blog" target="_blank" href="https://blog.toss.im"><img src="https://static.toss.im/assets/homepage/safety/icn-blog.svg" alt="Toss blog"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Naver Post" target="_blank" href="https://post.naver.com/tossblog"><img src="https://static.toss.im/assets/homepage/safety/icn-naver.svg" alt="Toss Naver Post"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Twitter" target="_blank" href="https://twitter.com/toss__official"><img src="https://static.toss.im/assets/homepage/safety/icn-twitter.svg" alt="Toss Twitter"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Instagram" target="_blank" href="https://www.instagram.com/toss.im/"><img src="https://static.toss.im/assets/homepage/safety/icn-instagram.svg" alt="Toss Instagram"/></a></li></ul></div></footer><div id="tds-pc__portal-container"></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"article":{"title":"CommonJS와 ESM에 모두 대응하는 라이브러리 개발하기: exports field","content":"\n\u003ch1\u003e들어가며\u003c/h1\u003e\n\n\n\n\u003cp\u003e토스 프론트엔드 챕터에서는 개발 생산성을 극대화하기 위해 코드를 지속적으로 라이브러리로 만들고 있습니다. 그 결과 지금은 100개가 넘는 라이브러리를 운영하고 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003eNode.js 12부터 ECMAScript Modules라는 새로운 Module System이 추가되면서, 기존의 CommonJS라는 Module System까지, 라이브러리는 두 가지 Module System을 지원해야 하게 되었습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e토스팀에서는 그것을 package.json의 exports field를 통해 지원하고 있습니다. 각각의 모듈 시스템과 exports field에 대해 자세히 알아봅시다.\u003c/p\u003e\n\n\n\n\u003ch1\u003eNode.js의 두 가지 Module System\u003c/h1\u003e\n\n\n\n\u003cp\u003eNode.js에는 CommonJS, ECMAScript Modules(이하 CJS, ESM)라는 두 가지 모듈 시스템이 존재합니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003eCommonJS (CJS)\u003c/h2\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-1\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003clink rel='stylesheet' id='syntax-highlighting-code-block-css'  href='https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1' media='all' /\u003e\u003cstyle\u003e.wp-block-code {\n\tborder: 0;\n\tpadding: 0;\n}\n\n.wp-block-code \u003e div {\n\toverflow: auto;\n}\n\n.shcb-language {\n\tborder: 0;\n\tclip: rect(1px, 1px, 1px, 1px);\n\t-webkit-clip-path: inset(50%);\n\tclip-path: inset(50%);\n\theight: 1px;\n\tmargin: -1px;\n\toverflow: hidden;\n\tpadding: 0;\n\tposition: absolute;\n\twidth: 1px;\n\tword-wrap: normal;\n\tword-break: normal;\n}\n\n.hljs {\n\tbox-sizing: border-box;\n}\n\n.hljs.shcb-code-table {\n\tdisplay: table;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table \u003e .shcb-loc {\n\tcolor: inherit;\n\tdisplay: table-row;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table .shcb-loc \u003e span {\n\tdisplay: table-cell;\n}\n\n.wp-block-code code.hljs:not(.shcb-wrap-lines) {\n\twhite-space: pre;\n}\n\n.wp-block-code code.hljs.shcb-wrap-lines {\n\twhite-space: pre-wrap;\n}\n\n.hljs.shcb-line-numbers {\n\tborder-spacing: 0;\n\tcounter-reset: line;\n}\n\n.hljs.shcb-line-numbers \u003e .shcb-loc {\n\tcounter-increment: line;\n}\n\n.hljs.shcb-line-numbers .shcb-loc \u003e span {\n\tpadding-left: 0.75em;\n}\n\n.hljs.shcb-line-numbers .shcb-loc::before {\n\tborder-right: 1px solid #ddd;\n\tcontent: counter(line);\n\tdisplay: table-cell;\n\tpadding: 0 0.75em;\n\ttext-align: right;\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\tuser-select: none;\n\twhite-space: nowrap;\n\twidth: 1%;\n}\n\u003c/style\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-comment\"\u003e// add.js\u003c/span\u003e\n\u003cspan class=\"hljs-built_in\"\u003emodule\u003c/span\u003e.exports.add = \u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003ex, y\u003c/span\u003e) =\u0026gt;\u003c/span\u003e x + y;\n\n\u003cspan class=\"hljs-comment\"\u003e// main.js\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e { add } = \u003cspan class=\"hljs-built_in\"\u003erequire\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e'./add'\u003c/span\u003e);\n\nadd(\u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e, \u003cspan class=\"hljs-number\"\u003e2\u003c/span\u003e);\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-1\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003ch2\u003eECMAScript Modules (ESM)\u003c/h2\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-2\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-comment\"\u003e// add.js\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eadd\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003ex, y\u003c/span\u003e) \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e x + y\n}\n\n\u003cspan class=\"hljs-comment\"\u003e// main.js\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e { add } \u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'./add.js'\u003c/span\u003e;\n\nadd(\u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e, \u003cspan class=\"hljs-number\"\u003e2\u003c/span\u003e);\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-2\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cul\u003e\u003cli\u003eCJS는 \u003ccode\u003erequire\u003c/code\u003e / \u003ccode\u003emodule.exports\u003c/code\u003e 를 사용하고, ESM은 \u003ccode\u003eimport\u003c/code\u003e / \u003ccode\u003eexport\u003c/code\u003e 문을 사용합니다.\u003c/li\u003e\u003cli\u003eCJS module loader는 동기적으로 작동하고, ESM module loader는 비동기적으로 작동합니다.\u003cul\u003e\u003cli\u003eESM은 \u003ca href=\"https://nodejs.org/api/esm.html#top-level-await\"\u003eTop-level Await\u003c/a\u003e을 지원하기 때문에 비동기적으로 동작합니다.\u003c/li\u003e\u003c/ul\u003e\u003c/li\u003e\u003cli\u003e따라서 ESM에서 CJS를 \u003ccode\u003eimport\u003c/code\u003e 할 수는 있지만, CJS에서 ESM을 \u003ccode\u003erequire\u003c/code\u003e 할 수는 없습니다. 왜냐하면 CJS는 Top-level Await을 지원하지 않기 때문입니다.\u003c/li\u003e\u003cli\u003e이 외에도 두 Module System은 기본적으로 동작이 다릅니다.\u003c/li\u003e\u003cli\u003e따라서 두 Module System은 서로 호환되기 어렵습니다.\u003c/li\u003e\u003c/ul\u003e\n\n\n\n\u003ch2\u003e왜 두 Module System을 지원해야해요?\u003c/h2\u003e\n\n\n\n\u003cp\u003e서로 호환되기 어려운 두 Module System을 지원해야하는 이유는 뭘까요? 그냥 하나로 통일하면 안될까요? 토스팀에서는 왜 그것을 중요하게 생각할까요?\u003c/p\u003e\n\n\n\n\u003cp\u003e토스팀에서는 Server-side Rendering(이하 SSR)을 적극적으로 사용하고 있기 때문에, Node.js의 CJS를 지원하는 것이 중요했습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e그리고 Module System의 지원은 브라우저 환경에서의 퍼포먼스와도 관련이 있습니다. 브라우저 환경에서는 페이지 렌더링을 빠르게 하는 것이 중요한데, 이 때 JavaScript는 로딩되어 실행되는 동안 페이지 렌더링을 중단시키는 리소스들 중 하나 입니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e따라서 JavaScript 번들의 사이즈를 줄여서 렌더링이 중단되는 시간을 최소화 하는 것이 중요합니다. 이를 위해 필요한 것이 바로 Tree-shaking입니다. Tree-shaking이란 필요하지 않은 코드와 사용되지 않는 코드를 삭제하여 JavaScript 번들의 크기를 가볍게 만드는 것을 말합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이 때, CJS는 Tree-shaking이 어렵고, ESM은 쉽게 가능합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e왜냐하면 CJS는 기본적으로 \u003ccode\u003erequire\u003c/code\u003e / \u003ccode\u003emodule.exports\u003c/code\u003e 를 동적으로 하는 것에 아무런 제약이 없습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-3\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-comment\"\u003e// require\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e utilName = \u003cspan class=\"hljs-comment\"\u003e/* 동적인 값 */\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e util = \u003cspan class=\"hljs-built_in\"\u003erequire\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e`./utils/\u003cspan class=\"hljs-subst\"\u003e${utilName}\u003c/span\u003e`\u003c/span\u003e);\n\n\u003cspan class=\"hljs-comment\"\u003e// module.exports\u003c/span\u003e\n\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003efoo\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003e\u003c/span\u003e) \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (\u003cspan class=\"hljs-comment\"\u003e/* 동적인 조건 */\u003c/span\u003e) {\n    \u003cspan class=\"hljs-built_in\"\u003emodule\u003c/span\u003e.exports = \u003cspan class=\"hljs-comment\"\u003e/* ... */\u003c/span\u003e;\n  }\n}\nfoo();\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-3\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e따라서 CJS는 빌드 타임에 정적 분석을 적용하기가 어렵고, 런타임에서만 모듈 관계를 파악할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e하지만 ESM은 정적인 구조로 모듈끼리 의존하도록 강제합니다. import path에 동적인 값을 사용할 수 없고, export는 항상 최상위 스코프에서만 사용할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-4\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e util \u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e`./utils/\u003cspan class=\"hljs-subst\"\u003e${utilName}\u003c/span\u003e.js`\u003c/span\u003e; \u003cspan class=\"hljs-comment\"\u003e// 불가능\u003c/span\u003e\n\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e { add } \u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\"./utils/math.js\"\u003c/span\u003e; \u003cspan class=\"hljs-comment\"\u003e// 가능\u003c/span\u003e\n\n\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003efoo\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003e\u003c/span\u003e) \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e value = \u003cspan class=\"hljs-string\"\u003e\"foo\"\u003c/span\u003e; \u003cspan class=\"hljs-comment\"\u003e// 불가능\u003c/span\u003e\n}\n\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e value = \u003cspan class=\"hljs-string\"\u003e\"foo\"\u003c/span\u003e; \u003cspan class=\"hljs-comment\"\u003e// 가능\u003c/span\u003e\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-4\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e따라서 ESM은 빌드 단계에서 정적 분석을 통해 모듈 간의 의존 관계를 파악할 수 있고, Tree-shaking을 쉽게 할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e위와 같은 배경으로 토스팀에서는 CJS/ESM 모두 지원하는 라이브러리를 운영하게 되었습니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003e파일이 CJS인지 ESM인지 어떻게 알아요?\u003c/h2\u003e\n\n\n\n\u003cp\u003eModule System이 두 개가 존재하며 둘 다 지원해야할 필요성은 알겠는데, \u003ccode\u003e.js\u003c/code\u003e 파일이 CJS인지 ESM인지 어떻게 알 수 있을까요? package.json의 \u003ccode\u003etype\u003c/code\u003e field 또는 확장자를 보고 알 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cul\u003e\u003cli\u003e\u003ccode\u003e.js\u003c/code\u003e 파일의 Module System은 package.json의 \u003ccode\u003etype\u003c/code\u003e field에 따라 결정됩니다.\u003cul\u003e\u003cli\u003e\u003ccode\u003etype\u003c/code\u003e field의 기본값은 \u003ccode\u003e\"commonjs\"\u003c/code\u003e 이고, 이 때 \u003ccode\u003e.js\u003c/code\u003e 는 CJS로 해석됩니다.\u003c/li\u003e\u003cli\u003e다른 하나는 \u003ccode\u003e\"module\"\u003c/code\u003e 입니다. 이 때 \u003ccode\u003e.js\u003c/code\u003e 는 ESM으로 해석됩니다.\u003c/li\u003e\u003c/ul\u003e\u003c/li\u003e\u003cli\u003e\u003ccode\u003e.cjs\u003c/code\u003e 는 항상 CJS로 해석됩니다.\u003c/li\u003e\u003cli\u003e\u003ccode\u003e.mjs\u003c/code\u003e 는 항상 ESM으로 해석됩니다.\u003c/li\u003e\u003c/ul\u003e\n\n\n\n\u003cp\u003eTypeScript도 4.7부터 \u003ccode\u003etsconfig.json\u003c/code\u003e 의 \u003ccode\u003emoduleResolution\u003c/code\u003e 이 \u003ccode\u003enodenext\u003c/code\u003e 또는 \u003ccode\u003enode16\u003c/code\u003e 으로 설정된 경우, 위 규칙이 똑같이 적용됩니다.\u003c/p\u003e\n\n\n\n\u003cul\u003e\u003cli\u003e\u003ccode\u003etype\u003c/code\u003e field가 \u003ccode\u003e\"commonjs\"\u003c/code\u003e 인 경우, \u003ccode\u003e.ts\u003c/code\u003e 는 CJS로 해석됩니다.\u003c/li\u003e\u003cli\u003e\u003ccode\u003etype\u003c/code\u003e field가 \u003ccode\u003e\"module\"\u003c/code\u003e 인 경우, \u003ccode\u003e.ts\u003c/code\u003e 는 ESM으로 해석됩니다.\u003c/li\u003e\u003cli\u003e\u003ccode\u003e.cts\u003c/code\u003e 는 항상 CJS로 해석됩니다.\u003c/li\u003e\u003cli\u003e\u003ccode\u003e.mts\u003c/code\u003e 는 항상 ESM으로 해석됩니다.\u003c/li\u003e\u003c/ul\u003e\n\n\n\n\u003chr class=\"wp-block-separator\"/\u003e\n\n\n\n\u003ch1\u003epackage.json의 exports field\u003c/h1\u003e\n\n\n\n\u003cp\u003eCJS와 ESM의 차이, 패키지의 기본 Module System을 설정하는 방법과 확장자 모두 알아봤는데, 그래서 어떻게 하면 하나의 패키지가 CJS/ESM을 동시에 매끄럽게 제공할 수 있을까요?\u003c/p\u003e\n\n\n\n\u003cp\u003e정답은 \u003ccode\u003eexports\u003c/code\u003e field입니다. \u003ccode\u003eexports\u003c/code\u003e field는 무슨 문제를 해결해줄까요? 어떤 역할을 할까요?\u003c/p\u003e\n\n\n\n\u003ch2\u003e패키지 entry point 지정\u003c/h2\u003e\n\n\n\n\u003cp\u003e기본적으로는 package.json의 \u003ccode\u003emain\u003c/code\u003e field와 같은 역할을 합니다. 패키지의 entry point를 지정할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003esubpath exports 지원\u003c/h2\u003e\n\n\n\n\u003cp\u003e기존에는 filesystem 기반으로 동작했기 때문에, 패키지 내부의 임의의 JS 파일에 접근할 수 있었고, 또한 실제 filesystem 상의 위치와 import path를 다르게 둘 수 없었습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-5\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-comment\"\u003e// 디렉토리 구조\u003c/span\u003e\n/modules\n  a.js\n  b.js\n  c.js\nindex.js\n\n\u003cspan class=\"hljs-built_in\"\u003erequire\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\"package/a\"\u003c/span\u003e); \u003cspan class=\"hljs-comment\"\u003e// 불가능\u003c/span\u003e\n\u003cspan class=\"hljs-built_in\"\u003erequire\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\"package/modules/a\"\u003c/span\u003e); \u003cspan class=\"hljs-comment\"\u003e// 가능\u003c/span\u003e\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-5\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e이 때, \u003ccode\u003eexports\u003c/code\u003e field를 사용해 subpath exports를 사용하면, 명시된 subpath 외에는 사용할 수 없고, filesystem 상의 위치와 import path를 다르게 지정할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-6\" data-shcb-language-name=\"JSON / JSON with Comments\" data-shcb-language-slug=\"json\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-json\"\u003e\u003cspan class=\"hljs-comment\"\u003e// CJS 패키지\u003c/span\u003e\n{\n  \u003cspan class=\"hljs-attr\"\u003e\"name\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"cjs-package\"\u003c/span\u003e,\n  \u003cspan class=\"hljs-attr\"\u003e\"exports\"\u003c/span\u003e: {\n    \u003cspan class=\"hljs-attr\"\u003e\".\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./index.js\"\u003c/span\u003e,\n    \u003cspan class=\"hljs-attr\"\u003e\"./a\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./modules/a.js\"\u003c/span\u003e,\n  },\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-6\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJSON / JSON with Comments\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejson\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-7\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-comment\"\u003e// ./a.js가 아니라\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e// ./modules/a.js를 불러온다.\u003c/span\u003e\n\u003cspan class=\"hljs-built_in\"\u003erequire\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\"cjs-package/a\"\u003c/span\u003e);\n\n\u003cspan class=\"hljs-comment\"\u003e// 에러\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e// ./b는 exports field에 명시하지 않은 subpath이다.\u003c/span\u003e\n\u003cspan class=\"hljs-built_in\"\u003erequire\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\"cjs-package/b\"\u003c/span\u003e);\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-7\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003ch2\u003econditional exports 지원\u003c/h2\u003e\n\n\n\n\u003cp\u003e기존에는 filesystem 기반으로 동작했기 때문에, Dual CJS/ESM 패키지를 자연스럽게 운영하기가 어려웠습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003eexports\u003c/code\u003e field를 사용하면, 똑같은 import path에 대해 특정 조건에 따라 다른 모듈을 제공할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-8\" data-shcb-language-name=\"JSON / JSON with Comments\" data-shcb-language-slug=\"json\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-json\"\u003e{\n  \u003cspan class=\"hljs-attr\"\u003e\"name\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"cjs-package\"\u003c/span\u003e,\n  \u003cspan class=\"hljs-attr\"\u003e\"exports\"\u003c/span\u003e: {\n    \u003cspan class=\"hljs-attr\"\u003e\".\"\u003c/span\u003e: {\n      \u003cspan class=\"hljs-attr\"\u003e\"require\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./dist/index.cjs\"\u003c/span\u003e,\n      \u003cspan class=\"hljs-attr\"\u003e\"import\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./esm/index.mjs\"\u003c/span\u003e\n    }\n  }\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-8\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJSON / JSON with Comments\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejson\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-9\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-comment\"\u003e// CJS 환경\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e// ./dist/index.cjs를 불러온다.\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e pkg = \u003cspan class=\"hljs-built_in\"\u003erequire\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\"cjs-package\"\u003c/span\u003e);\n\n\u003cspan class=\"hljs-comment\"\u003e// ESM 환경\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e// ./esm/index.mjs를 불러온다.\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e pkg \u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\"cjs-package\"\u003c/span\u003e;\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-9\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003ch2\u003e올바른 exports field\u003c/h2\u003e\n\n\n\n\u003cp\u003eDual CJS/ESM 패키지의 \u003ccode\u003eexports\u003c/code\u003e field를 올바르게 작성하기 위해 주의해야할 점을 알아봅시다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e상대 경로로 표시하기\u003c/h3\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003eexports\u003c/code\u003e field는 모두 \u003ccode\u003e.\u003c/code\u003e 으로 시작하는 상대 경로로 작성되어야 합니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-10\" data-shcb-language-name=\"JSON / JSON with Comments\" data-shcb-language-slug=\"json\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-json\"\u003e\u003cspan class=\"hljs-comment\"\u003e// X\u003c/span\u003e\n{\n  \u003cspan class=\"hljs-attr\"\u003e\"exports\"\u003c/span\u003e: {\n    \u003cspan class=\"hljs-attr\"\u003e\"sub-module\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"dist/modules/sub-module.js\"\u003c/span\u003e\n  }\n}\n\n\u003cspan class=\"hljs-comment\"\u003e// O\u003c/span\u003e\n{\n  \u003cspan class=\"hljs-attr\"\u003e\"exports\"\u003c/span\u003e: {\n    \u003cspan class=\"hljs-attr\"\u003e\".\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./dist/index.js\"\u003c/span\u003e,\n    \u003cspan class=\"hljs-attr\"\u003e\"./sub-module\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./dist/modules/sub-module.js\"\u003c/span\u003e\n  }\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-10\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJSON / JSON with Comments\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejson\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003ch3\u003eModule System에 따라 올바른 확장자 사용하기\u003c/h3\u003e\n\n\n\n\u003cp\u003econditional exports를 사용할 때, 패키지가 따르는 Module System에 따라, 즉 package.json의 \u003ccode\u003etype\u003c/code\u003e field에 따라 올바른 JS 확장자를 사용해야 합니다.\u003c/p\u003e\n\n\n\n\u003cul\u003e\u003cli\u003eCJS 패키지일 때\u003c/li\u003e\u003c/ul\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-11\" data-shcb-language-name=\"JSON / JSON with Comments\" data-shcb-language-slug=\"json\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-json\"\u003e\u003cspan class=\"hljs-comment\"\u003e// ESM은 .mjs로 명시해야함\u003c/span\u003e\n{\n  \u003cspan class=\"hljs-attr\"\u003e\"exports\"\u003c/span\u003e: {\n    \u003cspan class=\"hljs-attr\"\u003e\".\"\u003c/span\u003e: {\n      \u003cspan class=\"hljs-attr\"\u003e\"require\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./dist/index.js\"\u003c/span\u003e,\n      \u003cspan class=\"hljs-attr\"\u003e\"import\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./dist/index.mjs\"\u003c/span\u003e\n    }\n  }\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-11\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJSON / JSON with Comments\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejson\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cul\u003e\u003cli\u003eESM 패키지일 때\u003c/li\u003e\u003c/ul\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-12\" data-shcb-language-name=\"JSON / JSON with Comments\" data-shcb-language-slug=\"json\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-json\"\u003e\u003cspan class=\"hljs-comment\"\u003e// CJS는 .cjs로 명시해야함\u003c/span\u003e\n{\n  \u003cspan class=\"hljs-attr\"\u003e\"type\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"module\"\u003c/span\u003e\n  \u003cspan class=\"hljs-string\"\u003e\"exports\"\u003c/span\u003e: {\n    \u003cspan class=\"hljs-attr\"\u003e\".\"\u003c/span\u003e: {\n      \u003cspan class=\"hljs-attr\"\u003e\"require\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./dist/index.cjs\"\u003c/span\u003e,\n      \u003cspan class=\"hljs-attr\"\u003e\"import\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./dist/index.js\"\u003c/span\u003e\n    }\n  }\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-12\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJSON / JSON with Comments\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejson\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e이 규칙을 지키지 않고 전부 \u003ccode\u003e.js\u003c/code\u003e 확장자를 사용했을 때는 어떤 일이 발생할까요? 아래와 같이 상황을 가정하겠습니다.\u003c/p\u003e\n\n\n\n\u003cul\u003e\u003cli\u003e\u003ccode\u003ecjs-package\u003c/code\u003e 는 CJS 패키지이다.\u003cul\u003e\u003cli\u003e\u003ccode\u003etype\u003c/code\u003e field가 \u003ccode\u003e\"commonjs\"\u003c/code\u003e 이기 때문이다.\u003c/li\u003e\u003c/ul\u003e\u003c/li\u003e\u003cli\u003e\u003ccode\u003e./dist/index.js\u003c/code\u003e 는 CJS 문법(\u003ccode\u003erequire\u003c/code\u003e / \u003ccode\u003emodule.exports\u003c/code\u003e)으로 작성된 모듈이다.\u003c/li\u003e\u003cli\u003e\u003ccode\u003e./esm/index.js\u003c/code\u003e 는 ESM 문법(\u003ccode\u003eimport\u003c/code\u003e / \u003ccode\u003eexport\u003c/code\u003e)으로 작성된 모듈이다.\u003c/li\u003e\u003c/ul\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-13\" data-shcb-language-name=\"JSON / JSON with Comments\" data-shcb-language-slug=\"json\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-json\"\u003e{\n  \u003cspan class=\"hljs-attr\"\u003e\"name\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"cjs-package\"\u003c/span\u003e,\n  \u003cspan class=\"hljs-attr\"\u003e\"type\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"commonjs\"\u003c/span\u003e,\n  \u003cspan class=\"hljs-attr\"\u003e\"exports\"\u003c/span\u003e: {\n    \u003cspan class=\"hljs-attr\"\u003e\".\"\u003c/span\u003e: {\n      \u003cspan class=\"hljs-attr\"\u003e\"require\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./dist/index.js\"\u003c/span\u003e,\n      \u003cspan class=\"hljs-attr\"\u003e\"import\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./esm/index.js\"\u003c/span\u003e\n    }\n  }\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-13\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJSON / JSON with Comments\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejson\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003eCJS 환경에서 \u003ccode\u003ecjs-package\u003c/code\u003e 를 \u003ccode\u003erequire\u003c/code\u003e 했을 땐 잘 동작합니다. \u003ccode\u003e./dist/index.js\u003c/code\u003e 는 CJS 모듈이고, 확장자가 \u003ccode\u003e.js\u003c/code\u003e 이므로, 가장 가까운 package.json의 \u003ccode\u003etype\u003c/code\u003e field를 따라 CJS Module Loader가 사용될 것이기 때문입니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-14\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-comment\"\u003e// 잘 동작한다.\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e// ./dist/index.js를  CommonJS Module Loader로 불러온다.\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e pkg = \u003cspan class=\"hljs-built_in\"\u003erequire\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\"cjs-package\"\u003c/span\u003e);\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-14\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e하지만 ESM 환경에서 \u003ccode\u003ecjs-package\u003c/code\u003e 를 \u003ccode\u003eimport\u003c/code\u003e 했을 땐 에러가 발생합니다. \u003ccode\u003e./esm/index.js\u003c/code\u003e 는 ESM 모듈이지만, 확장자가 \u003ccode\u003e.js\u003c/code\u003e 이므로 가장 가까운 package.json의 \u003ccode\u003etype\u003c/code\u003e field를 따라 CJS Module Loader가 사용됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003eESM 문법으로 작성된 JavaScript를 CJS Module Loader로 읽기 때문에 당연히 에러가 발생합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e(예시: \u003ccode\u003eimport\u003c/code\u003e 문은 ESM에서만 사용 가능하다는 에러가 발생)\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-15\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-comment\"\u003e// 에러가 발생한다.\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e// ./esm/index.js를 CJS Module Loader로 읽었다.\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e * \u003cspan class=\"hljs-keyword\"\u003eas\u003c/span\u003e pkg \u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\"cjs-package\"\u003c/span\u003e;\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-15\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003ch3\u003eTypeScript 지원하기\u003c/h3\u003e\n\n\n\n\u003cp\u003eTypeScript에서 module import시, 항상 Type Definition을 찾게 되는데요. 기존에는 filesystem 기반으로 Type Definition을 탐색했습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-16\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-comment\"\u003e// ./sub-module.d.ts를 찾는다.\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e subModule \u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\"package/sub-module\"\u003c/span\u003e;\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-16\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e하지만 TypeScript 4.7부터 \u003ccode\u003emoduleResolution\u003c/code\u003e 옵션에 \u003ccode\u003enode16\u003c/code\u003e 과 \u003ccode\u003enodenext\u003c/code\u003e 가 정식으로 추가되었고, \u003ccode\u003enode16\u003c/code\u003e 과 \u003ccode\u003enodenext\u003c/code\u003e 는 filesystem 기반이 아닌 \u003ccode\u003eexports\u003c/code\u003e field로부터 Type Definition을 탐색합니다. 또한, CJS TypeScript( \u003ccode\u003e.cts\u003c/code\u003e )와 ESM TypeScript( \u003ccode\u003e.mts\u003c/code\u003e )를 구분합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003eTypeScript는 conditional import의 조건 중 \u003ccode\u003etypes\u003c/code\u003e 를 참조하며, 이 때 JavaScript와 마찬가지로 package.json의 \u003ccode\u003etype\u003c/code\u003e field에 따라 알맞은 확장자 ( \u003ccode\u003e.cts\u003c/code\u003e / \u003ccode\u003e.mts\u003c/code\u003e )를 사용해야 합니다.\u003c/p\u003e\n\n\n\n\u003cul\u003e\u003cli\u003eCJS 패키지\u003c/li\u003e\u003c/ul\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-17\" data-shcb-language-name=\"JSON / JSON with Comments\" data-shcb-language-slug=\"json\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-json\"\u003e\u003cspan class=\"hljs-comment\"\u003e// ESM TS는 mts로 명시해야함\u003c/span\u003e\n{\n  \u003cspan class=\"hljs-attr\"\u003e\"exports\"\u003c/span\u003e: {\n    \u003cspan class=\"hljs-attr\"\u003e\".\"\u003c/span\u003e: {\n      \u003cspan class=\"hljs-attr\"\u003e\"require\"\u003c/span\u003e: {\n        \u003cspan class=\"hljs-attr\"\u003e\"types\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./index.d.ts\"\u003c/span\u003e,\n        \u003cspan class=\"hljs-attr\"\u003e\"default\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./index.js\"\u003c/span\u003e\n      },\n      \u003cspan class=\"hljs-attr\"\u003e\"import\"\u003c/span\u003e: {\n        \u003cspan class=\"hljs-attr\"\u003e\"types\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./index.d.mts\"\u003c/span\u003e,\n        \u003cspan class=\"hljs-attr\"\u003e\"default\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./index.mjs\"\u003c/span\u003e\n      }\n    }\n  }\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-17\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJSON / JSON with Comments\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejson\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cul\u003e\u003cli\u003eESM 패키지\u003c/li\u003e\u003c/ul\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-18\" data-shcb-language-name=\"JSON / JSON with Comments\" data-shcb-language-slug=\"json\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-json\"\u003e\u003cspan class=\"hljs-comment\"\u003e// CJS TS는 cts로 명시해야함\u003c/span\u003e\n{\n  \u003cspan class=\"hljs-attr\"\u003e\"type\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"module\"\u003c/span\u003e,\n  \u003cspan class=\"hljs-attr\"\u003e\"exports\"\u003c/span\u003e: {\n    \u003cspan class=\"hljs-attr\"\u003e\".\"\u003c/span\u003e: {\n      \u003cspan class=\"hljs-attr\"\u003e\"require\"\u003c/span\u003e: {\n        \u003cspan class=\"hljs-attr\"\u003e\"types\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./index.d.cts\"\u003c/span\u003e,\n        \u003cspan class=\"hljs-attr\"\u003e\"default\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./index.cjs\"\u003c/span\u003e\n      },\n      \u003cspan class=\"hljs-attr\"\u003e\"import\"\u003c/span\u003e: {\n        \u003cspan class=\"hljs-attr\"\u003e\"types\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./index.d.ts\"\u003c/span\u003e,\n        \u003cspan class=\"hljs-attr\"\u003e\"default\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./index.js\"\u003c/span\u003e\n      }\n    }\n  }\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-18\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJSON / JSON with Comments\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejson\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e그럼 TypeScript의 경우에는 위 규칙을 지키지 않으면 어떻게 될까요? 아래와 같이 상황을 가정하겠습니다.\u003c/p\u003e\n\n\n\n\u003cul\u003e\u003cli\u003e\u003ccode\u003eesm-package\u003c/code\u003e 는 ESM 패키지이다.\u003cul\u003e\u003cli\u003e\u003ccode\u003etype\u003c/code\u003e field가 \u003ccode\u003e\"module\"\u003c/code\u003e 이기 때문이다.\u003c/li\u003e\u003c/ul\u003e\u003c/li\u003e\u003cli\u003e\u003ccode\u003e.cts\u003c/code\u003e (CJS TypeScript)에서 \u003ccode\u003eesm-package\u003c/code\u003e 를 사용한다.\u003c/li\u003e\u003c/ul\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-19\" data-shcb-language-name=\"JSON / JSON with Comments\" data-shcb-language-slug=\"json\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-json\"\u003e{\n  \u003cspan class=\"hljs-attr\"\u003e\"name\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"esm-package\"\u003c/span\u003e,\n  \u003cspan class=\"hljs-attr\"\u003e\"type\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"module\"\u003c/span\u003e,\n  \u003cspan class=\"hljs-attr\"\u003e\"exports\"\u003c/span\u003e: {\n    \u003cspan class=\"hljs-attr\"\u003e\".\"\u003c/span\u003e: {\n      \u003cspan class=\"hljs-attr\"\u003e\"types\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./index.d.ts\"\u003c/span\u003e,\n      \u003cspan class=\"hljs-attr\"\u003e\"require\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./index.cjs\"\u003c/span\u003e,\n      \u003cspan class=\"hljs-attr\"\u003e\"import\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"./index.js\"\u003c/span\u003e\n    }\n  }\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-19\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJSON / JSON with Comments\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejson\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e이 때 \u003ccode\u003e.cts\u003c/code\u003e (CJS TypeScript)에서 \u003ccode\u003eesm-package\u003c/code\u003e 를 require하면 타입 에러가 발생합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003eesm-package\u003c/code\u003e 는 Type Definition을 \u003ccode\u003e./index.d.ts\u003c/code\u003e 만 지원합니다. 즉, ESM/CJS TypeScript 모두 \u003ccode\u003e./index.d.ts\u003c/code\u003e 를 바라보게 됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이 때, \u003ccode\u003eesm-package\u003c/code\u003e 는 ESM 패키지이기 때문에 \u003ccode\u003eindex.d.ts\u003c/code\u003e 는 ESM TypeScript로써 해석됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e따라서 \u003ccode\u003eesm-package\u003c/code\u003e 는 CJS TypeScript 입장에서 Pure ESM Module이고, CJS는 ESM을 불러올 수 없기 때문에 \u003ccode\u003eesm-package\u003c/code\u003e 가 순수 ESM으로만 확인된다는 타입 에러가 발생합니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-20\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-comment\"\u003e// index.cts\u003c/span\u003e\n\n\u003cspan class=\"hljs-comment\"\u003e// Type Error: esm-package는 동기적으로 가져올 수 없는 ES 모듈로만 확인됩니다.\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e// CJS TypeScript를 위한 .d.cts를 지원하지 않았기 때문에 발생하는 에러\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e * \u003cspan class=\"hljs-keyword\"\u003eas\u003c/span\u003e esmPkg \u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\"esm-package\"\u003c/span\u003e;\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-20\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003chr class=\"wp-block-separator\"/\u003e\n\n\n\n\u003ch1\u003e마치며\u003c/h1\u003e\n\n\n\n\u003cp\u003e최근 토스팀 내부 라이브러리들은 위처럼 올바르게 \u003ccode\u003eexports\u003c/code\u003e field를 작성하여 배포되고 있습니다. CJS/ESM JavaScript는 물론 TypeScript 지원까지 잘 되있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003eJavaScript/TypeScript 생태계는 계속해서 발전하고 있지만, TypeScript까지 잘 지원하는 라이브러리는 정말 유명한 라이브러리들 중에서도 찾아보기가 많이 힘듭니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e그렇다면 우리가 그 시작점이 되면 어떨까요? 토스팀에서는 이런 기술적인 문제를 함께 풀어가고 싶으신 분들을 언제나 환영합니다. 함께 좋은 생태계를 만들어 나가고 싶어요.\u003c/p\u003e\n\n\n\n\u003ch1\u003e레퍼런스\u003c/h1\u003e\n\n\n\n\u003cul\u003e\u003cli\u003eNode.js의 CJS/ESM에 대해\u003cul\u003e\u003cli\u003e\u003ca href=\"https://nodejs.org/api/modules.html\"\u003eCJS\u003c/a\u003e\u003c/li\u003e\u003cli\u003e\u003ca href=\"https://nodejs.org/api/esm.html\"\u003eESM\u003c/a\u003e\u003c/li\u003e\u003cli\u003e\u003ca href=\"https://nodejs.org/api/packages.html#determining-module-system\"\u003eDetermining Module System\u003c/a\u003e\u003c/li\u003e\u003c/ul\u003e\u003c/li\u003e\u003cli\u003e\u003ccode\u003eexports\u003c/code\u003e field에 대해\u003cul\u003e\u003cli\u003e\u003ca href=\"https://nodejs.org/api/packages.html#exports\"\u003epackage.json export field\u003c/a\u003e\u003c/li\u003e\u003cli\u003e\u003ca href=\"https://nodejs.org/api/packages.html#subpath-exports\"\u003eSubpath exports\u003c/a\u003e\u003c/li\u003e\u003cli\u003e\u003ca href=\"https://nodejs.org/api/packages.html#conditional-exports\"\u003eConditional exports\u003c/a\u003e\u003c/li\u003e\u003c/ul\u003e\u003c/li\u003e\u003cli\u003eTypeScript의 CJS/ESM 지원에 대해\u003cul\u003e\u003cli\u003e\u003ca href=\"https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-7.html\"\u003e4.7 릴리즈 노트\u003c/a\u003e\u003c/li\u003e\u003c/ul\u003e\u003c/li\u003e\u003c/ul\u003e\n","date":"2022-10-04T17:37:32","excerpt":"\u003cp\u003eNode.js에는 두 가지 Module System이 존재합니다. 토스 프론트엔드 챕터에서 운영하는 100개가 넘는 라이브러리들은 그것에 어떻게 대응하고 있을까요?\u003c/p\u003e\n","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2022/10/techblog-11-node-js-300x150.png 300w, https://toss.tech/wp-content/uploads/2022/10/techblog-11-node-js-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2022/10/techblog-11-node-js-768x384.png 768w, https://toss.tech/wp-content/uploads/2022/10/techblog-11-node-js.png 1200w"}},"metadata":{"ogBackground":"https://static.toss.im/assets/homepage/tosstech/og/techblog-11-node-js-og.png","ogImageTitle":null,"ogGenerateImage":true,"recruitTitle":"재미있게 읽으셨나요?","recruitUrl":null,"form1Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=663\u0026title=CommonJS와_ESM에_모두_대응하는_라이브러리_개발하기\u0026reaction=good","form2Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=663\u0026title=CommonJS와_ESM에_모두_대응하는_라이브러리_개발하기\u0026reaction=bad","formDescription":"좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.","form1Label":"😍","form2Label":"🤔","recruitDescription":null},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}}]},"author":{"node":{"id":"dXNlcjoyMw==","firstName":"호승","lastName":"장","description":"토스코어에서 10대의 금융을 혁신하고 있습니다.","avatar":{"url":"https://toss.tech/wp-content/uploads/2022/10/IMG_6487-scaled-312x312.jpg"},"role":{"role":"Frontend Developer"}}}},"relatedArticles":[{"title":"무지성으로 사용한 헬스 체크가 불러일으킬 수 있는 참사","slug":"how-to-work-health-check-in-spring-boot-actuaotr","date":"2023-04-01T15:38:57","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/04/00009-889461687-300x300.png 300w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687-150x150.png 150w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687.png 512w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}},{"node":{"id":"dGVybTox","name":"Uncategorized"}}]}},{"title":"ESLint와 AST로 코드 퀄리티 높이기","slug":"improving-code-quality-via-eslint-and-ast","date":"2023-03-31T15:47:53","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/03/center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/center.png 1200w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}}]}}]},"__N_SSP":true},"page":"/article/[slug]","query":{"slug":"commonjs-esm-exports-field"},"buildId":"QqBxegmptuUDYc8oCREsD","assetPrefix":"https://static.toss.im/frontend/toss-tech","runtimeConfig":{"ENV":"live","NODE_ENV":"production","PORT":"3000","ASSET_PREFIX":"https://static.toss.im/frontend/toss-tech","SERVICE":"toss-tech","SENTRY":{"DSN":"https://5eff657ed6ef486fb8af2dc5f9508abd@sentry.io/1242586","PUBLIC_KEY":"5eff657ed6ef486fb8af2dc5f9508abd","RELEASE":"toss-tech_1.0.103","SERVICE":"toss-tech","SERVICE_VERSION":"1.0.103"},"RENDER_TYPE":"ssr"},"isFallback":false,"gssp":true,"customServer":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,104 @@
+2023-03-21 13:39:39 info: START BATCH APPLICATION
+2023-03-21 13:39:39 info: Kakao crawling start
+2023-03-21 13:39:54 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/03/02/python-and-rust/ PARSE SUCCESS
+2023-03-21 13:39:54 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/02/10/making-of-kubernetes-provisioning-tool/ PARSE SUCCESS
+2023-03-21 13:39:54 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/02/01/university-student-mentoring-get-out-from-the-well/ PARSE SUCCESS
+2023-03-21 13:39:54 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/03/02/python-and-rust/ PARSE SUCCESS
+2023-03-21 13:39:54 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/02/10/making-of-kubernetes-provisioning-tool/ PARSE SUCCESS
+2023-03-21 13:39:54 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/02/01/university-student-mentoring-get-out-from-the-well/ PARSE SUCCESS
+2023-03-21 13:39:54 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/01/25/2023-kakao-recruitment-round-2/ PARSE SUCCESS
+2023-03-21 13:39:54 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/01/25/2023-kakao-recruitment-round-1/ PARSE SUCCESS
+2023-03-21 13:39:54 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/01/19/kakaotalk-java-app-server-refactoring/ PARSE SUCCESS
+2023-03-21 13:39:54 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/01/19/social-login/ PARSE SUCCESS
+2023-03-21 13:39:54 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/01/12/introduce-kafka-sink-connector/ PARSE SUCCESS
+2023-03-21 13:39:54 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/03/02/python-and-rust/" }
+2023-03-21 13:39:54 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/02/10/making-of-kubernetes-provisioning-tool/" }
+2023-03-21 13:39:54 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/02/01/university-student-mentoring-get-out-from-the-well/" }
+2023-03-21 13:39:54 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/03/02/python-and-rust/" }
+2023-03-21 13:39:54 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/02/10/making-of-kubernetes-provisioning-tool/" }
+2023-03-21 13:39:54 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/02/01/university-student-mentoring-get-out-from-the-well/" }
+2023-03-21 13:39:54 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/01/25/2023-kakao-recruitment-round-2/" }
+2023-03-21 13:39:54 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/01/25/2023-kakao-recruitment-round-1/" }
+2023-03-21 13:39:54 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/01/19/kakaotalk-java-app-server-refactoring/" }
+2023-03-21 13:39:54 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/01/19/social-login/" }
+2023-03-21 13:39:54 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/01/12/introduce-kafka-sink-connector/" }
+2023-03-21 13:39:54 info: Kakao crawling end
+2023-03-21 13:39:54 info: Naver crawling start
+2023-03-21 13:39:54 error: Failed to launch the browser process!
+/home/ec2-user/.cache/puppeteer/chrome/linux-1095492/chrome-linux/chrome: error while loading shared libraries: libatk-1.0.so.0: cannot open shared object file: No such file or directory
+
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+2023-03-21 13:39:54 info: TechBlogCrawling End
+2023-03-21 13:42:57 info: START BATCH APPLICATION
+2023-03-21 13:42:57 info: Kakao crawling start
+2023-03-21 13:43:12 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/03/02/python-and-rust/ PARSE SUCCESS
+2023-03-21 13:43:12 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/02/10/making-of-kubernetes-provisioning-tool/ PARSE SUCCESS
+2023-03-21 13:43:12 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/02/01/university-student-mentoring-get-out-from-the-well/ PARSE SUCCESS
+2023-03-21 13:43:12 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/03/02/python-and-rust/ PARSE SUCCESS
+2023-03-21 13:43:12 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/02/10/making-of-kubernetes-provisioning-tool/ PARSE SUCCESS
+2023-03-21 13:43:12 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/02/01/university-student-mentoring-get-out-from-the-well/ PARSE SUCCESS
+2023-03-21 13:43:12 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/01/25/2023-kakao-recruitment-round-2/ PARSE SUCCESS
+2023-03-21 13:43:12 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/01/25/2023-kakao-recruitment-round-1/ PARSE SUCCESS
+2023-03-21 13:43:12 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/01/19/kakaotalk-java-app-server-refactoring/ PARSE SUCCESS
+2023-03-21 13:43:12 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/01/19/social-login/ PARSE SUCCESS
+2023-03-21 13:43:12 info: [Kakao INSPECTOR] https://tech.kakao.com/2023/01/12/introduce-kafka-sink-connector/ PARSE SUCCESS
+2023-03-21 13:43:12 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/03/02/python-and-rust/" }
+2023-03-21 13:43:12 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/02/10/making-of-kubernetes-provisioning-tool/" }
+2023-03-21 13:43:12 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/02/01/university-student-mentoring-get-out-from-the-well/" }
+2023-03-21 13:43:12 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/03/02/python-and-rust/" }
+2023-03-21 13:43:12 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/02/10/making-of-kubernetes-provisioning-tool/" }
+2023-03-21 13:43:12 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/02/01/university-student-mentoring-get-out-from-the-well/" }
+2023-03-21 13:43:12 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/01/25/2023-kakao-recruitment-round-2/" }
+2023-03-21 13:43:12 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/01/25/2023-kakao-recruitment-round-1/" }
+2023-03-21 13:43:12 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/01/19/kakaotalk-java-app-server-refactoring/" }
+2023-03-21 13:43:12 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/01/19/social-login/" }
+2023-03-21 13:43:12 error: [Kakao] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://tech.kakao.com/2023/01/12/introduce-kafka-sink-connector/" }
+2023-03-21 13:43:12 info: Kakao crawling end
+2023-03-21 13:43:12 info: Naver crawling start
+2023-03-21 13:43:12 info: Naver crawling end
+2023-03-21 13:43:12 info: ToastUI crawling start
+2023-03-21 13:43:18 info: [ToastUI INSPECTOR] https://ui.toast.com/posts/ko_chrome_report_202302 PARSE SUCCESS
+2023-03-21 13:43:18 info: [ToastUI INSPECTOR] https://ui.toast.com/posts/ko_20230207 PARSE SUCCESS
+2023-03-21 13:43:18 info: [ToastUI INSPECTOR] https://ui.toast.com/posts/ko_chrome_report_202301 PARSE SUCCESS
+2023-03-21 13:43:18 info: [ToastUI INSPECTOR] https://ui.toast.com/posts/ko_chrome_report_202212 PARSE SUCCESS
+2023-03-21 13:43:18 info: [ToastUI INSPECTOR] https://ui.toast.com/posts/ko_chrome_report_202211 PARSE SUCCESS
+2023-03-21 13:43:18 info: [ToastUI INSPECTOR] https://ui.toast.com/posts/ko_20221116_4 PARSE SUCCESS
+2023-03-21 13:43:18 info: [ToastUI INSPECTOR] https://ui.toast.com/posts/ko_20221116_3 PARSE SUCCESS
+2023-03-21 13:43:18 info: [ToastUI INSPECTOR] https://ui.toast.com/posts/ko_20221116_2 PARSE SUCCESS
+2023-03-21 13:43:18 info: [ToastUI INSPECTOR] https://ui.toast.com/posts/ko_20221116_1 PARSE SUCCESS
+2023-03-21 13:43:18 info: [ToastUI INSPECTOR] https://ui.toast.com/posts/ko_chrome_report_202210 PARSE SUCCESS
+2023-03-21 13:43:18 error: [ToastUI] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://ui.toast.com/posts/ko_chrome_report_202302" }
+2023-03-21 13:43:18 error: [ToastUI] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://ui.toast.com/posts/ko_20230207" }
+2023-03-21 13:43:18 error: [ToastUI] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://ui.toast.com/posts/ko_chrome_report_202301" }
+2023-03-21 13:43:18 error: [ToastUI] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://ui.toast.com/posts/ko_chrome_report_202212" }
+2023-03-21 13:43:18 error: [ToastUI] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://ui.toast.com/posts/ko_chrome_report_202211" }
+2023-03-21 13:43:18 error: [ToastUI] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://ui.toast.com/posts/ko_20221116_4" }
+2023-03-21 13:43:18 error: [ToastUI] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://ui.toast.com/posts/ko_20221116_3" }
+2023-03-21 13:43:18 error: [ToastUI] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://ui.toast.com/posts/ko_20221116_2" }
+2023-03-21 13:43:18 error: [ToastUI] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://ui.toast.com/posts/ko_20221116_1" }
+2023-03-21 13:43:18 error: [ToastUI] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://ui.toast.com/posts/ko_chrome_report_202210" }
+2023-03-21 13:43:18 info: ToastUI crawling end
+2023-03-21 13:43:18 info: Baemin crawling start
+2023-03-21 13:43:26 info: [Baemin INSPECTOR] https://techblog.woowahan.com/10795/ PARSE SUCCESS
+2023-03-21 13:43:26 info: [Baemin INSPECTOR] https://techblog.woowahan.com/10774/ PARSE SUCCESS
+2023-03-21 13:43:26 info: [Baemin INSPECTOR] https://techblog.woowahan.com/10593/ PARSE SUCCESS
+2023-03-21 13:43:26 info: [Baemin INSPECTOR] https://techblog.woowahan.com/10600/ PARSE SUCCESS
+2023-03-21 13:43:26 info: [Baemin INSPECTOR] https://techblog.woowahan.com/10567/ PARSE SUCCESS
+2023-03-21 13:43:26 info: [Baemin INSPECTOR] https://techblog.woowahan.com/10645/ PARSE SUCCESS
+2023-03-21 13:43:26 info: [Baemin INSPECTOR] https://techblog.woowahan.com/10430/ PARSE SUCCESS
+2023-03-21 13:43:26 info: [Baemin INSPECTOR] https://techblog.woowahan.com/10538/ PARSE SUCCESS
+2023-03-21 13:43:26 info: [Baemin INSPECTOR] https://techblog.woowahan.com/10504/ PARSE SUCCESS
+2023-03-21 13:43:26 info: [Baemin INSPECTOR] https://techblog.woowahan.com/10291/ PARSE SUCCESS
+2023-03-21 13:43:26 error: [Baemin] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://techblog.woowahan.com/10774/" }
+2023-03-21 13:43:26 error: [Baemin] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://techblog.woowahan.com/10593/" }
+2023-03-21 13:43:26 error: [Baemin] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://techblog.woowahan.com/10600/" }
+2023-03-21 13:43:26 error: [Baemin] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://techblog.woowahan.com/10567/" }
+2023-03-21 13:43:26 error: [Baemin] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://techblog.woowahan.com/10645/" }
+2023-03-21 13:43:26 error: [Baemin] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://techblog.woowahan.com/10430/" }
+2023-03-21 13:43:26 error: [Baemin] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://techblog.woowahan.com/10538/" }
+2023-03-21 13:43:26 error: [Baemin] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://techblog.woowahan.com/10504/" }
+2023-03-21 13:43:26 error: [Baemin] MongoServerError: E11000 duplicate key error collection: be_ready.blog_item index: href_1 dup key: { href: "https://techblog.woowahan.com/10291/" }
+2023-03-21 13:43:26 info: Baemin crawling end
+2023-03-21 13:43:26 info: TechBlogCrawling End

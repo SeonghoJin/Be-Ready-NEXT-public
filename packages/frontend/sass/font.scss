@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'Nexon Lv2';
+  src: url('../public/fonts/NEXON Lv2 Gothic Light.ttf') format('truetype'),
+    url('../public/fonts/NEXON Lv2 Gothic OTF Light.otf') format('woff');
+
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Nexon Lv2';
+  src: url('../public/fonts/NEXON Lv2 Gothic.ttf') format('truetype'),
+    url('../public/fonts/NEXON Lv2 Gothic OTF.otf') format('woff');
+
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Nexon Lv2';
+  src: url('../public/fonts/NEXON Lv2 Gothic Bold.ttf') format('truetype'),
+    url('../public/fonts/NEXON Lv2 Gothic OTF Bold.otf') format('woff');
+
+  font-weight: 700;
+}

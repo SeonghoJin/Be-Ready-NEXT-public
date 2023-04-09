@@ -1,0 +1,315 @@
+<!DOCTYPE html><html lang="ko"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <title>AI 플랫폼과 데이터 플랫폼을 이어주는 Alluxio 적용기</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/XEIcon/xeicon.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/katex/katex.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/naver_d2.from_server.css?1671783335538">
+<link href="/static/css/app.css?13c1e9311ca34225bfc0" rel="stylesheet"><script src="https://connect.facebook.net/ko_KR/sdk.js?hash=7e899826b14713274cda099ad43b215a" async="" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" src="https://ssl.pstatic.net/static.cbox/js/cbox.core.js?v=1399068"></script><style type="text/css" id="_cbox_default_style_"></style><script type="text/javascript" src="https://ssl.pstatic.net/static.cbox/20230309172524/js/cbox.all.js" charset="utf-8"></script><link type="text/css" rel="stylesheet" href="https://static-feedback.pstatic.net/css/cbox/cbox/ebb46c9a-246d-48cd-acc6-cf3892caf38d/3ed9c21a-1c97-4c94-aeeb-70cc581fb6a5/css/comment_default.css" charset="utf-8"><style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://connect.facebook.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://connect.facebook.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://connect.facebook.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://connect.facebook.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+.fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style></head>
+
+<body>
+<div id="wrap" class="main"><div><div id="header"><div class="main_lnb"><div class="progress_bar" style="height: 2px; background-color: rgb(50, 205, 160); width: 0px;"></div><div class="header_sec"><div class="inner_sec"><div class="lnb" id="lnb"><h1><a class="lnb_top_logo" href="/home"><span class="blind">naver D2</span></a></h1><div class="menu_sec"><div class="btn_lnb_menu"><a href="#"><span class="blind">메뉴</span></a></div><div style="height: 0px; transition: all 0.5s ease 0s;"><ul><li class="on"><a href="/helloworld">Hello world</a></li><li class=""><a href="/news">D2 News</a></li><li class=""><a href="/program">D2 Program</a></li><li class=""><a href="/about">About D2</a></li></ul></div></div><div><div class="m_search_sec"><div class="btn_lnb_search"><a href="#"><span class="blind">검색</span></a></div><form action="/" style="height: 0px; transition: all 0.5s ease 0s;"><input type="text" value="" placeholder="D2에서 검색" class="search_area"><button type="sunmit" class="blind"><i class="xi-search"></i></button></form></div><div class="pc_search_input"><fieldset><legend>검색</legend><form action="/"><input type="text" value="" placeholder="D2에서 검색" class="search_area"><button type="sunmit" class="btn_search"><i class="xi-search"></i></button></form></fieldset></div></div></div></div></div></div></div><div id="container"><div class="con_area"><div class="contents detail_view"><div class="post_article"><div class="cont_post"><h1 class="posting_tit">AI 플랫폼과 데이터 플랫폼을 이어주는 Alluxio 적용기</h1><dl class="post_info"><dt><i class="xi-time-o"><span class="blind">등록일</span></i></dt><dd>2022.05.27</dd><dt><span class="blind">|</span></dt><dd><span class="line_bar">|</span></dd><dt><i class="xi-eye"><span class="blind">코멘트</span></i></dt><dd>8172</dd></dl><div class="con_view"><p>고성능의 AI 모델을 개발하기 위해서는 좋은 알고리즘만큼이나 양질의 데이터가 중요합니다. 그렇기 때문에 대규모 데이터를 전처리하여 양질의 데이터로 만든 후 AI 플랫폼에서 이를 사용하는 것이 일반적입니다.</p>
+
+<p>네이버 검색에서는 어떻게 하고 있을까요? 네이버의 대규모 데이터는 데이터 저장소인 <a href="https://deview.kr/2017/schedule/188">Cuve</a>에 저장되어 있으며, Apache Hadoop 기반의 데이터 처리 플랫폼 <a href="https://deview.kr/2018/schedule/231">C3</a>에서 데이터를 처리합니다. 그리고 AI 학습 또는 서빙을 위해서는 Kubernetes 기반의 AI 플랫폼인 <a href="https://deview.kr/2021/sessions/465">AiSuite</a>를 사용합니다.</p>
+
+<p>즉, 네이버 검색에서 AI 서비스를 위한 데이터 흐름은 다음과 같습니다(<a href="https://naver-career.gitbook.io/kr/service/search/ai-and-data-platform">AI&amp;Data Platform</a> 참고).</p>
+
+<ol>
+<li>데이터 저장 플랫폼 Cuve에서 대규모의 원본 데이터 관리  </li>
+<li>데이터 처리 플랫폼 C3에서 데이터 저장 플랫폼 Cuve의 데이터를 가공하여 HDFS에 저장  </li>
+<li>AiSuite는 데이터 처리 플랫폼 C3의 HDFS에 저장된 데이터를 사용</li>
+</ol>
+
+<p>결국 원활한 AI 파이프라인 개발을 위해서는 AiSuite에서 데이터 처리 플랫폼 C3의 HDFS에 빠르고 쉽게 접근할 수 있어야 합니다.</p>
+
+<p><img src="/content/images/2022/05/57b1eb10-57ad-4785-8021-99aa5d9d1ade.png" alt=""></p>
+
+<p>본 문서에서는 Kubernetes 기반의 AI 플랫폼인 AiSuite에서 <a href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html">HDFS</a>에 쉽고 빠르게 접근하기 위해 고민했던 내용을 공유합니다.</p>
+
+<h2 id="">요구 사항</h2>
+
+<h3 id="">사용 편이성</h3>
+
+<p>Kubernetes에서 HDFS에 접근하기 위해서는 어떻게 해야 할까?</p>
+
+<p>단순하게 생각해보면 HDFS를 사용하는 방법은 어렵지 않다. Apache Hadoop 패키지, 클러스터 설정 파일을 배포하고 Kerberos 인증을 제공한 후 HDFS CLI, REST, Java API를 사용하여 접근할 수 있다.</p>
+
+<p>하지만 이는 Kubernetes에서 HDFS에 접근하려는 모든 컨테이너에 Apache Hadoop 패키지, 설정, 인증이 필요하다는 의미이다. 사용자가 매번 HDFS에 접근이 가능한 이미지를 직접 빌드하고 인증 방법을 마련해야 한다면 굉장히 번거로울 것이다. 그뿐만 아니라, HDFS CLI, REST, Java API 등을 이용한 HDFS 접근을 위한 코드 작성도 필요하다.</p>
+
+<p>따라서 HDFS를 사용하더라도 추가적인 개발이 없도록 지원해야 한다.</p>
+
+<h3 id="">이식성</h3>
+
+<p>AiSuite는 Kubernetes 기반에서 Kubeflow, Knative, KServe 등의 다양한 소프트웨어를 활용하여 MLOps 환경을 제공한다.</p>
+
+<p>이렇게 다양한 소프트웨어에서 스토리지가 필요하다면 어떻게 지원할까? Kubernetes에서는 PersistentVolume을 마운트하여 사용하는 것이 일반적인 스토리지 사용 방법이다. HDFS를 스토리지로 사용하는 경우에도 이러한 방식을 지원한다면 Kubernetes에서 실행되는 어떠한 소프트웨어에서도 자연스럽게 HDFS를 사용할 수 있다.</p>
+
+<h3 id="">성능</h3>
+
+<p>AiSuite의 GPU 노드는 여러 IDC에 걸쳐 분산되어 있으며, HDFS가 구축된 IDC와 다를 수 있다. 이러한 환경에서 항상 HDFS에 접근하는 경우 다량의 IDC 간 트래픽이 수시로 발생하며 데이터 전송이 지연된다.</p>
+
+<p>GPU를 활용하는 AI 작업에서 데이터 전송 지연은 단순히 오래 걸리는 것 이상의 비용이 발생한다. 일반적으로 GPU가 할당된 후 학습 또는 서빙에 필요한 데이터를 원격의 저장소로부터 가져오기 때문에, 데이터 전송이 지연된다면 그만큼 고비용의 GPU 자원을 낭비하는 것과 같다.</p>
+
+<p>따라서 한 번 읽은 데이터는 캐싱하여 효율적으로 접근하는 방법이 필요하다.</p>
+
+<h3 id="kuberneteshdfs">Kubernetes 저장소로 HDFS 활용</h3>
+
+<p>클라우드 환경에서는 AWS S3, GCS와 같은 스토리지 서비스를 사용하여 안정적인 데이터 보관이 가능하다. 하지만 on-premise Kubernetes에서 영구적인 데이터 저장 스토리지는 어떻게 마련할 수 있을까?</p>
+
+<p>간단한 방법으로 <a href="https://kubernetes.io/docs/concepts/storage/storage-classes/#nfs">nfs</a>, <a href="https://kubernetes.io/docs/concepts/storage/volumes/#local">local</a>, <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostpath</a> 등을 생각할 수 있으나 고가용성 부족, 스케줄링 제한, 보안 취약 등의 문제가 있다. 안정적인 지원을 위해서는 <a href="https://ceph.com/en/">Ceph</a>, <a href="https://www.gluster.org/">gluster</a> 등의 분산 스토리지를 직접 구축하고 운영해야 하는 부담이 생긴다.</p>
+
+<p>이미 네이버에서는 데이터 처리 플랫폼 C3에서 지원하는 HDFS를 데이터 저장 용도로 사용하고 있다. 따라서 AiSuite에서 생성한 데이터를 HDFS에 저장한다면 별도의 분산 스토리지 도입 없이 안정적인 데이터 보관이 가능하다.</p>
+
+<h2 id="alluxio">Alluxio</h2>
+
+<h3 id="alluxio">Alluxio란</h3>
+
+<p>이러한 요구 사항을 위해 <a href="https://www.alluxio.io">Alluxio</a>를 검토했다.</p>
+
+<p>Alluxio는 Data Orchestration layer로 소개되며 다음과 같은 이점이 있다.</p>
+
+<ul>
+<li>물리적으로 멀리 떨어져 있거나 느린 저장매체에 저장된 데이터를 캐싱</li>
+<li>HDFS, AWS S3, GCS, Ceph 등의 다양한 스토리지에 원하는 인터페이스로 접근</li>
+</ul>
+
+<p><a href="https://www.alluxio.io/use-cases/">Alluxio</a>는 주로 여러 클라우드 또는 내부 저장소의 데이터에 쉽고 빠르게 접근하기 위해 활용되고 있다.</p>
+
+<ul>
+<li>AWS S3에 저장된 데이터를 Spark, Presto 등에서 빠르게 처리</li>
+<li>on-premise HDFS 데이터를 AWS, GCP 등의 클라우드에서 빠르게 접근</li>
+<li>AWS S3, GCS, Azure 등 여러 클라우드에 저장된 데이터 접근 방식을 일원화</li>
+</ul>
+
+<p><img src="/content/images/2022/05/0d52ccea-15ad-459c-b096-80830b11a8d9.png" alt=""></p>
+
+<h3 id="alluxio">Alluxio의 아키텍처</h3>
+
+<p>Alluxio는 파일의 메타 데이터를 관리하는 master와 데이터 블럭을 저장하는 다수의 worker로 구성되며, 이러한 구조는 HDFS와 유사하다. 하지만 데이터를 안정적으로 보관하는 용도라기보다는 캐싱과 다양한 인터페이스를 지원하여 데이터를 빠르고 쉽게 사용하는 데 목적이 있다.</p>
+
+<p><img src="/content/images/2022/05/e0e881b4-4be9-486b-a1f5-7b8d60d1477c.png" alt=""></p>
+
+<p><span class="caption">출처: <a href="https://docs.alluxio.io/os/user/stable/en/overview/Architecture.html">https://docs.alluxio.io/os/user/stable/en/overview/Architecture.html</a></span></p>
+
+<p>데이터를 처음으로 읽는 경우에는 원본 저장소로부터 데이터를 가져오지만 이후에는 로컬 또는 다른 worker에 캐싱된 데이터를 가져오는 것이 기본적인 동작이다.</p>
+
+<ul>
+<li>local cache hit: 동일 노드의 worker에 캐싱된 데이터를 읽음(로컬 파일 시스템 속도)</li>
+<li>remote cache hit: 다른 노드의 worker에 캐싱된 데이터를 읽음(private network 속도)</li>
+<li>cache miss: 캐싱되어 있지 않은 경우 원본 저장소에서 데이터를 읽고 캐싱(원본 저장소 속도)</li>
+</ul>
+
+<p><img src="/content/images/2022/05/c0f0b247-cfbd-4c89-b3c5-ca69a98e4f77.png" alt=""></p>
+
+<p><span class="caption">출처: <a href="https://docs.alluxio.io/os/user/stable/en/overview/Architecture.html">https://docs.alluxio.io/os/user/stable/en/overview/Architecture.html</a></span></p>
+
+<p>데이터를 쓰는 경우에도 용도에 따라 다양한 방식을 지원한다.</p>
+
+<ul>
+<li>MUST_CACHE: 임시 캐싱만 수행. 빠르지만 데이터 유실 가능</li>
+<li>CACHE_THROUGH: 원본 저장소로 저장한 이후 종료. 느리지만 안전한 데이터 보관</li>
+<li>ASYNC_THROUGH: 캐싱 후 종료. 이후 비동기적으로 원본 저장소에 저장. 빠르지만 데이터 유실 가능</li>
+</ul>
+
+<p><img src="/content/images/2022/05/b4c3235d-a362-43a0-95bf-ece4f8116f86.png" alt=""></p>
+
+<p><span class="caption">출처: <a href="https://docs.alluxio.io/os/user/stable/en/overview/Architecture.html">https://docs.alluxio.io/os/user/stable/en/overview/Architecture.html</a></span></p>
+
+<p>본 문서에서는 Alluxio 설치, 튜닝 방법 등의 상세한 내용을 다루지는 않는다. 자세한 내용은 <a href="https://www.alluxio.io">alluxio.io</a>을 참고하시기 바란다. 이후로는 AiSuite에 Alluxio를 도입하기 위해 고려했던 내용을 위주로 설명한다.</p>
+
+<h2 id="kuberneteshdfs">Kubernetes 저장소로 HDFS 활용</h2>
+
+<h3 id="alluxiofuse">Alluxio FUSE</h3>
+
+<p>Alluxio는 데이터 접근을 위한 다양한 인터페이스를 지원하며, <a href="https://github.com/libfuse/libfuse">Linux FUSE</a> 기반의 Alluxio FUSE를 사용하여 POSIX API를 지원한다. 즉, 별도의 Alluxio 라이브러리가 필요하지 않고 일반적인 파일 시스템과 동일하게 사용할 수 있다. 예를 들어, HDFS 접근 시에도 ls, mkdir, cat 등을 그대로 사용할 수 있으며, 데이터를 읽어오는 기존에 작성된 코드를 변경없이 사용할 수 있다. 이는 위의 요구 사항 중 사용 편이성, 이식성을 위해 필요하다.</p>
+
+<p><img src="/content/images/2022/05/b37ecd6f-028c-43b3-b589-a0a7ae26b7fe.png" alt=""></p>
+
+<p><span class="caption">출처: <a href="https://docs.alluxio.io/os/user/edge/en/api/POSIX-API.html#choose-posix-api-implementation">https://docs.alluxio.io/os/user/edge/en/api/POSIX-API.html#choose-posix-api-implementation</a></span></p>
+
+<p>그렇다면 Alluxio FUSE를 Kubernetes에서 어떻게 지원해야 할까? 쉽게 떠오르는 것은 Kubernetes 모든 노드의 특정 경로에 Alluxio FUSE를 마운트하고 <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a>로 사용하는 것이다.</p>
+
+<p>하지만 AiSuite와 같이 여러 사용자가 함께 사용하는 다중 테넌트(multi-tenant) 환경에서는 다음과 같은 문제가 있다.</p>
+
+<ul>
+<li>하나의 FUSE 마운팅 포인트를 여러 사용자가 공유함으로서 성능 영향</li>
+<li>사용자별 HDFS 권한에 따른 접근 제어가 어려움</li>
+</ul>
+
+<p>그뿐만 아니라, hostPath는 보안 이슈를 일으킬 수 있어 부득이한 경우를 제외하면 사용하지 않도록 권고하고 있다. Kubernetes에서 스토리지는 <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/">PersistentVolume</a>으로 사용하는 것이 일반적인 방식이다. Alluxio 파일 시스템에 접근하는 경우에도 이러한 방식을 지원하는 것이 필요하다.</p>
+
+<h3 id="">컨테이너 스토리지 인터페이스</h3>
+
+<p>Kubernetes에서 PersistentVolume은 어떻게 지원할 수 있을까?</p>
+
+<p>컨테이너 스토리지 인터페이스(이하 CSI)는 컨테이너 오케스트레이션 시스템(Kubernetes, swarm, mesos 등)에서 다양한 스토리지를 지원하기 위한 인터페이스를 정의한다. 이전에는 스토리지 지원을 위한 플러그인들이 컨테이너 오케스트레이션 시스템에 종속적이었다. 예를 들어, 스토리지 플러그인을 추가하거나 업데이트하려면 Kubernetes와 같이 컴파일 또는 배포되어야 했다. 하지만 CSI가 소개되면서 플러그인을 독립적으로 배포하고 관리할 수 있게 되었다. 즉, 스토리지 벤더측에서 CSI를 준수하는 스토리지 플러그인을 제공한다면 Kubernetes에 이를 배포하는 것으로 스토리지를 사용할 수 있다.</p>
+
+<p><img src="/content/images/2022/05/6d5cf107-f274-4f33-a44d-ef4898d80207.png" alt=""></p>
+
+<p><span class="caption">출처: <a href="https://kubernetes.io/blog/2018/08/02/dynamically-expand-volume-with-csi-and-kubernetes/">https://kubernetes.io/blog/2018/08/02/dynamically-expand-volume-with-csi-and-kubernetes/</a></span></p>
+
+<p>CSI에 대한 자세한 내용은 <a href="https://github.com/container-storage-interface/spec/blob/master/spec.md">CSI spec</a>을 참고하기 바란다.</p>
+
+<h3 id="alluxiocsi">Alluxio CSI</h3>
+
+<p>따라서 Alluxio 파일 시스템에 대한 CSI 스토리지 플러그인을 개발해야 한다는 걸 알 수 있다.</p>
+
+<p>AiSuite를 위한 플러그인은 아래와 같이 동작하도록 구현했다. 아래는 구현된 부분을 강조한 대략적인 흐름이다.</p>
+
+<p><img src="/content/images/2022/05/e7e3ead7-d015-4026-aa09-143a3ff7ec13.png" alt=""></p>
+
+<p>(1) 사용자는 PVC(PersistentVolumeClaim), Pod 요청. 원하는 HDFS 경로를 PVC의 <code>hdfs/namespace</code>, <code>hdfs/path</code>로 명시</p>
+
+<p>(2.1) csi-provisioner에 의해 <code>CreateVolume</code>이 플러그인으로 요청</p>
+
+<p>(2.2) 플러그인은 PVC에 설정된 HDFS 경로를 Alluxio 파일 시스템과 마운트</p>
+
+<p>(3.1) Pod이 스케줄링되면, csi-attacher에 의해 <code>ControllerPublishVolume</code>이 플러그인으로 요청</p>
+
+<p>(3.2) 플러그인은 사용자가 PVC에 설정된 HDFS 경로에 대한 권한이 있는지 Ranger에 요청하여 확인</p>
+
+<p>(3.3) 플러그인은 HDFS와 Alluxio 파일 시스템과의 메타데이터 동기화 요청</p>
+
+<p>(4.1) 스케줄링된 노드의 kubelet은 <code>NodePublishVolume</code>을 플러그인으로 요청</p>
+
+<p>(4.2) 플러그인은 Alluxio 파일 시스템을 Pod 하위 경로에 Alluxio FUSE를 마운트하여 제공</p>
+
+<p>Alluxio에서도 <a href="https://github.com/Alluxio/alluxio-csi">Alluxio/alluxio-csi</a>를 지원하지만, 다중 테넌트 환경에서 HDFS와 연동하기 위한 목적인 AiSuite에서는 다음과 같은 개발이 추가로 필요했다.</p>
+
+<ul>
+<li>사용자가 필요한 HDFS 경로를 직접 PVC에 설정하여 요청(1)</li>
+<li>여러 사용자가 공유하는 Alluxio 파일 시스템의 효율적인 사용을 위해 필요한 HDFS 경로만 캐싱(2.2)</li>
+<li>HDFS 접근 권한을 관리하는 Ranger와 연동하여 사용자 접근 제한(3.2)</li>
+<li>HDFS 네임노드로의 부하를 줄이기 위해 Pod 사용 시점에 한 번만 매뉴얼한 동기화 요청(3.3)(<a href="#alluxio와-hdfs-간-동기화">Alluxio와 HDFS 간 동기화</a> 참고)</li>
+</ul>
+
+<p>결국 Alluxio CSI를 개발하여 HDFS를 일반적인 Kubernetes 스토리지와 동일한 방식으로 사용할 수 있게 되었다.</p>
+
+<h2 id="alluxio">Alluxio의 읽기 성능</h2>
+
+<p>Alluxio 캐싱으로 인한 효과를 살펴보기 위해 여러 가지 조건에서 6.4GB 파일을 읽어 보았다. 테스트는 Alluxio 2.4.1에서 <a href="https://docs.alluxio.io/ee/user/stable/en/overview/Architecture.html?q=short-circuit%20reads#local-cache-hit">short-circuit read</a>와 같은 성능 최적화 없이 진행되었다. 측정된 시간은 IDC 위치, 저장매체, Alluxio 버전 또는 설정 등에 영향을 받기 때문에 절대적인 것은 아니다.</p>
+
+<p>위에서 살펴본 대로 우리는 <a href="#alluxio-fuse">Alluxio FUSE</a>가 필요하므로, Alluxio FUSE를 사용한 테스트를 진행했다.</p>
+
+<p><img src="/content/images/2022/05/5d9bfc75-8c30-43d4-b75d-287db1024080.png" alt=""></p>
+
+<ul>
+<li>Alluxio FUSE로 캐싱되지 않은 파일을 읽는 경우(3), HDFS Client를 사용해 읽는 것(2)보다도 15% 가량 느려졌다. FUSE는 여러번 kernel-user 간 컨텍스트 스위칭이 발생하는데 이에 대한 오버헤드이다.</li>
+<li>Alluxio FUSE로 동일 노드에 캐싱된 파일을 읽는 경우(4), 캐싱되지 않는 파일을 읽는 경우(3)에 비해 5배 빠르게 읽어온다(short-circuit read 설정으로 더 빠른 속도도 기대할 수 있다).</li>
+<li>Alluxio FUSE로 다른 노드에 캐싱된 파일을 읽는 경우(5)에도 동일 노드에 캐싱된 파일을 읽는 경우(4)에 근사한 시간이 소요되었다.</li>
+</ul>
+
+<p>Alluxio 측에서도 Fuse 성능 개선에 노력하고 있으며, Alluxio 2.5.0부터는 성능을 개선한 <a href="https://docs.alluxio.io/os/user/edge/en/api/POSIX-API.html#choose-posix-api-implementation">JNI-Fuse</a>를 사용할 수 있다.</p>
+
+<p>파일을 쓰는 경우에 대한 성능은 평가하지 않았다. AiSuite에서 Alluxio 파일을 쓰는 것은 HDFS를 안정적인 스토리지로 사용하기 위함이며, 따라서 HDFS로의 저장을 보장하는 <a href="https://docs.alluxio.io/ee/user/stable/en/overview/Architecture.html?q=CACHE_THROUGH#write-through-to-ufs-cache_through">CACHE<em>THROUGH</em></a><em> 방식을 사용한다. 따라서, 일반적인 HDFS Client를 사용하는 것과 비슷한 시간이 소요된다. 만약 데이터 유실을 감수할 수 있는 임시 데이터 보관이 목적이라면 <a href="https://docs.alluxio.io/ee/user/stable/en/overview/Architecture.html?q=CACHE_THROUGH#write-to-alluxio-only-must_cache">MUST</a></em><a href="https://docs.alluxio.io/ee/user/stable/en/overview/Architecture.html?q=CACHE_THROUGH#write-to-alluxio-only-must_cache">CACHE</a>를 사용하여 빠른 쓰기 성능을 기대할 수 있다.</p>
+
+<h2 id="locality">Locality</h2>
+
+<p>AiSuite에 포함된 노드는 여러 IDC에 걸쳐 분산되어 있다. 데이터에 접근할 때 가능하면 IDC를 벗어나지 않고 근거리에서 데이터를 가져올 수 있어야 한다. 다른 IDC의 노드에서 데이터를 가져오는 경우, 느릴 뿐만 아니라 IDC 간 네트워크 트래픽 비용이 발생한다.</p>
+
+<p>Alluxio에서는 client, master, worker에 대해 <a href="https://docs.alluxio.io/os/user/stable/en/operation/Tiered-Locality.html">locality</a>를 부여하는 방법을 제공한다. Alluxio 파일 시스템에 접근하려는 client의 locality에 따라 어떤 worker로부터 캐싱된 데이터를 가져올지 결정할 수 있다.</p>
+
+<p>AiSuite에서는 node, zone, idc 순서로 locality를 고려하여 캐싱 데이터에 접근하도록 설정한다. zone은 용도에 따른 노드들의 그룹으로, 물리적으로 가까이 위치한다. 각 노드에는 node, zone, idc에 대한 <a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes/#add-a-label-to-a-node">Kubernetes node-label</a>을 설정해두고, client, master, worker가 구동될 때 다음과 같은 alluxio.locality 설정이 반영되도록 했다.</p>
+
+<ul>
+<li>alluxio.locality.order=node,zone,idc</li>
+<li>alluxio.locality.node={노드의 호스트명}</li>
+<li>alluxio.locality.zone={노드가 소속된 zone명}</li>
+<li>alluxio.locality.idc={노드가 위치한 idc명}</li>
+</ul>
+
+<p>다음은 node=node1, zone=web, idc=seoul인 client에서 캐싱 데이터에 접근하는 예이다.</p>
+
+<p><img src="/content/images/2022/05/94fc248a-a3c7-441f-b9b0-efe61a16c23f.png" alt=""></p>
+
+<ol>
+<li>같은 노드 node1에 캐싱된 데이터  </li>
+<li>같은 zone인 web에 캐싱된 데이터  </li>
+<li>같은 idc인 seoul에 캐싱된 데이터  </li>
+<li>그 외 다른 idc에 캐싱된 데이터</li>
+</ol>
+
+<p>만약 IDC 간 전송이 너무 느리거나 많은 비용이 발생한다면 어떻게 해야 할까? 다른 IDC에 캐싱된 데이터를 가져오는 것(위의 4번)보다, 같은 IDC의 HDFS에서 데이터를 가져오는 게 유리할 수 있다. 이 경우 <code>alluxio.locality.idc.strict=true</code>를 설정할 수 있다. 다른 IDC로의 요청 대신 HDFS로부터 데이터를 가져온다.</p>
+
+<h2 id="alluxiohdfs">Alluxio와 HDFS 간 동기화</h2>
+
+<p>Alluxio는 HDFS 메타데이터(파일, 디렉터리 등의 정보)를 캐싱하여 빠르고 효율적으로 데이터를 사용하게 한다. 그뿐만 아니라, 메타데이터를 캐싱하여 HDFS 네임노드로의 불필요한 요청을 줄이는 이점도 있다.</p>
+
+<p>하지만 캐싱은 원본 저장소와의 불일치를 유발하기도 한다. Alluxio를 이용하여 파일, 디렉터리를 생성하는 경우에는 Alluxio 파일 시스템에 반영된다. 하지만 외부로부터 가해지는 HDFS 변경을 알 수는 없다. 예를 들어, Alluxio에서 /data/20220401을 캐싱하고 있는데 만약 Hive를 이용해 HDFS에 /data/20220402가 생성된다면 Alluxio는 알 수 없다.</p>
+
+<p><img src="/content/images/2022/05/09f330e6-04dd-4cab-9f5b-034aa803d248.png" alt=""></p>
+
+<p><span class="caption">출처: <a href="https://www.alluxio.io/blog/two-ways-to-keep-files-in-sync-between-alluxio-and-hdfs">https://www.alluxio.io/blog/two-ways-to-keep-files-in-sync-between-alluxio-and-hdfs</a></span></p>
+
+<p>이를 위해 Alluxio에서는 얼마나 자주 HDFS와 <a href="https://docs.alluxio.io/os/user/stable/en/core-services/Unified-Namespace.html#ufs-metadata-sync">메타데이터 동기화</a>를 해야 하는지 client 측에 설정할 수 있다.</p>
+
+<ul>
+<li><code>alluxio.user.file.metadata.sync.interval=-1</code>는 한 번 캐싱한 이후로는 동기화하지 않는다. HDFS 네임노드로의 부담은 줄어들지만 동기화 문제가 발생할 수 있다.</li>
+<li><code>alluxio.user.file.metadata.sync.interval=0</code>은 파일 접근이 있을 때마다 HDFS 메타데이터를 동기화한다. 동기화 문제는 없지만, HDFS 네임노드로 항상 <a href="https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/fs/FileSystem.html#listStatus-org.apache.hadoop.fs.Path">listStatus</a> 요청이 발생하여 네임노드에 부담을 준다.</li>
+<li><code>alluxio.user.file.metadata.sync.interval=1m</code>는 1분마다 HDFS 메타데이터와 동기화한다. 1분마다 주기적으로 <a href="https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/fs/FileSystem.html#listStatus-org.apache.hadoop.fs.Path">listStatus</a> 요청이 발생한다.</li>
+</ul>
+
+<p>우리가 사용하는 C3S HDFS는 수많은 사용자가 있다. 따라서 무엇보다도 네임노드 부담을 줄이기 위한 방안이 필요하므로 <code>alluxio.user.file.metadata.sync.interval=-1</code>를 기본으로 사용한다. 다만, HDFS의 변경 사항이 반영되지 않는 문제를 보완하기 위해 Pod의 초기화 시점에 다음과 같이 매뉴얼한 동기화를 한 번 실행한다. 관련된 내용은 <a href="#alluxio_csi">Alluxio CSI</a>(3.3)를 참고하기 바란다.</p>
+
+<pre><code class="hljs stylus">$ ./bin/alluxio fs ls -R -Dalluxio<span class="hljs-selector-class">.user</span><span class="hljs-selector-class">.file</span><span class="hljs-selector-class">.metadata</span><span class="hljs-selector-class">.sync</span><span class="hljs-selector-class">.interval</span>=<span class="hljs-number">0</span> /path/to/sync
+</code></pre>
+
+<p><span class="caption">출처: <a href="https://docs.alluxio.io/os/user/stable/en/core-services/Unified-Namespace.html#periodic-metadata-sync">https://docs.alluxio.io/os/user/stable/en/core-services/Unified-Namespace.html#periodic-metadata-sync</a></span></p>
+
+<p>사용 패턴에 따라서는 Pod이 초기화된 이후에도 항상 HDFS와 동기화가 필요할 수 있다. 이런 경우에는 <code>alluxio.user.file.metadata.sync.interval=0</code>를 설정할 수 있다. 다만, 네임노드 부담이 얼마나 가해지는지 모니터링해야 한다.</p>
+
+<h2 id="">도입 효과</h2>
+
+<p>AiSuite에서는 Alluxio 도입으로 요구 사항을 모두 해결할 수 있었다.</p>
+
+<p><img src="/content/images/2022/05/1a3217d7-ee29-4696-a576-1bd9757021b0.png" alt=""></p>
+
+<ul>
+<li>사용 편이성, 이식성: 일반적인 Kubernetes의 PersistentVolume 사용 방식에 따라 HDFS를 사용할 수 있다. 사용자는 HDFS 사용을 위한 러닝커브가 없으며, 기존의 소프트웨어에서도 별도의 개발없이 HDFS 사용이 가능하다.</li>
+<li>성능: 여러 IDC에 분산된 노드 사이의 IDC 간 트래픽을 줄이고 HDFS에 빠르게 접근할 수 있다.</li>
+<li>Kubernetes 저장소로 HDFS 활용: AiSuite에서 생성한 AI 모델, 로그 등의 데이터를 안정적으로 보관하는 스토리지로서 HDFS를 사용할 수 있다.</li>
+</ul>
+
+<h2 id="">도입 시 고려 사항</h2>
+
+<p>Alluxio 운영은 간단하지 않다. master, worker, CSI 등의 Alluxio 컴포넌트 관리뿐만 아니라, HDFS 네임노드로 얼마나 많은 요청이 가해지는지, 효과적인 캐싱 정책은 무엇인지 등의 다양한 고민이 생긴다.</p>
+
+<p>사용 방식 또는 환경에 따라서는 Alluxio가 도움이 되지 못할 수 있다. 이 경우 불필요한 운영 부담만 생길 수 있다.</p>
+
+<h3 id="alluxioimmutable">Alluxio 파일은 immutable하다</h3>
+
+<p>HDFS 데이터를 읽기 위해 Alluxio를 사용하다면 대부분 잘 작동한다. 하지만 Alluxio를 통해 HDFS로 데이터를 쓰는 경우, Alluxio 파일은 immutable함을 이해하고 사용해야 한다. 즉, 이미 저장된 파일에 대한 변경(append, truncate)은 금지된다.</p>
+
+<pre><code class="language-shell">bash-5.0$ cd /data/  
+bash-5.0$ echo "appended" &gt;&gt; myfile.txt  
+bash: echo: write error: File exists  
+</code></pre>
+
+<p>이러한 제약으로 인해 기존에 잘 작동하던 코드가 Alluxio 마운트 경로를 지정하면 작동하지 않을 수도 있다.</p>
+
+<p>AiSuite에서는 작업 중 생성되는 임시 데이터는 <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#resource-emphemeralstorage-consumption">Emphemeral Storage</a>를 사용하고, 최종 결과를 영구적으로 HDFS에 저장하기 위해 Alluxio를 사용한다.</p>
+
+<h3 id="">캐싱 효과가 얼마나 있을까</h3>
+
+<p>Alluxio 캐싱 효과를 위해서는 HDFS로부터 읽어들인 데이터가 여러 작업에서 사용되어야 한다. 항상 새로운 데이터를 사용하는 방식이라면 캐싱 효과를 얻기가 어렵다. <br>
+또한 HDFS가 느린 저장매체에 저장되어 있거나 물리적으로 멀리 떨어진 경우에 효과적이다.</p>
+
+<p>AiSuite는 다중 테넌트 환경이므로 여러 사용자가 동일한 데이터를 활용하는 경우가 많다. 그뿐만 아니라, AiSuite의 노드들은 HDFS보다 빠른 저장매체를 가지면서 여러 IDC에 분산되어 있어 캐싱으로 인한 충분한 성능 향상을 기대할 수 있었다.</p>
+
+<h2 id="">마치며</h2>
+
+<p>지금까지 Kubernetes 기반의 AI 플랫폼과 Apache Hadoop 기반의 데이터 플랫폼 간의 데이터 연결을 위해 Alluxio를 도입한 과정을 살펴보았다.</p>
+
+<p>Alluxio를 활용하면 다양한 인터페이스로 빠르게 HDFS에 접근할 수 있다. 하지만 AiSuite의 요구 사항에 따라 Alluxio CSI 개발, Locality 적용, HDFS 동기화 등의 검토가 필요했다.</p>
+
+<p>AiSuite에서의 Alluxio 도입은 HDFS에 빠르고 쉽게 접근하는 것이 목적이었다. 하지만 Alluxio는 HDFS뿐만 아니라 AWS S3, GCS, Ceph 등의 다양한 스토리지를 지원한다. 앞으로 AiSuite에서는 HDFS 외의 스토리지도 검토하려고 한다. 여기저기 흩어져 있는 AI 데이터를 통합하고 일관된 인터페이스로 접근하여 더 편리하게 AI 파이프라인을 구축하도록 지원할 계획이다.</p></div><div class="txt_tag"><span class="icon_tag">Tag</span><div class="tag_list"><a href="/search?keyword=AI"><span>AI</span></a><a href="/search?keyword=Alluxio"><span>Alluxio</span></a><a href="/search?keyword=데이터플랫폼"><span>데이터플랫폼</span></a><a href="/search?keyword=dataplatform"><span>dataplatform</span></a></div></div><div class="post_writer_info"><div class="writer_info"><div class="ly_img_people"></div><div class="img_people"><img src="/image/20220526/403206402810.png" alt=""></div><div class="people_info"><dl><dt><span class="blind">글쓴이</span></dt><dd><span class="name">남경완<span></span></span><span><span class="bar">|</span><span class="duty_dept">네이버 Engineering Center</span></span></dd><dt><span class="blind">소개</span></dt><dd class="info">네이버에서 하둡 기반의 데이터 처리 플랫폼을 개발하고, 현재는 AI 플랫폼을 만들어가고 있습니다.</dd></dl></div><div class="people_write"><a href="https://d2.naver.com/search?keyword=%EB%82%A8%EA%B2%BD%EC%99%84">글쓴이의 다른 글 보기</a></div></div></div><div class="sns_position"><div class="sns_sec"><button type="button" class="sns_naver"><span class="sns_icon">NAVER</span></button><button type="button" class="sns_facebook"><span class="sns_icon">facebook</span></button><div class="fb-like fb_iframe_widget" data-href="http://d2.naver.com/helloworld/3863967" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="false" fb-xfbml-state="parsed" fb-iframe-plugin-query="action=like&amp;app_id=816454888441763&amp;container_width=714&amp;href=http%3A%2F%2Fd2.naver.com%2Fhelloworld%2F3863967&amp;layout=button_count&amp;locale=ko_KR&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;size=large"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f2f58b8829558f8" width="1000px" height="1000px" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.11/plugins/like.php?action=like&amp;app_id=816454888441763&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3d059f9078a9a%26domain%3Dd2.naver.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fd2.naver.com%252Ff13179c6872299c%26relation%3Dparent.parent&amp;container_width=714&amp;href=http%3A%2F%2Fd2.naver.com%2Fhelloworld%2F3863967&amp;layout=button_count&amp;locale=ko_KR&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;size=large" style="border: none; visibility: hidden;"></iframe></span></div><button type="button" class="sns_url"><span class="sns_icon">URL</span></button></div></div></div></div><div class="relation_sec"><p class="relation_title">관련글</p><div class="relation_list"><div class="list"><ul><li><a href="/news/4165757"><img src="/content/images/2022/03/-----------2022-03-15------10-31-21.png" width="60" height="50" alt="썸네일"><div class="relation_list_txt">[NDTI] 이 팀과 내 기술커리어 얼마나 어울릴까? - 검색, 추천 서비스</div></a></li><li><a href="/helloworld/29533"><img src="/content/images/2015/07/29533-1.PNG" width="60" height="50" alt="썸네일"><div class="relation_list_txt">빅데이터를 위한 플랫폼들</div></a></li><li><a href="/news/8329885"><img src="/content/images/2021/11/PC_thumb_170x120-3.png" width="60" height="50" alt="썸네일"><div class="relation_list_txt">네이버 서비스로 알아보는 DEVIEW 2021 (2/3)</div></a></li><li><a href="/helloworld/6908639"><img src="/content/images/2017/06/helloworld-201706-GoogleIO2017_1-19-1-1.png" width="60" height="50" alt="썸네일"><div class="relation_list_txt">Google I/O 2017 참관기 - 머신 러닝과 AI</div></a></li></ul></div></div></div><div id="cbox_module" style="max-width: 840px; margin: 0px auto; padding-bottom: 35px;" class="u_cbox"><div class="u_cbox_wrap u_cbox_ko"><div class="u_cbox_head"><h5 class="u_cbox_title">댓글</h5><span class="u_cbox_count">1</span><button type="button" class="u_cbox_btn_refresh" data-action="count#refresh" data-log="RPO.refresh"><span class="u_cbox_ico_refresh"></span><span class="u_cbox_txt_refresh">새로고침</span></button><div class="u_cbox_head_tools"></div></div><div class="u_cbox_write_wrap"><div class="u_cbox_write_box u_cbox_type_logged_out"><form><fieldset><legend class="u_vc">댓글 쓰기</legend><div class="u_cbox_write"><div class="u_cbox_write_inner"><div class="u_cbox_write_area"><strong class="u_vc">댓글 입력</strong><div class="u_cbox_inbox"><textarea title="댓글" id="cbox_module__write_textarea" class="u_cbox_text" rows="3" cols="30" data-log="RPC.input"></textarea><label for="cbox_module__write_textarea" class="u_cbox_guide" data-action="write#placeholder" data-param="@event">댓글을 작성하려면 <a href="#" class="u_cbox_link">로그인</a> 해주세요</label></div></div><div class="u_cbox_upload_sticker" style="display:none"></div><div class="u_cbox_write_count"><span class="u_vc">현재 입력한 글자수</span><strong class="u_cbox_count_num">0</strong>/<span class="u_vc">전체 입력 가능한 글자수</span><span class="u_cbox_write_total">400</span></div><div class="u_cbox_upload"><div class="u_cbox_addition"></div><button type="button" class="u_cbox_btn_upload" data-action="write#request" data-log="RPC.write#RPC.reply"><span class="u_cbox_ico_upload"></span><span class="u_cbox_txt_upload">등록</span></button></div></div></div></fieldset></form></div></div><div class="u_cbox_notice u_cbox_notice_none" style="display: none;"></div><div id="cbox_module_wai_u_cbox_content_wrap_tabpanel" tabindex="0" class="u_cbox_content_wrap" style="outline: 0"><ul class="u_cbox_list"><li class="u_cbox_comment cbox_module__comment_774017207062495362 _user_id_no_2HDA8" data-info="commentNo:'774017207062495362',deleted:false,best:false,visible:true,secret:false,manager:false,mine:false,report:undefined,blindReport:false,objectId:'3863967',replyLevel:1,parentCommentNo:'774017207062495362',pick:false"><div class="u_cbox_comment_box"><div class="u_cbox_area"><div class="u_cbox_info"><span class="u_cbox_info_main"><span class="u_cbox_name"><span class="u_cbox_name_area"><span class="u_cbox_nick_area"><span class="u_cbox_nick">eubn****</span></span></span></span></span><span class="u_cbox_info_sub"></span></div><div class="u_cbox_text_wrap"><span class="u_cbox_contents" data-lang="ko">멋집니다. 잘 배우고 갑니다 경완님 ㅎ.ㅎ</span></div><div class="u_cbox_info_base"><span class="u_cbox_date" data-value="2022-11-04T15:48:18+0900">2022-11-04 15:48</span></div><div class="u_cbox_tool"><a href="#" role="button" aria-expanded="false" class="u_cbox_btn_reply" data-action="reply#toggle" data-param="774017207062495362" data-log="RPC.replyopen#RPC.replyclose"><strong class="u_cbox_reply_txt">답글</strong><span class="u_cbox_reply_cnt u_vc">0</span></a><div class="u_cbox_recomm_set"><strong class="u_vc">공감/비공감</strong><a href="#" data-action="vote" data-param="mine:false,commentNo:'774017207062495362',voteStatus:'SYMPATHY',objectId:'3863967',ticket:'d2'" data-log="RPC.sym#RPC.unsym" class="u_cbox_btn_recomm"><span class="u_cbox_ico_recomm">공감</span><em class="u_cbox_cnt_recomm">2</em></a><a href="#" data-action="vote" data-param="mine:false,commentNo:'774017207062495362',voteStatus:'ANTIPATHY',objectId:'3863967',ticket:'d2'" data-log="RPC.dis#RPC.undis" class="u_cbox_btn_unrecomm"><span class="u_cbox_ico_unrecomm">비공감</span><em class="u_cbox_cnt_unrecomm">0</em></a></div></div><span class="u_cbox_comment_frame"><span class="u_cbox_ico_tip"></span><span class="u_cbox_comment_frame_top"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span><span class="u_cbox_comment_frame_bottom"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span></span></div></div><div class="u_cbox_reply_area" style="display:none;"></div></li></ul></div><div class="u_cbox_paginate" style=""><div class="u_cbox_page_wrap"><span class="u_cbox_pre u_cbox_pre_end" title="첫 페이지 목록으로 이동하기"><span class="u_cbox_ico_page"></span><span class="u_cbox_cnt_page">맨앞</span><span class="u_vc">페이지 목록으로 이동하기</span></span><span class="u_cbox_pre" title="이전 페이지 목록으로 이동하기"><span class="u_cbox_ico_page"></span><span class="u_cbox_cnt_page">이전</span><span class="u_vc">페이지 목록으로 이동하기</span></span><strong class="u_cbox_page" data-param="1"><span class="u_cbox_num_page">1</span><span class="u_vc">현재 선택된 페이지</span></strong><span class="u_cbox_next" title="다음 페이지 목록으로 이동하기"><span class="u_cbox_cnt_page">다음</span><span class="u_cbox_ico_page"></span><span class="u_vc">페이지 목록으로 이동하기</span></span><span class="u_cbox_next u_cbox_next_end" title="마지막 페이지 목록으로 이동하기"><span class="u_cbox_cnt_page">맨뒤</span><span class="u_cbox_ico_page"></span><span class="u_vc">페이지 목록으로 이동하기</span></span></div></div></div></div></div></div></div><div id="footer"><div class="inner_sec"><div class="footer_sec"><ul class="other_site"><li><a href="https://developers.naver.com/" target="_blank" class="developers">NAVER Developers</a></li><li><a href="https://techcon.naver.com/" target="_blank" class="techcon">NAVER TECH CONCERT</a></li><li><a href="https://deview.kr/" target="_blank" class="deview">DEVIEW</a></li><li><a href="https://naver.github.io/" target="_blank" class="opensource">OpenSource</a></li><li><a href="http://www.d2startup.com/" target="_blank" class="startup">D2 STARTUP FACTORY</a></li></ul><div class="sns_share"><ul><li class="email"><a href="mailto:d2@navercorp.com"><i class="xi-mail"></i></a></li><li class="facebook"><a href="https://facebook.com/naverd2" target="_blank"><i class="xi-facebook"></i></a></li><li class="rss"><a href="https://d2.naver.com/d2.atom" target="_blank"><i class="xi-social-rssfeed"></i></a></li></ul></div></div><div class="footer_sec"><div class="copyright"><p><span>Copyright</span> © <a href="https://www.navercorp.com/" target="_blank">NAVER Corp.</a> <span>All Rights Reserved.</span></p></div><a href="#" class="btn_go_top" style="bottom: 20px; right: 0px;"></a></div></div></div></div></div><i classname="xi-search">
+<script id="facebook-jssdk" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&amp;version=v2.11&amp;appId=816454888441763"></script><script async="" src="//www.google-analytics.com/analytics.js" id="google-analytics"></script><script async="" src="https://wcs.naver.net/wcslog.js" id="naver-analytics"></script><script type="text/javascript" src="/static/js/app.js?13c1e9311ca34225bfc0"></script>
+
+</i><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div></body></html>

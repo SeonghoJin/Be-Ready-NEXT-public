@@ -1,0 +1,399 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="https://static.toss.im/tds-pc/3.232.0/main.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/rss+xml" href="/rss.xml"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/atom+xml" href="/atom.xml"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/main.css"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/others.css"/><link rel="stylesheet" href="https://static.toss.im/tossface-font/tossface.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/activitystream+json" href="/feed.json"/><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"/><meta name="author" content="Viva Republica"/><link rel="preconnect" href="https://static.toss.im"/><link rel="shortcut icon" href="https://static.toss.im/tds/favicon/favicon.ico"/><link rel="icon" type="image/png" sizes="16x16" href="https://static.toss.im/tds/favicon/favicon-16x16.png"/><link rel="icon" type="image/png" sizes="32x32" href="https://static.toss.im/tds/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="48x48" href="https://static.toss.im/tds/favicon/favicon-48x48.png"/><link rel="icon" type="image/png" sizes="196x196" href="https://static.toss.im/tds/favicon/favicon-196x196.png"/><link rel="apple-touch-icon" sizes="57x57" href="https://static.toss.im/tds/favicon/apple-touch-icon-57x57.png"/><link rel="apple-touch-icon" sizes="72x72" href="https://static.toss.im/tds/favicon/apple-touch-icon-72x72.png"/><link rel="apple-touch-icon" sizes="114x114" href="https://static.toss.im/tds/favicon/apple-touch-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="https://static.toss.im/tds/favicon/apple-touch-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="https://static.toss.im/tds/favicon/apple-touch-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="https://static.toss.im/tds/favicon/apple-touch-icon-152x152.png"/><meta name="msapplication-TileImage" content="https://static.toss.im/tds/favicon/mstile-144x144.png"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PQ5NV18TH1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-PQ5NV18TH1');</script><script>(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:2399367,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script><title>선언적인 코드 작성하기</title><meta name="twitter:creator" content="Viva Republica"/><meta name="twitter:site" content="@Toss_service"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:title" content="선언적인 코드 작성하기"/><meta name="twitter:title" content="선언적인 코드 작성하기"/><meta property="og:description" content="선언적인 코드, 토스 프론트엔드 챕터는 어떻게 생각을 하고 있을까요?
+"/><meta name="twitter:description" content="선언적인 코드, 토스 프론트엔드 챕터는 어떻게 생각을 하고 있을까요?
+"/><meta property="og:image" content="https://og.toss.tech?title=%EC%84%A0%EC%96%B8%EC%A0%81%EC%9D%B8%20%EC%BD%94%EB%93%9C%0D%0A%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0&amp;imageUrl=https%3A%2F%2Fstatic.toss.im%2Fassets%2Ftoss-tech%2Fdeclarative_right.png&amp;v=2"/><meta name="twitter:image" content="https://og.toss.tech?title=%EC%84%A0%EC%96%B8%EC%A0%81%EC%9D%B8%20%EC%BD%94%EB%93%9C%0D%0A%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0&amp;imageUrl=https%3A%2F%2Fstatic.toss.im%2Fassets%2Ftoss-tech%2Fdeclarative_right.png&amp;v=2"/><meta name="next-head-count" content="36"/><meta name="next-font-preconnect"/><link rel="preload" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" as="style"/><link rel="stylesheet" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/webpack-a37367524f3d9e47.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/framework-5201cf011975c339.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/main-4ffd67ad72332dfe.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/_app-02461bb4136bedab.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/821-c2f4db054c6f6b42.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/935-149f2da2961c2b08.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/article/%5Bslug%5D-bf5a24035d1301de.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_buildManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_ssgManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_middlewareManifest.js" defer=""></script></head><body><div id="__next"><style data-emotion="css-global ubpbb5">html,body{padding:0;margin:0;font-family:'Toss Product Sans';}button{font-family:'Toss Product Sans';}p{margin:0;}</style><style data-emotion="css kcwxxw">.css-kcwxxw{position:-webkit-sticky;position:sticky;top:0;height:59px;}</style><nav class="p-navbar p-navbar--bottom-border css-kcwxxw"><div class="p-container p-container--default"><div class="p-container__inner p-navbar__inner-container"><div class="p-navbar__logo-container"><a class="p-navbar__logo-icon" href="/tech"><span class="icon p-icon" aria-hidden="true" role="presentation" style="height:auto;width:auto;min-width:24px"></span></a></div><div class="p-navbar__right-on-mobile"></div><div class="p-navbar__content" aria-expanded="false" aria-hidden="true"><ul class="p-navbar__menu"></ul><ul class="p-navbar__menu"><li class="p-navbar__item"><a>디자인</a></li><li class="p-navbar__item"><a>개발</a></li><li class="p-navbar__item p-navbar__button-item"><button class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s p-navbar__button" type="button" aria-disabled="false">채용 바로가기</button></li></ul></div></div></div></nav><style data-emotion="css 1nquki8">.css-1nquki8{max-width:700px;margin-bottom:80px;}.css-1nquki8 .has-extra-large-font-size{font-size:20px;}.css-1nquki8 .has-large-font-size{font-size:18px;}.css-1nquki8 .has-small-font-size{font-size:14px;}.css-1nquki8 .has-extra-small-font-size{font-size:12px;}@media (max-width: 700px){.css-1nquki8{margin-bottom:64px;}}</style><div class="p-container p-container--default css-1nquki8"><div class="p-container__inner"><style data-emotion="css gtmad4">.css-gtmad4>*:not(style)~*:not(style){margin-top:54px;}@media (max-width: 700px){.css-gtmad4>*:not(style)~*:not(style){margin-top:48px;}}</style><article class="css-gtmad4"><style data-emotion="css 1095auh">.css-1095auh>*:not(style)~*:not(style){margin-top:20px;}</style><header class="css-1095auh"><style data-emotion="css iffq4o">.css-iffq4o{width:100%;margin-top:36px;border-radius:12px;}</style><img srcSet="https://toss.tech/wp-content/uploads/2023/03/declarative-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/declarative-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/declarative-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/declarative.png 1200w" alt="선언적인 코드 작성하기" class="css-iffq4o e132k2574"/><style data-emotion="css 117sh4z">.css-117sh4z{margin-top:36px;margin-bottom:0;font-size:48px;font-weight:700;line-height:1.25;color:#333d4b;word-break:keep-all;overflow-wrap:break-word;}@media (max-width: 700px){.css-117sh4z{margin-top:28px;font-size:32px;}}</style><h1 class="css-117sh4z e132k2573">선언적인 코드 작성하기</h1><style data-emotion="css s5xdrg">.css-s5xdrg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><section class="css-s5xdrg e2c667z4"><style data-emotion="css 1hdebld">.css-1hdebld{grid-area:image;width:48px;height:48px;border-radius:156px;margin-right:14px;}</style><img src="https://wp.toss.tech/wp-content/uploads/2021/06/E01JAGTHP8R-U01K6L12VSL-0974fc35250c-512-312x312.png" alt="" class="css-1hdebld e2c667z3"/><div><style data-emotion="css 14d9k6d">.css-14d9k6d{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;grid-area:outline;-webkit-align-items:flex-end;-webkit-box-align:flex-end;-ms-flex-align:flex-end;align-items:flex-end;padding-top:8px;font-size:17px;margin-bottom:2px;}@media (max-width: 700px){.css-14d9k6d>*+*{margin-top:4px;margin-left:0;}}</style><div class="css-14d9k6d e2c667z2"><style data-emotion="css 9krnkp">.css-9krnkp{grid-area:name;margin:0;font-size:17px;font-weight:600;color:#4e5968;white-space:nowrap;}</style><h3 class="css-9krnkp e2c667z1">박서진</h3><h3 class="css-9krnkp e2c667z1">ㆍ<!-- -->Frontend Developer</h3></div><style data-emotion="css 154r2lc">.css-154r2lc{font-size:14px;line-height:1.5;color:#8b95a1;}</style><div class="css-154r2lc e2c667z0">2023. 3. 16</div></div></section></header><style data-emotion="css 1k1kkv6">.css-1k1kkv6{font-size:18px;line-height:1.7;color:var(--grey700);font-size:18px;word-break:keep-all;overflow-wrap:break-word;counter-reset:p-post-ol 0;}.css-1k1kkv6 h2{margin:2.2em 0 0.6em 0;font-size:25px;font-weight:600;line-height:1.4;color:var(--grey900);}.css-1k1kkv6 h3{margin:2.2em 0 0.6em 0;font-size:22px;font-weight:600;line-height:1.6;color:var(--grey900);}.css-1k1kkv6 h4{margin:2.2em 0 0.3em 0;font-size:19px;font-weight:600;line-height:1.6;color:var(--grey700);}.css-1k1kkv6 p{margin:1em 0;}.css-1k1kkv6 p code,.css-1k1kkv6 li code{font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:3px;}.css-1k1kkv6 a{color:var(--blue700);}.css-1k1kkv6 pre{margin:2em -24px;}@media (max-width: 700px){.css-1k1kkv6 pre{margin:2em 0;}}.css-1k1kkv6 pre code{display:block;padding:16px 24px;overflow-x:auto;font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;line-height:1.5;word-wrap:normal;white-space:pre;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:12px;}.css-1k1kkv6 figure{margin:2em 0;overflow:hidden;border-radius:12px;width:100%;}.css-1k1kkv6 figure.aligncenter{text-align:center;}.css-1k1kkv6 ol,.css-1k1kkv6 ul{margin:0 0 16px;list-style:none;}.css-1k1kkv6 ol li,.css-1k1kkv6 ul li{position:relative;margin-bottom:8px;}.css-1k1kkv6 ol li:before,.css-1k1kkv6 ul li:before{position:absolute;left:0;}.css-1k1kkv6 ol li ol,.css-1k1kkv6 ul li ol{padding-left:0;margin:8px 0 0 -16px;}.css-1k1kkv6 ol li ul,.css-1k1kkv6 ul li ul{padding-left:0;margin-top:8px;}.css-1k1kkv6 ol li p,.css-1k1kkv6 ul li p{margin:0;}.css-1k1kkv6 ol{padding-left:16px;counter-reset:p-post-ol;}.css-1k1kkv6 ol>li{padding-left:32px;counter-increment:p-post-ol;}.css-1k1kkv6 ol>li:before{font-weight:700;font-weight:var(--font-weight-bold);content:counter(p-post-ol) '.';}.css-1k1kkv6 ul{padding-left:16px;}.css-1k1kkv6 ul>li{padding-left:24px;}.css-1k1kkv6 ul>li:before{width:16px;text-align:center;content:'•';}.css-1k1kkv6 figcaption{font-size:0.9em;color:var(--grey600);}.css-1k1kkv6 .wp-block-pullquote{margin:0;}.css-1k1kkv6 blockquote{padding:32px;background:var(--greyOpacity100);border-radius:12px;text-align:left;margin:16px 0 16px 0;}.css-1k1kkv6 blockquote p{color:#333d4b;font-weight:600;margin:0;}.css-1k1kkv6 blockquote cite{font-style:normal;}@media (max-width: 700px){.css-1k1kkv6 blockquote{padding:24px;}}.css-1k1kkv6 .wp-block-embed-youtube iframe{width:100%;border-radius:12px;}.css-1k1kkv6 ol{counter-reset:none;}.css-1k1kkv6 hr{border-top:1px solid #e5e8eb;border-right-style:none;border-left-style:none;border-bottom-style:none;margin:2.5rem 0;}.css-1k1kkv6 figure{display:table;text-align:center;}@media (max-width: 700px){.css-1k1kkv6 figure{width:100%;}}.css-1k1kkv6 figure img,.css-1k1kkv6 figure video{max-width:100%;height:auto;border:1px solid rgba(2,32,71,0.05);border-radius:12px;}.css-1k1kkv6 figure.alignright{float:right;margin:0 0 8px 24px;}@media (max-width: 700px){.css-1k1kkv6 figure.alignright{float:none;margin:0;}}.css-1k1kkv6 figcaption{display:table-caption;text-align:center;white-space:pre-wrap;caption-side:bottom;}.css-1k1kkv6 p:empty::before{content:'';}</style><div class="css-1k1kkv6 e132k2572"><div>
+<p>선언적인 코드(Declarative Code)는 프론트엔드 개발을 하다 보면 자주 만나게 되는 개념입니다. 특히 React 생태계에서 웹 서비스를 개발하다 보면 선언적인 코드에 대해 고민하게 되는데요. 이번 아티클에서는 토스 프론트엔드 챕터에서 생각하는 선언적인 코드란 무엇인지, 그리고 실제로 어떻게 선언적인 코드를 작성하는지 공유해드리려고 합니다.</p>
+
+
+
+<h2>선언적인 코드</h2>
+
+
+
+<p>토스 프론트엔드 챕터에서는 선언적인 코드를 “추상화 레벨이 높아진 코드”로 생각하고 있습니다. 예를 들어서, 아래와 같이 주어진 배열의 합을 구하는 함수 <code>sum</code> 을 생각해봅시다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"/><style>.wp-block-code {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-code > div {
+	overflow: auto;
+}
+
+.shcb-language {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+.hljs {
+	box-sizing: border-box;
+}
+
+.hljs.shcb-code-table {
+	display: table;
+	width: 100%;
+}
+
+.hljs.shcb-code-table > .shcb-loc {
+	color: inherit;
+	display: table-row;
+	width: 100%;
+}
+
+.hljs.shcb-code-table .shcb-loc > span {
+	display: table-cell;
+}
+
+.wp-block-code code.hljs:not(.shcb-wrap-lines) {
+	white-space: pre;
+}
+
+.wp-block-code code.hljs.shcb-wrap-lines {
+	white-space: pre-wrap;
+}
+
+.hljs.shcb-line-numbers {
+	border-spacing: 0;
+	counter-reset: line;
+}
+
+.hljs.shcb-line-numbers > .shcb-loc {
+	counter-increment: line;
+}
+
+.hljs.shcb-line-numbers .shcb-loc > span {
+	padding-left: 0.75em;
+}
+
+.hljs.shcb-line-numbers .shcb-loc::before {
+	border-right: 1px solid #ddd;
+	content: counter(line);
+	display: table-cell;
+	padding: 0 0.75em;
+	text-align: right;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: 1%;
+}
+</style><div><code class="hljs language-javascript">sum([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p></p>
+
+
+
+<p><code>sum</code> 함수는 아래와 같이 <code>for</code> 문으로 구현할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">nums: <span class="hljs-built_in">number</span>[]</span>) </span>{
+  <span class="hljs-keyword">let</span> result = <span class="hljs-number">0</span>;
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> num of nums) {
+    result += num;
+  }
+
+  <span class="hljs-keyword">return</span> result;
+}</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>여기에서 <code>sum</code> 함수는 초기값이 0이고, 배열이 가지고 있는 각각의 원소를 순회하면서 결과값에 더하는 작업을 추상화합니다. 덕분에 <code>sum</code> 을 다루는 사람은 복잡한 제어 흐름을 이해할 필요 없이, “배열의 합을 구한다” 라고 하는 동작에 집중하여 함수를 사용할 수 있습니다.</p>
+
+
+
+<p>토스는 이렇게 동작에 집중하여 추상화된 <code>sum</code> 함수를 선언적인 코드로 생각하고 있습니다.</p>
+
+
+
+<p></p>
+
+
+
+<p>여기에서 한 걸음 더 나아가서 <code>sum</code> 함수 내부의 <code>for ... of</code> 문을 살펴봅시다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> num of nums) {
+  <span class="hljs-comment">/* 동작 ... */</span>
+}</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>이 제어 흐름도 선언적인 코드로 볼 수 있습니다. 배열이 가지고 있는 각각의 요소를 순회하는 동작을 추상화하고 있기 때문입니다.</p>
+
+
+
+<p></p>
+
+
+
+<p>실제로 ECMAScript 표준에 따라서 <code>for ... of</code> 가 추상화하는 로직을 그대로 드러내면 아래와 같이 나타낼 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="TypeScript" data-shcb-language-slug="typescript"><div><code class="hljs language-typescript"><span class="hljs-keyword">const</span> iterator = nums[Symbol.iterator]();
+
+<span class="hljs-keyword">let</span> step;
+
+<span class="hljs-keyword">while</span> (!(step = iterator.next()).done) {
+  <span class="hljs-keyword">const</span> num = step;
+  <span class="hljs-comment">/* 동작 ... */</span>
+}</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">TypeScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">typescript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>위와 같이, <code>for ... of</code> 문은 Iterator를 생성하고, Iterator가 끝날 때까지 다음 요소를 차례차례 가져오는 작업을 “각각의 요소를 순회하는 작업”으로 추상화합니다. 이런 관점에서 봤을 때, <code>for ... of</code> 문은 선언적인 코드입니다.</p>
+
+
+
+<p><em>*실제로는 생성된 Iterator를 삭제하는 동작도 존재하므로 보다 추상화되는 로직이 많습니다.</em></p>
+
+
+
+<p></p>
+
+
+
+<p>코드의 관점을 벗어나면 보다 재미있는 예시를 생각할 수 있습니다.</p>
+
+
+
+<p>“왼쪽으로 10걸음 걸어라” 라고 하는 말을 생각합시다. 여기에서</p>
+
+
+
+<ul><li>“왼쪽”은 “북쪽을 바라보았을 때 90도 돌아간 위치” 를 추상화한 것입니다.</li><li>“90도”는 “한 번의 회전을 360등분한 각의 90배만큼 시초선에 대해 시계 반대 방향으로 돌아간 것” 을 추상화한 것입니다.</li><li>“시계 방향” 의 정의는 “북반구에서 해시계의 바늘이 돌아가는 방향” 을 추상화한 것입니다.</li></ul>
+
+
+
+<p>그래서 “왼쪽으로 10걸음 걸어라”는 사실 “북쪽을 바라보았을 때 한 번의 회전을 360등분한 각의 90배만큼 북반구에서 해시계의 바늘이 돌아가는 방향으로 돌아서, 동물이 육상에서 다리를 이용해 움직이는 가장 빠른 방법보다 느린, 신체를 한 지점에서 다른 지점으로 옮겨가는 행위를 10번 반복해라” 라는 말을 추상화한, 선언적인 말로 볼 수 있을 것입니다.</p>
+
+
+
+<p></p>
+
+
+
+<h2>좋은 선언적인 코드 작성하기</h2>
+
+
+
+<p>위에서 선언적인 코드를 추상화 레벨이 높아진 코드로 살펴보았습니다. 그런데 선언적인 코드는 항상 좋은 것일까요? 토스에서는 추상화가 항상 좋은 것은 아닌 것처럼 선언적인 코드도 잘 쓰는 것이 중요하다고 생각합니다.</p>
+
+
+
+<p>토스에서는 좋은 코드를 판단하는 제1원칙을 “수정하기 쉬운 코드”라고 생각합니다. 비즈니스 요구사항은 항상 빠르게 변하기 때문에, 개발자가 기민하게 대응하는 것이 중요하기 때문입니다. 그러면 선언적인 코드가 언제 수정하기 쉽고, 언제 그렇지 않은지 살펴봅시다.</p>
+
+
+
+<p></p>
+
+
+
+<p>먼저 아래와 같은 회원가입 폼 컴포넌트를 살펴봅시다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">&lt;SignUpForm 
+  onSubmit={result =&gt; {
+    <span class="hljs-comment">/* 회원가입 결과에 따라서 특정 동작 수행 ... */</span>
+  }}
+/&gt;</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>위 컴포넌트는 회원가입 로직을 하나의 컴포넌트로 추상화했기 때문에 선언적인 컴포넌트로 볼 수 있습니다.</p>
+
+
+
+<p></p>
+
+
+
+<p>이 코드는 수정하기 쉬울까요?</p>
+
+
+
+<p>먼저 회원가입 폼을 여러 곳에서 사용한다면 각각의 폼을 중복해서 개발할 필요 없이 한 번만 개발하면 되기 때문에 효율적일 것입니다. 또한 회원가입 폼에 변경이 생긴다고 하더라도, 한 곳에서만 바꾸면 다른 화면들에 모두 반영되기 때문에 빨리 수정할 수 있을 것입니다.</p>
+
+
+
+<p></p>
+
+
+
+<p>수정하기 어려운 지점은 없을까요?</p>
+
+
+
+<p>화면마다 <code>SignUpForm</code> 이 조금씩 다르다면, 공통화된 것이 오히려 코드의 복잡함을 가져올 수도 있습니다. 예를 들어서, 어떤 페이지에서는 SNS 회원가입을 일반 이메일 회원가입보다 먼저 보여줘야 할 수 있습니다. 또, 다른 페이지에서는 텍스트나 스타일을 조금씩 다르게 보여줘야 할 수 있습니다.</p>
+
+
+
+<p></p>
+
+
+
+<p>아래와 같이 <code>SignUpForm</code> 에서 바뀔 수 있는 부분이 많다면, 내부 구현과 인터페이스도 복잡해지고, 쓰는 쪽에서도 불편할 것입니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">&lt;SignUpForm
+  signUpOrder={[<span class="hljs-string">&#x27;sns&#x27;</span>, <span class="hljs-string">&#x27;normal&#x27;</span>]
+  title=<span class="hljs-string">&quot;사이트에 어서 오세요&quot;</span>
+  subtitle=<span class="hljs-string">&quot;먼저 회원가입을 해주세요.&quot;</span>
+  primaryButtonColor={colors.blue}
+  secondaryButtonColor={colors.grey}
+  <span class="hljs-comment">/* 많은 Prop 들 ... */</span>
+  onCancel={<span class="hljs-comment">/* ... */</span>}
+  onSubmit={result =&gt; {
+    <span class="hljs-comment">/* 회원가입 결과에 따라서 특정 동작 수행 ... */</span>
+  }}
+/&gt;</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>이처럼 토스에서는 선언적인 코드가 항상 좋은 것이 아니라, 앞으로 제품이 어떻게 변화할지, 비즈니스 요구사항이 어떻게 되는지에 따라서 달라질 수 있다고 생각하고 있습니다. 앞으로 코드의 어떤 부분이 수정될지 예측하고, 이에 따라 적절한 선언 레벨을 따르는 코드를 작성할 필요가 있습니다.</p>
+
+
+
+<p></p>
+
+
+
+<h2>토스의 선언적 라이브러리</h2>
+
+
+
+<p>그렇다면 다양한 상황에서 일반적으로 사용할 수 있는 좋은 선언적 코드는 없을까요? 이번 아티클은 토스 프론트엔드 챕터가 100개가 넘는 서비스들에서 자주 사용하고 있는 선언적 라이브러리에 대해서 소개하고 마무리하려고 합니다.</p>
+
+
+
+<h3>useOverlay</h3>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><div data-rmiz-wrap="visible"><img loading="lazy" src="https://wp.toss.tech/wp-content/uploads/2023/03/스크린샷-2023-03-16-오후-9.48.58-1024x623.png" alt="" class="wp-image-1744" width="512" height="311" srcSet="https://toss.tech/wp-content/uploads/2023/03/스크린샷-2023-03-16-오후-9.48.58-1024x623.png 1024w, https://toss.tech/wp-content/uploads/2023/03/스크린샷-2023-03-16-오후-9.48.58-300x183.png 300w, https://toss.tech/wp-content/uploads/2023/03/스크린샷-2023-03-16-오후-9.48.58-768x467.png 768w, https://toss.tech/wp-content/uploads/2023/03/스크린샷-2023-03-16-오후-9.48.58-1536x935.png 1536w, https://toss.tech/wp-content/uploads/2023/03/스크린샷-2023-03-16-오후-9.48.58-1568x954.png 1568w, https://toss.tech/wp-content/uploads/2023/03/스크린샷-2023-03-16-오후-9.48.58.png 1584w" sizes="(max-width: 512px) 100vw, 512px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure></div>
+
+
+
+<p>토스에서는 BottomSheet, Dialog, Toast와 같이 화면 위에 뜨는 오버레이를 띄워야 하는 상황이 많습니다. 토스는 이렇게 오버레이를 띄우는 동작을 추상화하여 <code>useOverlay</code> 라고 하는 Hook 을 사용합니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> overlay = useOverlay();
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>
+  <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> {
+    overlay.open(({ isOpen, close }) =&gt; {
+      return (
+        <span class="hljs-tag">&lt;<span class="hljs-name">BottomSheet</span> <span class="hljs-attr">open</span>=<span class="hljs-string">{isOpen}</span> <span class="hljs-attr">onClose</span>=<span class="hljs-string">{close}</span>&gt;</span>
+          나는 바텀시트야
+        <span class="hljs-tag">&lt;/<span class="hljs-name">BottomSheet</span>&gt;</span>
+      );
+    })
+  }}
+&gt;
+  바텀시트 열기
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span></code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>예를 들어서, 위 코드에서는 <code>바텀시트 열기</code> 버튼을 누르면 <code>나는 바텀시트야</code> 라고 하는 바텀시트를 띄웁니다.</p>
+
+
+
+<p></p>
+
+
+
+<p><code>useOverlay</code> 가 없었더라면 아래와 같이 제어 흐름이 드러나는 코드를 작성했어야 할 것입니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> [isSheetOpen, setIsSheetOpen] = useState(<span class="hljs-literal">false</span>);
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> setIsSheetOpen(true)}&gt;
+  바텀시트 열기
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">BottomSheet</span> <span class="hljs-attr">open</span>=<span class="hljs-string">{isSheetOpen}</span> <span class="hljs-attr">onClose</span>=<span class="hljs-string">{()</span> =&gt;</span> setIsSheetOpen(false)}&gt;
+  나는 바텀시트야
+<span class="hljs-tag">&lt;/<span class="hljs-name">BottomSheet</span>&gt;</span></span>
+</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><code>useOverlay</code>에 대한 자세한 정보는 Slash libraries의 <a href="https://slash.page/ko/libraries/react/use-overlay/src/useoverlay.i18n/">useOverlay Hook</a>을 참고해주세요.</p>
+
+
+
+<p></p>
+
+
+
+<h3>ImpressionArea</h3>
+
+
+
+<p>토스 앱에서는 어떤 영역이 보여졌는지/숨겨졌는지에 따라서 동작하는 로직이 많습니다. 예를 들어서, 사용자가 특정한 요소를 보면 폭죽을 터뜨리거나 토스트를 보여주는 식이죠. 토스에서는 <code>ImpressionArea</code> 라고 하는 컴포넌트로 이를 추상화하고 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="plaintext" data-shcb-language-slug="plaintext"><div><code class="hljs language-plaintext">&lt;ImpressionArea onImpressionStart={() =&gt; { /* 보여졌을 때 실행 */ }}&gt;
+  &lt;div&gt;내가 보여졌으면 onImpressionStart가 실행돼&lt;/div&gt;
+&lt;/ImpressionArea&gt;
+</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">plaintext</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">plaintext</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><code>ImpressionArea</code> 가 없었더라면, 복잡한 <code>IntersectionObserver</code> API 를 사용하거나, 복잡한 Scroll 이벤트 핸들러 로직을 사용해야 했을 것입니다.</p>
+
+
+
+<p><code>ImpressionArea</code> 에 대한 자세한 정보는 Slash libraries의 <a href="https://slash.page/libraries/react/impression-area/src/impressionarea.i18n/">ImpressionArea 컴포넌트</a>를 참고해주세요.</p>
+
+
+
+<p></p>
+
+
+
+<h3>LoggingClick</h3>
+
+
+
+<p>토스에서는 데이터 주도 의사결정을 위해서 화면에 진입하는 사용자가 몇 명인지, 그 중 몇 명이 버튼을 누르는지를 기록하는 경우가 있습니다. 이런 누르는 동작에 대한 기록을 추상화하여 <code>LoggingClick</code> 컴포넌트를 사용하고 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="plaintext" data-shcb-language-slug="plaintext"><div><code class="hljs language-plaintext">&lt;LoggingClick params={{ price }}&gt;
+  &lt;button onClick={buy}&gt;사기&lt;/button&gt;
+&lt;/LoggingClick&gt;
+</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">plaintext</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">plaintext</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>예를 들어서, 위 코드에서 사용자가 버튼을 누르면 “사기” 버튼에 대한 동작이 분석 시스템에 기록됩니다.</p>
+
+
+
+<p><code>LoggingClick</code> 이 없었다면 아래와 같이 <code>log</code> 함수를 실행하는 것이 그대로 드러났어야 할 것입니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="plaintext" data-shcb-language-slug="plaintext"><div><code class="hljs language-plaintext">&lt;button
+  onClick={() =&gt; {
+    log({ title: &#x27;사기&#x27;, price });
+    buy();
+  }}
+&gt;
+  사기
+&lt;/button&gt;
+</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">plaintext</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">plaintext</span><span class="shcb-language__paren">)</span></small></pre></div></div><style data-emotion="css auig7l">.css-auig7l{margin-top:96px;}</style><style data-emotion="css x7fajo">.css-x7fajo{margin-top:96px;}.css-x7fajo>*:not(style)~*:not(style){margin-left:24px;}</style><style data-emotion="css 6rfvv8">.css-6rfvv8{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;margin-top:96px;}.css-6rfvv8>*:not(style)~*:not(style){margin-left:24px;}</style><div class="css-6rfvv8"><style data-emotion="css 1n0u3h">.css-1n0u3h{background-color:#f9fafb;width:100%;height:auto;border-radius:12px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:48px;}@media (max-width: 700px){.css-1n0u3h{padding:32px;}}</style><div class="css-1n0u3h e1t1xt3a7"><style data-emotion="css 6cc9f0">.css-6cc9f0{font-size:24px;font-weight:700;margin-bottom:16px;color:#4e5968;}</style><h2 class="css-6cc9f0 e1t1xt3a6">재미있게 읽으셨나요?</h2><style data-emotion="css 1wmgpcn">.css-1wmgpcn{font-size:16px;line-height:1.5;font-weight:600;color:#6b7684;margin-bottom:4px;}</style><p class="css-1wmgpcn e1t1xt3a5">좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.</p><style data-emotion="css 4qu8li">.css-4qu8li{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:16px;}</style><div class="css-4qu8li e1t1xt3a3"><style data-emotion="css 1fmr5ax">.css-1fmr5ax{display:block;font-family:'tossface';font-size:40px;cursor:pointer;margin:0 12px;-webkit-transition:0.15s ease-in-out all;transition:0.15s ease-in-out all;}.css-1fmr5ax a{-webkit-text-decoration:none;text-decoration:none;}.css-1fmr5ax:hover{-webkit-transform:scale(1.2);-moz-transform:scale(1.2);-ms-transform:scale(1.2);transform:scale(1.2);}</style><div class="css-1fmr5ax e1t1xt3a1">😍</div><div class="css-1fmr5ax e1t1xt3a1">🤔</div></div><style data-emotion="css 1p3zmjw">.css-1p3zmjw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;margin-top:16px;}.css-1p3zmjw button,.css-1p3zmjw a{margin:0 12px;}@media (max-width: 700px){.css-1p3zmjw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;}.css-1p3zmjw button,.css-1p3zmjw a{width:100%;margin:8px 0;}}</style><div class="css-1p3zmjw e1t1xt3a0"><style data-emotion="css 1u8jkqx">.css-1u8jkqx{display:grid;grid-template-columns:min-content auto;grid-column-gap:8px;}</style><button class="p-button p-button--primary p-button--inline p-button--weak p-button--default p-button--has-icon padding--base css-1u8jkqx" type="button" aria-disabled="false"><span class="icon p-icon icon--colored p-icon--colored" aria-hidden="true" role="presentation" style="height:16px;width:16px;min-width:16px;color:#3182f6"></span>아티클 공유하기</button></div></div></div></article><style data-emotion="css 1lsuzal">.css-1lsuzal{margin-top:100px;}.css-1lsuzal::before{content:'';position:absolute;width:100%;height:1px;left:0;border-bottom:1px solid #e5e8eb;}</style><div class="css-1lsuzal e132k2571"><style data-emotion="css 1ympfnp">.css-1ympfnp{display:inline-block;width:100%;font-size:20px;margin:34px 0 40px 0;}</style><span class="typography typography--h3 typography--bold color--grey800 css-1ympfnp e132k2570">이어지는 글</span><style data-emotion="css vivlm7">.css-vivlm7{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer;margin-bottom:40px;}.css-vivlm7:last-of-type{margin-bottom:0px;}.css-vivlm7:hover .egyklng4{color:#3182f6;}</style><div class="css-vivlm7 egyklng3"><style data-emotion="css bc0lqn">.css-bc0lqn{width:80px;height:80px;margin-right:20px;border-radius:12px;object-fit:cover;}@media (max-width: 700px){.css-bc0lqn{width:64px;height:64px;}}</style><img srcSet="https://toss.tech/wp-content/uploads/2023/03/00017-3291509353-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/00017-3291509353-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/00017-3291509353-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/00017-3291509353.png 1200w" class="css-bc0lqn egyklng2"/><style data-emotion="css 1fttcpj">.css-1fttcpj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}</style><div class="css-1fttcpj egyklng1"><style data-emotion="css p4blj2">.css-p4blj2{font-size:24px;margin-bottom:4px;word-break:keep-all;line-height:1.4;overflow-wrap:break-word;-webkit-transition:color 0.3s ease;transition:color 0.3s ease;-webkit-line-clamp:2;display:block;}@media (max-width: 700px){.css-p4blj2{font-size:18px;-webkit-line-clamp:2;}}</style><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">tosspayments-restdocs: 선언형 문서 작성 라이브러리</span><style data-emotion="css 1jxhn1e">.css-1jxhn1e{color:#8b95a1;}</style><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 03. 22</span></div></div><div class="css-vivlm7 egyklng3"><img srcSet="https://toss.tech/wp-content/uploads/2023/01/js_center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/01/js_center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/01/js_center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/01/js_center.png 1200w" class="css-bc0lqn egyklng2"/><div class="css-1fttcpj egyklng1"><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">똑똑하게 브라우저 Polyfill 관리하기</span><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 01. 21</span></div></div></div></div></div><style data-emotion="css 1d2vuhc">.css-1d2vuhc{padding:60px 24px;word-break:keep-all;overflow-wrap:break-word;background:rgba(2,9,19,0.91);}@media (max-width: 700px){.css-1d2vuhc{padding-top:24px;}}</style><section class="css-1d2vuhc eqrolup4"><style data-emotion="css yf0lpd">.css-yf0lpd{display:grid;grid-template-columns:3fr 7fr;grid-column-gap:20px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:640px;margin:0 auto;content-visibility:auto;}@media (max-width: 700px){.css-yf0lpd{grid-template-rows:min-content auto;grid-template-columns:1fr;grid-row-gap:24px;}}</style><div class="css-yf0lpd eqrolup2"><style data-emotion="css 1d33yk5">.css-1d33yk5{width:100%;}@media (max-width: 700px){.css-1d33yk5{width:90px;}}</style><img src="https://static.toss.im/3d/website_code_blue_alpha.png" alt="" class="css-1d33yk5 eqrolup3"/><style data-emotion="css 1gb2pj4">.css-1gb2pj4>*:not(style)~*:not(style){margin-top:24px;}</style><style data-emotion="css 7xmgw5">.css-7xmgw5{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-7xmgw5>*:not(style)~*:not(style){margin-top:24px;}</style><div class="css-7xmgw5"><style data-emotion="css 1pbuvpm">.css-1pbuvpm>*:not(style)~*:not(style){margin-top:8px;}</style><style data-emotion="css nbpfuv">.css-nbpfuv{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-nbpfuv>*:not(style)~*:not(style){margin-top:8px;}</style><div class="css-nbpfuv"><style data-emotion="css 19gu4b8">.css-19gu4b8{margin:0;font-size:26px;line-height:1.4;color:#ffffff;}@media (max-width: 700px){.css-19gu4b8{font-size:20px;}}</style><h3 class="css-19gu4b8 eqrolup1">토스팀이 만드는 수많은 혁신의 순간들</h3><style data-emotion="css shfxsq">.css-shfxsq{font-size:17px;line-height:1.5;color:#e5e8eb;}@media (max-width: 700px){.css-shfxsq{font-size:16px;}}</style><div class="css-shfxsq eqrolup0">당신과 함께 만들고 싶습니다.<br/>지금, 토스팀에 합류하세요.</div></div><a class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s" aria-disabled="false" href="https://toss.im/career/jobs?gh_src=38b73b7a3us">채용 중인 공고 보기</a></div></div></section><footer class="p-footer p-footer--light"><div class="p-footer__inner"><div class="p-footer__site-group-list"><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스테크</div></li><li class="p-footer__site-group-item"><a href="mailto:techblog@toss.im">의견 보내기</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스</div></li><li class="p-footer__site-group-item"><a href="https://toss.im">홈페이지</a></li><li class="p-footer__site-group-item"><a href="https://team.toss.im">회사 소개</a></li><li class="p-footer__site-group-item"><a href="https://toss.im/career">채용</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">고객센터</div></li><li class="p-footer__site-group-item"><a href="tel:1599-4905">전화: 1599-4905 (24시간 연중무휴)</a></li><li class="p-footer__site-group-item"><a href="mailto:support.toss.im">이메일: support@toss.im</a></li><li class="p-footer__site-group-item"><a href="https://goto.kakao.com/@toss">카카오톡: @toss</a></li></ul></div><address class="p-footer__address"><strong class="p-footer__address__company-name">㈜비바리퍼블리카</strong>Copyright © Viva Republica, Inc. All Rights Reserved.</address><ul class="p-footer__term-wrapper"></ul><ul class="p-footer__social-list"><li class="p-footer__social-list-item"><a aria-label="Toss Facebook" target="_blank" href="https://www.facebook.com/toss.revolution"><img src="https://static.toss.im/assets/homepage/safety/icn-facebook.svg" alt="Toss Facebook"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss blog" target="_blank" href="https://blog.toss.im"><img src="https://static.toss.im/assets/homepage/safety/icn-blog.svg" alt="Toss blog"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Naver Post" target="_blank" href="https://post.naver.com/tossblog"><img src="https://static.toss.im/assets/homepage/safety/icn-naver.svg" alt="Toss Naver Post"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Twitter" target="_blank" href="https://twitter.com/toss__official"><img src="https://static.toss.im/assets/homepage/safety/icn-twitter.svg" alt="Toss Twitter"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Instagram" target="_blank" href="https://www.instagram.com/toss.im/"><img src="https://static.toss.im/assets/homepage/safety/icn-instagram.svg" alt="Toss Instagram"/></a></li></ul></div></footer><div id="tds-pc__portal-container"></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"article":{"title":"선언적인 코드 작성하기","content":"\n\u003cp\u003e선언적인 코드(Declarative Code)는 프론트엔드 개발을 하다 보면 자주 만나게 되는 개념입니다. 특히 React 생태계에서 웹 서비스를 개발하다 보면 선언적인 코드에 대해 고민하게 되는데요. 이번 아티클에서는 토스 프론트엔드 챕터에서 생각하는 선언적인 코드란 무엇인지, 그리고 실제로 어떻게 선언적인 코드를 작성하는지 공유해드리려고 합니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003e선언적인 코드\u003c/h2\u003e\n\n\n\n\u003cp\u003e토스 프론트엔드 챕터에서는 선언적인 코드를 “추상화 레벨이 높아진 코드”로 생각하고 있습니다. 예를 들어서, 아래와 같이 주어진 배열의 합을 구하는 함수 \u003ccode\u003esum\u003c/code\u003e 을 생각해봅시다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-1\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003clink rel='stylesheet' id='syntax-highlighting-code-block-css'  href='https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1' media='all' /\u003e\u003cstyle\u003e.wp-block-code {\n\tborder: 0;\n\tpadding: 0;\n}\n\n.wp-block-code \u003e div {\n\toverflow: auto;\n}\n\n.shcb-language {\n\tborder: 0;\n\tclip: rect(1px, 1px, 1px, 1px);\n\t-webkit-clip-path: inset(50%);\n\tclip-path: inset(50%);\n\theight: 1px;\n\tmargin: -1px;\n\toverflow: hidden;\n\tpadding: 0;\n\tposition: absolute;\n\twidth: 1px;\n\tword-wrap: normal;\n\tword-break: normal;\n}\n\n.hljs {\n\tbox-sizing: border-box;\n}\n\n.hljs.shcb-code-table {\n\tdisplay: table;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table \u003e .shcb-loc {\n\tcolor: inherit;\n\tdisplay: table-row;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table .shcb-loc \u003e span {\n\tdisplay: table-cell;\n}\n\n.wp-block-code code.hljs:not(.shcb-wrap-lines) {\n\twhite-space: pre;\n}\n\n.wp-block-code code.hljs.shcb-wrap-lines {\n\twhite-space: pre-wrap;\n}\n\n.hljs.shcb-line-numbers {\n\tborder-spacing: 0;\n\tcounter-reset: line;\n}\n\n.hljs.shcb-line-numbers \u003e .shcb-loc {\n\tcounter-increment: line;\n}\n\n.hljs.shcb-line-numbers .shcb-loc \u003e span {\n\tpadding-left: 0.75em;\n}\n\n.hljs.shcb-line-numbers .shcb-loc::before {\n\tborder-right: 1px solid #ddd;\n\tcontent: counter(line);\n\tdisplay: table-cell;\n\tpadding: 0 0.75em;\n\ttext-align: right;\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\tuser-select: none;\n\twhite-space: nowrap;\n\twidth: 1%;\n}\n\u003c/style\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003esum([\u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e, \u003cspan class=\"hljs-number\"\u003e2\u003c/span\u003e, \u003cspan class=\"hljs-number\"\u003e3\u003c/span\u003e]);\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-1\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003esum\u003c/code\u003e 함수는 아래와 같이 \u003ccode\u003efor\u003c/code\u003e 문으로 구현할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-2\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003esum\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003enums: \u003cspan class=\"hljs-built_in\"\u003enumber\u003c/span\u003e[]\u003c/span\u003e) \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003elet\u003c/span\u003e result = \u003cspan class=\"hljs-number\"\u003e0\u003c/span\u003e;\n\n  \u003cspan class=\"hljs-keyword\"\u003efor\u003c/span\u003e (\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e num of nums) {\n    result += num;\n  }\n\n  \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e result;\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-2\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e여기에서 \u003ccode\u003esum\u003c/code\u003e 함수는 초기값이 0이고, 배열이 가지고 있는 각각의 원소를 순회하면서 결과값에 더하는 작업을 추상화합니다. 덕분에 \u003ccode\u003esum\u003c/code\u003e 을 다루는 사람은 복잡한 제어 흐름을 이해할 필요 없이, “배열의 합을 구한다” 라고 하는 동작에 집중하여 함수를 사용할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e토스는 이렇게 동작에 집중하여 추상화된 \u003ccode\u003esum\u003c/code\u003e 함수를 선언적인 코드로 생각하고 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e여기에서 한 걸음 더 나아가서 \u003ccode\u003esum\u003c/code\u003e 함수 내부의 \u003ccode\u003efor ... of\u003c/code\u003e 문을 살펴봅시다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-3\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003efor\u003c/span\u003e (\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e num of nums) {\n  \u003cspan class=\"hljs-comment\"\u003e/* 동작 ... */\u003c/span\u003e\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-3\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e이 제어 흐름도 선언적인 코드로 볼 수 있습니다. 배열이 가지고 있는 각각의 요소를 순회하는 동작을 추상화하고 있기 때문입니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e실제로 ECMAScript 표준에 따라서 \u003ccode\u003efor ... of\u003c/code\u003e 가 추상화하는 로직을 그대로 드러내면 아래와 같이 나타낼 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-4\" data-shcb-language-name=\"TypeScript\" data-shcb-language-slug=\"typescript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-typescript\"\u003e\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e iterator = nums[Symbol.iterator]();\n\n\u003cspan class=\"hljs-keyword\"\u003elet\u003c/span\u003e step;\n\n\u003cspan class=\"hljs-keyword\"\u003ewhile\u003c/span\u003e (!(step = iterator.next()).done) {\n  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e num = step;\n  \u003cspan class=\"hljs-comment\"\u003e/* 동작 ... */\u003c/span\u003e\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-4\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eTypeScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003etypescript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e위와 같이, \u003ccode\u003efor ... of\u003c/code\u003e 문은 Iterator를 생성하고, Iterator가 끝날 때까지 다음 요소를 차례차례 가져오는 작업을 “각각의 요소를 순회하는 작업”으로 추상화합니다. 이런 관점에서 봤을 때, \u003ccode\u003efor ... of\u003c/code\u003e 문은 선언적인 코드입니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cem\u003e*실제로는 생성된 Iterator를 삭제하는 동작도 존재하므로 보다 추상화되는 로직이 많습니다.\u003c/em\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e코드의 관점을 벗어나면 보다 재미있는 예시를 생각할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e“왼쪽으로 10걸음 걸어라” 라고 하는 말을 생각합시다. 여기에서\u003c/p\u003e\n\n\n\n\u003cul\u003e\u003cli\u003e“왼쪽”은 “북쪽을 바라보았을 때 90도 돌아간 위치” 를 추상화한 것입니다.\u003c/li\u003e\u003cli\u003e“90도”는 “한 번의 회전을 360등분한 각의 90배만큼 시초선에 대해 시계 반대 방향으로 돌아간 것” 을 추상화한 것입니다.\u003c/li\u003e\u003cli\u003e“시계 방향” 의 정의는 “북반구에서 해시계의 바늘이 돌아가는 방향” 을 추상화한 것입니다.\u003c/li\u003e\u003c/ul\u003e\n\n\n\n\u003cp\u003e그래서 “왼쪽으로 10걸음 걸어라”는 사실 “북쪽을 바라보았을 때 한 번의 회전을 360등분한 각의 90배만큼 북반구에서 해시계의 바늘이 돌아가는 방향으로 돌아서, 동물이 육상에서 다리를 이용해 움직이는 가장 빠른 방법보다 느린, 신체를 한 지점에서 다른 지점으로 옮겨가는 행위를 10번 반복해라” 라는 말을 추상화한, 선언적인 말로 볼 수 있을 것입니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch2\u003e좋은 선언적인 코드 작성하기\u003c/h2\u003e\n\n\n\n\u003cp\u003e위에서 선언적인 코드를 추상화 레벨이 높아진 코드로 살펴보았습니다. 그런데 선언적인 코드는 항상 좋은 것일까요? 토스에서는 추상화가 항상 좋은 것은 아닌 것처럼 선언적인 코드도 잘 쓰는 것이 중요하다고 생각합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e토스에서는 좋은 코드를 판단하는 제1원칙을 “수정하기 쉬운 코드”라고 생각합니다. 비즈니스 요구사항은 항상 빠르게 변하기 때문에, 개발자가 기민하게 대응하는 것이 중요하기 때문입니다. 그러면 선언적인 코드가 언제 수정하기 쉽고, 언제 그렇지 않은지 살펴봅시다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e먼저 아래와 같은 회원가입 폼 컴포넌트를 살펴봅시다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-5\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u0026lt;SignUpForm \n  onSubmit={result =\u0026gt; {\n    \u003cspan class=\"hljs-comment\"\u003e/* 회원가입 결과에 따라서 특정 동작 수행 ... */\u003c/span\u003e\n  }}\n/\u0026gt;\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-5\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e위 컴포넌트는 회원가입 로직을 하나의 컴포넌트로 추상화했기 때문에 선언적인 컴포넌트로 볼 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e이 코드는 수정하기 쉬울까요?\u003c/p\u003e\n\n\n\n\u003cp\u003e먼저 회원가입 폼을 여러 곳에서 사용한다면 각각의 폼을 중복해서 개발할 필요 없이 한 번만 개발하면 되기 때문에 효율적일 것입니다. 또한 회원가입 폼에 변경이 생긴다고 하더라도, 한 곳에서만 바꾸면 다른 화면들에 모두 반영되기 때문에 빨리 수정할 수 있을 것입니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e수정하기 어려운 지점은 없을까요?\u003c/p\u003e\n\n\n\n\u003cp\u003e화면마다 \u003ccode\u003eSignUpForm\u003c/code\u003e 이 조금씩 다르다면, 공통화된 것이 오히려 코드의 복잡함을 가져올 수도 있습니다. 예를 들어서, 어떤 페이지에서는 SNS 회원가입을 일반 이메일 회원가입보다 먼저 보여줘야 할 수 있습니다. 또, 다른 페이지에서는 텍스트나 스타일을 조금씩 다르게 보여줘야 할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e아래와 같이 \u003ccode\u003eSignUpForm\u003c/code\u003e 에서 바뀔 수 있는 부분이 많다면, 내부 구현과 인터페이스도 복잡해지고, 쓰는 쪽에서도 불편할 것입니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-6\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u0026lt;SignUpForm\n  signUpOrder={[\u003cspan class=\"hljs-string\"\u003e'sns'\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e'normal'\u003c/span\u003e]\n  title=\u003cspan class=\"hljs-string\"\u003e\"사이트에 어서 오세요\"\u003c/span\u003e\n  subtitle=\u003cspan class=\"hljs-string\"\u003e\"먼저 회원가입을 해주세요.\"\u003c/span\u003e\n  primaryButtonColor={colors.blue}\n  secondaryButtonColor={colors.grey}\n  \u003cspan class=\"hljs-comment\"\u003e/* 많은 Prop 들 ... */\u003c/span\u003e\n  onCancel={\u003cspan class=\"hljs-comment\"\u003e/* ... */\u003c/span\u003e}\n  onSubmit={result =\u0026gt; {\n    \u003cspan class=\"hljs-comment\"\u003e/* 회원가입 결과에 따라서 특정 동작 수행 ... */\u003c/span\u003e\n  }}\n/\u0026gt;\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-6\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e이처럼 토스에서는 선언적인 코드가 항상 좋은 것이 아니라, 앞으로 제품이 어떻게 변화할지, 비즈니스 요구사항이 어떻게 되는지에 따라서 달라질 수 있다고 생각하고 있습니다. 앞으로 코드의 어떤 부분이 수정될지 예측하고, 이에 따라 적절한 선언 레벨을 따르는 코드를 작성할 필요가 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch2\u003e토스의 선언적 라이브러리\u003c/h2\u003e\n\n\n\n\u003cp\u003e그렇다면 다양한 상황에서 일반적으로 사용할 수 있는 좋은 선언적 코드는 없을까요? 이번 아티클은 토스 프론트엔드 챕터가 100개가 넘는 서비스들에서 자주 사용하고 있는 선언적 라이브러리에 대해서 소개하고 마무리하려고 합니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003euseOverlay\u003c/h3\u003e\n\n\n\n\u003cdiv class=\"wp-block-image\"\u003e\u003cfigure class=\"aligncenter size-large is-resized\"\u003e\u003cimg loading=\"lazy\" src=\"https://wp.toss.tech/wp-content/uploads/2023/03/스크린샷-2023-03-16-오후-9.48.58-1024x623.png\" alt=\"\" class=\"wp-image-1744\" width=\"512\" height=\"311\" srcset=\"https://toss.tech/wp-content/uploads/2023/03/스크린샷-2023-03-16-오후-9.48.58-1024x623.png 1024w, https://toss.tech/wp-content/uploads/2023/03/스크린샷-2023-03-16-오후-9.48.58-300x183.png 300w, https://toss.tech/wp-content/uploads/2023/03/스크린샷-2023-03-16-오후-9.48.58-768x467.png 768w, https://toss.tech/wp-content/uploads/2023/03/스크린샷-2023-03-16-오후-9.48.58-1536x935.png 1536w, https://toss.tech/wp-content/uploads/2023/03/스크린샷-2023-03-16-오후-9.48.58-1568x954.png 1568w, https://toss.tech/wp-content/uploads/2023/03/스크린샷-2023-03-16-오후-9.48.58.png 1584w\" sizes=\"(max-width: 512px) 100vw, 512px\" /\u003e\u003c/figure\u003e\u003c/div\u003e\n\n\n\n\u003cp\u003e토스에서는 BottomSheet, Dialog, Toast와 같이 화면 위에 뜨는 오버레이를 띄워야 하는 상황이 많습니다. 토스는 이렇게 오버레이를 띄우는 동작을 추상화하여 \u003ccode\u003euseOverlay\u003c/code\u003e 라고 하는 Hook 을 사용합니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-7\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e overlay = useOverlay();\n\n\u003cspan class=\"xml\"\u003e\u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003ebutton\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003eonClick\u003c/span\u003e=\u003cspan class=\"hljs-string\"\u003e{()\u003c/span\u003e =\u0026gt;\u003c/span\u003e {\n    overlay.open(({ isOpen, close }) =\u0026gt; {\n      return (\n        \u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003eBottomSheet\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eopen\u003c/span\u003e=\u003cspan class=\"hljs-string\"\u003e{isOpen}\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eonClose\u003c/span\u003e=\u003cspan class=\"hljs-string\"\u003e{close}\u003c/span\u003e\u0026gt;\u003c/span\u003e\n          나는 바텀시트야\n        \u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u003cspan class=\"hljs-name\"\u003eBottomSheet\u003c/span\u003e\u0026gt;\u003c/span\u003e\n      );\n    })\n  }}\n\u0026gt;\n  바텀시트 열기\n\u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u003cspan class=\"hljs-name\"\u003ebutton\u003c/span\u003e\u0026gt;\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-7\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e예를 들어서, 위 코드에서는 \u003ccode\u003e바텀시트 열기\u003c/code\u003e 버튼을 누르면 \u003ccode\u003e나는 바텀시트야\u003c/code\u003e 라고 하는 바텀시트를 띄웁니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003euseOverlay\u003c/code\u003e 가 없었더라면 아래와 같이 제어 흐름이 드러나는 코드를 작성했어야 할 것입니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-8\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e [isSheetOpen, setIsSheetOpen] = useState(\u003cspan class=\"hljs-literal\"\u003efalse\u003c/span\u003e);\n\n\u003cspan class=\"xml\"\u003e\u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003ebutton\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eonClick\u003c/span\u003e=\u003cspan class=\"hljs-string\"\u003e{()\u003c/span\u003e =\u0026gt;\u003c/span\u003e setIsSheetOpen(true)}\u0026gt;\n  바텀시트 열기\n\u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u003cspan class=\"hljs-name\"\u003ebutton\u003c/span\u003e\u0026gt;\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"xml\"\u003e\u003cspan class=\"hljs-tag\"\u003e\u0026lt;\u003cspan class=\"hljs-name\"\u003eBottomSheet\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eopen\u003c/span\u003e=\u003cspan class=\"hljs-string\"\u003e{isSheetOpen}\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eonClose\u003c/span\u003e=\u003cspan class=\"hljs-string\"\u003e{()\u003c/span\u003e =\u0026gt;\u003c/span\u003e setIsSheetOpen(false)}\u0026gt;\n  나는 바텀시트야\n\u003cspan class=\"hljs-tag\"\u003e\u0026lt;/\u003cspan class=\"hljs-name\"\u003eBottomSheet\u003c/span\u003e\u0026gt;\u003c/span\u003e\u003c/span\u003e\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-8\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ccode\u003euseOverlay\u003c/code\u003e에 대한 자세한 정보는 Slash libraries의 \u003ca href=\"https://slash.page/ko/libraries/react/use-overlay/src/useoverlay.i18n/\"\u003euseOverlay Hook\u003c/a\u003e을 참고해주세요.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003eImpressionArea\u003c/h3\u003e\n\n\n\n\u003cp\u003e토스 앱에서는 어떤 영역이 보여졌는지/숨겨졌는지에 따라서 동작하는 로직이 많습니다. 예를 들어서, 사용자가 특정한 요소를 보면 폭죽을 터뜨리거나 토스트를 보여주는 식이죠. 토스에서는 \u003ccode\u003eImpressionArea\u003c/code\u003e 라고 하는 컴포넌트로 이를 추상화하고 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-9\" data-shcb-language-name=\"plaintext\" data-shcb-language-slug=\"plaintext\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-plaintext\"\u003e\u0026lt;ImpressionArea onImpressionStart={() =\u0026gt; { /* 보여졌을 때 실행 */ }}\u0026gt;\n  \u0026lt;div\u0026gt;내가 보여졌으면 onImpressionStart가 실행돼\u0026lt;/div\u0026gt;\n\u0026lt;/ImpressionArea\u0026gt;\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-9\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eplaintext\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003eplaintext\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ccode\u003eImpressionArea\u003c/code\u003e 가 없었더라면, 복잡한 \u003ccode\u003eIntersectionObserver\u003c/code\u003e API 를 사용하거나, 복잡한 Scroll 이벤트 핸들러 로직을 사용해야 했을 것입니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003eImpressionArea\u003c/code\u003e 에 대한 자세한 정보는 Slash libraries의 \u003ca href=\"https://slash.page/libraries/react/impression-area/src/impressionarea.i18n/\"\u003eImpressionArea 컴포넌트\u003c/a\u003e를 참고해주세요.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003eLoggingClick\u003c/h3\u003e\n\n\n\n\u003cp\u003e토스에서는 데이터 주도 의사결정을 위해서 화면에 진입하는 사용자가 몇 명인지, 그 중 몇 명이 버튼을 누르는지를 기록하는 경우가 있습니다. 이런 누르는 동작에 대한 기록을 추상화하여 \u003ccode\u003eLoggingClick\u003c/code\u003e 컴포넌트를 사용하고 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-10\" data-shcb-language-name=\"plaintext\" data-shcb-language-slug=\"plaintext\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-plaintext\"\u003e\u0026lt;LoggingClick params={{ price }}\u0026gt;\n  \u0026lt;button onClick={buy}\u0026gt;사기\u0026lt;/button\u0026gt;\n\u0026lt;/LoggingClick\u0026gt;\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-10\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eplaintext\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003eplaintext\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e예를 들어서, 위 코드에서 사용자가 버튼을 누르면 “사기” 버튼에 대한 동작이 분석 시스템에 기록됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003eLoggingClick\u003c/code\u003e 이 없었다면 아래와 같이 \u003ccode\u003elog\u003c/code\u003e 함수를 실행하는 것이 그대로 드러났어야 할 것입니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-11\" data-shcb-language-name=\"plaintext\" data-shcb-language-slug=\"plaintext\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-plaintext\"\u003e\u0026lt;button\n  onClick={() =\u0026gt; {\n    log({ title: '사기', price });\n    buy();\n  }}\n\u0026gt;\n  사기\n\u0026lt;/button\u0026gt;\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-11\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eplaintext\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003eplaintext\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e","date":"2023-03-16T21:41:13","excerpt":"\u003cp\u003e선언적인 코드, 토스 프론트엔드 챕터는 어떻게 생각을 하고 있을까요?\u003c/p\u003e\n","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/03/declarative-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/declarative-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/declarative-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/declarative.png 1200w"}},"metadata":{"ogBackground":"https://static.toss.im/assets/toss-tech/declarative_right.png","ogImageTitle":"선언적인 코드\r\n작성하기","ogGenerateImage":true,"recruitTitle":"재미있게 읽으셨나요?","recruitUrl":null,"form1Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=1729\u0026title=선언적인_코드_작성하기\u0026reaction=good","form2Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=1729\u0026title=선언적인_코드_작성하기\u0026reaction=bad","formDescription":"좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.","form1Label":"😍","form2Label":"🤔","recruitDescription":null},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}}]},"author":{"node":{"id":"dXNlcjoy","firstName":"서진","lastName":"박","description":"토스코어 Client Platform에서 개발자 경험과 웹 성능을 개선하고 있습니다.","avatar":{"url":"https://wp.toss.tech/wp-content/uploads/2021/06/E01JAGTHP8R-U01K6L12VSL-0974fc35250c-512-312x312.png"},"role":{"role":"Frontend Developer"}}}},"relatedArticles":[{"title":"tosspayments-restdocs: 선언형 문서 작성 라이브러리","slug":"tosspayments-restdocs","date":"2023-03-22T14:29:51","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/03/00017-3291509353-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/00017-3291509353-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/00017-3291509353-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/00017-3291509353.png 1200w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}}]}},{"title":"똑똑하게 브라우저 Polyfill 관리하기","slug":"smart-polyfills","date":"2023-01-21T12:52:16","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/01/js_center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/01/js_center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/01/js_center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/01/js_center.png 1200w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}},{"node":{"id":"dGVybTox","name":"Uncategorized"}}]}}]},"__N_SSP":true},"page":"/article/[slug]","query":{"slug":"frontend-declarative-code"},"buildId":"QqBxegmptuUDYc8oCREsD","assetPrefix":"https://static.toss.im/frontend/toss-tech","runtimeConfig":{"ENV":"live","NODE_ENV":"production","PORT":"3000","ASSET_PREFIX":"https://static.toss.im/frontend/toss-tech","SERVICE":"toss-tech","SENTRY":{"DSN":"https://5eff657ed6ef486fb8af2dc5f9508abd@sentry.io/1242586","PUBLIC_KEY":"5eff657ed6ef486fb8af2dc5f9508abd","RELEASE":"toss-tech_1.0.103","SERVICE":"toss-tech","SERVICE_VERSION":"1.0.103"},"RENDER_TYPE":"ssr"},"isFallback":false,"gssp":true,"customServer":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="https://static.toss.im/tds-pc/3.232.0/main.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/rss+xml" href="/rss.xml"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/atom+xml" href="/atom.xml"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/main.css"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/others.css"/><link rel="stylesheet" href="https://static.toss.im/tossface-font/tossface.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/activitystream+json" href="/feed.json"/><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"/><meta name="author" content="Viva Republica"/><link rel="preconnect" href="https://static.toss.im"/><link rel="shortcut icon" href="https://static.toss.im/tds/favicon/favicon.ico"/><link rel="icon" type="image/png" sizes="16x16" href="https://static.toss.im/tds/favicon/favicon-16x16.png"/><link rel="icon" type="image/png" sizes="32x32" href="https://static.toss.im/tds/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="48x48" href="https://static.toss.im/tds/favicon/favicon-48x48.png"/><link rel="icon" type="image/png" sizes="196x196" href="https://static.toss.im/tds/favicon/favicon-196x196.png"/><link rel="apple-touch-icon" sizes="57x57" href="https://static.toss.im/tds/favicon/apple-touch-icon-57x57.png"/><link rel="apple-touch-icon" sizes="72x72" href="https://static.toss.im/tds/favicon/apple-touch-icon-72x72.png"/><link rel="apple-touch-icon" sizes="114x114" href="https://static.toss.im/tds/favicon/apple-touch-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="https://static.toss.im/tds/favicon/apple-touch-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="https://static.toss.im/tds/favicon/apple-touch-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="https://static.toss.im/tds/favicon/apple-touch-icon-152x152.png"/><meta name="msapplication-TileImage" content="https://static.toss.im/tds/favicon/mstile-144x144.png"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PQ5NV18TH1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-PQ5NV18TH1');</script><script>(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:2399367,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script><title>TypeScript 타입 시스템 뜯어보기: 타입 호환성</title><meta name="twitter:creator" content="Viva Republica"/><meta name="twitter:site" content="@Toss_service"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:title" content="TypeScript 타입 시스템 뜯어보기: 타입 호환성"/><meta name="twitter:title" content="TypeScript 타입 시스템 뜯어보기: 타입 호환성"/><meta property="og:description" content="타입호환성은 무엇이며 왜 필요할까요? 타입호환이 지원되지 않는 경우가 존재한다는 것을 아셨나요? 평소 익숙했던 개념들에 대해 질문을 던져가며 TypeScript 타입 시스템에 관해 심도있게 알아보고자 합니다. 
+"/><meta name="twitter:description" content="타입호환성은 무엇이며 왜 필요할까요? 타입호환이 지원되지 않는 경우가 존재한다는 것을 아셨나요? 평소 익숙했던 개념들에 대해 질문을 던져가며 TypeScript 타입 시스템에 관해 심도있게 알아보고자 합니다. 
+"/><meta property="og:image" content="https://og.toss.tech?title=TypeScript%0D%0A%ED%83%80%EC%9E%85%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EB%9C%AF%EC%96%B4%EB%B3%B4%EA%B8%B0%3A%0D%0A%ED%83%80%EC%9E%85%20%ED%98%B8%ED%99%98%EC%84%B1&amp;imageUrl=https%3A%2F%2Fstatic.toss.im%2Fassets%2Ftoss-tech%2Ftech-article-ts-og.png&amp;v=2"/><meta name="twitter:image" content="https://og.toss.tech?title=TypeScript%0D%0A%ED%83%80%EC%9E%85%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EB%9C%AF%EC%96%B4%EB%B3%B4%EA%B8%B0%3A%0D%0A%ED%83%80%EC%9E%85%20%ED%98%B8%ED%99%98%EC%84%B1&amp;imageUrl=https%3A%2F%2Fstatic.toss.im%2Fassets%2Ftoss-tech%2Ftech-article-ts-og.png&amp;v=2"/><meta name="next-head-count" content="36"/><meta name="next-font-preconnect"/><link rel="preload" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" as="style"/><link rel="stylesheet" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/webpack-a37367524f3d9e47.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/framework-5201cf011975c339.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/main-4ffd67ad72332dfe.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/_app-02461bb4136bedab.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/821-c2f4db054c6f6b42.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/935-149f2da2961c2b08.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/article/%5Bslug%5D-bf5a24035d1301de.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_buildManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_ssgManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_middlewareManifest.js" defer=""></script></head><body><div id="__next"><style data-emotion="css-global ubpbb5">html,body{padding:0;margin:0;font-family:'Toss Product Sans';}button{font-family:'Toss Product Sans';}p{margin:0;}</style><style data-emotion="css kcwxxw">.css-kcwxxw{position:-webkit-sticky;position:sticky;top:0;height:59px;}</style><nav class="p-navbar p-navbar--bottom-border css-kcwxxw"><div class="p-container p-container--default"><div class="p-container__inner p-navbar__inner-container"><div class="p-navbar__logo-container"><a class="p-navbar__logo-icon" href="/tech"><span class="icon p-icon" aria-hidden="true" role="presentation" style="height:auto;width:auto;min-width:24px"></span></a></div><div class="p-navbar__right-on-mobile"></div><div class="p-navbar__content" aria-expanded="false" aria-hidden="true"><ul class="p-navbar__menu"></ul><ul class="p-navbar__menu"><li class="p-navbar__item"><a>디자인</a></li><li class="p-navbar__item"><a>개발</a></li><li class="p-navbar__item p-navbar__button-item"><button class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s p-navbar__button" type="button" aria-disabled="false">채용 바로가기</button></li></ul></div></div></div></nav><style data-emotion="css 1nquki8">.css-1nquki8{max-width:700px;margin-bottom:80px;}.css-1nquki8 .has-extra-large-font-size{font-size:20px;}.css-1nquki8 .has-large-font-size{font-size:18px;}.css-1nquki8 .has-small-font-size{font-size:14px;}.css-1nquki8 .has-extra-small-font-size{font-size:12px;}@media (max-width: 700px){.css-1nquki8{margin-bottom:64px;}}</style><div class="p-container p-container--default css-1nquki8"><div class="p-container__inner"><style data-emotion="css gtmad4">.css-gtmad4>*:not(style)~*:not(style){margin-top:54px;}@media (max-width: 700px){.css-gtmad4>*:not(style)~*:not(style){margin-top:48px;}}</style><article class="css-gtmad4"><style data-emotion="css 1095auh">.css-1095auh>*:not(style)~*:not(style){margin-top:20px;}</style><header class="css-1095auh"><style data-emotion="css iffq4o">.css-iffq4o{width:100%;margin-top:36px;border-radius:12px;}</style><img srcSet="https://toss.tech/wp-content/uploads/2022/10/tech-article-ts-300x150.png 300w, https://toss.tech/wp-content/uploads/2022/10/tech-article-ts-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2022/10/tech-article-ts-768x384.png 768w, https://toss.tech/wp-content/uploads/2022/10/tech-article-ts.png 1200w" alt="TypeScript 타입 시스템 뜯어보기: 타입 호환성" class="css-iffq4o e132k2574"/><style data-emotion="css 117sh4z">.css-117sh4z{margin-top:36px;margin-bottom:0;font-size:48px;font-weight:700;line-height:1.25;color:#333d4b;word-break:keep-all;overflow-wrap:break-word;}@media (max-width: 700px){.css-117sh4z{margin-top:28px;font-size:32px;}}</style><h1 class="css-117sh4z e132k2573">TypeScript 타입 시스템 뜯어보기: 타입 호환성</h1><style data-emotion="css s5xdrg">.css-s5xdrg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><section class="css-s5xdrg e2c667z4"><style data-emotion="css 1hdebld">.css-1hdebld{grid-area:image;width:48px;height:48px;border-radius:156px;margin-right:14px;}</style><img src="https://toss.tech/wp-content/uploads/2022/10/profile_bm-312x312.png" alt="" class="css-1hdebld e2c667z3"/><div><style data-emotion="css 14d9k6d">.css-14d9k6d{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;grid-area:outline;-webkit-align-items:flex-end;-webkit-box-align:flex-end;-ms-flex-align:flex-end;align-items:flex-end;padding-top:8px;font-size:17px;margin-bottom:2px;}@media (max-width: 700px){.css-14d9k6d>*+*{margin-top:4px;margin-left:0;}}</style><div class="css-14d9k6d e2c667z2"><style data-emotion="css 9krnkp">.css-9krnkp{grid-area:name;margin:0;font-size:17px;font-weight:600;color:#4e5968;white-space:nowrap;}</style><h3 class="css-9krnkp e2c667z1">김병묵</h3><h3 class="css-9krnkp e2c667z1">ㆍ<!-- -->Node.js Developer</h3></div><style data-emotion="css 154r2lc">.css-154r2lc{font-size:14px;line-height:1.5;color:#8b95a1;}</style><div class="css-154r2lc e2c667z0">2022. 10. 26</div></div></section></header><style data-emotion="css 1k1kkv6">.css-1k1kkv6{font-size:18px;line-height:1.7;color:var(--grey700);font-size:18px;word-break:keep-all;overflow-wrap:break-word;counter-reset:p-post-ol 0;}.css-1k1kkv6 h2{margin:2.2em 0 0.6em 0;font-size:25px;font-weight:600;line-height:1.4;color:var(--grey900);}.css-1k1kkv6 h3{margin:2.2em 0 0.6em 0;font-size:22px;font-weight:600;line-height:1.6;color:var(--grey900);}.css-1k1kkv6 h4{margin:2.2em 0 0.3em 0;font-size:19px;font-weight:600;line-height:1.6;color:var(--grey700);}.css-1k1kkv6 p{margin:1em 0;}.css-1k1kkv6 p code,.css-1k1kkv6 li code{font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:3px;}.css-1k1kkv6 a{color:var(--blue700);}.css-1k1kkv6 pre{margin:2em -24px;}@media (max-width: 700px){.css-1k1kkv6 pre{margin:2em 0;}}.css-1k1kkv6 pre code{display:block;padding:16px 24px;overflow-x:auto;font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;line-height:1.5;word-wrap:normal;white-space:pre;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:12px;}.css-1k1kkv6 figure{margin:2em 0;overflow:hidden;border-radius:12px;width:100%;}.css-1k1kkv6 figure.aligncenter{text-align:center;}.css-1k1kkv6 ol,.css-1k1kkv6 ul{margin:0 0 16px;list-style:none;}.css-1k1kkv6 ol li,.css-1k1kkv6 ul li{position:relative;margin-bottom:8px;}.css-1k1kkv6 ol li:before,.css-1k1kkv6 ul li:before{position:absolute;left:0;}.css-1k1kkv6 ol li ol,.css-1k1kkv6 ul li ol{padding-left:0;margin:8px 0 0 -16px;}.css-1k1kkv6 ol li ul,.css-1k1kkv6 ul li ul{padding-left:0;margin-top:8px;}.css-1k1kkv6 ol li p,.css-1k1kkv6 ul li p{margin:0;}.css-1k1kkv6 ol{padding-left:16px;counter-reset:p-post-ol;}.css-1k1kkv6 ol>li{padding-left:32px;counter-increment:p-post-ol;}.css-1k1kkv6 ol>li:before{font-weight:700;font-weight:var(--font-weight-bold);content:counter(p-post-ol) '.';}.css-1k1kkv6 ul{padding-left:16px;}.css-1k1kkv6 ul>li{padding-left:24px;}.css-1k1kkv6 ul>li:before{width:16px;text-align:center;content:'•';}.css-1k1kkv6 figcaption{font-size:0.9em;color:var(--grey600);}.css-1k1kkv6 .wp-block-pullquote{margin:0;}.css-1k1kkv6 blockquote{padding:32px;background:var(--greyOpacity100);border-radius:12px;text-align:left;margin:16px 0 16px 0;}.css-1k1kkv6 blockquote p{color:#333d4b;font-weight:600;margin:0;}.css-1k1kkv6 blockquote cite{font-style:normal;}@media (max-width: 700px){.css-1k1kkv6 blockquote{padding:24px;}}.css-1k1kkv6 .wp-block-embed-youtube iframe{width:100%;border-radius:12px;}.css-1k1kkv6 ol{counter-reset:none;}.css-1k1kkv6 hr{border-top:1px solid #e5e8eb;border-right-style:none;border-left-style:none;border-bottom-style:none;margin:2.5rem 0;}.css-1k1kkv6 figure{display:table;text-align:center;}@media (max-width: 700px){.css-1k1kkv6 figure{width:100%;}}.css-1k1kkv6 figure img,.css-1k1kkv6 figure video{max-width:100%;height:auto;border:1px solid rgba(2,32,71,0.05);border-radius:12px;}.css-1k1kkv6 figure.alignright{float:right;margin:0 0 8px 24px;}@media (max-width: 700px){.css-1k1kkv6 figure.alignright{float:none;margin:0;}}.css-1k1kkv6 figcaption{display:table-caption;text-align:center;white-space:pre-wrap;caption-side:bottom;}.css-1k1kkv6 p:empty::before{content:'';}</style><div class="css-1k1kkv6 e132k2572"><div>
+<p></p>
+
+
+
+<h1>들어가며</h1>
+
+
+
+<p>토스 Node.js 챕터에서는 높은 코드 가독성과 품질을 위해 TypeScript의 타입 시스템을 적극적으로 활용하고 있고 이에 대한 이해도를 높이기 위해 스터디를 꾸준히 진행하고 있습니다. TypeScript의 타입 시스템에 대해 공부해보던 중 알게된 흥미로운 몇가지 토픽들을 소개하려 합니다. 그 중 한가지로 이번글에서는 “타입 호환성 (type compatibility)”에 대해 알아보고자 합니다.</p>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<h1>타입 호환성은 무엇이며 왜 필요할까?</h1>
+
+
+
+<p>TypeScript 공식문서 <a rel="noreferrer noopener" href="https://www.typescriptlang.org/ko/docs/handbook/type-compatibility.html" target="_blank">타입 호환성에 관한 글</a>을 보면 아래와 같이 소개하고 있습니다.</p>
+
+
+
+<blockquote class="wp-block-quote"><p>TypeScript의 타입 호환성은 구조적 서브타이핑(structural subtyping)을 기반으로 합니다. 구조적 타이핑이란 오직 멤버만으로 타입을 관계시키는 방식입니다. 명목적 타이핑(nominal typing)과는 대조적입니다. TypeScript의 구조적 타입 시스템의 기본 규칙은 y가 최소한 x와 동일한 멤버를 가지고 있다면 x와 y는 호환된다는 것입니다.</p></blockquote>
+
+
+
+<p>위 내용에 대해 하나씩 이해해봅시다. 우선 강한 타입 시스템을 통해 높은 가독성과 코드 품질을 지향하는 TypeScript가 왜 타입 호환성을 지원하는 것일까요? 이 경우 타입 안정성에 문제가 생기게 되는 것은 아닐까요? 아래 예시를 통해 타입 호환성이 왜 필요한지 살펴보겠습니다.</p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="1024" height="256" src="https://wp.toss.tech/wp-content/uploads/2022/10/image-6-1024x256.png" alt="" class="wp-image-868" srcSet="https://toss.tech/wp-content/uploads/2022/10/image-6-1024x256.png 1024w, https://toss.tech/wp-content/uploads/2022/10/image-6-300x75.png 300w, https://toss.tech/wp-content/uploads/2022/10/image-6-768x192.png 768w, https://toss.tech/wp-content/uploads/2022/10/image-6-1536x384.png 1536w, https://toss.tech/wp-content/uploads/2022/10/image-6-1568x392.png 1568w, https://toss.tech/wp-content/uploads/2022/10/image-6.png 1766w" sizes="(max-width: 1024px) 100vw, 1024px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<p>위와 같이 음식 <code>Food</code> 타입의 객체를 인자로 받아 간단한 칼로리 계산 공식으로 주어진 음식의 칼로리를 구하는 <code>calculateCalorie</code> 함수가 있습니다. 타입과 함수는 아래와 같이 구현되어 있습니다.</p>
+
+
+
+<p></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="PHP" data-shcb-language-slug="php"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"/><style>.wp-block-code {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-code > div {
+	overflow: auto;
+}
+
+.shcb-language {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+.hljs {
+	box-sizing: border-box;
+}
+
+.hljs.shcb-code-table {
+	display: table;
+	width: 100%;
+}
+
+.hljs.shcb-code-table > .shcb-loc {
+	color: inherit;
+	display: table-row;
+	width: 100%;
+}
+
+.hljs.shcb-code-table .shcb-loc > span {
+	display: table-cell;
+}
+
+.wp-block-code code.hljs:not(.shcb-wrap-lines) {
+	white-space: pre;
+}
+
+.wp-block-code code.hljs.shcb-wrap-lines {
+	white-space: pre-wrap;
+}
+
+.hljs.shcb-line-numbers {
+	border-spacing: 0;
+	counter-reset: line;
+}
+
+.hljs.shcb-line-numbers > .shcb-loc {
+	counter-increment: line;
+}
+
+.hljs.shcb-line-numbers .shcb-loc > span {
+	padding-left: 0.75em;
+}
+
+.hljs.shcb-line-numbers .shcb-loc::before {
+	border-right: 1px solid #ddd;
+	content: counter(line);
+	display: table-cell;
+	padding: 0 0.75em;
+	text-align: right;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: 1%;
+}
+</style><div><code class="hljs language-php">type Food = { 
+  <span class="hljs-comment">/** 각 영양소에 대한 gram 중량값 */</span>
+  protein: number;
+  carbohydrates: number;
+  fat: number;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculateCalorie</span><span class="hljs-params">(food: Food)</span></span>{
+  <span class="hljs-keyword">return</span> food.protein * <span class="hljs-number">4</span> 
+    + food.carbohydrates * <span class="hljs-number">4</span> 
+    + food.fat * <span class="hljs-number">9</span>
+}</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>한편, 개발자가 코드를 작성하는 과정에서 (의도했거나 혹은 실수로) <code>calculateCalorie</code> 함수 인자에 여러가지 타입의 객체를 전달해본다고 가정해봅시다. 이 경우 TypeScript 타입 시스템은 프로그램이 타입 오류를 일으킬 가능성을 검사하게 됩니다.</p>
+
+
+
+<p></p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="1024" height="554" src="https://wp.toss.tech/wp-content/uploads/2022/10/image-7-1024x554.png" alt="" class="wp-image-870" srcSet="https://toss.tech/wp-content/uploads/2022/10/image-7-1024x554.png 1024w, https://toss.tech/wp-content/uploads/2022/10/image-7-300x162.png 300w, https://toss.tech/wp-content/uploads/2022/10/image-7-768x416.png 768w, https://toss.tech/wp-content/uploads/2022/10/image-7-1536x832.png 1536w, https://toss.tech/wp-content/uploads/2022/10/image-7-1568x849.png 1568w, https://toss.tech/wp-content/uploads/2022/10/image-7.png 1762w" sizes="(max-width: 1024px) 100vw, 1024px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div><figcaption>위 3가지 케이스에 대해 Type Checker가 어떻게 판단하는 것이 좋을까요?</figcaption></figure>
+
+
+
+<p>개발자가 정의한 <code>Food</code> 타입과 동일한 타입인 경우 (1번) 오류 없음이 명확하며, <code>Computer</code> 타입과 같이 다른 타입이며 칼로리 계산이 불가능한 경우 (2번) 오류로 판단하는 것이 명확합니다. 하지만, 햄버거를 의미하며 음식의 한 종류인 <code>Burger</code> 타입이 전달되는 경우 (3번) 어떻게 판단하는 것이 맞을까요?</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">type Burger = Food &amp; {
+  <span class="hljs-comment">/** 햄버거 브랜드 이름 */</span>
+  burgerBrand: string; 
+}</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>심지어 <code>Burger</code> 타입이 위와 같이 <code>Food</code> 타입을 상속하며 칼로리 계산에 필요한 모든 프로퍼티를 포함하고 있어 런타임 상에서 정상적으로 동작한다면 이를 타입 오류라고 판단하는게 올바른 걸까요? </p>
+
+
+
+<p>이처럼 실제로 정상적으로 동작할 수 있는 올바른 코드라면 타입 시스템은 개발자의 의도에 맞게 유연하게 대응하여 타입 호환성을 지원하는 것이 더 좋을 수 있습니다. 이러한 유연성을 위해 TypeScript 타입 시스템은 부분적으로 타입 호환을 지원하고 있습니다.</p>
+
+
+
+<p></p>
+
+
+
+<h1>타입 호환성을 지원하는 규칙 : 구조적 서브타이핑</h1>
+
+
+
+<p>한편 위에 예시에서 <code>Computer</code> 타입 사례처럼 타입오류로 판단하는 것이 명확한 경우가 있으며, 타입 안정성을 해치면서까지 유연함을 제공하는 것은 바람직하지 못합니다. 이를 위해서는 어떠한 경우에 호환을 허용할 것인지에 대한 명확한 규칙이 필요합니다. 이러한 규칙 중 프로그래밍 언어들에서 널리 활용되는 방식으로 명목적 서브타이핑(nominal subtyping)과 구조적 서브타이핑(structural subtpying)이 있습니다.</p>
+
+
+
+<p>명목적 서브타이핑은 아래와 같이 타입 정의 시에 상속 관계임을 명확히 명시한 경우에만 타입 호환을 허용하는 것입니다. 이 방법을 통해 타입 오류가 발생할 가능성을 배제하고, 개발자의 명확한 의도를 반영할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment">/** 상속 관계 명시 */</span>
+type Burger = Food &amp; {
+  burgerBrand: string;
+}
+
+<span class="hljs-keyword">const</span> burger: Burger = {
+  protein: <span class="hljs-number">29</span>,
+  carbohydrates: <span class="hljs-number">48</span>,
+  fat: <span class="hljs-number">13</span>,
+  burgerBrand: <span class="hljs-string">&#x27;버거킹&#x27;</span>
+}
+
+<span class="hljs-keyword">const</span> calorie = calculateCalorie(burger)  
+<span class="hljs-comment">/** 타입검사결과 : 오류없음 (OK) */</span>
+</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>한편, 구조적 서브타이핑은 아래와 같이 상속 관계가 명시되어 있지 않더라도 객체의 프로퍼티를 기반으로 사용처에서 사용함에 문제가 없다면 타입 호환을 허용하는 방식입니다. 아래 예시를 보면 비록 상속 관계임을 명시하지는 않았지만 <code>burger</code> 변수는 <code>Food</code> 타입의 프로퍼티를 모두 포함하고 있고 따라서<code>calculateCalorie</code> 함수 실행과정에서 오류가 발생하지 않습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-keyword">const</span> burger = {
+  protein: <span class="hljs-number">29</span>,
+  carbohydrates: <span class="hljs-number">48</span>,
+  fat: <span class="hljs-number">13</span>,
+  burgerBrand: <span class="hljs-string">&#x27;버거킹&#x27;</span>
+}
+
+<span class="hljs-keyword">const</span> calorie = calculateCalorie(burger)  
+<span class="hljs-comment">/** 타입검사결과 : 오류없음 (OK) */</span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>구조적 서브타이핑 방식은 타입 시스템이 객체의 프로퍼티를 체크하는 과정을 수행해주므로써, 명목적 서브타이핑과 동일한 효과를 내면서도 개발자가 상속 관계를 명시해주어야 하는 수고를 덜어주게 됩니다. 참고로, 구조적 서브타이핑은 “만약 어떤 새가 오리처럼 걷고, 헤엄치고, 꽥꽥거리는 소리를 낸다면 나는 그 새를 오리라고 부를 것이다.” 라는 의미에서 덕 타이핑 (duck typing) 이라고도 합니다.</p>
+
+
+
+<p></p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="1024" height="558" src="https://wp.toss.tech/wp-content/uploads/2022/10/image-8-1024x558.png" alt="" class="wp-image-873" srcSet="https://toss.tech/wp-content/uploads/2022/10/image-8-1024x558.png 1024w, https://toss.tech/wp-content/uploads/2022/10/image-8-300x163.png 300w, https://toss.tech/wp-content/uploads/2022/10/image-8-768x419.png 768w, https://toss.tech/wp-content/uploads/2022/10/image-8-1536x837.png 1536w, https://toss.tech/wp-content/uploads/2022/10/image-8-1568x854.png 1568w, https://toss.tech/wp-content/uploads/2022/10/image-8.png 1758w" sizes="(max-width: 1024px) 100vw, 1024px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div><figcaption>TypeScript Type Checker는 구조적 서브타이핑을 기반으로 타입 호환을 판단합니다.</figcaption></figure>
+
+
+
+<p>TypeScript는 구조적 서브타이핑을 지원하며, 명목적 서브타이핑만 지원하는 C#, Java 등의 언어는 명시적으로 상속 관계를 명시해주어야 타입 호환이 가능합니다.</p>
+
+
+
+<p></p>
+
+
+
+<blockquote class="wp-block-quote"><p><strong><span>💡</span></strong>  한편, 여기서부터 좀 더 본격적인 이야기를 다루어 보겠습니다.</p><p></p></blockquote>
+
+
+
+<h1>구조적 서브타이핑에 기반한 타입 호환이 지원되지 않는 경우가 존재한다?</h1>
+
+
+
+<p>위 구조적 서브타이핑 예시의 코드는 타입 호환성에 따라 타입 오류가 발생하지 않지만, 아래 코드의 경우 컴파일 과정에서 <code>Argument is not assignable to parameter of type &#x27;Food&#x27;</code> 라는 타입 오류가 발생하게 됩니다. 글을 더 읽으시기에 앞서 실제로 <a href="https://www.typescriptlang.org/play?#code/C4TwDgpgBAYg9nAJlAvFA3lAUASAPQBUBUggDVSCAY4ImjgMYOALo1IADNgOqtQDmATgIYC2UgiJOBJ9sBINVAJ4sUKGHZxgEAJYA7AFxRFAV24AjCOwDcEqAGNO7LXAAWIRFzkBnVRu26DkgGadgjzTv1YAvlhYbuqKRsDycIrGnAA2RgDCcXDsIAAUbgiIqvBIAJTohuwQwOrs0ZlIAHTSsgrRxAAsUADUUJWIVSZmlta2EHaiUM1tHVUewEMAnAFBoJBQAEJlrLqosFlQAGQYhloruotcitlQdsDsSqwGgVhGUedQ++yr7ACMqssva2iFOLVyJSqABMUwANIZuuYrDZPANVI0ABwQ9yeVRvADMKKeB3YR04J1UAHJACE9gAcawCdC0TZncHpMTLEUiA3usGYlkqk0s9Xm88pJCMRAAMLgFDxwABNYAagaggAaawA-NVBVIASMcAGp1QQBjo4AZcdE4lpike3N0wPWfwB9RB4MhpmhfThDmGyMME3RWL2uPxhKgpMp1Nu9119I5IFZcXZjM5+vYwL5UAFUBFEulcsVKo1WqCvseDKZGKD8SSofSxpkgJUUFB2KhvVh9gR9tRXigmOx4bdp09VICUckXe7Pd7fZ7McFgBDx+Oy+VQZVQQAR45qxEA" target="_blank" rel="noreferrer noopener">TS Playground</a>를 통해 오류를 확인해보시고 다양하게 테스트해보시는 것도 추천합니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-keyword">const</span> calorie = calculateCalorie({
+  protein: <span class="hljs-number">29</span>,
+  carbohydrates: <span class="hljs-number">48</span>,
+  fat: <span class="hljs-number">13</span>,
+  burgerBrand: <span class="hljs-string">&#x27;버거킹&#x27;</span>
+})                                
+<span class="hljs-comment">/** 타임검사결과 : 오류 (NOT OK)*/</span></code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>왜 위 코드는 타입 호환이 지원되지 않는 것일까요? 처음에 이 오류를 마주쳤을 때 이런저런 테스트를 해보며 함수에 값을 바로 인자로 전달하는 경우만 타입 호환이 지원되지 않는 것 같다고 유추하기는 했으나 조금 더 구체적인 규칙과 이렇게 예외가 발생하는 이유에 대해 이해해보고자 했습니다.</p>
+
+
+
+<p>결과적으로 TypeScript 컴파일러 코드 상의 구현로직과 위 이슈와 연관된 <a href="https://github.com/Microsoft/TypeScript/pull/3823">TypeScript Github PR</a>을 통해 이해할 수 있었습니다. 이에 대해 알아보기 위해 우선 TypeScript 컴파일러가 동작하는 방식에 대해 간략히 살펴보겠습니다.</p>
+
+
+
+<h1>TypeScript 컴파일러 동작방식 살펴보기</h1>
+
+
+
+<p>TypeScript 컴파일러가 동작하는 방식에 관해 아래 영상에 자세히 소개되어 있으며, 이 중 몇가지 내용만 요약하여 살펴보겠습니다.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="How the TypeScript Compiler Compiles - understanding the compiler internal" width="750" height="422" src="https://www.youtube.com/embed/X8k_4tZ16qU?feature=oembed" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div></figure>
+
+
+
+<p>TypeScript 컴파일러의 역할은 TypeScript 소스코드를 AST (Abstract Syntax Tree)로 변환한 뒤, 타입 검사를 수행하고, 그 후 JavaScript 소스코드로 변환하는 과정을 담당합니다.</p>
+
+
+
+<p>TypeScript 소스코드를 AST로 변환하는 과정은 <code>parser.ts, scanner.ts</code> , 타입 검사를 수행하는 과정은 <code>binder.ts, checker.ts</code>, AST를 JavaScript 소스코드로 변환하는 과정은 <code>emitter.ts, transformer.ts</code> 등의 파일이 담당하고 있습니다.</p>
+
+
+
+<p></p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="1024" height="618" src="https://wp.toss.tech/wp-content/uploads/2022/10/image-3-1024x618.png" alt="" class="wp-image-740" srcSet="https://toss.tech/wp-content/uploads/2022/10/image-3-1024x618.png 1024w, https://toss.tech/wp-content/uploads/2022/10/image-3-300x181.png 300w, https://toss.tech/wp-content/uploads/2022/10/image-3-768x463.png 768w, https://toss.tech/wp-content/uploads/2022/10/image-3-1536x927.png 1536w, https://toss.tech/wp-content/uploads/2022/10/image-3-1568x946.png 1568w, https://toss.tech/wp-content/uploads/2022/10/image-3.png 1870w" sizes="(max-width: 1024px) 100vw, 1024px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<p>실제로 <a rel="noreferrer noopener" href="https://github.com/microsoft/TypeScript/tree/main/src/compiler" target="_blank">TypeScript Github의 compiler 디렉토리</a>에 가면 위 코드 파일이 어떤식으로 구현되어 있는지 확인해볼 수 있으며, 이번 글에서 다루고 있는 주제인 구조적 서브타이핑과 타입 호환에 관한 부분은 타입 검사와 가장 연관이 높은 <code>checker.ts</code> 파일의 <code>hasExcessProperties()</code> 함수에서 처리하고 있었습니다.</p>
+
+
+
+<p>아래는 <code>checker.ts</code> <a rel="noreferrer noopener" href="https://raw.githubusercontent.com/microsoft/TypeScript/main/src/compiler/checker.ts" data-type="URL" data-id="https://raw.githubusercontent.com/microsoft/TypeScript/main/src/compiler/checker.ts" target="_blank">코드</a> 중 타입 호환의 예외가 발생하는 지점의 코드를 주요한 부분만 남기고 간소화한 것입니다. 주석과 함께 봐주시면 좋을 것 같습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment">/** 함수 매개변수에 전달된 값이 FreshLiteral인 경우 true가 됩니다. */</span>
+<span class="hljs-keyword">const</span> isPerformingExcessPropertyChecks =
+    getObjectFlags(source) &amp; ObjectFlags.FreshLiteral;
+
+<span class="hljs-keyword">if</span> (isPerformingExcessPropertyChecks) {
+    <span class="hljs-comment">/** 이 경우 아래 로직이 실행되는데, 
+     * hasExcessProperties() 함수는
+     * excess property가 있는 경우 에러를 반환하게 됩니다.
+     * 즉, property가 정확히 일치하는 경우만 허용하는 것으로 
+     * 타입 호환을 허용하지 않는 것과 같은 의미입니다. */</span>
+    <span class="hljs-keyword">if</span> (hasExcessProperties(source <span class="hljs-keyword">as</span> FreshObjectLiteralType)) {
+        reportError();
+    }
+}
+<span class="hljs-comment">/** 
+ * FreshLiteral이 아닌 경우 위 분기를 skip하게 되며, 
+ * 타입 호환을 허용하게 됩니다. */</span></code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>지면상 다소 간소화한 코드만 남겨두었지만, 함수에 인자로 들어온 값이 <code>FreshLiteral</code> 인지 아닌지 여부에 따라 조건분기가 발생하여 타입 호환 허용 여부가 결정된다는 것을 확인할 수 있었습니다.</p>
+
+
+
+<p>그렇다면 <code>Fresh Literal</code> 이란 무엇이며, 왜 이 경우에는 타입 호환의 예외가 발생하도록 되어 있는 것일까요?</p>
+
+
+
+<h1>타입 호환 예외 조건 : 신선도(Freshness)</h1>
+
+
+
+<p>TypeScript는 구조적 서브타이핑에 기반한 타입 호환의 예외 조건과 관련하여 <a href="https://radlohead.gitbook.io/typescript-deep-dive/type-system/freshness">신선도 (Freshness)</a> 라는 개념을 제공합니다. 모든 object literal은 초기에 “fresh” 하다고 간주되며, 타입 단언 (type assertion) 을 하거나, 타입 추론에 의해 object literal의 타입이 확장되면 “freshness”가 사라지게 됩니다. 특정한 변수에 object literal을 할당하는 경우 이 2가지 중 한가지가 발생하게 되므로 “freshness”가 사라지게 되며, 함수에 인자로 object literal을 바로 전달하는 경우에는 “fresh”한 상태로 전달됩니다.</p>
+
+
+
+<p>한편, <a href="https://github.com/Microsoft/TypeScript/pull/3823">TypeScript Github PR (2015년 7월) 의 논의</a>에 따르면, fresh object인 경우에는 예외적으로 타입 호환을 허용하지 않기로 했음을 확인할 수 있습니다. 그러한 이유에 대해 살펴보겠습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-comment">/** 부작용 1 
+ * 코드를 읽는 다른 개발자가 calculateCalorie 함수가
+ * burgerBrand를 사용한다고 오해할 수 있음 */</span>
+<span class="hljs-keyword">const</span> calorie1 = calculateCalorie({
+  protein: <span class="hljs-number">29</span>,
+  carbohydrates: <span class="hljs-number">48</span>,
+  fat: <span class="hljs-number">13</span>,
+  burgerBrand: <span class="hljs-string">&#x27;버거킹&#x27;</span>
+})
+
+<span class="hljs-comment">/** 부작용 2 
+ * birgerBrand 라는 오타가 발생하더라도 
+ * excess property이기 때문에 호환에 의해 오류가 
+ * 발견되지 않음 */</span>
+<span class="hljs-keyword">const</span> calorie2 = calculateCalorie({
+  protein: <span class="hljs-number">29</span>,
+  carbohydrates: <span class="hljs-number">48</span>,
+  fat: <span class="hljs-number">13</span>,
+  birgerBrand: <span class="hljs-string">&#x27;버거킹&#x27;</span>
+})</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>구조적 서브타이핑에 기반한 타입 호환은 유연함을 제공한다는 이점이 있지만, 위 코드 사례와 같이 코드를 읽는 다른 개발자의 입장에서 함수가 실제 다루는 것보다 더 많은 데이터를 받아들인다는 오해를 불러일으킬 수 있고, 프로퍼티 키에 대한 오타가 발생하더라도 오류가 확인되지 않는 부작용이 있습니다.</p>
+
+
+
+<p>한편, fresh object를 함수에 인자로 전달한 경우, 이는 특정한 변수에 할당되지 않았으므로 어차피 <strong>해당 함수에서만 사용되고 다른 곳에서 사용되지 않습니다.</strong> 이 경우 유연함에 대한 이점보다는 부작용을 발생시킬 가능성이 높으므로 굳이 구조적 서브타이핑을 지원해야할 이유가 없습니다.</p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="1024" height="579" src="https://wp.toss.tech/wp-content/uploads/2022/10/image-9-1024x579.png" alt="" class="wp-image-876" srcSet="https://toss.tech/wp-content/uploads/2022/10/image-9-1024x579.png 1024w, https://toss.tech/wp-content/uploads/2022/10/image-9-300x170.png 300w, https://toss.tech/wp-content/uploads/2022/10/image-9-768x434.png 768w, https://toss.tech/wp-content/uploads/2022/10/image-9-1536x869.png 1536w, https://toss.tech/wp-content/uploads/2022/10/image-9-1568x887.png 1568w, https://toss.tech/wp-content/uploads/2022/10/image-9.png 1750w" sizes="(max-width: 1024px) 100vw, 1024px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div><figcaption>TypeScript Type Checker는 구조적 서브타이핑을 기반으로 타입 호환을 판단하되,<br/>Freshness에 따라 예외를 둡니다.</figcaption></figure>
+
+
+
+<p>이처럼 타입 호환성은 유연함이라는 이점을 제공하지만 그로 인해 부작용이 발생할 수 있으므로, 이에 대한 절충안으로 타입 호환을 제공해서 얻는 이점이 거의 없는 fresh object에 대해서는 호환성을 지원하지 않기로 논의되어 TypeScript 컴파일러 코드에 반영된 것을 확인해볼 수 있었습니다.</p>
+
+
+
+<h1>타입 호환성에 대한 개발자의 선택지 : Index signature vs Branded type</h1>
+
+
+
+<p>한편, 그럼에도 개발자가 fresh object에 대해서 타입 호환을 허용하고자 한다면 아래와 같이 함수 매개변수 타입에 index signature를 포함시켜두어 명시적으로 타입 호환을 허용시키는 것이 가능합니다. 또는 tsconfig 상에 <code>suppressExcessPropertyErrors</code> 를 true로 설정하는 방식도 가능합니다. (이 또한 <a href="https://github.com/Microsoft/TypeScript/pull/3823">동일한 PR 논의</a>에 정의되어 있습니다.)</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">type Food = { 
+  protein: number;
+  carbohydrates: number;
+  fat: number;
+  [x: string]: any                  <span class="hljs-comment">/** index signature */</span>
+}
+
+<span class="hljs-keyword">const</span> calorie = calculateCalorie({
+  protein: <span class="hljs-number">29</span>,
+  carbohydrates: <span class="hljs-number">48</span>,
+  fat: <span class="hljs-number">13</span>,
+  burgerBrand: <span class="hljs-string">&#x27;버거킹&#x27;</span>
+})                                  
+<span class="hljs-comment">/** 타임검사결과 : 오류없음 (OK) */</span>
+</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>또한 반대로 모든 경우에 대해 타입 호환을 허용하지 않도록 강제하는 것도 가능한데 이를 위해 사용할 수 있는 기법이 Branded type (또는 Branding type) 입니다. 아래와 같이 의도적으로 <code>__brand</code> 와 같은 프로퍼티를 추가시켜, 개발자가 함수의 매개변수로 정의한 타입 외에는 호환이 될 수 없도록 강제하는 기법입니다. 온도(섭씨, 화씨)나 화폐단위(원, 달러, 유로)와 같이 같이 <code>number</code> 타입이지만 서로 다를 의미를 가질 수 있어 명시적인 구분이 필요할 때 사용해볼 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">type Brand&lt;K, T&gt; = K &amp; { __brand: T};
+type Food = Brand&lt;{ 
+  protein: number;
+  carbohydrates: number;
+  fat: number;
+}, <span class="hljs-string">&#x27;Food&#x27;</span>&gt;
+
+<span class="hljs-keyword">const</span> burger = {
+  protein: <span class="hljs-number">100</span>,
+  carbohydrates: <span class="hljs-number">100</span>, 
+  fat: <span class="hljs-number">100</span>, 
+  burgerBrand: <span class="hljs-string">&#x27;버거킹&#x27;</span>
+}
+
+calculateCalorie(burger)                   
+<span class="hljs-comment">/** 타임검사결과 : 오류 (NOT OK) */</span>         
+</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>앞선 글을 통해 이해한 타입 호환의 이점과 부작용에 대한 이해를 바탕으로 개발자는 자신의 프로젝트를 진행하는 과정에서 필요에 맞게 <code>index signature</code>, <code>tsconfig &gt; suppressExcessPropertyErrors</code>, <code>branded type</code> 등을 통해 타입 호환성의 범위를 선택하여 개발하는 것이 가능할 것입니다.</p>
+
+
+
+<p></p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="1024" height="601" src="https://wp.toss.tech/wp-content/uploads/2022/10/image-10-1024x601.png" alt="" class="wp-image-879" srcSet="https://toss.tech/wp-content/uploads/2022/10/image-10-1024x601.png 1024w, https://toss.tech/wp-content/uploads/2022/10/image-10-300x176.png 300w, https://toss.tech/wp-content/uploads/2022/10/image-10-768x451.png 768w, https://toss.tech/wp-content/uploads/2022/10/image-10-1536x901.png 1536w, https://toss.tech/wp-content/uploads/2022/10/image-10-1568x920.png 1568w, https://toss.tech/wp-content/uploads/2022/10/image-10.png 1762w" sizes="(max-width: 1024px) 100vw, 1024px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div><figcaption>TypeScript Type Checker는 내부적인 규칙에 따라 타입 호환을 판단하지만,<br/>개발자가 필요에 따라 선택하는 것이 가능합니다.</figcaption></figure>
+
+
+
+<p></p>
+
+
+
+<h1>마치며</h1>
+
+
+
+<p>이번글의 내용을 모두 요약하면 아래와 같습니다.</p>
+
+
+
+<ul><li><strong>타입 검사의 안정성과 유연함 사이에서 절충안으로 도입된 개념이 타입 호환성입니다. 그리고 타입 호환성을 지원하는 방법과 관련하여 개발자에게 명시적 선언을 어디까지 요구할 것인지에 대한 선택지가 존재합니다.</strong></li><li><strong>TypeScript는 구조적 서브타이핑에 기반한 타입 호환을 통해 개발자의 명시적 선언을 줄여주는 한편 이로 인한 부작용을 개선하고자 freshness에 기반한 예외조건을 두었고, Index Signature와 Branded type 등의 방식을 통해 개발자가 명시적으로 선택할 수 있는 선택지를 만들어두었습니다.</strong></li><li><strong>프로그래밍 언어마다 타입 검사가 동작하는 방식이 다르며 이는 해당 언어를 개발한 커뮤니티의 논의와 의사결정에 따라 선택된 결과라고 볼 수 있습니다. 본 주제 외에도 TypeScript 컴파일러 코드와 Github PR을 살펴보면 흥미로운 논의와 토픽들을 확인해볼 수 있습니다.</strong> </li></ul>
+
+
+
+<p></p>
+
+
+
+<p>토스 Node.js 챕터는 토스의 다양한 제품과 라이브러리 개발을 위해 팀원들의 지속적인 성장이 중요하다고 믿으며, 이를 위해 꾸준히 공부하고 공유하는 자리를 가지고 있으니 많은 관심 부탁드립니다.</p>
+
+
+
+<p><span style="font-size:inherit;font-weight:inherit;line-height:inherit;color:inherit">토스 Node.js Chapter 채용 공고 </span><span>👉</span><span style="font-size:inherit;font-weight:inherit;line-height:inherit;color:inherit"> </span><a rel="noreferrer noopener" href="https://toss.im/career/jobs?search=node.js" data-type="URL" data-id="https://toss.im/career/jobs?search=node.js" target="_blank">바로가기</a></p>
+
+
+
+<p></p>
+
+
+
+<p>감사합니다.</p>
+</div></div><style data-emotion="css auig7l">.css-auig7l{margin-top:96px;}</style><style data-emotion="css x7fajo">.css-x7fajo{margin-top:96px;}.css-x7fajo>*:not(style)~*:not(style){margin-left:24px;}</style><style data-emotion="css 6rfvv8">.css-6rfvv8{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;margin-top:96px;}.css-6rfvv8>*:not(style)~*:not(style){margin-left:24px;}</style><div class="css-6rfvv8"><style data-emotion="css 1n0u3h">.css-1n0u3h{background-color:#f9fafb;width:100%;height:auto;border-radius:12px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:48px;}@media (max-width: 700px){.css-1n0u3h{padding:32px;}}</style><div class="css-1n0u3h e1t1xt3a7"><style data-emotion="css 6cc9f0">.css-6cc9f0{font-size:24px;font-weight:700;margin-bottom:16px;color:#4e5968;}</style><h2 class="css-6cc9f0 e1t1xt3a6">재미있게 읽으셨나요?</h2><style data-emotion="css 1wmgpcn">.css-1wmgpcn{font-size:16px;line-height:1.5;font-weight:600;color:#6b7684;margin-bottom:4px;}</style><p class="css-1wmgpcn e1t1xt3a5">좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.</p><style data-emotion="css 4qu8li">.css-4qu8li{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:16px;}</style><div class="css-4qu8li e1t1xt3a3"><style data-emotion="css 1fmr5ax">.css-1fmr5ax{display:block;font-family:'tossface';font-size:40px;cursor:pointer;margin:0 12px;-webkit-transition:0.15s ease-in-out all;transition:0.15s ease-in-out all;}.css-1fmr5ax a{-webkit-text-decoration:none;text-decoration:none;}.css-1fmr5ax:hover{-webkit-transform:scale(1.2);-moz-transform:scale(1.2);-ms-transform:scale(1.2);transform:scale(1.2);}</style><div class="css-1fmr5ax e1t1xt3a1">😍</div><div class="css-1fmr5ax e1t1xt3a1">🤔</div></div><style data-emotion="css 1p3zmjw">.css-1p3zmjw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;margin-top:16px;}.css-1p3zmjw button,.css-1p3zmjw a{margin:0 12px;}@media (max-width: 700px){.css-1p3zmjw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;}.css-1p3zmjw button,.css-1p3zmjw a{width:100%;margin:8px 0;}}</style><div class="css-1p3zmjw e1t1xt3a0"><style data-emotion="css 1u8jkqx">.css-1u8jkqx{display:grid;grid-template-columns:min-content auto;grid-column-gap:8px;}</style><button class="p-button p-button--primary p-button--inline p-button--weak p-button--default p-button--has-icon padding--base css-1u8jkqx" type="button" aria-disabled="false"><span class="icon p-icon icon--colored p-icon--colored" aria-hidden="true" role="presentation" style="height:16px;width:16px;min-width:16px;color:#3182f6"></span>아티클 공유하기</button></div></div></div></article><style data-emotion="css 1lsuzal">.css-1lsuzal{margin-top:100px;}.css-1lsuzal::before{content:'';position:absolute;width:100%;height:1px;left:0;border-bottom:1px solid #e5e8eb;}</style><div class="css-1lsuzal e132k2571"><style data-emotion="css 1ympfnp">.css-1ympfnp{display:inline-block;width:100%;font-size:20px;margin:34px 0 40px 0;}</style><span class="typography typography--h3 typography--bold color--grey800 css-1ympfnp e132k2570">이어지는 글</span><style data-emotion="css vivlm7">.css-vivlm7{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer;margin-bottom:40px;}.css-vivlm7:last-of-type{margin-bottom:0px;}.css-vivlm7:hover .egyklng4{color:#3182f6;}</style><div class="css-vivlm7 egyklng3"><style data-emotion="css bc0lqn">.css-bc0lqn{width:80px;height:80px;margin-right:20px;border-radius:12px;object-fit:cover;}@media (max-width: 700px){.css-bc0lqn{width:64px;height:64px;}}</style><img srcSet="https://toss.tech/wp-content/uploads/2023/04/00009-889461687-300x300.png 300w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687-150x150.png 150w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687.png 512w" class="css-bc0lqn egyklng2"/><style data-emotion="css 1fttcpj">.css-1fttcpj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}</style><div class="css-1fttcpj egyklng1"><style data-emotion="css p4blj2">.css-p4blj2{font-size:24px;margin-bottom:4px;word-break:keep-all;line-height:1.4;overflow-wrap:break-word;-webkit-transition:color 0.3s ease;transition:color 0.3s ease;-webkit-line-clamp:2;display:block;}@media (max-width: 700px){.css-p4blj2{font-size:18px;-webkit-line-clamp:2;}}</style><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">무지성으로 사용한 헬스 체크가 불러일으킬 수 있는 참사</span><style data-emotion="css 1jxhn1e">.css-1jxhn1e{color:#8b95a1;}</style><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 04. 01</span></div></div><div class="css-vivlm7 egyklng3"><img srcSet="https://toss.tech/wp-content/uploads/2023/03/center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/center.png 1200w" class="css-bc0lqn egyklng2"/><div class="css-1fttcpj egyklng1"><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">ESLint와 AST로 코드 퀄리티 높이기</span><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 03. 31</span></div></div></div></div></div><style data-emotion="css 1d2vuhc">.css-1d2vuhc{padding:60px 24px;word-break:keep-all;overflow-wrap:break-word;background:rgba(2,9,19,0.91);}@media (max-width: 700px){.css-1d2vuhc{padding-top:24px;}}</style><section class="css-1d2vuhc eqrolup4"><style data-emotion="css yf0lpd">.css-yf0lpd{display:grid;grid-template-columns:3fr 7fr;grid-column-gap:20px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:640px;margin:0 auto;content-visibility:auto;}@media (max-width: 700px){.css-yf0lpd{grid-template-rows:min-content auto;grid-template-columns:1fr;grid-row-gap:24px;}}</style><div class="css-yf0lpd eqrolup2"><style data-emotion="css 1d33yk5">.css-1d33yk5{width:100%;}@media (max-width: 700px){.css-1d33yk5{width:90px;}}</style><img src="https://static.toss.im/3d/website_code_blue_alpha.png" alt="" class="css-1d33yk5 eqrolup3"/><style data-emotion="css 1gb2pj4">.css-1gb2pj4>*:not(style)~*:not(style){margin-top:24px;}</style><style data-emotion="css 7xmgw5">.css-7xmgw5{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-7xmgw5>*:not(style)~*:not(style){margin-top:24px;}</style><div class="css-7xmgw5"><style data-emotion="css 1pbuvpm">.css-1pbuvpm>*:not(style)~*:not(style){margin-top:8px;}</style><style data-emotion="css nbpfuv">.css-nbpfuv{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-nbpfuv>*:not(style)~*:not(style){margin-top:8px;}</style><div class="css-nbpfuv"><style data-emotion="css 19gu4b8">.css-19gu4b8{margin:0;font-size:26px;line-height:1.4;color:#ffffff;}@media (max-width: 700px){.css-19gu4b8{font-size:20px;}}</style><h3 class="css-19gu4b8 eqrolup1">토스팀이 만드는 수많은 혁신의 순간들</h3><style data-emotion="css shfxsq">.css-shfxsq{font-size:17px;line-height:1.5;color:#e5e8eb;}@media (max-width: 700px){.css-shfxsq{font-size:16px;}}</style><div class="css-shfxsq eqrolup0">당신과 함께 만들고 싶습니다.<br/>지금, 토스팀에 합류하세요.</div></div><a class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s" aria-disabled="false" href="https://toss.im/career/jobs?gh_src=38b73b7a3us">채용 중인 공고 보기</a></div></div></section><footer class="p-footer p-footer--light"><div class="p-footer__inner"><div class="p-footer__site-group-list"><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스테크</div></li><li class="p-footer__site-group-item"><a href="mailto:techblog@toss.im">의견 보내기</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스</div></li><li class="p-footer__site-group-item"><a href="https://toss.im">홈페이지</a></li><li class="p-footer__site-group-item"><a href="https://team.toss.im">회사 소개</a></li><li class="p-footer__site-group-item"><a href="https://toss.im/career">채용</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">고객센터</div></li><li class="p-footer__site-group-item"><a href="tel:1599-4905">전화: 1599-4905 (24시간 연중무휴)</a></li><li class="p-footer__site-group-item"><a href="mailto:support.toss.im">이메일: support@toss.im</a></li><li class="p-footer__site-group-item"><a href="https://goto.kakao.com/@toss">카카오톡: @toss</a></li></ul></div><address class="p-footer__address"><strong class="p-footer__address__company-name">㈜비바리퍼블리카</strong>Copyright © Viva Republica, Inc. All Rights Reserved.</address><ul class="p-footer__term-wrapper"></ul><ul class="p-footer__social-list"><li class="p-footer__social-list-item"><a aria-label="Toss Facebook" target="_blank" href="https://www.facebook.com/toss.revolution"><img src="https://static.toss.im/assets/homepage/safety/icn-facebook.svg" alt="Toss Facebook"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss blog" target="_blank" href="https://blog.toss.im"><img src="https://static.toss.im/assets/homepage/safety/icn-blog.svg" alt="Toss blog"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Naver Post" target="_blank" href="https://post.naver.com/tossblog"><img src="https://static.toss.im/assets/homepage/safety/icn-naver.svg" alt="Toss Naver Post"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Twitter" target="_blank" href="https://twitter.com/toss__official"><img src="https://static.toss.im/assets/homepage/safety/icn-twitter.svg" alt="Toss Twitter"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Instagram" target="_blank" href="https://www.instagram.com/toss.im/"><img src="https://static.toss.im/assets/homepage/safety/icn-instagram.svg" alt="Toss Instagram"/></a></li></ul></div></footer><div id="tds-pc__portal-container"></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"article":{"title":"TypeScript 타입 시스템 뜯어보기: 타입 호환성","content":"\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch1\u003e들어가며\u003c/h1\u003e\n\n\n\n\u003cp\u003e토스 Node.js 챕터에서는 높은 코드 가독성과 품질을 위해 TypeScript의 타입 시스템을 적극적으로 활용하고 있고 이에 대한 이해도를 높이기 위해 스터디를 꾸준히 진행하고 있습니다. TypeScript의 타입 시스템에 대해 공부해보던 중 알게된 흥미로운 몇가지 토픽들을 소개하려 합니다. 그 중 한가지로 이번글에서는 “타입 호환성 (type compatibility)”에 대해 알아보고자 합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch1\u003e타입 호환성은 무엇이며 왜 필요할까?\u003c/h1\u003e\n\n\n\n\u003cp\u003eTypeScript 공식문서 \u003ca rel=\"noreferrer noopener\" href=\"https://www.typescriptlang.org/ko/docs/handbook/type-compatibility.html\" target=\"_blank\"\u003e타입 호환성에 관한 글\u003c/a\u003e을 보면 아래와 같이 소개하고 있습니다.\u003c/p\u003e\n\n\n\n\u003cblockquote class=\"wp-block-quote\"\u003e\u003cp\u003eTypeScript의 타입 호환성은 구조적 서브타이핑(structural subtyping)을 기반으로 합니다. 구조적 타이핑이란 오직 멤버만으로 타입을 관계시키는 방식입니다. 명목적 타이핑(nominal typing)과는 대조적입니다. TypeScript의 구조적 타입 시스템의 기본 규칙은\u0026nbsp;y가 최소한\u0026nbsp;x와 동일한 멤버를 가지고 있다면\u0026nbsp;x와 y는 호환된다는 것입니다.\u003c/p\u003e\u003c/blockquote\u003e\n\n\n\n\u003cp\u003e위 내용에 대해 하나씩 이해해봅시다. 우선 강한 타입 시스템을 통해 높은 가독성과 코드 품질을 지향하는 TypeScript가 왜 타입 호환성을 지원하는 것일까요? 이 경우 타입 안정성에 문제가 생기게 되는 것은 아닐까요? 아래 예시를 통해 타입 호환성이 왜 필요한지 살펴보겠습니다.\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"1024\" height=\"256\" src=\"https://wp.toss.tech/wp-content/uploads/2022/10/image-6-1024x256.png\" alt=\"\" class=\"wp-image-868\" srcset=\"https://toss.tech/wp-content/uploads/2022/10/image-6-1024x256.png 1024w, https://toss.tech/wp-content/uploads/2022/10/image-6-300x75.png 300w, https://toss.tech/wp-content/uploads/2022/10/image-6-768x192.png 768w, https://toss.tech/wp-content/uploads/2022/10/image-6-1536x384.png 1536w, https://toss.tech/wp-content/uploads/2022/10/image-6-1568x392.png 1568w, https://toss.tech/wp-content/uploads/2022/10/image-6.png 1766w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e위와 같이 음식 \u003ccode\u003eFood\u003c/code\u003e 타입의 객체를 인자로 받아 간단한 칼로리 계산 공식으로 주어진 음식의 칼로리를 구하는 \u003ccode\u003ecalculateCalorie\u003c/code\u003e 함수가 있습니다. 타입과 함수는 아래와 같이 구현되어 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-1\" data-shcb-language-name=\"PHP\" data-shcb-language-slug=\"php\"\u003e\u003clink rel='stylesheet' id='syntax-highlighting-code-block-css'  href='https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1' media='all' /\u003e\u003cstyle\u003e.wp-block-code {\n\tborder: 0;\n\tpadding: 0;\n}\n\n.wp-block-code \u003e div {\n\toverflow: auto;\n}\n\n.shcb-language {\n\tborder: 0;\n\tclip: rect(1px, 1px, 1px, 1px);\n\t-webkit-clip-path: inset(50%);\n\tclip-path: inset(50%);\n\theight: 1px;\n\tmargin: -1px;\n\toverflow: hidden;\n\tpadding: 0;\n\tposition: absolute;\n\twidth: 1px;\n\tword-wrap: normal;\n\tword-break: normal;\n}\n\n.hljs {\n\tbox-sizing: border-box;\n}\n\n.hljs.shcb-code-table {\n\tdisplay: table;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table \u003e .shcb-loc {\n\tcolor: inherit;\n\tdisplay: table-row;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table .shcb-loc \u003e span {\n\tdisplay: table-cell;\n}\n\n.wp-block-code code.hljs:not(.shcb-wrap-lines) {\n\twhite-space: pre;\n}\n\n.wp-block-code code.hljs.shcb-wrap-lines {\n\twhite-space: pre-wrap;\n}\n\n.hljs.shcb-line-numbers {\n\tborder-spacing: 0;\n\tcounter-reset: line;\n}\n\n.hljs.shcb-line-numbers \u003e .shcb-loc {\n\tcounter-increment: line;\n}\n\n.hljs.shcb-line-numbers .shcb-loc \u003e span {\n\tpadding-left: 0.75em;\n}\n\n.hljs.shcb-line-numbers .shcb-loc::before {\n\tborder-right: 1px solid #ddd;\n\tcontent: counter(line);\n\tdisplay: table-cell;\n\tpadding: 0 0.75em;\n\ttext-align: right;\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\tuser-select: none;\n\twhite-space: nowrap;\n\twidth: 1%;\n}\n\u003c/style\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-php\"\u003etype Food = { \n  \u003cspan class=\"hljs-comment\"\u003e/** 각 영양소에 대한 gram 중량값 */\u003c/span\u003e\n  protein: number;\n  carbohydrates: number;\n  fat: number;\n}\n\n\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003ecalculateCalorie\u003c/span\u003e\u003cspan class=\"hljs-params\"\u003e(food: Food)\u003c/span\u003e\u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e food.protein * \u003cspan class=\"hljs-number\"\u003e4\u003c/span\u003e \n    + food.carbohydrates * \u003cspan class=\"hljs-number\"\u003e4\u003c/span\u003e \n    + food.fat * \u003cspan class=\"hljs-number\"\u003e9\u003c/span\u003e\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-1\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003ePHP\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ephp\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e한편, 개발자가 코드를 작성하는 과정에서 (의도했거나 혹은 실수로) \u003ccode\u003ecalculateCalorie\u003c/code\u003e 함수 인자에 여러가지 타입의 객체를 전달해본다고 가정해봅시다. 이 경우 TypeScript 타입 시스템은 프로그램이 타입 오류를 일으킬 가능성을 검사하게 됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"1024\" height=\"554\" src=\"https://wp.toss.tech/wp-content/uploads/2022/10/image-7-1024x554.png\" alt=\"\" class=\"wp-image-870\" srcset=\"https://toss.tech/wp-content/uploads/2022/10/image-7-1024x554.png 1024w, https://toss.tech/wp-content/uploads/2022/10/image-7-300x162.png 300w, https://toss.tech/wp-content/uploads/2022/10/image-7-768x416.png 768w, https://toss.tech/wp-content/uploads/2022/10/image-7-1536x832.png 1536w, https://toss.tech/wp-content/uploads/2022/10/image-7-1568x849.png 1568w, https://toss.tech/wp-content/uploads/2022/10/image-7.png 1762w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /\u003e\u003cfigcaption\u003e위 3가지 케이스에 대해 Type Checker가 어떻게 판단하는 것이 좋을까요?\u003c/figcaption\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e개발자가 정의한 \u003ccode\u003eFood\u003c/code\u003e 타입과 동일한 타입인 경우 (1번) 오류 없음이 명확하며, \u003ccode\u003eComputer\u003c/code\u003e 타입과 같이 다른 타입이며 칼로리 계산이 불가능한 경우 (2번) 오류로 판단하는 것이 명확합니다. 하지만, 햄버거를 의미하며 음식의 한 종류인 \u003ccode\u003eBurger\u003c/code\u003e 타입이 전달되는 경우 (3번) 어떻게 판단하는 것이 맞을까요?\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-2\" data-shcb-language-name=\"PHP\" data-shcb-language-slug=\"php\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-php\"\u003etype Burger = Food \u0026amp; {\n  \u003cspan class=\"hljs-comment\"\u003e/** 햄버거 브랜드 이름 */\u003c/span\u003e\n  burgerBrand: string; \n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-2\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003ePHP\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ephp\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e심지어 \u003ccode\u003eBurger\u003c/code\u003e 타입이 위와 같이 \u003ccode\u003eFood\u003c/code\u003e 타입을 상속하며 칼로리 계산에 필요한 모든 프로퍼티를 포함하고 있어 런타임 상에서 정상적으로 동작한다면 이를 타입 오류라고 판단하는게 올바른 걸까요? \u003c/p\u003e\n\n\n\n\u003cp\u003e이처럼 실제로 정상적으로 동작할 수 있는 올바른 코드라면 타입 시스템은 개발자의 의도에 맞게 유연하게 대응하여 타입 호환성을 지원하는 것이 더 좋을 수 있습니다. 이러한 유연성을 위해 TypeScript 타입 시스템은 부분적으로 타입 호환을 지원하고 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch1\u003e타입 호환성을 지원하는 규칙 : 구조적 서브타이핑\u003c/h1\u003e\n\n\n\n\u003cp\u003e한편 위에 예시에서 \u003ccode\u003eComputer\u003c/code\u003e 타입 사례처럼 타입오류로 판단하는 것이 명확한 경우가 있으며, 타입 안정성을 해치면서까지 유연함을 제공하는 것은 바람직하지 못합니다. 이를 위해서는 어떠한 경우에 호환을 허용할 것인지에 대한 명확한 규칙이 필요합니다. 이러한 규칙 중 프로그래밍 언어들에서 널리 활용되는 방식으로 명목적 서브타이핑(nominal subtyping)과 구조적 서브타이핑(structural subtpying)이 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e명목적 서브타이핑은 아래와 같이 타입 정의 시에 상속 관계임을 명확히 명시한 경우에만 타입 호환을 허용하는 것입니다. 이 방법을 통해 타입 오류가 발생할 가능성을 배제하고, 개발자의 명확한 의도를 반영할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-3\" data-shcb-language-name=\"PHP\" data-shcb-language-slug=\"php\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-php\"\u003e\u003cspan class=\"hljs-comment\"\u003e/** 상속 관계 명시 */\u003c/span\u003e\ntype Burger = Food \u0026amp; {\n  burgerBrand: string;\n}\n\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e burger: Burger = {\n  protein: \u003cspan class=\"hljs-number\"\u003e29\u003c/span\u003e,\n  carbohydrates: \u003cspan class=\"hljs-number\"\u003e48\u003c/span\u003e,\n  fat: \u003cspan class=\"hljs-number\"\u003e13\u003c/span\u003e,\n  burgerBrand: \u003cspan class=\"hljs-string\"\u003e'버거킹'\u003c/span\u003e\n}\n\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e calorie = calculateCalorie(burger)  \n\u003cspan class=\"hljs-comment\"\u003e/** 타입검사결과 : 오류없음 (OK) */\u003c/span\u003e\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-3\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003ePHP\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ephp\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e한편, 구조적 서브타이핑은 아래와 같이 상속 관계가 명시되어 있지 않더라도 객체의 프로퍼티를 기반으로 사용처에서 사용함에 문제가 없다면 타입 호환을 허용하는 방식입니다. 아래 예시를 보면 비록 상속 관계임을 명시하지는 않았지만 \u003ccode\u003eburger\u003c/code\u003e 변수는 \u003ccode\u003eFood\u003c/code\u003e 타입의 프로퍼티를 모두 포함하고 있고 따라서\u003ccode\u003ecalculateCalorie\u003c/code\u003e 함수 실행과정에서 오류가 발생하지 않습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-4\" data-shcb-language-name=\"PHP\" data-shcb-language-slug=\"php\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-php\"\u003e\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e burger = {\n  protein: \u003cspan class=\"hljs-number\"\u003e29\u003c/span\u003e,\n  carbohydrates: \u003cspan class=\"hljs-number\"\u003e48\u003c/span\u003e,\n  fat: \u003cspan class=\"hljs-number\"\u003e13\u003c/span\u003e,\n  burgerBrand: \u003cspan class=\"hljs-string\"\u003e'버거킹'\u003c/span\u003e\n}\n\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e calorie = calculateCalorie(burger)  \n\u003cspan class=\"hljs-comment\"\u003e/** 타입검사결과 : 오류없음 (OK) */\u003c/span\u003e\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-4\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003ePHP\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ephp\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e구조적 서브타이핑 방식은 타입 시스템이 객체의 프로퍼티를 체크하는 과정을 수행해주므로써, 명목적 서브타이핑과 동일한 효과를 내면서도 개발자가 상속 관계를 명시해주어야 하는 수고를 덜어주게 됩니다. 참고로, 구조적 서브타이핑은 “만약 어떤 새가 오리처럼 걷고, 헤엄치고, 꽥꽥거리는 소리를 낸다면 나는 그 새를 오리라고 부를 것이다.” 라는 의미에서 덕 타이핑 (duck typing) 이라고도 합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"1024\" height=\"558\" src=\"https://wp.toss.tech/wp-content/uploads/2022/10/image-8-1024x558.png\" alt=\"\" class=\"wp-image-873\" srcset=\"https://toss.tech/wp-content/uploads/2022/10/image-8-1024x558.png 1024w, https://toss.tech/wp-content/uploads/2022/10/image-8-300x163.png 300w, https://toss.tech/wp-content/uploads/2022/10/image-8-768x419.png 768w, https://toss.tech/wp-content/uploads/2022/10/image-8-1536x837.png 1536w, https://toss.tech/wp-content/uploads/2022/10/image-8-1568x854.png 1568w, https://toss.tech/wp-content/uploads/2022/10/image-8.png 1758w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /\u003e\u003cfigcaption\u003eTypeScript Type Checker는 구조적 서브타이핑을 기반으로 타입 호환을 판단합니다.\u003c/figcaption\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003eTypeScript는 구조적 서브타이핑을 지원하며, 명목적 서브타이핑만 지원하는 C#, Java 등의 언어는 명시적으로 상속 관계를 명시해주어야 타입 호환이 가능합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cblockquote class=\"wp-block-quote\"\u003e\u003cp\u003e\u003cstrong\u003e💡\u003c/strong\u003e  한편, 여기서부터 좀 더 본격적인 이야기를 다루어 보겠습니다.\u003c/p\u003e\u003cp\u003e\u003c/p\u003e\u003c/blockquote\u003e\n\n\n\n\u003ch1\u003e구조적 서브타이핑에 기반한 타입 호환이 지원되지 않는 경우가 존재한다?\u003c/h1\u003e\n\n\n\n\u003cp\u003e위 구조적 서브타이핑 예시의 코드는 타입 호환성에 따라 타입 오류가 발생하지 않지만, 아래 코드의 경우 컴파일 과정에서 \u003ccode\u003eArgument is not assignable to parameter of type 'Food'\u003c/code\u003e 라는 타입 오류가 발생하게 됩니다. 글을 더 읽으시기에 앞서 실제로 \u003ca href=\"https://www.typescriptlang.org/play?#code/C4TwDgpgBAYg9nAJlAvFA3lAUASAPQBUBUggDVSCAY4ImjgMYOALo1IADNgOqtQDmATgIYC2UgiJOBJ9sBINVAJ4sUKGHZxgEAJYA7AFxRFAV24AjCOwDcEqAGNO7LXAAWIRFzkBnVRu26DkgGadgjzTv1YAvlhYbuqKRsDycIrGnAA2RgDCcXDsIAAUbgiIqvBIAJTohuwQwOrs0ZlIAHTSsgrRxAAsUADUUJWIVSZmlta2EHaiUM1tHVUewEMAnAFBoJBQAEJlrLqosFlQAGQYhloruotcitlQdsDsSqwGgVhGUedQ++yr7ACMqssva2iFOLVyJSqABMUwANIZuuYrDZPANVI0ABwQ9yeVRvADMKKeB3YR04J1UAHJACE9gAcawCdC0TZncHpMTLEUiA3usGYlkqk0s9Xm88pJCMRAAMLgFDxwABNYAagaggAaawA-NVBVIASMcAGp1QQBjo4AZcdE4lpike3N0wPWfwB9RB4MhpmhfThDmGyMME3RWL2uPxhKgpMp1Nu9119I5IFZcXZjM5+vYwL5UAFUBFEulcsVKo1WqCvseDKZGKD8SSofSxpkgJUUFB2KhvVh9gR9tRXigmOx4bdp09VICUckXe7Pd7fZ7McFgBDx+Oy+VQZVQQAR45qxEA\" target=\"_blank\" rel=\"noreferrer noopener\"\u003eTS Playground\u003c/a\u003e를 통해 오류를 확인해보시고 다양하게 테스트해보시는 것도 추천합니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-5\" data-shcb-language-name=\"PHP\" data-shcb-language-slug=\"php\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-php\"\u003e\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e calorie = calculateCalorie({\n  protein: \u003cspan class=\"hljs-number\"\u003e29\u003c/span\u003e,\n  carbohydrates: \u003cspan class=\"hljs-number\"\u003e48\u003c/span\u003e,\n  fat: \u003cspan class=\"hljs-number\"\u003e13\u003c/span\u003e,\n  burgerBrand: \u003cspan class=\"hljs-string\"\u003e'버거킹'\u003c/span\u003e\n})                                \n\u003cspan class=\"hljs-comment\"\u003e/** 타임검사결과 : 오류 (NOT OK)*/\u003c/span\u003e\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-5\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003ePHP\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ephp\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e왜 위 코드는 타입 호환이 지원되지 않는 것일까요? 처음에 이 오류를 마주쳤을 때 이런저런 테스트를 해보며 함수에 값을 바로 인자로 전달하는 경우만 타입 호환이 지원되지 않는 것 같다고 유추하기는 했으나 조금 더 구체적인 규칙과 이렇게 예외가 발생하는 이유에 대해 이해해보고자 했습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e결과적으로 TypeScript 컴파일러 코드 상의 구현로직과 위 이슈와 연관된 \u003ca href=\"https://github.com/Microsoft/TypeScript/pull/3823\"\u003eTypeScript Github PR\u003c/a\u003e을 통해 이해할 수 있었습니다. 이에 대해 알아보기 위해 우선 TypeScript 컴파일러가 동작하는 방식에 대해 간략히 살펴보겠습니다.\u003c/p\u003e\n\n\n\n\u003ch1\u003eTypeScript 컴파일러 동작방식 살펴보기\u003c/h1\u003e\n\n\n\n\u003cp\u003eTypeScript 컴파일러가 동작하는 방식에 관해 아래 영상에 자세히 소개되어 있으며, 이 중 몇가지 내용만 요약하여 살펴보겠습니다.\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio\"\u003e\u003cdiv class=\"wp-block-embed__wrapper\"\u003e\n\u003ciframe loading=\"lazy\" title=\"How the TypeScript Compiler Compiles - understanding the compiler internal\" width=\"750\" height=\"422\" src=\"https://www.youtube.com/embed/X8k_4tZ16qU?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen\u003e\u003c/iframe\u003e\n\u003c/div\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003eTypeScript 컴파일러의 역할은 TypeScript 소스코드를 AST (Abstract Syntax Tree)로 변환한 뒤, 타입 검사를 수행하고, 그 후 JavaScript 소스코드로 변환하는 과정을 담당합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003eTypeScript 소스코드를 AST로 변환하는 과정은 \u003ccode\u003eparser.ts, scanner.ts\u003c/code\u003e , 타입 검사를 수행하는 과정은 \u003ccode\u003ebinder.ts, checker.ts\u003c/code\u003e, AST를 JavaScript 소스코드로 변환하는 과정은 \u003ccode\u003eemitter.ts, transformer.ts\u003c/code\u003e 등의 파일이 담당하고 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"1024\" height=\"618\" src=\"https://wp.toss.tech/wp-content/uploads/2022/10/image-3-1024x618.png\" alt=\"\" class=\"wp-image-740\" srcset=\"https://toss.tech/wp-content/uploads/2022/10/image-3-1024x618.png 1024w, https://toss.tech/wp-content/uploads/2022/10/image-3-300x181.png 300w, https://toss.tech/wp-content/uploads/2022/10/image-3-768x463.png 768w, https://toss.tech/wp-content/uploads/2022/10/image-3-1536x927.png 1536w, https://toss.tech/wp-content/uploads/2022/10/image-3-1568x946.png 1568w, https://toss.tech/wp-content/uploads/2022/10/image-3.png 1870w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e실제로 \u003ca rel=\"noreferrer noopener\" href=\"https://github.com/microsoft/TypeScript/tree/main/src/compiler\" target=\"_blank\"\u003eTypeScript Github의 compiler 디렉토리\u003c/a\u003e에 가면 위 코드 파일이 어떤식으로 구현되어 있는지 확인해볼 수 있으며, 이번 글에서 다루고 있는 주제인 구조적 서브타이핑과 타입 호환에 관한 부분은 타입 검사와 가장 연관이 높은 \u003ccode\u003echecker.ts\u003c/code\u003e 파일의 \u003ccode\u003ehasExcessProperties()\u003c/code\u003e 함수에서 처리하고 있었습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e아래는 \u003ccode\u003echecker.ts\u003c/code\u003e \u003ca rel=\"noreferrer noopener\" href=\"https://raw.githubusercontent.com/microsoft/TypeScript/main/src/compiler/checker.ts\" data-type=\"URL\" data-id=\"https://raw.githubusercontent.com/microsoft/TypeScript/main/src/compiler/checker.ts\" target=\"_blank\"\u003e코드\u003c/a\u003e 중 타입 호환의 예외가 발생하는 지점의 코드를 주요한 부분만 남기고 간소화한 것입니다. 주석과 함께 봐주시면 좋을 것 같습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-6\" data-shcb-language-name=\"PHP\" data-shcb-language-slug=\"php\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-php\"\u003e\u003cspan class=\"hljs-comment\"\u003e/** 함수 매개변수에 전달된 값이 FreshLiteral인 경우 true가 됩니다. */\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e isPerformingExcessPropertyChecks =\n    getObjectFlags(source) \u0026amp; ObjectFlags.FreshLiteral;\n\n\u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (isPerformingExcessPropertyChecks) {\n    \u003cspan class=\"hljs-comment\"\u003e/** 이 경우 아래 로직이 실행되는데, \n     * hasExcessProperties() 함수는\n     * excess property가 있는 경우 에러를 반환하게 됩니다.\n     * 즉, property가 정확히 일치하는 경우만 허용하는 것으로 \n     * 타입 호환을 허용하지 않는 것과 같은 의미입니다. */\u003c/span\u003e\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (hasExcessProperties(source \u003cspan class=\"hljs-keyword\"\u003eas\u003c/span\u003e FreshObjectLiteralType)) {\n        reportError();\n    }\n}\n\u003cspan class=\"hljs-comment\"\u003e/** \n * FreshLiteral이 아닌 경우 위 분기를 skip하게 되며, \n * 타입 호환을 허용하게 됩니다. */\u003c/span\u003e\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-6\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003ePHP\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ephp\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e지면상 다소 간소화한 코드만 남겨두었지만, 함수에 인자로 들어온 값이 \u003ccode\u003eFreshLiteral\u003c/code\u003e 인지 아닌지 여부에 따라 조건분기가 발생하여 타입 호환 허용 여부가 결정된다는 것을 확인할 수 있었습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e그렇다면 \u003ccode\u003eFresh Literal\u003c/code\u003e 이란 무엇이며, 왜 이 경우에는 타입 호환의 예외가 발생하도록 되어 있는 것일까요?\u003c/p\u003e\n\n\n\n\u003ch1\u003e타입 호환 예외 조건 : 신선도(Freshness)\u003c/h1\u003e\n\n\n\n\u003cp\u003eTypeScript는 구조적 서브타이핑에 기반한 타입 호환의 예외 조건과 관련하여 \u003ca href=\"https://radlohead.gitbook.io/typescript-deep-dive/type-system/freshness\"\u003e신선도 (Freshness)\u003c/a\u003e 라는 개념을 제공합니다. 모든 object literal은 초기에 “fresh” 하다고 간주되며, 타입 단언 (type assertion) 을 하거나, 타입 추론에 의해 object literal의 타입이 확장되면 “freshness”가 사라지게 됩니다. 특정한 변수에 object literal을 할당하는 경우 이 2가지 중 한가지가 발생하게 되므로 “freshness”가 사라지게 되며, 함수에 인자로 object literal을 바로 전달하는 경우에는 “fresh”한 상태로 전달됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e한편, \u003ca href=\"https://github.com/Microsoft/TypeScript/pull/3823\"\u003eTypeScript Github PR (2015년 7월) 의 논의\u003c/a\u003e에 따르면, fresh object인 경우에는 예외적으로 타입 호환을 허용하지 않기로 했음을 확인할 수 있습니다. 그러한 이유에 대해 살펴보겠습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-7\" data-shcb-language-name=\"PHP\" data-shcb-language-slug=\"php\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-php\"\u003e\u003cspan class=\"hljs-comment\"\u003e/** 부작용 1 \n * 코드를 읽는 다른 개발자가 calculateCalorie 함수가\n * burgerBrand를 사용한다고 오해할 수 있음 */\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e calorie1 = calculateCalorie({\n  protein: \u003cspan class=\"hljs-number\"\u003e29\u003c/span\u003e,\n  carbohydrates: \u003cspan class=\"hljs-number\"\u003e48\u003c/span\u003e,\n  fat: \u003cspan class=\"hljs-number\"\u003e13\u003c/span\u003e,\n  burgerBrand: \u003cspan class=\"hljs-string\"\u003e'버거킹'\u003c/span\u003e\n})\n\n\u003cspan class=\"hljs-comment\"\u003e/** 부작용 2 \n * birgerBrand 라는 오타가 발생하더라도 \n * excess property이기 때문에 호환에 의해 오류가 \n * 발견되지 않음 */\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e calorie2 = calculateCalorie({\n  protein: \u003cspan class=\"hljs-number\"\u003e29\u003c/span\u003e,\n  carbohydrates: \u003cspan class=\"hljs-number\"\u003e48\u003c/span\u003e,\n  fat: \u003cspan class=\"hljs-number\"\u003e13\u003c/span\u003e,\n  birgerBrand: \u003cspan class=\"hljs-string\"\u003e'버거킹'\u003c/span\u003e\n})\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-7\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003ePHP\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ephp\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e구조적 서브타이핑에 기반한 타입 호환은 유연함을 제공한다는 이점이 있지만, 위 코드 사례와 같이 코드를 읽는 다른 개발자의 입장에서 함수가 실제 다루는 것보다 더 많은 데이터를 받아들인다는 오해를 불러일으킬 수 있고, 프로퍼티 키에 대한 오타가 발생하더라도 오류가 확인되지 않는 부작용이 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e한편, fresh object를 함수에 인자로 전달한 경우, 이는 특정한 변수에 할당되지 않았으므로 어차피 \u003cstrong\u003e해당 함수에서만 사용되고 다른 곳에서 사용되지 않습니다.\u003c/strong\u003e 이 경우 유연함에 대한 이점보다는 부작용을 발생시킬 가능성이 높으므로 굳이 구조적 서브타이핑을 지원해야할 이유가 없습니다.\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"1024\" height=\"579\" src=\"https://wp.toss.tech/wp-content/uploads/2022/10/image-9-1024x579.png\" alt=\"\" class=\"wp-image-876\" srcset=\"https://toss.tech/wp-content/uploads/2022/10/image-9-1024x579.png 1024w, https://toss.tech/wp-content/uploads/2022/10/image-9-300x170.png 300w, https://toss.tech/wp-content/uploads/2022/10/image-9-768x434.png 768w, https://toss.tech/wp-content/uploads/2022/10/image-9-1536x869.png 1536w, https://toss.tech/wp-content/uploads/2022/10/image-9-1568x887.png 1568w, https://toss.tech/wp-content/uploads/2022/10/image-9.png 1750w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /\u003e\u003cfigcaption\u003eTypeScript Type Checker는 구조적 서브타이핑을 기반으로 타입 호환을 판단하되,\u003cbr\u003eFreshness에 따라 예외를 둡니다.\u003c/figcaption\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e이처럼 타입 호환성은 유연함이라는 이점을 제공하지만 그로 인해 부작용이 발생할 수 있으므로, 이에 대한 절충안으로 타입 호환을 제공해서 얻는 이점이 거의 없는 fresh object에 대해서는 호환성을 지원하지 않기로 논의되어 TypeScript 컴파일러 코드에 반영된 것을 확인해볼 수 있었습니다.\u003c/p\u003e\n\n\n\n\u003ch1\u003e타입 호환성에 대한 개발자의 선택지 : Index signature vs Branded type\u003c/h1\u003e\n\n\n\n\u003cp\u003e한편, 그럼에도 개발자가 fresh object에 대해서 타입 호환을 허용하고자 한다면 아래와 같이 함수 매개변수 타입에 index signature를 포함시켜두어 명시적으로 타입 호환을 허용시키는 것이 가능합니다. 또는 tsconfig 상에 \u003ccode\u003esuppressExcessPropertyErrors\u003c/code\u003e 를 true로 설정하는 방식도 가능합니다. (이 또한 \u003ca href=\"https://github.com/Microsoft/TypeScript/pull/3823\"\u003e동일한 PR 논의\u003c/a\u003e에 정의되어 있습니다.)\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-8\" data-shcb-language-name=\"PHP\" data-shcb-language-slug=\"php\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-php\"\u003etype Food = { \n  protein: number;\n  carbohydrates: number;\n  fat: number;\n  [x: string]: any                  \u003cspan class=\"hljs-comment\"\u003e/** index signature */\u003c/span\u003e\n}\n\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e calorie = calculateCalorie({\n  protein: \u003cspan class=\"hljs-number\"\u003e29\u003c/span\u003e,\n  carbohydrates: \u003cspan class=\"hljs-number\"\u003e48\u003c/span\u003e,\n  fat: \u003cspan class=\"hljs-number\"\u003e13\u003c/span\u003e,\n  burgerBrand: \u003cspan class=\"hljs-string\"\u003e'버거킹'\u003c/span\u003e\n})                                  \n\u003cspan class=\"hljs-comment\"\u003e/** 타임검사결과 : 오류없음 (OK) */\u003c/span\u003e\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-8\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003ePHP\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ephp\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e또한 반대로 모든 경우에 대해 타입 호환을 허용하지 않도록 강제하는 것도 가능한데 이를 위해 사용할 수 있는 기법이 Branded type (또는 Branding type) 입니다. 아래와 같이 의도적으로 \u003ccode\u003e__brand\u003c/code\u003e 와 같은 프로퍼티를 추가시켜, 개발자가 함수의 매개변수로 정의한 타입 외에는 호환이 될 수 없도록 강제하는 기법입니다. 온도(섭씨, 화씨)나 화폐단위(원, 달러, 유로)와 같이 같이 \u003ccode\u003enumber\u003c/code\u003e 타입이지만 서로 다를 의미를 가질 수 있어 명시적인 구분이 필요할 때 사용해볼 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-9\" data-shcb-language-name=\"PHP\" data-shcb-language-slug=\"php\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-php\"\u003etype Brand\u0026lt;K, T\u0026gt; = K \u0026amp; { __brand: T};\ntype Food = Brand\u0026lt;{ \n  protein: number;\n  carbohydrates: number;\n  fat: number;\n}, \u003cspan class=\"hljs-string\"\u003e'Food'\u003c/span\u003e\u0026gt;\n\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e burger = {\n  protein: \u003cspan class=\"hljs-number\"\u003e100\u003c/span\u003e,\n  carbohydrates: \u003cspan class=\"hljs-number\"\u003e100\u003c/span\u003e, \n  fat: \u003cspan class=\"hljs-number\"\u003e100\u003c/span\u003e, \n  burgerBrand: \u003cspan class=\"hljs-string\"\u003e'버거킹'\u003c/span\u003e\n}\n\ncalculateCalorie(burger)                   \n\u003cspan class=\"hljs-comment\"\u003e/** 타임검사결과 : 오류 (NOT OK) */\u003c/span\u003e         \n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-9\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003ePHP\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ephp\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e앞선 글을 통해 이해한 타입 호환의 이점과 부작용에 대한 이해를 바탕으로 개발자는 자신의 프로젝트를 진행하는 과정에서 필요에 맞게 \u003ccode\u003eindex signature\u003c/code\u003e, \u003ccode\u003etsconfig \u0026gt; suppressExcessPropertyErrors\u003c/code\u003e, \u003ccode\u003ebranded type\u003c/code\u003e 등을 통해 타입 호환성의 범위를 선택하여 개발하는 것이 가능할 것입니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"1024\" height=\"601\" src=\"https://wp.toss.tech/wp-content/uploads/2022/10/image-10-1024x601.png\" alt=\"\" class=\"wp-image-879\" srcset=\"https://toss.tech/wp-content/uploads/2022/10/image-10-1024x601.png 1024w, https://toss.tech/wp-content/uploads/2022/10/image-10-300x176.png 300w, https://toss.tech/wp-content/uploads/2022/10/image-10-768x451.png 768w, https://toss.tech/wp-content/uploads/2022/10/image-10-1536x901.png 1536w, https://toss.tech/wp-content/uploads/2022/10/image-10-1568x920.png 1568w, https://toss.tech/wp-content/uploads/2022/10/image-10.png 1762w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /\u003e\u003cfigcaption\u003eTypeScript Type Checker는 내부적인 규칙에 따라 타입 호환을 판단하지만,\u003cbr\u003e개발자가 필요에 따라 선택하는 것이 가능합니다.\u003c/figcaption\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003ch1\u003e마치며\u003c/h1\u003e\n\n\n\n\u003cp\u003e이번글의 내용을 모두 요약하면 아래와 같습니다.\u003c/p\u003e\n\n\n\n\u003cul\u003e\u003cli\u003e\u003cstrong\u003e타입 검사의 안정성과 유연함 사이에서 절충안으로 도입된 개념이 타입 호환성입니다. 그리고 타입 호환성을 지원하는 방법과 관련하여 개발자에게 명시적 선언을 어디까지 요구할 것인지에 대한 선택지가 존재합니다.\u003c/strong\u003e\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eTypeScript는 구조적 서브타이핑에 기반한 타입 호환을 통해 개발자의 명시적 선언을 줄여주는 한편 이로 인한 부작용을 개선하고자 freshness에 기반한 예외조건을 두었고, Index Signature와 Branded type 등의 방식을 통해 개발자가 명시적으로 선택할 수 있는 선택지를 만들어두었습니다.\u003c/strong\u003e\u003c/li\u003e\u003cli\u003e\u003cstrong\u003e프로그래밍 언어마다 타입 검사가 동작하는 방식이 다르며 이는 해당 언어를 개발한 커뮤니티의 논의와 의사결정에 따라 선택된 결과라고 볼 수 있습니다. 본 주제 외에도 TypeScript 컴파일러 코드와 Github PR을 살펴보면 흥미로운 논의와 토픽들을 확인해볼 수 있습니다.\u003c/strong\u003e \u003c/li\u003e\u003c/ul\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e토스 Node.js 챕터는 토스의 다양한 제품과 라이브러리 개발을 위해 팀원들의 지속적인 성장이 중요하다고 믿으며, 이를 위해 꾸준히 공부하고 공유하는 자리를 가지고 있으니 많은 관심 부탁드립니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e토스 Node.js Chapter 채용 공고 👉\u0026nbsp;\u003ca rel=\"noreferrer noopener\" href=\"https://toss.im/career/jobs?search=node.js\" data-type=\"URL\" data-id=\"https://toss.im/career/jobs?search=node.js\" target=\"_blank\"\u003e바로가기\u003c/a\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e감사합니다.\u003c/p\u003e\n","date":"2022-10-26T00:38:54","excerpt":"\u003cp\u003e타입호환성은 무엇이며 왜 필요할까요? 타입호환이 지원되지 않는 경우가 존재한다는 것을 아셨나요? 평소 익숙했던 개념들에 대해 질문을 던져가며 TypeScript 타입 시스템에 관해 심도있게 알아보고자 합니다. \u003c/p\u003e\n","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2022/10/tech-article-ts-300x150.png 300w, https://toss.tech/wp-content/uploads/2022/10/tech-article-ts-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2022/10/tech-article-ts-768x384.png 768w, https://toss.tech/wp-content/uploads/2022/10/tech-article-ts.png 1200w"}},"metadata":{"ogBackground":"https://static.toss.im/assets/toss-tech/tech-article-ts-og.png","ogImageTitle":"TypeScript\r\n타입 시스템 뜯어보기:\r\n타입 호환성","ogGenerateImage":true,"recruitTitle":"재미있게 읽으셨나요?","recruitUrl":null,"form1Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=729\u0026title=TypeScript_타입_시스템_뜯어보기\u0026reaction=good","form2Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=729\u0026title=TypeScript_타입_시스템_뜯어보기\u0026reaction=bad","formDescription":"좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.","form1Label":"😍","form2Label":"🤔","recruitDescription":null},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}},{"node":{"id":"dGVybTox","name":"Uncategorized"}}]},"author":{"node":{"id":"dXNlcjoyNw==","firstName":"병묵","lastName":"김","description":null,"avatar":{"url":"https://toss.tech/wp-content/uploads/2022/10/profile_bm-312x312.png"},"role":{"role":"Node.js Developer"}}}},"relatedArticles":[{"title":"무지성으로 사용한 헬스 체크가 불러일으킬 수 있는 참사","slug":"how-to-work-health-check-in-spring-boot-actuaotr","date":"2023-04-01T15:38:57","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/04/00009-889461687-300x300.png 300w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687-150x150.png 150w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687.png 512w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}},{"node":{"id":"dGVybTox","name":"Uncategorized"}}]}},{"title":"ESLint와 AST로 코드 퀄리티 높이기","slug":"improving-code-quality-via-eslint-and-ast","date":"2023-03-31T15:47:53","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/03/center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/center.png 1200w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}}]}}]},"__N_SSP":true},"page":"/article/[slug]","query":{"slug":"typescript-type-compatibility"},"buildId":"QqBxegmptuUDYc8oCREsD","assetPrefix":"https://static.toss.im/frontend/toss-tech","runtimeConfig":{"ENV":"live","NODE_ENV":"production","PORT":"3000","ASSET_PREFIX":"https://static.toss.im/frontend/toss-tech","SERVICE":"toss-tech","SENTRY":{"DSN":"https://5eff657ed6ef486fb8af2dc5f9508abd@sentry.io/1242586","PUBLIC_KEY":"5eff657ed6ef486fb8af2dc5f9508abd","RELEASE":"toss-tech_1.0.103","SERVICE":"toss-tech","SERVICE_VERSION":"1.0.103"},"RENDER_TYPE":"ssr"},"isFallback":false,"gssp":true,"customServer":true,"scriptLoader":[]}</script></body></html>

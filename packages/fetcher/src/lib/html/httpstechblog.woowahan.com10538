@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="ko-KR"
+	prefix="og: https://ogp.me/ns#" >
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<title>Developers of Woowa, how do they grow? (a.k.a. system and culture of the development organization) | 우아한형제들 기술블로그</title>
+
+		<!-- All in One SEO 4.1.7 -->
+		<meta name="robots" content="max-image-preview:large" />
+		<link rel="canonical" href="https://techblog.woowahan.com/10538/" />
+		<meta property="og:locale" content="ko_KR" />
+		<meta property="og:site_name" content="우아한형제들 기술블로그  |" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Developers of Woowa, how do they grow? (a.k.a. system and culture of the development organization) | 우아한형제들 기술블로그" />
+		<meta property="og:url" content="https://techblog.woowahan.com/10538/" />
+		<meta property="og:image" content="https://techblog.woowahan.com/wp-content/uploads/2022/08/우아한-개발자들-어떻게-성장해요-a.k.a.-개발조직의-제도와-문화-3.jpg" />
+		<meta property="og:image:secure_url" content="https://techblog.woowahan.com/wp-content/uploads/2022/08/우아한-개발자들-어떻게-성장해요-a.k.a.-개발조직의-제도와-문화-3.jpg" />
+		<meta property="og:image:width" content="1640" />
+		<meta property="og:image:height" content="856" />
+		<meta property="article:published_time" content="2023-02-09T07:50:01+00:00" />
+		<meta property="article:modified_time" content="2023-02-09T08:24:40+00:00" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="Developers of Woowa, how do they grow? (a.k.a. system and culture of the development organization) | 우아한형제들 기술블로그" />
+		<meta name="twitter:image" content="https://techblog.woowahan.com/wp-content/uploads/2021/06/screenshot.jpg" />
+		<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/techblog.woowahan.com\/#website","url":"https:\/\/techblog.woowahan.com\/","name":"\uc6b0\uc544\ud55c\ud615\uc81c\ub4e4 \uae30\uc220\ube14\ub85c\uadf8","inLanguage":"ko-KR","publisher":{"@id":"https:\/\/techblog.woowahan.com\/#organization"}},{"@type":"Organization","@id":"https:\/\/techblog.woowahan.com\/#organization","name":"\uc6b0\uc544\ud55c\ud615\uc81c\ub4e4 \uae30\uc220\ube14\ub85c\uadf8","url":"https:\/\/techblog.woowahan.com\/","logo":{"@type":"ImageObject","@id":"https:\/\/techblog.woowahan.com\/#organizationLogo","url":"https:\/\/techblog.woowa.in\/wp-content\/uploads\/2021\/06\/screenshot.jpg"},"image":{"@id":"https:\/\/techblog.woowahan.com\/#organizationLogo"}},{"@type":"BreadcrumbList","@id":"https:\/\/techblog.woowahan.com\/10538\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/techblog.woowahan.com\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/techblog.woowahan.com\/","name":"\ud648","description":"\uc6b0\uc544\ud55c\ud615\uc81c\ub4e4\uc758 \uae30\uc220, \uc11c\ube44\uc2a4, \ube44\uc804, \uac00\uce58\ub97c \ub4e4\ub824 \ub4dc\ub9bd\ub2c8\ub2e4.","url":"https:\/\/techblog.woowahan.com\/"}}]},{"@type":"Person","@id":"https:\/\/techblog.woowahan.com\/author\/dev_relations\/#author","url":"https:\/\/techblog.woowahan.com\/author\/dev_relations\/","name":"\uc6b0\uc544\ud55c\ud615\uc81c\ub4e4 DevRel","image":{"@type":"ImageObject","@id":"https:\/\/techblog.woowahan.com\/10538\/#authorImage","url":"https:\/\/techblog.woowahan.com\/wp-content\/uploads\/2023\/02\/2023-\uc6b0\uc544\ud55c\ud14c\ud06c-\ub85c\uace0-\uc138\ub85c-e1675772885187.png","width":96,"height":96,"caption":"\uc6b0\uc544\ud55c\ud615\uc81c\ub4e4 DevRel"}},{"@type":"WebPage","@id":"https:\/\/techblog.woowahan.com\/10538\/#webpage","url":"https:\/\/techblog.woowahan.com\/10538\/","name":"Developers of Woowa, how do they grow? (a.k.a. system and culture of the development organization) | \uc6b0\uc544\ud55c\ud615\uc81c\ub4e4 \uae30\uc220\ube14\ub85c\uadf8","inLanguage":"ko-KR","isPartOf":{"@id":"https:\/\/techblog.woowahan.com\/#website"},"breadcrumb":{"@id":"https:\/\/techblog.woowahan.com\/10538\/#breadcrumblist"},"author":"https:\/\/techblog.woowahan.com\/author\/dev_relations\/#author","creator":"https:\/\/techblog.woowahan.com\/author\/dev_relations\/#author","datePublished":"2023-02-09T07:50:01+09:00","dateModified":"2023-02-09T08:24:40+09:00"},{"@type":"Article","@id":"https:\/\/techblog.woowahan.com\/10538\/#article","name":"Developers of Woowa, how do they grow? (a.k.a. system and culture of the development organization) | \uc6b0\uc544\ud55c\ud615\uc81c\ub4e4 \uae30\uc220\ube14\ub85c\uadf8","inLanguage":"ko-KR","headline":"Developers of Woowa, how do they grow? (a.k.a. system and culture of the development organization)","author":{"@id":"https:\/\/techblog.woowahan.com\/author\/dev_relations\/#author"},"publisher":{"@id":"https:\/\/techblog.woowahan.com\/#organization"},"datePublished":"2023-02-09T07:50:01+09:00","dateModified":"2023-02-09T08:24:40+09:00","articleSection":"Culture","mainEntityOfPage":{"@id":"https:\/\/techblog.woowahan.com\/10538\/#webpage"},"isPartOf":{"@id":"https:\/\/techblog.woowahan.com\/10538\/#webpage"},"image":{"@type":"ImageObject","@id":"https:\/\/techblog.woowahan.com\/#articleImage","url":"https:\/\/techblog.woowahan.com\/wp-content\/uploads\/2022\/08\/DSC046053.png","width":4000,"height":2251}}]}
+		</script>
+		<!-- All in One SEO -->
+
+<script>                function apbct_attach_event_handler__backend(elem, event, callback) {                    if(typeof window.addEventListener === "function") elem.addEventListener(event, callback);                    else                                                elem.attachEvent(event, callback);                }                apbct_attach_event_handler__backend(document, 'DOMContentLoaded', function(){                    if (typeof apbctLocalStorage === "object" && ctPublic.data__key_is_ok) {                        apbctLocalStorage.set('ct_checkjs', '5d875f8195a8fbeb9689c586b508ec17aa4dd9c79b3ca1d436d4f6c8c1ab01ad', true );                    } else {                        console.log('APBCT ERROR: apbctLocalStorage object is not loaded.');                    }                  });    </script><link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="우아한형제들 기술블로그 &raquo; 피드" href="https://techblog.woowahan.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="우아한형제들 기술블로그 &raquo; 댓글 피드" href="https://techblog.woowahan.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="우아한형제들 기술블로그 &raquo; Developers of Woowa, how do they grow? (a.k.a. system and culture of the development organization) 댓글 피드" href="https://techblog.woowahan.com/10538/feed/" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/techblog.woowahan.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.5"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://techblog.woowahan.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.5' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='ct_public_css-css'  href='https://techblog.woowahan.com/wp-content/plugins/cleantalk-spam-protect/css/cleantalk-public.min.css?ver=6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='post_hit_counter-frontend-css'  href='https://techblog.woowahan.com/wp-content/plugins/post-hit-counter/assets/css/frontend.css?ver=1.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='less-style-css'  href='https://techblog.woowahan.com/wp-content/uploads/wp-less/updater-0W9NMo/assets/css/style-989b48800d.css' type='text/css' media='all' />
+<link rel='stylesheet' id='content-style-css'  href='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/assets/css/style-content.css?ver=5.9.5' type='text/css' media='all' />
+<link rel='stylesheet' id='swiper-style-css'  href='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/assets/css/swiper-bundle.css?ver=5.9.5' type='text/css' media='all' />
+<link rel='stylesheet' id='post_hit_counter-widget-css'  href='https://techblog.woowahan.com/wp-content/plugins/post-hit-counter/assets/css/widget.css?ver=1.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='sab-font-css'  href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&#038;subset=latin' type='text/css' media='all' />
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='ct_public_functions-js-extra'>
+/* <![CDATA[ */
+var ctPublicFunctions = {"_ajax_nonce":"f989b12a4e","_rest_nonce":"93614f95ce","_ajax_url":"\/wp-admin\/admin-ajax.php","_rest_url":"https:\/\/techblog.woowahan.com\/wp-json\/","data__cookies_type":"none","data__ajax_type":"rest","text__wait_for_decoding":"Decoding the contact data, let us a few seconds to finish. Anti-Spam by CleanTalk.","cookiePrefix":""};
+var ctPublic = {"settings__forms__check_internal":"0","settings__forms__check_external":"0","blog_home":"https:\/\/techblog.woowahan.com\/","pixel__setting":"3","pixel__enabled":"1","pixel__url":"https:\/\/moderate2.cleantalk.org\/pixel\/86071727e0fe330bd800deb37d6f4a5d.gif","data__email_check_before_post":"1","data__cookies_type":"none","data__key_is_ok":"1","data__visible_fields_required":"1","data__to_local_storage":{"apbct_cookies_test":"%7B%22cookies_names%22%3A%5B%22apbct_timestamp%22%2C%22apbct_site_landing_ts%22%2C%22apbct_page_hits%22%5D%2C%22check_value%22%3A%22a41bffac45457c09c865deb5ed78df27%22%7D","apbct_page_hits":"30","apbct_site_referer":"UNKNOWN","apbct_timestamp":"1679492533","apbct_urls":"{\"techblog.woowahan.com\/10774\/\":[1679492531],\"techblog.woowahan.com\/10600\/\":[1679492532],\"techblog.woowahan.com\/10567\/\":[1679492532],\"techblog.woowahan.com\/10645\/\":[1679492533],\"techblog.woowahan.com\/10430\/\":[1679492533]}"}};
+/* ]]> */
+</script>
+<script type='text/javascript' data-pagespeed-no-defer src='https://techblog.woowahan.com/wp-content/plugins/cleantalk-spam-protect/js/apbct-public-bundle.min.js?ver=6.1' id='ct_public_functions-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/assets/js/sticky.min.js?ver=5.9.5' id='sticky-js-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/assets/js/swiper-bundle.min.js?ver=5.9.5' id='swiper-js-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/build/vue.min.js?ver=5.9.5' id='vuejs-js'></script>
+<link rel="https://api.w.org/" href="https://techblog.woowahan.com/wp-json/" /><link rel="alternate" type="application/json" href="https://techblog.woowahan.com/wp-json/wp/v2/posts/10538" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://techblog.woowahan.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://techblog.woowahan.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.9.5" />
+<link rel='shortlink' href='https://techblog.woowahan.com/?p=10538' />
+<link rel="alternate" type="application/json+oembed" href="https://techblog.woowahan.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftechblog.woowahan.com%2F10538%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://techblog.woowahan.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftechblog.woowahan.com%2F10538%2F&#038;format=xml" />
+        <script type="text/javascript">
+            var StrCPVisits_page_data = {
+                'abort' : 'false',
+                'title' : 'Developers of Woowa, how do they grow? (a.k.a. system and culture of the development organization)',
+            };
+
+        </script>
+        <!-- This website uses the Ultimate Social Comments plugin v2.0.0 - https://wordpress.org/plugins/ultimate-facebook-comments/ -->
+<meta property="fb:app_id" content="596588250503455"/>
+<style type="text/css">.fb-comments, .fb-comments span, .fb-comments span iframe[style] { min-width:100% !important; width:100% !important }</style>
+<style type="text/css">.saboxplugin-wrap{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;border:1px solid #eee;width:100%;clear:both;display:block;overflow:hidden;word-wrap:break-word;position:relative}.saboxplugin-wrap .saboxplugin-gravatar{float:left;padding:0 20px 20px 20px}.saboxplugin-wrap .saboxplugin-gravatar img{max-width:100px;height:auto;border-radius:0;}.saboxplugin-wrap .saboxplugin-authorname{font-size:18px;line-height:1;margin:20px 0 0 20px;display:block}.saboxplugin-wrap .saboxplugin-authorname a{text-decoration:none}.saboxplugin-wrap .saboxplugin-authorname a:focus{outline:0}.saboxplugin-wrap .saboxplugin-desc{display:block;margin:5px 20px}.saboxplugin-wrap .saboxplugin-desc a{text-decoration:underline}.saboxplugin-wrap .saboxplugin-desc p{margin:5px 0 12px}.saboxplugin-wrap .saboxplugin-web{margin:0 20px 15px;text-align:left}.saboxplugin-wrap .sab-web-position{text-align:right}.saboxplugin-wrap .saboxplugin-web a{color:#ccc;text-decoration:none}.saboxplugin-wrap .saboxplugin-socials{position:relative;display:block;background:#fcfcfc;padding:5px;border-top:1px solid #eee}.saboxplugin-wrap .saboxplugin-socials a svg{width:20px;height:20px}.saboxplugin-wrap .saboxplugin-socials a svg .st2{fill:#fff; transform-origin:center center;}.saboxplugin-wrap .saboxplugin-socials a svg .st1{fill:rgba(0,0,0,.3)}.saboxplugin-wrap .saboxplugin-socials a:hover{opacity:.8;-webkit-transition:opacity .4s;-moz-transition:opacity .4s;-o-transition:opacity .4s;transition:opacity .4s;box-shadow:none!important;-webkit-box-shadow:none!important}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-color{box-shadow:none;padding:0;border:0;-webkit-transition:opacity .4s;-moz-transition:opacity .4s;-o-transition:opacity .4s;transition:opacity .4s;display:inline-block;color:#fff;font-size:0;text-decoration:inherit;margin:5px;-webkit-border-radius:0;-moz-border-radius:0;-ms-border-radius:0;-o-border-radius:0;border-radius:0;overflow:hidden}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-grey{text-decoration:inherit;box-shadow:none;position:relative;display:-moz-inline-stack;display:inline-block;vertical-align:middle;zoom:1;margin:10px 5px;color:#444;fill:#444}.clearfix:after,.clearfix:before{content:' ';display:table;line-height:0;clear:both}.ie7 .clearfix{zoom:1}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-twitch{border-color:#38245c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-addthis{border-color:#e91c00}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-behance{border-color:#003eb0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-delicious{border-color:#06c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-deviantart{border-color:#036824}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-digg{border-color:#00327c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-dribbble{border-color:#ba1655}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-facebook{border-color:#1e2e4f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-flickr{border-color:#003576}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-github{border-color:#264874}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-google{border-color:#0b51c5}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-googleplus{border-color:#96271a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-html5{border-color:#902e13}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-instagram{border-color:#1630aa}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-linkedin{border-color:#00344f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-pinterest{border-color:#5b040e}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-reddit{border-color:#992900}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-rss{border-color:#a43b0a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-sharethis{border-color:#5d8420}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-skype{border-color:#00658a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-soundcloud{border-color:#995200}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-spotify{border-color:#0f612c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-stackoverflow{border-color:#a95009}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-steam{border-color:#006388}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-user_email{border-color:#b84e05}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-stumbleUpon{border-color:#9b280e}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-tumblr{border-color:#10151b}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-twitter{border-color:#0967a0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-vimeo{border-color:#0d7091}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-windows{border-color:#003f71}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-whatsapp{border-color:#003f71}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-wordpress{border-color:#0f3647}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-yahoo{border-color:#14002d}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-youtube{border-color:#900}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-xing{border-color:#000202}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-mixcloud{border-color:#2475a0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-vk{border-color:#243549}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-medium{border-color:#00452c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-quora{border-color:#420e00}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-meetup{border-color:#9b181c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-goodreads{border-color:#000}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-snapchat{border-color:#999700}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-500px{border-color:#00557f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-mastodont{border-color:#185886}.sabox-plus-item{margin-bottom:20px}@media screen and (max-width:480px){.saboxplugin-wrap{text-align:center}.saboxplugin-wrap .saboxplugin-gravatar{float:none;padding:20px 0;text-align:center;margin:0 auto;display:block}.saboxplugin-wrap .saboxplugin-gravatar img{float:none;display:inline-block;display:-moz-inline-stack;vertical-align:middle;zoom:1}.saboxplugin-wrap .saboxplugin-desc{margin:0 10px 20px;text-align:center}.saboxplugin-wrap .saboxplugin-authorname{text-align:center;margin:10px 0 20px}}body .saboxplugin-authorname a,body .saboxplugin-authorname a:hover{box-shadow:none;-webkit-box-shadow:none}a.sab-profile-edit{font-size:16px!important;line-height:1!important}.sab-edit-settings a,a.sab-profile-edit{color:#0073aa!important;box-shadow:none!important;-webkit-box-shadow:none!important}.sab-edit-settings{margin-right:15px;position:absolute;right:0;z-index:2;bottom:10px;line-height:20px}.sab-edit-settings i{margin-left:5px}.saboxplugin-socials{line-height:1!important}.rtl .saboxplugin-wrap .saboxplugin-gravatar{float:right}.rtl .saboxplugin-wrap .saboxplugin-authorname{display:flex;align-items:center}.rtl .saboxplugin-wrap .saboxplugin-authorname .sab-profile-edit{margin-right:10px}.rtl .sab-edit-settings{right:auto;left:0}img.sab-custom-avatar{max-width:75px;}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-color .st1 {display: none;}.saboxplugin-wrap .saboxplugin-authorname {font-family:"Noto Sans";}.saboxplugin-wrap .saboxplugin-desc {font-family:Noto Sans;}.saboxplugin-wrap {margin-top:40px; margin-bottom:0px; padding: 0px 0px }.saboxplugin-wrap .saboxplugin-authorname {font-size:14px; line-height:21px;}.saboxplugin-wrap .saboxplugin-desc p, .saboxplugin-wrap .saboxplugin-desc {font-size:14px !important; line-height:21px !important;}.saboxplugin-wrap .saboxplugin-web {font-size:14px;}.saboxplugin-wrap .saboxplugin-socials a svg {width:36px;height:36px;}</style><link rel="icon" href="https://techblog.woowahan.com/wp-content/uploads/2020/08/favicon.ico" sizes="32x32" />
+<link rel="icon" href="https://techblog.woowahan.com/wp-content/uploads/2020/08/favicon.ico" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://techblog.woowahan.com/wp-content/uploads/2020/08/favicon.ico" />
+<meta name="msapplication-TileImage" content="https://techblog.woowahan.com/wp-content/uploads/2020/08/favicon.ico" />
+
+	<script type="text/javascript">
+		var ajaxurl = "https://techblog.woowahan.com/wp-admin/admin-ajax.php";
+	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQ34XQDGNB"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'G-JQ34XQDGNB');
+	</script>
+	<!-- Naver -->
+	<meta name="naver-site-verification" content="4b53b1e487890e94c3d0f88804669d2f565d1eb0" />
+</head>
+
+<body data-rsssl=1 class="post-template-default single single-post postid-10538 single-format-standard wp-embed-responsive" data-barba="wrapper">
+	<header>
+		<!--헤더-->
+		<div class="gnb pc">
+			<div>
+				<a href="/" class="title">
+					<span class="logo">
+						<img src="/wp-content/uploads/2021/04/logo-e1619937994625.png" />
+					</span>
+					<span class="sub-logo">기술블로그</span>
+				</a>
+			</div>
+			<div class="menu">
+				<div class="menu-2">
+					<img class="search" src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/search.svg" />
+					<a href="https://www.facebook.com/woowahanTech" name="facebook" target="_blank">
+						<img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/1.svg" />
+					</a>
+					<a href="https://www.youtube.com/%EC%9A%B0%EC%95%84%ED%95%9CTech" name="youtube" target="_blank">
+						<img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/2.svg" />
+					</a>
+				</div>
+				<div class="txt">
+					<a href="https://career.woowahan.com/?utm_source=techblog&utm_medium=display&utm_campaign=2022_1h_developer_recuiting_da&utm_content=techhr&jobCodes&employmentTypeCodes=&serviceSectionCodes=&careerPeriod=&keyword=&category=jobGroupCodes%3ABA005001&fbclid=IwAR1SDMBF6WjfUZ1WV-JrCYxYyAGBf92r-Au1TQ0seGgOuT0ZuAT7XUilsGg#recruit-list" target="_blank">개발자 채용</a>
+					<a href="https://docs.google.com/forms/d/e/1FAIpQLSe5HMoawj5-lsjcOLvF5BtxWWr7D_uZXYChkWse1bgQs58C4w/viewform" target="_blank">뉴스레터 신청</a>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="gnb mob">
+			<div>
+				<a href="/" class="title">
+					<span class="logo">
+						<img src="/wp-content/uploads/2021/04/logo-e1619937994625.png" />
+					</span>
+					<span class="sub-logo">기술블로그</span>
+				</a>
+			</div>
+			<div class="right">
+
+				<div class="hambug_btn">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="search">
+					<img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/search.svg" />
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="search_wrap">
+		<span class="search_inner">
+			<form role="search" method="get" id="searchform" class="searchform" action="/">
+				<input class="searchbar" type="text" name="s" id="s" placeholder="검색어를 입력해주세요." />
+				<input type="submit" id="searchsubmit" value="">
+			</form>
+			<br>
+			<a href="#" class="search">돌아가기</a>
+		</span>
+	</div>
+
+		<div class="content vuejs">
+		<div class="hambug_menu">
+			<div class="top"></div>
+			<div class="inner">
+				<div class="menu-wrap">
+					<a v-for="item in categories" v-bind:href="'/category/'+item.slug" class="item link"
+						v-bind:data-id="item.cat_ID">
+						<!-- <input v-bind:id="'cat-'+item.slug" type="checkbox" v-bind:value="item.slug"
+							v-model="vcategory" /> -->
+						<label>{{item.name}}</label>
+					</a>
+				</div>
+				<div class="menu-wrap extra">
+					<p class="item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSe5HMoawj5-lsjcOLvF5BtxWWr7D_uZXYChkWse1bgQs58C4w/viewform">우아한Tech에 문의하기</a></p>
+					<p class="item"><a href="https://career.woowahan.com/?utm_source=techblog&utm_medium=display&utm_campaign=2022_1h_developer_recuiting_da&utm_content=techhr&jobCodes&employmentTypeCodes=&serviceSectionCodes=&careerPeriod=&keyword=&category=jobGroupCodes%3ABA005001&fbclid=IwAR1SDMBF6WjfUZ1WV-JrCYxYyAGBf92r-Au1TQ0seGgOuT0ZuAT7XUilsGg#recruit-list" target="_blank">개발자 채용</a></p>
+				</div>
+				<div class="menu-wrap extra">
+					<p>
+						<a class="sns" href="/" target="_blank">
+							<img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/1.svg" />
+						</a>
+						<a class="sns" href="/" target="_blank">
+							<img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/2.svg" />
+						</a>
+					</p>
+				</div>
+			</div>
+			<div class="bottom">
+
+			</div>
+		</div>
+		<!-- page content -->
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><div class="content-wrap">
+    <div class="post-content">
+    <div class="cont-header">
+    <h1>Developers of Woowa, how do they grow? (a.k.a. system and culture of the development organization)</h1>
+        <div class="col col-2">
+        <div class="author">
+        <span>
+            Feb.09.2023        </span>
+        <span>
+            우아한형제들 DevRel        </span>
+        <span class="thumb">
+            <img src="https://techblog.woowahan.com/wp-content/uploads/2023/02/2023-우아한테크-로고-세로-e1675772885187-150x150.png" width="150" height="150" alt="우아한형제들 DevRel" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo" />        </span>
+    </div>
+        <div class="sns">
+        <img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/link.svg" alt="clipboard" onclick="SNS('clipboard')">
+        <img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/facebook.svg" alt="facebook" onclick="SNS('facebook')">
+        <img src="https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/imgs/twitter.svg" alt="twitter" onclick="SNS('twitter')">
+    </div>
+    </div>
+    <p>
+        <span class="cats">
+                <a class="cat-tag" href="/?pcat=culture" data-slug="culture">
+            Culture        </a>
+                </span>
+        </p>
+    </div>
+    <div class="post-content-inner">
+    <div class="toc">
+        <ul>
+            <li v-for="item in tocs">
+                <a class="item" v-bind:href="'#'+item.link">{{item.name}}</a>
+                <ul v-if="item.sub && item.sub.length > 0">
+                    <li v-for="sub in item.sub">
+                        <a v-bind:href="'#'+sub.link">{{sub.name}}</a>
+                    </li>
+                </ul>
+            </li>
+    </div>
+    <p><em>🗒️일러두기: 이 글은 글로벌 관계사와 독자를 위해 2022년 8월 발행한 &quot;<a href="https://techblog.woowahan.com/9059/" title="우아한 개발자들, 어떻게 성장해요?(a.k.a. 개발조직의 제도와 문화)">우아한 개발자들, 어떻게 성장해요?(a.k.a. 개발조직의 제도와 문화)</a>&quot;를 영문화한 글입니다.</em></p>
+<hr />
+<p>How does Woowa Brothers support growth for its developer members in terms of system and organizational culture? Here is a variety of systems that enable every developer who joins Woowa Brothers to have a pleasant experience in the hiring process, find satisfaction in their work, and continuously grow within the technical organization of Woowa Brothers.</p>
+<h2>Before we begin</h2>
+<p>In this post, we would like to paint a vivid picture of the development culture and in-house systems that support the growth of Woowa Brothers&#8217; development organization through interviews with four members working in the Tech HR team and DR team under the Tech HR Dept.. In this post, you&#8217;ll be able to take a peek of the various activities and cultures that are part of the Woowa Brothers&#8217; development organization.</p>
+<blockquote>
+<p>[Main content]<br />
+Roles of Tech HR Depts and various activities and programs to support the growth of the development organization<br />
+Special culture and system unique to Woowa Brothers&#8217; development organization<br />
+Future goals for the development organization of Woowa Brothers</p>
+</blockquote>
+<p style="text-align:center"><img src="https://techblog.woowahan.com/wp-content/uploads/2022/08/DSC046053-600x338.png"></p>
+<p></br></p>
+<h2>Roles of Tech HR Office</h2>
+<p><strong>Q) Hello, nice to meet you! Could you briefly introduce what each of you do in Tech HR Dept., along with the roles of Tech HR team and Developer Relations (DR) team, please?</strong></p>
+<p><strong><span style="color:#2ac1bc;">Rina</span></strong>: Hello, I&#8217;m Rina Woo, and I&#8217;m in charge of hiring tech talent in Tech HR team. I get to be both an interviewer and an interviewee today, so hope I can do well! Tech HR Dept is an organization whose main activities are  hiring developers and DR. Our goal is to build a unique hiring brand for Woowa Brothers within the IT industry, and expand Woowa Brothers&#8217; technical influence to strengthen our development organization&#8217;s capabilities both in terms of quality and quantity.</p>
+<p><strong><span style="color:#2ac1bc;">Eunkyung</span></strong>: Hello, I&#8217;m Eunkyung Ko, also working in the Tech HR Hiring team. Tech HR team is in charge of HR and hiring for Woowa Brothers&#8217; development organization. We also play the role of supporting and resolving HR issues within the organization as a HR business partner for each team to function effectively within their organization.</p>
+<p><strong><span style="color:#2ac1bc;">Soohyun</span></strong>: Glad to meet you, I&#8217;m Soo Hyun Park, and I&#8217;m in charge of Developere Relations. Our DR team focuses on building relationships between developers by undertaking activities such as tech events, tech conference, and various tech-related contents like our tech blog. Our goal is to promote Woowa Brothers&#8217; tech organization and increase its influence within the IT industry.</p>
+<p><strong><span style="color:#2ac1bc;">Youngkyung</span></strong>: I am Youngkyung Yu, a technical writing coach at the DR team. Nice to meet you. : ) To add to Soohyun&#8217;s explanation with a general description for those who have a hard time defining DR, PR stands for Public Relations, right? DR narrows the scope a bit further down to &quot;Developers,&quot; so you can think of it as &quot;Developer Relations.&quot;<br />
+</br></p>
+<h2>Growth program for development organization</h2>
+<p><strong>Q) The company seems to not spare organizational support for the growth of developers. It&#8217;s evident in the fact that there&#8217;s a separate organization who is in charge of this. There is great diversity in the activities and programs that the office carries out for our developers, right?</strong></p>
+<p><strong><span style="color:#2ac1bc;">Soohyun</span></strong>: Yes, there is a really big variety of programs. I would like to bring up three of those programs. Firstly, <a href="https://youtube.com/playlist?list=PLgXGHBqgT2TtGi82mCZWuhMu-nQy301ew" title="WOOWA TECH seminars">WOOWA TECH seminars</a> (YouTube). It is a monthly online seminar that openly introduce and share the development stories that take place within Woowa Brothers. These are the stories of Woowa Brothers&#8217; developers struggling and growing in order to provide more valuable services to our customers. </p>
+<p>WOOWATECH seminars usually deal with the trials and errors that our developers undergo while developing the service, or stories where we gained technical lessons from successes. By sharing these kinds of stories on an open channel, we get to promote our technologies to the outside world, as well as give some useful insights to those who might have the same kinds of problems. I believe this activity is especially meaningful since these technical exchanges allow us to communicate with the external ecosystem of developers.</p>
+<p><strong><span style="color:#2ac1bc;">Youngkyung</span></strong>: <strong>WOOWA STUDY</strong> is an activity where we provide a space for study (Tech Salon) along with operation costs so that developers with common interests can meet, exchange, and grow together. WOOWA STUDY is open to external developers to participate, as well as Woowa developers. </p>
+<p>There&#8217;s a lot of fun to be had in studying tech books and discussing them, and working on Toy projects together. There&#8217;s also an advantage of being able to network and interact with developers with different careers. Some of Woowa&#8217;s senior developers take the role of study leaders and share their talent. More than 200 developers are participating in this program at the moment. </p>
+<p>Each study team picks its own topics and autonomously decides how to run the study and what its goal would be. In this way, we try to constantly create opportunities for developers to learn and grow themselves.</p>
+<p style="text-align:center"><img src="https://techblog.woowahan.com/wp-content/uploads/2022/08/unnamed-2-e1661347376880.png"></p>
+<p style="text-align:center; color:gray;">WOOWA STUDY networking day</p>
+<p><strong><span style="color:#2ac1bc;">Soohyun</span></strong>: Lastly, there&#8217;s an internal training program for strengthening the technical capability of Woowa developers, called <strong>WOOWATECH LEARNING</strong>. We design the courses based on the skillset and technical trends required by each tech team. We sometimes invite an external speaker for the theme selected or an internal speaker who may deliver the message best. Any Woowa developer can participate in these training sessions.<br />
+</br></p>
+<p><strong>Q) I heard that there&#8217;s also professional support for technical writing activities for developers. Could you tell us a bit about the &quot;technical writing&quot; activity?</strong></p>
+<p><strong><span style="color:#2ac1bc;">Youngkyung</span></strong>: It seems there are many developers who have a desire to write down their thoughts and what they learned, organize these ideas, and then share them. It is a meaningful thing for a developer to organize and summarize their experiences in writing, it&#8217;d be made more meaningful by sharing if many others can read and get help from it. But the problem is &quot;so, how can I write well?&quot; Even the things that might come easily in words are not as easy as you think when you try and put them together well in writing.</p>
+<p>For example, you might have a subject, but you could be thinking of how to start it, what kind of format it should have, and how to present your story as it unfolds. The difficulties that individuals experience and their needs when they want to write are very diverse. We help our developers deal with these difficulties through technical writing coaching program.</p>
+<p>In this program, Woowa engineers get a chance to advance their writing skills by completing pieces of writing that are suited to their purpose. For Woowa developers, writing is a meaningful activity that has a positive impact, not only on personal growth but also on promoting their team, service, and technologies that they are building.<br />
+</br></p>
+<p><strong>Q) There are so many programs! Are there any activities that Woowa developers are particularly happy with? It&#8217;d be great if you can share the actual feedback or cases from Woowa developers.</strong></p>
+<p><strong><span style="color:#2ac1bc;">Soohyun</span></strong>: I&#8217;d like to specifically mention <strong>WOOWA-THON</strong>. WOOWA-THON is Woowa Brothers&#8217; annual hackathon <strong>that goes on for two days without a break</strong>. It gives an opportunity for developers, designers, and product managers to organize teams where they can work on new ideas outside of their official tasks. The winning team may be awarded an opportunity to apply their ideas to the actual Baemin service.<br />
+Even though it may be physically exhausting, Woowa developers love WOOWA-THON, and I think it&#8217;s because they get a deep sense of achievement from this immersive experience where they can make their ideas come true in a very short period of time.</p>
+<p style="text-align:center"><img src="https://techblog.woowahan.com/wp-content/uploads/2022/08/%E1%84%8B%E1%85%AE%E1%84%8B%E1%85%A1%E1%84%90%E1%85%A9%E1%86%AB-1.png"></p>
+<p style="text-align:center; color:gray;">WOOWA-THON project presentation as a gather-town</p>
+<p><strong><span style="color:#2ac1bc;">Eunkyung</span></strong>: I&#8217;d love to present the <strong>Train-to-Recruit program</strong> among the activities supported by the Tech HR Office.<br />
+There is a specialized organization called the Tech Course Training Development team within Woowa Brothers. It designs programs needed to nurture strong developers and trains them through these programs.</p>
+<p>There are a total of 3 Train-to-Recruit programs: &quot;Tech Course, Tech Camp, and Tech Camp Pro.&quot; Our colleagues are very happy with the new members who joined after completing these training courses. I think this may be because they not only completed the required hands-on training while actually working, but they also gained so-called soft skills that are important in working with others.</p>
+<p><strong><span style="color:#2ac1bc;">Rina</span></strong>: Actually, many senior developers say that working with competent juniors is the most satisfying part of working at Woowa Brothers. Not everyone joins Woowa Brothers after completing the training course, but we also connect the students to other top IT companies so that they might be hired by them.</p>
+<p>I would also like to mention that we provide a lot of opportunities for Woowa developers to become speakers at internal and external conferences or seminars. As Youngkyung has already mentioned, we are actively creating opportunities for our developers to participate as a speaker or writer, which will help them develop their careers and create their own personal brands. There was actually a case where a developer who had presented at &quot;WOOWACON,&quot; an annual technical conference held by Woowa Brothers, got invited to be a lecturer at an external class and even got to write a book.</p>
+<p style="text-align:center"><img src="https://techblog.woowahan.com/wp-content/uploads/2022/08/DSC046121-600x363.png"></p>
+<p style="text-align:center; color:gray;">WOOWACON technical session presentation rehearsal</p>
+<p></br></p>
+<h2>What&#8217;s unique about Woowa&#8217;s development organization</h2>
+<p><strong>Q) What can you share about the special systems and culture in the development organization of Woowa Brothers?</strong></p>
+<p><strong><span style="color:#2ac1bc;">Eunkyung</span></strong>: There&#8217;s a community group for each job group at Woowa Brothers, such as Front-end development group, Server development group, Mobile app development group, etc. It&#8217;s the company&#8217;s official organization that was founded to help growth of individuals in each job group.</p>
+<p>They have group leaders just like other organizations, and get all the support that any official organization could expect to receive. This allows various activities for growth and interactions for raising technical experiences within the job group to be carried out. The developers engage in technical activities not only within the teams they belong to but also in the job group and can receive guidance and feedback necessary for individual development.</p>
+<p><strong><span style="color:#2ac1bc;">Youngkyung</span></strong>: There&#8217;s also a &quot;Technical committee coming to you.&quot; A general technical committee would be held by a technical leader, and developers from each organization will participate to discuss the organization&#8217;s technical issues top-down. However, we run it as a meeting where our technical directors visit an organization that needs help by &quot;coming to them,&quot; listen to them about the technical difficulties they face, and work to resolve them. Each organization has various different issues they face, so the committee members can carefully listen to the problems on-site and help resolve them from diverse perspectives.</p>
+<p><strong><span style="color:#2ac1bc;">Soohyun</span></strong>: I&#8217;d like to also mention the positions of Tech leader (TL) and Tech initiatives (TI).<br />
+The difference between them is that TL is an official position within the organization and TI is not, but they play similar roles in the sense that they influence the organization and lead important decisions from a technical perspective.</p>
+<p>The members of TI may regularly change, so the opportunity is open for many different people. It&#8217;s attractive for developers since they can prove technical leadership and develop their capabilities as a leader even if they don&#8217;t hold an official position of leadership.<br />
+</br></p>
+<p><strong>Q) How would you describe the characteristics that Woowa developers have in common?</strong></p>
+<p><strong><span style="color:#2ac1bc;">Rina</span></strong>: I&#8217;ve talked about this with Jaeha, our CTO. He said that we should think about our business and services to understand our culture and our developers&#8217; characteristics. We enact a service where this cycle of &quot;Order &#8211; Cooking &#8211; Placing a delivery &#8211; Delivery &#8211; (The customer&#8217;s) Consumption&quot; occurs in real time. The service must ensure that this cycle runs successfully and quickly, and a quick response is required whenever there&#8217;s a problem. The developers&#8217; characteristics and atmosphere in the working environment are also connected to the needs of solving these real-time problems, and that was something I strongly agreed with.</p>
+<p><strong><span style="color:#2ac1bc;">Soohyun</span></strong>: I agree. There are millions of orders placed and delivered in a day, and if we can&#8217;t handle the problems in real time, then we can&#8217;t satisfy our customers. So, achieving &quot;customer satisfaction&quot; for our service is a lot harder than any other business. In addition, the various interests of customers, restaurant owners, and delivery riders are interwoven in the service. There&#8217;s this high complexity in terms of system connectivity and technology. The communication should be super organic as well.</p>
+<p><strong><span style="color:#2ac1bc;">Eunkyung</span></strong>: To summarize, we could say our development organization&#8217;s characteristics are agility and organicity needed for handling highly complicated problems and the complexity of business with various interested parties. Such characteristics make it important to have problem solving skills and communication abilities. Our developers are good at both solving problems and communication! </p>
+<p><strong><span style="color:#2ac1bc;">Youngkyung</span></strong>: I find our developers to be very fun and witty when I work with them. I also feel quite familiar and attached to them. Perhaps it&#8217;s the camaraderie that comes from solving difficult problems together. I would like to say that they&#8217;re all witty quick thinkers. You enjoy working with them, even in difficult and complicated circumstances, and that keeps the workplace&#8217;s vibe always positive.<br />
+</br></p>
+<p><strong>Q) It seems communication with the developers is very important to keep this culture. How do you usually communicate with Woowa developers?</strong></p>
+<p><strong><span style="color:#2ac1bc;">Soohyun</span></strong>: I try to create contact points with different developer members in each group. For example, there would be groups of team members, the tech leader (director) group, and heads of organizations. Listening to all these different people allows us to look at things like the current status of Woowa Brothers&#8217; development organization, where improvements are needed, and directions to take from a more balanced perspective. </p>
+<p>I believe it&#8217;s very important to create a good environment to work for our internal developers, as much as promoting our development organization to the outside world. Because the high satisfaction of the internal members would be naturally conveyed externally.</p>
+<p><strong><span style="color:#2ac1bc;">Rina</span></strong>: I agree. I think that only when the internal members are satisfied, we can attract great talent from the outside as well. The &quot;satisfaction&quot; includes how well communication and sharing work within the organization as an important factor. That&#8217;s why we conduct a <strong>monthly townhall meetings regularly</strong>. Our townhall meetings receive guidance and support on the company level.</p>
+<p><strong><span style="color:#2ac1bc;">Eunkyung</span></strong>: We at the Tech HR Hiring team discuss recruitment and HR issues through regular meetings with the organization heads who are in charge of hiring in their daily work and meet with new hires often.<br />
+</br></p>
+<h2>Future goals for development organization of Woowa Brothers</h2>
+<p><strong>Q) Is there any part you&#8217;ve particularly been focused on in the Tech HR Office lately to create a good working environment?</strong></p>
+<p><strong><span style="color:#2ac1bc;">Soohyun</span></strong>: In terms of growth for in-house developers, we continue to exchange information and collaborate with global tech companies that run similar services to Baemin around the world through Delivery Hero. We regularly conduct a global tech council where quick commerce companies in different companies gather and share about how they can achieve innovation in their own markets.</p>
+<p>We also have the Developer Exchange Program through which developers can work at partner companies for a short period of time. There are a lot of areas where we can share the technical know-how of Woowa Brothers and contribute, so we&#8217;re creating opportunities to grow together through these technical exchanges.</p>
+<p>Our experience so far has been mainly to create a domestic service for a single market within a homogenous culture. Moving forward, equipping ourselves with the technology and know-how for creating a service that can be generalized for any culture or market would help the developers to step up to the next level.</p>
+<p><strong><span style="color:#2ac1bc;">Rina</span></strong>: Our company and service have grown a lot, as Soohyun mentioned, and it seems many people are not sure how much growth potential we have, or if there&#8217;d be any opportunities for advancement after they join us. Woowa Brothers is focusing on preparations to jump up to the next level as a global tech company based on our experience of growth and success.</p>
+<p>We have to continuously attract great people in terms of recruitment, so we try to let people know that there are still many great opportunities to be had when you join Woowa Brothers, and what these opportunities are specifically, through various contents. I&#8217;m excited at the opportunities to introduce more of our global and recruitment opportunities, and the opportunities we will be able to offer to candidates who are interested in working at Woowa Brothers.</p>
+<p><strong><span style="color:#2ac1bc;">Eunkyung</span></strong>: We are constantly improving the ways of working and the work culture in Woowa, so the developers can work in a more satisfying environment. It may be obvious, but I think only when things like what values the product you make creates, how it affects customers, and why we do it are shared, the developers can find a meaning in their work. This is a basic element, but one of the most critical ones. So we are constantly thinking about ways to better share and communicate within the organization, and to protect this culture.<br />
+</br></p>
+<p><strong>Q) As we wrap up this interview, would you have something you really want to say to the readers of this post who are interested in Woowa Brothers&#8217; technology and development culture?</strong></p>
+<p><strong><span style="color:#2ac1bc;">Soohyun</span></strong>: I&#8217;ve been emphasizing this in what I&#8217;ve been saying earlier, but Woowa Brothers is a company that takes its members&#8217; growth extremely seriously. I want to reiterate that we care much about sharing and communication, internally obviously, but also with the external development ecosystem. You&#8217;d see this yourself when you read our tech blog and see Woowa Brothers&#8217; various activities that share technology. There are painfully honest stories, failures, and experiences of trials and errors being shared so you might think &quot;Do they even share such things?&quot;</p>
+<p><strong><span style="color:#2ac1bc;">Youngkyung</span></strong>: I think the fact that the company hired a technical writing coach as a member of the DR team and supports developers to write demonstrates an example of how important it regards growth and skill sharing through writing. </p>
+<p>I believe the culture of supporting developers to grow not only in terms of technology but also to nurture various different competencies themselves is a big advantage and weapon Woowa Brothers has. Because such support is done based on autonomy and trust in its members. I hope to see many people, who understand and sympathize with such sincerity and who want to be part of that, join us. 🙂</p>
+<p><strong><span style="color:#2ac1bc;">Rina</span></strong>: Youngkyung raised a good point, which is &quot;autonomy.&quot; I&#8217;d like to also emphasize that even though the service and organization have considerably grown in size, we still have the flexibility and autonomy to freely suggest the technology we need and to make various technological attempts. </p>
+<p>I think it&#8217;s a truly important element in creating an environment where developers can work happily. For example, there&#8217;s something called &quot;AWS playground&quot; in Woowa Brothers&#8217; technology organization. We open an account with which you can use AWS with the admin permission to run tests and study in an environment that&#8217;s separated from the working system. It&#8217;d be great if there&#8217;s another opportunity to introduce &quot;AWS playground&quot; in more detail.</p>
+<p><strong><span style="color:#2ac1bc;">Eunkyung</span></strong>: I think we can create this culture and keep it going because of our members. Culture simply can&#8217;t be maintained just because the systems exist. It&#8217;s only possible because each member of the organization sympathizes with such a direction, and because we have people who actively participate. </p>
+<p>Emphasizing that there are many &quot;good colleagues&quot; may sound a bit like cliché. However, it&#8217;s worth pointing out that many are concerned about whether such a great culture can be maintained as we grow. I can say with confidence that you can join Woowa Brothers if you&#8217;d like to work in a good environment with the best people in your field.</p>
+<p style="text-align:center"><img src="https://techblog.woowahan.com/wp-content/uploads/2022/08/DSC045731-600x345.jpg"></p>
+<p></br></p>
+<h2>Closing the interview</h2>
+<p>It has been great to talk with the members fromTech HR Dept., and we&#8217;re glad to have the opportunity to summarize Woowa Brothers&#8217; development culture and various systems that the company supports at the organizational level for developers&#8217; growth. It has also been impressive to know that our development organization places great value on not just the growth of internal developers, but also growing  the external development ecosystem and external developers through close communication and knowledge sharing.</p>
+<p>We look forward to the future as the Tech HR Dept is looking for ways to ensure that our development organization&#8217;s members enjoy their work and continue growing at Woowa Brothers. In order to do so they are preparing and designing various systems within the organization.</p>
+<div class="saboxplugin-wrap" itemtype="http://schema.org/Person" itemscope itemprop="author"><div class="saboxplugin-tab"><div class="saboxplugin-gravatar"><img src="https://techblog.woowahan.com/wp-content/uploads/2023/02/2023-우아한테크-로고-세로-e1675772885187-150x150.png" width="100" height="100" alt="우아한형제들 DevRel" class="avatar avatar-100 wp-user-avatar wp-user-avatar-100 alignnone photo" /></div><div class="saboxplugin-authorname"><a href="https://techblog.woowahan.com/author/dev_relations/" class="vcard author" rel="author" itemprop="url"><span class="fn" itemprop="name">우아한형제들 DevRel</span></a></div><div class="saboxplugin-desc"><div itemprop="description"><p>공통 관심사를 가진 개발자들이 기술 교류 활동을 통해 함께 성장할 수 있기를 희망합니다.<br />
+기술블로그, 우아한테크세미나, 우아한스터디, 우아한테크캠프, 우아콘에서 자주 만나요!</p>
+</div></div><div class="saboxplugin-web "><a href="http://facebook.com/woowahanTech" target="_blank" >facebook.com/woowahanTech</a></div><div class="clearfix"></div></div></div>    </div>
+    </div>
+    <div class="fb_comment_wrap">
+    <div id="" class="ufc-comments ufc-comments-area" style="width:100%;"><div id="ufc-button-div" style="text-align: center; display: none;"><button id="ufc-button" class="btn button">Leave a Comment</button></div><div id="fbc-comments-div" class="fb-comments" data-notify="true" data-colorscheme="light" data-href="https://techblog.woowahan.com/10538/" data-numposts="10" data-order-by="social" data-width="100%"></div></div>
+<!-- Facebook SDK is added by Ultimate Social Comments v2.0.0 plugin -->
+<div id="fb-root"></div><script type="text/javascript">(function() {(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.async = true;
+        js.src = '//connect.facebook.net/ko_KR/sdk.js#xfbml=1&autoLogAppEvents=1&version=v7.0&appId=596588250503455';
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        })();</script>
+<!-- / End of Facebook SDK -->
+    </div>
+    <div class="col col-1 post-bottom">
+        <a href="/" class="toback">
+            목록으로 돌아가기
+        </a>
+        <div class="col col-2">
+            <div class="prev">
+                <a href="https://techblog.woowahan.com/10504/" rel="prev">원하는 곳 어디서든 일할 수 있다면, 근무지 자율선택제</a>            </div>
+            <div class="next">
+                <a href="https://techblog.woowahan.com/10430/" rel="next">[다시보기] 1월 우아한테크세미나: 배민송년회 퀴즈 서비스, 한 달 안에 만들기</a>            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<footer>
+<!-- 푸터내용 -->
+</footer>
+		<script type='text/javascript' id='StrCPVisits_js_frontend-js-extra'>
+/* <![CDATA[ */
+var STR_CPVISITS = {"security":"e18ee58976","ajax_url":"https:\/\/techblog.woowahan.com\/wp-admin\/admin-ajax.php","text_page_name":"PAGE NAME","text_cannot_access_page_name":"Cannot access page name - try to flush server cache...","text_message":"MESSAGE","text_total_page_visits":"TOTAL PAGE VISITS","text_total_website_visits":"TOTAL WEBSITE VISITS"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/plugins/page-visits-counter-lite/assets/frontend/page-visits-counter-lite-ajax.js?ver=1669164996' id='StrCPVisits_js_frontend-js'></script>
+<script type='text/javascript' id='ufc-frontend-script-js-extra'>
+/* <![CDATA[ */
+var ufc_frontend_ajax_data = {"ajaxurl":"https:\/\/techblog.woowahan.com\/wp-admin\/admin-ajax.php","permalink":"https:\/\/techblog.woowahan.com\/10538\/","title":"Developers of Woowa, how do they grow? (a.k.a. system and culture of the development organization)","postid":"10538","security":"e78fb10bfe","version":"2.0.0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/plugins/ultimate-facebook-comments-2/public/js/frontend.min.js?ver=2.0.0' id='ufc-frontend-script-js'></script>
+<script type='text/javascript' src='https://techblog.woowahan.com/wp-content/themes/updater-0W9NMo/assets/js/main.js?ver=5.9.5' id='main-js-js'></script>
+ <script id="module-prism-line-number"> (function($) { $(function() { $("code").each(function() { var parent_div = $(this).parent("pre"); var pre_css = $(this).attr("class"); if (typeof pre_css !== "undefined" && -1 !== pre_css.indexOf("language-")) { parent_div.addClass("line-numbers"); } }); }); })(jQuery); </script> 	</body>
+</html>
+<!-- Page supported by LiteSpeed Cache 3.6.4 on 2023-03-22 22:42:14 -->

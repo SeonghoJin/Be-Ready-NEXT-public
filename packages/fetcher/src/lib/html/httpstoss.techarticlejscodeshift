@@ -1,0 +1,499 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="https://static.toss.im/tds-pc/3.232.0/main.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/rss+xml" href="/rss.xml"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/atom+xml" href="/atom.xml"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/main.css"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/others.css"/><link rel="stylesheet" href="https://static.toss.im/tossface-font/tossface.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/activitystream+json" href="/feed.json"/><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"/><meta name="author" content="Viva Republica"/><link rel="preconnect" href="https://static.toss.im"/><link rel="shortcut icon" href="https://static.toss.im/tds/favicon/favicon.ico"/><link rel="icon" type="image/png" sizes="16x16" href="https://static.toss.im/tds/favicon/favicon-16x16.png"/><link rel="icon" type="image/png" sizes="32x32" href="https://static.toss.im/tds/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="48x48" href="https://static.toss.im/tds/favicon/favicon-48x48.png"/><link rel="icon" type="image/png" sizes="196x196" href="https://static.toss.im/tds/favicon/favicon-196x196.png"/><link rel="apple-touch-icon" sizes="57x57" href="https://static.toss.im/tds/favicon/apple-touch-icon-57x57.png"/><link rel="apple-touch-icon" sizes="72x72" href="https://static.toss.im/tds/favicon/apple-touch-icon-72x72.png"/><link rel="apple-touch-icon" sizes="114x114" href="https://static.toss.im/tds/favicon/apple-touch-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="https://static.toss.im/tds/favicon/apple-touch-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="https://static.toss.im/tds/favicon/apple-touch-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="https://static.toss.im/tds/favicon/apple-touch-icon-152x152.png"/><meta name="msapplication-TileImage" content="https://static.toss.im/tds/favicon/mstile-144x144.png"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PQ5NV18TH1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-PQ5NV18TH1');</script><script>(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:2399367,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script><title>JSCodeShift로 기술 부채 청산하기</title><meta name="twitter:creator" content="Viva Republica"/><meta name="twitter:site" content="@Toss_service"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:title" content="JSCodeShift로 기술 부채 청산하기"/><meta name="twitter:title" content="JSCodeShift로 기술 부채 청산하기"/><meta property="og:description" content="기술 부채는 개발할수록 쌓여만 갑니다. 프론트엔드 챕터가 JSCodeShift를 이용하여 순식간에 100개 서비스의 기술 부채를 해결한 경험을 소개합니다.
+"/><meta name="twitter:description" content="기술 부채는 개발할수록 쌓여만 갑니다. 프론트엔드 챕터가 JSCodeShift를 이용하여 순식간에 100개 서비스의 기술 부채를 해결한 경험을 소개합니다.
+"/><meta property="og:image" content="https://static.toss.im/assets/tech-blog/og-image:/techblog-03-jscodeshift-og.png?v=2"/><meta name="twitter:image" content="https://static.toss.im/assets/tech-blog/og-image:/techblog-03-jscodeshift-og.png?v=2"/><meta name="next-head-count" content="36"/><meta name="next-font-preconnect"/><link rel="preload" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" as="style"/><link rel="stylesheet" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/webpack-a37367524f3d9e47.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/framework-5201cf011975c339.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/main-4ffd67ad72332dfe.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/_app-02461bb4136bedab.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/821-c2f4db054c6f6b42.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/935-149f2da2961c2b08.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/article/%5Bslug%5D-bf5a24035d1301de.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_buildManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_ssgManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_middlewareManifest.js" defer=""></script></head><body><div id="__next"><style data-emotion="css-global ubpbb5">html,body{padding:0;margin:0;font-family:'Toss Product Sans';}button{font-family:'Toss Product Sans';}p{margin:0;}</style><style data-emotion="css kcwxxw">.css-kcwxxw{position:-webkit-sticky;position:sticky;top:0;height:59px;}</style><nav class="p-navbar p-navbar--bottom-border css-kcwxxw"><div class="p-container p-container--default"><div class="p-container__inner p-navbar__inner-container"><div class="p-navbar__logo-container"><a class="p-navbar__logo-icon" href="/tech"><span class="icon p-icon" aria-hidden="true" role="presentation" style="height:auto;width:auto;min-width:24px"></span></a></div><div class="p-navbar__right-on-mobile"></div><div class="p-navbar__content" aria-expanded="false" aria-hidden="true"><ul class="p-navbar__menu"></ul><ul class="p-navbar__menu"><li class="p-navbar__item"><a>디자인</a></li><li class="p-navbar__item"><a>개발</a></li><li class="p-navbar__item p-navbar__button-item"><button class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s p-navbar__button" type="button" aria-disabled="false">채용 바로가기</button></li></ul></div></div></div></nav><style data-emotion="css 1nquki8">.css-1nquki8{max-width:700px;margin-bottom:80px;}.css-1nquki8 .has-extra-large-font-size{font-size:20px;}.css-1nquki8 .has-large-font-size{font-size:18px;}.css-1nquki8 .has-small-font-size{font-size:14px;}.css-1nquki8 .has-extra-small-font-size{font-size:12px;}@media (max-width: 700px){.css-1nquki8{margin-bottom:64px;}}</style><div class="p-container p-container--default css-1nquki8"><div class="p-container__inner"><style data-emotion="css gtmad4">.css-gtmad4>*:not(style)~*:not(style){margin-top:54px;}@media (max-width: 700px){.css-gtmad4>*:not(style)~*:not(style){margin-top:48px;}}</style><article class="css-gtmad4"><style data-emotion="css 1095auh">.css-1095auh>*:not(style)~*:not(style){margin-top:20px;}</style><header class="css-1095auh"><style data-emotion="css iffq4o">.css-iffq4o{width:100%;margin-top:36px;border-radius:12px;}</style><img srcSet="https://toss.tech/wp-content/uploads/2021/05/techblog-03-jscodeshift-300x150.png 300w, https://toss.tech/wp-content/uploads/2021/05/techblog-03-jscodeshift-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2021/05/techblog-03-jscodeshift-768x384.png 768w, https://toss.tech/wp-content/uploads/2021/05/techblog-03-jscodeshift.png 1200w" alt="JSCodeShift로 기술 부채 청산하기" class="css-iffq4o e132k2574"/><style data-emotion="css 117sh4z">.css-117sh4z{margin-top:36px;margin-bottom:0;font-size:48px;font-weight:700;line-height:1.25;color:#333d4b;word-break:keep-all;overflow-wrap:break-word;}@media (max-width: 700px){.css-117sh4z{margin-top:28px;font-size:32px;}}</style><h1 class="css-117sh4z e132k2573">JSCodeShift로 기술 부채 청산하기</h1><style data-emotion="css s5xdrg">.css-s5xdrg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><section class="css-s5xdrg e2c667z4"><style data-emotion="css 1hdebld">.css-1hdebld{grid-area:image;width:48px;height:48px;border-radius:156px;margin-right:14px;}</style><img src="https://wp.toss.tech/wp-content/uploads/2021/06/E01JAGTHP8R-U01JA15NFDL-b3979cc31718-512-312x312.png" alt="" class="css-1hdebld e2c667z3"/><div><style data-emotion="css 14d9k6d">.css-14d9k6d{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;grid-area:outline;-webkit-align-items:flex-end;-webkit-box-align:flex-end;-ms-flex-align:flex-end;align-items:flex-end;padding-top:8px;font-size:17px;margin-bottom:2px;}@media (max-width: 700px){.css-14d9k6d>*+*{margin-top:4px;margin-left:0;}}</style><div class="css-14d9k6d e2c667z2"><style data-emotion="css 9krnkp">.css-9krnkp{grid-area:name;margin:0;font-size:17px;font-weight:600;color:#4e5968;white-space:nowrap;}</style><h3 class="css-9krnkp e2c667z1">박지우</h3><h3 class="css-9krnkp e2c667z1">ㆍ<!-- -->Frontend Developer</h3></div><style data-emotion="css 154r2lc">.css-154r2lc{font-size:14px;line-height:1.5;color:#8b95a1;}</style><div class="css-154r2lc e2c667z0">2021. 5. 4</div></div></section></header><style data-emotion="css 1k1kkv6">.css-1k1kkv6{font-size:18px;line-height:1.7;color:var(--grey700);font-size:18px;word-break:keep-all;overflow-wrap:break-word;counter-reset:p-post-ol 0;}.css-1k1kkv6 h2{margin:2.2em 0 0.6em 0;font-size:25px;font-weight:600;line-height:1.4;color:var(--grey900);}.css-1k1kkv6 h3{margin:2.2em 0 0.6em 0;font-size:22px;font-weight:600;line-height:1.6;color:var(--grey900);}.css-1k1kkv6 h4{margin:2.2em 0 0.3em 0;font-size:19px;font-weight:600;line-height:1.6;color:var(--grey700);}.css-1k1kkv6 p{margin:1em 0;}.css-1k1kkv6 p code,.css-1k1kkv6 li code{font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:3px;}.css-1k1kkv6 a{color:var(--blue700);}.css-1k1kkv6 pre{margin:2em -24px;}@media (max-width: 700px){.css-1k1kkv6 pre{margin:2em 0;}}.css-1k1kkv6 pre code{display:block;padding:16px 24px;overflow-x:auto;font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;line-height:1.5;word-wrap:normal;white-space:pre;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:12px;}.css-1k1kkv6 figure{margin:2em 0;overflow:hidden;border-radius:12px;width:100%;}.css-1k1kkv6 figure.aligncenter{text-align:center;}.css-1k1kkv6 ol,.css-1k1kkv6 ul{margin:0 0 16px;list-style:none;}.css-1k1kkv6 ol li,.css-1k1kkv6 ul li{position:relative;margin-bottom:8px;}.css-1k1kkv6 ol li:before,.css-1k1kkv6 ul li:before{position:absolute;left:0;}.css-1k1kkv6 ol li ol,.css-1k1kkv6 ul li ol{padding-left:0;margin:8px 0 0 -16px;}.css-1k1kkv6 ol li ul,.css-1k1kkv6 ul li ul{padding-left:0;margin-top:8px;}.css-1k1kkv6 ol li p,.css-1k1kkv6 ul li p{margin:0;}.css-1k1kkv6 ol{padding-left:16px;counter-reset:p-post-ol;}.css-1k1kkv6 ol>li{padding-left:32px;counter-increment:p-post-ol;}.css-1k1kkv6 ol>li:before{font-weight:700;font-weight:var(--font-weight-bold);content:counter(p-post-ol) '.';}.css-1k1kkv6 ul{padding-left:16px;}.css-1k1kkv6 ul>li{padding-left:24px;}.css-1k1kkv6 ul>li:before{width:16px;text-align:center;content:'•';}.css-1k1kkv6 figcaption{font-size:0.9em;color:var(--grey600);}.css-1k1kkv6 .wp-block-pullquote{margin:0;}.css-1k1kkv6 blockquote{padding:32px;background:var(--greyOpacity100);border-radius:12px;text-align:left;margin:16px 0 16px 0;}.css-1k1kkv6 blockquote p{color:#333d4b;font-weight:600;margin:0;}.css-1k1kkv6 blockquote cite{font-style:normal;}@media (max-width: 700px){.css-1k1kkv6 blockquote{padding:24px;}}.css-1k1kkv6 .wp-block-embed-youtube iframe{width:100%;border-radius:12px;}.css-1k1kkv6 ol{counter-reset:none;}.css-1k1kkv6 hr{border-top:1px solid #e5e8eb;border-right-style:none;border-left-style:none;border-bottom-style:none;margin:2.5rem 0;}.css-1k1kkv6 figure{display:table;text-align:center;}@media (max-width: 700px){.css-1k1kkv6 figure{width:100%;}}.css-1k1kkv6 figure img,.css-1k1kkv6 figure video{max-width:100%;height:auto;border:1px solid rgba(2,32,71,0.05);border-radius:12px;}.css-1k1kkv6 figure.alignright{float:right;margin:0 0 8px 24px;}@media (max-width: 700px){.css-1k1kkv6 figure.alignright{float:none;margin:0;}}.css-1k1kkv6 figcaption{display:table-caption;text-align:center;white-space:pre-wrap;caption-side:bottom;}.css-1k1kkv6 p:empty::before{content:'';}</style><div class="css-1k1kkv6 e132k2572"><div>
+<p>토스 프론트엔드 챕터에서는 100개 이상의 서비스들이 작은 패키지 단위로 쪼개져 활발하게 개발되고 있는데요. 공통으로 사용하는 라이브러리에서 인터페이스가 변경되는 Breaking Change가 발생하면, 의존하고 있는 모든 서비스의 코드를 수정해야 했습니다. 관리하는 코드베이스가 점점 커지면서 해야 하는 작업의 양도 계속 늘어나고는 했습니다.</p>
+
+
+
+<p>이에 프론트엔드 챕터는 JSCodeShift를 도입하여 대부분의 코드 수정 작업을 자동화할 수 있었습니다. 토스팀이 JSCodeShift를 도입하면서 알게 된 점과 노하우를 테크 블로그로 공유합니다.</p>
+
+
+
+<h2>JSCodeShift란?</h2>
+
+
+
+<p><a href="https://github.com/facebook/jscodeshift">JSCodeShift</a>는 Facebook이 만든 JavaScript/TypeScript 코드 수정 도구입니다. JSCodeShift를 통해 코드를 수정하는 코드를 작성할 수 있습니다.</p>
+
+
+
+<h2>찾아 바꾸기와의 비교</h2>
+
+
+
+<p>JSCodeShift를 도입하기 전, 토스에서는 대량의 코드 수정이 필요할 때면 IDE의 찾아 바꾸기(Find &amp; Replace)를 사용했습니다. 그러나 찾아 바꾸기로는 안전하게 코드를 수정하는 데에 한계가 많았습니다.</p>
+
+
+
+<h3>예시 1: console.log() 모두 삭제하기</h3>
+
+
+
+<p>프로젝트 전체에 있는 <code>console.log()</code> 호출을 모두 제거하고 싶은 상황을 생각해봅시다. 간단한 예제임에도 쉽게 고칠 수 없는 엣지 케이스들이 발생합니다. 우선 console.log 안에 들어가는 인자의 내용이 달라질 수 있습니다. console.log에 여러 인자를 넘겨서 함수 호출이 여러 줄에 걸칠 수도 있습니다.</p>
+
+
+
+<p>이것을 정규식을 이용하여 어느 정도 해결할 수도 있습니다. 그러나 다양한 엣지케이스에 대응하기 위해서 정규식이 점점 복잡해지는 경우가 발생했습니다. 또 정규식은 정규 언어이기 때문에 기술적으로 대응할 수 없는 경우도 존재했습니다.</p>
+
+
+
+<h3>예시 2: default import된 객체의 프로퍼티 수정하기</h3>
+
+
+
+<p>아래와 같은 코드가 있었다고 생각해봅시다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"/><style>.wp-block-code {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-code > div {
+	overflow: auto;
+}
+
+.shcb-language {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+.hljs {
+	box-sizing: border-box;
+}
+
+.hljs.shcb-code-table {
+	display: table;
+	width: 100%;
+}
+
+.hljs.shcb-code-table > .shcb-loc {
+	color: inherit;
+	display: table-row;
+	width: 100%;
+}
+
+.hljs.shcb-code-table .shcb-loc > span {
+	display: table-cell;
+}
+
+.wp-block-code code.hljs:not(.shcb-wrap-lines) {
+	white-space: pre;
+}
+
+.wp-block-code code.hljs.shcb-wrap-lines {
+	white-space: pre-wrap;
+}
+
+.hljs.shcb-line-numbers {
+	border-spacing: 0;
+	counter-reset: line;
+}
+
+.hljs.shcb-line-numbers > .shcb-loc {
+	counter-increment: line;
+}
+
+.hljs.shcb-line-numbers .shcb-loc > span {
+	padding-left: 0.75em;
+}
+
+.hljs.shcb-line-numbers .shcb-loc::before {
+	border-right: 1px solid #ddd;
+	content: counter(line);
+	display: table-cell;
+	padding: 0 0.75em;
+	text-align: right;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: 1%;
+}
+</style><div><code class="hljs language-javascript"><span class="hljs-keyword">import</span> A <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@tossteam/a&#x27;</span>;
+
+A.foo();
+</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>어느 순간 <code>A.foo()</code> 함수가 <code>A.bar()</code> 함수로 이름이 변경되었다고 가정해봅시다.</p>
+
+
+
+<p>Default import의 변수 이름은 사용하는 사람마다 임의로 정할 수 있기 때문에, 어떤 사람은 이 라이브러리를 <code>B</code> 라고 하는 이름으로 사용하고 있을 수도 있습니다. 때문에 이 라이브러리를 <code>B.foo()</code> 처럼 사용하고 있던 코드가 있었다면, <code>B.bar()</code> 로 수정해주어야 합니다.</p>
+
+
+
+<p>이런 경우는 찾아 바꾸기로 쉽게 대응하기 어렵습니다.</p>
+
+
+
+<h2>JSCodeShift 기초</h2>
+
+
+
+<p>JSCodeShift는 추상 구문 트리(AST, Abstract Syntax Tree)를 이용하여 코드를 수정하는 방법을 제공함으로써 코드 수정 작업을 정확하고 편리하게 할 수 있도록 도와줍니다.</p>
+
+
+
+<h3>추상 구문 트리 (AST)</h3>
+
+
+
+<p>추상 구문 트리는 프로그램의 소스 코드를 쉽게 다룰 수 있도록 도와주는 자료구조입니다.</p>
+
+
+
+<p>예를 들어서, 다음 <code>import</code> 문을 추상 구문 트리로 옮기면 이런 모습이 됩니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">import</span> React, { useMemo } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>;
+</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-tag">ImportDeclaration</span> {
+  <span class="hljs-attribute">specifiers</span>: [
+    ImportDefaultSpecifier {
+      local: Identifier {
+        name: <span class="hljs-string">&quot;React&quot;</span>
+      }
+    },
+    <span class="hljs-selector-tag">ImportSpecifier</span> {
+      <span class="hljs-attribute">local</span>: Identifier {
+        name: <span class="hljs-string">&quot;useMemo&quot;</span>
+      }
+    }
+  ],
+  <span class="hljs-selector-tag">source</span>: <span class="hljs-selector-tag">Literal</span> {
+    <span class="hljs-attribute">value</span>: <span class="hljs-string">&quot;react&quot;</span>
+  }
+}
+</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>살펴보면 <code>import</code> 문이 <code>ImportDeclaration</code> 객체로 바뀌었습니다. 또 내부에서 사용되는 Default Import와 Named Import, 라이브러리 이름이 알맞은 객체로 옮겨진 것을 확인할 수 있습니다.</p>
+
+
+
+<h3>ASTExplorer</h3>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img src="https://static.toss.im/assets/toss-tech/jscodeshift-1.png" alt="" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<p>작성한 코드의 추상 구문 트리를 <a href="https://astexplorer.net/">ASTExplorer</a><span style="font-size:inherit;font-weight:inherit;line-height:inherit;color:inherit">로 쉽게 확인할 수 있습니다. 코드만 붙여넣으면 해당하는 구문 트리를 바로 확인할 수 있어 편리합니다. 소스 코드의 특정 부분에 커서를 옮기면 그 부분이 트리의 어떤 부분에 해당하는지 바로 볼 수 있기도 합니다. </span><span>😉</span><span style="font-size:inherit;font-weight:inherit;line-height:inherit;color:inherit"> 추상 구문 트리에 익숙하지 않다면, 사용해보시는 것을 권장합니다.</span></p>
+
+
+
+<h3>라이브러리별 추상 구문 트리</h3>
+
+
+
+<p>라이브러리마다 사용하는 추상 구문 트리의 모습은 다를 수 있습니다. 예를 들어서 같은 JavaScript를 다루더라도 ESLint가 사용하는 트리와 Babel이 사용하는 트리는 약간 다릅니다. JSCodeShift는 Babel이 사용하는 트리를 사용하고 있습니다.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><div data-rmiz-wrap="visible"><img loading="lazy" src="https://static.toss.im/assets/toss-tech/jscodeshift-2.png" alt="" width="578" height="397" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure></div>
+
+
+
+<p>ASTExplorer 상단 메뉴에서 사용할 추상 구문 트리를 선택할 수 있습니다. JSCodeShift가 사용하는 트리는 <code>@babel/parser</code> 입니다.</p>
+
+
+
+<h2>JSCodeShift 사용하기</h2>
+
+
+
+<p>JSCodeShift로 코드를 수정하는 과정은 크게 4가지 작업으로 나눌 수 있습니다.</p>
+
+
+
+<ol><li><strong>AST로 파싱:</strong> 파일의 소스 코드를 AST로 파싱합니다.</li><li><strong>수정할 노드 선택</strong>: AST에서 수정할 노드를 선택합니다.</li><li><strong>수정하기</strong>: 검색한 노드를 JSCodeShift가 제공하는 유틸리티로 코드를 변경시킵니다.</li><li><strong>소스 코드로 내보내기:</strong> 수정된 AST를 JavaScript 소스 코드로 내보냅니다.</li></ol>
+
+
+
+<p>예를 들어, 이런 형식으로 코드를 작성합니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-comment">/* transformSomeCode.js */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transformSomeCode</span>(<span class="hljs-params">file, { jscodeshift }</span>) </span>{
+  <span class="hljs-comment">// 1. AST로 파싱</span>
+  <span class="hljs-keyword">const</span> tree = jscodeshift(file.source);
+
+  <span class="hljs-comment">// 2. 수정할 노드 선택</span>
+  <span class="hljs-keyword">const</span> nodes = tree.find(...);
+
+  <span class="hljs-comment">// 3. 수정</span>
+  jscodeshift(nodes)
+    .remove() | .replaceWith() | .insertBefore()
+
+  <span class="hljs-comment">// 4. 소스 코드로 내보내기</span>
+  <span class="hljs-keyword">return</span> tree.toSource();
+}
+</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>이후 JSCodeShift CLI를 이용하여 <code>jscodeshift -t transformSomeCode.js &lt;target&gt;</code> 와 같은 명령을 실행하면 <code>&lt;target&gt;</code> 에 있는 소스 코드들이 <code>transformSomeCode.js</code> 에 정의된 규칙에 맞게 수정됩니다.</p>
+
+
+
+<p>이제 본격적으로 JSCodeShift에서 자주 사용되는 메서드들을 살펴보겠습니다.</p>
+
+
+
+<h3>수정할 노드 선택하기: find()</h3>
+
+
+
+<p>기본적으로 수정할 노드를 선택하기 위해 <code>find()</code> 함수를 사용합니다.</p>
+
+
+
+<p>예를 들어, <code>react</code> 라이브러리의 <code>useMemo</code> 를 가져오는 <code>import</code> 구문들을 선택하기 위해서는 아래와 같이 코드를 작성할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> nodes = tree.find(
+  <span class="hljs-comment">/* 찾을 AST 노드 타입 */</span>
+  jscodeshift.ImportDeclaration,
+  <span class="hljs-comment">/* 필터링할 함수 */</span>
+  node =&gt; {
+    <span class="hljs-keyword">return</span> (
+      <span class="hljs-comment">/* ImportDeclaration 중에서 */</span>
+      node.type === <span class="hljs-string">&#x27;ImportDeclaration&#x27;</span> &amp;&amp;
+      <span class="hljs-comment">/* react 라이브러리에서 */</span>
+      node.source.value === <span class="hljs-string">&#x27;react&#x27;</span> &amp;&amp;
+      <span class="hljs-comment">/* 가져오는 것 중에서 */</span>
+      node.specifiers.some(<span class="hljs-function"><span class="hljs-params">specifier</span> =&gt;</span> {
+        <span class="hljs-comment">/* useMemo를 포함하는 것을 */</span>
+        <span class="hljs-keyword">return</span> (
+          specifier.type === <span class="hljs-string">&#x27;ImportSpecifier&#x27;</span> &amp;&amp;
+          specifier.imported.name === <span class="hljs-string">&#x27;useMemo&#x27;</span>
+        );
+      })
+      <span class="hljs-comment">/* 선택한다 */</span>
+    )
+  }
+);
+</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3>노드 삭제하기: remove()</h3>
+
+
+
+<p>선택한 노드를 삭제하기 위해 <code>remove()</code> 함수를 사용합니다.</p>
+
+
+
+<p>예를 들어서, 아래와 같이 코드를 작성함으로써 선택한 <code>node</code> 의 목록을 삭제할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> node <span class="hljs-keyword">of</span> nodes) {
+  jscodeshift(node).remove();
+}
+</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3>노드를 다른 노드로 치환하기: replaceWith()</h3>
+
+
+
+<p>선택한 노드를 새로운 노드로 치환하려고 할 때 <code>replaceWith()</code> 함수를 사용할 수 있습니다.</p>
+
+
+
+<p>예를 들어서, 선택한 <code>node</code> 들을 다른 모습으로 치환하기 위해서는 아래와 같이 코드를 작성할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> node <span class="hljs-keyword">of</span> nodes) {
+  <span class="hljs-comment">/* 노드를 만드는 방법에 대해서 아래에서 더 자세히 다룹니다. */</span>
+  <span class="hljs-keyword">const</span> newNode = createNode();
+
+  jscodeshift(node).replaceWith(newNode);
+}
+</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h4>새로운 노드 만들기</h4>
+
+
+
+<p><code>replaceWith()</code> 와 같은 함수에서 사용하기 위해서 새로운 노드를 만들 때는 JSCodeShift에서 제공하는 도우미 함수들을 사용할 수 있습니다.</p>
+
+
+
+<blockquote class="wp-block-quote"><p>각 노드를 만드는 방법을 모두 알 필요는 없습니다. TypeScript를 사용하는 경우, 각 함수가 어떤 인자를 받는지 바로 확인할 수 있습니다. JavaScript를 사용하는 경우, <a href="https://github.com/benjamn/ast-types">ast-types</a>가 정의하는 타입 정보를 참고해주세요.</p></blockquote>
+
+
+
+<p><strong>변수 참조:</strong> <code>foo</code>와 같은 변수에 참조하는 노드를 만들기 위해서 <code>jscodeshift.identifier()</code> 를 사용할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">jscodeshift.identifier(<span class="hljs-string">&#x27;foo&#x27;</span>);
+</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><strong>멤버 접근:</strong> 변수 <code>foo</code>의 멤버 <code>bar</code> 에 접근하는 노드를 만들기 위해서 <code>jscodeshift.memberExpression()</code> 을 사용할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">jscodeshift.memberExpression(
+  jscodeshift.identifier(<span class="hljs-string">&#x27;foo&#x27;</span>),
+  jscodeshift.identifier(<span class="hljs-string">&#x27;bar&#x27;</span>)
+);
+</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><strong>import 문:</strong> <code>import { useMemo } from &#x27;react&#x27;;</code> 와 같은 <code>import</code> 문을 만들기 위해서 <code>jscodeshift.importDeclaration()</code> 을 사용할 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">jscodeShift.importDeclaration(
+  [
+    jscodeShift.importSpecifier(
+      jscodeshift.identifier(<span class="hljs-string">&#x27;useMemo&#x27;</span>)
+    )
+  ],
+  jscodeshift.literal(<span class="hljs-string">&#x27;react&#x27;</span>)
+);
+</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h2>JSCodeShift 사용 예시</h2>
+
+
+
+<p>토스 프론트엔드 챕터에서는 2020년 <code>import { Adaptive } from &#x27;@tossteam/web-development-kits&#x27;</code> 와 같은 <code>import</code> 문을 모두 <code>import { adaptive } from &#x27;@tossteam/colors&#x27;</code> 으로 수정해야 하는 필요성이 있었습니다.</p>
+
+
+
+<p>이런 경우는 찾아 바꾸기로 해결하는 데에 어려움이 있었습니다. 코드를 수정하는 규칙이 복잡했기 때문입니다.</p>
+
+
+
+<ol><li><code>@tossteam/web-development-kits</code> 라이브러리로부터 <code>Adaptive</code> 뿐 아니라 다른 변수나 함수를 import 하는 경우가 있었습니다. 그런 경우에는 전체 import 문을 지우는 것이 아닌, <code>Adaptive</code> 를 가져오는 부분만 삭제해야 했습니다.</li><li><code>Adaptive</code> 를 import하는 부분이 삭제된 경우에만 <code>import { adaptive } from &#x27;@tossteam/colors&#x27;;</code> 와 같이 새로운 import 문을 파일의 가장 처음에 추가해주어야 했습니다. 아닌 경우, 사용하지 않은 변수로 인해 컴파일 시간에 오류가 발생했습니다.</li><li><code>Adaptive</code> 를 import하는 부분이 삭제된 경우에만 그 파일에서 사용되는 모든 <code>Adaptive</code> 변수를 <code>adaptive</code> 로 바꿔줘야 했습니다.</li></ol>
+
+
+
+<p>다행히 토스팀에서는 간단히 이 문제를 JSCodeShift로 해결할 수 있었습니다. 저희가 설계한 JSCodeShift 변환 코드의 구조는 다음과 같습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transformLegacyImportToNewImport</span><span class="hljs-params">(file, { jscodeshift })</span> </span>{
+  <span class="hljs-keyword">const</span> root = jscodeshift(file.source);
+
+  <span class="hljs-comment">/* 오래된 import 문들을 찾음 */</span>
+  <span class="hljs-keyword">const</span> oldImports = findOldImports(root, { jscodeshift });
+
+  <span class="hljs-comment">/* 오래된 import 문이 없는 파일인 경우, 아무 작업을 하지 않음 */</span>
+  <span class="hljs-keyword">if</span> (oldImports.length === <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span>;
+  }
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> oldImport of oldImports) {
+    <span class="hljs-comment">/* 오래된 import 문에서 Adaptive를 가져오는 부분을 삭제 */</span>
+    <span class="hljs-comment">/* (Adaptive만을 가져오는 import 문인 경우, import 문 전체를 삭제) */</span>
+    removeImportMember(root, oldImport, <span class="hljs-string">&#x27;Adaptive&#x27;</span>, { jscodeshift });
+  }
+
+  <span class="hljs-comment">/* <span class="hljs-doctag">@tossteam</span>/colors에서 adaptive를 import하는 부분을 추가 */</span>
+  <span class="hljs-comment">/* (<span class="hljs-doctag">@tossteam</span>/colors를 import하고 있지 않은 경우, import 문을 추가) */</span>
+  addImportMember(root, <span class="hljs-string">&#x27;@tossteam/colors&#x27;</span>, <span class="hljs-string">&#x27;adaptive&#x27;</span>, { jscodeshift });
+
+  <span class="hljs-comment">/* Adaptive 변수를 모두 adaptive로 치환 */</span>
+  <span class="hljs-keyword">const</span> oldAdaptives = findIdentifiers(root, <span class="hljs-string">&#x27;Adaptive&#x27;</span>, { jscodeshift });
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> oldAdaptive of oldAdaptives) {
+    jscodeshift(oldAdaptive).replaceWith(
+      jscodeshift.identifier(<span class="hljs-string">&#x27;adaptive&#x27;</span>)
+    );
+  }
+
+  <span class="hljs-comment">/* 수정된 소스코드를 반환 */</span>
+  <span class="hljs-keyword">return</span> root.toSource();
+}
+</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>이 중에서 <code>removeImportMember</code> 함수와 같은 경우, 아래와 같이 간단히 구현할 수 있었습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">removeImportMember</span>(<span class="hljs-params">root, importNode, name, { jscodeshift }</span>) </span>{
+  <span class="hljs-keyword">const</span> oldSpecifiers = importNode.value.specifiers;
+
+  <span class="hljs-comment">/* name을 import하는 부분을 삭제 */</span>
+  <span class="hljs-keyword">const</span> newSpecifiers = oldSpecifiers.filter(<span class="hljs-function"><span class="hljs-params">specifier</span> =&gt;</span> {
+    <span class="hljs-keyword">return</span> (
+      specifier.type !== <span class="hljs-string">&#x27;ImportSpecifier&#x27;</span> ||
+      specifier.imported.name !== name
+    );
+  }
+
+  <span class="hljs-comment">/* 더 이상 import할 것이 남지 않은 경우에는, import 문을 삭제 */</span>
+  <span class="hljs-keyword">if</span> (newSpecifiers.length === <span class="hljs-number">0</span>) {
+    jscodeshift(importNode).remove();
+    <span class="hljs-keyword">return</span>;
+  }
+
+  <span class="hljs-comment">/* 그렇지 않은 경우, import 문에서 name을 가져오는 부분만 삭제 */</span>
+  jscodeshift(importNode).replaceWith(
+    jscodeshift.importDeclaration(
+      newSpecifiers,
+      importNode.value.source
+    )
+  );
+}
+</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>다른 함수의 경우에도 유사하게 JSCodeShift API를 이용하여 구현할 수 있었습니다.</p>
+
+
+
+<h2>JSCodeShift 테스트하기</h2>
+
+
+
+<p>JSCodeShift는 작성한 변환 코드가 잘 작동하는지 테스트할 수 있도록 <code>testUtils</code> 라고 하는 이름의 테스트 도구를 제공합니다. 테스트 파일의 디렉토리 구조를 JSCodeShift가 요구하는 대로 맞춰야 하지만, 손쉽게 Jest에 테스트를 붙일 수 있어서 편리합니다.</p>
+
+
+
+<p>테스트가 잘 붙어 있으면, JSCodeShift 코드의 문제점을 바로바로 찾을 수 있게 됩니다. 개발 속도도 절약되는 만큼, JSCodeShift를 개발할 때는 꼭 테스트와 함께 하는 것을 추천합니다.</p>
+
+
+
+<p>JSCodeShift 테스트와 관련된 자세한 내용은 <a href="https://github.com/facebook/jscodeshift#unit-testing">JSCodeShift README</a>에서 확인할 수 있습니다.</p>
+
+
+
+<h2>토스팀과 JSCodeShift</h2>
+
+
+
+<p>토스 프론트엔드 개발팀은 짧은 시간동안 빠르게 개발환경을 개선해오면서 대량의 레거시 코드를 최신 라이브러리와 코드 컨벤션에 맞추도록 수정해주어야 했습니다. 경우에 따라서는 작성된지 2년이 지난 오래된 코드가 수만 줄 이상 존재하기도 했습니다.</p>
+
+
+
+<p>이때 JSCodeShift를 사용함으로써 그런 코드도 한번에 최신 코드와 같이 일관성을 맞출 수 있었습니다. 이번 JSCodeShift 가이드가 레거시 시스템을 다루는 다른 프론트엔드 개발자 분들께 도움이 되었으면 합니다.</p>
+</div></div><style data-emotion="css auig7l">.css-auig7l{margin-top:96px;}</style><style data-emotion="css x7fajo">.css-x7fajo{margin-top:96px;}.css-x7fajo>*:not(style)~*:not(style){margin-left:24px;}</style><style data-emotion="css 6rfvv8">.css-6rfvv8{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;margin-top:96px;}.css-6rfvv8>*:not(style)~*:not(style){margin-left:24px;}</style><div class="css-6rfvv8"><style data-emotion="css 1n0u3h">.css-1n0u3h{background-color:#f9fafb;width:100%;height:auto;border-radius:12px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:48px;}@media (max-width: 700px){.css-1n0u3h{padding:32px;}}</style><div class="css-1n0u3h e1t1xt3a7"><style data-emotion="css 6cc9f0">.css-6cc9f0{font-size:24px;font-weight:700;margin-bottom:16px;color:#4e5968;}</style><h2 class="css-6cc9f0 e1t1xt3a6">재미있게 읽으셨나요?</h2><style data-emotion="css 1wmgpcn">.css-1wmgpcn{font-size:16px;line-height:1.5;font-weight:600;color:#6b7684;margin-bottom:4px;}</style><p class="css-1wmgpcn e1t1xt3a5">좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.</p><style data-emotion="css 4qu8li">.css-4qu8li{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:16px;}</style><div class="css-4qu8li e1t1xt3a3"><style data-emotion="css 1fmr5ax">.css-1fmr5ax{display:block;font-family:'tossface';font-size:40px;cursor:pointer;margin:0 12px;-webkit-transition:0.15s ease-in-out all;transition:0.15s ease-in-out all;}.css-1fmr5ax a{-webkit-text-decoration:none;text-decoration:none;}.css-1fmr5ax:hover{-webkit-transform:scale(1.2);-moz-transform:scale(1.2);-ms-transform:scale(1.2);transform:scale(1.2);}</style><div class="css-1fmr5ax e1t1xt3a1">😍</div><div class="css-1fmr5ax e1t1xt3a1">🤔</div></div><style data-emotion="css 1p3zmjw">.css-1p3zmjw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;margin-top:16px;}.css-1p3zmjw button,.css-1p3zmjw a{margin:0 12px;}@media (max-width: 700px){.css-1p3zmjw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;}.css-1p3zmjw button,.css-1p3zmjw a{width:100%;margin:8px 0;}}</style><div class="css-1p3zmjw e1t1xt3a0"><style data-emotion="css 1u8jkqx">.css-1u8jkqx{display:grid;grid-template-columns:min-content auto;grid-column-gap:8px;}</style><button class="p-button p-button--primary p-button--inline p-button--weak p-button--default p-button--has-icon padding--base css-1u8jkqx" type="button" aria-disabled="false"><span class="icon p-icon icon--colored p-icon--colored" aria-hidden="true" role="presentation" style="height:16px;width:16px;min-width:16px;color:#3182f6"></span>아티클 공유하기</button></div></div></div></article><style data-emotion="css 1lsuzal">.css-1lsuzal{margin-top:100px;}.css-1lsuzal::before{content:'';position:absolute;width:100%;height:1px;left:0;border-bottom:1px solid #e5e8eb;}</style><div class="css-1lsuzal e132k2571"><style data-emotion="css 1ympfnp">.css-1ympfnp{display:inline-block;width:100%;font-size:20px;margin:34px 0 40px 0;}</style><span class="typography typography--h3 typography--bold color--grey800 css-1ympfnp e132k2570">이어지는 글</span><style data-emotion="css vivlm7">.css-vivlm7{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer;margin-bottom:40px;}.css-vivlm7:last-of-type{margin-bottom:0px;}.css-vivlm7:hover .egyklng4{color:#3182f6;}</style><div class="css-vivlm7 egyklng3"><style data-emotion="css bc0lqn">.css-bc0lqn{width:80px;height:80px;margin-right:20px;border-radius:12px;object-fit:cover;}@media (max-width: 700px){.css-bc0lqn{width:64px;height:64px;}}</style><img srcSet="https://toss.tech/wp-content/uploads/2023/04/00009-889461687-300x300.png 300w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687-150x150.png 150w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687.png 512w" class="css-bc0lqn egyklng2"/><style data-emotion="css 1fttcpj">.css-1fttcpj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}</style><div class="css-1fttcpj egyklng1"><style data-emotion="css p4blj2">.css-p4blj2{font-size:24px;margin-bottom:4px;word-break:keep-all;line-height:1.4;overflow-wrap:break-word;-webkit-transition:color 0.3s ease;transition:color 0.3s ease;-webkit-line-clamp:2;display:block;}@media (max-width: 700px){.css-p4blj2{font-size:18px;-webkit-line-clamp:2;}}</style><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">무지성으로 사용한 헬스 체크가 불러일으킬 수 있는 참사</span><style data-emotion="css 1jxhn1e">.css-1jxhn1e{color:#8b95a1;}</style><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 04. 01</span></div></div><div class="css-vivlm7 egyklng3"><img srcSet="https://toss.tech/wp-content/uploads/2023/03/center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/center.png 1200w" class="css-bc0lqn egyklng2"/><div class="css-1fttcpj egyklng1"><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">ESLint와 AST로 코드 퀄리티 높이기</span><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 03. 31</span></div></div></div></div></div><style data-emotion="css 1d2vuhc">.css-1d2vuhc{padding:60px 24px;word-break:keep-all;overflow-wrap:break-word;background:rgba(2,9,19,0.91);}@media (max-width: 700px){.css-1d2vuhc{padding-top:24px;}}</style><section class="css-1d2vuhc eqrolup4"><style data-emotion="css yf0lpd">.css-yf0lpd{display:grid;grid-template-columns:3fr 7fr;grid-column-gap:20px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:640px;margin:0 auto;content-visibility:auto;}@media (max-width: 700px){.css-yf0lpd{grid-template-rows:min-content auto;grid-template-columns:1fr;grid-row-gap:24px;}}</style><div class="css-yf0lpd eqrolup2"><style data-emotion="css 1d33yk5">.css-1d33yk5{width:100%;}@media (max-width: 700px){.css-1d33yk5{width:90px;}}</style><img src="https://static.toss.im/3d/website_code_blue_alpha.png" alt="" class="css-1d33yk5 eqrolup3"/><style data-emotion="css 1gb2pj4">.css-1gb2pj4>*:not(style)~*:not(style){margin-top:24px;}</style><style data-emotion="css 7xmgw5">.css-7xmgw5{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-7xmgw5>*:not(style)~*:not(style){margin-top:24px;}</style><div class="css-7xmgw5"><style data-emotion="css 1pbuvpm">.css-1pbuvpm>*:not(style)~*:not(style){margin-top:8px;}</style><style data-emotion="css nbpfuv">.css-nbpfuv{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-nbpfuv>*:not(style)~*:not(style){margin-top:8px;}</style><div class="css-nbpfuv"><style data-emotion="css 19gu4b8">.css-19gu4b8{margin:0;font-size:26px;line-height:1.4;color:#ffffff;}@media (max-width: 700px){.css-19gu4b8{font-size:20px;}}</style><h3 class="css-19gu4b8 eqrolup1">토스팀이 만드는 수많은 혁신의 순간들</h3><style data-emotion="css shfxsq">.css-shfxsq{font-size:17px;line-height:1.5;color:#e5e8eb;}@media (max-width: 700px){.css-shfxsq{font-size:16px;}}</style><div class="css-shfxsq eqrolup0">당신과 함께 만들고 싶습니다.<br/>지금, 토스팀에 합류하세요.</div></div><a class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s" aria-disabled="false" href="https://toss.im/career/jobs?gh_src=38b73b7a3us">채용 중인 공고 보기</a></div></div></section><footer class="p-footer p-footer--light"><div class="p-footer__inner"><div class="p-footer__site-group-list"><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스테크</div></li><li class="p-footer__site-group-item"><a href="mailto:techblog@toss.im">의견 보내기</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스</div></li><li class="p-footer__site-group-item"><a href="https://toss.im">홈페이지</a></li><li class="p-footer__site-group-item"><a href="https://team.toss.im">회사 소개</a></li><li class="p-footer__site-group-item"><a href="https://toss.im/career">채용</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">고객센터</div></li><li class="p-footer__site-group-item"><a href="tel:1599-4905">전화: 1599-4905 (24시간 연중무휴)</a></li><li class="p-footer__site-group-item"><a href="mailto:support.toss.im">이메일: support@toss.im</a></li><li class="p-footer__site-group-item"><a href="https://goto.kakao.com/@toss">카카오톡: @toss</a></li></ul></div><address class="p-footer__address"><strong class="p-footer__address__company-name">㈜비바리퍼블리카</strong>Copyright © Viva Republica, Inc. All Rights Reserved.</address><ul class="p-footer__term-wrapper"></ul><ul class="p-footer__social-list"><li class="p-footer__social-list-item"><a aria-label="Toss Facebook" target="_blank" href="https://www.facebook.com/toss.revolution"><img src="https://static.toss.im/assets/homepage/safety/icn-facebook.svg" alt="Toss Facebook"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss blog" target="_blank" href="https://blog.toss.im"><img src="https://static.toss.im/assets/homepage/safety/icn-blog.svg" alt="Toss blog"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Naver Post" target="_blank" href="https://post.naver.com/tossblog"><img src="https://static.toss.im/assets/homepage/safety/icn-naver.svg" alt="Toss Naver Post"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Twitter" target="_blank" href="https://twitter.com/toss__official"><img src="https://static.toss.im/assets/homepage/safety/icn-twitter.svg" alt="Toss Twitter"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Instagram" target="_blank" href="https://www.instagram.com/toss.im/"><img src="https://static.toss.im/assets/homepage/safety/icn-instagram.svg" alt="Toss Instagram"/></a></li></ul></div></footer><div id="tds-pc__portal-container"></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"article":{"title":"JSCodeShift로 기술 부채 청산하기","content":"\n\u003cp\u003e토스 프론트엔드 챕터에서는 100개 이상의 서비스들이 작은 패키지 단위로 쪼개져 활발하게 개발되고 있는데요. 공통으로 사용하는 라이브러리에서 인터페이스가 변경되는 Breaking Change가 발생하면, 의존하고 있는 모든 서비스의 코드를 수정해야 했습니다. 관리하는 코드베이스가 점점 커지면서 해야 하는 작업의 양도 계속 늘어나고는 했습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이에 프론트엔드 챕터는 JSCodeShift를 도입하여 대부분의 코드 수정 작업을 자동화할 수 있었습니다. 토스팀이 JSCodeShift를 도입하면서 알게 된 점과 노하우를 테크 블로그로 공유합니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003eJSCodeShift란?\u003c/h2\u003e\n\n\n\n\u003cp\u003e\u003ca href=\"https://github.com/facebook/jscodeshift\"\u003eJSCodeShift\u003c/a\u003e는 Facebook이 만든 JavaScript/TypeScript 코드 수정 도구입니다. JSCodeShift를 통해 코드를 수정하는 코드를 작성할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003e찾아 바꾸기와의 비교\u003c/h2\u003e\n\n\n\n\u003cp\u003eJSCodeShift를 도입하기 전, 토스에서는 대량의 코드 수정이 필요할 때면 IDE의 찾아 바꾸기(Find \u0026amp; Replace)를 사용했습니다. 그러나 찾아 바꾸기로는 안전하게 코드를 수정하는 데에 한계가 많았습니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e예시 1:\u0026nbsp;console.log() 모두 삭제하기\u003c/h3\u003e\n\n\n\n\u003cp\u003e프로젝트 전체에 있는\u0026nbsp;\u003ccode\u003econsole.log()\u003c/code\u003e\u0026nbsp;호출을 모두 제거하고 싶은 상황을 생각해봅시다. 간단한 예제임에도 쉽게 고칠 수 없는 엣지 케이스들이 발생합니다. 우선 console.log 안에 들어가는 인자의 내용이 달라질 수 있습니다. console.log에 여러 인자를 넘겨서 함수 호출이 여러 줄에 걸칠 수도 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이것을 정규식을 이용하여 어느 정도 해결할 수도 있습니다. 그러나 다양한 엣지케이스에 대응하기 위해서 정규식이 점점 복잡해지는 경우가 발생했습니다. 또 정규식은 정규 언어이기 때문에 기술적으로 대응할 수 없는 경우도 존재했습니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e예시 2: default import된 객체의 프로퍼티 수정하기\u003c/h3\u003e\n\n\n\n\u003cp\u003e아래와 같은 코드가 있었다고 생각해봅시다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-1\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003clink rel='stylesheet' id='syntax-highlighting-code-block-css'  href='https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1' media='all' /\u003e\u003cstyle\u003e.wp-block-code {\n\tborder: 0;\n\tpadding: 0;\n}\n\n.wp-block-code \u003e div {\n\toverflow: auto;\n}\n\n.shcb-language {\n\tborder: 0;\n\tclip: rect(1px, 1px, 1px, 1px);\n\t-webkit-clip-path: inset(50%);\n\tclip-path: inset(50%);\n\theight: 1px;\n\tmargin: -1px;\n\toverflow: hidden;\n\tpadding: 0;\n\tposition: absolute;\n\twidth: 1px;\n\tword-wrap: normal;\n\tword-break: normal;\n}\n\n.hljs {\n\tbox-sizing: border-box;\n}\n\n.hljs.shcb-code-table {\n\tdisplay: table;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table \u003e .shcb-loc {\n\tcolor: inherit;\n\tdisplay: table-row;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table .shcb-loc \u003e span {\n\tdisplay: table-cell;\n}\n\n.wp-block-code code.hljs:not(.shcb-wrap-lines) {\n\twhite-space: pre;\n}\n\n.wp-block-code code.hljs.shcb-wrap-lines {\n\twhite-space: pre-wrap;\n}\n\n.hljs.shcb-line-numbers {\n\tborder-spacing: 0;\n\tcounter-reset: line;\n}\n\n.hljs.shcb-line-numbers \u003e .shcb-loc {\n\tcounter-increment: line;\n}\n\n.hljs.shcb-line-numbers .shcb-loc \u003e span {\n\tpadding-left: 0.75em;\n}\n\n.hljs.shcb-line-numbers .shcb-loc::before {\n\tborder-right: 1px solid #ddd;\n\tcontent: counter(line);\n\tdisplay: table-cell;\n\tpadding: 0 0.75em;\n\ttext-align: right;\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\tuser-select: none;\n\twhite-space: nowrap;\n\twidth: 1%;\n}\n\u003c/style\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e A \u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'@tossteam/a'\u003c/span\u003e;\n\nA.foo();\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-1\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e어느 순간\u0026nbsp;\u003ccode\u003eA.foo()\u003c/code\u003e\u0026nbsp;함수가\u0026nbsp;\u003ccode\u003eA.bar()\u003c/code\u003e\u0026nbsp;함수로 이름이 변경되었다고 가정해봅시다.\u003c/p\u003e\n\n\n\n\u003cp\u003eDefault import의 변수 이름은 사용하는 사람마다 임의로 정할 수 있기 때문에, 어떤 사람은 이 라이브러리를\u0026nbsp;\u003ccode\u003eB\u003c/code\u003e\u0026nbsp;라고 하는 이름으로 사용하고 있을 수도 있습니다. 때문에 이 라이브러리를\u0026nbsp;\u003ccode\u003eB.foo()\u003c/code\u003e\u0026nbsp;처럼 사용하고 있던 코드가 있었다면,\u0026nbsp;\u003ccode\u003eB.bar()\u003c/code\u003e\u0026nbsp;로 수정해주어야 합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이런 경우는 찾아 바꾸기로 쉽게 대응하기 어렵습니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003eJSCodeShift 기초\u003c/h2\u003e\n\n\n\n\u003cp\u003eJSCodeShift는 추상 구문 트리(AST, Abstract Syntax Tree)를 이용하여 코드를 수정하는 방법을 제공함으로써 코드 수정 작업을 정확하고 편리하게 할 수 있도록 도와줍니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e추상 구문 트리 (AST)\u003c/h3\u003e\n\n\n\n\u003cp\u003e추상 구문 트리는 프로그램의 소스 코드를 쉽게 다룰 수 있도록 도와주는 자료구조입니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e예를 들어서, 다음\u0026nbsp;\u003ccode\u003eimport\u003c/code\u003e\u0026nbsp;문을 추상 구문 트리로 옮기면 이런 모습이 됩니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-2\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e React, { useMemo } \u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'react'\u003c/span\u003e;\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-2\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-3\" data-shcb-language-name=\"CSS\" data-shcb-language-slug=\"css\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-css\"\u003e\u003cspan class=\"hljs-selector-tag\"\u003eImportDeclaration\u003c/span\u003e {\n  \u003cspan class=\"hljs-attribute\"\u003especifiers\u003c/span\u003e: [\n    ImportDefaultSpecifier {\n      local: Identifier {\n        name: \u003cspan class=\"hljs-string\"\u003e\"React\"\u003c/span\u003e\n      }\n    },\n    \u003cspan class=\"hljs-selector-tag\"\u003eImportSpecifier\u003c/span\u003e {\n      \u003cspan class=\"hljs-attribute\"\u003elocal\u003c/span\u003e: Identifier {\n        name: \u003cspan class=\"hljs-string\"\u003e\"useMemo\"\u003c/span\u003e\n      }\n    }\n  ],\n  \u003cspan class=\"hljs-selector-tag\"\u003esource\u003c/span\u003e: \u003cspan class=\"hljs-selector-tag\"\u003eLiteral\u003c/span\u003e {\n    \u003cspan class=\"hljs-attribute\"\u003evalue\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"react\"\u003c/span\u003e\n  }\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-3\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eCSS\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ecss\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e살펴보면\u0026nbsp;\u003ccode\u003eimport\u003c/code\u003e\u0026nbsp;문이\u0026nbsp;\u003ccode\u003eImportDeclaration\u003c/code\u003e\u0026nbsp;객체로 바뀌었습니다. 또 내부에서 사용되는 Default Import와 Named Import, 라이브러리 이름이 알맞은 객체로 옮겨진 것을 확인할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003eASTExplorer\u003c/h3\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg src=\"https://static.toss.im/assets/toss-tech/jscodeshift-1.png\" alt=\"\"/\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e작성한 코드의 추상 구문 트리를\u0026nbsp;\u003ca href=\"https://astexplorer.net/\"\u003eASTExplorer\u003c/a\u003e로 쉽게 확인할 수 있습니다. 코드만 붙여넣으면 해당하는 구문 트리를 바로 확인할 수 있어 편리합니다. 소스 코드의 특정 부분에 커서를 옮기면 그 부분이 트리의 어떤 부분에 해당하는지 바로 볼 수 있기도 합니다. 😉 추상 구문 트리에 익숙하지 않다면, 사용해보시는 것을 권장합니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e라이브러리별 추상 구문 트리\u003c/h3\u003e\n\n\n\n\u003cp\u003e라이브러리마다 사용하는 추상 구문 트리의 모습은 다를 수 있습니다. 예를 들어서 같은 JavaScript를 다루더라도 ESLint가 사용하는 트리와 Babel이 사용하는 트리는 약간 다릅니다. JSCodeShift는 Babel이 사용하는 트리를 사용하고 있습니다.\u003c/p\u003e\n\n\n\n\u003cdiv class=\"wp-block-image\"\u003e\u003cfigure class=\"aligncenter size-large is-resized\"\u003e\u003cimg loading=\"lazy\" src=\"https://static.toss.im/assets/toss-tech/jscodeshift-2.png\" alt=\"\" width=\"578\" height=\"397\"/\u003e\u003c/figure\u003e\u003c/div\u003e\n\n\n\n\u003cp\u003eASTExplorer 상단 메뉴에서 사용할 추상 구문 트리를 선택할 수 있습니다. JSCodeShift가 사용하는 트리는\u0026nbsp;\u003ccode\u003e@babel/parser\u003c/code\u003e\u0026nbsp;입니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003eJSCodeShift 사용하기\u003c/h2\u003e\n\n\n\n\u003cp\u003eJSCodeShift로 코드를 수정하는 과정은 크게 4가지 작업으로 나눌 수 있습니다.\u003c/p\u003e\n\n\n\n\u003col\u003e\u003cli\u003e\u003cstrong\u003eAST로 파싱:\u003c/strong\u003e\u0026nbsp;파일의 소스 코드를 AST로 파싱합니다.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003e수정할 노드 선택\u003c/strong\u003e: AST에서 수정할 노드를 선택합니다.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003e수정하기\u003c/strong\u003e: 검색한 노드를 JSCodeShift가 제공하는 유틸리티로 코드를 변경시킵니다.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003e소스 코드로 내보내기:\u003c/strong\u003e\u0026nbsp;수정된 AST를 JavaScript 소스\u0026nbsp;코드로 내보냅니다.\u003c/li\u003e\u003c/ol\u003e\n\n\n\n\u003cp\u003e예를 들어, 이런 형식으로 코드를 작성합니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-4\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-comment\"\u003e/* transformSomeCode.js */\u003c/span\u003e\n\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003etransformSomeCode\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003efile, { jscodeshift }\u003c/span\u003e) \u003c/span\u003e{\n  \u003cspan class=\"hljs-comment\"\u003e// 1. AST로 파싱\u003c/span\u003e\n  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e tree = jscodeshift(file.source);\n\n  \u003cspan class=\"hljs-comment\"\u003e// 2. 수정할 노드 선택\u003c/span\u003e\n  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e nodes = tree.find(...);\n\n  \u003cspan class=\"hljs-comment\"\u003e// 3. 수정\u003c/span\u003e\n  jscodeshift(nodes)\n    .remove() | .replaceWith() | .insertBefore()\n\n  \u003cspan class=\"hljs-comment\"\u003e// 4. 소스 코드로 내보내기\u003c/span\u003e\n  \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e tree.toSource();\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-4\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e이후 JSCodeShift CLI를 이용하여\u0026nbsp;\u003ccode\u003ejscodeshift -t transformSomeCode.js \u0026lt;target\u0026gt;\u003c/code\u003e\u0026nbsp;와 같은 명령을 실행하면\u0026nbsp;\u003ccode\u003e\u0026lt;target\u0026gt;\u003c/code\u003e\u0026nbsp;에 있는 소스 코드들이\u0026nbsp;\u003ccode\u003etransformSomeCode.js\u003c/code\u003e\u0026nbsp;에 정의된 규칙에 맞게 수정됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이제 본격적으로 JSCodeShift에서 자주 사용되는 메서드들을 살펴보겠습니다.\u003c/p\u003e\n\n\n\n\u003ch3\u003e수정할 노드 선택하기:\u0026nbsp;find()\u003c/h3\u003e\n\n\n\n\u003cp\u003e기본적으로 수정할 노드를 선택하기 위해\u0026nbsp;\u003ccode\u003efind()\u003c/code\u003e\u0026nbsp;함수를 사용합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e예를 들어,\u0026nbsp;\u003ccode\u003ereact\u003c/code\u003e\u0026nbsp;라이브러리의\u0026nbsp;\u003ccode\u003euseMemo\u003c/code\u003e\u0026nbsp;를 가져오는\u0026nbsp;\u003ccode\u003eimport\u003c/code\u003e\u0026nbsp;구문들을 선택하기 위해서는 아래와 같이 코드를 작성할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-5\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e nodes = tree.find(\n  \u003cspan class=\"hljs-comment\"\u003e/* 찾을 AST 노드 타입 */\u003c/span\u003e\n  jscodeshift.ImportDeclaration,\n  \u003cspan class=\"hljs-comment\"\u003e/* 필터링할 함수 */\u003c/span\u003e\n  node =\u0026gt; {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e (\n      \u003cspan class=\"hljs-comment\"\u003e/* ImportDeclaration 중에서 */\u003c/span\u003e\n      node.type === \u003cspan class=\"hljs-string\"\u003e'ImportDeclaration'\u003c/span\u003e \u0026amp;\u0026amp;\n      \u003cspan class=\"hljs-comment\"\u003e/* react 라이브러리에서 */\u003c/span\u003e\n      node.source.value === \u003cspan class=\"hljs-string\"\u003e'react'\u003c/span\u003e \u0026amp;\u0026amp;\n      \u003cspan class=\"hljs-comment\"\u003e/* 가져오는 것 중에서 */\u003c/span\u003e\n      node.specifiers.some(\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-params\"\u003especifier\u003c/span\u003e =\u0026gt;\u003c/span\u003e {\n        \u003cspan class=\"hljs-comment\"\u003e/* useMemo를 포함하는 것을 */\u003c/span\u003e\n        \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e (\n          specifier.type === \u003cspan class=\"hljs-string\"\u003e'ImportSpecifier'\u003c/span\u003e \u0026amp;\u0026amp;\n          specifier.imported.name === \u003cspan class=\"hljs-string\"\u003e'useMemo'\u003c/span\u003e\n        );\n      })\n      \u003cspan class=\"hljs-comment\"\u003e/* 선택한다 */\u003c/span\u003e\n    )\n  }\n);\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-5\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003ch3\u003e노드 삭제하기: remove()\u003c/h3\u003e\n\n\n\n\u003cp\u003e선택한 노드를 삭제하기 위해\u0026nbsp;\u003ccode\u003eremove()\u003c/code\u003e\u0026nbsp;함수를 사용합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e예를 들어서, 아래와 같이 코드를 작성함으로써 선택한\u0026nbsp;\u003ccode\u003enode\u003c/code\u003e\u0026nbsp;의 목록을 삭제할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-6\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003efor\u003c/span\u003e (\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e node \u003cspan class=\"hljs-keyword\"\u003eof\u003c/span\u003e nodes) {\n  jscodeshift(node).remove();\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-6\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003ch3\u003e노드를 다른 노드로 치환하기: replaceWith()\u003c/h3\u003e\n\n\n\n\u003cp\u003e선택한 노드를 새로운 노드로 치환하려고 할 때\u0026nbsp;\u003ccode\u003ereplaceWith()\u003c/code\u003e\u0026nbsp;함수를 사용할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e예를 들어서, 선택한\u0026nbsp;\u003ccode\u003enode\u003c/code\u003e\u0026nbsp;들을 다른 모습으로 치환하기 위해서는 아래와 같이 코드를 작성할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-7\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003efor\u003c/span\u003e (\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e node \u003cspan class=\"hljs-keyword\"\u003eof\u003c/span\u003e nodes) {\n  \u003cspan class=\"hljs-comment\"\u003e/* 노드를 만드는 방법에 대해서 아래에서 더 자세히 다룹니다. */\u003c/span\u003e\n  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e newNode = createNode();\n\n  jscodeshift(node).replaceWith(newNode);\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-7\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003ch4\u003e새로운 노드 만들기\u003c/h4\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003ereplaceWith()\u003c/code\u003e\u0026nbsp;와 같은 함수에서 사용하기 위해서 새로운 노드를 만들 때는 JSCodeShift에서 제공하는 도우미 함수들을 사용할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cblockquote class=\"wp-block-quote\"\u003e\u003cp\u003e각 노드를 만드는 방법을 모두 알 필요는 없습니다. TypeScript를 사용하는 경우, 각 함수가 어떤 인자를 받는지 바로 확인할 수 있습니다. JavaScript를 사용하는 경우,\u0026nbsp;\u003ca href=\"https://github.com/benjamn/ast-types\"\u003east-types\u003c/a\u003e가 정의하는 타입 정보를 참고해주세요.\u003c/p\u003e\u003c/blockquote\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003e변수 참조:\u003c/strong\u003e\u0026nbsp;\u003ccode\u003efoo\u003c/code\u003e와 같은 변수에 참조하는 노드를 만들기 위해서\u0026nbsp;\u003ccode\u003ejscodeshift.identifier()\u003c/code\u003e\u0026nbsp;를 사용할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-8\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003ejscodeshift.identifier(\u003cspan class=\"hljs-string\"\u003e'foo'\u003c/span\u003e);\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-8\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003cstrong\u003e멤버 접근:\u003c/strong\u003e\u0026nbsp;변수\u0026nbsp;\u003ccode\u003efoo\u003c/code\u003e의 멤버\u0026nbsp;\u003ccode\u003ebar\u003c/code\u003e\u0026nbsp;에 접근하는 노드를 만들기 위해서\u0026nbsp;\u003ccode\u003ejscodeshift.memberExpression()\u003c/code\u003e\u0026nbsp;을 사용할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-9\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003ejscodeshift.memberExpression(\n  jscodeshift.identifier(\u003cspan class=\"hljs-string\"\u003e'foo'\u003c/span\u003e),\n  jscodeshift.identifier(\u003cspan class=\"hljs-string\"\u003e'bar'\u003c/span\u003e)\n);\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-9\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003cstrong\u003eimport 문:\u003c/strong\u003e\u0026nbsp;\u003ccode\u003eimport { useMemo } from 'react';\u003c/code\u003e\u0026nbsp;와 같은\u0026nbsp;\u003ccode\u003eimport\u003c/code\u003e\u0026nbsp;문을 만들기 위해서\u0026nbsp;\u003ccode\u003ejscodeshift.importDeclaration()\u003c/code\u003e\u0026nbsp;을 사용할 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-10\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003ejscodeShift.importDeclaration(\n  [\n    jscodeShift.importSpecifier(\n      jscodeshift.identifier(\u003cspan class=\"hljs-string\"\u003e'useMemo'\u003c/span\u003e)\n    )\n  ],\n  jscodeshift.literal(\u003cspan class=\"hljs-string\"\u003e'react'\u003c/span\u003e)\n);\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-10\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003ch2\u003eJSCodeShift 사용 예시\u003c/h2\u003e\n\n\n\n\u003cp\u003e토스 프론트엔드 챕터에서는 2020년\u0026nbsp;\u003ccode\u003eimport { Adaptive } from '@tossteam/web-development-kits'\u003c/code\u003e\u0026nbsp;와 같은\u0026nbsp;\u003ccode\u003eimport\u003c/code\u003e\u0026nbsp;문을 모두\u0026nbsp;\u003ccode\u003eimport { adaptive } from '@tossteam/colors'\u003c/code\u003e\u0026nbsp;으로 수정해야 하는 필요성이 있었습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이런 경우는 찾아 바꾸기로 해결하는 데에 어려움이 있었습니다. 코드를 수정하는 규칙이 복잡했기 때문입니다.\u003c/p\u003e\n\n\n\n\u003col\u003e\u003cli\u003e\u003ccode\u003e@tossteam/web-development-kits\u003c/code\u003e\u0026nbsp;라이브러리로부터\u0026nbsp;\u003ccode\u003eAdaptive\u003c/code\u003e\u0026nbsp;뿐 아니라 다른 변수나 함수를 import 하는 경우가 있었습니다. 그런 경우에는 전체 import 문을 지우는 것이 아닌,\u0026nbsp;\u003ccode\u003eAdaptive\u003c/code\u003e\u0026nbsp;를 가져오는 부분만 삭제해야 했습니다.\u003c/li\u003e\u003cli\u003e\u003ccode\u003eAdaptive\u003c/code\u003e\u0026nbsp;를 import하는 부분이 삭제된 경우에만\u0026nbsp;\u003ccode\u003eimport { adaptive } from '@tossteam/colors';\u003c/code\u003e\u0026nbsp;와 같이 새로운 import 문을 파일의 가장 처음에 추가해주어야 했습니다. 아닌 경우, 사용하지 않은 변수로 인해 컴파일 시간에 오류가 발생했습니다.\u003c/li\u003e\u003cli\u003e\u003ccode\u003eAdaptive\u003c/code\u003e\u0026nbsp;를 import하는 부분이 삭제된 경우에만 그 파일에서 사용되는 모든\u0026nbsp;\u003ccode\u003eAdaptive\u003c/code\u003e\u0026nbsp;변수를\u0026nbsp;\u003ccode\u003eadaptive\u003c/code\u003e\u0026nbsp;로 바꿔줘야 했습니다.\u003c/li\u003e\u003c/ol\u003e\n\n\n\n\u003cp\u003e다행히 토스팀에서는 간단히 이 문제를 JSCodeShift로 해결할 수 있었습니다. 저희가 설계한 JSCodeShift 변환 코드의 구조는 다음과 같습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-11\" data-shcb-language-name=\"PHP\" data-shcb-language-slug=\"php\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-php\"\u003e\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003etransformLegacyImportToNewImport\u003c/span\u003e\u003cspan class=\"hljs-params\"\u003e(file, { jscodeshift })\u003c/span\u003e \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e root = jscodeshift(file.source);\n\n  \u003cspan class=\"hljs-comment\"\u003e/* 오래된 import 문들을 찾음 */\u003c/span\u003e\n  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e oldImports = findOldImports(root, { jscodeshift });\n\n  \u003cspan class=\"hljs-comment\"\u003e/* 오래된 import 문이 없는 파일인 경우, 아무 작업을 하지 않음 */\u003c/span\u003e\n  \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (oldImports.length === \u003cspan class=\"hljs-number\"\u003e0\u003c/span\u003e) {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e;\n  }\n\n  \u003cspan class=\"hljs-keyword\"\u003efor\u003c/span\u003e (\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e oldImport of oldImports) {\n    \u003cspan class=\"hljs-comment\"\u003e/* 오래된 import 문에서 Adaptive를 가져오는 부분을 삭제 */\u003c/span\u003e\n    \u003cspan class=\"hljs-comment\"\u003e/* (Adaptive만을 가져오는 import 문인 경우, import 문 전체를 삭제) */\u003c/span\u003e\n    removeImportMember(root, oldImport, \u003cspan class=\"hljs-string\"\u003e'Adaptive'\u003c/span\u003e, { jscodeshift });\n  }\n\n  \u003cspan class=\"hljs-comment\"\u003e/* \u003cspan class=\"hljs-doctag\"\u003e@tossteam\u003c/span\u003e/colors에서 adaptive를 import하는 부분을 추가 */\u003c/span\u003e\n  \u003cspan class=\"hljs-comment\"\u003e/* (\u003cspan class=\"hljs-doctag\"\u003e@tossteam\u003c/span\u003e/colors를 import하고 있지 않은 경우, import 문을 추가) */\u003c/span\u003e\n  addImportMember(root, \u003cspan class=\"hljs-string\"\u003e'@tossteam/colors'\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e'adaptive'\u003c/span\u003e, { jscodeshift });\n\n  \u003cspan class=\"hljs-comment\"\u003e/* Adaptive 변수를 모두 adaptive로 치환 */\u003c/span\u003e\n  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e oldAdaptives = findIdentifiers(root, \u003cspan class=\"hljs-string\"\u003e'Adaptive'\u003c/span\u003e, { jscodeshift });\n\n  \u003cspan class=\"hljs-keyword\"\u003efor\u003c/span\u003e (\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e oldAdaptive of oldAdaptives) {\n    jscodeshift(oldAdaptive).replaceWith(\n      jscodeshift.identifier(\u003cspan class=\"hljs-string\"\u003e'adaptive'\u003c/span\u003e)\n    );\n  }\n\n  \u003cspan class=\"hljs-comment\"\u003e/* 수정된 소스코드를 반환 */\u003c/span\u003e\n  \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e root.toSource();\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-11\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003ePHP\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ephp\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e이 중에서\u0026nbsp;\u003ccode\u003eremoveImportMember\u003c/code\u003e\u0026nbsp;함수와 같은 경우, 아래와 같이 간단히 구현할 수 있었습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-12\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eremoveImportMember\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003eroot, importNode, name, { jscodeshift }\u003c/span\u003e) \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e oldSpecifiers = importNode.value.specifiers;\n\n  \u003cspan class=\"hljs-comment\"\u003e/* name을 import하는 부분을 삭제 */\u003c/span\u003e\n  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e newSpecifiers = oldSpecifiers.filter(\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-params\"\u003especifier\u003c/span\u003e =\u0026gt;\u003c/span\u003e {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e (\n      specifier.type !== \u003cspan class=\"hljs-string\"\u003e'ImportSpecifier'\u003c/span\u003e ||\n      specifier.imported.name !== name\n    );\n  }\n\n  \u003cspan class=\"hljs-comment\"\u003e/* 더 이상 import할 것이 남지 않은 경우에는, import 문을 삭제 */\u003c/span\u003e\n  \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (newSpecifiers.length === \u003cspan class=\"hljs-number\"\u003e0\u003c/span\u003e) {\n    jscodeshift(importNode).remove();\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e;\n  }\n\n  \u003cspan class=\"hljs-comment\"\u003e/* 그렇지 않은 경우, import 문에서 name을 가져오는 부분만 삭제 */\u003c/span\u003e\n  jscodeshift(importNode).replaceWith(\n    jscodeshift.importDeclaration(\n      newSpecifiers,\n      importNode.value.source\n    )\n  );\n}\n\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-12\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e다른 함수의 경우에도 유사하게 JSCodeShift API를 이용하여 구현할 수 있었습니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003eJSCodeShift 테스트하기\u003c/h2\u003e\n\n\n\n\u003cp\u003eJSCodeShift는 작성한 변환 코드가 잘 작동하는지 테스트할 수 있도록\u0026nbsp;\u003ccode\u003etestUtils\u003c/code\u003e\u0026nbsp;라고 하는 이름의 테스트 도구를 제공합니다. 테스트 파일의 디렉토리 구조를 JSCodeShift가 요구하는 대로 맞춰야 하지만, 손쉽게 Jest에 테스트를 붙일 수 있어서 편리합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e테스트가 잘 붙어 있으면, JSCodeShift 코드의 문제점을 바로바로 찾을 수 있게 됩니다. 개발 속도도 절약되는 만큼, JSCodeShift를 개발할 때는 꼭 테스트와 함께 하는 것을 추천합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003eJSCodeShift 테스트와 관련된 자세한 내용은\u0026nbsp;\u003ca href=\"https://github.com/facebook/jscodeshift#unit-testing\"\u003eJSCodeShift README\u003c/a\u003e에서 확인할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003ch2\u003e토스팀과 JSCodeShift\u003c/h2\u003e\n\n\n\n\u003cp\u003e토스 프론트엔드 개발팀은 짧은 시간동안 빠르게 개발환경을 개선해오면서 대량의 레거시 코드를 최신 라이브러리와 코드 컨벤션에 맞추도록 수정해주어야 했습니다. 경우에 따라서는 작성된지 2년이 지난 오래된 코드가 수만 줄 이상 존재하기도 했습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이때 JSCodeShift를 사용함으로써 그런 코드도 한번에 최신 코드와 같이 일관성을 맞출 수 있었습니다. 이번 JSCodeShift 가이드가 레거시 시스템을 다루는 다른 프론트엔드 개발자 분들께 도움이 되었으면 합니다.\u003c/p\u003e\n","date":"2021-05-04T17:16:00","excerpt":"\u003cp\u003e기술 부채는 개발할수록 쌓여만 갑니다. 프론트엔드 챕터가 JSCodeShift를 이용하여 순식간에 100개 서비스의 기술 부채를 해결한 경험을 소개합니다.\u003c/p\u003e\n","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2021/05/techblog-03-jscodeshift-300x150.png 300w, https://toss.tech/wp-content/uploads/2021/05/techblog-03-jscodeshift-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2021/05/techblog-03-jscodeshift-768x384.png 768w, https://toss.tech/wp-content/uploads/2021/05/techblog-03-jscodeshift.png 1200w"}},"metadata":{"ogBackground":"https://static.toss.im/assets/tech-blog/og-image:/techblog-03-jscodeshift-og.png","ogImageTitle":"JSCodeShift로\r\n기술 부채 청산하기","ogGenerateImage":null,"recruitTitle":"재미있게 읽으셨나요?","recruitUrl":null,"form1Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=020\u0026title=js_codeshift로_기술_부채_청산하기\u0026reaction=good","form2Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=020\u0026title=js_codeshift로_기술_부채_청산하기\u0026reaction=bad","formDescription":"좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.","form1Label":"😍","form2Label":"🤔","recruitDescription":null},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}},{"node":{"id":"dGVybTox","name":"Uncategorized"}}]},"author":{"node":{"id":"dXNlcjo2","firstName":"지우","lastName":"박","description":"토스 Insurance Partner Silo에서 토스보험파트너 애플리케이션을 개발하고 있습니다.","avatar":{"url":"https://wp.toss.tech/wp-content/uploads/2021/06/E01JAGTHP8R-U01JA15NFDL-b3979cc31718-512-312x312.png"},"role":{"role":"Frontend Developer"}}}},"relatedArticles":[{"title":"무지성으로 사용한 헬스 체크가 불러일으킬 수 있는 참사","slug":"how-to-work-health-check-in-spring-boot-actuaotr","date":"2023-04-01T15:38:57","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/04/00009-889461687-300x300.png 300w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687-150x150.png 150w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687.png 512w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}},{"node":{"id":"dGVybTox","name":"Uncategorized"}}]}},{"title":"ESLint와 AST로 코드 퀄리티 높이기","slug":"improving-code-quality-via-eslint-and-ast","date":"2023-03-31T15:47:53","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/03/center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/center.png 1200w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}}]}}]},"__N_SSP":true},"page":"/article/[slug]","query":{"slug":"jscodeshift"},"buildId":"QqBxegmptuUDYc8oCREsD","assetPrefix":"https://static.toss.im/frontend/toss-tech","runtimeConfig":{"ENV":"live","NODE_ENV":"production","PORT":"3000","ASSET_PREFIX":"https://static.toss.im/frontend/toss-tech","SERVICE":"toss-tech","SENTRY":{"DSN":"https://5eff657ed6ef486fb8af2dc5f9508abd@sentry.io/1242586","PUBLIC_KEY":"5eff657ed6ef486fb8af2dc5f9508abd","RELEASE":"toss-tech_1.0.103","SERVICE":"toss-tech","SERVICE_VERSION":"1.0.103"},"RENDER_TYPE":"ssr"},"isFallback":false,"gssp":true,"customServer":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,1088 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="https://static.toss.im/tds-pc/3.232.0/main.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/rss+xml" href="/rss.xml"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/atom+xml" href="/atom.xml"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/main.css"/><link rel="stylesheet" type="text/css" href="//static.toss.im/tps/others.css"/><link rel="stylesheet" href="https://static.toss.im/tossface-font/tossface.css"/><link rel="alternate" title="토스 기술 블로그, 토스테크 글 목록" type="application/activitystream+json" href="/feed.json"/><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"/><meta name="author" content="Viva Republica"/><link rel="preconnect" href="https://static.toss.im"/><link rel="shortcut icon" href="https://static.toss.im/tds/favicon/favicon.ico"/><link rel="icon" type="image/png" sizes="16x16" href="https://static.toss.im/tds/favicon/favicon-16x16.png"/><link rel="icon" type="image/png" sizes="32x32" href="https://static.toss.im/tds/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="48x48" href="https://static.toss.im/tds/favicon/favicon-48x48.png"/><link rel="icon" type="image/png" sizes="196x196" href="https://static.toss.im/tds/favicon/favicon-196x196.png"/><link rel="apple-touch-icon" sizes="57x57" href="https://static.toss.im/tds/favicon/apple-touch-icon-57x57.png"/><link rel="apple-touch-icon" sizes="72x72" href="https://static.toss.im/tds/favicon/apple-touch-icon-72x72.png"/><link rel="apple-touch-icon" sizes="114x114" href="https://static.toss.im/tds/favicon/apple-touch-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="https://static.toss.im/tds/favicon/apple-touch-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="https://static.toss.im/tds/favicon/apple-touch-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="https://static.toss.im/tds/favicon/apple-touch-icon-152x152.png"/><meta name="msapplication-TileImage" content="https://static.toss.im/tds/favicon/mstile-144x144.png"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PQ5NV18TH1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-PQ5NV18TH1');</script><script>(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:2399367,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script><title>NestJS 환경에 맞는 Custom Decorator 만들기</title><meta name="twitter:creator" content="Viva Republica"/><meta name="twitter:site" content="@Toss_service"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:title" content="NestJS 환경에 맞는 Custom Decorator 만들기"/><meta name="twitter:title" content="NestJS 환경에 맞는 Custom Decorator 만들기"/><meta property="og:description" content="NestJS에서 데코레이터를 만들기 위해서는 NestJS의 DI와 메타 프로그래밍 환경 등을 고려해야 합니다. 어떻게 하면 이러한 NestJS 환경에 맞는 데코레이터를 만들 수 있을지 고민해보았습니다.
+"/><meta name="twitter:description" content="NestJS에서 데코레이터를 만들기 위해서는 NestJS의 DI와 메타 프로그래밍 환경 등을 고려해야 합니다. 어떻게 하면 이러한 NestJS 환경에 맞는 데코레이터를 만들 수 있을지 고민해보았습니다.
+"/><meta property="og:image" content="https://og.toss.tech?title=NestJS%20%ED%99%98%EA%B2%BD%EC%97%90%20%EB%A7%9E%EB%8A%94%0D%0ACustom%20Decorator%20%EB%A7%8C%EB%93%A4%EA%B8%B0&amp;imageUrl=https%3A%2F%2Fstatic.toss.im%2Fassets%2Ftech-blog%2Fog-image%2Ftech-article-nest-js-02-og.png&amp;v=2"/><meta name="twitter:image" content="https://og.toss.tech?title=NestJS%20%ED%99%98%EA%B2%BD%EC%97%90%20%EB%A7%9E%EB%8A%94%0D%0ACustom%20Decorator%20%EB%A7%8C%EB%93%A4%EA%B8%B0&amp;imageUrl=https%3A%2F%2Fstatic.toss.im%2Fassets%2Ftech-blog%2Fog-image%2Ftech-article-nest-js-02-og.png&amp;v=2"/><meta name="next-head-count" content="36"/><meta name="next-font-preconnect"/><link rel="preload" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" as="style"/><link rel="stylesheet" href="https://static.toss.im/frontend/toss-tech/_next/static/css/6486c46747f65f89.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/webpack-a37367524f3d9e47.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/framework-5201cf011975c339.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/main-4ffd67ad72332dfe.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/_app-02461bb4136bedab.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/821-c2f4db054c6f6b42.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/935-149f2da2961c2b08.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/chunks/pages/article/%5Bslug%5D-bf5a24035d1301de.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_buildManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_ssgManifest.js" defer=""></script><script src="https://static.toss.im/frontend/toss-tech/_next/static/QqBxegmptuUDYc8oCREsD/_middlewareManifest.js" defer=""></script></head><body><div id="__next"><style data-emotion="css-global ubpbb5">html,body{padding:0;margin:0;font-family:'Toss Product Sans';}button{font-family:'Toss Product Sans';}p{margin:0;}</style><style data-emotion="css kcwxxw">.css-kcwxxw{position:-webkit-sticky;position:sticky;top:0;height:59px;}</style><nav class="p-navbar p-navbar--bottom-border css-kcwxxw"><div class="p-container p-container--default"><div class="p-container__inner p-navbar__inner-container"><div class="p-navbar__logo-container"><a class="p-navbar__logo-icon" href="/tech"><span class="icon p-icon" aria-hidden="true" role="presentation" style="height:auto;width:auto;min-width:24px"></span></a></div><div class="p-navbar__right-on-mobile"></div><div class="p-navbar__content" aria-expanded="false" aria-hidden="true"><ul class="p-navbar__menu"></ul><ul class="p-navbar__menu"><li class="p-navbar__item"><a>디자인</a></li><li class="p-navbar__item"><a>개발</a></li><li class="p-navbar__item p-navbar__button-item"><button class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s p-navbar__button" type="button" aria-disabled="false">채용 바로가기</button></li></ul></div></div></div></nav><style data-emotion="css 1nquki8">.css-1nquki8{max-width:700px;margin-bottom:80px;}.css-1nquki8 .has-extra-large-font-size{font-size:20px;}.css-1nquki8 .has-large-font-size{font-size:18px;}.css-1nquki8 .has-small-font-size{font-size:14px;}.css-1nquki8 .has-extra-small-font-size{font-size:12px;}@media (max-width: 700px){.css-1nquki8{margin-bottom:64px;}}</style><div class="p-container p-container--default css-1nquki8"><div class="p-container__inner"><style data-emotion="css gtmad4">.css-gtmad4>*:not(style)~*:not(style){margin-top:54px;}@media (max-width: 700px){.css-gtmad4>*:not(style)~*:not(style){margin-top:48px;}}</style><article class="css-gtmad4"><style data-emotion="css 1095auh">.css-1095auh>*:not(style)~*:not(style){margin-top:20px;}</style><header class="css-1095auh"><style data-emotion="css iffq4o">.css-iffq4o{width:100%;margin-top:36px;border-radius:12px;}</style><img srcSet="https://toss.tech/wp-content/uploads/2022/11/tech-article-nest-js-02-300x150.png 300w, https://toss.tech/wp-content/uploads/2022/11/tech-article-nest-js-02-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2022/11/tech-article-nest-js-02-768x384.png 768w, https://toss.tech/wp-content/uploads/2022/11/tech-article-nest-js-02.png 1200w" alt="NestJS 환경에 맞는 Custom Decorator 만들기" class="css-iffq4o e132k2574"/><style data-emotion="css 117sh4z">.css-117sh4z{margin-top:36px;margin-bottom:0;font-size:48px;font-weight:700;line-height:1.25;color:#333d4b;word-break:keep-all;overflow-wrap:break-word;}@media (max-width: 700px){.css-117sh4z{margin-top:28px;font-size:32px;}}</style><h1 class="css-117sh4z e132k2573">NestJS 환경에 맞는 Custom Decorator 만들기</h1><style data-emotion="css s5xdrg">.css-s5xdrg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><section class="css-s5xdrg e2c667z4"><style data-emotion="css 1hdebld">.css-1hdebld{grid-area:image;width:48px;height:48px;border-radius:156px;margin-right:14px;}</style><img src="https://toss.tech/wp-content/uploads/2022/11/IMG_1399-312x312.jpg" alt="" class="css-1hdebld e2c667z3"/><div><style data-emotion="css 14d9k6d">.css-14d9k6d{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;grid-area:outline;-webkit-align-items:flex-end;-webkit-box-align:flex-end;-ms-flex-align:flex-end;align-items:flex-end;padding-top:8px;font-size:17px;margin-bottom:2px;}@media (max-width: 700px){.css-14d9k6d>*+*{margin-top:4px;margin-left:0;}}</style><div class="css-14d9k6d e2c667z2"><style data-emotion="css 9krnkp">.css-9krnkp{grid-area:name;margin:0;font-size:17px;font-weight:600;color:#4e5968;white-space:nowrap;}</style><h3 class="css-9krnkp e2c667z1">송현지</h3><h3 class="css-9krnkp e2c667z1">ㆍ<!-- -->Node.js Developer</h3></div><style data-emotion="css 154r2lc">.css-154r2lc{font-size:14px;line-height:1.5;color:#8b95a1;}</style><div class="css-154r2lc e2c667z0">2022. 11. 22</div></div></section></header><style data-emotion="css 1k1kkv6">.css-1k1kkv6{font-size:18px;line-height:1.7;color:var(--grey700);font-size:18px;word-break:keep-all;overflow-wrap:break-word;counter-reset:p-post-ol 0;}.css-1k1kkv6 h2{margin:2.2em 0 0.6em 0;font-size:25px;font-weight:600;line-height:1.4;color:var(--grey900);}.css-1k1kkv6 h3{margin:2.2em 0 0.6em 0;font-size:22px;font-weight:600;line-height:1.6;color:var(--grey900);}.css-1k1kkv6 h4{margin:2.2em 0 0.3em 0;font-size:19px;font-weight:600;line-height:1.6;color:var(--grey700);}.css-1k1kkv6 p{margin:1em 0;}.css-1k1kkv6 p code,.css-1k1kkv6 li code{font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:3px;}.css-1k1kkv6 a{color:var(--blue700);}.css-1k1kkv6 pre{margin:2em -24px;}@media (max-width: 700px){.css-1k1kkv6 pre{margin:2em 0;}}.css-1k1kkv6 pre code{display:block;padding:16px 24px;overflow-x:auto;font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;font-size:0.9em;line-height:1.5;word-wrap:normal;white-space:pre;background-color:var(--greyOpacity100);border:1px solid var(--greyOpacity200);border-radius:12px;}.css-1k1kkv6 figure{margin:2em 0;overflow:hidden;border-radius:12px;width:100%;}.css-1k1kkv6 figure.aligncenter{text-align:center;}.css-1k1kkv6 ol,.css-1k1kkv6 ul{margin:0 0 16px;list-style:none;}.css-1k1kkv6 ol li,.css-1k1kkv6 ul li{position:relative;margin-bottom:8px;}.css-1k1kkv6 ol li:before,.css-1k1kkv6 ul li:before{position:absolute;left:0;}.css-1k1kkv6 ol li ol,.css-1k1kkv6 ul li ol{padding-left:0;margin:8px 0 0 -16px;}.css-1k1kkv6 ol li ul,.css-1k1kkv6 ul li ul{padding-left:0;margin-top:8px;}.css-1k1kkv6 ol li p,.css-1k1kkv6 ul li p{margin:0;}.css-1k1kkv6 ol{padding-left:16px;counter-reset:p-post-ol;}.css-1k1kkv6 ol>li{padding-left:32px;counter-increment:p-post-ol;}.css-1k1kkv6 ol>li:before{font-weight:700;font-weight:var(--font-weight-bold);content:counter(p-post-ol) '.';}.css-1k1kkv6 ul{padding-left:16px;}.css-1k1kkv6 ul>li{padding-left:24px;}.css-1k1kkv6 ul>li:before{width:16px;text-align:center;content:'•';}.css-1k1kkv6 figcaption{font-size:0.9em;color:var(--grey600);}.css-1k1kkv6 .wp-block-pullquote{margin:0;}.css-1k1kkv6 blockquote{padding:32px;background:var(--greyOpacity100);border-radius:12px;text-align:left;margin:16px 0 16px 0;}.css-1k1kkv6 blockquote p{color:#333d4b;font-weight:600;margin:0;}.css-1k1kkv6 blockquote cite{font-style:normal;}@media (max-width: 700px){.css-1k1kkv6 blockquote{padding:24px;}}.css-1k1kkv6 .wp-block-embed-youtube iframe{width:100%;border-radius:12px;}.css-1k1kkv6 ol{counter-reset:none;}.css-1k1kkv6 hr{border-top:1px solid #e5e8eb;border-right-style:none;border-left-style:none;border-bottom-style:none;margin:2.5rem 0;}.css-1k1kkv6 figure{display:table;text-align:center;}@media (max-width: 700px){.css-1k1kkv6 figure{width:100%;}}.css-1k1kkv6 figure img,.css-1k1kkv6 figure video{max-width:100%;height:auto;border:1px solid rgba(2,32,71,0.05);border-radius:12px;}.css-1k1kkv6 figure.alignright{float:right;margin:0 0 8px 24px;}@media (max-width: 700px){.css-1k1kkv6 figure.alignright{float:none;margin:0;}}.css-1k1kkv6 figcaption{display:table-caption;text-align:center;white-space:pre-wrap;caption-side:bottom;}.css-1k1kkv6 p:empty::before{content:'';}</style><div class="css-1k1kkv6 e132k2572"><div>
+<h1>들어가며</h1>
+
+
+
+<p>데코레이터는 비즈니스와 상관 없는 로직들을 숨기면서 기능을 변경하거나 확장할 수 있게 합니다. 또한 여러 클래스에서 반복되는 공통 관심사가 있을 때 데코레이터를 사용하면 중복된 코드를 줄이고 코드를 모듈 단위로 관리하는 효과를 거둘 수 있습니다.</p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="1024" height="847" src="https://wp.toss.tech/wp-content/uploads/2022/11/tech-blog-1-1024x847.png" alt="" class="wp-image-1001" srcSet="https://toss.tech/wp-content/uploads/2022/11/tech-blog-1-1024x847.png 1024w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-1-300x248.png 300w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-1-768x635.png 768w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-1-1536x1270.png 1536w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-1-1568x1297.png 1568w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-1.png 2000w" sizes="(max-width: 1024px) 100vw, 1024px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<p>이런 이유로 저희 Node.js Chapter에서도 데코레이터를 적극 활용하고 있습니다. 하지만 NestJS에서는 데코레이터를 만들 때 다음과 같은 질문들이 있었습니다.<br/></p>
+
+
+
+<ol><li>데코레이터에서 Provider를 사용해야할 때 어떻게 Provider에 접근할 수 있을까?</li><li>메타데이터를 쓰는 NestJS 데코레이터를 일반 데코레이터와 사용해도 괜찮을까?</li></ol>
+
+
+
+<p><br/>NestJS에서 데코레이터를 만들기 위해서는 NestJS의 DI와 메타 프로그래밍 환경 등을 고려해야 합니다. 그래서 이 글을 통해 NestJS에서는 어떻게 데코레이터를 만드는지 살펴보고, 앞의 두 질문들을 고려하여 NestJS 환경에 맞는 데코레이터를 만들어보려고 합니다.<br/></p>
+
+
+
+<p>들어가기 전에, 만약 데코레이터나 메타데이터가 생소하시다면 아래 문서들을 읽어보시는 걸 추천드립니다.</p>
+
+
+
+<ul><li><a href="https://www.typescriptlang.org/ko/docs/handbook/decorators.html">Typescript Decorator</a></li><li><a href="https://www.npmjs.com/package/reflect-metadata">reflect-metadata</a></li></ul>
+
+
+
+<p><br/></p>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p><br/></p>
+
+
+
+<h1>Chapter1. 데코레이터에서 Provider에 접근하기<br/></h1>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><link rel="stylesheet" id="syntax-highlighting-code-block-css" href="https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1" media="all"/><style>.wp-block-code {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-code > div {
+	overflow: auto;
+}
+
+.shcb-language {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+.hljs {
+	box-sizing: border-box;
+}
+
+.hljs.shcb-code-table {
+	display: table;
+	width: 100%;
+}
+
+.hljs.shcb-code-table > .shcb-loc {
+	color: inherit;
+	display: table-row;
+	width: 100%;
+}
+
+.hljs.shcb-code-table .shcb-loc > span {
+	display: table-cell;
+}
+
+.wp-block-code code.hljs:not(.shcb-wrap-lines) {
+	white-space: pre;
+}
+
+.wp-block-code code.hljs.shcb-wrap-lines {
+	white-space: pre-wrap;
+}
+
+.hljs.shcb-line-numbers {
+	border-spacing: 0;
+	counter-reset: line;
+}
+
+.hljs.shcb-line-numbers > .shcb-loc {
+	counter-increment: line;
+}
+
+.hljs.shcb-line-numbers .shcb-loc > span {
+	padding-left: 0.75em;
+}
+
+.hljs.shcb-line-numbers .shcb-loc::before {
+	border-right: 1px solid #ddd;
+	content: counter(line);
+	display: table-cell;
+	padding: 0 0.75em;
+	text-align: right;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: 1%;
+}
+</style><div><code class="hljs language-javascript">@Injectable()
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestService</span> </span>{
+  @Cacheable(<span class="hljs-string">&#x27;key&#x27;</span>)
+  test() {
+      <span class="hljs-comment">// 비즈니스 로직</span>
+  }
+}</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>TestService가 있을 때, 캐싱 로직을 Cacheable 데코레이터를 사용해 비즈니스 로직과 분리하려고 합니다.<br/><br/>Cacheable 데코레이터에서 <code>CacheManager</code>라는 Provider를 사용하려면 어떻게 접근해야 할까요?</p>
+
+
+
+<p><br/></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-keyword">@Module</span>{
+  <span class="hljs-selector-tag">imports</span>: <span class="hljs-selector-attr">[CacheModule.register(...)]</span>
+  <span class="hljs-selector-tag">providers</span>: <span class="hljs-selector-attr">[TestService]</span>
+}
+<span class="hljs-selector-tag">class</span> <span class="hljs-selector-tag">TestModule</span> {}</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>CacheManager Provider를 export하는 CacheModule을 import 해봅시다.</p>
+
+
+
+<p><br/></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Cacheable</span>(<span class="hljs-params">key: string, ttl: number</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">target: any, _key: string, descriptor: PropertyDescriptor</span>) </span>{
+    <span class="hljs-keyword">const</span> methodRef = descriptor.value;
+
+    descriptor.value = <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">...args: any[]</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>) <span class="hljs-comment">// TestService {}</span>
+
+    <span class="hljs-comment">// TypeError: Cannot read properties of undefined (reading &#x27;get&#x27;)</span>
+    <span class="hljs-keyword">const</span> value = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.cache.get(key); 
+    <span class="hljs-keyword">if</span> (value) {
+      <span class="hljs-keyword">return</span> value;
+    }
+
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> methodRef.call(<span class="hljs-keyword">this</span>, ...args);
+    <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.cache.set(key, result, ttl);
+    <span class="hljs-built_in">console</span>.log(result)
+    <span class="hljs-keyword">return</span> result;
+    };
+  };
+}</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p></p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="1024" height="458" src="https://wp.toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-15-오후-2.44.44-1024x458.png" alt="" class="wp-image-1074" srcSet="https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-15-오후-2.44.44-1024x458.png 1024w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-15-오후-2.44.44-300x134.png 300w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-15-오후-2.44.44-768x344.png 768w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-15-오후-2.44.44-1536x687.png 1536w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-15-오후-2.44.44-1568x702.png 1568w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-15-오후-2.44.44.png 1926w" sizes="(max-width: 1024px) 100vw, 1024px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<p></p>
+
+
+
+<p>TestModule에서 CacheModule을 import하고 있긴 하지만 TestService에서 CacheManager 를 주입하지 않는 이상 Cacheable에서 CacheManager에 접근할 방법이 없습니다. Cacheable 데코레이터를 사용하려면 클래스에 항상 CacheManager를 주입해주어야 하는 불편함이 있습니다.</p>
+
+
+
+<p>게다가 CacheManager를 넣어준다고 해도 멤버 이름을 <code>cache</code> 로 강제해야 합니다. 가능한 방법이지만 휴먼 에러가 발생할 수 있어 좋은 방법은 아닙니다.</p>
+
+
+
+<p><br/><br/>그렇다면 NestJS 메서드 데코레이터는 어떻게 되어있을까요?</p>
+
+
+
+<p>NestJS가 데코레이터를 등록하는 과정은 ‘<strong>마킹 – 조회 – 등록</strong>’로 크게 세 단계로 나뉩니다. <code>Cron</code> 메서드 데코레이터를 예로 들어보겠습니다.<br/></p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="1024" height="310" src="https://wp.toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-6.44.45-1024x310.png" alt="" class="wp-image-1116" srcSet="https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-6.44.45-1024x310.png 1024w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-6.44.45-300x91.png 300w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-6.44.45-768x232.png 768w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-6.44.45-1536x464.png 1536w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-6.44.45-2048x619.png 2048w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-6.44.45-1568x474.png 1568w" sizes="(max-width: 1024px) 100vw, 1024px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<p></p>
+
+
+
+<ol><li>마킹 – SetMetadata라는 함수로 특정 메서드에 <code>CRON</code> 심볼을 메타데이터 키로 등록합니다.</li><li>조회 – 모듈이 초기화되는 시점에 DiscoveryServiced와 MetadataScanner로 모든 Provider 클래스를 순회하며 <code>CRON</code> 심볼을 메타데이터로 가지고 있는 메서드들을 찾습니다.</li><li>등록 – 메서드를 찾았으면 해당 메서드를 크론 잡으로 등록합니다.</li></ol>
+
+
+
+<p><br/>NestJS에서 제공하는 SetMetadata와 DiscoverService, 그리고 MetadataScanner를 사용하면, 특정 클래스나 메서드만 필터링하여 IoC 내 다른 Provider를 사용해 원하는 로직들을 적용할 수 있습니다. <br/></p>
+
+
+
+<h2>SetMetadata</h2>
+
+
+
+<p>SetMetadata는 <strong>타겟(클래스, 메서드)에 메타데이터를 마킹하는 데코레이터</strong>를 반환하는 함수입니다. NestJS의 코드를 보면 아래와 같습니다.<br/><br/><a rel="noreferrer noopener" href="https://github1s.com/nestjs/nest/blob/HEAD/packages/common/decorators/core/set-metadata.decorator.ts#L22-L37" target="_blank"><strong>setMetadata 코드</strong></a></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">export <span class="hljs-keyword">const</span> SetMetadata = &lt;K = string, V = any&gt;(
+  metadataKey: K,
+  metadataValue: V,
+): CustomDecorator&lt;K&gt; =&gt; {
+  <span class="hljs-keyword">const</span> decoratorFactory = (target: object, key?: any, descriptor?: any) =&gt; {
+    <span class="hljs-comment">// method or class에 메타데이터 등록</span>
+    Reflect.defineMetadata(metadataKey, metadataValue, <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">or</span> <span class="hljs-title">method</span>);
+    <span class="hljs-title">return</span> <span class="hljs-title">target</span>;
+  };
+  <span class="hljs-title">decoratorFactory</span>.<span class="hljs-title">KEY</span> = <span class="hljs-title">metadataKey</span>;
+  <span class="hljs-title">return</span> <span class="hljs-title">decoratorFactory</span>;
+};</span></code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p></p>
+
+
+
+<p><code><strong>Reflect.defineMetadata(metadataKey, metadataValue, class or method);</strong></code></p>
+
+
+
+<p>SetMetadata 함수 내부에서는 *<code>Reflect.defineMetadata</code> 메서드를 통해 타겟 객체에 metadataKey를 키, metadataValue를 값으로 하는 <a href="https://medium.com/jspoint/what-are-internal-slots-and-internal-methods-in-javascript-f2f0f6b38de">내부 슬롯</a>을 정의합니다. (<code>[[Metadata]]</code> )<br/><br/>*<code>Reflect</code> 는 <a href="https://www.npmjs.com/package/reflect-metadata">reflect-metadata</a> 라이브러리가 설치되어있는 경우 사용할 수 있습니다. 메타데이터를 정의하거나 조회하는 데 사용합니다.<br/><br/><br/></p>
+
+
+
+<p><code><strong>SetMetadata(KEY, value) -&gt; CustomDecorator;</strong></code></p>
+
+
+
+<p>SetMetadata의 리턴값은 클래스, 메서드 데코레이터로 사용 가능합니다. 해당 데코레이터로 타겟 클래스나 메서드에 대한 메타데이터를 설정할 수 있습니다.<br/><br/></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> SOMETHING = <span class="hljs-built_in">Symbol</span>(<span class="hljs-string">&#x27;SOMETHING&#x27;</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">CustomDecorator</span>(<span class="hljs-params">key: string | symbol</span>) </span>{
+  <span class="hljs-comment">// SetMetadata(SOMETHING, key)와 다른 데코레이터를 합성할 수 있습니다.</span>
+  <span class="hljs-keyword">return</span> applyDecorators(SetMetadata(SOMETHING, key), AnotherDecorator)
+}
+
+@CustomDecorator(<span class="hljs-string">&#x27;KEY1&#x27;</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DecoratedClass</span> </span>{}</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><code>DecoratedClass</code>에 <code>SOMETHING</code> 심볼을 메타데이터 키, <code>&#x27;KEY1&#x27;</code>을 메타데이터 값으로 등록합니다. </p>
+
+
+
+<p><br/></p>
+
+
+
+<h2>DiscoveryService</h2>
+
+
+
+<p>NestJS는 DiscoveryModule 을 제공합니다. DiscoveryModule의 DiscoveryService에서는 내부적으로 modulesContainer를 사용하여 모든 모듈의 Controller와 Provider 클래스를 조회할 수 있습니다.</p>
+
+
+
+<p><strong><code>DiscoverService</code>를 사용하여 모든 Provider 클래스를 순회하며, SetMetadata로 등록했던 메타데이터 키로 특정 Provider를 필터링할 수 있게 됩니다.</strong><br/></p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/nestjs/nest/blob/master/packages/core/discovery/discovery-service.ts" target="_blank"><strong></strong></a><strong><a rel="noreferrer noopener" href="https://github.com/nestjs/nest/blob/master/packages/core/discovery/discovery-service.ts" target="_blank">DiscoveryService 코드</a></strong></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">@Injectable()
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DiscoveryService</span> </span>{
+  <span class="hljs-keyword">constructor</span>(private readonly modulesContainer: ModulesContainer) {}
+
+  getProviders(
+    options: DiscoveryOptions = {},
+    <span class="hljs-attr">modules</span>: Module[] = <span class="hljs-keyword">this</span>.getModules(options),
+  ): InstanceWrapper[] {
+    <span class="hljs-keyword">return</span> modules.flatMap(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> [...item.providers.values()]);
+  }
+
+  <span class="hljs-comment">// ...생략</span>
+}</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p></p>
+
+
+
+<p>CustomDecorator 가 붙은 메서드를 찾는 과정을 예로 들어보겠습니다. 메타데이터 키는 <kbd><code>CUSTOM_DECORATOR</code></kbd>  심볼이고, 메타데이터 값은 <kbd><code>test-value </code></kbd>입니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> CUSTOM_DECORATOR = <span class="hljs-built_in">Symbol</span>(<span class="hljs-string">&quot;CUSTOM_DECORATOR&quot;</span>);
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> CustomDecorator = SetMetadata(CUSTOM_DECORATOR, <span class="hljs-string">&#x27;test-value&#x27;</span>);
+
+@CustomDecorator
+@Injectable()
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestService</span> </span>{
+  test() {}
+}</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p></p>
+
+
+
+<p><br/>아래의 <code>explorerService.find(CUSTOM_DECORATOR)</code> 메서드를 실행하면 어떻게 될까요?</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">import</span> { Injectable } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nestjs/common&#x27;</span>;
+<span class="hljs-keyword">import</span> { DiscoveryService, MetadataScanner, Reflector } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nestjs/core&#x27;</span>;
+
+@Injectable()
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExplorerService</span> </span>{
+  <span class="hljs-keyword">constructor</span>(
+    private readonly discoveryService: DiscoveryService,
+  ) {}
+
+  find(metadataKey: string | symbol) {
+    <span class="hljs-keyword">const</span> providers = <span class="hljs-keyword">this</span>.discoveryService.getProviders();
+
+    <span class="hljs-keyword">return</span> providers
+      .filter(<span class="hljs-function">(<span class="hljs-params">wrapper</span>) =&gt;</span> wrapper.isDependencyTreeStatic()) 
+      .filter(<span class="hljs-function">(<span class="hljs-params">{ metatype, instance }</span>) =&gt;</span> {
+        <span class="hljs-keyword">if</span> (!instance || !metatype) {
+          <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Reflect</span>.getMetadata(metadataKey, metatype);
+      })
+      .map(<span class="hljs-function">(<span class="hljs-params">{ instance }</span>) =&gt;</span> instance);
+  }
+}</code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><strong>첫번째 필터: <code>filter((wrapper) =&gt; wrapper.isDependencyTreeStatic())</code></strong></p>
+
+
+
+<p>request scope가 아닌 싱글톤 프로바이더만 필터링합니다.<br/></p>
+
+
+
+<p><strong>두번째 필터: <code>Reflect.getMetadata(metadataKey, metatype)</code></strong></p>
+
+
+
+<p>해당 필터는 메타데이터가 등록된 클래스만 필터링합니다.</p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="1024" height="249" src="https://wp.toss.tech/wp-content/uploads/2022/11/tech-blog-3-1024x249.png" alt="" class="wp-image-1005" srcSet="https://toss.tech/wp-content/uploads/2022/11/tech-blog-3-1024x249.png 1024w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-3-300x73.png 300w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-3-768x187.png 768w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-3-1536x374.png 1536w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-3-1568x382.png 1568w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-3.png 2000w" sizes="(max-width: 1024px) 100vw, 1024px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<p><code>metatype</code> 은 <code>class TestService</code> 와 같이 해당 Provider의 클래스를 의미합니다. </p>
+
+
+
+<p><code>Reflect.getMetadata(metadataKey, metatype)</code> 은 metatype(클래스)에 <code>metadataKey</code>로 등록된 메타데이터의 값을 가져옵니다. TestService 클래스의 경우 메타데이터 키는 <code>CUSTOM_DECORATOR</code> 이고 값은 <code>test-value</code> 입니다.</p>
+
+
+
+<p>만약 등록된 메타데이터가 없으면 undefined를 반환하고 해당 Provider는 필터링됩니다.<br/><br/></p>
+
+
+
+<h2>MetadataScanner</h2>
+
+
+
+<p></p>
+
+
+
+<p>앞의 DiscoverService의 예시에서는 데코레이팅된 메서드를 가진 인스턴스에 접근하는 데 그쳤습니다. 실제 데코레이팅된 메서드에 접근하기 위해서는 DiscoveryModule에서 제공하는 <code>MetadataScanner</code> 를 사용해야 합니다.</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github1s.com/nestjs/nest/blob/HEAD/packages/core/metadata-scanner.ts#L9-L40" target="_blank"><strong>MetadataScanner 코드</strong></a></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MetadataScanner</span> </span>{
+  public scanFromPrototype&lt;T extends Injectable, R = any&gt;(
+    instance: T,
+    <span class="hljs-attr">prototype</span>: object,
+    <span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">name: string</span>) =&gt;</span> R,
+  ): R[] {
+    <span class="hljs-keyword">const</span> methodNames = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>(<span class="hljs-keyword">this</span>.getAllFilteredMethodNames(prototype));
+    <span class="hljs-keyword">return</span> iterate(methodNames)
+      .map(callback)
+      .filter(<span class="hljs-function"><span class="hljs-params">metadata</span> =&gt;</span> !isNil(metadata))
+      .toArray();
+  }
+
+  *getAllFilteredMethodNames(prototype: object): IterableIterator&lt;string&gt; {
+    <span class="hljs-comment">// prototype에 등록된 method 이름들을 가져온다.  </span>
+  }
+}</code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><code>scanFromPrototype</code> 는 <code>getAllFilteredMethodNames</code> 메서드로 인스턴스의 모든 메서드 이름들을 가져와 인자로 받은 callback을 실행시킵니다. 이 중에서 메타데이터가 있는 메서드만 필터링합니다.</p>
+
+
+
+<p><strong><code>scanFromPrototype</code> 의 callback 파라미터에서 인스턴스 메서드에 접근할 수 있습니다. 이제 메서드에 접근해 데코레이팅 함수로 덮어씌울 수 있습니다.</strong></p>
+
+
+
+<p><code>SetMetadata</code>, <code>DiscoveryService</code>, <code>MetadataScanner</code> 모든 재료들이 모였으니 Provider에 접근 가능한 메서드 데코레이터를 만들어봅시다.<br/><br/></p>
+
+
+
+<p><strong>Cacheable 데코레이터</strong></p>
+
+
+
+<p>메서드에 <code>CACHEABLE</code> 심볼을 메타데이터 키로, ttl을 메타데이터 값으로 설정합니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> CACHEABLE = <span class="hljs-built_in">Symbol</span>(<span class="hljs-string">&#x27;CACHEABLE&#x27;</span>);
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> Cacheable = <span class="hljs-function">(<span class="hljs-params">ttl: number</span>) =&gt;</span> SetMetadata(CACHEABLE, ttl);
+
+@Injectable()
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TargetClass</span> </span>{
+  @Cacheable(<span class="hljs-number">0</span>)
+  test() {}
+}</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><br/><br/><strong>CacheDecoratorRegister 클래스</strong></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">@Injectable()
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CacheDecoratorRegister</span> <span class="hljs-title">implements</span> <span class="hljs-title">OnModuleInit</span> </span>{
+  <span class="hljs-keyword">constructor</span>(
+    private readonly discoveryService: DiscoveryService,
+    private readonly metadataScanner: MetadataScanner,
+    private readonly reflector: Reflector,
+    private readonly cache: Cache,
+  ) {}
+
+  onModuleInit() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.discoveryService
+      .getProviders() <span class="hljs-comment">// #1. 모든 provider 조회</span>
+      .filter(<span class="hljs-function">(<span class="hljs-params">wrapper</span>) =&gt;</span> wrapper.isDependencyTreeStatic())
+      .filter(<span class="hljs-function">(<span class="hljs-params">{ instance }</span>) =&gt;</span> instance &amp;&amp; <span class="hljs-built_in">Object</span>.getPrototypeOf(instance))
+      .forEach(<span class="hljs-function">(<span class="hljs-params">{ instance }</span>) =&gt;</span> {
+        <span class="hljs-keyword">this</span>.metadataScanner.scanFromPrototype(
+          instance,
+          <span class="hljs-built_in">Object</span>.getPrototypeOf(instance),
+          (methodName) =&gt; {
+	    <span class="hljs-comment">// #2. 메타데이터 value</span>
+            <span class="hljs-keyword">const</span> ttl = <span class="hljs-keyword">this</span>.reflector.get(CACHEABLE, instance[methodName]); 
+            <span class="hljs-keyword">if</span> (!ttl) {
+              <span class="hljs-keyword">return</span>;
+            }
+
+            <span class="hljs-keyword">const</span> methodRef = instance[methodName];
+
+            <span class="hljs-comment">// #3. 기존 함수 데코레이팅</span>
+            instance[methodName] = <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">...args: any[]</span>) </span>{
+              <span class="hljs-keyword">const</span> name = <span class="hljs-string">`<span class="hljs-subst">${instance.constructor.name}</span>.<span class="hljs-subst">${methodName}</span>`</span>;
+              <span class="hljs-keyword">const</span> value = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.cache.get(name, args);
+              <span class="hljs-keyword">if</span> (value) {
+                <span class="hljs-keyword">return</span> value;
+              }
+
+              <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> methodRef.call(instance, ...args);
+              <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.cache.set(name, args, result, ttl);
+              <span class="hljs-keyword">return</span> result;
+            };
+          },
+        );
+      });
+  }
+}</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>해당 클래스를 모듈의 provider에 등록하면, onModuleInit 단계에서 <code>@Cacheable</code>로 데코레이팅된 메서드를 찾아 기존 메서드를 덮어씌웁니다.</p>
+
+
+
+<p>메서드 데코레이터를 만드는 과정은 다음과 같습니다.</p>
+
+
+
+<p>#1. 모든 Provider 클래스를 순회하며</p>
+
+
+
+<p>#2. 특정 메타데이터가 등록된 메서드를 찾아</p>
+
+
+
+<p>#3. 기존 메서드를 덮어씌웁니다.</p>
+
+
+
+<p>#3의 과정에서, <code>CacheDecoratorRegister</code> 생성자에 주입한 CacheManager를 사용할 수 있습니다.</p>
+
+
+
+<p>그런데 메서드 데코레이터를 만들 때마다 매번 이렇게 복잡한 과정을 거쳐야하는 걸까요? 저희 챕터에서는 메서드 데코레이터마다 반복되는 과정을 <strong>AopModule</strong>이라는 모듈로 해결했습니다.</p>
+
+
+
+<p></p>
+
+
+
+<p>해당 모듈은 2022년 12월에 오픈소스로 공개되었습니다. 현재 npm에서 <a rel="noreferrer noopener" href="https://www.npmjs.com/package/@toss/nestjs-aop" data-type="URL" data-id="https://www.npmjs.com/package/@toss/nestjs-aop" target="_blank"><strong>@toss/nestjs-aop</strong></a> 라이브러리를 다운 받아 사용해보실 수 있습니다.</p>
+
+
+
+<p>관련해서 <a href="https://youtube.com/channel/UCxUcLf_VfUC0pwFujmLK6dw"></a><strong><a rel="noreferrer noopener" href="https://www.youtube.com/watch?v=VH1GTGIMHQw&amp;t=3000s" target="_blank">NestJS 밋업에서 발표한 자료</a></strong><span style="font-size:inherit;font-weight:inherit;line-height:inherit;color:inherit">도 있으니 함께 참고하시면 좋을 듯 합니다. </span><span>🙂</span></p>
+
+
+
+<h2><br/>AopModule</h2>
+
+
+
+<p>AopModule이 데코레이터들을 등록하는 과정은 이렇습니다.</p>
+
+
+
+<p></p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="1024" height="489" src="https://wp.toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.03.31-1024x489.png" alt="" class="wp-image-1122" srcSet="https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.03.31-1024x489.png 1024w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.03.31-300x143.png 300w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.03.31-768x367.png 768w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.03.31-1536x733.png 1536w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.03.31-1568x749.png 1568w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.03.31.png 1990w" sizes="(max-width: 1024px) 100vw, 1024px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<p></p>
+
+
+
+<p>간단히 설명하면</p>
+
+
+
+<ol><li>Aspect 데코레이터가 붙은 클래스를 찾고 (CacheableDecorator)</li><li>Cacheable 데코레이터가 붙은 함수를 찾아 (FooService.foo)</li><li>1번 클래스의 wrap 함수로 2번의 함수를 감쌉니다. (CacheableDecorator.wrap)</li></ol>
+
+
+
+<p>코드를 보며 좀 더 자세히 설명해볼게요.<br/><br/></p>
+
+
+
+<h3>1. Aspect 데코레이터 사용</h3>
+
+
+
+<p><br/><strong>Aspect 데코레이터</strong></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">import</span> { applyDecorators, Injectable } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nestjs/common&#x27;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ASPECT = <span class="hljs-built_in">Symbol</span>(<span class="hljs-string">&#x27;ASPECT_CLASS&#x27;</span>);
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Aspect</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> applyDecorators(SetMetadata(ASPECT, <span class="hljs-string">&#x27;ASPECT_CLASS&#x27;</span>), Injectable);
+}</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><br/></p>
+
+
+
+<p><strong>데코레이터 사용</strong></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">@Aspect()
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CacheLazyDecorator</span> </span>{}</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>데코레이터 로직을 실행할 클래스에 <code>ASPECT</code> 라는 심볼을 메타데이터로 설정합니다.</p>
+
+
+
+<p><br/></p>
+
+
+
+<h3>2. 데코레이터 생성</h3>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> CACHEABLE = <span class="hljs-built_in">Symbol</span>(<span class="hljs-string">&#x27;CACHEABLE&#x27;</span>);
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> Cacheable = <span class="hljs-function">(<span class="hljs-params">ttl: number</span>) =&gt;</span> SetMetadata(CACHEABLE, ttl);
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FooService</span> </span>{
+	@Cacheable(<span class="hljs-number">1000</span>)
+	foo() {}
+}</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>특정 심볼(또는 문자열)을 메타데이터 키로 하여 SetMetadata로 원하는 데코레이터를 만듭니다.</p>
+
+
+
+<p><br/></p>
+
+
+
+<h3>3. LazyDecorator 구현</h3>
+
+
+
+<p>AopModule에 등록되는 모든 데코레이터들은 LazyDecorator 인터페이스를 구현해야 합니다. 데코레이팅 하는 시점을 모듈이 초기화되는 시점으로 미루기 때문에 LazyDecorator라고 합니다.</p>
+
+
+
+<p><br/></p>
+
+
+
+<p><strong>LazyDecorator 인터페이스</strong></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">export</span> interface LazyDecorator {
+  wrap(reflector: Reflector, <span class="hljs-attr">instance</span>: any, <span class="hljs-attr">methodName</span>: string): Decorator | <span class="hljs-literal">undefined</span>;
+}</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><br/></p>
+
+
+
+<p><strong>CacheLazyDecorator 구현</strong></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-16" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">@Aspect()
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CacheLazyDecorator</span> <span class="hljs-title">implements</span> <span class="hljs-title">LazyDecorator</span> </span>{
+  <span class="hljs-keyword">constructor</span>(@Inject(CACHE_MANAGER) private readonly cache: CacheManager) {}
+
+  wrap(reflector: Reflector, <span class="hljs-attr">instance</span>: any, <span class="hljs-attr">methodName</span>: string) {
+    <span class="hljs-keyword">const</span> ttl = reflector.get(CACHEABLE, instance[methodName]);
+    <span class="hljs-keyword">if</span> (!ttl) {
+      <span class="hljs-keyword">return</span>;
+    }
+
+    <span class="hljs-keyword">const</span> methodRef = instance[methodName];
+    <span class="hljs-keyword">const</span> name = <span class="hljs-string">`<span class="hljs-subst">${instance.constructor.name}</span>.<span class="hljs-subst">${methodName}</span>`</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">async</span> (...args: any[]) =&gt; {
+      <span class="hljs-keyword">const</span> value = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.cache.get(name);
+      <span class="hljs-keyword">if</span> (value) {
+        <span class="hljs-keyword">return</span> value;
+      }
+
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> methodRef.call(instance, ...args);
+      <span class="hljs-keyword">this</span>.cache.set(name, result, ttl);
+      <span class="hljs-keyword">return</span> result;
+    };
+  }
+}</code></div><small class="shcb-language" id="shcb-language-16"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>접근하고자 하는 Provider는 이제 생성자에 주입하여 사용할 수 있습니다.</p>
+
+
+
+<p><br/></p>
+
+
+
+<h3>4. AutoAspectExecutor</h3>
+
+
+
+<p>onModuleInit 단계에서 AopModule의 AutoAspectExecutor 가 ASPECT가 붙은 데코레이터 클래스들의 wrap 함수를 실행시키며 기존 메서드를 덮어씌웁니다.</p>
+
+
+
+<p><br/></p>
+
+
+
+<p><strong>AutoAspectExecutor 코드</strong></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-17" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">@Injectable()
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AutoAspectExecutor</span> <span class="hljs-title">implements</span> <span class="hljs-title">OnModuleInit</span> </span>{
+  <span class="hljs-keyword">constructor</span>(
+    private readonly discoveryService: DiscoveryService,
+    private readonly metadataScanner: MetadataScanner,
+    private readonly reflector: Reflector,
+  ) {}
+
+  onModuleInit() {
+    <span class="hljs-keyword">const</span> providers = <span class="hljs-keyword">this</span>.discoveryService.getProviders();
+    <span class="hljs-keyword">const</span> lazyDecorators = <span class="hljs-keyword">this</span>.lookupLazyDecorators(providers);
+    <span class="hljs-keyword">if</span> (lazyDecorators.length === <span class="hljs-number">0</span>) {
+      <span class="hljs-keyword">return</span>;
+    }
+
+    providers
+      .filter(<span class="hljs-function">(<span class="hljs-params">wrapper</span>) =&gt;</span> wrapper.isDependencyTreeStatic())
+      .filter(<span class="hljs-function">(<span class="hljs-params">{ instance }</span>) =&gt;</span> instance &amp;&amp; <span class="hljs-built_in">Object</span>.getPrototypeOf(instance))
+      .forEach(<span class="hljs-function">(<span class="hljs-params">{ instance }</span>) =&gt;</span> {
+        <span class="hljs-keyword">this</span>.metadataScanner.scanFromPrototype(
+          instance,
+          <span class="hljs-built_in">Object</span>.getPrototypeOf(instance),
+          (methodName) =&gt;
+            lazyDecorators.forEach(<span class="hljs-function">(<span class="hljs-params">lazyDecorator</span>) =&gt;</span> {
+              <span class="hljs-keyword">const</span> wrappedMethod = lazyDecorator.wrap(<span class="hljs-keyword">this</span>.reflector, instance, methodName);
+              <span class="hljs-keyword">if</span> (wrappedMethod) {
+                instance[methodName] = wrappedMethod;
+              }
+            }),
+        );
+      });
+  }
+
+  private lookupLazyDecorators(providers: any[]): LazyDecorator[] {
+    <span class="hljs-comment">// this.reflector.get(ASPECT, metatype) 결과값이 존재하는 providers만 필터링</span>
+  }
+}</code></div><small class="shcb-language" id="shcb-language-17"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p></p>
+
+
+
+<p>Provider에 접근 가능한 데코레이터를 만드는 과정을 다시 요약하면 이렇습니다.</p>
+
+
+
+<ol><li><code>SetMetadata</code>로 필터링할 클래스에 메타데이터를 등록하고</li><li><code>DiscoveryService</code>로 모든 Provider를 조회하며</li><li>등록된 Metadata로 특정 클래스나 메서드를 필터링하여 원하는 작업을 하면 됩니다.</li></ol>
+
+
+
+<p><br/></p>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p><br/></p>
+
+
+
+<h1>Chapter2. 메타데이터를 유지하는 데코레이터</h1>
+
+
+
+<p>Provider에 접근이 필요없는 경우 일반 메서드 데코레이터를 구현하면 될 것입니다. 하지만 메타데이터를 사용하는 NestJS 데코레이터를 일반 데코레이터와 함께 사용해도 괜찮을까요?</p>
+
+
+
+<p>결론부터 말하자면 둘을 함께 사용하면 예상치 못한 버그가 발생할 수 있습니다.</p>
+
+
+
+<p><br/></p>
+
+
+
+<h3>일반 메서드 데코레이터를 사용하면 안되는 이유</h3>
+
+
+
+<p><strong>메타데이터를 등록하는 다른 데코레이터와 함께 쓰이는 경우, 기존 메서드가 덮어씌워지면서 프로토타입에 등록된 메타데이터가 사라질 수 있습니다.</strong></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-18" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">OnError</span>(<span class="hljs-params">handler: (e: Error</span>) =&gt; <span class="hljs-title">void</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">target: object, key?: any, descriptor?: any</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> originMethod = descriptor.value;
+    descriptor.value = <span class="hljs-function">(<span class="hljs-params">...args: any[]</span>) =&gt;</span> {
+      <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">return</span> originMethod.call(<span class="hljs-keyword">this</span>, ...args);
+      } <span class="hljs-keyword">catch</span> (error) {
+        handler(error);
+      }
+    };
+  };
+}</code></div><small class="shcb-language" id="shcb-language-18"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>OnError 데코레이터는 기존 메서드를 새로운 메서드로 덮어씌웁니다.</p>
+
+
+
+<p>아래 코드에서는 메타데이터를 등록하는 RegisterMetadata 데코레이터와 OnError 데코레이터를 함께 사용하고 있습니다. 데코레이터 선언 순서에 따라 기존에 등록된 메타데이터는 사라질 수 있습니다.<br/></p>
+
+
+
+<p>아래 메서드 중에 <code>Reflect.getMetadata</code>를 했을 때 메타데이터가 사라지는 메서드는 무엇일까요?</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-19" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">@Injectable()
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestService</span> </span>{
+  @OnError(<span class="hljs-built_in">console</span>.log)
+  @RegisterMetadata(<span class="hljs-string">&#x27;value&#x27;</span>)
+  test() {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&#x27;error&#x27;</span>);
+  }
+
+  @RegisterMetadata(<span class="hljs-string">&#x27;value2&#x27;</span>)
+  @OnError(<span class="hljs-built_in">console</span>.log)
+  test2() {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&#x27;error&#x27;</span>);
+  }
+}</code></div><small class="shcb-language" id="shcb-language-19"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p>정답은 test 메서드입니다. 실행 결과는 <a rel="noreferrer noopener" href="https://www.typescriptlang.org/play?noImplicitAny=false&amp;noImplicitThis=false&amp;ssl=54&amp;ssc=89&amp;pln=51&amp;pc=1#code/PTAEEsFsAcHsCcAuoDk8CmAzANugxogLSTqICGAJmeSgFC16wB2AzsgMqkCypl1ZoALygAPAGkhoNvHBMA5gBpQANUlkmATwB8AClqhQJclXJj0GgFygxC-Yd4myystgCu6K8tsBKIVtAA3naMrLC4AHTYsHI6KJyIPMb8oICTy4AANSjewcxsoBT4CNQIAGJkBAgakjrk8HKkVrAARgBW+IhKANbmAPxW6hpK+Sx4MtCICL2g-b6C-kEGBuCYoDpDI+BjCL7zCwYhLGHokdGxgCpdgAMLgA7NgC7jgAyLoICPLYC6HShKRnzkzm7oWbsGAEpYXAEcL5TCydCJD5kHTvRxmAb2JKfFzuQboYajcbwcIAN1RPwA3HZdhhEK54Ew8hj1pt4MTdgBfOyMhnUxjwIrwUrleAacJiACiAE1JHD+Ai2WSKVT8hyuTzsRpiaz6JhXEwCOBmKAAPJMQXweAIHQAC3UFFw8CsOg8oENxvgM38uNg4Ao22yoQiURiACJ9Q6EKk0n7vFLSDKVjU6ogGi02p0en1NOjMRtsZNpn5AiTQPtDsd-YGjcHACdDgEjVqyAC1XABhDoEAds2AFtHAA8jgAY6sNsvY5ZAIcByWSJU2wCiSNZYhB4gld6npulT75VcLLsi1FgpjQAbQAus7c39QIg+fuD6BpZTQH2B0whyPwngXNhqqbwCwlMvwqu5Cxw3mDIz82oPBTRWdBS2tKZNE9U9QHNJhLTA21wN-A9mSZNlVWZBge1Af5BQAcQASXYAAVQV-gAfS4QUSIAQQAEVoujJHYDRIEaMJYjwojSPIqiaIYpjaMybDWGQQEBzYMCoUcKp8W+KxpFkOQ93iGT+B0bjiLIyjqLoxi6KUeT3CyBhsDIFgWFAEiMUQTh4FxcA8HQE8AAES0dHQCx9aJflAVyJNfRBpIcDSUGM9ARIMYK2B0aCFkQU1jQAd1AJh0FSoN4FiMDHUyDD6AMAL0Ek4L4HU8hYgigAmKL-I8k1vKOX0-JixBqrik9oqS2BUvSzLwJy8D8pZWgsP2ZA2vsxznMkfrrNs6anPQOL6CaotYjapFoVeXCgTacJYwqmEtN43SBIM2ilCmsCZqONrvCydbfU22zqu2xxdsBHADqO0LKtOnT+P0oTrsW27lvCNrqseoA" target="_blank"><strong>타입스크립트 플레이그라운드</strong>에서</a> 직접 확인하실 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-20" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">const</span> testService = <span class="hljs-keyword">new</span> TestService()
+
+<span class="hljs-comment">// undefined</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;test metadata&#x27;</span>, <span class="hljs-built_in">Reflect</span>.getMetadata(REGISTER_METADATA, testService.test))
+<span class="hljs-comment">// value2</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;test2 metadata&#x27;</span>, <span class="hljs-built_in">Reflect</span>.getMetadata(REGISTER_METADATA, testService.test2))</code></div><small class="shcb-language" id="shcb-language-20"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p></p>
+
+
+
+<p>왜 이렇게 되는 걸까요? 데코레이터의 실행 순서가 힌트입니다.</p>
+
+
+
+<p><em>g∘f(x) = g(f(x))</em> 와 같은 합성 함수가 있을 때 선언은 <em>g</em>가 <em>f</em>보다 먼저 되었지만 실행은 <em>f</em> 함수가 먼저 실행됩니다. 마찬가지로 <strong>데코레이터는 평가될 때는 선언된 순서대로 위에서 아래로, 실행될 때는 아래에서 위로 실행됩니다</strong>.</p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="1024" height="828" src="https://wp.toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.21.51-1024x828.png" alt="" class="wp-image-1124" srcSet="https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.21.51-1024x828.png 1024w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.21.51-300x243.png 300w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.21.51-768x621.png 768w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.21.51-1536x1243.png 1536w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.21.51-1568x1268.png 1568w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.21.51.png 1916w" sizes="(max-width: 1024px) 100vw, 1024px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<p>RegisterMetadata에서 <code>Reflector.defineMetadata</code>가 먼저 실행되고 그 다음 OnError 데코레이터가 기존 함수를 덮어씌웁니다. </p>
+
+
+
+<p>덮어씌워지면서 기존에 메타데이터가 저장된 프로토타입과 끊기게 되고 <code>test</code> 메서드에서 메타데이터를 찾을 수 없게 됩니다.</p>
+
+
+
+<p><br/></p>
+
+
+
+<p>이런 사례도 있을 수 있습니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-21" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">@Injectable()
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TossScheduler</span> </span>{
+
+  @OnError(<span class="hljs-built_in">console</span>.log)
+  @Cron(<span class="hljs-string">&#x27;*/10 * * * *&#x27;</span>)
+  task() {
+    <span class="hljs-comment">// do something</span>
+  }
+}</code></div><small class="shcb-language" id="shcb-language-21"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><code>@nestjs/schedule</code> 의 Cron 데코레이터 역시 CRON 심볼을 메타데이터로 등록합니다. 모듈이 초기화되는 시점에 해당 메타데이터가 등록된 메서드들을 조회하여 cron job을 등록합니다.</p>
+
+
+
+<p>하지만 OnError 데코레이터가 Cron 데코레이터 이후에 실행됨으로써 메타데이터가 사라지게 되고, NestJS에서는 task 메서드를 찾지 못해 cron job을 등록하지 못하게 됩니다.</p>
+
+
+
+<p>이렇듯 일반 메서드 데코레이터를 NestJS 환경에서 그냥 사용하게 되면 개발자의 실수에 의해 코드의 동작이 바뀔 수 있습니다. 데코레이터 실행 순서나 메타데이터 환경에 대해 알고 있지 못하다면 이런 류의 버그를 찾는 데는 시간이 오래 걸릴 지도 모릅니다.</p>
+
+
+
+<p>이를 방지하기 위해서는 메타데이터를 고려하여 데코레이터를 생성해야 합니다.</p>
+
+
+
+<p><br/></p>
+
+
+
+<h2>메타데이터를 유지하는 데코레이터</h2>
+
+
+
+<p>메타데이터를 유지하는 가장 naive한 방법은, 오버라이딩 되기 전에 메타데이터를 저장해둔 뒤 오버라이딩이 끝나면 메타데이터를 다시 등록해주는 것입니다.</p>
+
+
+
+<p><br/></p>
+
+
+
+<p><strong>OnErrorPreserveMeta 코드</strong></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-22" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">OnErrorPreserveMeta</span>(<span class="hljs-params">handler: (e: Error</span>) =&gt; <span class="hljs-title">void</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">target: object, key?: any, descriptor?: any</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> originMethod = descriptor.value;
+
+    <span class="hljs-comment">//  오버라이딩 되기 전의 메타데이터를 저장해놨다가</span>
+    <span class="hljs-keyword">const</span> metaKeys = <span class="hljs-built_in">Reflect</span>.getOwnMetadataKeys(descriptor.value);
+    <span class="hljs-keyword">const</span> metas = metaKeys.map(<span class="hljs-function">(<span class="hljs-params">k</span>) =&gt;</span> [
+      k,
+      <span class="hljs-built_in">Reflect</span>.getMetadata(k, descriptor.value),
+    ]);
+
+    descriptor.value = <span class="hljs-function">(<span class="hljs-params">...args: any[]</span>) =&gt;</span> {
+      <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">return</span> originMethod.call(<span class="hljs-keyword">this</span>, ...args);
+      } <span class="hljs-keyword">catch</span> (error) {
+        handler(error);
+      }
+    };
+
+    <span class="hljs-comment">// 오버라이딩 된 메서드에 대해 메타데이터 재등록</span>
+    metas.forEach(<span class="hljs-function">(<span class="hljs-params">[k, v]</span>) =&gt;</span> <span class="hljs-built_in">Reflect</span>.defineMetadata(k, v, descriptor.value));
+  };
+}</code></div><small class="shcb-language" id="shcb-language-22"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>직관적이지만 매번 Decorator를 만들어줄 때마다 이런 과정을 거쳐야 하는 게 불편합니다. 이를 해결하는 좀 더 간단한 방법이 있습니다.</p>
+
+
+
+<p><br/></p>
+
+
+
+<h2>프로토타입을 사용해 메타데이터 유지하기</h2>
+
+
+
+<p>SetMetadata 파트에서 Reflect.defineMetadata 는 타겟 객체에 [[Metadata]] 라는 내부 슬롯을 정의한다고 말씀드렸습니다. </p>
+
+
+
+<figure class="wp-block-image size-large"><div data-rmiz-wrap="visible"><img loading="lazy" width="1024" height="405" src="https://wp.toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-9.09.56-1024x405.png" alt="" class="wp-image-1126" srcSet="https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-9.09.56-1024x405.png 1024w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-9.09.56-300x119.png 300w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-9.09.56-768x304.png 768w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-9.09.56.png 1466w" sizes="(max-width: 1024px) 100vw, 1024px" style="max-width:100%;max-height:100%"/><button aria-label="Zoom image" data-rmiz-btn-open="true"></button></div></figure>
+
+
+
+<p>내부 슬롯 또한 프로토타입의 내부 프로퍼티이니, 기존 프로토타입에 메타데이터 내부 슬롯이 저장되어있을 것입니다. 따라서 <strong>새롭게 정의한 메서드에 기존 프로토타입을 연결해주면 됩니다.</strong></p>
+
+
+
+<p><br/></p>
+
+
+
+<p><strong>변경된 OnErrorPreserveMeta 코드</strong></p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-23" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">OnErrorPreserveMeta</span>(<span class="hljs-params">handler: (e: Error</span>) =&gt; <span class="hljs-title">void</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">target: object, key?: any, descriptor?: any</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> originMethod = descriptor.value;
+
+    <span class="hljs-keyword">const</span> wrapper = <span class="hljs-function">(<span class="hljs-params">...args: any[]</span>) =&gt;</span> {
+      <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">return</span> originMethod.call(<span class="hljs-keyword">this</span>, ...args);
+      } <span class="hljs-keyword">catch</span> (error) {
+        handler(error);
+      }
+    };
+
+    <span class="hljs-built_in">Object</span>.setPrototypeOf(wrapper, originMethod); <span class="hljs-comment">// 이 줄만 추가</span>
+    descriptor.value = wrapper;
+  };
+}</code></div><small class="shcb-language" id="shcb-language-23"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><code>Object.setPrototypeOf(arg1, arg2)</code> 은 arg1 객체의 프로토타입을 arg2로 설정합니다.</p>
+
+
+
+<p>기존 메서드를 덮어씌운 후 <code>Object.setPrototypeOf(wrapper, originMethod)</code>로 originMethod를 wrapper의 프로토타입으로 설정해주면 메타데이터가 유지됩니다.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-24" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">@Injectable()
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestService</span> </span>{
+  @OnError(<span class="hljs-built_in">console</span>.log)
+  @RegisterMetadata(<span class="hljs-string">&#x27;value&#x27;</span>)
+  test() {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&#x27;error&#x27;</span>);
+  }
+}
+
+<span class="hljs-keyword">const</span> testService = <span class="hljs-keyword">new</span> TestService()
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;test metadata&#x27;</span>, <span class="hljs-built_in">Reflect</span>.getMetadata(REGISTER_METADATA, testService.test)) <span class="hljs-comment">// &#x27;value&#x27;</span></code></div><small class="shcb-language" id="shcb-language-24"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p><br/></p>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p><br/></p>
+
+
+
+<h1>마치며</h1>
+
+
+
+<p>메타데이터와 NestJS의 <code>DiscoveryModule</code> 을 사용하여 NestJS의 IoC 컨테이너에 접근할 수 있는 데코레이터, 그리고 메타데이터를 유지할 수 있는 데코레이터를 만들어보았습니다.</p>
+
+
+
+<p>메타데이터 태깅, DiscoveryModule, 프로토타입을 사용해 NestJS 환경에 맞는 데코레이터를 만들 수 있었습니다. 이 글을 통해 더욱 더 NestJS의 Aop 패턴에 맞는 프로그래밍을 하게 되었기를 바랍니다.</p>
+
+
+
+<p>또한 토스 Node.js 챕터는 토스의 다양한 제품과 라이브러리 개발을 위해 팀원들의 지속적인 성장이 중요하다고 믿으며, 이를 위해 코드 리뷰, 스터디와 엔지니어링 세미나 등을 통해 꾸준히 공부하고 공유하는 자리를 가지고 있으니 많은 관심 부탁드립니다.</p>
+
+
+
+<p><br/></p>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p><br/></p>
+
+
+
+<h2>References</h2>
+
+
+
+<ul><li><a href="https://zuminternet.github.io/nestjs-custom-decorator/">https://zuminternet.github.io/nestjs-custom-decorator/</a></li><li><a href="https://github.com/nestjs/nest">https://github.com/nestjs/nest</a></li><li><a href="https://github.com/nestjs/swagger/issues/217">https://github.com/nestjs/swagger/issues/217</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf</a></li></ul>
+
+
+
+<p></p>
+</div></div><style data-emotion="css auig7l">.css-auig7l{margin-top:96px;}</style><style data-emotion="css x7fajo">.css-x7fajo{margin-top:96px;}.css-x7fajo>*:not(style)~*:not(style){margin-left:24px;}</style><style data-emotion="css 6rfvv8">.css-6rfvv8{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;margin-top:96px;}.css-6rfvv8>*:not(style)~*:not(style){margin-left:24px;}</style><div class="css-6rfvv8"><style data-emotion="css 1n0u3h">.css-1n0u3h{background-color:#f9fafb;width:100%;height:auto;border-radius:12px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:48px;}@media (max-width: 700px){.css-1n0u3h{padding:32px;}}</style><div class="css-1n0u3h e1t1xt3a7"><style data-emotion="css 6cc9f0">.css-6cc9f0{font-size:24px;font-weight:700;margin-bottom:16px;color:#4e5968;}</style><h2 class="css-6cc9f0 e1t1xt3a6">토스 Node.js Chapter 채용 공고</h2><style data-emotion="css 1wmgpcn">.css-1wmgpcn{font-size:16px;line-height:1.5;font-weight:600;color:#6b7684;margin-bottom:4px;}</style><p class="css-1wmgpcn e1t1xt3a5">좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.</p><style data-emotion="css 4qu8li">.css-4qu8li{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:16px;}</style><div class="css-4qu8li e1t1xt3a3"><style data-emotion="css 1fmr5ax">.css-1fmr5ax{display:block;font-family:'tossface';font-size:40px;cursor:pointer;margin:0 12px;-webkit-transition:0.15s ease-in-out all;transition:0.15s ease-in-out all;}.css-1fmr5ax a{-webkit-text-decoration:none;text-decoration:none;}.css-1fmr5ax:hover{-webkit-transform:scale(1.2);-moz-transform:scale(1.2);-ms-transform:scale(1.2);transform:scale(1.2);}</style><div class="css-1fmr5ax e1t1xt3a1">😍</div><div class="css-1fmr5ax e1t1xt3a1">🤔</div></div><style data-emotion="css 1p3zmjw">.css-1p3zmjw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;margin-top:16px;}.css-1p3zmjw button,.css-1p3zmjw a{margin:0 12px;}@media (max-width: 700px){.css-1p3zmjw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;}.css-1p3zmjw button,.css-1p3zmjw a{width:100%;margin:8px 0;}}</style><div class="css-1p3zmjw e1t1xt3a0"><style data-emotion="css 1u8jkqx">.css-1u8jkqx{display:grid;grid-template-columns:min-content auto;grid-column-gap:8px;}</style><button class="p-button p-button--primary p-button--inline p-button--weak p-button--default p-button--has-icon padding--base css-1u8jkqx" type="button" aria-disabled="false"><span class="icon p-icon icon--colored p-icon--colored" aria-hidden="true" role="presentation" style="height:16px;width:16px;min-width:16px;color:#3182f6"></span>아티클 공유하기</button><a class="p-button p-button--primary p-button--inline p-button--fill p-button--default padding--base" aria-disabled="false" href="https://toss.im/career/jobs?search=node.js">채용 공고 보기</a></div></div></div></article><style data-emotion="css 1lsuzal">.css-1lsuzal{margin-top:100px;}.css-1lsuzal::before{content:'';position:absolute;width:100%;height:1px;left:0;border-bottom:1px solid #e5e8eb;}</style><div class="css-1lsuzal e132k2571"><style data-emotion="css 1ympfnp">.css-1ympfnp{display:inline-block;width:100%;font-size:20px;margin:34px 0 40px 0;}</style><span class="typography typography--h3 typography--bold color--grey800 css-1ympfnp e132k2570">이어지는 글</span><style data-emotion="css vivlm7">.css-vivlm7{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer;margin-bottom:40px;}.css-vivlm7:last-of-type{margin-bottom:0px;}.css-vivlm7:hover .egyklng4{color:#3182f6;}</style><div class="css-vivlm7 egyklng3"><style data-emotion="css bc0lqn">.css-bc0lqn{width:80px;height:80px;margin-right:20px;border-radius:12px;object-fit:cover;}@media (max-width: 700px){.css-bc0lqn{width:64px;height:64px;}}</style><img srcSet="https://toss.tech/wp-content/uploads/2023/04/00009-889461687-300x300.png 300w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687-150x150.png 150w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687.png 512w" class="css-bc0lqn egyklng2"/><style data-emotion="css 1fttcpj">.css-1fttcpj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}</style><div class="css-1fttcpj egyklng1"><style data-emotion="css p4blj2">.css-p4blj2{font-size:24px;margin-bottom:4px;word-break:keep-all;line-height:1.4;overflow-wrap:break-word;-webkit-transition:color 0.3s ease;transition:color 0.3s ease;-webkit-line-clamp:2;display:block;}@media (max-width: 700px){.css-p4blj2{font-size:18px;-webkit-line-clamp:2;}}</style><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">무지성으로 사용한 헬스 체크가 불러일으킬 수 있는 참사</span><style data-emotion="css 1jxhn1e">.css-1jxhn1e{color:#8b95a1;}</style><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 04. 01</span></div></div><div class="css-vivlm7 egyklng3"><img srcSet="https://toss.tech/wp-content/uploads/2023/03/center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/center.png 1200w" class="css-bc0lqn egyklng2"/><div class="css-1fttcpj egyklng1"><span class="typography typography--h4 typography--bold color--grey800 css-p4blj2 egyklng4">ESLint와 AST로 코드 퀄리티 높이기</span><span class="typography typography--p typography--regular color--grey700 css-1jxhn1e egyklng0">2023. 03. 31</span></div></div></div></div></div><style data-emotion="css 1d2vuhc">.css-1d2vuhc{padding:60px 24px;word-break:keep-all;overflow-wrap:break-word;background:rgba(2,9,19,0.91);}@media (max-width: 700px){.css-1d2vuhc{padding-top:24px;}}</style><section class="css-1d2vuhc eqrolup4"><style data-emotion="css yf0lpd">.css-yf0lpd{display:grid;grid-template-columns:3fr 7fr;grid-column-gap:20px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:640px;margin:0 auto;content-visibility:auto;}@media (max-width: 700px){.css-yf0lpd{grid-template-rows:min-content auto;grid-template-columns:1fr;grid-row-gap:24px;}}</style><div class="css-yf0lpd eqrolup2"><style data-emotion="css 1d33yk5">.css-1d33yk5{width:100%;}@media (max-width: 700px){.css-1d33yk5{width:90px;}}</style><img src="https://static.toss.im/3d/website_code_blue_alpha.png" alt="" class="css-1d33yk5 eqrolup3"/><style data-emotion="css 1gb2pj4">.css-1gb2pj4>*:not(style)~*:not(style){margin-top:24px;}</style><style data-emotion="css 7xmgw5">.css-7xmgw5{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-7xmgw5>*:not(style)~*:not(style){margin-top:24px;}</style><div class="css-7xmgw5"><style data-emotion="css 1pbuvpm">.css-1pbuvpm>*:not(style)~*:not(style){margin-top:8px;}</style><style data-emotion="css nbpfuv">.css-nbpfuv{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}.css-nbpfuv>*:not(style)~*:not(style){margin-top:8px;}</style><div class="css-nbpfuv"><style data-emotion="css 19gu4b8">.css-19gu4b8{margin:0;font-size:26px;line-height:1.4;color:#ffffff;}@media (max-width: 700px){.css-19gu4b8{font-size:20px;}}</style><h3 class="css-19gu4b8 eqrolup1">토스팀이 만드는 수많은 혁신의 순간들</h3><style data-emotion="css shfxsq">.css-shfxsq{font-size:17px;line-height:1.5;color:#e5e8eb;}@media (max-width: 700px){.css-shfxsq{font-size:16px;}}</style><div class="css-shfxsq eqrolup0">당신과 함께 만들고 싶습니다.<br/>지금, 토스팀에 합류하세요.</div></div><a class="p-button p-button--primary p-button--inline p-button--fill p-button--small padding--s" aria-disabled="false" href="https://toss.im/career/jobs?gh_src=38b73b7a3us">채용 중인 공고 보기</a></div></div></section><footer class="p-footer p-footer--light"><div class="p-footer__inner"><div class="p-footer__site-group-list"><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스테크</div></li><li class="p-footer__site-group-item"><a href="mailto:techblog@toss.im">의견 보내기</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">토스</div></li><li class="p-footer__site-group-item"><a href="https://toss.im">홈페이지</a></li><li class="p-footer__site-group-item"><a href="https://team.toss.im">회사 소개</a></li><li class="p-footer__site-group-item"><a href="https://toss.im/career">채용</a></li></ul><ul class="p-footer__site-group"><li><div class="p-footer__site-group-title">고객센터</div></li><li class="p-footer__site-group-item"><a href="tel:1599-4905">전화: 1599-4905 (24시간 연중무휴)</a></li><li class="p-footer__site-group-item"><a href="mailto:support.toss.im">이메일: support@toss.im</a></li><li class="p-footer__site-group-item"><a href="https://goto.kakao.com/@toss">카카오톡: @toss</a></li></ul></div><address class="p-footer__address"><strong class="p-footer__address__company-name">㈜비바리퍼블리카</strong>Copyright © Viva Republica, Inc. All Rights Reserved.</address><ul class="p-footer__term-wrapper"></ul><ul class="p-footer__social-list"><li class="p-footer__social-list-item"><a aria-label="Toss Facebook" target="_blank" href="https://www.facebook.com/toss.revolution"><img src="https://static.toss.im/assets/homepage/safety/icn-facebook.svg" alt="Toss Facebook"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss blog" target="_blank" href="https://blog.toss.im"><img src="https://static.toss.im/assets/homepage/safety/icn-blog.svg" alt="Toss blog"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Naver Post" target="_blank" href="https://post.naver.com/tossblog"><img src="https://static.toss.im/assets/homepage/safety/icn-naver.svg" alt="Toss Naver Post"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Twitter" target="_blank" href="https://twitter.com/toss__official"><img src="https://static.toss.im/assets/homepage/safety/icn-twitter.svg" alt="Toss Twitter"/></a></li><li class="p-footer__social-list-item"><a aria-label="Toss Instagram" target="_blank" href="https://www.instagram.com/toss.im/"><img src="https://static.toss.im/assets/homepage/safety/icn-instagram.svg" alt="Toss Instagram"/></a></li></ul></div></footer><div id="tds-pc__portal-container"></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"article":{"title":"NestJS 환경에 맞는 Custom Decorator 만들기","content":"\n\u003ch1\u003e들어가며\u003c/h1\u003e\n\n\n\n\u003cp\u003e데코레이터는 비즈니스와 상관 없는 로직들을 숨기면서 기능을 변경하거나 확장할 수 있게 합니다. 또한 여러 클래스에서 반복되는 공통 관심사가 있을 때 데코레이터를 사용하면 중복된 코드를 줄이고 코드를 모듈 단위로 관리하는 효과를 거둘 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"1024\" height=\"847\" src=\"https://wp.toss.tech/wp-content/uploads/2022/11/tech-blog-1-1024x847.png\" alt=\"\" class=\"wp-image-1001\" srcset=\"https://toss.tech/wp-content/uploads/2022/11/tech-blog-1-1024x847.png 1024w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-1-300x248.png 300w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-1-768x635.png 768w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-1-1536x1270.png 1536w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-1-1568x1297.png 1568w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-1.png 2000w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e이런 이유로 저희 Node.js Chapter에서도 데코레이터를 적극 활용하고 있습니다. 하지만 NestJS에서는 데코레이터를 만들 때 다음과 같은 질문들이 있었습니다.\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003col\u003e\u003cli\u003e데코레이터에서 Provider를 사용해야할 때 어떻게 Provider에 접근할 수 있을까?\u003c/li\u003e\u003cli\u003e메타데이터를 쓰는 NestJS 데코레이터를 일반 데코레이터와 사용해도 괜찮을까?\u003c/li\u003e\u003c/ol\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003eNestJS에서 데코레이터를 만들기 위해서는 NestJS의 DI와 메타 프로그래밍 환경 등을 고려해야 합니다. 그래서 이 글을 통해 NestJS에서는 어떻게 데코레이터를 만드는지 살펴보고, 앞의 두 질문들을 고려하여 NestJS 환경에 맞는 데코레이터를 만들어보려고 합니다.\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e들어가기 전에, 만약 데코레이터나 메타데이터가 생소하시다면 아래 문서들을 읽어보시는 걸 추천드립니다.\u003c/p\u003e\n\n\n\n\u003cul\u003e\u003cli\u003e\u003ca href=\"https://www.typescriptlang.org/ko/docs/handbook/decorators.html\"\u003eTypescript Decorator\u003c/a\u003e\u003c/li\u003e\u003cli\u003e\u003ca href=\"https://www.npmjs.com/package/reflect-metadata\"\u003ereflect-metadata\u003c/a\u003e\u003c/li\u003e\u003c/ul\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003chr class=\"wp-block-separator\"/\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003ch1\u003eChapter1. 데코레이터에서 Provider에 접근하기\u003cbr\u003e\u003c/h1\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-1\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003clink rel='stylesheet' id='syntax-highlighting-code-block-css'  href='https://toss.tech/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css?ver=1.3.1' media='all' /\u003e\u003cstyle\u003e.wp-block-code {\n\tborder: 0;\n\tpadding: 0;\n}\n\n.wp-block-code \u003e div {\n\toverflow: auto;\n}\n\n.shcb-language {\n\tborder: 0;\n\tclip: rect(1px, 1px, 1px, 1px);\n\t-webkit-clip-path: inset(50%);\n\tclip-path: inset(50%);\n\theight: 1px;\n\tmargin: -1px;\n\toverflow: hidden;\n\tpadding: 0;\n\tposition: absolute;\n\twidth: 1px;\n\tword-wrap: normal;\n\tword-break: normal;\n}\n\n.hljs {\n\tbox-sizing: border-box;\n}\n\n.hljs.shcb-code-table {\n\tdisplay: table;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table \u003e .shcb-loc {\n\tcolor: inherit;\n\tdisplay: table-row;\n\twidth: 100%;\n}\n\n.hljs.shcb-code-table .shcb-loc \u003e span {\n\tdisplay: table-cell;\n}\n\n.wp-block-code code.hljs:not(.shcb-wrap-lines) {\n\twhite-space: pre;\n}\n\n.wp-block-code code.hljs.shcb-wrap-lines {\n\twhite-space: pre-wrap;\n}\n\n.hljs.shcb-line-numbers {\n\tborder-spacing: 0;\n\tcounter-reset: line;\n}\n\n.hljs.shcb-line-numbers \u003e .shcb-loc {\n\tcounter-increment: line;\n}\n\n.hljs.shcb-line-numbers .shcb-loc \u003e span {\n\tpadding-left: 0.75em;\n}\n\n.hljs.shcb-line-numbers .shcb-loc::before {\n\tborder-right: 1px solid #ddd;\n\tcontent: counter(line);\n\tdisplay: table-cell;\n\tpadding: 0 0.75em;\n\ttext-align: right;\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\tuser-select: none;\n\twhite-space: nowrap;\n\twidth: 1%;\n}\n\u003c/style\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e@Injectable()\n\u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eTestService\u003c/span\u003e \u003c/span\u003e{\n  @Cacheable(\u003cspan class=\"hljs-string\"\u003e'key'\u003c/span\u003e)\n  test() {\n      \u003cspan class=\"hljs-comment\"\u003e// 비즈니스 로직\u003c/span\u003e\n  }\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-1\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003eTestService가 있을 때, 캐싱 로직을 Cacheable 데코레이터를 사용해 비즈니스 로직과 분리하려고 합니다.\u003cbr\u003e\u003cbr\u003eCacheable 데코레이터에서 \u003ccode\u003eCacheManager\u003c/code\u003e라는 Provider를 사용하려면 어떻게 접근해야 할까요?\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-2\" data-shcb-language-name=\"CSS\" data-shcb-language-slug=\"css\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-css\"\u003e\u003cspan class=\"hljs-keyword\"\u003e@Module\u003c/span\u003e{\n  \u003cspan class=\"hljs-selector-tag\"\u003eimports\u003c/span\u003e: \u003cspan class=\"hljs-selector-attr\"\u003e[CacheModule.register(...)]\u003c/span\u003e\n  \u003cspan class=\"hljs-selector-tag\"\u003eproviders\u003c/span\u003e: \u003cspan class=\"hljs-selector-attr\"\u003e[TestService]\u003c/span\u003e\n}\n\u003cspan class=\"hljs-selector-tag\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-selector-tag\"\u003eTestModule\u003c/span\u003e {}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-2\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eCSS\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ecss\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003eCacheManager Provider를 export하는 CacheModule을 import 해봅시다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-3\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eCacheable\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003ekey: string, ttl: number\u003c/span\u003e) \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e (\u003cspan class=\"hljs-params\"\u003etarget: any, _key: string, descriptor: PropertyDescriptor\u003c/span\u003e) \u003c/span\u003e{\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e methodRef = descriptor.value;\n\n    descriptor.value = \u003cspan class=\"hljs-keyword\"\u003easync\u003c/span\u003e \u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e (\u003cspan class=\"hljs-params\"\u003e...args: any[]\u003c/span\u003e) \u003c/span\u003e{\n    \u003cspan class=\"hljs-built_in\"\u003econsole\u003c/span\u003e.log(\u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e) \u003cspan class=\"hljs-comment\"\u003e// TestService {}\u003c/span\u003e\n\n    \u003cspan class=\"hljs-comment\"\u003e// TypeError: Cannot read properties of undefined (reading 'get')\u003c/span\u003e\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e value = \u003cspan class=\"hljs-keyword\"\u003eawait\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.cache.get(key); \n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (value) {\n      \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e value;\n    }\n\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e result = \u003cspan class=\"hljs-keyword\"\u003eawait\u003c/span\u003e methodRef.call(\u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e, ...args);\n    \u003cspan class=\"hljs-keyword\"\u003eawait\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.cache.set(key, result, ttl);\n    \u003cspan class=\"hljs-built_in\"\u003econsole\u003c/span\u003e.log(result)\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e result;\n    };\n  };\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-3\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"1024\" height=\"458\" src=\"https://wp.toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-15-오후-2.44.44-1024x458.png\" alt=\"\" class=\"wp-image-1074\" srcset=\"https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-15-오후-2.44.44-1024x458.png 1024w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-15-오후-2.44.44-300x134.png 300w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-15-오후-2.44.44-768x344.png 768w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-15-오후-2.44.44-1536x687.png 1536w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-15-오후-2.44.44-1568x702.png 1568w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-15-오후-2.44.44.png 1926w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003eTestModule에서 CacheModule을 import하고 있긴 하지만 TestService에서 CacheManager 를 주입하지 않는 이상 Cacheable에서 CacheManager에 접근할 방법이 없습니다. Cacheable 데코레이터를 사용하려면 클래스에 항상 CacheManager를 주입해주어야 하는 불편함이 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e게다가 CacheManager를 넣어준다고 해도 멤버 이름을 \u003ccode\u003ecache\u003c/code\u003e 로 강제해야 합니다. 가능한 방법이지만 휴먼 에러가 발생할 수 있어 좋은 방법은 아닙니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003cbr\u003e그렇다면 NestJS 메서드 데코레이터는 어떻게 되어있을까요?\u003c/p\u003e\n\n\n\n\u003cp\u003eNestJS가 데코레이터를 등록하는 과정은 ‘\u003cstrong\u003e마킹 \u0026#8211; 조회 \u0026#8211; 등록\u003c/strong\u003e’로 크게 세 단계로 나뉩니다. \u003ccode\u003eCron\u003c/code\u003e 메서드 데코레이터를 예로 들어보겠습니다.\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"1024\" height=\"310\" src=\"https://wp.toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-6.44.45-1024x310.png\" alt=\"\" class=\"wp-image-1116\" srcset=\"https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-6.44.45-1024x310.png 1024w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-6.44.45-300x91.png 300w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-6.44.45-768x232.png 768w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-6.44.45-1536x464.png 1536w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-6.44.45-2048x619.png 2048w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-6.44.45-1568x474.png 1568w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003col\u003e\u003cli\u003e마킹 \u0026#8211; SetMetadata라는 함수로 특정 메서드에 \u003ccode\u003eCRON\u003c/code\u003e 심볼을 메타데이터 키로 등록합니다.\u003c/li\u003e\u003cli\u003e조회 \u0026#8211; 모듈이 초기화되는 시점에 DiscoveryServiced와 MetadataScanner로 모든 Provider 클래스를 순회하며 \u003ccode\u003eCRON\u003c/code\u003e 심볼을 메타데이터로 가지고 있는 메서드들을 찾습니다.\u003c/li\u003e\u003cli\u003e등록 \u0026#8211; 메서드를 찾았으면 해당 메서드를 크론 잡으로 등록합니다.\u003c/li\u003e\u003c/ol\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003eNestJS에서 제공하는 SetMetadata와 DiscoverService, 그리고 MetadataScanner를 사용하면, 특정 클래스나 메서드만 필터링하여 IoC 내 다른 Provider를 사용해 원하는 로직들을 적용할 수 있습니다. \u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003ch2\u003eSetMetadata\u003c/h2\u003e\n\n\n\n\u003cp\u003eSetMetadata는 \u003cstrong\u003e타겟(클래스, 메서드)에 메타데이터를 마킹하는 데코레이터\u003c/strong\u003e를 반환하는 함수입니다. NestJS의 코드를 보면 아래와 같습니다.\u003cbr\u003e\u003cbr\u003e\u003ca rel=\"noreferrer noopener\" href=\"https://github1s.com/nestjs/nest/blob/HEAD/packages/common/decorators/core/set-metadata.decorator.ts#L22-L37\" target=\"_blank\"\u003e\u003cstrong\u003esetMetadata 코드\u003c/strong\u003e\u003c/a\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-4\" data-shcb-language-name=\"PHP\" data-shcb-language-slug=\"php\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-php\"\u003eexport \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e SetMetadata = \u0026lt;K = string, V = any\u0026gt;(\n  metadataKey: K,\n  metadataValue: V,\n): CustomDecorator\u0026lt;K\u0026gt; =\u0026gt; {\n  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e decoratorFactory = (target: object, key?: any, descriptor?: any) =\u0026gt; {\n    \u003cspan class=\"hljs-comment\"\u003e// method or class에 메타데이터 등록\u003c/span\u003e\n    Reflect.defineMetadata(metadataKey, metadataValue, \u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eor\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003emethod\u003c/span\u003e);\n    \u003cspan class=\"hljs-title\"\u003ereturn\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003etarget\u003c/span\u003e;\n  };\n  \u003cspan class=\"hljs-title\"\u003edecoratorFactory\u003c/span\u003e.\u003cspan class=\"hljs-title\"\u003eKEY\u003c/span\u003e = \u003cspan class=\"hljs-title\"\u003emetadataKey\u003c/span\u003e;\n  \u003cspan class=\"hljs-title\"\u003ereturn\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003edecoratorFactory\u003c/span\u003e;\n};\u003c/span\u003e\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-4\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003ePHP\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ephp\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003e\u003cstrong\u003eReflect.defineMetadata(metadataKey, metadataValue, class or method);\u003c/strong\u003e\u003c/code\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003eSetMetadata 함수 내부에서는 *\u003ccode\u003eReflect.defineMetadata\u003c/code\u003e 메서드를 통해 타겟 객체에 metadataKey를 키, metadataValue를 값으로 하는 \u003ca href=\"https://medium.com/jspoint/what-are-internal-slots-and-internal-methods-in-javascript-f2f0f6b38de\"\u003e내부 슬롯\u003c/a\u003e을 정의합니다. (\u003ccode\u003e[[Metadata]]\u003c/code\u003e )\u003cbr\u003e\u003cbr\u003e*\u003ccode\u003eReflect\u003c/code\u003e 는 \u003ca href=\"https://www.npmjs.com/package/reflect-metadata\"\u003ereflect-metadata\u003c/a\u003e 라이브러리가 설치되어있는 경우 사용할 수 있습니다. 메타데이터를 정의하거나 조회하는 데 사용합니다.\u003cbr\u003e\u003cbr\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003e\u003cstrong\u003eSetMetadata(KEY, value) -\u0026gt; CustomDecorator;\u003c/strong\u003e\u003c/code\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003eSetMetadata의 리턴값은 클래스, 메서드 데코레이터로 사용 가능합니다. 해당 데코레이터로 타겟 클래스나 메서드에 대한 메타데이터를 설정할 수 있습니다.\u003cbr\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-5\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e SOMETHING = \u003cspan class=\"hljs-built_in\"\u003eSymbol\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e'SOMETHING'\u003c/span\u003e)\n\n\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eCustomDecorator\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003ekey: string | symbol\u003c/span\u003e) \u003c/span\u003e{\n  \u003cspan class=\"hljs-comment\"\u003e// SetMetadata(SOMETHING, key)와 다른 데코레이터를 합성할 수 있습니다.\u003c/span\u003e\n  \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e applyDecorators(SetMetadata(SOMETHING, key), AnotherDecorator)\n}\n\n@CustomDecorator(\u003cspan class=\"hljs-string\"\u003e'KEY1'\u003c/span\u003e)\n\u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eDecoratedClass\u003c/span\u003e \u003c/span\u003e{}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-5\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ccode\u003eDecoratedClass\u003c/code\u003e에 \u003ccode\u003eSOMETHING\u003c/code\u003e 심볼을 메타데이터 키, \u003ccode\u003e'KEY1'\u003c/code\u003e을 메타데이터 값으로 등록합니다. \u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003ch2\u003eDiscoveryService\u003c/h2\u003e\n\n\n\n\u003cp\u003eNestJS는 DiscoveryModule 을 제공합니다. DiscoveryModule의 DiscoveryService에서는 내부적으로 modulesContainer를 사용하여 모든 모듈의 Controller와 Provider 클래스를 조회할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eDiscoverService\u003c/code\u003e를 사용하여 모든 Provider 클래스를 순회하며, SetMetadata로 등록했던 메타데이터 키로 특정 Provider를 필터링할 수 있게 됩니다.\u003c/strong\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003ca rel=\"noreferrer noopener\" href=\"https://github.com/nestjs/nest/blob/master/packages/core/discovery/discovery-service.ts\" target=\"_blank\"\u003e\u003cstrong\u003e\u003c/strong\u003e\u003c/a\u003e\u003cstrong\u003e\u003ca rel=\"noreferrer noopener\" href=\"https://github.com/nestjs/nest/blob/master/packages/core/discovery/discovery-service.ts\" target=\"_blank\"\u003eDiscoveryService 코드\u003c/a\u003e\u003c/strong\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-6\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e@Injectable()\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eDiscoveryService\u003c/span\u003e \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003econstructor\u003c/span\u003e(private readonly modulesContainer: ModulesContainer) {}\n\n  getProviders(\n    options: DiscoveryOptions = {},\n    \u003cspan class=\"hljs-attr\"\u003emodules\u003c/span\u003e: Module[] = \u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.getModules(options),\n  ): InstanceWrapper[] {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e modules.flatMap(\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-params\"\u003eitem\u003c/span\u003e =\u0026gt;\u003c/span\u003e [...item.providers.values()]);\n  }\n\n  \u003cspan class=\"hljs-comment\"\u003e// ...생략\u003c/span\u003e\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-6\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003eCustomDecorator 가 붙은 메서드를 찾는 과정을 예로 들어보겠습니다. 메타데이터 키는 \u003ckbd\u003e\u003ccode\u003eCUSTOM_DECORATOR\u003c/code\u003e\u003c/kbd\u003e  심볼이고, 메타데이터 값은 \u003ckbd\u003e\u003ccode\u003etest-value \u003c/code\u003e\u003c/kbd\u003e입니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-7\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e CUSTOM_DECORATOR = \u003cspan class=\"hljs-built_in\"\u003eSymbol\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\"CUSTOM_DECORATOR\"\u003c/span\u003e);\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e CustomDecorator = SetMetadata(CUSTOM_DECORATOR, \u003cspan class=\"hljs-string\"\u003e'test-value'\u003c/span\u003e);\n\n@CustomDecorator\n@Injectable()\n\u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eTestService\u003c/span\u003e \u003c/span\u003e{\n  test() {}\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-7\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e아래의 \u003ccode\u003eexplorerService.find(CUSTOM_DECORATOR)\u003c/code\u003e 메서드를 실행하면 어떻게 될까요?\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-8\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e { Injectable } \u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'@nestjs/common'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e { DiscoveryService, MetadataScanner, Reflector } \u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'@nestjs/core'\u003c/span\u003e;\n\n@Injectable()\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eExplorerService\u003c/span\u003e \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003econstructor\u003c/span\u003e(\n    private readonly discoveryService: DiscoveryService,\n  ) {}\n\n  find(metadataKey: string | symbol) {\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e providers = \u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.discoveryService.getProviders();\n\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e providers\n      .filter(\u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003ewrapper\u003c/span\u003e) =\u0026gt;\u003c/span\u003e wrapper.isDependencyTreeStatic()) \n      .filter(\u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003e{ metatype, instance }\u003c/span\u003e) =\u0026gt;\u003c/span\u003e {\n        \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (!instance || !metatype) {\n          \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u003cspan class=\"hljs-literal\"\u003efalse\u003c/span\u003e;\n        }\n        \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003eReflect\u003c/span\u003e.getMetadata(metadataKey, metatype);\n      })\n      .map(\u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003e{ instance }\u003c/span\u003e) =\u0026gt;\u003c/span\u003e instance);\n  }\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-8\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003cstrong\u003e첫번째 필터: \u003ccode\u003efilter((wrapper) =\u0026gt; wrapper.isDependencyTreeStatic())\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003erequest scope가 아닌 싱글톤 프로바이더만 필터링합니다.\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003e두번째 필터: \u003ccode\u003eReflect.getMetadata(metadataKey, metatype)\u003c/code\u003e\u003c/strong\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e해당 필터는 메타데이터가 등록된 클래스만 필터링합니다.\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"1024\" height=\"249\" src=\"https://wp.toss.tech/wp-content/uploads/2022/11/tech-blog-3-1024x249.png\" alt=\"\" class=\"wp-image-1005\" srcset=\"https://toss.tech/wp-content/uploads/2022/11/tech-blog-3-1024x249.png 1024w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-3-300x73.png 300w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-3-768x187.png 768w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-3-1536x374.png 1536w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-3-1568x382.png 1568w, https://toss.tech/wp-content/uploads/2022/11/tech-blog-3.png 2000w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003emetatype\u003c/code\u003e 은 \u003ccode\u003eclass TestService\u003c/code\u003e 와 같이 해당 Provider의 클래스를 의미합니다. \u003c/p\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003eReflect.getMetadata(metadataKey, metatype)\u003c/code\u003e 은 metatype(클래스)에 \u003ccode\u003emetadataKey\u003c/code\u003e로 등록된 메타데이터의 값을 가져옵니다. TestService 클래스의 경우 메타데이터 키는 \u003ccode\u003eCUSTOM_DECORATOR\u003c/code\u003e 이고 값은 \u003ccode\u003etest-value\u003c/code\u003e 입니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e만약 등록된 메타데이터가 없으면 undefined를 반환하고 해당 Provider는 필터링됩니다.\u003cbr\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003ch2\u003eMetadataScanner\u003c/h2\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e앞의 DiscoverService의 예시에서는 데코레이팅된 메서드를 가진 인스턴스에 접근하는 데 그쳤습니다. 실제 데코레이팅된 메서드에 접근하기 위해서는 DiscoveryModule에서 제공하는 \u003ccode\u003eMetadataScanner\u003c/code\u003e 를 사용해야 합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003ca rel=\"noreferrer noopener\" href=\"https://github1s.com/nestjs/nest/blob/HEAD/packages/core/metadata-scanner.ts#L9-L40\" target=\"_blank\"\u003e\u003cstrong\u003eMetadataScanner 코드\u003c/strong\u003e\u003c/a\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-9\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eMetadataScanner\u003c/span\u003e \u003c/span\u003e{\n  public scanFromPrototype\u0026lt;T extends Injectable, R = any\u0026gt;(\n    instance: T,\n    \u003cspan class=\"hljs-attr\"\u003eprototype\u003c/span\u003e: object,\n    \u003cspan class=\"hljs-attr\"\u003ecallback\u003c/span\u003e: \u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003ename: string\u003c/span\u003e) =\u0026gt;\u003c/span\u003e R,\n  ): R[] {\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e methodNames = \u003cspan class=\"hljs-keyword\"\u003enew\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003eSet\u003c/span\u003e(\u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.getAllFilteredMethodNames(prototype));\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e iterate(methodNames)\n      .map(callback)\n      .filter(\u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-params\"\u003emetadata\u003c/span\u003e =\u0026gt;\u003c/span\u003e !isNil(metadata))\n      .toArray();\n  }\n\n  *getAllFilteredMethodNames(prototype: object): IterableIterator\u0026lt;string\u0026gt; {\n    \u003cspan class=\"hljs-comment\"\u003e// prototype에 등록된 method 이름들을 가져온다.  \u003c/span\u003e\n  }\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-9\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ccode\u003escanFromPrototype\u003c/code\u003e 는 \u003ccode\u003egetAllFilteredMethodNames\u003c/code\u003e 메서드로 인스턴스의 모든 메서드 이름들을 가져와 인자로 받은 callback을 실행시킵니다. 이 중에서 메타데이터가 있는 메서드만 필터링합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003escanFromPrototype\u003c/code\u003e 의 callback 파라미터에서 인스턴스 메서드에 접근할 수 있습니다. 이제 메서드에 접근해 데코레이팅 함수로 덮어씌울 수 있습니다.\u003c/strong\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003ccode\u003eSetMetadata\u003c/code\u003e, \u003ccode\u003eDiscoveryService\u003c/code\u003e, \u003ccode\u003eMetadataScanner\u003c/code\u003e 모든 재료들이 모였으니 Provider에 접근 가능한 메서드 데코레이터를 만들어봅시다.\u003cbr\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eCacheable 데코레이터\u003c/strong\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e메서드에 \u003ccode\u003eCACHEABLE\u003c/code\u003e 심볼을 메타데이터 키로, ttl을 메타데이터 값으로 설정합니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-10\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e CACHEABLE = \u003cspan class=\"hljs-built_in\"\u003eSymbol\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e'CACHEABLE'\u003c/span\u003e);\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e Cacheable = \u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003ettl: number\u003c/span\u003e) =\u0026gt;\u003c/span\u003e SetMetadata(CACHEABLE, ttl);\n\n@Injectable()\n\u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eTargetClass\u003c/span\u003e \u003c/span\u003e{\n  @Cacheable(\u003cspan class=\"hljs-number\"\u003e0\u003c/span\u003e)\n  test() {}\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-10\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eCacheDecoratorRegister 클래스\u003c/strong\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-11\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e@Injectable()\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eCacheDecoratorRegister\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eimplements\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eOnModuleInit\u003c/span\u003e \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003econstructor\u003c/span\u003e(\n    private readonly discoveryService: DiscoveryService,\n    private readonly metadataScanner: MetadataScanner,\n    private readonly reflector: Reflector,\n    private readonly cache: Cache,\n  ) {}\n\n  onModuleInit() {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.discoveryService\n      .getProviders() \u003cspan class=\"hljs-comment\"\u003e// #1. 모든 provider 조회\u003c/span\u003e\n      .filter(\u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003ewrapper\u003c/span\u003e) =\u0026gt;\u003c/span\u003e wrapper.isDependencyTreeStatic())\n      .filter(\u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003e{ instance }\u003c/span\u003e) =\u0026gt;\u003c/span\u003e instance \u0026amp;\u0026amp; \u003cspan class=\"hljs-built_in\"\u003eObject\u003c/span\u003e.getPrototypeOf(instance))\n      .forEach(\u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003e{ instance }\u003c/span\u003e) =\u0026gt;\u003c/span\u003e {\n        \u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.metadataScanner.scanFromPrototype(\n          instance,\n          \u003cspan class=\"hljs-built_in\"\u003eObject\u003c/span\u003e.getPrototypeOf(instance),\n          (methodName) =\u0026gt; {\n\t    \u003cspan class=\"hljs-comment\"\u003e// #2. 메타데이터 value\u003c/span\u003e\n            \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e ttl = \u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.reflector.get(CACHEABLE, instance[methodName]); \n            \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (!ttl) {\n              \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e;\n            }\n\n            \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e methodRef = instance[methodName];\n\n            \u003cspan class=\"hljs-comment\"\u003e// #3. 기존 함수 데코레이팅\u003c/span\u003e\n            instance[methodName] = \u003cspan class=\"hljs-keyword\"\u003easync\u003c/span\u003e \u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e (\u003cspan class=\"hljs-params\"\u003e...args: any[]\u003c/span\u003e) \u003c/span\u003e{\n              \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e name = \u003cspan class=\"hljs-string\"\u003e`\u003cspan class=\"hljs-subst\"\u003e${instance.constructor.name}\u003c/span\u003e.\u003cspan class=\"hljs-subst\"\u003e${methodName}\u003c/span\u003e`\u003c/span\u003e;\n              \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e value = \u003cspan class=\"hljs-keyword\"\u003eawait\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.cache.get(name, args);\n              \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (value) {\n                \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e value;\n              }\n\n              \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e result = \u003cspan class=\"hljs-keyword\"\u003eawait\u003c/span\u003e methodRef.call(instance, ...args);\n              \u003cspan class=\"hljs-keyword\"\u003eawait\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.cache.set(name, args, result, ttl);\n              \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e result;\n            };\n          },\n        );\n      });\n  }\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-11\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e해당 클래스를 모듈의 provider에 등록하면, onModuleInit 단계에서 \u003ccode\u003e@Cacheable\u003c/code\u003e로 데코레이팅된 메서드를 찾아 기존 메서드를 덮어씌웁니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e메서드 데코레이터를 만드는 과정은 다음과 같습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e#1. 모든 Provider 클래스를 순회하며\u003c/p\u003e\n\n\n\n\u003cp\u003e#2. 특정 메타데이터가 등록된 메서드를 찾아\u003c/p\u003e\n\n\n\n\u003cp\u003e#3. 기존 메서드를 덮어씌웁니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e#3의 과정에서, \u003ccode\u003eCacheDecoratorRegister\u003c/code\u003e 생성자에 주입한 CacheManager를 사용할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e그런데 메서드 데코레이터를 만들 때마다 매번 이렇게 복잡한 과정을 거쳐야하는 걸까요? 저희 챕터에서는 메서드 데코레이터마다 반복되는 과정을 \u003cstrong\u003eAopModule\u003c/strong\u003e이라는 모듈로 해결했습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e해당 모듈은 2022년 12월에 오픈소스로 공개되었습니다. 현재 npm에서 \u003ca rel=\"noreferrer noopener\" href=\"https://www.npmjs.com/package/@toss/nestjs-aop\" data-type=\"URL\" data-id=\"https://www.npmjs.com/package/@toss/nestjs-aop\" target=\"_blank\"\u003e\u003cstrong\u003e@toss/nestjs-aop\u003c/strong\u003e\u003c/a\u003e 라이브러리를 다운 받아 사용해보실 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e관련해서 \u003ca href=\"https://youtube.com/channel/UCxUcLf_VfUC0pwFujmLK6dw\"\u003e\u003c/a\u003e\u003cstrong\u003e\u003ca rel=\"noreferrer noopener\" href=\"https://www.youtube.com/watch?v=VH1GTGIMHQw\u0026amp;t=3000s\" target=\"_blank\"\u003eNestJS 밋업에서 발표한 자료\u003c/a\u003e\u003c/strong\u003e도 있으니 함께 참고하시면 좋을 듯 합니다. 🙂\u003c/p\u003e\n\n\n\n\u003ch2\u003e\u003cbr\u003eAopModule\u003c/h2\u003e\n\n\n\n\u003cp\u003eAopModule이 데코레이터들을 등록하는 과정은 이렇습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"1024\" height=\"489\" src=\"https://wp.toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.03.31-1024x489.png\" alt=\"\" class=\"wp-image-1122\" srcset=\"https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.03.31-1024x489.png 1024w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.03.31-300x143.png 300w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.03.31-768x367.png 768w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.03.31-1536x733.png 1536w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.03.31-1568x749.png 1568w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.03.31.png 1990w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e간단히 설명하면\u003c/p\u003e\n\n\n\n\u003col\u003e\u003cli\u003eAspect 데코레이터가 붙은 클래스를 찾고 (CacheableDecorator)\u003c/li\u003e\u003cli\u003eCacheable 데코레이터가 붙은 함수를 찾아 (FooService.foo)\u003c/li\u003e\u003cli\u003e1번 클래스의 wrap 함수로 2번의 함수를 감쌉니다. (CacheableDecorator.wrap)\u003c/li\u003e\u003c/ol\u003e\n\n\n\n\u003cp\u003e코드를 보며 좀 더 자세히 설명해볼게요.\u003cbr\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e1. Aspect 데코레이터 사용\u003c/h3\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003cstrong\u003eAspect 데코레이터\u003c/strong\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-12\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e { applyDecorators, Injectable } \u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'@nestjs/common'\u003c/span\u003e;\n\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e ASPECT = \u003cspan class=\"hljs-built_in\"\u003eSymbol\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e'ASPECT_CLASS'\u003c/span\u003e);\n\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eAspect\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003e\u003c/span\u003e) \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e applyDecorators(SetMetadata(ASPECT, \u003cspan class=\"hljs-string\"\u003e'ASPECT_CLASS'\u003c/span\u003e), Injectable);\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-12\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003e데코레이터 사용\u003c/strong\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-13\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e@Aspect()\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eCacheLazyDecorator\u003c/span\u003e \u003c/span\u003e{}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-13\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e데코레이터 로직을 실행할 클래스에 \u003ccode\u003eASPECT\u003c/code\u003e 라는 심볼을 메타데이터로 설정합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e2. 데코레이터 생성\u003c/h3\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-14\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e CACHEABLE = \u003cspan class=\"hljs-built_in\"\u003eSymbol\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e'CACHEABLE'\u003c/span\u003e);\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e Cacheable = \u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003ettl: number\u003c/span\u003e) =\u0026gt;\u003c/span\u003e SetMetadata(CACHEABLE, ttl);\n\n\n\u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eFooService\u003c/span\u003e \u003c/span\u003e{\n\t@Cacheable(\u003cspan class=\"hljs-number\"\u003e1000\u003c/span\u003e)\n\tfoo() {}\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-14\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e특정 심볼(또는 문자열)을 메타데이터 키로 하여 SetMetadata로 원하는 데코레이터를 만듭니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e3. LazyDecorator 구현\u003c/h3\u003e\n\n\n\n\u003cp\u003eAopModule에 등록되는 모든 데코레이터들은 LazyDecorator 인터페이스를 구현해야 합니다. 데코레이팅 하는 시점을 모듈이 초기화되는 시점으로 미루기 때문에 LazyDecorator라고 합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eLazyDecorator 인터페이스\u003c/strong\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-15\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e interface LazyDecorator {\n  wrap(reflector: Reflector, \u003cspan class=\"hljs-attr\"\u003einstance\u003c/span\u003e: any, \u003cspan class=\"hljs-attr\"\u003emethodName\u003c/span\u003e: string): Decorator | \u003cspan class=\"hljs-literal\"\u003eundefined\u003c/span\u003e;\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-15\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eCacheLazyDecorator 구현\u003c/strong\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-16\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e@Aspect()\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eCacheLazyDecorator\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eimplements\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eLazyDecorator\u003c/span\u003e \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003econstructor\u003c/span\u003e(@Inject(CACHE_MANAGER) private readonly cache: CacheManager) {}\n\n  wrap(reflector: Reflector, \u003cspan class=\"hljs-attr\"\u003einstance\u003c/span\u003e: any, \u003cspan class=\"hljs-attr\"\u003emethodName\u003c/span\u003e: string) {\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e ttl = reflector.get(CACHEABLE, instance[methodName]);\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (!ttl) {\n      \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e;\n    }\n\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e methodRef = instance[methodName];\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e name = \u003cspan class=\"hljs-string\"\u003e`\u003cspan class=\"hljs-subst\"\u003e${instance.constructor.name}\u003c/span\u003e.\u003cspan class=\"hljs-subst\"\u003e${methodName}\u003c/span\u003e`\u003c/span\u003e;\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003easync\u003c/span\u003e (...args: any[]) =\u0026gt; {\n      \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e value = \u003cspan class=\"hljs-keyword\"\u003eawait\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.cache.get(name);\n      \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (value) {\n        \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e value;\n      }\n\n      \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e result = \u003cspan class=\"hljs-keyword\"\u003eawait\u003c/span\u003e methodRef.call(instance, ...args);\n      \u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.cache.set(name, result, ttl);\n      \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e result;\n    };\n  }\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-16\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e접근하고자 하는 Provider는 이제 생성자에 주입하여 사용할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e4. AutoAspectExecutor\u003c/h3\u003e\n\n\n\n\u003cp\u003eonModuleInit 단계에서 AopModule의 AutoAspectExecutor 가 ASPECT가 붙은 데코레이터 클래스들의 wrap 함수를 실행시키며 기존 메서드를 덮어씌웁니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eAutoAspectExecutor 코드\u003c/strong\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-17\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e@Injectable()\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eAutoAspectExecutor\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eimplements\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eOnModuleInit\u003c/span\u003e \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003econstructor\u003c/span\u003e(\n    private readonly discoveryService: DiscoveryService,\n    private readonly metadataScanner: MetadataScanner,\n    private readonly reflector: Reflector,\n  ) {}\n\n  onModuleInit() {\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e providers = \u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.discoveryService.getProviders();\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e lazyDecorators = \u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.lookupLazyDecorators(providers);\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (lazyDecorators.length === \u003cspan class=\"hljs-number\"\u003e0\u003c/span\u003e) {\n      \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e;\n    }\n\n    providers\n      .filter(\u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003ewrapper\u003c/span\u003e) =\u0026gt;\u003c/span\u003e wrapper.isDependencyTreeStatic())\n      .filter(\u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003e{ instance }\u003c/span\u003e) =\u0026gt;\u003c/span\u003e instance \u0026amp;\u0026amp; \u003cspan class=\"hljs-built_in\"\u003eObject\u003c/span\u003e.getPrototypeOf(instance))\n      .forEach(\u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003e{ instance }\u003c/span\u003e) =\u0026gt;\u003c/span\u003e {\n        \u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.metadataScanner.scanFromPrototype(\n          instance,\n          \u003cspan class=\"hljs-built_in\"\u003eObject\u003c/span\u003e.getPrototypeOf(instance),\n          (methodName) =\u0026gt;\n            lazyDecorators.forEach(\u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003elazyDecorator\u003c/span\u003e) =\u0026gt;\u003c/span\u003e {\n              \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e wrappedMethod = lazyDecorator.wrap(\u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.reflector, instance, methodName);\n              \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (wrappedMethod) {\n                instance[methodName] = wrappedMethod;\n              }\n            }),\n        );\n      });\n  }\n\n  private lookupLazyDecorators(providers: any[]): LazyDecorator[] {\n    \u003cspan class=\"hljs-comment\"\u003e// this.reflector.get(ASPECT, metatype) 결과값이 존재하는 providers만 필터링\u003c/span\u003e\n  }\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-17\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003eProvider에 접근 가능한 데코레이터를 만드는 과정을 다시 요약하면 이렇습니다.\u003c/p\u003e\n\n\n\n\u003col\u003e\u003cli\u003e\u003ccode\u003eSetMetadata\u003c/code\u003e로 필터링할 클래스에 메타데이터를 등록하고\u003c/li\u003e\u003cli\u003e\u003ccode\u003eDiscoveryService\u003c/code\u003e로 모든 Provider를 조회하며\u003c/li\u003e\u003cli\u003e등록된 Metadata로 특정 클래스나 메서드를 필터링하여 원하는 작업을 하면 됩니다.\u003c/li\u003e\u003c/ol\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003chr class=\"wp-block-separator\"/\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003ch1\u003eChapter2. 메타데이터를 유지하는 데코레이터\u003c/h1\u003e\n\n\n\n\u003cp\u003eProvider에 접근이 필요없는 경우 일반 메서드 데코레이터를 구현하면 될 것입니다. 하지만 메타데이터를 사용하는 NestJS 데코레이터를 일반 데코레이터와 함께 사용해도 괜찮을까요?\u003c/p\u003e\n\n\n\n\u003cp\u003e결론부터 말하자면 둘을 함께 사용하면 예상치 못한 버그가 발생할 수 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003ch3\u003e일반 메서드 데코레이터를 사용하면 안되는 이유\u003c/h3\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003e메타데이터를 등록하는 다른 데코레이터와 함께 쓰이는 경우, 기존 메서드가 덮어씌워지면서 프로토타입에 등록된 메타데이터가 사라질 수 있습니다.\u003c/strong\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-18\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eOnError\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003ehandler: (e: Error\u003c/span\u003e) =\u0026gt; \u003cspan class=\"hljs-title\"\u003evoid\u003c/span\u003e) \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003etarget: object, key?: any, descriptor?: any\u003c/span\u003e) =\u0026gt;\u003c/span\u003e {\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e originMethod = descriptor.value;\n    descriptor.value = \u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003e...args: any[]\u003c/span\u003e) =\u0026gt;\u003c/span\u003e {\n      \u003cspan class=\"hljs-keyword\"\u003etry\u003c/span\u003e {\n        \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e originMethod.call(\u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e, ...args);\n      } \u003cspan class=\"hljs-keyword\"\u003ecatch\u003c/span\u003e (error) {\n        handler(error);\n      }\n    };\n  };\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-18\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003eOnError 데코레이터는 기존 메서드를 새로운 메서드로 덮어씌웁니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e아래 코드에서는 메타데이터를 등록하는 RegisterMetadata 데코레이터와 OnError 데코레이터를 함께 사용하고 있습니다. 데코레이터 선언 순서에 따라 기존에 등록된 메타데이터는 사라질 수 있습니다.\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e아래 메서드 중에 \u003ccode\u003eReflect.getMetadata\u003c/code\u003e를 했을 때 메타데이터가 사라지는 메서드는 무엇일까요?\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-19\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e@Injectable()\n\u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eTestService\u003c/span\u003e \u003c/span\u003e{\n  @OnError(\u003cspan class=\"hljs-built_in\"\u003econsole\u003c/span\u003e.log)\n  @RegisterMetadata(\u003cspan class=\"hljs-string\"\u003e'value'\u003c/span\u003e)\n  test() {\n    \u003cspan class=\"hljs-keyword\"\u003ethrow\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003enew\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003eError\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e'error'\u003c/span\u003e);\n  }\n\n  @RegisterMetadata(\u003cspan class=\"hljs-string\"\u003e'value2'\u003c/span\u003e)\n  @OnError(\u003cspan class=\"hljs-built_in\"\u003econsole\u003c/span\u003e.log)\n  test2() {\n    \u003cspan class=\"hljs-keyword\"\u003ethrow\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003enew\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003eError\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e'error'\u003c/span\u003e);\n  }\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-19\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e정답은 test 메서드입니다. 실행 결과는 \u003ca rel=\"noreferrer noopener\" href=\"https://www.typescriptlang.org/play?noImplicitAny=false\u0026amp;noImplicitThis=false\u0026amp;ssl=54\u0026amp;ssc=89\u0026amp;pln=51\u0026amp;pc=1#code/PTAEEsFsAcHsCcAuoDk8CmAzANugxogLSTqICGAJmeSgFC16wB2AzsgMqkCypl1ZoALygAPAGkhoNvHBMA5gBpQANUlkmATwB8AClqhQJclXJj0GgFygxC-Yd4myystgCu6K8tsBKIVtAA3naMrLC4AHTYsHI6KJyIPMb8oICTy4AANSjewcxsoBT4CNQIAGJkBAgakjrk8HKkVrAARgBW+IhKANbmAPxW6hpK+Sx4MtCICL2g-b6C-kEGBuCYoDpDI+BjCL7zCwYhLGHokdGxgCpdgAMLgA7NgC7jgAyLoICPLYC6HShKRnzkzm7oWbsGAEpYXAEcL5TCydCJD5kHTvRxmAb2JKfFzuQboYajcbwcIAN1RPwA3HZdhhEK54Ew8hj1pt4MTdgBfOyMhnUxjwIrwUrleAacJiACiAE1JHD+Ai2WSKVT8hyuTzsRpiaz6JhXEwCOBmKAAPJMQXweAIHQAC3UFFw8CsOg8oENxvgM38uNg4Ao22yoQiURiACJ9Q6EKk0n7vFLSDKVjU6ogGi02p0en1NOjMRtsZNpn5AiTQPtDsd-YGjcHACdDgEjVqyAC1XABhDoEAds2AFtHAA8jgAY6sNsvY5ZAIcByWSJU2wCiSNZYhB4gld6npulT75VcLLsi1FgpjQAbQAus7c39QIg+fuD6BpZTQH2B0whyPwngXNhqqbwCwlMvwqu5Cxw3mDIz82oPBTRWdBS2tKZNE9U9QHNJhLTA21wN-A9mSZNlVWZBge1Af5BQAcQASXYAAVQV-gAfS4QUSIAQQAEVoujJHYDRIEaMJYjwojSPIqiaIYpjaMybDWGQQEBzYMCoUcKp8W+KxpFkOQ93iGT+B0bjiLIyjqLoxi6KUeT3CyBhsDIFgWFAEiMUQTh4FxcA8HQE8AAES0dHQCx9aJflAVyJNfRBpIcDSUGM9ARIMYK2B0aCFkQU1jQAd1AJh0FSoN4FiMDHUyDD6AMAL0Ek4L4HU8hYgigAmKL-I8k1vKOX0-JixBqrik9oqS2BUvSzLwJy8D8pZWgsP2ZA2vsxznMkfrrNs6anPQOL6CaotYjapFoVeXCgTacJYwqmEtN43SBIM2ilCmsCZqONrvCydbfU22zqu2xxdsBHADqO0LKtOnT+P0oTrsW27lvCNrqseoA\" target=\"_blank\"\u003e\u003cstrong\u003e타입스크립트 플레이그라운드\u003c/strong\u003e에서\u003c/a\u003e 직접 확인하실 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-20\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e testService = \u003cspan class=\"hljs-keyword\"\u003enew\u003c/span\u003e TestService()\n\n\u003cspan class=\"hljs-comment\"\u003e// undefined\u003c/span\u003e\n\u003cspan class=\"hljs-built_in\"\u003econsole\u003c/span\u003e.log(\u003cspan class=\"hljs-string\"\u003e'test metadata'\u003c/span\u003e, \u003cspan class=\"hljs-built_in\"\u003eReflect\u003c/span\u003e.getMetadata(REGISTER_METADATA, testService.test))\n\u003cspan class=\"hljs-comment\"\u003e// value2\u003c/span\u003e\n\u003cspan class=\"hljs-built_in\"\u003econsole\u003c/span\u003e.log(\u003cspan class=\"hljs-string\"\u003e'test2 metadata'\u003c/span\u003e, \u003cspan class=\"hljs-built_in\"\u003eReflect\u003c/span\u003e.getMetadata(REGISTER_METADATA, testService.test2))\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-20\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e왜 이렇게 되는 걸까요? 데코레이터의 실행 순서가 힌트입니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cem\u003eg∘f(x) = g(f(x))\u003c/em\u003e 와 같은 합성 함수가 있을 때 선언은 \u003cem\u003eg\u003c/em\u003e가 \u003cem\u003ef\u003c/em\u003e보다 먼저 되었지만 실행은 \u003cem\u003ef\u003c/em\u003e 함수가 먼저 실행됩니다. 마찬가지로 \u003cstrong\u003e데코레이터는 평가될 때는 선언된 순서대로 위에서 아래로, 실행될 때는 아래에서 위로 실행됩니다\u003c/strong\u003e.\u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"1024\" height=\"828\" src=\"https://wp.toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.21.51-1024x828.png\" alt=\"\" class=\"wp-image-1124\" srcset=\"https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.21.51-1024x828.png 1024w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.21.51-300x243.png 300w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.21.51-768x621.png 768w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.21.51-1536x1243.png 1536w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.21.51-1568x1268.png 1568w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-8.21.51.png 1916w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003eRegisterMetadata에서 \u003ccode\u003eReflector.defineMetadata\u003c/code\u003e가 먼저 실행되고 그 다음 OnError 데코레이터가 기존 함수를 덮어씌웁니다. \u003c/p\u003e\n\n\n\n\u003cp\u003e덮어씌워지면서 기존에 메타데이터가 저장된 프로토타입과 끊기게 되고 \u003ccode\u003etest\u003c/code\u003e 메서드에서 메타데이터를 찾을 수 없게 됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e이런 사례도 있을 수 있습니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-21\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e@Injectable()\n\u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eTossScheduler\u003c/span\u003e \u003c/span\u003e{\n\n  @OnError(\u003cspan class=\"hljs-built_in\"\u003econsole\u003c/span\u003e.log)\n  @Cron(\u003cspan class=\"hljs-string\"\u003e'*/10 * * * *'\u003c/span\u003e)\n  task() {\n    \u003cspan class=\"hljs-comment\"\u003e// do something\u003c/span\u003e\n  }\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-21\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ccode\u003e@nestjs/schedule\u003c/code\u003e 의 Cron 데코레이터 역시 CRON 심볼을 메타데이터로 등록합니다. 모듈이 초기화되는 시점에 해당 메타데이터가 등록된 메서드들을 조회하여 cron job을 등록합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e하지만 OnError 데코레이터가 Cron 데코레이터 이후에 실행됨으로써 메타데이터가 사라지게 되고, NestJS에서는 task 메서드를 찾지 못해 cron job을 등록하지 못하게 됩니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이렇듯 일반 메서드 데코레이터를 NestJS 환경에서 그냥 사용하게 되면 개발자의 실수에 의해 코드의 동작이 바뀔 수 있습니다. 데코레이터 실행 순서나 메타데이터 환경에 대해 알고 있지 못하다면 이런 류의 버그를 찾는 데는 시간이 오래 걸릴 지도 모릅니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e이를 방지하기 위해서는 메타데이터를 고려하여 데코레이터를 생성해야 합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003ch2\u003e메타데이터를 유지하는 데코레이터\u003c/h2\u003e\n\n\n\n\u003cp\u003e메타데이터를 유지하는 가장 naive한 방법은, 오버라이딩 되기 전에 메타데이터를 저장해둔 뒤 오버라이딩이 끝나면 메타데이터를 다시 등록해주는 것입니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003eOnErrorPreserveMeta 코드\u003c/strong\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-22\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eOnErrorPreserveMeta\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003ehandler: (e: Error\u003c/span\u003e) =\u0026gt; \u003cspan class=\"hljs-title\"\u003evoid\u003c/span\u003e) \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003etarget: object, key?: any, descriptor?: any\u003c/span\u003e) =\u0026gt;\u003c/span\u003e {\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e originMethod = descriptor.value;\n\n    \u003cspan class=\"hljs-comment\"\u003e//  오버라이딩 되기 전의 메타데이터를 저장해놨다가\u003c/span\u003e\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e metaKeys = \u003cspan class=\"hljs-built_in\"\u003eReflect\u003c/span\u003e.getOwnMetadataKeys(descriptor.value);\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e metas = metaKeys.map(\u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003ek\u003c/span\u003e) =\u0026gt;\u003c/span\u003e [\n      k,\n      \u003cspan class=\"hljs-built_in\"\u003eReflect\u003c/span\u003e.getMetadata(k, descriptor.value),\n    ]);\n\n    descriptor.value = \u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003e...args: any[]\u003c/span\u003e) =\u0026gt;\u003c/span\u003e {\n      \u003cspan class=\"hljs-keyword\"\u003etry\u003c/span\u003e {\n        \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e originMethod.call(\u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e, ...args);\n      } \u003cspan class=\"hljs-keyword\"\u003ecatch\u003c/span\u003e (error) {\n        handler(error);\n      }\n    };\n\n    \u003cspan class=\"hljs-comment\"\u003e// 오버라이딩 된 메서드에 대해 메타데이터 재등록\u003c/span\u003e\n    metas.forEach(\u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003e[k, v]\u003c/span\u003e) =\u0026gt;\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003eReflect\u003c/span\u003e.defineMetadata(k, v, descriptor.value));\n  };\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-22\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e직관적이지만 매번 Decorator를 만들어줄 때마다 이런 과정을 거쳐야 하는 게 불편합니다. 이를 해결하는 좀 더 간단한 방법이 있습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003ch2\u003e프로토타입을 사용해 메타데이터 유지하기\u003c/h2\u003e\n\n\n\n\u003cp\u003eSetMetadata 파트에서 Reflect.defineMetadata 는 타겟 객체에 [[Metadata]] 라는 내부 슬롯을 정의한다고 말씀드렸습니다. \u003c/p\u003e\n\n\n\n\u003cfigure class=\"wp-block-image size-large\"\u003e\u003cimg loading=\"lazy\" width=\"1024\" height=\"405\" src=\"https://wp.toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-9.09.56-1024x405.png\" alt=\"\" class=\"wp-image-1126\" srcset=\"https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-9.09.56-1024x405.png 1024w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-9.09.56-300x119.png 300w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-9.09.56-768x304.png 768w, https://toss.tech/wp-content/uploads/2022/11/스크린샷-2022-11-18-오후-9.09.56.png 1466w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /\u003e\u003c/figure\u003e\n\n\n\n\u003cp\u003e내부 슬롯 또한 프로토타입의 내부 프로퍼티이니, 기존 프로토타입에 메타데이터 내부 슬롯이 저장되어있을 것입니다. 따라서 \u003cstrong\u003e새롭게 정의한 메서드에 기존 프로토타입을 연결해주면 됩니다.\u003c/strong\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cstrong\u003e변경된 OnErrorPreserveMeta 코드\u003c/strong\u003e\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-23\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-function\"\u003e\u003cspan class=\"hljs-keyword\"\u003efunction\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eOnErrorPreserveMeta\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003ehandler: (e: Error\u003c/span\u003e) =\u0026gt; \u003cspan class=\"hljs-title\"\u003evoid\u003c/span\u003e) \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003etarget: object, key?: any, descriptor?: any\u003c/span\u003e) =\u0026gt;\u003c/span\u003e {\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e originMethod = descriptor.value;\n\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e wrapper = \u003cspan class=\"hljs-function\"\u003e(\u003cspan class=\"hljs-params\"\u003e...args: any[]\u003c/span\u003e) =\u0026gt;\u003c/span\u003e {\n      \u003cspan class=\"hljs-keyword\"\u003etry\u003c/span\u003e {\n        \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e originMethod.call(\u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e, ...args);\n      } \u003cspan class=\"hljs-keyword\"\u003ecatch\u003c/span\u003e (error) {\n        handler(error);\n      }\n    };\n\n    \u003cspan class=\"hljs-built_in\"\u003eObject\u003c/span\u003e.setPrototypeOf(wrapper, originMethod); \u003cspan class=\"hljs-comment\"\u003e// 이 줄만 추가\u003c/span\u003e\n    descriptor.value = wrapper;\n  };\n}\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-23\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003ccode\u003eObject.setPrototypeOf(arg1, arg2)\u003c/code\u003e 은 arg1 객체의 프로토타입을 arg2로 설정합니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e기존 메서드를 덮어씌운 후 \u003ccode\u003eObject.setPrototypeOf(wrapper, originMethod)\u003c/code\u003e로 originMethod를 wrapper의 프로토타입으로 설정해주면 메타데이터가 유지됩니다.\u003c/p\u003e\n\n\n\u003cpre class=\"wp-block-code\" aria-describedby=\"shcb-language-24\" data-shcb-language-name=\"JavaScript\" data-shcb-language-slug=\"javascript\"\u003e\u003cdiv\u003e\u003ccode class=\"hljs language-javascript\"\u003e@Injectable()\n\u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eTestService\u003c/span\u003e \u003c/span\u003e{\n  @OnError(\u003cspan class=\"hljs-built_in\"\u003econsole\u003c/span\u003e.log)\n  @RegisterMetadata(\u003cspan class=\"hljs-string\"\u003e'value'\u003c/span\u003e)\n  test() {\n    \u003cspan class=\"hljs-keyword\"\u003ethrow\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003enew\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003eError\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e'error'\u003c/span\u003e);\n  }\n}\n\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e testService = \u003cspan class=\"hljs-keyword\"\u003enew\u003c/span\u003e TestService()\n\n\u003cspan class=\"hljs-built_in\"\u003econsole\u003c/span\u003e.log(\u003cspan class=\"hljs-string\"\u003e'test metadata'\u003c/span\u003e, \u003cspan class=\"hljs-built_in\"\u003eReflect\u003c/span\u003e.getMetadata(REGISTER_METADATA, testService.test)) \u003cspan class=\"hljs-comment\"\u003e// 'value'\u003c/span\u003e\u003c/code\u003e\u003c/div\u003e\u003csmall class=\"shcb-language\" id=\"shcb-language-24\"\u003e\u003cspan class=\"shcb-language__label\"\u003eCode language:\u003c/span\u003e \u003cspan class=\"shcb-language__name\"\u003eJavaScript\u003c/span\u003e \u003cspan class=\"shcb-language__paren\"\u003e(\u003c/span\u003e\u003cspan class=\"shcb-language__slug\"\u003ejavascript\u003c/span\u003e\u003cspan class=\"shcb-language__paren\"\u003e)\u003c/span\u003e\u003c/small\u003e\u003c/pre\u003e\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003chr class=\"wp-block-separator\"/\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003ch1\u003e마치며\u003c/h1\u003e\n\n\n\n\u003cp\u003e메타데이터와 NestJS의 \u003ccode\u003eDiscoveryModule\u003c/code\u003e 을 사용하여 NestJS의 IoC 컨테이너에 접근할 수 있는 데코레이터, 그리고 메타데이터를 유지할 수 있는 데코레이터를 만들어보았습니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e메타데이터 태깅, DiscoveryModule, 프로토타입을 사용해 NestJS 환경에 맞는 데코레이터를 만들 수 있었습니다. 이 글을 통해 더욱 더 NestJS의 Aop 패턴에 맞는 프로그래밍을 하게 되었기를 바랍니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e또한 토스 Node.js 챕터는 토스의 다양한 제품과 라이브러리 개발을 위해 팀원들의 지속적인 성장이 중요하다고 믿으며, 이를 위해 코드 리뷰, 스터디와 엔지니어링 세미나 등을 통해 꾸준히 공부하고 공유하는 자리를 가지고 있으니 많은 관심 부탁드립니다.\u003c/p\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003chr class=\"wp-block-separator\"/\u003e\n\n\n\n\u003cp\u003e\u003cbr\u003e\u003c/p\u003e\n\n\n\n\u003ch2\u003eReferences\u003c/h2\u003e\n\n\n\n\u003cul\u003e\u003cli\u003e\u003ca href=\"https://zuminternet.github.io/nestjs-custom-decorator/\"\u003ehttps://zuminternet.github.io/nestjs-custom-decorator/\u003c/a\u003e\u003c/li\u003e\u003cli\u003e\u003ca href=\"https://github.com/nestjs/nest\"\u003ehttps://github.com/nestjs/nest\u003c/a\u003e\u003c/li\u003e\u003cli\u003e\u003ca href=\"https://github.com/nestjs/swagger/issues/217\"\u003ehttps://github.com/nestjs/swagger/issues/217\u003c/a\u003e\u003c/li\u003e\u003cli\u003e\u003ca href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf\"\u003ehttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf\u003c/a\u003e\u003c/li\u003e\u003c/ul\u003e\n\n\n\n\u003cp\u003e\u003c/p\u003e\n","date":"2022-11-22T00:03:49","excerpt":"\u003cp\u003eNestJS에서 데코레이터를 만들기 위해서는 NestJS의 DI와 메타 프로그래밍 환경 등을 고려해야 합니다. 어떻게 하면 이러한 NestJS 환경에 맞는 데코레이터를 만들 수 있을지 고민해보았습니다.\u003c/p\u003e\n","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2022/11/tech-article-nest-js-02-300x150.png 300w, https://toss.tech/wp-content/uploads/2022/11/tech-article-nest-js-02-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2022/11/tech-article-nest-js-02-768x384.png 768w, https://toss.tech/wp-content/uploads/2022/11/tech-article-nest-js-02.png 1200w"}},"metadata":{"ogBackground":"https://static.toss.im/assets/tech-blog/og-image/tech-article-nest-js-02-og.png","ogImageTitle":"NestJS 환경에 맞는\r\nCustom Decorator 만들기","ogGenerateImage":true,"recruitTitle":"토스 Node.js Chapter 채용 공고","recruitUrl":"https://toss.im/career/jobs?search=node.js","form1Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=998\u0026title=NestJS_환경에_맞는_Custom_Decorator_만들기\u0026reaction=good","form2Url":"https://8cv5m2yf13x.typeform.com/tossengineering#no=998\u0026title=NestJS_환경에_맞는_Custom_Decorator_만들기\u0026reaction=bad","formDescription":"좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.","form1Label":"😍","form2Label":"🤔","recruitDescription":null},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}},{"node":{"id":"dGVybTox","name":"Uncategorized"}}]},"author":{"node":{"id":"dXNlcjoyOA==","firstName":"현지","lastName":"송","description":"토스 코어, 증권에서 금융에 필요한 모든 자동화 서비스를 개발하고 있습니다 :)","avatar":{"url":"https://toss.tech/wp-content/uploads/2022/11/IMG_1399-312x312.jpg"},"role":{"role":"Node.js Developer"}}}},"relatedArticles":[{"title":"무지성으로 사용한 헬스 체크가 불러일으킬 수 있는 참사","slug":"how-to-work-health-check-in-spring-boot-actuaotr","date":"2023-04-01T15:38:57","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/04/00009-889461687-300x300.png 300w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687-150x150.png 150w, https://toss.tech/wp-content/uploads/2023/04/00009-889461687.png 512w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}},{"node":{"id":"dGVybTox","name":"Uncategorized"}}]}},{"title":"ESLint와 AST로 코드 퀄리티 높이기","slug":"improving-code-quality-via-eslint-and-ast","date":"2023-03-31T15:47:53","featuredImage":{"node":{"srcSet":"https://toss.tech/wp-content/uploads/2023/03/center-300x150.png 300w, https://toss.tech/wp-content/uploads/2023/03/center-1024x512.png 1024w, https://toss.tech/wp-content/uploads/2023/03/center-768x384.png 768w, https://toss.tech/wp-content/uploads/2023/03/center.png 1200w"}},"categories":{"edges":[{"node":{"id":"dGVybToy","name":"tech"}}]}}]},"__N_SSP":true},"page":"/article/[slug]","query":{"slug":"nestjs-custom-decorator"},"buildId":"QqBxegmptuUDYc8oCREsD","assetPrefix":"https://static.toss.im/frontend/toss-tech","runtimeConfig":{"ENV":"live","NODE_ENV":"production","PORT":"3000","ASSET_PREFIX":"https://static.toss.im/frontend/toss-tech","SERVICE":"toss-tech","SENTRY":{"DSN":"https://5eff657ed6ef486fb8af2dc5f9508abd@sentry.io/1242586","PUBLIC_KEY":"5eff657ed6ef486fb8af2dc5f9508abd","RELEASE":"toss-tech_1.0.103","SERVICE":"toss-tech","SERVICE_VERSION":"1.0.103"},"RENDER_TYPE":"ssr"},"isFallback":false,"gssp":true,"customServer":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,802 @@
+<!DOCTYPE html><html lang="ko"><head><script src="https://connect.facebook.net/ko_KR/sdk.js?hash=7e899826b14713274cda099ad43b215a" async="" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <title>Spring Batch를 더 우아하게 사용하기 - Spring Batch Plus</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/XEIcon/xeicon.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/katex/katex.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/naver_d2.from_server.css?1671783335538">
+<link href="/static/css/app.css?13c1e9311ca34225bfc0" rel="stylesheet"><script type="text/javascript" charset="utf-8" src="https://ssl.pstatic.net/static.cbox/js/cbox.core.js?v=1399068"></script><style type="text/css" id="_cbox_default_style_"></style><script type="text/javascript" src="https://ssl.pstatic.net/static.cbox/20230309172524/js/cbox.all.js" charset="utf-8"></script><link type="text/css" rel="stylesheet" href="https://static-feedback.pstatic.net/css/cbox/cbox/ebb46c9a-246d-48cd-acc6-cf3892caf38d/3ed9c21a-1c97-4c94-aeeb-70cc581fb6a5/css/comment_default.css" charset="utf-8"><style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://connect.facebook.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://connect.facebook.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://connect.facebook.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://connect.facebook.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+.fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style></head>
+
+<body>
+<div id="wrap" class="main"><div><div id="header"><div class="main_lnb"><div class="progress_bar" style="height: 2px; background-color: rgb(50, 205, 160); width: 0px;"></div><div class="header_sec"><div class="inner_sec"><div class="lnb" id="lnb"><h1><a class="lnb_top_logo" href="/home"><span class="blind">naver D2</span></a></h1><div class="menu_sec"><div class="btn_lnb_menu"><a href="#"><span class="blind">메뉴</span></a></div><div style="height: 0px; transition: all 0.5s ease 0s;"><ul><li class="on"><a href="/helloworld">Hello world</a></li><li class=""><a href="/news">D2 News</a></li><li class=""><a href="/program">D2 Program</a></li><li class=""><a href="/about">About D2</a></li></ul></div></div><div><div class="m_search_sec"><div class="btn_lnb_search"><a href="#"><span class="blind">검색</span></a></div><form action="/" style="height: 0px; transition: all 0.5s ease 0s;"><input type="text" value="" placeholder="D2에서 검색" class="search_area"><button type="sunmit" class="blind"><i class="xi-search"></i></button></form></div><div class="pc_search_input"><fieldset><legend>검색</legend><form action="/"><input type="text" value="" placeholder="D2에서 검색" class="search_area"><button type="sunmit" class="btn_search"><i class="xi-search"></i></button></form></fieldset></div></div></div></div></div></div></div><div id="container"><div class="con_area"><div class="contents detail_view"><div class="post_article"><div class="cont_post"><h1 class="posting_tit">Spring Batch를 더 우아하게 사용하기 - Spring Batch Plus</h1><dl class="post_info"><dt><i class="xi-time-o"><span class="blind">등록일</span></i></dt><dd>2023.01.02</dd><dt><span class="blind">|</span></dt><dd><span class="line_bar">|</span></dd><dt><i class="xi-eye"><span class="blind">코멘트</span></i></dt><dd>11711</dd></dl><div class="con_view"><ul>
+<li><a href="#ch1">개발 배경</a>
+<ul><li><a href="#ch1_1">분산된 ItemReader ItemProcessor ItemWriter</a></li>
+<li><a href="#ch1_2">많은 종류의 Job</a></li></ul></li>
+<li><a href="#ch2">ItemStreamReaderProcessorWriter</a></li>
+<li><a href="#ch3">Domain Specific Language (DSL)</a>
+<ul><li><a href="#ch3_1">Type-safe Builder</a></li>
+<li><a href="#ch3_2">Type-safe Builder를 구성하는 Kotlin 기능</a></li>
+<li><a href="#ch3_3">Kotlin을 사용한 Internal DSL</a></li></ul></li>
+<li><a href="#ch4">Spring Batch Kotlin DSL</a>
+<ul><li><a href="#ch4_1">구조 분석</a></li>
+<li><a href="#ch4_2">설계 및 구현</a></li>
+<li><a href="#ch4_3">네이버페이 정산 프로젝트에 적용</a></li></ul></li>
+<li><a href="#ch5">오픈 과정</a></li>
+<li><a href="#ch6">마치며</a></li>
+</ul>
+
+<hr>
+
+<p>Spring Batch Plus는 Spring Batch를 조금 더 편리하게 사용할 수 있게 유용한 기능을 제공하는 헬퍼 라이브러리입니다. Spring Batch Plus는 Kotlin 언어 사용 시 Spring Batch를 간결하게 설정하도록 도와주는 Spring Batch Kotlin DSL과 하나의 클래스에서 ItemReader, ItemProcessor, ItemWriter 모두를 작성하게 해주는 등의 다양한 기능을 제공합니다.</p>
+
+<p>저희는 매년 급속히 성장 중인 네이버페이를 개선하는 프로젝트를 진행하고 있습니다. 이 중에서 정산 플랫폼을 개선하는 프로젝트를 Kotlin 기반으로 Spring Batch를 활용하여 진행했습니다. 진행 과정에서 수십 개의 배치 Job을 작성해야 했는데 Spring Batch 기능을 그대로 사용하기에는 보일러플레이트 코드가 많고 파일도 많아지는 문제점이 있었습니다. 이를 해결하기 위해 여러 트릭을 사용했고 이를 담고 있는 라이브러리가 Spring Batch Plus입니다.</p>
+
+<p>이 글에서는 연간 52조 규모의 네이버페이 정산 플랫폼을 신규 시스템으로 전환하는 과정에서 탄생한 Spring Batch Plus의 개발 배경과 구현 과정에 대해서 알아보겠습니다.</p>
+
+<p><a id="ch1"></a>  </p>
+
+<h2 id="">개발 배경</h2>
+
+<p><a id="ch1_1"></a>  </p>
+
+<h3 id="itemreaderitemprocessoritemwriter">분산된 ItemReader ItemProcessor ItemWriter</h3>
+
+<p>Spring Batch 공식 문서에 따르면 Spring Batch의 <a href="https://docs.spring.io/spring-batch/docs/current/reference/html/domain.html#step">Step</a>은 ItemReader, ItemProcessor, ItemWriter로 구성되어 있다. ItemReader, ItemProcessor, ItemWriter는 각각 다음과 같이 정의한다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-comment">// ItemReader example</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestItemReader</span> : <span class="hljs-type">ItemReader</span>&lt;<span class="hljs-type">Int</span>&gt; </span>{  
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">read</span><span class="hljs-params">()</span></span>: <span class="hljs-built_in">Int</span>? {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>
+    }
+}
+</code></pre>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-comment">// ItemProcessor example</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestItemProcessor</span> : <span class="hljs-type">ItemProcessor</span>&lt;<span class="hljs-type">Int, String</span>&gt; </span>{  
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">process</span><span class="hljs-params">(item: <span class="hljs-type">Int</span>)</span></span>: String? {
+        <span class="hljs-keyword">return</span> item.toString()
+    }
+}
+</code></pre>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-comment">// ItemWriter example</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestItemWriter</span> : <span class="hljs-type">ItemWriter</span>&lt;<span class="hljs-type">String</span>&gt; </span>{  
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">write</span><span class="hljs-params">(items: <span class="hljs-type">MutableList</span>&lt;<span class="hljs-type">out</span> <span class="hljs-type">String</span>&gt;)</span></span> {
+        println(items)
+    }
+}
+</code></pre>
+
+<p>이를 Step을 정의할 때 사용할 수 있다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-meta">@Bean</span>
+<span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">testStep</span><span class="hljs-params">(  
+    stepBuilderFactory: <span class="hljs-type">StepBuilderFactory</span>
+)</span></span>: Step {
+    <span class="hljs-keyword">return</span> stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"testStep"</span>)
+        .chunk&lt;<span class="hljs-built_in">Int</span>, String&gt;(<span class="hljs-number">3</span>)
+        .reader(TestItemReader())
+        .processor(TestItemProcessor())
+        .writer(TestItemWriter())
+        .build()
+}
+</code></pre>
+
+<p>Spring Batch는 ItemReader, ItemProcessor, ItemWriter를 각각 독립적으로 재활용할 수 있다고 가정하고 ItemReader, ItemProcessor, ItemWriter를 별도의 파일로 정의하도록 가이드 한다. 예를 들어 XML에서 데이터를 읽는 코드는 대부분 비슷할 테니 <a href="https://docs.spring.io/spring-batch/docs/current/reference/html/readersAndWriters.html#StaxEventItemReader">StaxEventItemReader</a>로 미리 정의하고 필요할 때마다 재활용하는 식이다. 그런데 Spring Batch로 복잡한 데이터를 처리해야 할 경우 각 클래스는 특정한 도메인 로직을 처리하기 위해 사용하기 때문에 한 Step에서만 사용되도록 특수하게 구현하는 경우가 많다. 이럴 경우 특정 도메인을 처리하는 배치의 흐름을 알기 위해서는 ItemReader, ItemProcessor, ItemWriter 각각의 파일을 다 살펴봐야 해서 응집도가 낮아지는 문제점이 있다. 또한 ItemReader, ItemProcessor, ItemWriter 간 데이터 공유도 어렵다.</p>
+
+<p><a id="ch1_2"></a>  </p>
+
+<h3 id="job">많은 종류의 Job</h3>
+
+<p>Spring Batch는 <a href="https://docs.spring.io/spring-batch/docs/current/reference/html/domain.html#job">Job</a>이라는 단위로 배치 작업을 분류한다. 한 개의 Job은 한 개 또는 여러 개의 <a href="https://docs.spring.io/spring-batch/docs/current/reference/html/domain.html#step">Step</a>으로 구성된다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-meta">@Bean</span>
+<span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">testJob</span><span class="hljs-params">(  
+    jobBuilderFactory: <span class="hljs-type">JobBuilderFactory</span>,
+    stepBuilderFactory: <span class="hljs-type">StepBuilderFactory</span>
+)</span></span>: Job {
+    <span class="hljs-keyword">return</span> jobBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"testJob"</span>)
+        .start(
+            stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"testStep1"</span>)
+                .tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"testStep2"</span>)
+                .tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"testStep3"</span>)
+                .tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"testStep4"</span>)
+                .tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .build()
+}
+</code></pre>
+
+<p>네이버페이 정산 시스템은  금액 집계, 지급 요청 등 서로 다른 역할을 하는 수십 개의 Job으로 구성된다. 그런데 이 Job은 상호 의존한다. 이를테면 정산 금액을 집계하지도 않았는데 판매자에게 정산 금액을 지급할 수는 없는 일이다. Spring Batch는 Job 간 의존관계를 설정할 수 있는 JobStep 기능을 제공한다. JobStep을 사용하면 한 Job에서 다른 Job을 Step처럼 사용할 수 있다. 네이버페이 정산 개편 프로젝트는 이를 활용하여 Job 간 의존관계를 정의했다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-meta">@Bean</span>
+<span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">testJob</span><span class="hljs-params">(  
+    jobBuilderFactory: <span class="hljs-type">JobBuilderFactory</span>,
+    stepBuilderFactory: <span class="hljs-type">StepBuilderFactory</span>,
+    subJob1: <span class="hljs-type">Job</span>,
+    subJob2: <span class="hljs-type">Job</span>,
+)</span></span>: Job {
+    <span class="hljs-keyword">return</span> jobBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"testJob"</span>)
+        .start(
+            stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"subJob1Step"</span>)
+                .job(subJob1)
+                .build()
+        )
+        .next(
+            stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"subJob2Step"</span>)
+                .job(subJob2)
+                .build()
+        )
+        .build()
+}
+
+<span class="hljs-meta">@Bean</span>
+<span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">subJob1</span><span class="hljs-params">(  
+    jobBuilderFactory: <span class="hljs-type">JobBuilderFactory</span>,
+    stepBuilderFactory: <span class="hljs-type">StepBuilderFactory</span>
+)</span></span>: Job {
+    <span class="hljs-keyword">return</span> jobBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"subJob1"</span>)
+        .start(
+            stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"subJob1 - step1"</span>)
+                .tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"subJob1 - step2"</span>)
+                .tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .build()
+}
+
+<span class="hljs-meta">@Bean</span>
+<span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">subJob2</span><span class="hljs-params">(  
+    jobBuilderFactory: <span class="hljs-type">JobBuilderFactory</span>,
+    stepBuilderFactory: <span class="hljs-type">StepBuilderFactory</span>
+)</span></span>: Job {
+    <span class="hljs-keyword">return</span> jobBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"subJob2"</span>)
+        .start(
+            stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"subJob2 - step1"</span>)
+                .tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"subJob2 - step2"</span>)
+                .tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .build()
+}
+</code></pre>
+
+<p>그런데 이 코드에는 문제가 있다. 의존하는 Job을 모두 인자로 받아야 하고 build 등 불필요한 보일러플레이트 코드가 많다. 무엇보다 Kotlin스럽지 않은 객체 생성을 요구한다. Kotlin 생태계에서는 <a href="https://kotlinlang.org/docs/type-safe-builders.html">Type-safe builder</a>를 활용하여 선언형으로 객체를 생성한다. 다음은 Kotlin 공식 문서에 있는 HTML 정보 생성 예시 코드이다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-keyword">val</span> htmlContent = html {  
+    head {
+        title {+<span class="hljs-string">"XML encoding with Kotlin"</span>}
+    }
+    body {
+        h1 {+<span class="hljs-string">"XML encoding with Kotlin"</span>}
+        p  {+<span class="hljs-string">"this format can be used as an alternative markup to XML"</span>}
+        a(href = <span class="hljs-string">"https://kotlinlang.org"</span>) {+<span class="hljs-string">"Kotlin"</span>}
+        ...
+    }
+}
+</code></pre>
+
+<p><a id="ch2"></a>  </p>
+
+<h2 id="itemstreamreaderprocessorwriter">ItemStreamReaderProcessorWriter</h2>
+
+<p>먼저 분산된 ItemReader, ItemProcessor, ItemWriter를 어떻게 통합했는지 살펴보자. 해결 과정은 의외로 간단했다. ItemReader, ItemProcessor, ItmeWriter 3개 모두 처리할 수 있는 클래스를 구현해서 Adaptor를 통해 기존 ItemReader, ItemProcessor, ItemWriter에 맞춰주었다. 프로젝트 진행 과정에서 stream 기능을 활용했기 때문에 실제로 사용한 객체는 ItemStreamReader, ItemProcessor, ItemStreamWriter였다. 이를 각각 위임해서 호출할 수 있는 인터페이스를 설계하고 단일 interface에 모두 담았다.</p>
+
+<pre><code class="language-java hljs"><span class="hljs-comment">// delegation for ItemStreamReader</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ItemStreamReaderDelegate</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">default</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onOpenRead</span><span class="hljs-params">(@NonNull ExecutionContext executionContext)</span> </span>{
+    }
+
+    <span class="hljs-meta">@NonNull</span>
+    <span class="hljs-function">Flux&lt;T&gt; <span class="hljs-title">readFlux</span><span class="hljs-params">(@NonNull ExecutionContext executionContext)</span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">default</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onUpdateRead</span><span class="hljs-params">(@NonNull ExecutionContext executionContext)</span> </span>{
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">default</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCloseRead</span><span class="hljs-params">()</span> </span>{
+    }
+}
+</code></pre>
+
+<pre><code class="language-java hljs"><span class="hljs-comment">// delegation for ItemProcessor</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ItemProcessorDelegate</span>&lt;<span class="hljs-title">I</span>, <span class="hljs-title">O</span>&gt; </span>{
+
+    <span class="hljs-meta">@Nullable</span>
+    <span class="hljs-function">O <span class="hljs-title">process</span><span class="hljs-params">(@NonNull I item)</span></span>;
+}
+</code></pre>
+
+<pre><code class="language-java hljs"><span class="hljs-comment">// delegation for ItemStreamWriter</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ItemStreamWriterDelegate</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">default</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onOpenWrite</span><span class="hljs-params">(@NonNull ExecutionContext executionContext)</span> </span>{
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">write</span><span class="hljs-params">(@NonNull List&lt;? extends T&gt; items)</span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">default</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onUpdateWrite</span><span class="hljs-params">(@NonNull ExecutionContext executionContext)</span> </span>{
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">default</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCloseWrite</span><span class="hljs-params">()</span> </span>{
+    }
+}
+</code></pre>
+
+<pre><code class="language-java hljs"><span class="hljs-comment">// holds all</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ItemStreamReaderProcessorWriter</span>&lt;<span class="hljs-title">I</span>, <span class="hljs-title">O</span>&gt;  
+    <span class="hljs-keyword">extends</span> <span class="hljs-title">ItemStreamReaderDelegate</span>&lt;<span class="hljs-title">I</span>&gt;, <span class="hljs-title">ItemProcessorDelegate</span>&lt;<span class="hljs-title">I</span>, <span class="hljs-title">O</span>&gt;, <span class="hljs-title">ItemStreamWriterDelegate</span>&lt;<span class="hljs-title">O</span>&gt; </span>{
+}
+</code></pre>
+
+<p>ItemStreamReaderDelegate의 경우 stream이라는 취지에 맞게 Spring 생태계에서 사용하는 Reactor의 Flux로 반환하게 했다.</p>
+
+<p>이렇게 정의한 ItemStreamReaderProcessorWriter를 기존 ItemStreamReader, ItemProcessor, ItemWriter에 맞추는 Adaptor를 정의해 사용했다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-comment">// single class example</span>
+<span class="hljs-meta">@Component</span>
+<span class="hljs-meta">@StepScope</span>
+<span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SampleTasklet</span></span>(  
+    <span class="hljs-meta">@Value(<span class="hljs-meta-string">"#{jobParameters['totalCount']}"</span>)</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> totalCount: <span class="hljs-built_in">Long</span>
+) : ItemStreamReaderProcessorWriter&lt;<span class="hljs-built_in">Int</span>, String&gt; {
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>
+
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">readFlux</span><span class="hljs-params">(executionContext: <span class="hljs-type">ExecutionContext</span>)</span></span>: Flux&lt;<span class="hljs-built_in">Int</span>&gt; {
+        println(<span class="hljs-string">"totalCount: <span class="hljs-subst">$totalCount</span>"</span>)
+        <span class="hljs-keyword">return</span> Flux.generate { sink -&gt;
+            <span class="hljs-keyword">if</span> (count &lt; totalCount) {
+                sink.next(count)
+                ++count
+            } <span class="hljs-keyword">else</span> {
+                sink.complete()
+            }
+        }
+    }
+
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">process</span><span class="hljs-params">(item: <span class="hljs-type">Int</span>)</span></span>: String? {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"'<span class="hljs-subst">$item</span>'"</span>
+    }
+
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">write</span><span class="hljs-params">(items: <span class="hljs-type">List</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+        println(items)
+    }
+}
+</code></pre>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-meta">@Bean</span>
+<span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">testStep</span><span class="hljs-params">(  
+    stepBuilderFactory: <span class="hljs-type">StepBuilderFactory</span>,
+    sampleTasklet: <span class="hljs-type">SampleTasklet</span>,
+)</span></span>: Step {
+    <span class="hljs-keyword">return</span> stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"testStep"</span>)
+        .chunk&lt;<span class="hljs-built_in">Int</span>, String&gt;(<span class="hljs-number">3</span>)
+        .reader(sampleTasklet.asItemStreamReader()) <span class="hljs-comment">// uses adaptor</span>
+        .processor(sampleTasklet.asItemProcessor())
+        .writer(sampleTasklet.asItemStreamWriter())
+        .build()
+}
+</code></pre>
+
+<p><a id="ch3"></a>  </p>
+
+<h2 id="domainspecificlanguagedsl">Domain Specific Language (DSL)</h2>
+
+<p>Spring Batch Kotlin DSL 개발 과정을 알아보기 전에 DSL에 대해 먼저 살펴볼 필요가 있다. DSL(Domain Specific Language)은 특정 도메인에 대한 언어이다. 이는 컴퓨터로 해결 가능한 모든 문제를 정의하는 General Purpose Langauge와 대비된다. DSL의 대표 예시로는 SQL이 있다. SQL은 Structured Query Language의 약자로 데이터를 조작/정의하기 위한 언어이다. 다음은 나이가 20 이상의 사람 중 top 100명의 나이, 신장을 추출하는 SQL의 예시이다.</p>
+
+<pre><code class="language-sql hljs"><span class="hljs-keyword">SELECT</span>  
+    height,
+    age
+<span class="hljs-keyword">FROM</span> human  
+<span class="hljs-keyword">WHERE</span>  
+    age &gt;= <span class="hljs-number">20</span>
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> age <span class="hljs-keyword">DESC</span>  
+<span class="hljs-keyword">LIMIT</span> <span class="hljs-number">100</span>  
+</code></pre>
+
+<p>DSL과 General Purpose Language(이하 GPL)와의 명확한 경계는 없다. 사실 우리는 적절한 이름의 함수를 추출해서 DSL을 만들고 있다고도 볼 수 있다. 하지만 DSL와 GPL 간에는 구조의 차이가 있다. GPL은 컴퓨터로 해결 가능한 모든 문제를 풀기 위한 자체 구문과 문법이 있다. 반면에 DSL은 특정 도메인에 특화된 구조가 있다. 이를테면 위의 SQL 예시에서 SELECT, WHERE의 순서를 바꾸면 동작하지 않는다.</p>
+
+<p>DSL은 External DSL과 Internal DSL로 구분된다. External DSL은 GPL과 별도의 구문이 있으며 자체 파서가 필요하다. 위 예시의 SQL이 External DSL이라고 할 수 있다. Internal DSL은 GPL을 이용하여 도메인 특화 언어처럼 느껴지게 하는 언어이다. GPL을 이용하면 기반 언어의 구문 체크, IDE 지원 등을 그대로 이용할 수 있다. 대표적인 예로 Gradle Kotlin DSL이 있다. 다음은 Kotlin Java Build라는 도메인을 설명하는 언어를 Kotlin으로 정의한 예이다.</p>
+
+<pre><code class="language-kotlin hljs">plugins {  
+    `java`
+}
+
+dependencies {  
+    api(<span class="hljs-string">"junit:junit:4.13"</span>)
+    implementation(<span class="hljs-string">"junit:junit:4.13"</span>)
+    testImplementation(<span class="hljs-string">"junit:junit:4.13"</span>)
+}
+
+java {  
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+</code></pre>
+
+<p><a id="ch3_1"></a>  </p>
+
+<h3 id="typesafebuilder">Type-safe Builder</h3>
+
+<p>Kotlin은 <a href="https://kotlinlang.org/docs/type-safe-builders.html">Type-safe builder</a>라는 이름으로 Internal DSL을 생성하는 기능을 제공한다. Type-safe builder는 Kotlin의 여러 기능을 조합해서 만든다.</p>
+
+<ul>
+<li>Higher order function</li>
+<li>Lambda expression</li>
+<li>Trailing Lambda</li>
+<li>Function literals with Receiver</li>
+<li>Invoke operator</li>
+</ul>
+
+<p><a id="ch3_2"></a>  </p>
+
+<h3 id="typesafebuilderkotlin">Type-safe Builder를 구성하는 Kotlin 기능</h3>
+
+<p>Higher order function은 함수를 인자로 받는 함수로, 함수 호출 시 다른 함수를 인자로 넘길 수 있다. 다음은 fold라는 함수를 정의하여 combine 함수를 인자로 받는 예이다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-comment">// definition</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-type">&lt;T, R&gt;</span> Collection<span class="hljs-type">&lt;T&gt;</span>.<span class="hljs-title">fold</span><span class="hljs-params">(  
+    initial: <span class="hljs-type">R</span>,
+    combine: (<span class="hljs-type">acc</span>: <span class="hljs-type">R</span>, nextElement: <span class="hljs-type">T</span>)</span></span> -&gt; R
+): R {
+    <span class="hljs-keyword">var</span> accumulator: R = initial
+    <span class="hljs-keyword">for</span> (element : T <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span>) {
+        accumulator = combine(accumulator, element)
+    }
+    <span class="hljs-keyword">return</span> accumulator
+}
+
+<span class="hljs-comment">// usage</span>
+<span class="hljs-keyword">val</span> items = listOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)  
+<span class="hljs-keyword">val</span> result = items.fold(<span class="hljs-number">0</span>, <span class="hljs-function"><span class="hljs-title">fun</span><span class="hljs-params">(acc: <span class="hljs-type">Int</span>, i: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Int</span> {  
+    <span class="hljs-keyword">return</span> acc + i
+})
+</code></pre>
+
+<p>Lambda expression은 익명 함수로, 쉽게 말해 함수 정의를 { ... }로 감싸서 처리하는 기능이다. 위의 예를 익명 함수를 사용하여 다시 구현하면 다음과 같다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-keyword">val</span> items = listOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)  
+<span class="hljs-keyword">val</span> result = items.fold(<span class="hljs-number">0</span>, { acc, i -&gt; acc + i }) <span class="hljs-comment">// usage  </span>
+</code></pre>
+
+<p>Trailing Lambda는 함수 마지막의 인자가 함수라면 Lambda expression을 <code>)</code> 이후로 적게 해준다. 앞의 예에서 Trailing Lambda를 fold 함수에 사용하면 다음과 같아진다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-keyword">val</span> items = listOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)  
+<span class="hljs-keyword">val</span> result = items.fold(<span class="hljs-number">0</span>) { acc, i -&gt; acc + i } <span class="hljs-comment">// usage  </span>
+</code></pre>
+
+<p>Function literals with Receiver는 조금 특별한 기능으로, receiver의 멤버를 this 키워드 없이 바로 호출할 수 있다. 아래 예시는 Function literals with Receiver (TestClass.() -&gt; Unit)를 두 번째 인자로 사용하는 test라는 함수를 정의하여 호출 시 TestClass::doSomething2()를 this 키워드 없이 사용하는 예이다. 앞서 설명한 Trailing Lambda 기능을 활용하여 block 함수를 <code>)</code> 이후에 넘기는 것을 볼 수 있다. 여기서 TestClass를 receiver 타입이라고 부른다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestClass</span> </span>{  
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">doSomething1</span><span class="hljs-params">()</span></span>: <span class="hljs-built_in">Int</span> = <span class="hljs-number">1</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">doSomething2</span><span class="hljs-params">()</span></span>: <span class="hljs-built_in">Int</span> = <span class="hljs-number">2</span>
+}
+
+<span class="hljs-comment">// definition</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">test</span><span class="hljs-params">(i: <span class="hljs-type">Int</span>, block: <span class="hljs-type">TestClass</span>.()</span></span> -&gt; <span class="hljs-built_in">Unit</span>) {  
+    <span class="hljs-keyword">val</span> testClass = TestClass()
+    testClass.apply(block)
+}
+
+<span class="hljs-comment">// usage</span>
+test(<span class="hljs-number">3</span>) {  
+    <span class="hljs-keyword">this</span>.doSomething1()
+    doSomething2() <span class="hljs-comment">// no need to use 'this'</span>
+}
+</code></pre>
+
+<p>Invoke operator는 해당 객체 자체를 호출하는 operator로 invoke라는 함수를 operator 키워드로 정의해서 사용 가능하다. 이는 실제 invoke 메서드를 호출하여 동작한다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-comment">// definition</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestClass</span> </span>{  
+    <span class="hljs-keyword">operator</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">invoke</span><span class="hljs-params">(block: <span class="hljs-type">TestClass</span>.()</span></span> -&gt; <span class="hljs-built_in">Int</span>) {
+        block()
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">doSomething1</span><span class="hljs-params">()</span></span>: <span class="hljs-built_in">Int</span> = <span class="hljs-number">1</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">doSomething2</span><span class="hljs-params">()</span></span>: <span class="hljs-built_in">Int</span> = <span class="hljs-number">2</span>
+}
+
+<span class="hljs-comment">// usage</span>
+<span class="hljs-keyword">val</span> testClass = TestClass()  
+testClass {  
+    doSomething1()
+    doSomething2()
+}
+
+<span class="hljs-comment">// actual action</span>
+testClass.invoke {  
+    doSomething1()
+    doSomething2()
+}
+</code></pre>
+
+<p><a id="ch3_3"></a>  </p>
+
+<h3 id="kotlininternaldsl">Kotlin을 사용한 Internal DSL</h3>
+
+<p>앞서 설명한 Kotlin의 다양한 기능을 종합하여 Type-safe Builder를 만들 수 있다. Type-safe Builder를 활용하여 Html을 생성하는 DSL을 만들면 다음과 같다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-comment">// entry point</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">html</span><span class="hljs-params">(init: <span class="hljs-type">Html</span>.()</span></span> -&gt; <span class="hljs-built_in">Unit</span>): Html {  
+    <span class="hljs-keyword">val</span> html = Html()
+    html.init()
+    <span class="hljs-keyword">return</span> html
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Html</span> </span>{  
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">head</span><span class="hljs-params">(init: <span class="hljs-type">Head</span>.()</span></span> -&gt; <span class="hljs-built_in">Unit</span>) {
+        <span class="hljs-keyword">val</span> head = Head()
+        head.init()
+
+        <span class="hljs-comment">// ...</span>
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Head</span> </span>{  
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">title</span><span class="hljs-params">(text: <span class="hljs-type">String</span>)</span></span> {
+        <span class="hljs-keyword">val</span> title = Title(text)
+
+        <span class="hljs-comment">// ...</span>
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Title</span></span>(<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> text: String)  
+</code></pre>
+
+<p>Html, Head, Title 클래스는 각각 Html, Head, Title 태그를 위한 클래스다. 위의 예에서 실제 태그를 저장하는 기능 등은 생략했다. 여기서는 html 함수가 Builder의 시작점이다. html 함수의 body를 보면 Html 클래스를 만들고 인자로 받은 Function literals with Receiver인 init을 호출하고 반환한다. html 함수를 활용하여 실제 HTML을 다음과 같이 만들 수 있다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-keyword">val</span> html = html {  
+    head {
+        title(<span class="hljs-string">"title"</span>)
+    }
+}
+</code></pre>
+
+<p>얼핏 보면 구조가 겹쳐져 있어서 실제 어떻게 동작하는지 감을 잡기 힘들지 모르겠지만 사실 의외로 간단하다. Trailing Lambda를 활용하여 Function literals with Receiver를 계속 넘긴다. html 함수는 Html 클래스를 receiver 타입으로 하는 Function literal with Receiver를 인자로 받는다. 이를 통해 html 함수를 호출할 때 Html 클래스의 head 함수를 호출하는 Lambda expression을 Trailing Lambda를 활용하여 넘긴다. 실제 호출 구조는 다음과 같다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-keyword">val</span> html = html(  
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> Html.<span class="hljs-params">()</span></span> {
+        <span class="hljs-keyword">this</span>.head { <span class="hljs-comment">// this : Html class</span>
+            title(<span class="hljs-string">"233"</span>)
+        }
+    }
+)
+</code></pre>
+
+<p>비슷하게 Html의 head 함수는 Head 클래스를 receiver 타입으로 하는 Function literal with Receiver를 인자로 받는다. 이를 통해 head 함수를 호출할 때 Head 클래스의 title 함수를 호출하는 Lambda expression을 Trailing Lambda를 활용하여 넘긴다. 이 경우에도 실제 호출 구조는 이전과 유사하다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-keyword">val</span> html = html {  
+    head(
+        <span class="hljs-function"><span class="hljs-keyword">fun</span> Head.<span class="hljs-params">()</span></span> {
+            <span class="hljs-keyword">this</span>.title(<span class="hljs-string">"233"</span>) <span class="hljs-comment">// this : Head class</span>
+        }
+    )
+}
+</code></pre>
+
+<p>그런데 이렇게 Lambda expression이 중첩되는 경우 head 안에서 다시 head를 호출할 수도 있다. head { ... } scope가 결국 html { ... } scope 안에 있기 때문에 head { ... } scope 안에서 다시 html { ... } scope 안에 있는 head 함수를 호출할 수도 있다. 즉, 문법상 다음과 같이 호출해도 문제는 없다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-keyword">val</span> html = html {  
+    head {
+        head { } <span class="hljs-comment">// can call 'head' method of Html class</span>
+    }
+}
+</code></pre>
+
+<p>이 구조는 실제 HTML 구조와 맞지 않는다. Kotlin에서는 이런 경우를 방지하기 위해 @DslMarker를 제공한다. Builder 대상 클래스에 @DslMarker 애너테이션을 붙인 애너테이션을 만들어 scope를 제어하면 위와 같은 상황에 구문 오류를 발생시킨다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-comment">// @DslMarker usage</span>
+<span class="hljs-meta">@DslMarker</span>
+<span class="hljs-keyword">annotation</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HtmlTagMarker</span></span>
+
+<span class="hljs-meta">@HtmlTagMarker</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Html</span></span>(...)
+
+<span class="hljs-meta">@HtmlTagMarker</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Head</span></span>(...)
+
+<span class="hljs-comment">// usage</span>
+<span class="hljs-keyword">val</span> html = html {  
+    head {
+        head { } <span class="hljs-comment">// error</span>
+    }
+}
+</code></pre>
+
+<p><a id="ch4"></a>  </p>
+
+<h2 id="springbatchkotlindsl">Spring Batch Kotlin DSL</h2>
+
+<p>지금까지 DSL과 Kotlin에서 제공하는 기능인 Type-safe builder에 대해 알아보았다. 이 기능을 활용하여 Spring Batch Kotlin DSL을 어떻게 개발했는지 살펴보자.</p>
+
+<p><a id="ch4_1"></a>  </p>
+
+<h3 id="">구조 분석</h3>
+
+<p>Spring Batch Kotlin DSL은 대상 도메인이 Spring Batch의 Builder이다. Spring Batch 4.3.x 기준에서 Builder는 크게 JobBuilder, StepBuilder, FlowBuilder로 나뉜다.</p>
+
+<p>JobBuilder의 구조는 다음과 같다. JobBuilderFactory가 JobBuilder를 생성한다. JobBuilder는 SimpleJobBuilder, FlowJobBuilder를 생성한다. SimpleJobBuilder, FlowJobBuilder는 JobFlowBuilder를 생성한다.</p>
+
+<p><img src="/content/images/2023/01/job-builder-diagram.png" alt="job-builder-diagram"></p>
+
+<p>FlowBuilder의 구조는 다음과 같다. FlowBuilder가 UnterminatedFlowBuilder, TransitionBuilder, SplitBuilder를 생성한다. JobFlowBuilder는 FlowBuilder를 상속한다.</p>
+
+<p><img src="/content/images/2023/01/flow-builder-diagram.png" alt="flow-builder-diagram"></p>
+
+<p>StepBuilder의 구조는 다음과 같다. StepBuilderFactory가 StepBuilder를 생성한다. StepBuilder는 SimpleStepBuilder, TaskletStepBuilder, JobStepBuilder, FlowStepBuiler, PartitionStepBuilder를 생성한다. FaultTolerantStepBuilder는 SimpleStepBuilder를 상속한다.</p>
+
+<p><img src="/content/images/2023/01/step-builder-diagram.png" alt="step-builder-diagram"></p>
+
+<p><a id="ch4_2"></a>  </p>
+
+<h3 id="">설계 및 구현</h3>
+
+<p>Spring Batch Kotlin DSL이 다루는 것은 Spring Batch Builder이다. 그래서 구조를 기존과 유사하도록 설계했다. BatchDsl이라는 시작 클래스가 JobBuilderDsl, StepBuilderDsl, FlowBuilderDsl을 생성하고 각각 DSL에서 세부 Builder인 SimpleJobBuilderDsl, TaskletStepBuilderDsl 등을 생성할 수 있게 설계했다.</p>
+
+<p><img src="/content/images/2023/01/spring-batch-plus-diagram.png" alt="spring-batch-plus-diagram"></p>
+
+<p>구현을 어떻게 할지 정하기 위해 스프링 생태계에서 기존에 어떻게 하는지 살펴보았다. <a href="https://docs.spring.io/spring-framework/docs/5.0.0.RELEASE/spring-framework-reference/kotlin.html#bean-definition-dsl">Spring Bean DSL</a>에서는 다음과 같은 방식으로 DSL을 구성했다. beans라는 함수를 사용해서 Function literals with Receiver를 활용해서 bean이라는 함수를 연달아 정의하는 것을 확인할 수 있었다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-comment">// definition</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">beans</span><span class="hljs-params">()</span></span> = beans {  
+    bean&lt;UserHandler&gt;()
+    bean&lt;Routes&gt;()
+    ...
+}
+
+<span class="hljs-keyword">val</span> context = GenericApplicationContext().apply {  
+    beans().invoke(<span class="hljs-keyword">this</span>) <span class="hljs-comment">// to register bean</span>
+    refresh()
+}
+</code></pre>
+
+<p>코드를 살펴보니 앞서 소개한 Html을 생성하는 DSL과 유사하게 구현되어 있는 것을 확인할 수 있었다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">beans</span><span class="hljs-params">(init: <span class="hljs-type">BeanDefinitionDsl</span>.()</span></span> -&gt; <span class="hljs-built_in">Unit</span>) = BeanDefinitionDsl(init)
+
+...
+
+<span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BeanDefinitionDsl</span> </span>{  
+    ...
+
+    <span class="hljs-keyword">inline</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-type">&lt;<span class="hljs-keyword">reified</span> T : Any&gt;</span> <span class="hljs-title">bean</span><span class="hljs-params">(name: <span class="hljs-type">String</span>? = <span class="hljs-literal">null</span>,
+                                      scope: <span class="hljs-type">Scope</span>? = <span class="hljs-literal">null</span>,
+                                      isLazyInit: <span class="hljs-type">Boolean</span>? = <span class="hljs-literal">null</span>,
+                                      isPrimary: <span class="hljs-type">Boolean</span>? = <span class="hljs-literal">null</span>,
+                                      isAutowireCandidate: <span class="hljs-type">Boolean</span>? = <span class="hljs-literal">null</span>,
+                                      initMethodName: <span class="hljs-type">String</span>? = <span class="hljs-literal">null</span>,
+                                      destroyMethodName: <span class="hljs-type">String</span>? = <span class="hljs-literal">null</span>,
+                                      description: <span class="hljs-type">String</span>? = <span class="hljs-literal">null</span>,
+                                      role: <span class="hljs-type">Role</span>? = <span class="hljs-literal">null</span>)</span></span> {
+    ...
+}
+</code></pre>
+
+<p>또 다른 Spring 컴포넌트인 Spring Security에도 Kotlin DSL이 이미 있다. 다음은 Spring Security에서 ServerHttpSecurity를 생성하는 예이다.</p>
+
+<pre><code class="language-kotlin hljs"> <span class="hljs-meta">@Bean</span>
+ <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">springWebFilterChain</span><span class="hljs-params">(http: <span class="hljs-type">ServerHttpSecurity</span>)</span></span>: SecurityWebFilterChain {
+        <span class="hljs-keyword">return</span> http {
+            authorizeExchange {
+                authorize(<span class="hljs-string">"/public"</span>, permitAll)
+                authorize(anyExchange, authenticated)
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>이번에는 조금 다르게 Bean으로 객체를 받아서 호출한다. 코드를 살펴보니 invoke 함수를 호출하는 것을 확인할 수 있었다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-keyword">operator</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> ServerHttpSecurity.<span class="hljs-title">invoke</span><span class="hljs-params">(httpConfiguration: <span class="hljs-type">ServerHttpSecurityDsl</span>.()</span></span> -&gt; <span class="hljs-built_in">Unit</span>): SecurityWebFilterChain =  
+        ServerHttpSecurityDsl(<span class="hljs-keyword">this</span>, httpConfiguration).build()
+</code></pre>
+
+<p>Spring Batch Kotlin DSL에서 어떤 방식을 채택할지 고민이 많았다. 각 방식은 장단점이 있었다. Bean DSL 방식은 간단하게 함수 호출만으로 깔끔하게 작성할 수 있지만 실제 ApplicationContext와 연동하는 코드가 필요했다. Spring Security 방식은 가독성은 Bean DSL에 비해 떨어지지만 Bean으로 받은 객체의 값을 활용할 수 있다는 장점이 있었다.</p>
+
+<p>Spring Batch Kotlin DSL을 만들려고 할 때 고려 사항이 다음과 같았다.</p>
+
+<ul>
+<li>JobBuilderFactory, StepBuilderFactory를 직접 쓰지 않는다.</li>
+<li>Bean에서도 이름으로 값을 가져오고 싶다.</li>
+<li>Nested된 경우에도 유연하게 잘 처리될 수 있게 한다.</li>
+<li>기존에 되던 설정은 다 되게 한다.</li>
+</ul>
+
+<p>Spring Batch는 보통 Bean으로 등록된 JobBuilderFactory, StepBuilderFactory를 가져와서 사용한다. 또한 Bean을 가져오기 위해서는 BeanFactory를 사용해야 한다. 이런 이유로 Spring Batch Kotlin DSL에서는 Bean으로 등록된 객체를 invoke하는 Spring Security 방식을 채택했다. 다음과 같은 모습을 생각하고 구현했다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-comment">// before</span>
+<span class="hljs-meta">@Bean</span>
+<span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">testJob</span><span class="hljs-params">(  
+    jobBuilderFactory: <span class="hljs-type">JobBuilderFactory</span>,
+    stepBuilderFactory: <span class="hljs-type">StepBuilderFactory</span>
+)</span></span>: Job {
+    <span class="hljs-keyword">return</span> jobBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"testJob"</span>)
+        .start(
+            stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"testStep1"</span>)
+                .tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"testStep2"</span>)
+                .tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"testStep3"</span>)
+                .tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.<span class="hljs-keyword">get</span>(<span class="hljs-string">"testStep4"</span>)
+                .tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .build()
+}
+
+<span class="hljs-comment">// after</span>
+<span class="hljs-meta">@Bean</span>
+<span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">testJob</span><span class="hljs-params">(  
+    batch: <span class="hljs-type">BatchDsl</span>
+)</span></span>: Job = batch {
+    job(<span class="hljs-string">"testJob"</span>) {
+        step(<span class="hljs-string">"testStep1"</span>) {
+            tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+        }
+        step(<span class="hljs-string">"testStep2"</span>) {
+            tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+        }
+        step(<span class="hljs-string">"testStep3"</span>) {
+            tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+        }
+        step(<span class="hljs-string">"testStep4"</span>) {
+            tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+        }
+    }
+}
+</code></pre>
+
+<p>구현은 Spring Batch에서 제공하는 Builder 클래스의 구조를 따라가면 되어 의외로 간단했다. 핵심 클래스인 BatchDsl의 코드를 살펴보면 다음과 같다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-meta">@BatchDslMarker</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BatchDsl</span> <span class="hljs-keyword">internal</span> <span class="hljs-keyword">constructor</span></span>(  
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> dslContext: DslContext,
+) {
+    <span class="hljs-keyword">constructor</span>(
+        beanFactory: BeanFactory,
+        jobBuilderFactory: JobBuilderFactory,
+        stepBuilderFactory: StepBuilderFactory
+    ) : <span class="hljs-keyword">this</span>(
+        DslContext(
+            beanFactory,
+            jobBuilderFactory,
+            stepBuilderFactory
+        )
+    )
+
+    <span class="hljs-keyword">operator</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-type">&lt;T : Any&gt;</span> <span class="hljs-title">invoke</span><span class="hljs-params">(init: <span class="hljs-type">BatchDsl</span>.()</span></span> -&gt; T): T = init()
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">job</span><span class="hljs-params">(name: <span class="hljs-type">String</span>, init: <span class="hljs-type">JobBuilderDsl</span>.()</span></span> -&gt; <span class="hljs-built_in">Unit</span>): Job {
+        <span class="hljs-keyword">val</span> jobBuilderFactory = <span class="hljs-keyword">this</span>.dslContext.jobBuilderFactory
+        <span class="hljs-keyword">val</span> jobBuilder = jobBuilderFactory.<span class="hljs-keyword">get</span>(name)
+        <span class="hljs-keyword">return</span> JobBuilderDsl(<span class="hljs-keyword">this</span>.dslContext, jobBuilder).apply(init).build()
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">step</span><span class="hljs-params">(name: <span class="hljs-type">String</span>, init: <span class="hljs-type">StepBuilderDsl</span>.()</span></span> -&gt; Step): Step {
+        <span class="hljs-keyword">val</span> stepBuilderFactory = <span class="hljs-keyword">this</span>.dslContext.stepBuilderFactory
+        <span class="hljs-keyword">val</span> stepBuilder = stepBuilderFactory.<span class="hljs-keyword">get</span>(name)
+        <span class="hljs-keyword">return</span> StepBuilderDsl(<span class="hljs-keyword">this</span>.dslContext, stepBuilder).let(init)
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">flow</span><span class="hljs-params">(name: <span class="hljs-type">String</span>, init: <span class="hljs-type">FlowBuilderDsl</span>&lt;<span class="hljs-type">Flow</span>&gt;.()</span></span> -&gt; <span class="hljs-built_in">Unit</span>): Flow {
+        <span class="hljs-keyword">val</span> flowBuilder = FlowBuilder&lt;Flow&gt;(name)
+        <span class="hljs-keyword">return</span> ConcreteFlowBuilderDsl(<span class="hljs-keyword">this</span>.dslContext, flowBuilder).apply(init).build()
+    }
+}
+</code></pre>
+
+<p>BeanFactory, JobBuilderFactory, StepBuilderFactory를 담기 위해 DslContext라는 클래스를 만들었다. invoke 함수를 정의해서 BatchDsl 자체를 호출할 수 있게 했다. invoke 함수의 인자로는 BatchDsl 클래스를 receiver 타입으로 하는 Function literals with Receiver를 받아서 job, step, flow를 호출할 수 있게 했다.</p>
+
+<p><a id="ch4_3"></a>  </p>
+
+<h3 id="">네이버페이 정산 프로젝트에 적용</h3>
+
+<p>앞서 정산 프로젝트의 subJob의 문제를 살펴보았다. Kotlin DSL을 활용하여 Job-subJob 구조를 정의하면 다음과 같다.</p>
+
+<pre><code class="language-kotlin hljs"><span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">testJob</span><span class="hljs-params">(batch: <span class="hljs-type">BatchDsl</span>)</span></span>: Job = batch {  
+    job(<span class="hljs-string">"testJob"</span>) {
+        step(<span class="hljs-string">"subJob1Step"</span>) {
+            jobBean(<span class="hljs-string">"subJob1"</span>)
+        }
+        step(<span class="hljs-string">"subJob2Step"</span>) {
+            jobBean(<span class="hljs-string">"subJob2"</span>)
+        }
+    }
+}
+
+<span class="hljs-meta">@Bean</span>
+<span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">subJob1</span><span class="hljs-params">(batch: <span class="hljs-type">BatchDsl</span>)</span></span>: Job = batch {  
+    job(<span class="hljs-string">"subJob1"</span>) {
+        step(<span class="hljs-string">"subJob1 - step1"</span>) {
+            tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+        }
+        step(<span class="hljs-string">"subJob1 - step2"</span>) {
+            tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+        }
+    }
+}
+
+<span class="hljs-meta">@Bean</span>
+<span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">subJob2</span><span class="hljs-params">(batch: <span class="hljs-type">BatchDsl</span>)</span></span>: Job = batch {  
+    job(<span class="hljs-string">"subJob2"</span>) {
+        step(<span class="hljs-string">"subJob2 - step1"</span>) {
+            tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+        }
+        step(<span class="hljs-string">"subJob2 - step2"</span>) {
+            tasklet { _, _ -&gt; RepeatStatus.FINISHED }
+        }
+    }
+}
+</code></pre>
+
+<p>Kotlin DSL을 통해 build, JobStepBuilderFactory, StepBuilderFactory 같은 보일러플레이트 코드를 제거하고 Kotlin스럽게 선언형으로 작성했다.</p>
+
+<p><a id="ch5"></a>  </p>
+
+<h2 id="">오픈 과정</h2>
+
+<p>어느 정도 안정화가 된 후 DSL의 경우 Spring Batch에 직접 기여하면 되지 않을까 해서 <a href="https://github.com/spring-projects/spring-batch/issues/3984">Issue</a>를 생성해서 Spring Batch Maintainer에게 의견을 물었다. 하지만 Maintainer는 내부 논의 결과 이런 기능은 포함시키지 않기로 이전에 결정했다고 <a href="https://github.com/spring-projects/spring-batch-extensions">Spring Batch Extension</a>에 등록하라고 답변했다.</p>
+
+<p><img src="/content/images/2023/01/issue-response.png" alt="issue-response"></p>
+
+<p>그래서 정산 배치 모듈에 있는 Spring Batch 개선 코드를 정리하여 Spring Batch Extension에 <a href="https://github.com/spring-projects/spring-batch-extensions/pull/80">PR</a>을 등록했다.</p>
+
+<p>하지만 1년이 지나도 해당 GitHub 저장소 운영자의 응답이 없었고 결국 <a href="https://github.com/naver/spring-batch-plus">별도의 오픈소스 프로젝트</a>로 진행하기로 했다. 이름은 조직 내에서 이미 나온 <a href="https://github.com/naver/spring-jdbc-plus">Spring Jdbc Plus</a>의 이름을 따서 Spring Batch Plus로 지었다. Spring Batch Plus라는 이름답게 Kotlin DSL, ItemStreamReaderProcessorWriter뿐만 아니라 프로젝트 진행 과정에서 사용한 다른 기능도 포함시켰다. 자세한 기능은 <a href="https://github.com/naver/spring-batch-plus/blob/main/doc/ko/README.md">공식 문서</a>에서 확인할 수 있다.</p>
+
+<p><a id="ch6"></a>  </p>
+
+<h2 id="">마치며</h2>
+
+<p>Spring Batch Plus가 무엇을 해결하고자 했고 어떤 과정을 통해 세상에 나왔는지 살펴보았다. Spring Batch Plus를 작성함으로써 네이버페이 정산 플랫폼을 신규 시스템으로 전환하는 코드 작성을 보다 깔끔하게 할 수 있었다.</p>
+
+<p>Spring Batch Plus는 연간 52조 규모의 거래액을 다루는 네이버페이 정산의 83개 Job과, 네이버페이 포인트의 29개 Job에 실제 사용된 라이브러리이다. Spring Batch의 Builder를 Kotlin스럽게 작성하고 싶거나 단일 클래스에서 ItemReader, ItemProcessor, ItemWriter를 작성하고 싶다면 Spring Batch Plus 사용을 고려해 볼 수 있다. 이 글 작성 기준으로 Spring Batch Plus는 Spring Batch 4.3.x 버전과 호환되고, 간단히 다음을 참고하여 의존성만 추가하면 사용 가능하다. 자세한 호환 정보는 <a href="https://github.com/naver/spring-batch-plus#compatibility">Compatibility</a>를 참고하길 바란다.</p>
+
+<pre><code class="language-kotlin hljs">implementation(<span class="hljs-string">"org.springframework.batch:spring-batch-core:4.3.7"</span>)  
+implementation(<span class="hljs-string">"com.navercorp.spring:spring-boot-starter-batch-plus-kotlin:0.2.0"</span>)  
+</code></pre>
+
+<p>Spring Batch Plus는 이름에서 알 수 있듯이 Spring Batch에 여러 유용한 기능을 추가한다는 취지의 라이브러리이다. Spring Batch를 사용면서 이런 기능이 있으면 좋겠는데 Spring Batch에 넣기는 애매하다 싶으면 <a href="https://github.com/naver/spring-batch-plus">Spring Batch Plus GitHub 저장소</a>에 PR이나 Issue를 등록해주길 바란다.</p></div><div class="txt_tag"><span class="icon_tag">Tag</span><div class="tag_list"><a href="/search?keyword=Kotlin"><span>Kotlin</span></a><a href="/search?keyword=네이버페이"><span>네이버페이</span></a><a href="/search?keyword=Spring"><span>Spring</span></a><a href="/search?keyword=Spring Batch"><span>Spring Batch</span></a><a href="/search?keyword=Spring Batch Plus"><span>Spring Batch Plus</span></a></div></div><div class="post_writer_info"><div class="writer_info"><div class="ly_img_people"></div><div class="img_people"><img src="/image/20230102/842107996220.jpeg" alt=""></div><div class="people_info"><dl><dt><span class="blind">글쓴이</span></dt><dd><span class="name">임태익<span></span></span><span><span class="bar">|</span><span class="duty_dept">네이버 Platform Labs</span></span></dd><dt><span class="blind">소개</span></dt><dd class="info">프레임워크나 라이브러리 자체를 만드는데 관심이 많은 개발자입니다. Naver Pay 개선 프로젝트에 참여했고 현재는 사내 Platform 개선에 참여하고 있습니다.</dd></dl></div><div class="people_write"><a href="https://d2.naver.com/search?keyword=%EC%9E%84%ED%83%9C%EC%9D%B5">글쓴이의 다른 글 보기</a></div></div></div><div class="sns_position"><div class="sns_sec"><button type="button" class="sns_naver"><span class="sns_icon">NAVER</span></button><button type="button" class="sns_facebook"><span class="sns_icon">facebook</span></button><div class="fb-like fb_iframe_widget" data-href="http://d2.naver.com/helloworld/9879422" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="false" fb-xfbml-state="parsed" fb-iframe-plugin-query="action=like&amp;app_id=816454888441763&amp;container_width=714&amp;href=http%3A%2F%2Fd2.naver.com%2Fhelloworld%2F9879422&amp;layout=button_count&amp;locale=ko_KR&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;size=large"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f2f17dc0fcb2344" width="1000px" height="1000px" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.11/plugins/like.php?action=like&amp;app_id=816454888441763&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2214dc4e3a6728%26domain%3Dd2.naver.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fd2.naver.com%252Ffae685922785a%26relation%3Dparent.parent&amp;container_width=714&amp;href=http%3A%2F%2Fd2.naver.com%2Fhelloworld%2F9879422&amp;layout=button_count&amp;locale=ko_KR&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;size=large" style="border: none; visibility: hidden;"></iframe></span></div><button type="button" class="sns_url"><span class="sns_icon">URL</span></button></div></div></div></div><div class="relation_sec"><p class="relation_title">관련글</p><div class="relation_list"><div class="list"><ul><li><a href="/helloworld/9878588"><img src="/content/images/2018/11/image.png" width="60" height="50" alt="썸네일"><div class="relation_list_txt">Elastic Stack과 Lambda를 활용한 데이터 모니터링 시스템 구축</div></a></li><li><a href="/helloworld/1247"><img src="/content/images/2015/07/1247.PNG" width="60" height="50" alt="썸네일"><div class="relation_list_txt">MQ를 이용한 SNS 글쓰기 성능 개선</div></a></li><li><a href="/helloworld/9423440"><img src="/content/images/2021/04/hw210409.png" width="60" height="50" alt="썸네일"><div class="relation_list_txt">streaming API를 사용한 네이버페이의 대형 XLSX 파일 다운로드 구현</div></a></li><li><a href="/helloworld/1341"><img src="/content/images/2015/07/1341.PNG" width="60" height="50" alt="썸네일"><div class="relation_list_txt">Spring-Test-MVC 프로젝트 소개</div></a></li></ul></div></div></div><div id="cbox_module" style="max-width: 840px; margin: 0px auto; padding-bottom: 35px;" class="u_cbox"><div class="u_cbox_wrap u_cbox_ko"><div class="u_cbox_head"><h5 class="u_cbox_title">댓글</h5><span class="u_cbox_count">2</span><button type="button" class="u_cbox_btn_refresh" data-action="count#refresh" data-log="RPO.refresh"><span class="u_cbox_ico_refresh"></span><span class="u_cbox_txt_refresh">새로고침</span></button><div class="u_cbox_head_tools"></div></div><div class="u_cbox_write_wrap"><div class="u_cbox_write_box u_cbox_type_logged_out"><form><fieldset><legend class="u_vc">댓글 쓰기</legend><div class="u_cbox_write"><div class="u_cbox_write_inner"><div class="u_cbox_write_area"><strong class="u_vc">댓글 입력</strong><div class="u_cbox_inbox"><textarea title="댓글" id="cbox_module__write_textarea" class="u_cbox_text" rows="3" cols="30" data-log="RPC.input"></textarea><label for="cbox_module__write_textarea" class="u_cbox_guide" data-action="write#placeholder" data-param="@event">댓글을 작성하려면 <a href="#" class="u_cbox_link">로그인</a> 해주세요</label></div></div><div class="u_cbox_upload_sticker" style="display:none"></div><div class="u_cbox_write_count"><span class="u_vc">현재 입력한 글자수</span><strong class="u_cbox_count_num">0</strong>/<span class="u_vc">전체 입력 가능한 글자수</span><span class="u_cbox_write_total">400</span></div><div class="u_cbox_upload"><div class="u_cbox_addition"></div><button type="button" class="u_cbox_btn_upload" data-action="write#request" data-log="RPC.write#RPC.reply"><span class="u_cbox_ico_upload"></span><span class="u_cbox_txt_upload">등록</span></button></div></div></div></fieldset></form></div></div><div class="u_cbox_notice u_cbox_notice_none" style="display: none;"></div><div id="cbox_module_wai_u_cbox_content_wrap_tabpanel" tabindex="0" class="u_cbox_content_wrap" style="outline: 0"><ul class="u_cbox_list"><li class="u_cbox_comment cbox_module__comment_785562463771820079 _user_id_no_3LEP8" data-info="commentNo:'785562463771820079',deleted:false,best:false,visible:true,secret:false,manager:false,mine:false,report:undefined,blindReport:false,objectId:'9879422',replyLevel:1,parentCommentNo:'785562463771820079',pick:false"><div class="u_cbox_comment_box"><div class="u_cbox_area"><div class="u_cbox_info"><span class="u_cbox_info_main"><span class="u_cbox_name"><span class="u_cbox_name_area"><span class="u_cbox_nick_area"><span class="u_cbox_nick">삿까마라스</span></span></span></span></span><span class="u_cbox_info_sub"></span></div><div class="u_cbox_text_wrap"><span class="u_cbox_contents" data-lang="ko">ItemStreamReader는 StepScopeItemStreamReader를 통해서, Step Scope Context에서 객체가 있는지 여부를 파악하고 없으면 생성하는 것으로 보이는데,ItemStreamWriter는 그렇게 되어있지 않더라구요 혹시 이유를 알 수 있을까요???</span></div><div class="u_cbox_info_base"><span class="u_cbox_date" data-value="2023-03-09T02:34:16+0900">6일 전</span></div><div class="u_cbox_tool"><a href="#" role="button" aria-expanded="false" class="u_cbox_btn_reply" data-action="reply#toggle" data-param="785562463771820079" data-log="RPC.replyopen#RPC.replyclose"><strong class="u_cbox_reply_txt">답글</strong><span class="u_cbox_reply_cnt u_vc">0</span></a><div class="u_cbox_recomm_set"><strong class="u_vc">공감/비공감</strong><a href="#" data-action="vote" data-param="mine:false,commentNo:'785562463771820079',voteStatus:'SYMPATHY',objectId:'9879422',ticket:'d2'" data-log="RPC.sym#RPC.unsym" class="u_cbox_btn_recomm"><span class="u_cbox_ico_recomm">공감</span><em class="u_cbox_cnt_recomm">0</em></a><a href="#" data-action="vote" data-param="mine:false,commentNo:'785562463771820079',voteStatus:'ANTIPATHY',objectId:'9879422',ticket:'d2'" data-log="RPC.dis#RPC.undis" class="u_cbox_btn_unrecomm"><span class="u_cbox_ico_unrecomm">비공감</span><em class="u_cbox_cnt_unrecomm">0</em></a></div></div><span class="u_cbox_comment_frame"><span class="u_cbox_ico_tip"></span><span class="u_cbox_comment_frame_top"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span><span class="u_cbox_comment_frame_bottom"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span></span></div></div><div class="u_cbox_reply_area" style="display:none;"></div></li><li class="u_cbox_comment cbox_module__comment_779499366116229383 _user_id_no_3ncYD" data-info="commentNo:'779499366116229383',deleted:false,best:false,visible:true,secret:false,manager:false,mine:false,report:undefined,blindReport:false,objectId:'9879422',replyLevel:1,parentCommentNo:'779499366116229383',pick:false"><div class="u_cbox_comment_box"><div class="u_cbox_area"><div class="u_cbox_info"><span class="u_cbox_info_main"><span class="u_cbox_name"><span class="u_cbox_name_area"><span class="u_cbox_nick_area"><span class="u_cbox_nick">스테이</span></span></span></span></span><span class="u_cbox_info_sub"></span></div><div class="u_cbox_text_wrap"><span class="u_cbox_contents" data-lang="ko">최근에 코틀린 언어를 사용해서 개발하는 중에 보게 된 글인데 좋은 내용이네요. 자바를 주로 사용하다 코틀린을 쓰게되며 느낀 장점중 한가지가 수많은 보일러 플레이트코드를 양성하지 않아도 된다였는데.. 코틀린과 배치를 사용하면서도 코틀린 스러운, 깔끔한 코드를 작성할 수 있다는 점에서 매우 좋아보입니다. 나중에 코틀린 사용자들 더욱 많아지면 Spring Batch Extension PR 수락 될 것 같네요 ㅎㅎ</span></div><div class="u_cbox_info_base"><span class="u_cbox_date" data-value="2023-01-02T18:02:36+0900">2023-01-02 18:02</span></div><div class="u_cbox_tool"><a href="#" role="button" aria-expanded="false" class="u_cbox_btn_reply" data-action="reply#toggle" data-param="779499366116229383" data-log="RPC.replyopen#RPC.replyclose"><strong class="u_cbox_reply_txt">답글</strong><span class="u_cbox_reply_cnt u_vc">0</span></a><div class="u_cbox_recomm_set"><strong class="u_vc">공감/비공감</strong><a href="#" data-action="vote" data-param="mine:false,commentNo:'779499366116229383',voteStatus:'SYMPATHY',objectId:'9879422',ticket:'d2'" data-log="RPC.sym#RPC.unsym" class="u_cbox_btn_recomm"><span class="u_cbox_ico_recomm">공감</span><em class="u_cbox_cnt_recomm">1</em></a><a href="#" data-action="vote" data-param="mine:false,commentNo:'779499366116229383',voteStatus:'ANTIPATHY',objectId:'9879422',ticket:'d2'" data-log="RPC.dis#RPC.undis" class="u_cbox_btn_unrecomm"><span class="u_cbox_ico_unrecomm">비공감</span><em class="u_cbox_cnt_unrecomm">0</em></a></div></div><span class="u_cbox_comment_frame"><span class="u_cbox_ico_tip"></span><span class="u_cbox_comment_frame_top"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span><span class="u_cbox_comment_frame_bottom"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span></span></div></div><div class="u_cbox_reply_area" style="display:none;"></div></li></ul></div><div class="u_cbox_paginate" style=""><div class="u_cbox_page_wrap"><span class="u_cbox_pre u_cbox_pre_end" title="첫 페이지 목록으로 이동하기"><span class="u_cbox_ico_page"></span><span class="u_cbox_cnt_page">맨앞</span><span class="u_vc">페이지 목록으로 이동하기</span></span><span class="u_cbox_pre" title="이전 페이지 목록으로 이동하기"><span class="u_cbox_ico_page"></span><span class="u_cbox_cnt_page">이전</span><span class="u_vc">페이지 목록으로 이동하기</span></span><strong class="u_cbox_page" data-param="1"><span class="u_cbox_num_page">1</span><span class="u_vc">현재 선택된 페이지</span></strong><span class="u_cbox_next" title="다음 페이지 목록으로 이동하기"><span class="u_cbox_cnt_page">다음</span><span class="u_cbox_ico_page"></span><span class="u_vc">페이지 목록으로 이동하기</span></span><span class="u_cbox_next u_cbox_next_end" title="마지막 페이지 목록으로 이동하기"><span class="u_cbox_cnt_page">맨뒤</span><span class="u_cbox_ico_page"></span><span class="u_vc">페이지 목록으로 이동하기</span></span></div></div></div></div></div></div></div><div id="footer"><div class="inner_sec"><div class="footer_sec"><ul class="other_site"><li><a href="https://developers.naver.com/" target="_blank" class="developers">NAVER Developers</a></li><li><a href="https://techcon.naver.com/" target="_blank" class="techcon">NAVER TECH CONCERT</a></li><li><a href="https://deview.kr/" target="_blank" class="deview">DEVIEW</a></li><li><a href="https://naver.github.io/" target="_blank" class="opensource">OpenSource</a></li><li><a href="http://www.d2startup.com/" target="_blank" class="startup">D2 STARTUP FACTORY</a></li></ul><div class="sns_share"><ul><li class="email"><a href="mailto:d2@navercorp.com"><i class="xi-mail"></i></a></li><li class="facebook"><a href="https://facebook.com/naverd2" target="_blank"><i class="xi-facebook"></i></a></li><li class="rss"><a href="https://d2.naver.com/d2.atom" target="_blank"><i class="xi-social-rssfeed"></i></a></li></ul></div></div><div class="footer_sec"><div class="copyright"><p><span>Copyright</span> © <a href="https://www.navercorp.com/" target="_blank">NAVER Corp.</a> <span>All Rights Reserved.</span></p></div><a href="#" class="btn_go_top" style="bottom: 20px; right: 0px;"></a></div></div></div></div></div><i classname="xi-search">
+<script id="facebook-jssdk" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&amp;version=v2.11&amp;appId=816454888441763"></script><script async="" src="//www.google-analytics.com/analytics.js" id="google-analytics"></script><script async="" src="https://wcs.naver.net/wcslog.js" id="naver-analytics"></script><script type="text/javascript" src="/static/js/app.js?13c1e9311ca34225bfc0"></script>
+
+</i><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div></body></html>

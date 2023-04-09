@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="ko"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <title>모던 프론트엔드 프로젝트 구성 기법 - 모노레포 개념 편</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/XEIcon/xeicon.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/katex/katex.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/naver_d2.from_server.css?1671783335538">
+<link href="/static/css/app.css?13c1e9311ca34225bfc0" rel="stylesheet"><script src="https://connect.facebook.net/ko_KR/sdk.js?hash=7e899826b14713274cda099ad43b215a" async="" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" src="https://ssl.pstatic.net/static.cbox/js/cbox.core.js?v=1399068"></script><style type="text/css" id="_cbox_default_style_"></style><script type="text/javascript" src="https://ssl.pstatic.net/static.cbox/20230309172524/js/cbox.all.js" charset="utf-8"></script><link type="text/css" rel="stylesheet" href="https://static-feedback.pstatic.net/css/cbox/cbox/ebb46c9a-246d-48cd-acc6-cf3892caf38d/3ed9c21a-1c97-4c94-aeeb-70cc581fb6a5/css/comment_default.css" charset="utf-8"><style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://connect.facebook.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://connect.facebook.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://connect.facebook.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://connect.facebook.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+.fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style></head>
+
+<body>
+<div id="wrap" class="main"><div><div id="header"><div class="main_lnb"><div class="progress_bar" style="height: 2px; background-color: rgb(50, 205, 160); width: 0px;"></div><div class="header_sec"><div class="inner_sec"><div class="lnb" id="lnb"><h1><a class="lnb_top_logo" href="/home"><span class="blind">naver D2</span></a></h1><div class="menu_sec"><div class="btn_lnb_menu"><a href="#"><span class="blind">메뉴</span></a></div><div style="height: 0px; transition: all 0.5s ease 0s;"><ul><li class="on"><a href="/helloworld">Hello world</a></li><li class=""><a href="/news">D2 News</a></li><li class=""><a href="/program">D2 Program</a></li><li class=""><a href="/about">About D2</a></li></ul></div></div><div><div class="m_search_sec"><div class="btn_lnb_search"><a href="#"><span class="blind">검색</span></a></div><form action="/" style="height: 0px; transition: all 0.5s ease 0s;"><input type="text" value="" placeholder="D2에서 검색" class="search_area"><button type="sunmit" class="blind"><i class="xi-search"></i></button></form></div><div class="pc_search_input"><fieldset><legend>검색</legend><form action="/"><input type="text" value="" placeholder="D2에서 검색" class="search_area"><button type="sunmit" class="btn_search"><i class="xi-search"></i></button></form></fieldset></div></div></div></div></div></div></div><div id="container"><div class="con_area"><div class="contents detail_view"><div class="post_article"><div class="cont_post"><h1 class="posting_tit">모던 프론트엔드 프로젝트 구성 기법 - 모노레포 개념 편</h1><dl class="post_info"><dt><i class="xi-time-o"><span class="blind">등록일</span></i></dt><dd>2022.04.18</dd><dt><span class="blind">|</span></dt><dd><span class="line_bar">|</span></dd><dt><i class="xi-eye"><span class="blind">코멘트</span></i></dt><dd>32156</dd></dl><div class="con_view"><p>새로운 프로젝트를 설계하거나 기존 프로젝트가 성장하면서 규모가 커질 때 우리는 효율적인 프로젝트 구조를 고민합니다. <a href="https://github.com/pinpoint-apm/pinpoint">핀포인트 프로젝트</a>의 프론트엔드 구조를 개선하면서 검토하고 조사했던 모노레포(monorepo)의 개념과 프로젝트 구성 기법들을 두 편으로 나누어 공유하고자 합니다.</p>
+
+<p><a href="https://qeunit.com/blog/how-google-does-monorepo/">Google</a>, <a href="https://buck.build/">Facebook</a>, <a href="https://rushjs.io/">Microsoft</a>, Uber, Airbnb, 그리고 <a href="https://www.pantsbuild.org/docs/welcome-to-pants">Twitter</a> 등 글로벌 테크 회사들은 이미 각자 자신들의 운영 전략 아래 대규모 모노레포를 운영하고 있습니다.</p>
+
+<p>이번 개념 편에서는 다음과 같은 내용을 알아보겠습니다.</p>
+
+<ol>
+<li><a href="#ch1">모노레포의 등장 배경</a>  </li>
+<li><a href="#ch2">모노레포가 해결하는 문제</a>  </li>
+<li><a href="#ch3">모노레포를 구축할 때 고려할 측면</a>  </li>
+<li><a href="#ch4">모노레포 구축을 도와주는 도구</a></li>
+</ol>
+
+<p>그리고 다음 도구 편에서는 각 도구의 사용법을 예시를 통해 자세히 알아보겠습니다.</p>
+
+<p><a id="ch1"></a></p>
+
+<h2 id="1">1. 모노레포의 등장 배경</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Monorepo">위키백과</a>에 따르면 모노레포의 정의는 다음과 같다.</p>
+
+<blockquote>
+  <p>모노레포란 버전 관리 시스템에서 두 개 이상의 프로젝트 코드가 동일한 저장소에 저장되는 소프트웨어 개발 전략</p>
+</blockquote>
+
+<p>이 개발 전략은 고전적 소프트웨어 개발 방식인 <a href="https://en.wikipedia.org/wiki/Monolithic_application">모놀리식 애플리케이션(monolithic application)</a>의 한계에 대한 비판에서 출발한다.</p>
+
+<h3 id="">모놀리식 애플리케이션의 한계</h3>
+
+<blockquote>
+  <p>"<em>소프트웨어 엔지니어링에서 모놀리식 애플리케이션은 모듈화 없이 설계된 소프트웨어 애플리케이션을 말한다.</em>"</p>
+</blockquote>
+
+<p><img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e0ae025d1b.png" alt=""></p>
+
+<p>우리가 네이버와 같은 거대 서비스를 개발할 때, 소스 코드가 모듈화 없이 하나의 프로젝트로 구성된다면 어떻게 될까? 코드가 서로 직접적으로 의존하며 단 하나의 버전으로 관리되면서 <a href="https://ko.wikipedia.org/wiki/%EA%B4%80%EC%8B%AC%EC%82%AC_%EB%B6%84%EB%A6%AC">관심 분리(separation of concerns)</a>가 어려워지고, 설계, 리팩터링, 배포 등의 작업을 매번 거대한 단위로 처리해야 하므로 개발상 많은 제약과 비효율이 있을 것이다.</p>
+
+<h3 id="">모듈화와 재사용성</h3>
+
+<p>이러한 모놀리식 구조의 한계는 <a href="https://en.wikipedia.org/wiki/Modularity">모듈화(modularity)</a>를 통해 해결할 수 있다. 일반적으로 <a href="https://en.wikipedia.org/wiki/Modular_programming">모듈식 프로그래밍(modular programming)</a>은 애플리케이션 로직의 일부를 재사용할 수 있도록 지원하고 전체 교체 없이 애플리케이션의 일부를 수정 또는 교체할 수 있게 해 유지 관리를 용이하게 한다.</p>
+
+<p><img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e0fa095e41.png" alt=""></p>
+
+<p>그런데 이렇게 만든 모듈이 다른 애플리케이션에도 사용될 수 있다면 소스를 어디에 위치시켜야 할까? 아마도 해당 모듈을 위한 독자적인 저장소가 있다면 좀 더 관리하기 쉬울 것이다. 이 구조가 바로 멀티레포(multirepo)다.</p>
+
+<h3 id="">멀티레포</h3>
+
+<p>멀티레포 구조는 폴리레포(polyrepo) 구조라고도 부른다. 앞선 예시의 분리된 각 모듈은 멀티레포 구조에서 고유한 저장소가 있는 독자적 프로젝트가 된다. 각 프로젝트는 자율성이 높으며 독립적인 개발, 린트, 테스트, 빌드, 게시, 배포 파이프라인이 존재한다.</p>
+
+<p><img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e13d875e4e.png" alt=""></p>
+
+<p>멀티레포는 현재 대부분의 애플리케이션을 개발하는 표준적인 방법이다. 업계는 <strong>팀의 자율성</strong>이라는 큰 이유 때문에 이 방식을 선호한다. 팀은 애플리케이션 개발의 라이프사이클을 스스로 결정하기를 원한다.</p>
+
+<p><img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e17ec25e73.png" alt=""></p>
+
+<p>좋은 일인데 무엇이 문제일까? 양날의 검처럼 이 <strong><a href="https://monorepo.tools/#polyrepo-concept">자율성은 고립(isolation)에 의해 제공되고 고립은 협업을 방해한다</a></strong>. 멀티레포를 통해 모놀리식 구조의 문제를 해결했지만 다음과 같은 새로운 문제가 생긴다.</p>
+
+<h3 id="">멀티레포의 문제</h3>
+
+<ul>
+<li><p>번거로운 프로젝트 생성</p>
+
+<p>새로운 공유 패키지를 생성할 때마다 다음과 같이 번거로운 과정을 거쳐야 한다.</p>
+
+<p>저장소 생성 &gt; 커미터 추가 &gt; 개발 환경 구축 &gt; CI/CD 구축 &gt; 빌드 &gt; 패키지 저장소에 publish</p></li>
+</ul>
+
+<p><img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e1c3aa6129-1.png" alt=""></p>
+
+<ul>
+<li><p>패키지의 중복 코드 가능성</p>
+
+<p>위의 번거로움을 피하기 위해 각 프로젝트에서 공통 구성 요소를 자체적으로 작성한다면, 초기 시간을 아낄 수 있지만 시간이 지날수록 보안 및 품질 관리 부담을 증가시킨다.</p></li>
+<li><p>관리 포인트 증가</p>
+
+<p>늘어난 프로젝트 저장소의 수만큼 관리 포인트가 늘어난다. 린트, 테스트, 개발 모드 실행, 빌드, 게시, 배포 등의 과정을 저장소의 수만큼 반복해야 한다.</p></li>
+<li><p>일관성 없는 개발자 경험(DX)</p>
+
+<p>각 프로젝트는 테스트 실행, 빌드, 테스트, 린트, 배포 등을 위해 고유한 명령 집합을 사용한다.
+이러한 불일치는 여러 프로젝트에서 사용할 명령을 기억해야 하는 정신적 오버헤드를 만든다.</p></li>
+<li><p>다른 패키지의 변경 사항 파악</p>
+
+<p>관련 패키지의 변화를 지켜보거나 통지받지 않으면 문제가 발생할 수 있다.</p></li>
+<li><p>교차 저장소의 리팩터링 비용</p>
+
+<p>관련 패키지의 변화가 있을 때 여러 저장소에 걸쳐 변화를 반영하는 것은 쉬운 일이 아닐 것이다. 또한 이렇게 리팩터링된 각 패키지의 버전은 어떻게 관리해야 할까.</p></li>
+</ul>
+
+<p>그렇다면 모듈을 적절히 분리하여 관심 분리를 이루면서, 동시에 분리된 모듈을 쉽게 참조하고 테스트, 빌드, 배포 과정도 쉽게 한 번에 할 수는 없을까? 이제 모노레포가 출동할 시간이다.</p>
+
+<p><a id="ch2"></a></p>
+
+<h2 id="2">2. 모노레포가 해결하는 문제</h2>
+
+<h3 id="">모노레포의 특징</h3>
+
+<p>모노레포(monorepo) 구조는 두 개 이상의 프로젝트가 동일한 저장소에 저장되는 소프트웨어 개발 전략이다. 앞선 예시의 분리된 모듈들은 모노레포에서 여전히 독자 프로젝트로 존재하지만 저장소는 같은 곳을 사용한다.</p>
+
+<p><img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e20998613f.png" alt=""></p>
+
+<p>모노레포의 또 다른 중요한 특징 중 하나는 <strong>프로젝트 간의 관계</strong>다. 단순히 여러 프로젝트가 하나의 저장소를 사용한다고 해서 모노레포 구조라고 부르기에는 부족하다. 흔히 모노레포에서는 프로젝트 사이에 의존성이 존재하거나 같은 제품군이거나 하는 정의된 관계가 존재한다. 아래에서 소개할 모노레포 관리 도구는 모두 이러한 <strong>관계를 효율적으로 관리해 주는 도구</strong>라고 할 수 있다.</p>
+
+<h3 id="">모노레포가 해결하는 멀티레포의 문제</h3>
+
+<ul>
+<li><p>더 쉬운 프로젝트 생성</p>
+
+<p>멀티레포에서 공유 패키지를 만들 때 다음과 같은 과정을 거친다.</p>
+
+<p>저장소 생성 &gt; 커미터 추가 &gt; 개발환경 구축 &gt; CI/CD 구축 &gt; 빌드 &gt; 패키지 저장소에 publish</p>
+
+<p>모노레포에서는 저장소 생성 및 커미터 추가 과정이 필요 없고, 개발 환경, CI/CD, 빌드, 게시 등의 과정에 기존 DevOps를 이용하므로 새 프로젝트 생성에 대한 오버헤드가 없다.</p></li>
+<li><p>더 쉬운 의존성 관리</p>
+
+<p>의존성 패키지가 같은 저장소에 있으므로 버전이 지정된 패키지를 npm registry와 같은 곳에 publish할 필요가 없다.</p></li>
+<li><p>단일화된 관리 포인트</p>
+
+<p>개발환경 및 DevOps에 대한 업데이트를 한 번에 반영할 수 있다.</p></li>
+<li><p>일관된 개발자 경험 제공</p>
+
+<p>애플리케이션을 일관되게 구축하고 테스트할 수 있다. 개발자는 다른 팀의 애플리케이션에 자신 있게 기여하고 변경 사항이 안전한지 확인할 수 있다.</p></li>
+<li><p>프로젝트들에 걸친 원자적 커밋</p>
+
+<p>커밋할 때마다 모든 것이 함께 작동한다. 변경 사항의 영향을 받는 조직에서 쉽게 변화를 확인할 수 있다.</p></li>
+<li><p>서로 의존하는 저장소들의 리팩터링 비용 감소</p>
+
+<p>모노레포는 대규모 변경을 훨씬 더 간단하게 만든다. 100개의 라이브러리로 만든 10개의 앱을 리팩터링하고 변경을 커밋하기 전에 모두 작동하는지 확인할 수 있다.</p></li>
+</ul>
+
+<h3 id="">그 밖의 모노레포의 특징</h3>
+
+<ul>
+<li><p>테스트 및 빌드 범위 최소화</p>
+
+<p>소스 변경 시 모든 프로젝트를 다시 빌드하거나 다시 테스트하지 않는다. 대신 변경 사항의 영향을 받는 프로젝트만 다시 테스트하고 빌드한다.</p></li>
+</ul>
+
+<h3 id="">모노레포에 대한 오해</h3>
+
+<ul>
+<li><p>다른 팀이 내가 모르는 사이에 내 코드를 변경한다면?</p>
+
+<p>GitHub에는 <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">CODEOWNERS</a>와 같은 기능을 사용하여 폴더 기반으로 소유권을 구성할 수 있다.</p></li>
+</ul>
+
+<pre><code class="hljs less"><span class="hljs-variable">@global-owner1</span> <span class="hljs-variable">@global-owner2</span> ## 이 저장소에 대한 모든 PR을 소유자에게 리뷰받아야 머지할 수 있다.
+packages/todo-api<span class="hljs-comment">/* @john @jane ## todo-api 경로는 john과 jane에게 리뷰받아야 한다.  
+packages/i18n/* @michael ## i18n은 michael에게 리뷰받아야 한다.  
+</span></code></pre>
+
+<ul>
+<li><p>모노레포가 멀티레포보다 항상 나은 방법인가?</p>
+
+<p>그렇지 않다. 멀티레포의 단점이 모노레포의 장점이고 장단점이 교차하기 때문에 적절한 상황에서 사용해야 한다.</p>
+
+<p>모노레포의 핵심적 특징은 프로젝트 사이의 관계이고, 모노레포가 적절한 상황은 다음과 같다.</p>
+
+<ul><li>유사한 제품의 집합</li>
+<li>여러 프로젝트의 변화를 한눈에 파악해야 할 때</li>
+<li>호스트 애플리케이션을 플러그인 등으로 확장할 때</li>
+<li>공통 기능을 재사용하는 관련된 프로젝트의 집합</li>
+<li>유사한 DevOps로 구성된 프로젝트의 집합</li></ul></li>
+</ul>
+
+<p><a id="ch3"></a></p>
+
+<h2 id="3">3. 모노레포를 구축할 때 고려할 측면</h2>
+
+<p>모노레포를 구축하려고 할 때 <strong>관리 용이성</strong>, <strong>속도</strong> 그리고 <strong>프로젝트 구조 관리</strong> 측면에서 다음과 같은 사항을 고려해야 한다.</p>
+
+<blockquote>
+  <p>분류 기준은 <a href="https://monorepo.tools/#monorepo-features">Monorepo features</a>를 참고했다.</p>
+</blockquote>
+
+<h3 id="">관리 측면</h3>
+
+<ul>
+<li><p>코드 공유: 서로 다른 프로젝트 간에 쉽게 소스 코드를 공유</p></li>
+<li><p>일관성 있는 도구: 서로 다른 프로젝트들(심지어 서로 다른 프레임워크를 사용하더라도)에서 일관된 개발 경험을 제공</p></li>
+<li><p>스케폴딩: 새로운 프로젝트를 생성할 때 초기 코드를 쉽게 생성</p></li>
+<li><p>프로젝트 제약 및 가시성(visibility): 저장소 내에서 의존 관계를 제한하는 규칙 정의 지원. 예를 들어, 일부 프로젝트를 팀 전용으로 표시하거나 특정 프레임워크을 사용 중임을 기술.</p></li>
+</ul>
+
+<h3 id="">속도 측면</h3>
+
+<ul>
+<li><p>로컬 캐싱: 같은 머신에서 같은 것을 두 번 빌드하거나 테스트하지 않음</p></li>
+<li><p>분산 캐싱: 다양한 환경에서 캐시 아티팩트를 공유. 즉, 조직 단위로 여러 CI 환경에 걸쳐 같은 것을 두 번 빌드, 테스트하지 않음</p></li>
+<li><p>로컬 작업 오케스트레이션: 빌드 및 테스트 등의 작업을 순서에 맞게 병렬로 실행</p></li>
+<li><p>분산 작업 실행: 단일 시스템에서 실행되어 여러 시스템에 명령을 전달</p></li>
+<li><p>변화에 영향을 받는 프로젝트 감지: 변경의 영향을 받을 수 있는 항목을 결정하여 영향을 받는 프로젝트만 빌드/테스트</p></li>
+</ul>
+
+<h3 id="">구조 파악 측면</h3>
+
+<ul>
+<li><p>워크스페이스 분석: 추가 구성 없이 주어진 워크 스페이스의 의존성 관계를 분석</p></li>
+<li><p>의존성 그래프 시각화: 프로젝트 및 작업 간의 종속 관계를 시각화</p></li>
+</ul>
+
+<p><a id="ch4"></a></p>
+
+<h2 id="4">4. 모노레포 구축을 도와주는 도구</h2>
+
+<p>그럼 어떤 도구를 통해 위에 고려한 측면을 구축하고 지원받을 수 있을까? <a href="https://2021.stateofjs.com/en-US/libraries/monorepo-tools">2021.stateofjs.com</a> 기준으로 인기있는 도구를 살펴보면 다음과 같다.</p>
+
+<h3 id="">얼마나 사용되는가</h3>
+
+<p>Lerna, Yarn, npm, pnpm, Nx 등이 많이 사용되었다.</p>
+
+<p><img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e2763b61e3.png" alt=""></p>
+
+<h3 id="">얼마나 만족하는가</h3>
+
+<p>pnpm, Turborepo, Nx, npm, Yarn 등을 훌륭하게 평가하였다.</p>
+
+<p><img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e2aa2861ea.png" alt=""></p>
+
+<h3 id="">누가 사용하는가</h3>
+
+<ul>
+<li>Yarn
+<ul><li><a href="https://github.com/facebook/react/blob/b9de50d2f9ad6ff8caae0729976c3cc9a69c176e/package.json#L3-L5">React</a></li>
+<li><a href="https://github.com/remix-run/react-router/blob/7dca9dc38c837ed94796325b1e0582aa72a9313f/package.json#L63-L73">React-router</a></li>
+<li><a href="https://github.com/babel/babel/blob/24f0944e2d5b83dac4cba80e1b33c8098c613dc7/package.json#L20">Babel</a> (Yarn Berry)</li></ul></li>
+<li>Lerna + Yarn
+<ul><li><a href="https://github.com/vercel/next.js/blob/21994ce591be70b03176a2512c7304381d52e629/lerna.json#L1-L20">Next.js</a></li>
+<li><a href="https://github.com/babel/babel/blob/v7.12.12/lerna.json">Babel</a> (v7.12.12)</li>
+<li><a href="https://github.com/facebook/jest/blob/54420eb51baecaba7dff293770f8cb2579825731/lerna.json#L1-L7">Jest</a></li>
+<li><a href="https://github.com/facebook/create-react-app/blob/fd8c5f7b1b1d19d10d24cc2f9fdfc110585dc030/lerna.json#L1-L19">Create React App</a></li>
+<li><a href="https://github.com/storybookjs/storybook/blob/275406ad764d9d02ff41ad7eb8983b52cf22faa0/lerna.json">Storybook</a></li>
+<li><a href="https://github.com/vuejs/vue-cli/blob/f7dc46d0692c2d8a07f5c8b0580177de81c150b0/lerna.json#L2">Vue-cli</a></li>
+<li><a href="https://github.com/nuxt/framework/blob/a55c7874e6c22a8a927027cbf5f4149a8711525a/lerna.json#L3">Nuxt.js</a></li>
+<li><a href="https://github.com/webpack/webpack-cli/blob/2f5e331f8786fbb21e349df3a7518886ac6deaa1/lerna.json#L5">Webpack-cli</a></li>
+<li><a href="https://lerna.js.org/#users">모든 레퍼런스</a></li></ul></li>
+<li>Lerna + Npm
+<ul><li><a href="https://github.com/apollographql/apollo-server/blob/90069be053f28deb9fc6b605f2008fc54909c255/lerna.json#L2">Apollo-server</a></li></ul></li>
+<li>Nx
+<ul><li><a href="https://github.com/storybookjs/storybook/blob/275406ad764d9d02ff41ad7eb8983b52cf22faa0/nx.json#L1">Storybook</a></li>
+<li><a href="https://github.com/microsoft/fluentui/blob/605d53a436a9dfb24075fdb39bb4c4823ee0b9ba/nx.json#L1">FluentUI</a></li>
+<li><a href="https://github.com/ngrx/platform/blob/1d3e33735f5e438eab27e36681e04c0649ce48ac/nx.json#L1">NgRx</a></li></ul></li>
+<li>Turborepo
+<ul><li><a href="https://vercel.com/">Vercel</a></li>
+<li><a href="https://lattice.com/">Lattice</a></li>
+<li><a href="https://spri.ng/">TeeSpring</a></li>
+<li><a href="https://makeswift.com/">MakeSwift</a></li>
+<li><a href="https://beondeck.com/">On Deck</a></li>
+<li><a href="https://astro.build/">Astro</a></li>
+<li><a href="https://github.com/vercel/turborepo/discussions/103">모든 레퍼런스</a></li></ul></li>
+<li>Pnpm
+<ul><li><a href="https://github.com/vuejs/core/blob/1070f127a78bfe7da6fe550cc272ef11a1f434a0/pnpm-workspace.yaml#L1">Vue 3</a></li>
+<li><a href="https://pnpm.io/users">모든 레퍼런스</a></li></ul></li>
+</ul>
+
+<h2 id="">마치며</h2>
+
+<p>다음 편에서는 위의 도구 중 Yarn, Lerna, Nx 그리고 Turborepo에 대해 자세히 알아보겠다.</p></div><div class="txt_tag"><span class="icon_tag">Tag</span><div class="tag_list"><a href="/search?keyword=front-end"><span>front-end</span></a><a href="/search?keyword=모노레포"><span>모노레포</span></a><a href="/search?keyword=monorepo"><span>monorepo</span></a></div></div><div class="post_writer_info"><div class="writer_info"><div class="ly_img_people"></div><div class="img_people"><img src="/image/20220414/645987127543.png" alt=""></div><div class="people_info"><dl><dt><span class="blind">글쓴이</span></dt><dd><span class="name">심흥운<span></span></span><span><span class="bar">|</span><span class="duty_dept">네이버 Platform Labs</span></span></dd><dt><span class="blind">소개</span></dt><dd class="info">NAVER Platform Labs에서 사내 플랫폼의 프론트엔드 개발을 담당하고 있습니다. 협업 도구, 그래픽 저작 도구, ML용 어노테이션 도구, 웹기반 IDE, 스마트TV앱 그리고 쇼핑몰 솔루션 등의 프로젝트에 참여하였습니다. 오픈소스에 관심이 많고 사용하는 것과 함께 내부 구현에도 호기심을 갖고 있습니다. 다양한 분야의 기술을 FE 분야에 접목하는 데에도 관심이 많습니다.</dd></dl></div><div class="people_write"><a href="https://d2.naver.com/search?keyword=%EC%8B%AC%ED%9D%A5%EC%9A%B4">글쓴이의 다른 글 보기</a></div></div><div class="writer_info"><div class="ly_img_people"></div><div class="img_people"><img src="/image/20220414/534941194807.jpeg" alt=""></div><div class="people_info"><dl><dt><span class="blind">글쓴이</span></dt><dd><span class="name">김동빈<span></span></span><span><span class="bar">|</span><span class="duty_dept">네이버 Platform Labs</span></span></dd><dt><span class="blind">소개</span></dt><dd class="info">FC 바르셀로나를 열렬히 응원하며, Pinpoint FE 오픈소스 개발도 가끔하는 김동빈입니다.</dd></dl></div><div class="people_write"><a href="https://d2.naver.com/search?keyword=%EA%B9%80%EB%8F%99%EB%B9%88">글쓴이의 다른 글 보기</a></div></div><div class="writer_info"><div class="ly_img_people"></div><div class="img_people"><img src="/image/20220414/727738771151.png" alt=""></div><div class="people_info"><dl><dt><span class="blind">글쓴이</span></dt><dd><span class="name">김도윤<span></span></span><span><span class="bar">|</span><span class="duty_dept">네이버 Platform Labs</span></span></dd><dt><span class="blind">소개</span></dt><dd class="info">옷과 운동을 좋아하는 개발자입니다. 페이센터, 스마트스토어센터 프론트엔드 개선 프로젝트에 참여했고 현재는 Pinpoint FE 오픈소스 개발에 참여하고있습니다.</dd></dl></div><div class="people_write"><a href="https://d2.naver.com/search?keyword=%EA%B9%80%EB%8F%84%EC%9C%A4">글쓴이의 다른 글 보기</a></div></div></div><div class="sns_position"><div class="sns_sec"><button type="button" class="sns_naver"><span class="sns_icon">NAVER</span></button><button type="button" class="sns_facebook"><span class="sns_icon">facebook</span></button><div class="fb-like fb_iframe_widget" data-href="http://d2.naver.com/helloworld/0923884" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="false" fb-xfbml-state="parsed" fb-iframe-plugin-query="action=like&amp;app_id=816454888441763&amp;container_width=714&amp;href=http%3A%2F%2Fd2.naver.com%2Fhelloworld%2F0923884&amp;layout=button_count&amp;locale=ko_KR&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;size=large"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f44b60e1dd5d14" width="1000px" height="1000px" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.11/plugins/like.php?action=like&amp;app_id=816454888441763&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df369f9ec4a7d728%26domain%3Dd2.naver.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fd2.naver.com%252Ff23a4af0485858%26relation%3Dparent.parent&amp;container_width=714&amp;href=http%3A%2F%2Fd2.naver.com%2Fhelloworld%2F0923884&amp;layout=button_count&amp;locale=ko_KR&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;size=large" style="border: none; visibility: hidden;"></iframe></span></div><button type="button" class="sns_url"><span class="sns_icon">URL</span></button></div></div></div></div><div class="relation_sec"><p class="relation_title">관련글</p><div class="relation_list"><div class="list"><ul><li><a href="/helloworld/7553804"><img src="/content/images/2022/04/----.png" width="60" height="50" alt="썸네일"><div class="relation_list_txt">모던 프론트엔드 프로젝트 구성 기법 - 모노레포 도구 편</div></a></li><li><a href="/helloworld/639204"><img src="/content/images/2015/07/416268-1.PNG" width="60" height="50" alt="썸네일"><div class="relation_list_txt">[제6회 오픈 세미나] Front-end 개발자 커뮤니티 특집 (JavaScript, 웹표준 &amp; 접근성)</div></a></li><li><a href="/news/8383433"><img src="/content/images/2015/11/p2.png" width="60" height="50" alt="썸네일"><div class="relation_list_txt">Chrome 46 Beta 추가 및 변경사항</div></a></li><li><a href="/news/7622167"><img src="/static/img/app/common/empty_img1.png" width="60" height="50" alt="썸네일"><div class="relation_list_txt">Front-end 기술 세미나 발표자료</div></a></li></ul></div></div></div><div id="cbox_module" style="max-width: 840px; margin: 0px auto; padding-bottom: 35px;" class="u_cbox"><div class="u_cbox_wrap u_cbox_ko"><div class="u_cbox_head"><h5 class="u_cbox_title">댓글</h5><span class="u_cbox_count">4</span><button type="button" class="u_cbox_btn_refresh" data-action="count#refresh" data-log="RPO.refresh"><span class="u_cbox_ico_refresh"></span><span class="u_cbox_txt_refresh">새로고침</span></button><div class="u_cbox_head_tools"></div></div><div class="u_cbox_write_wrap"><div class="u_cbox_write_box u_cbox_type_logged_out"><form><fieldset><legend class="u_vc">댓글 쓰기</legend><div class="u_cbox_write"><div class="u_cbox_write_inner"><div class="u_cbox_write_area"><strong class="u_vc">댓글 입력</strong><div class="u_cbox_inbox"><textarea title="댓글" id="cbox_module__write_textarea" class="u_cbox_text" rows="3" cols="30" data-log="RPC.input"></textarea><label for="cbox_module__write_textarea" class="u_cbox_guide" data-action="write#placeholder" data-param="@event">댓글을 작성하려면 <a href="#" class="u_cbox_link">로그인</a> 해주세요</label></div></div><div class="u_cbox_upload_sticker" style="display:none"></div><div class="u_cbox_write_count"><span class="u_vc">현재 입력한 글자수</span><strong class="u_cbox_count_num">0</strong>/<span class="u_vc">전체 입력 가능한 글자수</span><span class="u_cbox_write_total">400</span></div><div class="u_cbox_upload"><div class="u_cbox_addition"></div><button type="button" class="u_cbox_btn_upload" data-action="write#request" data-log="RPC.write#RPC.reply"><span class="u_cbox_ico_upload"></span><span class="u_cbox_txt_upload">등록</span></button></div></div></div></fieldset></form></div></div><div class="u_cbox_notice u_cbox_notice_none" style="display: none;"></div><div id="cbox_module_wai_u_cbox_content_wrap_tabpanel" tabindex="0" class="u_cbox_content_wrap" style="outline: 0"><ul class="u_cbox_list"><li class="u_cbox_comment cbox_module__comment_771056081269948649 _user_id_no_317xG" data-info="commentNo:'771056081269948649',deleted:false,best:false,visible:true,secret:false,manager:false,mine:false,report:undefined,blindReport:false,objectId:'0923884',replyLevel:1,parentCommentNo:'771056081269948649',pick:false"><div class="u_cbox_comment_box"><div class="u_cbox_area"><div class="u_cbox_info"><span class="u_cbox_info_main"><span class="u_cbox_name"><span class="u_cbox_name_area"><span class="u_cbox_nick_area"><span class="u_cbox_nick">종리</span></span></span></span></span><span class="u_cbox_info_sub"></span></div><div class="u_cbox_text_wrap"><span class="u_cbox_contents" data-lang="ko">감사합니다.</span></div><div class="u_cbox_info_base"><span class="u_cbox_date" data-value="2022-10-03T17:45:34+0900">2022-10-03 17:45</span></div><div class="u_cbox_tool"><a href="#" role="button" aria-expanded="false" class="u_cbox_btn_reply" data-action="reply#toggle" data-param="771056081269948649" data-log="RPC.replyopen#RPC.replyclose"><strong class="u_cbox_reply_txt">답글</strong><span class="u_cbox_reply_cnt u_vc">0</span></a><div class="u_cbox_recomm_set"><strong class="u_vc">공감/비공감</strong><a href="#" data-action="vote" data-param="mine:false,commentNo:'771056081269948649',voteStatus:'SYMPATHY',objectId:'0923884',ticket:'d2'" data-log="RPC.sym#RPC.unsym" class="u_cbox_btn_recomm"><span class="u_cbox_ico_recomm">공감</span><em class="u_cbox_cnt_recomm">0</em></a><a href="#" data-action="vote" data-param="mine:false,commentNo:'771056081269948649',voteStatus:'ANTIPATHY',objectId:'0923884',ticket:'d2'" data-log="RPC.dis#RPC.undis" class="u_cbox_btn_unrecomm"><span class="u_cbox_ico_unrecomm">비공감</span><em class="u_cbox_cnt_unrecomm">0</em></a></div></div><span class="u_cbox_comment_frame"><span class="u_cbox_ico_tip"></span><span class="u_cbox_comment_frame_top"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span><span class="u_cbox_comment_frame_bottom"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span></span></div></div><div class="u_cbox_reply_area" style="display:none;"></div></li><li class="u_cbox_comment cbox_module__comment_758967308864454751 _user_id_no_2sfu4" data-info="commentNo:'758967308864454751',deleted:false,best:false,visible:true,secret:false,manager:false,mine:false,report:undefined,blindReport:false,objectId:'0923884',replyLevel:1,parentCommentNo:'758967308864454751',pick:false"><div class="u_cbox_comment_box"><div class="u_cbox_area"><div class="u_cbox_info"><span class="u_cbox_info_main"><span class="u_cbox_name"><span class="u_cbox_name_area"><span class="u_cbox_nick_area"><span class="u_cbox_nick">초아</span></span></span></span></span><span class="u_cbox_info_sub"></span></div><div class="u_cbox_text_wrap"><span class="u_cbox_contents" data-lang="ko">좋은 글 감사합니다!</span></div><div class="u_cbox_info_base"><span class="u_cbox_date" data-value="2022-05-26T10:23:09+0900">2022-05-26 10:23</span></div><div class="u_cbox_tool"><a href="#" role="button" aria-expanded="false" class="u_cbox_btn_reply" data-action="reply#toggle" data-param="758967308864454751" data-log="RPC.replyopen#RPC.replyclose"><strong class="u_cbox_reply_txt">답글</strong><span class="u_cbox_reply_cnt u_vc">0</span></a><div class="u_cbox_recomm_set"><strong class="u_vc">공감/비공감</strong><a href="#" data-action="vote" data-param="mine:false,commentNo:'758967308864454751',voteStatus:'SYMPATHY',objectId:'0923884',ticket:'d2'" data-log="RPC.sym#RPC.unsym" class="u_cbox_btn_recomm"><span class="u_cbox_ico_recomm">공감</span><em class="u_cbox_cnt_recomm">3</em></a><a href="#" data-action="vote" data-param="mine:false,commentNo:'758967308864454751',voteStatus:'ANTIPATHY',objectId:'0923884',ticket:'d2'" data-log="RPC.dis#RPC.undis" class="u_cbox_btn_unrecomm"><span class="u_cbox_ico_unrecomm">비공감</span><em class="u_cbox_cnt_unrecomm">0</em></a></div></div><span class="u_cbox_comment_frame"><span class="u_cbox_ico_tip"></span><span class="u_cbox_comment_frame_top"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span><span class="u_cbox_comment_frame_bottom"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span></span></div></div><div class="u_cbox_reply_area" style="display:none;"></div></li><li class="u_cbox_comment cbox_module__comment_757580005923356912 _user_id_no_yYT9" data-info="commentNo:'757580005923356912',deleted:false,best:false,visible:true,secret:false,manager:false,mine:false,report:undefined,blindReport:false,objectId:'0923884',replyLevel:1,parentCommentNo:'757580005923356912',pick:false"><div class="u_cbox_comment_box"><div class="u_cbox_area"><div class="u_cbox_info"><span class="u_cbox_info_main"><span class="u_cbox_name"><span class="u_cbox_name_area"><span class="u_cbox_nick_area"><span class="u_cbox_nick">No7베컴</span></span></span></span></span><span class="u_cbox_info_sub"></span></div><div class="u_cbox_text_wrap"><span class="u_cbox_contents" data-lang="ko">잘 읽었습니다!감사합니다</span></div><div class="u_cbox_info_base"><span class="u_cbox_date" data-value="2022-05-11T11:29:22+0900">2022-05-11 11:29</span></div><div class="u_cbox_tool"><a href="#" role="button" aria-expanded="false" class="u_cbox_btn_reply" data-action="reply#toggle" data-param="757580005923356912" data-log="RPC.replyopen#RPC.replyclose"><strong class="u_cbox_reply_txt">답글</strong><span class="u_cbox_reply_cnt u_vc">0</span></a><div class="u_cbox_recomm_set"><strong class="u_vc">공감/비공감</strong><a href="#" data-action="vote" data-param="mine:false,commentNo:'757580005923356912',voteStatus:'SYMPATHY',objectId:'0923884',ticket:'d2'" data-log="RPC.sym#RPC.unsym" class="u_cbox_btn_recomm"><span class="u_cbox_ico_recomm">공감</span><em class="u_cbox_cnt_recomm">1</em></a><a href="#" data-action="vote" data-param="mine:false,commentNo:'757580005923356912',voteStatus:'ANTIPATHY',objectId:'0923884',ticket:'d2'" data-log="RPC.dis#RPC.undis" class="u_cbox_btn_unrecomm"><span class="u_cbox_ico_unrecomm">비공감</span><em class="u_cbox_cnt_unrecomm">1</em></a></div></div><span class="u_cbox_comment_frame"><span class="u_cbox_ico_tip"></span><span class="u_cbox_comment_frame_top"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span><span class="u_cbox_comment_frame_bottom"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span></span></div></div><div class="u_cbox_reply_area" style="display:none;"></div></li><li class="u_cbox_comment cbox_module__comment_756412952579408080 _user_id_no_3yI4x" data-info="commentNo:'756412952579408080',deleted:false,best:false,visible:true,secret:false,manager:false,mine:false,report:undefined,blindReport:false,objectId:'0923884',replyLevel:1,parentCommentNo:'756412952579408080',pick:false"><div class="u_cbox_comment_box"><div class="u_cbox_area"><div class="u_cbox_info"><span class="u_cbox_info_main"><span class="u_cbox_name"><span class="u_cbox_name_area"><span class="u_cbox_nick_area"><span class="u_cbox_nick">hustle dev</span></span></span></span></span><span class="u_cbox_info_sub"></span></div><div class="u_cbox_text_wrap"><span class="u_cbox_contents" data-lang="ko">모노레포에 대한 질문을 면접때 받았었는데 이렇게 알게 되네요.  좋은글 감사합니다~</span></div><div class="u_cbox_info_base"><span class="u_cbox_date" data-value="2022-04-28T21:34:19+0900">2022-04-28 21:34</span></div><div class="u_cbox_tool"><a href="#" role="button" aria-expanded="false" class="u_cbox_btn_reply" data-action="reply#toggle" data-param="756412952579408080" data-log="RPC.replyopen#RPC.replyclose"><strong class="u_cbox_reply_txt">답글</strong><span class="u_cbox_reply_cnt u_vc">0</span></a><div class="u_cbox_recomm_set"><strong class="u_vc">공감/비공감</strong><a href="#" data-action="vote" data-param="mine:false,commentNo:'756412952579408080',voteStatus:'SYMPATHY',objectId:'0923884',ticket:'d2'" data-log="RPC.sym#RPC.unsym" class="u_cbox_btn_recomm"><span class="u_cbox_ico_recomm">공감</span><em class="u_cbox_cnt_recomm">2</em></a><a href="#" data-action="vote" data-param="mine:false,commentNo:'756412952579408080',voteStatus:'ANTIPATHY',objectId:'0923884',ticket:'d2'" data-log="RPC.dis#RPC.undis" class="u_cbox_btn_unrecomm"><span class="u_cbox_ico_unrecomm">비공감</span><em class="u_cbox_cnt_unrecomm">1</em></a></div></div><span class="u_cbox_comment_frame"><span class="u_cbox_ico_tip"></span><span class="u_cbox_comment_frame_top"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span><span class="u_cbox_comment_frame_bottom"><span class="u_cbox_comment_bg_r"></span><span class="u_cbox_comment_bg_l"></span></span></span></div></div><div class="u_cbox_reply_area" style="display:none;"></div></li></ul></div><div class="u_cbox_paginate" style=""><div class="u_cbox_page_wrap"><span class="u_cbox_pre u_cbox_pre_end" title="첫 페이지 목록으로 이동하기"><span class="u_cbox_ico_page"></span><span class="u_cbox_cnt_page">맨앞</span><span class="u_vc">페이지 목록으로 이동하기</span></span><span class="u_cbox_pre" title="이전 페이지 목록으로 이동하기"><span class="u_cbox_ico_page"></span><span class="u_cbox_cnt_page">이전</span><span class="u_vc">페이지 목록으로 이동하기</span></span><strong class="u_cbox_page" data-param="1"><span class="u_cbox_num_page">1</span><span class="u_vc">현재 선택된 페이지</span></strong><span class="u_cbox_next" title="다음 페이지 목록으로 이동하기"><span class="u_cbox_cnt_page">다음</span><span class="u_cbox_ico_page"></span><span class="u_vc">페이지 목록으로 이동하기</span></span><span class="u_cbox_next u_cbox_next_end" title="마지막 페이지 목록으로 이동하기"><span class="u_cbox_cnt_page">맨뒤</span><span class="u_cbox_ico_page"></span><span class="u_vc">페이지 목록으로 이동하기</span></span></div></div></div></div></div></div></div><div id="footer"><div class="inner_sec"><div class="footer_sec"><ul class="other_site"><li><a href="https://developers.naver.com/" target="_blank" class="developers">NAVER Developers</a></li><li><a href="https://techcon.naver.com/" target="_blank" class="techcon">NAVER TECH CONCERT</a></li><li><a href="https://deview.kr/" target="_blank" class="deview">DEVIEW</a></li><li><a href="https://naver.github.io/" target="_blank" class="opensource">OpenSource</a></li><li><a href="http://www.d2startup.com/" target="_blank" class="startup">D2 STARTUP FACTORY</a></li></ul><div class="sns_share"><ul><li class="email"><a href="mailto:d2@navercorp.com"><i class="xi-mail"></i></a></li><li class="facebook"><a href="https://facebook.com/naverd2" target="_blank"><i class="xi-facebook"></i></a></li><li class="rss"><a href="https://d2.naver.com/d2.atom" target="_blank"><i class="xi-social-rssfeed"></i></a></li></ul></div></div><div class="footer_sec"><div class="copyright"><p><span>Copyright</span> © <a href="https://www.navercorp.com/" target="_blank">NAVER Corp.</a> <span>All Rights Reserved.</span></p></div><a href="#" class="btn_go_top" style="bottom: 20px; right: 0px;"></a></div></div></div></div></div><i classname="xi-search">
+<script id="facebook-jssdk" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&amp;version=v2.11&amp;appId=816454888441763"></script><script async="" src="//www.google-analytics.com/analytics.js" id="google-analytics"></script><script async="" src="https://wcs.naver.net/wcslog.js" id="naver-analytics"></script><script type="text/javascript" src="/static/js/app.js?13c1e9311ca34225bfc0"></script>
+
+</i><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div></body></html>

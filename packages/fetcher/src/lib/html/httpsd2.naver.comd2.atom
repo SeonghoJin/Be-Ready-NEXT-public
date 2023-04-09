@@ -1,0 +1,3445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>D2 Blog</title>
+  <link rel="alternate" href="https://d2.naver.com" />
+  <id>https://d2.naver.com/blog.atom</id>
+  <icon>https://d2.naver.com/favicon.ico</icon>
+  <updated>2023-03-22T08:39:37Z</updated>
+  <entry>
+    <title>학생 개발자를 위한 DEVIEW CAMPUS 2023이 열렸습니다!</title>
+    <link rel="alternate" href="https://d2.naver.com/news/8012036" />
+    <category term="news" />
+    <id>https://d2.naver.com/news/8012036</id>
+    <updated>2023-03-22T18:32:11Z</updated>
+    <content type="html">&lt;p&gt;&lt;img src="/content/images/2023/03/0R4A7922-1.jpg" alt="DEVIEW CAMPUS 2023" /&gt;
+&lt;span class="caption"&gt;&amp;lt;참여한 네이버 개발자와 D2 CAMPUS PARTNER 참가자들 &gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;지난 2월 DEVIEW 2023이 열리던 코엑스 한켠에서는 학생개발자를 위한 컨퍼런스, DEVIEW CAMPUS 2023이 열렸습니다. 올해 처음 진행된 DEVIEW CAMPUS 2023에서는 그동안 &lt;a href="https://d2.naver.com/news/6671933"&gt;D2 CAMPUS PARTNER&lt;/a&gt;로 활동했던 역대 파트너들과 함께하는 자리로 진행되었습니다.&lt;/p&gt;
+
+&lt;p&gt;DEVIEW CAMPUS 2023은 설문을 통해 참가자 분들이 가장 많이 궁금해하신 내용을 위주로 구성되었는데요, 첫 세션으로 네이버의 채용, 복지, 개발 문화 등 입사시 궁금할 전반적인 내용에 대해 담당자께서 꼼꼼히 짚어주시며 살펴보는 시간을 가졌습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/03/-----------2023-03-22------5-45-49.png" alt="" /&gt;
+&lt;span class="caption"&gt;&amp;lt;'TECH Panel Talk'에서 이야기 하는 패널과 질문하는 참가자 &gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;이어 IT 개발자를 꿈꾸는 학생분들이 모인 만큼 선배 개발자들의 이야기를 들어보는 TECH Panel Talk 시간을 통해 학생개발자로서 미리 준비하면 도움이 될 부분, 현업에서 이용하는 Tool, 네이버 개발문화, 기술 스터디 방법 등 한 번쯤 궁금했을 이야기들 관련하여 네이버 선배 개발자들의 생각을 나누어 보았습니다.&lt;/p&gt;
+
+&lt;p&gt;그리고 DEVIEW CAMPUS답게 본격적인 기술 세션 Group Tech Talk도 진행되었는데요! 웹과 서버 개발은 물론 모바일부터 보안, AI/ML까지 다양한 주제로 기술을 나누며 성장할 수 있는 시간도 빠지지 않았습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/03/-----------2023-03-20------12-28-48.png" alt="" /&gt;
+&lt;span class="caption"&gt;&amp;lt;기술 분야별로 나누어 진행 된 'Group Tech Talk'&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;마무리는 D2 CAMPUS PARTNER의 꽃! Speaker Networking 시간을 통해 다른 파트너 분들과의 못다 한 이야기도 나누고 각 세션별 연사분들과도 편하게 이야기 나누는 자리를 가지며 행사는 마무리되었습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/03/-----------2023-03-20------3-46-26.png" alt="" /&gt;
+&lt;span class="caption"&gt;&amp;lt;참가자와 멘토가 함께 한 'Speaker Networking' 진행모습&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;처음 진행되는 행사에는 D2 CAMPUS PARTNER 분들을 모시고 소규모로 진행되었는데요, 이후에는 더 많은 학생개발자 분들과 풍성하고 즐겁게 참여 할 수 있는 DEVIEW CAMPUS가 되도록 준비하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;DEVIEW CAMPUS 2023 스케치 영상 - 유투브에서 보기&gt;  &lt;/p&gt;
+
+&lt;iframe width="700" height="450" src="https://www.youtube.com/embed/BjG-5k7P-RA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>DEVIEW 2023 발표영상이 공개 되었습니다.</title>
+    <link rel="alternate" href="https://d2.naver.com/news/7503274" />
+    <category term="news" />
+    <id>https://d2.naver.com/news/7503274</id>
+    <updated>2023-03-16T14:24:18Z</updated>
+    <content type="html">&lt;p&gt;오프라인으로 돌아온 DEVIEW 2023이 많은 분들의 관심과 참여로 성황리에 종료되었습니다. 정말 오랜만에 개발자분들과 직접 만나서 기술 관련 이야기를 나누다보니 열기가 가득했는데요. 함께 해 주신 여러분들께 다시 한 번 감사드립니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/03/-----2023-03-16----2-16-37.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;모든 발표영상이 &lt;a href="https://deview.kr/2023/sessions"&gt;DEVIEW 2023 홈페이지&lt;/a&gt;와 &lt;a href="https://www.youtube.com/@naverd2848"&gt;NAVER D2 유튜브 채널&lt;/a&gt;에 공개 되었습니다. DEVIEW 2023 현장에서 가장 참여율이 높았던 세션들도 정리했으니 많은 관심 부탁드립니다.&lt;/p&gt;
+
+&lt;h4 id="deview2023top3day1"&gt;&lt;strong&gt;DEVIEW 2023 인기세션 Top 3 - DAY1&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="https://youtu.be/wyuQ9na8r40"&gt;하나의 코드로 React, Vue, Svelte 등 모든 프레임워크를 지원할 수 있는 CFCs Reactive - NAVER 최연규님&lt;/a&gt;&lt;br/&gt;
+CFCs Reactive는 하나의 코드로 함수 컴포넌트에서 사용할 수 있는 Reactive Component를 만들 수 있습니다. CFCs와 CFCs Reactive를 만들게 된 계기와 그 결과물을 오픈소스로 공개합니다.   &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://youtu.be/OxMdru93E6k"&gt;네이버 스케일로 카프카 컨슈머 사용하기 - NAVER 이동진님&lt;/a&gt;&lt;br/&gt;
+카프카 컨슈머는 많은 경우 잘 동작하는 물건이지만, 쿠버네티스 환경에서 사용하는 것이 그리 쉽지만은 않습니다. 이 세션에서는 카프카 컨슈머를 쿠버네티스 환경에서 사용할 때 주의할 점과 네이버가 어떻게 이 문제를 해결했는지를 살펴봅니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://youtu.be/zncmO90s0sk"&gt;UI 빌더를 지탱하는 레고 블록 같은 아키텍처 만들기 - NAVER 김훈민님&lt;/a&gt;&lt;br/&gt;
+'레고 블록을 조립하듯 애플리케이션을 만들 순 없을까?' 이런 상상을 누구나 한 번쯤은 해봅니다. UI 빌더를 만들며 '고객 확장과 제품 기술 기반 파편화' 문제를 풀어가는 과정에서 레고 블록 같은 아키텍처를 만들기 위해 했던 고민과 해결책을 공유합니다.&lt;/p&gt;
+
+&lt;h4 id="deview2023top3day2"&gt;&lt;strong&gt;DEVIEW 2023 인기세션 Top 3 - DAY2&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="https://youtu.be/qE7HY7Y-5vs"&gt;런타임 데드 코드 분석 도구 Scavenger: 당신의 코드는 생각보다 많이 죽어있다. - NAVER 김태연/권오준님&lt;/a&gt;&lt;br/&gt;
+오픈소스로 공개하는 Scavenger라는 런타임 데드 코드 분석 도구를 소개하고, 네이버 페이 등의 신규 시스템으로 재개발하는 중에 Scavenger를 활용하여 어떻게 몇십만 라인의 데드 코드를 제거했는지 설명합니다. 또한 Scavenger을 구현하는 데 사용한 bytecode instrumentation 등의 기술적 백그라운드에 대해서도 살펴봅니다. Scavenger를 사용하면 여러분의 Java 코드가 날씬해집니다!   &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://youtu.be/RXUHjDL4cRw"&gt;웨일 브라우저 오픈 소스 생존기 - NAVER Cloud 이형욱님&lt;/a&gt;&lt;br/&gt;
+웨일 브라우저 팀에서 5년이 넘는 시간 동안 웹플랫폼인 브라우저를 크로미움이라는 오픈 소스를 활용해서 어떻게 개발하였는지 그리고 안정적으로 리베이스를 하기까지 경험했던 시행착오들과 고민의 결과 그리고 앞으로의 계획 등에 대한 이야기를 나누고자 합니다.  &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://youtu.be/OUyXPgVcdw4"&gt;VictoriaMetrics: 시계열 데이터 대혼돈의 멀티버스 - NAVER 손주식/이선규님&lt;/a&gt;&lt;br/&gt;
+대용량의 시계열 데이터를 수집하고, 저장하고, 분석한 경험과 노하우를 다룹니다. 저희는 검색 SRE 팀의 구성원으로서 시계열 데이터베이스 플랫폼을 운영하고 있습니다. 오픈 소스 프로젝트인 VictoriaMetrics 기반으로 여러 인스턴스를 구축하고 관리하면서 수많은 사건 사고를 겪었는데요, 그 과정에서 저희가 했던 고민, 그리고 새롭게 알게 된 기술 지식과 팁을 공유해드리겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://deview.kr/2023/sessions"&gt;&gt;&gt; DEVIEW 2023 발표영상 더 보기&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://www.youtube.com/@naverd2848"&gt;&gt;&gt; NAVER D2 유튜브 채널 바로가기&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>DEVIEW 2023 D-6! 부스를 소개합니다.</title>
+    <link rel="alternate" href="https://d2.naver.com/news/3775781" />
+    <category term="news" />
+    <id>https://d2.naver.com/news/3775781</id>
+    <updated>2023-02-23T11:08:51Z</updated>
+    <content type="html">&lt;p&gt;DEVIEW 2023이 다음 주로 다가왔습니다! &lt;br /&gt;
+오랜만에 진행되는 오프라인 컨퍼런스에 생생한 연사분들의 기술 세션만큼이나 놓칠 수 없는 또 하나의 포인트, 바로 참여사들의 부스일 텐데요.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://deview.kr/2023/sessions"&gt;홈페이지&lt;/a&gt;에 소개된 46개의 세션만큼 알차게 준비하고 있는
+DEVIEW 2023의 부스 소식을 미리 살펴보실 수 있도록 가져왔습니다. 각 부스마다 준비 된 이벤트와 유용한 정보를 미리 살펴보시고 현장에서 꼭 참여해보세요~&lt;/p&gt;
+
+&lt;h1 id="expert"&gt;네이버 eXpert&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/02/-----------2023-02-20------12-26-55.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;개발자 분들을 eXpert로 모십니다!  &lt;br/&gt;
+전문가 신청 or 설문조사 진행 시 신청한 내역을 확인 후 &lt;strong&gt;엑스퍼트 굿즈 백&lt;/strong&gt;을 증정할 예정이니 많은 관심과 참여 부탁드립니다.&lt;/p&gt;
+
+&lt;p&gt;현재 개발 관련 직무로 재직중인 개발자분이라면, 재직증명서/경력증명서 제출을 통해 eXpert 승인이 가능합니다.
+이외에도 관련 자격증이 있다면 재직증명서 없이도 &lt;a href="(https://expert.naver.com/expert/introduction?tab=guide#category)"&gt;자격증 제출&lt;/a&gt;로도 승인 가능합니다. 
+전문가 신청 후 승인이 완료되면 10만원의 가입 축하 쿠폰팩을 지급해드립니다.&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;▶ &lt;a href="https://expert.naver.com/expert/join/introduction"&gt;eXpert 전문가 신청하기&lt;/a&gt;&lt;br/&gt;
+▶ &lt;a href="https://m.expert.naver.com/mobile/expert/category/home?groupCategoryId=154&amp;amp;categoryId=29&amp;amp;itemType=COUNSELING&amp;amp;sortType=POPULARITY"&gt;IT개발/외주 인기상품 구경하기&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=""&gt;네이버 웨일&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/02/-----------2023-02-20------3-30-55.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;DEVIEW 2023 기간 동안 웨일 부스에서 모바일 웨일 앱을 설치하시는 분들께 2시(수정) 부터 기념품을 나눠주는 시간을 준비했습니다. &lt;br /&gt;
+&lt;strong&gt;귀여운 양말과 유용한 립스탑백&lt;/strong&gt; 받아가세요!&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;▶ &lt;a href="https://whale.naver.com/"&gt;네이버 웨일 홈페이지&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id="hyperconnect"&gt;HYPERCONNECT&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/02/-----------2023-02-22------8-17-54.png" alt="" /&gt;
+하이퍼커넥트에서는 프로덕트와 Social Discovery Service의 즐거움을 선명하게 느낄 수 있는 풍성한 프로그램이 준비되어 있습니다.
+개발 문화 및 최신 기술에 대해 궁금한 점이 있으시다면 실무 엔지니어들과 개발 문화를 이끌고 있는 DevRel팀 에게 직접 질문할 수 있는 기회를 놓치지 마세요! 
+부스를 방문해주시는 분들께는 다가오는 봄, 한강변에 예쁘게 펼칠 수 있는 &lt;strong&gt;피크닉 매트&lt;/strong&gt;를 드립니다!&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;▶ &lt;a href="https://career.hyperconnect.com/"&gt;HYPERCONNECT 홈페이지&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id="coupang"&gt;Coupang&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/02/-----------2023-02-20------11-09-54.png" alt="" /&gt;
+쿠팡에 관심 있는 개발자/디자이너/프로덕트매니저분들을 위하여 리더급 엔지니어들과 리크루터와 함께하는 시간을 마련하였습니다.
+쿠팡 부스에 방문하셔서 개발자/디자이너/프로덕트매니저로서의 고민, 쿠팡의 개발 문화, 업계 근황 등에 대해 자유롭게 이야기 나누세요. 네트워킹에 참여하시면 &lt;strong&gt;기념품&lt;/strong&gt;도 받아보실 수 있습니다.&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;▶ &lt;a href="https://www.coupang.jobs/kr/"&gt;Coupang 홈페이지&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id="scatterlab"&gt;SCATTER LAB&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/02/-----------2023-02-21-------11-04-23.png" alt="" /&gt;
+스캐터랩 루다팀에서는 AI를 통해 누구나 소중한 관계를 갖는 세상을 꿈꾸고 있어요. 그래서 누구도 가보지 않은 인공지능 제품의 새로운 길로 나아가는데 있어 귀중한 가치를 더해주실 동료를 찾습니다.&lt;br/&gt;
+부스 방문하셔서 루다팀의 근황과 조직문화 그리고 인공지능 업계의 주요 화두까지 이야기 나눌 수 있는 기회를 가져보시고, &lt;strong&gt;스캐터랩 굿즈와 귀여운 루다 스티커&lt;/strong&gt;도 받아가세요!&lt;/p&gt;
+
+&lt;p&gt;▶ &lt;a href="https://team.luda.ai/"&gt;SCATTER LAB 홈페이지&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=""&gt;한국축산데이터&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/02/-----------2023-02-21------12-40-31.png" alt="" /&gt;
+국내 대표 축산 테크 기업 한국축산데이터 부스에서 무슨 일이?&lt;br/&gt;
+DEVIEW 2023 참여 개발자분들을 위한 취향 저격 깜짝 이벤트와 함께 특별한 경품을 준비했습니다. &lt;br /&gt;
+야심차게 준비한 &lt;strong&gt;퀴즈 맞추고 선물&lt;/strong&gt;도 받아가세요! 
+(선착순 증정으로 조기마감 될 수 있습니다.)&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;▶ &lt;a href="https://www.aidkr.com/"&gt;한국축산데이터 홈페이지&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt; &lt;br /&gt;
+그 밖에도 체험 존을 준비한 NAVER WEBTOON, NAVER Z 뿐 아니라 SOCAR, SYMBIOTE AI 등 다양한 부스들이 마련되어 있습니다. 시간 내셔서 꼭 한번 둘러보시고 기념품도 많이 받아가세요 :) &lt;br/&gt;
+부스는 2월 27일, 28일 양일간 오전 10시부터 마지막 세션 진행 시까지 운영합니다!&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>오프라인으로 돌아온 DEVIEW 2023, 미리보는 참가 신청 방법!</title>
+    <link rel="alternate" href="https://d2.naver.com/news/1888051" />
+    <category term="news" />
+    <id>https://d2.naver.com/news/1888051</id>
+    <updated>2023-02-07T10:24:52Z</updated>
+    <content type="html">&lt;p&gt;&lt;img src="/content/images/2023/02/S__39067674.jpg" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;오프라인으로 돌아온 DEVIEW 2023의 참가 신청이 이틀 앞으로 다가왔습니다. &lt;/br&gt;&lt;/p&gt;
+
+&lt;p&gt;지난 2019년 오프라인 DEVIEW 선착순 참가 신청 시 마감되는 데 걸린 시간 단, 11초.
+정말 짧은 순간 참가 신청이 마감되다 보니 더 빠르게 참가 신청 할 수 있는 방법을 고민하고 계신 분들이 많으실 텐데요.&lt;/p&gt;
+
+&lt;p&gt;게다가 처음으로 네이버 예약을 통해 DEVIEW 선착순 참가 신청이 이루어지는 만큼 처음 신청하시는 분들도 어려움 없이 참여하실 수 있도록 미리 참가 신청 방법을 공유 하고자 합니다.&lt;/p&gt;
+
+&lt;p&gt;[참고] DEVIEW 2023의 참가신청은 2월 8일(수)에 DAY 1(2/27)의 참가신청이, 9일(목)에는 DAY 2(2/28)의 참가 신청이 각각 선착순으로 &lt;a href="https://deview.kr/2023"&gt;DEVIEW 2023 홈페이지&lt;/a&gt;를 통해 네이버 예약으로 진행됩니다. &lt;/p&gt;
+
+&lt;h3 id="1deview"&gt;1. [참가 신청 전] DEVIEW 홈페이지가 아닌 네이버 페이지 로그인 완료!&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;DEVIEW 2023 홈페이지 로그인은 관심있는 세션을 MY SCHEDULE에 담기 위한 기능입니다.&lt;/li&gt;
+&lt;li&gt;참가 신청을 위해서는 꼭! 별도의 브라우저 탭에서 네이버 로그인을 미리 완료해주세요.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="2deview2023"&gt;2. [참가 신청] DEVIEW 2023 홈페이지 메인화면의 참가신청 버튼 클릭&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;공개 예정인 메인화면의 참가신청 버튼을 누르시면 네이버 예약 화면(항목)을 보실 수 있습니다.&lt;/li&gt;
+&lt;li&gt;필수 항목에 해당되는 정보 중 이메일 주소는 미리 복사할 수 있도록 준비해두시고, 선택 항목도 확인해두세요!&lt;/li&gt;
+&lt;li&gt;예약자 정보 중 이메일 주소(선택 항목)가 있지만, 행사 안내를 위한 필수 항목이라 별도의 이메일 주소를 취합합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/02/-----3-3.png" alt="" /&gt;
+&lt;span class="caption"&gt;&amp;lt;신청 화면(DAY 1)미리보기&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id="3"&gt;3. [참가 신청 완료] 예약 확정&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;참가 신청(예약) 성공시 아래와 같은 화면을 보실 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/02/-----------2023-02-06------2-49-30.png" alt="" /&gt;
+&lt;span class="caption"&gt;&amp;lt;참가 신청(예약) 완료&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id="4"&gt;4. [참가 신청 결과 확인] 네이버 예약에서 확인하세요!&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://m.booking.naver.com/my/bookings"&gt;https://m.booking.naver.com/my/bookings&lt;/a&gt; 에서 확인하실 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/02/-----------2023-02-06------2-49-48.png" alt="" /&gt;
+&lt;span class="caption"&gt;&amp;lt;참가신청 페이지 확인&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;본 튜토리얼은 참가자 분들의 참가 신청을 원활히 하실 수 있도록 도움을 드리고자 PC 버전으로 DAY 1 화면을 기준으로 작성되었으며 예약 페이지 내 일부 문구는 변경될 수 있습니다. 
+  정확한 예약 화면 확인을 위해서는 참가 신청 당일 예약 페이지를 확인해주세요!&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+  </entry>
+  <entry>
+    <title>네이버 검색 SRE 2편 - 측정하지 않으면 개선할 수 없다! SRE KPI 개발기</title>
+    <link rel="alternate" href="https://d2.naver.com/helloworld/9231267" />
+    <category term="hello world" />
+    <id>https://d2.naver.com/helloworld/9231267</id>
+    <updated>2023-01-27T10:25:36Z</updated>
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="#ch1"&gt;MTTM 개발기&lt;/a&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="#ch1_1"&gt;개발 배경&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch1_2"&gt;MTTR이란&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch1_3"&gt;전사 장애 시스템의 장애 관제 방식&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch1_4"&gt;MTTR 지표 사용의 한계&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch1_5"&gt;새로운 지표 MTTM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch1_6"&gt;TTM 지표 측정&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch2"&gt;끝날 때까지 끝난 게 아닌 SRE KPI 개발 여정&lt;/a&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="#ch2_1"&gt;KPI 개발 끝, 행복 시작?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch2_2"&gt;평균의 함정&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch2_3"&gt;새로운 지표 CTTM, DTTM의 등장&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch3"&gt;앞으로의 과제&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;지난 글에서 &lt;a href="https://d2.naver.com/helloworld/5799075"&gt;차세대 검색 모니터링 시스템 개발 여정&lt;/a&gt;을 다루었습니다. 이번 편에서는 SRE KPI 개발기에 대해 이야기해보려고 합니다.&lt;/p&gt;
+
+&lt;p&gt;검색 SRE팀에서는 검색 서비스의 장애를 예방하고 서비스 신뢰도를 높이기 위해 여러 관련 시스템도 개발하고 on-call 업무도 진행하는 등 이곳저곳에서 바쁘게 움직이고 있습니다. 저희의 이런 노력과 검색 서비스 모든 담당자분들의 노고 덕분에 검색 서비스 신뢰도와 안정성은 계속해서 개선되고 있는데요, 그렇다면 얼마나 개선되었는지는 어떻게 알 수 있을까요? 단순히 운이 좋아서 수치가 개선된 것이 아니라 여러 사람들의 노력으로 인해 좋아졌다는 것은 어떻게 보여줄 수 있을까요?&lt;/p&gt;
+
+&lt;p&gt;이런 물음에 답하기 위해 검색 SRE팀에서는 검색 서비스의 건강도를 측정하고, 장애 상황에 신속하게 대응하기 위한 여러 가지 방법을 연구하고 발전시켜나가고 있습니다. 이번 검색 SRE 2부 아티클을 통해 지난 몇 년간 내부적으로 논의하고 사용해본 방법들에 대한 이야기를 나누어보고자 합니다.&lt;/p&gt;
+
+&lt;p&gt;우선, &lt;strong&gt;검색 서비스의 건강도&lt;/strong&gt;에 관해 이야기해보고자 합니다. 검색 서비스의 건강도란 무엇을 의미하는 걸까요? 어떤 서비스가 건강한지에 대해서는 어떻게 알 수 있을까요? 가장 간단하고 직접적인 방법은 서비스를 운영하는 장비의 지표(CPU, 메모리, 네트워크 TX/RX 등)를 확인하는 방법이 있을 것입니다. 그런데, 네이버 검색 서비스는 매우 많은 시스템으로 구성되어 있고, 따라서 모든 장비의 지표를 일일이 확인하여 서비스의 건강도를 파악하는 것은 몹시 고되고 비효율적인 작업입니다.&lt;/p&gt;
+
+&lt;p&gt;숲에 있는 나무 하나하나의 건강을 챙기는 것도 중요하지만, 숲 전체의 건강을 챙기는 것 역시 중요합니다. 이는 곧, 저희 검색 SRE팀의 목표 그리고 존재 의의라고 할 수 있겠습니다. 좀 더 직관적으로 서비스 전체의 건강도를 파악하기 위해 저희가 시도했던 노력, 그리고 그 과정에서 도출한 지표들에 대해 소개해드리겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch1"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="mttm"&gt;MTTM 개발기&lt;/h2&gt;
+
+&lt;p&gt;&lt;a id="ch1_1"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=""&gt;개발 배경&lt;/h3&gt;
+
+&lt;p&gt;검색 SRE팀에서는 장애율(장애 발생 건수/변경 공지 건수) 지표를 KPI로 사용하고 있다. 서비스의 장애 대부분이 변경 배포 와중에, 혹은 배포 이후 발생하는 것에서 착안한 지표이다. 매우 단순하면서도 효과적으로 검색 서비스 전반의 건강도를 알 수 있는 지표이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/58f7813d-71a5-46c8-9802-2cfb7781938c.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;검색 SRE가 지원 중인 부서 기준으로 2019년부터 장애율 1% 이하를 유지하고 있다. 특히 2020년에는 0.45% 장애율을 달성했고 이는 변경 공지 200건당 약 1건 이하의 장애 발생을 의미한다. 장애율을 줄이는 것은 중요하지만 장애율을 0%로 줄이는 것은 불가능한 일이기에, 1% 이하의 장애율은 현실적으로 달성하기 어려운 수치를 이루어낸 것이며 앞으로의 지표 개선은 한계가 있다고 판단했다. 따라서 자연스럽게 새로운 KPI 개발의 필요성이 대두되었다.&lt;/p&gt;
+
+&lt;p&gt;가장 먼저 논의된 지표는 MTTR(mean time to recovery)이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch1_2"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="mttr"&gt;MTTR이란&lt;/h3&gt;
+
+&lt;p&gt;장애가 발생하지 않도록 하는 것도 중요하지만, 장애가 발생했을 때 신속하게 복구하는 것도 중요하다. 장애가 발생했을 때 복구까지 걸리는 시간의 평균을 MTTR이라고 하며, 이 지표를 줄여나간다는 것은 신속한 장애 대처 능력을 갖춘다는 것을 의미한다. MTTR은 네이버 전사 장애 시스템에 기록된 장애 티켓의 &lt;strong&gt;장애 발생 시각~복구 완료 시각&lt;/strong&gt;을 하나의 TTR 데이터로 측정하여 산출한다.&lt;/p&gt;
+
+&lt;p&gt;위 방식을 통해 검색 SRE가 지원 중인 부서 기준으로 2018년 이후의 MTTR을 살펴보면 매년 1시간이 넘어간다는 것을 확인했다. 실제로 검색 서비스에서 1시간 이상 장애가 지속되었던 케이스는 없었기 때문에 해당 MTTR은 &lt;strong&gt;신속한 장애 복구 능력&lt;/strong&gt;을 나타내는 지표로 사용하기에는 어렵다는 것을 알 수 있다. 먼저 전사 장애 시스템의 장애 관제 방식에 대해서 살펴보겠다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch1_3"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=""&gt;전사 장애 시스템의 장애 관제 방식&lt;/h3&gt;
+
+&lt;p&gt;먼저 전사 장애 시스템에서 장애를 감지하는 경로는 3가지이다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;서비스 모니터링 툴을 이용하여 실시간으로 장애 감지&lt;/li&gt;
+&lt;li&gt;고객센터로 인입된 고객 문의나 자체 판단 기준을 통해 감지&lt;/li&gt;
+&lt;li&gt;장애센터로 인입되는 전사 임직원의 문의를 통해 감지&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이 중 엔지니어의 개입 없이 자동적으로 장애를 감지하는 방법은 &lt;strong&gt;서비스 모니터링 툴을 이용한 장애 감지&lt;/strong&gt;이다. 그렇다면 현재 서비스 모니터링 툴에서는 검색 서비스에 대해서 어떤 방식으로 장애 감지를 하고 있을까? 모니터링하고자 하는 &lt;strong&gt;특정 URL을 지정&lt;/strong&gt;하고, 해당 페이지에서 등장해야 하는 &lt;strong&gt;오브젝트를 지정&lt;/strong&gt;함으로써 해당 오브젝트가 존재하는지 판단한다. 즉, 특정 주기마다 해당 페이지의 정상 출력 여부에 대한 모니터링을 진행하고 있다.&lt;/p&gt;
+
+&lt;p&gt;예를 들면, 이미지 검색이 잘 되는지 확인하기 위해 아래와 같이 '네이버'라는 테스트 검색어로 검색을 진행하고 이미지 탭에서 결과가 잘 나오는지 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/28f340d2-3be6-4b3f-bd9f-8e59ef2a9dc8.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch1_4"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="mttr"&gt;MTTR 지표 사용의 한계&lt;/h3&gt;
+
+&lt;p&gt;위와 같은 방식으로 장애를 감지하고, 서비스 장애의 복구 시간을 나타내는 MTTR을 검색 SRE의 &lt;strong&gt;신속한 장애 복구 능력&lt;/strong&gt;을 나타내는 지표로 사용하는 것에는 몇 가지 어려움이 있었다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;장애 감지 사각지대 존재&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;담당자가 위 감지 조건을 직접 튜닝해야 한다. 감지 조건 튜닝을 잘한 서비스는 그만큼 장애가 잘 관측되지만, 그렇지 않은 서비스는 잘 관측되지 않는다.&lt;/li&gt;
+&lt;li&gt;새로 출시된 서비스일수록 상대적으로 조건 튜닝의 디테일이 부족하기 때문에 감지의 사각지대가 생길 수 있다.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;서비스별 장애 감지 조건의 차이와 서비스/시스템 관점에서의 지표 산출&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;검색 SRE는 모든 서비스의 &lt;strong&gt;장애 복구 시간&lt;/strong&gt;을 한눈에 볼 수 있는 특정 지표로 환산하고자 한다. 따라서 '서비스'의 관점에서 모두 각기 다른 감지 조건을 설정하여 장애를 감지하고 이를 지표로 산출하기보다는, '시스템'의 관점에서 일관성 있고 객관적인 방식의 장애 감지와 그에 따른 지표 산출이 필요하다고 판단했다.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;표본 수 부족&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;절대적인 표본 수 부족&lt;/li&gt;
+&lt;li&gt;검색 SRE가 지원 중인 부서 기준 매년 장애 건수는 00건 이하이다. 표본의 수가 부족하다는 것은 결국 통계적으로 신뢰도가 낮다는 문제로 연결된다.&lt;/li&gt;
+&lt;li&gt;표본 수의 감소 추세&lt;/li&gt;
+&lt;li&gt;위 표본 수가 부족한 문제는 검색 SRE 활동을 통해 장애율을 줄여나감에 따라 더욱 심해진다. 기존 KPI에서 &lt;strong&gt;장애 발생 건수/변경 공지 건수&lt;/strong&gt;를 줄여 1% 이하의 장애율을 달성했는데, 이 말은 결국 MTTR의 표본인 장애 건수의 감소를 의미한다.&lt;/li&gt;
+&lt;li&gt;이상값(outlier)에 의한 지표의 변화&lt;/li&gt;
+&lt;li&gt;분석한 장애 데이터의 복구 시간은 최소 0분~최대 0000분으로 범위가 매우 넓다. 표본이 적다는 문제는 worst case의 이상값에 의한 값의 왜곡 현상을 심화시킨다.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id="ch1_5"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="mttm"&gt;새로운 지표 MTTM&lt;/h3&gt;
+
+&lt;p&gt;따라서 위 3가지 문제점을 해결하며, &lt;strong&gt;신속한 장애 복구 능력&lt;/strong&gt;을 지표화할 수 있는 방식에 대해서 고민했다. 이때 '장애의 &lt;strong&gt;발생~복구&lt;/strong&gt;만이 아닌 &lt;strong&gt;서버 이상 증상의 감지~완화&lt;/strong&gt;를 측정 데이터로 사용하면 어떨까?'라는 아이디어에서 MTTM의 개념이 등장했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/7389fd72-4375-4835-abd4-beb30315ab0e.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;MTTM(mean time to mitigation)이란 서버의 이상 증상이 감지되어 경보가 발생한 시점부터 증상의 완화(mitigation) 시점까지 걸린 시간의 평균을 의미한다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;MTTM은 검색 모니터링 시스템의 Event 데이터를 사용하여 지표를 산출했다.(1편에서 소개한 바로 그 검색 모니터링 시스템이다.) 검색 모니터링 시스템에서는 장애 및 이상 증상에 대한 일관성있고 고도화된 감지를 통해 사용자에게 Event를 알려준다. 또한 수년간의 이상 증상에 대한 데이터가 아카이빙 되어있으며, 표본 수도 많고 정확도도 높다. Event는 아래와 같은 종류가 있으며, 각 Event의 발동과 해제 기준은 모든 검색 서비스에 동일하게 적용된다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;트래픽 경보&lt;/li&gt;
+&lt;li&gt;가용량 부족&lt;/li&gt;
+&lt;li&gt;시간 초과 발생&lt;/li&gt;
+&lt;li&gt;평균 응답 시간 지연&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id="ch1_6"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="ttm"&gt;TTM 지표 측정&lt;/h3&gt;
+
+&lt;p&gt;전사 장애 기준에는 미치지 못했으나 검색 모니터링 시스템에 관측된 한 가지 이상 증상 케이스를 예로 설명하겠다.(경보 시간, CPU 사용률 등 구체적인 수치는 예시이다.) 잘못된 배포로 인하여 특정 서버의 CPU 사용률이 급격히 상승했고 이에 따라 연결 시간 초과(connection timeout)이 발생했던 케이스이다. 운영자는 이를 인지하여 수 분내에 롤백 조치를 했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/4ec92e6e-409f-4a26-917b-ca62837e32da.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;검색 모니터링 시스템에서는 해당 Event를 가용량이 부족한 &lt;strong&gt;이상 증상&lt;/strong&gt;으로 규정하고 있다. 이에 따라 임계점(threshold)을 넘어간 시점에 경보를 발생시키고, 증상이 완화된 시점에는 경보를 해제한다. 우리는 경보의 발동부터 해제까지를 time to mitigation(완화까지의 시간)으로 정하고, 모든 이상 증상의 TTM 평균인 MTTM(mean time to mitigation)을 사용한다.&lt;/p&gt;
+
+&lt;p&gt;해당 케이스의 경우 17시 25분에 경보가 발동하여 17시 35분에 해제되었으므로 TTM은 10분으로 계산된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/7e467778-fd31-4d32-8473-2e0497202027.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;더욱 자세한 내용은 해당 주제로 발표를 진행했던 &lt;a href="https://deview.kr/2021/sessions/448"&gt;DEVIEW 2021 세션&lt;/a&gt;에서 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch2"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="srekpi"&gt;끝날 때까지 끝난 게 아닌 SRE KPI 개발 여정&lt;/h2&gt;
+
+&lt;p&gt;&lt;a id="ch2_1"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="kpi"&gt;KPI 개발 끝, 행복 시작?&lt;/h3&gt;
+
+&lt;p&gt;이렇게 MTTM이라는 새로운 지표를 만들고 적용한 지 일 년이 흘러 살펴본 지표는 아래와 같았다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/6d82ed27-03bb-46b5-93b8-e06ccb820f81.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;그런데 정말로 "최근 검색 서비스의 이상 증상이 해소되기까지 평균적으로 약 10분 정도 소요된다"라고 해석해도 괜찮은 걸까?&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch2_2"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=""&gt;평균의 함정&lt;/h3&gt;
+
+&lt;p&gt;경험을 통해 대강 짐작하고 있는 경보의 지속 시간과 'MTTM 5~10분'은 검색 SRE 입장에서는 조금 괴리가 있다고 느껴졌다. 왜 그런지 경보 데이터를 살펴보니 일시적으로 1~2분 튀었다가 경보가 해제되는 경우가 전체 경보의 절반 이상을 차지하고 있었고, 그에 따라 우리는 MTTM이 더 낮은 수치를 보여줄 것이라고 기대하고 있던 것이다. 이상 증상이 해소되기까지 오래 걸리는 몇몇 이상값으로 인해 10분이라는 수치로 계산되었기에, 이는 '평균의 함정'이라고도 해석이 가능했다.&lt;/p&gt;
+
+&lt;p&gt;그리고 1~2분 경보 데이터는 정말로 '경보'일까? 아니면 일시적으로 튀는 이상 증상이니 경보 상황으로 보지 않아야 하는걸까? 2분 이하 경보 케이스를 하나씩 살펴보면 실제로 장애로 이어질 수 있었던 경보 상황은 많지 않았고, 배포나 하드웨어 이슈 등으로 일시적으로 수치가 튀었다가 다시 정상으로 돌아오는 경우가 많았다. 그렇지만 실제로 장애였던 케이스도 분명 존재했다.&lt;/p&gt;
+
+&lt;p&gt;논의 끝에 대표 MTTM은 10분 이상의 경보 데이터를 기준으로 계산하는 것으로 결정했다. 이러한 기준은 10분 이상의 경보와 이상 증상에 대해서 더 집중해서 먼저 살펴보겠다는 의지가 담겨 있기도 하다.&lt;/p&gt;
+
+&lt;p&gt;10분 이상의 경보 데이터로 MTTM을 다시 계산하면 아래와 같다. 전체 TTM의 평균보다 최대 6배 정도 수치가 증가한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/4a7d19dd-5226-4419-8d58-cac28d5690cb.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;그런데 &lt;strong&gt;TTM &gt;= 10분 MTTM&lt;/strong&gt;을 본다고 하더라도, 아래 두 가지 문제는 여전히 고민이 필요하다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;여전히 평균값을 사용하기 때문에 '평균의 함정'에서는 벗어날 수 없다. 짧은 경보 상황이 많이 발생할수록 지표가 좋아지거나, 이상값 몇 개가 지표를 악화시키는 문제는 여전히 존재한다.&lt;/li&gt;
+&lt;li&gt;짧은 시간 지속되는 경보 상황이 많은 것에 대해서는 "경보 시간이 긴 것 보다는 짧은 게 좋은 것 아닌가?"라는 생각이 자연스럽게 떠오르지만, 경보가 '많은' 것이 건강한 시스템 상황이라고 볼 수 있을지는 고민이 필요하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이에 대한 예시로, 위 2020년 MTTM을 다시 살펴보면 TTM 필터링에 따라 다른 양상을 보인다는 것을 확인할 수 있다. 전체 TTM을 대상으로 한 MTTM의 경우 2019년보다 작고 2021년보다 크지만, 10분 이상 TTM을 대상으로 한 MTTM의 경우 2019년, 2021년보다 확연히 큰 값을 보여준다.&lt;/p&gt;
+
+&lt;p&gt;그리고 10분 미만의 TTM 비율이 늘어나고 있는 것도 확인할 수 있었다. 짧은 시간의 경보가 많아지고 있는 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/b8cd8300-5303-41de-af08-f0076fc08784.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;이에 대해, MTTM 값이 낮다고 해서 시스템이 건강하다고 판단하기는 어렵다는 결론을 내렸다. 이 문제를 해결하기 위해 평균값만 보는것이 아니라 &lt;strong&gt;이상 증상의 규모나 빈도를 함께 살펴볼 수 있는 보조 지표를 추가해보자는 의견이 나왔다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch2_3"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="cttmdttm"&gt;새로운 지표 CTTM, DTTM의 등장&lt;/h3&gt;
+
+&lt;p&gt;규모를 확인할 수 있는 가장 간단한 방법은 그 합계 값을 확인하는 것이다. 우리도 이에 따라 보조 지표인 CTTM, DTTM을 만들었다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CTTM: &lt;strong&gt;누적 TTM&lt;/strong&gt;. TTM을 단순 합산한 것. 이상 증상의 전체 규모를 숫자 하나로 파악할 수 있음&lt;/li&gt;
+&lt;li&gt;DTTM: &lt;strong&gt;Duration TTM&lt;/strong&gt;. 경보끼리의 중복 시간을 제거해서 구한 전체 TTM 합.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;즉, 예를 들어 지속 시간 1분짜리 경보 3개가 동시에 울렸다면 CTTM은 3분, DTTM은 1분으로 계산한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/dce071bc-8fa3-4cca-b770-e46c7e103a95.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;전체 합산값인 CTTM은 경보의 전체적인 규모를 파악하기 위한 지표라는 것을 알겠는데, 그렇다면 DTTM은 어떤 목적으로 만들어진 지표일까?&lt;/p&gt;
+
+&lt;p&gt;검색 SRE에서는 200여 개가 넘는 검색 서비스가 운영되고 있고, 경보의 종류도 다양하다. 따라서 단순히 합산값만 구하면 1년 중 몇 퍼센트의 시간만큼 이상 증상이 있었는지 직관적으로 확인하기가 어렵다. 예를 들어 여러 종류의 경보가 여러 서비스에서 많이 발생한다면 연간 CTTM 기준으로 1년을 넘어가는 값이 나올 수도 있다.&lt;/p&gt;
+
+&lt;p&gt;그러나 DTTM은 '이 시간에 이상 증상이 있었는지 없었는지'를 기준으로 하기 때문에 기준시간 대비 100%를 초과하는 값이 나올 수 없다. 이를 통해 검색 서비스 전체 *이상 증상의 budget도 확인할 수 있게된다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;* 이상 증상의 budget: 이상 증상 시간의 총합. 시스템 다운타임의 최대값을 뜻하는 error budget에서 착안한 단어.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;그리고 DTTM을 확인하며 각 시간에 얼마나 많은 이상 증상이 겹쳐서 일어났는지도 확인할 수 있다. 만일 같은 시간에 여러 서비스 혹은 여러 이상 증상이 동시에 나타나면 SPOF(single point of failure)과 같이 광범위하게 영향을 미치는 이상 증상이 있었다는 것을 확인할 수 있다. 이는 큰 영향을 주는 이상 증상이나 장애를 추적하고 예방하는 것에도 도움이 될 수 있을 것이라고 생각했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/ab17d66e-1c21-47f2-9c8a-81bd787cc87f.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/0b02cf20-f59c-4a7f-b0fa-69632d916f38.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 그래프를 통해 알 수 있는 우리 시스템의 건강도 상황은 다음과 같다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;22년을 기준으로 10분 이상의 이상 증상 평균 지속 시간은 65분이다. 이상 증상 규모는 약 1% 정도였다.&lt;/li&gt;
+&lt;li&gt;반면 CTTM과 DTTM 두 가지 지표를 비교하면 DTTM이 더 빠르게 작아지고 있는것을 확인할 수 있다. 22년도에는 대략 0.5% 정도까지 차이가 나기도 한다. 이는 여러 서비스에서 여러 이상 증상이 동시에 발생하는 비율이 더 커지고 있음을 나타낸다고 볼 수 있다. 이상 증상이 동시에 발생한 시간과 그 내용을 확인하여, 하나의 증상이 여러 서비스에 영향을 미치고 있는 것은 아닌지 점검이 필요해보인다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id="ch3"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=""&gt;앞으로의 과제&lt;/h3&gt;
+
+&lt;p&gt;지금까지의 SRE KPI 개발 과제를 이렇게 정리할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;목적
+&lt;ul&gt;&lt;li&gt;기존 KPI였던 &lt;strong&gt;장애 발생 건수/변경 공지 건수&lt;/strong&gt;인 장애율이 1% 아래로 saturation되면서 이를 대신할 새로운 KPI가 필요해졌다.&lt;/li&gt;
+&lt;li&gt;장애율만큼이나 검색 SRE가 일을 잘 하고 있는지, 그로 인해 검색 서비스의 신뢰도가 어떻게 좋아지고 있는지 단순명료하게 보여줄 수 있는 KPI면 좋겠다.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;방식
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;장애의 발생~복구&lt;/strong&gt;만이 아닌 &lt;strong&gt;서버 이상 증상의 감지~완화&lt;/strong&gt;를 측정 데이터로 사용한다.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;의의
+&lt;ul&gt;&lt;li&gt;서버 이상 증상 데이터를 사용함으로써 장애 감지 해상도를 높이고 장애 감지 사각지대를 줄일 수 있다.&lt;/li&gt;
+&lt;li&gt;기존 KPI인 장애율과 후보 KPI였던 MTTR은 전사 장애 시스템의 데이터를 사용하고, 새로운 KPI인 MTTM은 검색 모니터링 시스템 경보 데이터를 사용한다.&lt;/li&gt;
+&lt;li&gt;전사에서 공통으로 사용하고 있는 장애 기준은 서비스 유저 입장을 기준으로 e2e 환경에서의 장애를 측정한다. 반면 우리 검색 SRE에서는 검색 서비스 내 시스템 단위의 안정성, 건강도에 집중하고 있고 이를 위해 검색 서비스 메트릭을 기준으로 장애를 측정한다는 의미가 있다.&lt;/li&gt;
+&lt;li&gt;TTM 데이터 수집부터 MTTM 측정까지 전 과정이 자동화되어 있다.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;보완
+&lt;ul&gt;&lt;li&gt;평균의 함정을 피하기 위해 10분 이상의 TTM을 중심으로 지표를 계산한다.&lt;/li&gt;
+&lt;li&gt;이상 증상의 지속 시간 뿐만 아니라, 규모와 빈도까지 확인하기 위해 보조 지표인 CTTM, DTTM을 개발했다.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;그럼에도 아래와 같은 고민은 현재 진행형이다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;이상 증상 시간이 줄어들어 MTTM/CTTM/DTTM 수치가 작아지는 것은 검색 서비스의 신뢰도가 좋아지고 있다는 좋은 신호이다. 하지만 동시에 경보 커버리지를 유지할 수 있어야 한다. 실제로 이상 증상을 줄이려는 노력도 필요하고, 긍정 오류(false positive) 경보를 줄여서 경보 피로도도 줄여나가되, 우리가 놓치고 있는 경보는 없는지도 계속 살펴보아야 한다.&lt;/li&gt;
+&lt;li&gt;장애율의 saturation 기준을 1%로 세팅한 것처럼, MTTM/CTTM/DTTM 지표도 해당 기준을 설정할 수 있을지 고민이 필요하다.&lt;/li&gt;
+&lt;li&gt;검색 서비스 장애 자체는 정말 많이 줄었다. 그런데 장애가 줄어든 이유가 트래픽이 완만하게 늘어나면서 서비스 환경이 안정화되고 운영 환경이 좋아진 결과인지, 아니면 검색 SRE가 잘했기 때문인지 어떻게 알 수 있을까? 그리고 장애가 많이 줄어든 이 시점에서 검색 SRE가 여전히 여러 가지 업무를 잘 해내고 있다는 것은 어떻게 증명해낼 수 있을까?&lt;/li&gt;
+&lt;li&gt;궁극적으로, 검색 SRE는 어떤 방향을 향해 가야 할까?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;SRE KPI를 개발하고 설정하는 일은 검색 SRE의 방향성을 보여주고 또 그 방향대로 한 발자국씩 개선되고 있다는 것을 보여준다는 점에서 중요한 업무라는 생각이 들었다. SRE 업무가 잘 진행되고 있다는 느낌만 주는 것이 아니라, 실제 데이터로 검색 서비스 신뢰도가 더욱 좋아지고 있다는 것을 보여줄 수 있는 SRE KPI TF 업무는 앞으로도 계속된다! 많은 고민에 대한 해답을 풀어나가는 모습을 앞으로도 잘 지켜봐주시고, 관련된 문의사항이나 아이디어가 있다면 제보해주시길 바란다.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>네이버 검색 SRE 1편 - 차세대 검색 모니터링 시스템을 향한 여정</title>
+    <link rel="alternate" href="https://d2.naver.com/helloworld/5799075" />
+    <category term="hello world" />
+    <id>https://d2.naver.com/helloworld/5799075</id>
+    <updated>2023-01-20T12:22:26Z</updated>
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="#ch1"&gt;개발 배경&lt;/a&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="#ch1_1"&gt;네이버 검색 SRE의 목표&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch1_2"&gt;네이버 검색 규모와 SRE 도입 배경&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch1_3"&gt;기존 네이버 검색 모니터링 시스템과 한계&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch2"&gt;차세대 검색 모니터링 시스템 개발 과정&lt;/a&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="#ch2_1"&gt;차세대 모니터링 시스템의 목표&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch2_2"&gt;차세대 모니터링 시스템 설계&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch2_3"&gt;차세대 모니터링 시스템 개발시 마주했던 문제점과 해결&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch2_4"&gt;차세대 모니터링 시스템의 개선 효과&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch3"&gt;마무리&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2016년 9월 12일, 네이버는 경주 지진으로 약 10분간 검색 서비스를 제공하지 못하는 중대한 장애를 경험한 적이 있습니다. 경주 지진으로 인한 장애 이후 네이버 검색 시스템의 신뢰성 보장을 위해 SRE(Site Reliability Engineering)라는 방법론을 도입하기 시작했습니다. 그리고 현재 2023년까지 약 6년이라는 긴 시간 동안 안정적인 검색 서비스를 제공하기 위해 노력을 계속 이어 나가고 있습니다. 그 결과 검색 SRE가 지원하는 검색 서비스는 장애율 1% 이하의 지표를 유지하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;이번 시리즈는 지난 포스팅 이후부터 2022년까지의 검색 SRE 활동을 총 두 편으로 준비했습니다. 이전의 저희 이야기가 궁금하시다면, &lt;a href="https://d2.naver.com/helloworld/2047663"&gt;D2 Hello World: 네이버 검색의 SRE 시스템&lt;/a&gt;에서 소개한 검색 SRE 시스템을 참고해 주세요.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1편: 차세대 검색 모니터링 시스템을 향한 여정&lt;/li&gt;
+&lt;li&gt;2편: 측정하지 않으면 개선할 수 없다! SRE KPI 개발기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;1편에서 다룰 내용은 차세대 검색 모니터링 시스템 개발 과정입니다. 지난 몇 년간 운영해온 기존의 네이버 검색 시스템 모니터링에서 새로운 검색 모니터링 시스템으로 전환하며 어떻게 검색 안정성을 높여나갈 수 있었는지 소개해 드리도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch1"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=""&gt;개발 배경&lt;/h2&gt;
+
+&lt;p&gt;&lt;a id="ch1_1"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="sre"&gt;네이버 검색 SRE의 목표&lt;/h3&gt;
+
+&lt;p&gt;네이버의 검색 서비스는 사용자의 요구에 맞추어 끊임없이 성장하며 진화하고 있다. 성장과 진화 과정에서 변경은 필연적으로 동반되는데, 이런 변경은 검색 서비스의 안정성에 영향을 주기도 한다.&lt;/p&gt;
+
+&lt;p&gt;변경에 따른 크고 작은 장애는 어느 곳에나 있다. 하지만 사용자는 이와 상관없이 검색 서비스가 의도한 대로 잘 동작하기를 바란다. 사용자의 기대에 부응하며 안정적인 검색 시스템을 제공하기 위해 검색 SRE가 추구하는 두 가지 목표는 다음과 같다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;지표 이상 현상을 감지했을 때 빠르게 파악하고 초기 상황을 전파할 수 있어야 한다.&lt;/li&gt;
+&lt;li&gt;장애에 의한 영향도를 빠르고 정확하게 확인할 수 있어야 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;위 두 가지 목표를 달성하기 위해, 기존의 네이버 검색 모니터링 시스템을 어떻게 개선했는지 그 과정을 소개하겠다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch1_2"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="sre"&gt;네이버 검색 규모와 SRE 도입 배경&lt;/h3&gt;
+
+&lt;p&gt;2023년 1월을 기준으로, 네이버 검색은 수만 대 규모의 서버를 기반으로 수백 개의 서비스로 구성되어 있다. 네이버 검색이 성장함에 따라 검색을 구성하는 서비스 간의 관계도 점점 복잡해지고 있는데, 이에 따라 어느 한 서비스의 장애가 주변 시스템의 장애로 번지는 일이 일어나기도 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/920f60d5-c811-495a-84b8-5e9e8713a021.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 1 복잡하게 그물망처럼 얽힌 네이버 검색 서비스 일부분에 장애가 발생한다면?&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;기존의 네이버 검색 모니터링 시스템은 이러한 배경으로 탄생했다. 수많은 서비스 간 의존도와 복잡도가 높아진 상황에서, 전체 검색 서비스를 관제하는 SRE 주도 장애 관제의 필요성이 대두되었다. 장애를 신속하게 파악하고 정확하게 문제 원인을 공유하기 위해서는 모두가 함께 보는 시스템이 필요했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch1_3"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=""&gt;기존 네이버 검색 모니터링 시스템과 한계&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;네이버 검색에서 사용되던 기존 모니터링 시스템은 &lt;a href="https://d2.naver.com/helloworld/2047663"&gt;D2 Hello World: 네이버 검색의 SRE 시스템&lt;/a&gt;에서 소개한 바 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;장애 발생 시 상황 파악을 위해 기존 개발했던 모니터링 시스템은 지난 몇 년간 별다른 문제가 없는 것처럼 보였다.
+그러나 점차 기존 시스템을 운영하며 발견한 구조적 문제점이 수면 위로 드러나기 시작했다.&lt;/p&gt;
+
+&lt;h4 id="1"&gt;한계 1. 지표 확인 및 알람 딜레이&lt;/h4&gt;
+
+&lt;p&gt;아래 그림의 데이터 파이프라인을 살펴보면 데이터 수집, 저장, 알람이 Crontab 기반 1분 단위 배치 구조로 수행되다 보니 시스템 대기 시간 때문에 필연적으로 2~3분의 시스템 딜레이가 발생하는 구조적 한계가 있었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/2ba6fdc4-60df-4615-9e21-698868320496.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 2 배치 구조로 대기 딜레이가 발생하는 기존 시스템&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;언뜻 보면 전체 데이터를 처리하고 확인하는 데까지 2~3분이면 네이버 검색 규모에 비해 그렇게 오래 걸리는 것은 아니라고 생각할 수 있다. 그러나 기존 모니터링 시스템을 이용하여 실시간으로 대응하는 온콜 멤버가 느끼는 2~3분 가량의 딜레이는 실제 시간보다 훨씬 답답하게 느껴지기 마련이다.&lt;/p&gt;
+
+&lt;p&gt;예를 하나 들어 보면, 2022년 10월 29일 토요일 오전 8시 27분 충북 괴산 지진이 발생했을 때, 재난 문자를 수신한 직후 담당 온콜이 모니터링 시스템에 접속했는데 시스템 딜레이 때문에 실시간 트래픽이 아닌 2~3분 전 트래픽을 확인할 수밖에 없는 상황이라면 매우 난감할 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/1e66348f-b4de-4008-83a7-a38961a6ae3e.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 3 시스템 딜레이가 실시간 비상 대응에 미치는 영향&lt;/span&gt;&lt;/p&gt;
+
+&lt;h4 id="2"&gt;한계 2. 시스템 딜레이에 따른 의사 결정 지연&lt;/h4&gt;
+
+&lt;p&gt;이상 징후 탐지에 소요되는 시스템 딜레이는 모니터링 시스템에 매우 치명적인 영향을 미친다. 시스템 딜레이에 따라 의사 결정 시간 또한 지연되기 때문이다. 이는 마치 사고 직전에 있는 자동차가 눈을 감은 상태로 3분 동안 핸들을 조향하지 못하는 것과 다름이 없다. 그뿐만 아니라 추후 자동화 대응 시스템을 연동하더라도 동작을 기대하는 시간보다 시스템 딜레이만큼 늦게 동작하게 될 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/d5fd2a5b-fc92-4400-8aa1-31611f7b0bd0.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 4 장애 지속 시간에 영향일 미치는 이상 징후 탐지 딜레이&lt;/span&gt;&lt;/p&gt;
+
+&lt;h4 id="3"&gt;한계 3. 필요한 데이터 확인의 어려움&lt;/h4&gt;
+
+&lt;p&gt;배치 구조 때문에 발생하는 시스템 딜레이를 개선하는 이슈와 별개로, 사람이 데이터를 확인하는 데 걸리는 시간을 줄이는 것 또한 매우 중요한 문제이다.&lt;/p&gt;
+
+&lt;p&gt;예를 들자면 아래 기존 모니터링 시스템의 UI 데이터 테이블은 정보가 너무 많기 때문에 사용자가 장애 상황 파악에 필요한 데이터를 식별하기 어려웠다. 긴급한 순간 30초란 시간이 주어진다면, 아래와 같은 화면에서 장애 분석에 필요한 정보를 올바르게 획득할 수 있을까?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/54376fee-3405-45bc-9fdb-e2309e6597c2.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 5 원하는 정보를 확인할 수 없을 만큼 복잡해져버린 기존 시스템의 데이터 테이블&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch2"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=""&gt;차세대 검색 모니터링 시스템 개발 과정&lt;/h2&gt;
+
+&lt;p&gt;&lt;a id="ch2_1"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=""&gt;차세대 모니터링 시스템의 목표&lt;/h3&gt;
+
+&lt;p&gt;기존 모니터링 시스템을 차세대 모니터링 시스템으로 전환하며 삼았던 목표는 크게 3가지이다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;초스피드&lt;/strong&gt;: 기존 최대 180초 소요되었던 지표 확인과 알람 딜레이를 60초 이내로 단축하여 이상 현상을 빠르게 감지할 것&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;고해상도&lt;/strong&gt;: 기존 서비스 해상도를 마이크로 서비스 해상도로 확대할 것&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;데이터 가독성 향상&lt;/strong&gt;: 기존 데이터 테이블의 정보 과다 노출을 줄이고 반드시 의사 결정에 필요한 데이터만 노출할 것&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;위 3가지 목표를 모두 달성하기 위해 시스템을 밑바탕부터 다시 고민하고 설계하기 시작했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch2_2"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=""&gt;차세대 모니터링 시스템 설계&lt;/h3&gt;
+
+&lt;p&gt;기존 모니터링 시스템의 가장 큰 문제점은 '수집 - 처리 - 저장 - 알람' 배치가 하나의 프로젝트로 구성되어 불필요한 대기 시간이 발생했다는 점이다. 이런 구조적 문제 때문에 모든 배치가 순차적으로 진행되다 보니, 이전 작업이 모두 끝나지 않으면 다음 작업을 진행할 수 없었다. 불필요한 대기 시간으로 인해 지표 확인과 알람 발송에 총 2~3분 가량 딜레이가 발생하는 암울한 결과를 낳았다. 그리고 기하급수적으로 늘어가는 서버 수와 서비스 개수에 비례하여 지난 몇 년간 지표 확인 및 알람 발송 딜레이는 해가 갈수록 늘어나는 상황이 지속되었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/f62152f0-ae53-4e49-9c20-7ce9e5686768.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 6 기존 시스템 대기 딜레이가 발생하는 구간 확인&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;위에서 말했던 3가지 차세대 모니터링 시스템 목표 (대기 딜레이 단축, 해상도 확대, 데이터 가시성)를 달성하기 위해 팀 내에서 리팩토링이 아닌 시스템을 처음부터 다시 설계한다는 중대한 결정을 내리게 되었다. 수집, 처리, 저장, 알람을 담당하는 컴포넌트의 역할과 책임을 분리했으며 대기 딜레이 단축을 위해 기존 배치 구조에서 스트림 구조로 변경하기 위한 노력을 기울였다.&lt;/p&gt;
+
+&lt;p&gt;기존 시스템 운영 경험과 교훈을 바탕으로 새로운 시스템을 설계할 때 기대했던 점은 아래와 같다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;짧은 대기 시간&lt;/strong&gt;: 낭비되는 대기 시간을 최대한 줄일 것&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;리플레이와 시뮬레이션&lt;/strong&gt;: 수집, 처리, 저장, 알람은 언제든지 리플레이 가능하도록 할 것, 그리고 시뮬레이션될 수 있도록 할 것&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;단일 컴포넌트 책임 축소&lt;/strong&gt;: 컴포넌트 간 역할과 관계를 분리하고, 단일 컴포넌트가 너무 큰 책임을 지지 않도록 할 것&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이런 기대치를 달성하기 위하여 가장 크게 구조를 변경했던 부분은 단일 배치 스크립트의 분리였다. 앞에서 언급했던 것처럼 단일 배치 스크립트가 전부 담당했던 '수집 - 처리 - 저장 - 알람' 단계를 새로운 여러 컴포넌트로 위임하여 분리하였고 이를 도식화하면 아래와 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/3d52c647-971d-4f08-a9b6-a6f7fcfeab09.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 7 차세대 검색 모니터링 시스템 딜레이와 설계 모식도&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch2_3"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=""&gt;차세대 모니터링 시스템 개발 시 마주쳤던 난관과 해결 방법&lt;/h3&gt;
+
+&lt;p&gt;설계 과정에서 계획했던 것처럼 이상적으로 흘러갔으면 좋았겠지만, 현실의 개발 과정은 희망과 목표처럼 순탄치만 않았다. 기존 검색 모니터링 시스템을 운영하는 동시에 완전히 패러다임이 다른 차세대 시스템을 개발하는 과정에서 마주쳤던 난관과 해결 방법을 소개하겠다.&lt;/p&gt;
+
+&lt;p&gt;첫 번째 문제는 알람 기준 시각에 따른 데이터 신뢰성 문제이다. 데이터 흐름을 시간에 따라 나타내면 아래와 같다. 순차적인 수집, 처리 및 저장, 알람 순서로 이루어져 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/6ef70bac-6ffc-429e-8995-f969f6a7e8c2.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 8 기존 시스템의 순차적 배치 처리&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;이 흐름을 스트림으로 변경하면 아래와 같이 데이터 수집과 처리가 모두 완료되지 않은 상태에서 알람을 평가하기도 한다. 그런데 이렇게 되면 데이터를 신뢰할 수 없는 순간에 읽고 평가될 수 있으므로 잘못된 경보가 발생할 가능성이 높아진다. 데이터 수집과 처리가 끝나지 않은 순간 알람이 평가된다면 어떤 일이 벌어질까? 알람 주기마다 잘못된 경보가 발생할 것이다. 아마 Grafana를 사용하는 분은 새로 고침을 계속 클릭하다 보면 아래 그림과 같이 데이터가 쌓이기 전 조회되는 현상과 마주친 적이 분명 있을 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/c56d353a-d428-454f-8717-6c832e67d6ec.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 9 차세대 시스템의 스트림 혼합 배치 처리&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;이런 문제를 해결하기 위해 각 처리 단계의 완료 시간을 측정해, 통계를 기반으로 데이터 신뢰가 가능한 시각을 30초로 설정했다. 그리고 데이터 신뢰 가능 시각까지 기다린 후 알람을 평가하도록 변경하여, 신뢰할 수 있는 알람이 발생하도록 처리했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/9b51a12e-76a5-4f85-bb75-6857f9117c84.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 10 데이터 신뢰 가능한 시각 설정, 이후 알람 스트림 처리&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;두 번째 문제는, 기존에 배치 스크립트에 녹여냈던 휴릭스틱을 Time Series Database (TSDB) 질의 언어와 관제 규칙으로 모두 위임한다는 초기 설계 철학의 한계를 발견한 것이었다.&lt;/p&gt;
+
+&lt;p&gt;기존 배치 코드에 스파게티 형식으로 담았던 휴리스틱 알고리즘을 코드가 아닌 외부로 최대한 분리하려 했지만 생각보다 아름답게 정리되지는 않았다. 많은 시행착오 끝에 결국 이상과 현실 사이에서 어느 정도 타협을 할 수밖에 없다는 것을 알게 되었고, 대신 보이 스카우트 규칙(캠프장은 처음 왔을 때보다 더 깨끗하게 해놓고 떠나라)만큼은 꼭 지키기로 했다.&lt;/p&gt;
+
+&lt;p&gt;처음에 기대했던 대로 100% 완벽하게 코드를 정리하지는 못했지만 약 70% 정도의 지저분한 로직은 설정, 데이터베이스, 템플릿, 질의로 분리해내어 기존 구조보다는 훨씬 유지보수가 수월해졌다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/9455ec69-1e7a-4cbc-a022-2deef3daf132.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 11 휴리스틱 알고리즘을 위임하여 코드라인 수 70% 감소&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;마지막 문제는, '언제 시스템을 전환하는 것이 좋을지' 결정하는 것이었다. 기존 시스템을 운영하면서 새로운 시스템으로 전환을 결정하려면 시스템 전환 기준이 반드시 필요하다.&lt;/p&gt;
+
+&lt;p&gt;시스템 개발을 80% 가까이 진행해 보니, 새로운 구현과 정책에 따라서 100% 완벽하게 기존 시스템을 이식하는 것은 불가능하다는 판단을 내렸다. 기존 시스템 대비 90% 정확도 수준의 시뮬레이션 결과를 도출하면 &lt;strong&gt;기존 시스템과 알람 발생에 통계적으로 큰 차이가 없다&lt;/strong&gt;는 실험 결과에 따라 90%의 알람 정확도와 지표 정확도를 기준으로 삼았다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/c4e55098-713c-427b-abac-bd6165c50008-2.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 12 기존 시스템과 신규 서비스를 시뮬레이션하여 동일한 알람이 발생하는지 확인&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/fb5c9dc3-ebe3-414e-a641-b42316c55d16.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 13 기존 시스템과 신규 서비스는 어떤 서비스 지표가 차이 나는지 나타내는 데이터 테이블&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;위와 같이 개발과 전환에서 만났던 문제를 차근차근 해결해 나가다 보니 결과물이 보이기 시작했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch2_4"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=""&gt;차세대 모니터링 시스템의 개선 효과&lt;/h3&gt;
+
+&lt;p&gt;차세대 시스템이 90%의 정확도 수준에 도달한 이후, 기존 시스템과 차세대 시스템의 상호 전환을 완료했다.&lt;/p&gt;
+
+&lt;p&gt;초기 설계부터, 실제 구현에서 마주한 문제를 해결해 나가며 결국 목표로 했던 초스피드, 고해상도, 데이터 가독성의 3가지 시스템 개선 목표를 모두 달성했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/a96897ea-7f10-4065-8a39-e23c09570f21.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 14 기존 시스템과 신규 서비스의 성능 차이&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;초스피드: 기존 최대 180초가 소요되었던 지표 확인과 알람 딜레이를 60초 이내로 단축하여 이상 현상을 보다 빠르게 감지&lt;br /&gt;
+기존 시스템에선 배치 처리 때문에 앞 단계의 데이터 처리를 모두 기다려야 해서 2분 이상 시스템 대기로 낭비되는 시간이 있었지만, 새로운 시스템은 이런 불필요한 대기 시간을 스트림 병렬 처리로 줄여 데이터 확인 및 알람 시간을 2분 이상 앞당겼다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/85033d7e-d395-4ee9-b51e-18554abc3670.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 15 기존 시스템과 신규 서비스의 차트 UI 변경점&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;고해상도: 기존 차트의 서비스 해상도를 마이크로 서비스 해상도 단위로 확대&lt;br /&gt;
+기존 시스템은 하나의 서비스 데이터를 Aggregation 처리했다. 이에 따라서 해상도가 낮아져 필요한 마이크로 서비스 데이터를 확인할 수 없는 문제가 있었다. 개선된 시스템에선 데이터를 Aggregation 처리하는 대신 Raw data를 모두 저장하도록 하여 서비스뿐만 아니라 마이크로 서비스의 데이터까지 확인할 수 있었다. 즉, ETL (Extract, Transform, Load) 처리를 ELT (Extract, Load, Transform)로 변경했다고 볼 수 있다. 추가로 차트 UI에 알람 기준을 배경으로 가시화하여 현재 위험도 수준이 어떤지 더욱 명확히 볼 수 있도록 했다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/536f5b75-2b29-4009-9b9a-0cc1280622a1.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 16 기존 시스템과 신규 서비스의 데이터 테이블 UI 변경점&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;데이터 가독성 향상: 기존 데이터 테이블의 정보 과다 노출을 해결하고, 차트와 테이블에서 반드시 의사 결정에 필요한 데이터만 한정하여 노출&lt;br /&gt;
+기존 시스템 UI는 너무 많은 정보가 노출되어 어떤 정보를 봐야 할지 알 수 없었다. 시스템을 개선하며 테이블 형식의 UI를 카드 형태의 UI로 간략화하여 어떤 서비스의 레이어에 이상이 있는지 한눈에 확인할 수 있었다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이렇게 목표로 했던 초스피드, 고해상도, 데이터 가독성 3가지 목표를 모두 달성하여, 검색 시스템의 문제 발생 시 장애 지속 시간에 큰 영향을 미치는 이상 징후 탐지 시간을 기존 최대 3분에서 1분 이내로 단축할 수 있었다. 이에 따라 중대한 장애 발생 시 신속하게 의사 결정을 내릴 수 있었고, 장애 지속 시간을 단축시킬 수 있었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/a993e05b-113a-4017-a52f-c4be353b2ecf.png" alt="image" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;그림 17 이상 현상 파악 딜레이 단축으로 인한 장애 지속 시간 감소&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch3"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=""&gt;마무리&lt;/h2&gt;
+
+&lt;p&gt;우리 네이버 검색 SRE는 이렇게 많은 우여곡절을 겪어왔고 또 앞으로도 계속 겪을 예정이다. 우리가 직접 개발한 모니터링 시스템을 수년간 운영하면서 겪은 각종 시행착오를 바탕으로 차세대 시스템이 만들어진 만큼 더욱 단단하고 강력해졌을 것이라고 믿고 있다. 또 이렇게 차근차근 지속적인 개선을 해나간다면 앞으로도 전 국민이 사용하는 네이버 검색 서비스를 계속 든든하게 뒷받침할 수 있을 것이라 기대한다.&lt;/p&gt;
+
+&lt;p&gt;이어지는 다음 편에서는 검색 SRE 조직의 KPI 개발 과정을 소개하겠다.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>DEVIEW 2023 홈페이지 오픈!</title>
+    <link rel="alternate" href="https://d2.naver.com/news/6755421" />
+    <category term="news" />
+    <id>https://d2.naver.com/news/6755421</id>
+    <updated>2023-01-16T16:07:58Z</updated>
+    <content type="html">&lt;p&gt;&lt;img src="/content/images/2023/01/---------_750X140.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;국내 최대 규모의 개발자 컨퍼런스 DEVIEW가 4년만에 오프라인으로 돌아왔습니다!&lt;/p&gt;
+
+&lt;p&gt;DEVIEW 2023은 코엑스 그랜드볼룸에서 2/27일(월)~2/28일(화) 이틀 동안 진행되며, 개발자분들의 탁월한 경험과 노하우를 공유할 수 있도록 다양한 세션들을 준비 중입니다 :)&lt;/p&gt;
+
+&lt;p&gt;올해도 네이버 뿐만 아니라 쿠팡, 하이퍼커넥트, 쏘카 외 여러 스타트업 개발자분들이 연사로 참가하여 더 풍성한 DEVIEW 2023을 빛내주실 예정이에요.&lt;/p&gt;
+
+&lt;p&gt;DEVIEW 2023을 위한 참가신청은 2/8일(수)에는 DAY1(2/27), 2/9일(목)에는 DAY2(2/28) 각각 오후 3시부터 진행되며, 선착순으로 진행되니 많은 관심 부탁드립니다! &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://deview.kr/2023"&gt;DEVIEW 2023 홈페이지 바로가기&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Batch를 더 우아하게 사용하기 - Spring Batch Plus</title>
+    <link rel="alternate" href="https://d2.naver.com/helloworld/9879422" />
+    <category term="hello world" />
+    <id>https://d2.naver.com/helloworld/9879422</id>
+    <updated>2023-01-02T17:46:48Z</updated>
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="#ch1"&gt;개발 배경&lt;/a&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="#ch1_1"&gt;분산된 ItemReader ItemProcessor ItemWriter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch1_2"&gt;많은 종류의 Job&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch2"&gt;ItemStreamReaderProcessorWriter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch3"&gt;Domain Specific Language (DSL)&lt;/a&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="#ch3_1"&gt;Type-safe Builder&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch3_2"&gt;Type-safe Builder를 구성하는 Kotlin 기능&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch3_3"&gt;Kotlin을 사용한 Internal DSL&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch4"&gt;Spring Batch Kotlin DSL&lt;/a&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="#ch4_1"&gt;구조 분석&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch4_2"&gt;설계 및 구현&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch4_3"&gt;네이버페이 정산 프로젝트에 적용&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch5"&gt;오픈 과정&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch6"&gt;마치며&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Spring Batch Plus는 Spring Batch를 조금 더 편리하게 사용할 수 있게 유용한 기능을 제공하는 헬퍼 라이브러리입니다. Spring Batch Plus는 Kotlin 언어 사용 시 Spring Batch를 간결하게 설정하도록 도와주는 Spring Batch Kotlin DSL과 하나의 클래스에서 ItemReader, ItemProcessor, ItemWriter 모두를 작성하게 해주는 등의 다양한 기능을 제공합니다.&lt;/p&gt;
+
+&lt;p&gt;저희는 매년 급속히 성장 중인 네이버페이를 개선하는 프로젝트를 진행하고 있습니다. 이 중에서 정산 플랫폼을 개선하는 프로젝트를 Kotlin 기반으로 Spring Batch를 활용하여 진행했습니다. 진행 과정에서 수십 개의 배치 Job을 작성해야 했는데 Spring Batch 기능을 그대로 사용하기에는 보일러플레이트 코드가 많고 파일도 많아지는 문제점이 있었습니다. 이를 해결하기 위해 여러 트릭을 사용했고 이를 담고 있는 라이브러리가 Spring Batch Plus입니다.&lt;/p&gt;
+
+&lt;p&gt;이 글에서는 연간 52조 규모의 네이버페이 정산 플랫폼을 신규 시스템으로 전환하는 과정에서 탄생한 Spring Batch Plus의 개발 배경과 구현 과정에 대해서 알아보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch1"&gt;&lt;/a&gt;  &lt;/p&gt;
+
+&lt;h2 id=""&gt;개발 배경&lt;/h2&gt;
+
+&lt;p&gt;&lt;a id="ch1_1"&gt;&lt;/a&gt;  &lt;/p&gt;
+
+&lt;h3 id="itemreaderitemprocessoritemwriter"&gt;분산된 ItemReader ItemProcessor ItemWriter&lt;/h3&gt;
+
+&lt;p&gt;Spring Batch 공식 문서에 따르면 Spring Batch의 &lt;a href="https://docs.spring.io/spring-batch/docs/current/reference/html/domain.html#step"&gt;Step&lt;/a&gt;은 ItemReader, ItemProcessor, ItemWriter로 구성되어 있다. ItemReader, ItemProcessor, ItemWriter는 각각 다음과 같이 정의한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;// ItemReader example
+class TestItemReader : ItemReader&amp;lt;Int&amp;gt; {  
+    override fun read(): Int? {
+        return 3
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;// ItemProcessor example
+class TestItemProcessor : ItemProcessor&amp;lt;Int, String&amp;gt; {  
+    override fun process(item: Int): String? {
+        return item.toString()
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;// ItemWriter example
+class TestItemWriter : ItemWriter&amp;lt;String&amp;gt; {  
+    override fun write(items: MutableList&amp;lt;out String&amp;gt;) {
+        println(items)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;이를 Step을 정의할 때 사용할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;@Bean
+open fun testStep(  
+    stepBuilderFactory: StepBuilderFactory
+): Step {
+    return stepBuilderFactory.get("testStep")
+        .chunk&amp;lt;Int, String&amp;gt;(3)
+        .reader(TestItemReader())
+        .processor(TestItemProcessor())
+        .writer(TestItemWriter())
+        .build()
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Spring Batch는 ItemReader, ItemProcessor, ItemWriter를 각각 독립적으로 재활용할 수 있다고 가정하고 ItemReader, ItemProcessor, ItemWriter를 별도의 파일로 정의하도록 가이드 한다. 예를 들어 XML에서 데이터를 읽는 코드는 대부분 비슷할 테니 &lt;a href="https://docs.spring.io/spring-batch/docs/current/reference/html/readersAndWriters.html#StaxEventItemReader"&gt;StaxEventItemReader&lt;/a&gt;로 미리 정의하고 필요할 때마다 재활용하는 식이다. 그런데 Spring Batch로 복잡한 데이터를 처리해야 할 경우 각 클래스는 특정한 도메인 로직을 처리하기 위해 사용하기 때문에 한 Step에서만 사용되도록 특수하게 구현하는 경우가 많다. 이럴 경우 특정 도메인을 처리하는 배치의 흐름을 알기 위해서는 ItemReader, ItemProcessor, ItemWriter 각각의 파일을 다 살펴봐야 해서 응집도가 낮아지는 문제점이 있다. 또한 ItemReader, ItemProcessor, ItemWriter 간 데이터 공유도 어렵다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch1_2"&gt;&lt;/a&gt;  &lt;/p&gt;
+
+&lt;h3 id="job"&gt;많은 종류의 Job&lt;/h3&gt;
+
+&lt;p&gt;Spring Batch는 &lt;a href="https://docs.spring.io/spring-batch/docs/current/reference/html/domain.html#job"&gt;Job&lt;/a&gt;이라는 단위로 배치 작업을 분류한다. 한 개의 Job은 한 개 또는 여러 개의 &lt;a href="https://docs.spring.io/spring-batch/docs/current/reference/html/domain.html#step"&gt;Step&lt;/a&gt;으로 구성된다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;@Bean
+open fun testJob(  
+    jobBuilderFactory: JobBuilderFactory,
+    stepBuilderFactory: StepBuilderFactory
+): Job {
+    return jobBuilderFactory.get("testJob")
+        .start(
+            stepBuilderFactory.get("testStep1")
+                .tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.get("testStep2")
+                .tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.get("testStep3")
+                .tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.get("testStep4")
+                .tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .build()
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;네이버페이 정산 시스템은  금액 집계, 지급 요청 등 서로 다른 역할을 하는 수십 개의 Job으로 구성된다. 그런데 이 Job은 상호 의존한다. 이를테면 정산 금액을 집계하지도 않았는데 판매자에게 정산 금액을 지급할 수는 없는 일이다. Spring Batch는 Job 간 의존관계를 설정할 수 있는 JobStep 기능을 제공한다. JobStep을 사용하면 한 Job에서 다른 Job을 Step처럼 사용할 수 있다. 네이버페이 정산 개편 프로젝트는 이를 활용하여 Job 간 의존관계를 정의했다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;@Bean
+open fun testJob(  
+    jobBuilderFactory: JobBuilderFactory,
+    stepBuilderFactory: StepBuilderFactory,
+    subJob1: Job,
+    subJob2: Job,
+): Job {
+    return jobBuilderFactory.get("testJob")
+        .start(
+            stepBuilderFactory.get("subJob1Step")
+                .job(subJob1)
+                .build()
+        )
+        .next(
+            stepBuilderFactory.get("subJob2Step")
+                .job(subJob2)
+                .build()
+        )
+        .build()
+}
+
+@Bean
+open fun subJob1(  
+    jobBuilderFactory: JobBuilderFactory,
+    stepBuilderFactory: StepBuilderFactory
+): Job {
+    return jobBuilderFactory.get("subJob1")
+        .start(
+            stepBuilderFactory.get("subJob1 - step1")
+                .tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.get("subJob1 - step2")
+                .tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .build()
+}
+
+@Bean
+open fun subJob2(  
+    jobBuilderFactory: JobBuilderFactory,
+    stepBuilderFactory: StepBuilderFactory
+): Job {
+    return jobBuilderFactory.get("subJob2")
+        .start(
+            stepBuilderFactory.get("subJob2 - step1")
+                .tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.get("subJob2 - step2")
+                .tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .build()
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;그런데 이 코드에는 문제가 있다. 의존하는 Job을 모두 인자로 받아야 하고 build 등 불필요한 보일러플레이트 코드가 많다. 무엇보다 Kotlin스럽지 않은 객체 생성을 요구한다. Kotlin 생태계에서는 &lt;a href="https://kotlinlang.org/docs/type-safe-builders.html"&gt;Type-safe builder&lt;/a&gt;를 활용하여 선언형으로 객체를 생성한다. 다음은 Kotlin 공식 문서에 있는 HTML 정보 생성 예시 코드이다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;val htmlContent = html {  
+    head {
+        title {+"XML encoding with Kotlin"}
+    }
+    body {
+        h1 {+"XML encoding with Kotlin"}
+        p  {+"this format can be used as an alternative markup to XML"}
+        a(href = "https://kotlinlang.org") {+"Kotlin"}
+        ...
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id="ch2"&gt;&lt;/a&gt;  &lt;/p&gt;
+
+&lt;h2 id="itemstreamreaderprocessorwriter"&gt;ItemStreamReaderProcessorWriter&lt;/h2&gt;
+
+&lt;p&gt;먼저 분산된 ItemReader, ItemProcessor, ItemWriter를 어떻게 통합했는지 살펴보자. 해결 과정은 의외로 간단했다. ItemReader, ItemProcessor, ItmeWriter 3개 모두 처리할 수 있는 클래스를 구현해서 Adaptor를 통해 기존 ItemReader, ItemProcessor, ItemWriter에 맞춰주었다. 프로젝트 진행 과정에서 stream 기능을 활용했기 때문에 실제로 사용한 객체는 ItemStreamReader, ItemProcessor, ItemStreamWriter였다. 이를 각각 위임해서 호출할 수 있는 인터페이스를 설계하고 단일 interface에 모두 담았다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;// delegation for ItemStreamReader
+public interface ItemStreamReaderDelegate&amp;lt;T&amp;gt; {
+
+    default void onOpenRead(@NonNull ExecutionContext executionContext) {
+    }
+
+    @NonNull
+    Flux&amp;lt;T&amp;gt; readFlux(@NonNull ExecutionContext executionContext);
+
+    default void onUpdateRead(@NonNull ExecutionContext executionContext) {
+    }
+
+    default void onCloseRead() {
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;// delegation for ItemProcessor
+public interface ItemProcessorDelegate&amp;lt;I, O&amp;gt; {
+
+    @Nullable
+    O process(@NonNull I item);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;// delegation for ItemStreamWriter
+public interface ItemStreamWriterDelegate&amp;lt;T&amp;gt; {
+
+    default void onOpenWrite(@NonNull ExecutionContext executionContext) {
+    }
+
+    void write(@NonNull List&amp;lt;? extends T&amp;gt; items);
+
+    default void onUpdateWrite(@NonNull ExecutionContext executionContext) {
+    }
+
+    default void onCloseWrite() {
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;// holds all
+public interface ItemStreamReaderProcessorWriter&amp;lt;I, O&amp;gt;  
+    extends ItemStreamReaderDelegate&amp;lt;I&amp;gt;, ItemProcessorDelegate&amp;lt;I, O&amp;gt;, ItemStreamWriterDelegate&amp;lt;O&amp;gt; {
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ItemStreamReaderDelegate의 경우 stream이라는 취지에 맞게 Spring 생태계에서 사용하는 Reactor의 Flux로 반환하게 했다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 정의한 ItemStreamReaderProcessorWriter를 기존 ItemStreamReader, ItemProcessor, ItemWriter에 맞추는 Adaptor를 정의해 사용했다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;// single class example
+@Component
+@StepScope
+open class SampleTasklet(  
+    @Value("#{jobParameters['totalCount']}") private var totalCount: Long
+) : ItemStreamReaderProcessorWriter&amp;lt;Int, String&amp;gt; {
+    private var count = 0
+
+    override fun readFlux(executionContext: ExecutionContext): Flux&amp;lt;Int&amp;gt; {
+        println("totalCount: $totalCount")
+        return Flux.generate { sink -&amp;gt;
+            if (count &amp;lt; totalCount) {
+                sink.next(count)
+                ++count
+            } else {
+                sink.complete()
+            }
+        }
+    }
+
+    override fun process(item: Int): String? {
+        return "'$item'"
+    }
+
+    override fun write(items: List&amp;lt;String&amp;gt;) {
+        println(items)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;@Bean
+open fun testStep(  
+    stepBuilderFactory: StepBuilderFactory,
+    sampleTasklet: SampleTasklet,
+): Step {
+    return stepBuilderFactory.get("testStep")
+        .chunk&amp;lt;Int, String&amp;gt;(3)
+        .reader(sampleTasklet.asItemStreamReader()) // uses adaptor
+        .processor(sampleTasklet.asItemProcessor())
+        .writer(sampleTasklet.asItemStreamWriter())
+        .build()
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id="ch3"&gt;&lt;/a&gt;  &lt;/p&gt;
+
+&lt;h2 id="domainspecificlanguagedsl"&gt;Domain Specific Language (DSL)&lt;/h2&gt;
+
+&lt;p&gt;Spring Batch Kotlin DSL 개발 과정을 알아보기 전에 DSL에 대해 먼저 살펴볼 필요가 있다. DSL(Domain Specific Language)은 특정 도메인에 대한 언어이다. 이는 컴퓨터로 해결 가능한 모든 문제를 정의하는 General Purpose Langauge와 대비된다. DSL의 대표 예시로는 SQL이 있다. SQL은 Structured Query Language의 약자로 데이터를 조작/정의하기 위한 언어이다. 다음은 나이가 20 이상의 사람 중 top 100명의 나이, 신장을 추출하는 SQL의 예시이다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-sql"&gt;SELECT  
+    height,
+    age
+FROM human  
+WHERE  
+    age &amp;gt;= 20
+ORDER BY age DESC  
+LIMIT 100  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;DSL과 General Purpose Language(이하 GPL)와의 명확한 경계는 없다. 사실 우리는 적절한 이름의 함수를 추출해서 DSL을 만들고 있다고도 볼 수 있다. 하지만 DSL와 GPL 간에는 구조의 차이가 있다. GPL은 컴퓨터로 해결 가능한 모든 문제를 풀기 위한 자체 구문과 문법이 있다. 반면에 DSL은 특정 도메인에 특화된 구조가 있다. 이를테면 위의 SQL 예시에서 SELECT, WHERE의 순서를 바꾸면 동작하지 않는다.&lt;/p&gt;
+
+&lt;p&gt;DSL은 External DSL과 Internal DSL로 구분된다. External DSL은 GPL과 별도의 구문이 있으며 자체 파서가 필요하다. 위 예시의 SQL이 External DSL이라고 할 수 있다. Internal DSL은 GPL을 이용하여 도메인 특화 언어처럼 느껴지게 하는 언어이다. GPL을 이용하면 기반 언어의 구문 체크, IDE 지원 등을 그대로 이용할 수 있다. 대표적인 예로 Gradle Kotlin DSL이 있다. 다음은 Kotlin Java Build라는 도메인을 설명하는 언어를 Kotlin으로 정의한 예이다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;plugins {  
+    `java`
+}
+
+dependencies {  
+    api("junit:junit:4.13")
+    implementation("junit:junit:4.13")
+    testImplementation("junit:junit:4.13")
+}
+
+java {  
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id="ch3_1"&gt;&lt;/a&gt;  &lt;/p&gt;
+
+&lt;h3 id="typesafebuilder"&gt;Type-safe Builder&lt;/h3&gt;
+
+&lt;p&gt;Kotlin은 &lt;a href="https://kotlinlang.org/docs/type-safe-builders.html"&gt;Type-safe builder&lt;/a&gt;라는 이름으로 Internal DSL을 생성하는 기능을 제공한다. Type-safe builder는 Kotlin의 여러 기능을 조합해서 만든다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Higher order function&lt;/li&gt;
+&lt;li&gt;Lambda expression&lt;/li&gt;
+&lt;li&gt;Trailing Lambda&lt;/li&gt;
+&lt;li&gt;Function literals with Receiver&lt;/li&gt;
+&lt;li&gt;Invoke operator&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id="ch3_2"&gt;&lt;/a&gt;  &lt;/p&gt;
+
+&lt;h3 id="typesafebuilderkotlin"&gt;Type-safe Builder를 구성하는 Kotlin 기능&lt;/h3&gt;
+
+&lt;p&gt;Higher order function은 함수를 인자로 받는 함수로, 함수 호출 시 다른 함수를 인자로 넘길 수 있다. 다음은 fold라는 함수를 정의하여 combine 함수를 인자로 받는 예이다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;// definition
+fun &amp;lt;T, R&amp;gt; Collection&amp;lt;T&amp;gt;.fold(  
+    initial: R,
+    combine: (acc: R, nextElement: T) -&amp;gt; R
+): R {
+    var accumulator: R = initial
+    for (element : T in this) {
+        accumulator = combine(accumulator, element)
+    }
+    return accumulator
+}
+
+// usage
+val items = listOf(1, 2, 3, 4, 5)  
+val result = items.fold(0, fun(acc: Int, i: Int): Int {  
+    return acc + i
+})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lambda expression은 익명 함수로, 쉽게 말해 함수 정의를 { ... }로 감싸서 처리하는 기능이다. 위의 예를 익명 함수를 사용하여 다시 구현하면 다음과 같다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;val items = listOf(1, 2, 3, 4, 5)  
+val result = items.fold(0, { acc, i -&amp;gt; acc + i }) // usage  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Trailing Lambda는 함수 마지막의 인자가 함수라면 Lambda expression을 &lt;code&gt;)&lt;/code&gt; 이후로 적게 해준다. 앞의 예에서 Trailing Lambda를 fold 함수에 사용하면 다음과 같아진다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;val items = listOf(1, 2, 3, 4, 5)  
+val result = items.fold(0) { acc, i -&amp;gt; acc + i } // usage  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Function literals with Receiver는 조금 특별한 기능으로, receiver의 멤버를 this 키워드 없이 바로 호출할 수 있다. 아래 예시는 Function literals with Receiver (TestClass.() -&gt; Unit)를 두 번째 인자로 사용하는 test라는 함수를 정의하여 호출 시 TestClass::doSomething2()를 this 키워드 없이 사용하는 예이다. 앞서 설명한 Trailing Lambda 기능을 활용하여 block 함수를 &lt;code&gt;)&lt;/code&gt; 이후에 넘기는 것을 볼 수 있다. 여기서 TestClass를 receiver 타입이라고 부른다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;class TestClass {  
+    fun doSomething1(): Int = 1
+
+    fun doSomething2(): Int = 2
+}
+
+// definition
+fun test(i: Int, block: TestClass.() -&amp;gt; Unit) {  
+    val testClass = TestClass()
+    testClass.apply(block)
+}
+
+// usage
+test(3) {  
+    this.doSomething1()
+    doSomething2() // no need to use 'this'
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Invoke operator는 해당 객체 자체를 호출하는 operator로 invoke라는 함수를 operator 키워드로 정의해서 사용 가능하다. 이는 실제 invoke 메서드를 호출하여 동작한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;// definition
+class TestClass {  
+    operator fun invoke(block: TestClass.() -&amp;gt; Int) {
+        block()
+    }
+
+    fun doSomething1(): Int = 1
+
+    fun doSomething2(): Int = 2
+}
+
+// usage
+val testClass = TestClass()  
+testClass {  
+    doSomething1()
+    doSomething2()
+}
+
+// actual action
+testClass.invoke {  
+    doSomething1()
+    doSomething2()
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id="ch3_3"&gt;&lt;/a&gt;  &lt;/p&gt;
+
+&lt;h3 id="kotlininternaldsl"&gt;Kotlin을 사용한 Internal DSL&lt;/h3&gt;
+
+&lt;p&gt;앞서 설명한 Kotlin의 다양한 기능을 종합하여 Type-safe Builder를 만들 수 있다. Type-safe Builder를 활용하여 Html을 생성하는 DSL을 만들면 다음과 같다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;// entry point
+fun html(init: Html.() -&amp;gt; Unit): Html {  
+    val html = Html()
+    html.init()
+    return html
+}
+
+class Html {  
+    fun head(init: Head.() -&amp;gt; Unit) {
+        val head = Head()
+        head.init()
+
+        // ...
+    }
+}
+
+class Head {  
+    fun title(text: String) {
+        val title = Title(text)
+
+        // ...
+    }
+}
+
+class Title(private val text: String)  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Html, Head, Title 클래스는 각각 Html, Head, Title 태그를 위한 클래스다. 위의 예에서 실제 태그를 저장하는 기능 등은 생략했다. 여기서는 html 함수가 Builder의 시작점이다. html 함수의 body를 보면 Html 클래스를 만들고 인자로 받은 Function literals with Receiver인 init을 호출하고 반환한다. html 함수를 활용하여 실제 HTML을 다음과 같이 만들 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;val html = html {  
+    head {
+        title("title")
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;얼핏 보면 구조가 겹쳐져 있어서 실제 어떻게 동작하는지 감을 잡기 힘들지 모르겠지만 사실 의외로 간단하다. Trailing Lambda를 활용하여 Function literals with Receiver를 계속 넘긴다. html 함수는 Html 클래스를 receiver 타입으로 하는 Function literal with Receiver를 인자로 받는다. 이를 통해 html 함수를 호출할 때 Html 클래스의 head 함수를 호출하는 Lambda expression을 Trailing Lambda를 활용하여 넘긴다. 실제 호출 구조는 다음과 같다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;val html = html(  
+    fun Html.() {
+        this.head { // this : Html class
+            title("233")
+        }
+    }
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;비슷하게 Html의 head 함수는 Head 클래스를 receiver 타입으로 하는 Function literal with Receiver를 인자로 받는다. 이를 통해 head 함수를 호출할 때 Head 클래스의 title 함수를 호출하는 Lambda expression을 Trailing Lambda를 활용하여 넘긴다. 이 경우에도 실제 호출 구조는 이전과 유사하다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;val html = html {  
+    head(
+        fun Head.() {
+            this.title("233") // this : Head class
+        }
+    )
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;그런데 이렇게 Lambda expression이 중첩되는 경우 head 안에서 다시 head를 호출할 수도 있다. head { ... } scope가 결국 html { ... } scope 안에 있기 때문에 head { ... } scope 안에서 다시 html { ... } scope 안에 있는 head 함수를 호출할 수도 있다. 즉, 문법상 다음과 같이 호출해도 문제는 없다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;val html = html {  
+    head {
+        head { } // can call 'head' method of Html class
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;이 구조는 실제 HTML 구조와 맞지 않는다. Kotlin에서는 이런 경우를 방지하기 위해 @DslMarker를 제공한다. Builder 대상 클래스에 @DslMarker 애너테이션을 붙인 애너테이션을 만들어 scope를 제어하면 위와 같은 상황에 구문 오류를 발생시킨다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;// @DslMarker usage
+@DslMarker
+annotation class HtmlTagMarker
+
+@HtmlTagMarker
+class Html(...)
+
+@HtmlTagMarker
+class Head(...)
+
+// usage
+val html = html {  
+    head {
+        head { } // error
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id="ch4"&gt;&lt;/a&gt;  &lt;/p&gt;
+
+&lt;h2 id="springbatchkotlindsl"&gt;Spring Batch Kotlin DSL&lt;/h2&gt;
+
+&lt;p&gt;지금까지 DSL과 Kotlin에서 제공하는 기능인 Type-safe builder에 대해 알아보았다. 이 기능을 활용하여 Spring Batch Kotlin DSL을 어떻게 개발했는지 살펴보자.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch4_1"&gt;&lt;/a&gt;  &lt;/p&gt;
+
+&lt;h3 id=""&gt;구조 분석&lt;/h3&gt;
+
+&lt;p&gt;Spring Batch Kotlin DSL은 대상 도메인이 Spring Batch의 Builder이다. Spring Batch 4.3.x 기준에서 Builder는 크게 JobBuilder, StepBuilder, FlowBuilder로 나뉜다.&lt;/p&gt;
+
+&lt;p&gt;JobBuilder의 구조는 다음과 같다. JobBuilderFactory가 JobBuilder를 생성한다. JobBuilder는 SimpleJobBuilder, FlowJobBuilder를 생성한다. SimpleJobBuilder, FlowJobBuilder는 JobFlowBuilder를 생성한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/job-builder-diagram.png" alt="job-builder-diagram" /&gt;&lt;/p&gt;
+
+&lt;p&gt;FlowBuilder의 구조는 다음과 같다. FlowBuilder가 UnterminatedFlowBuilder, TransitionBuilder, SplitBuilder를 생성한다. JobFlowBuilder는 FlowBuilder를 상속한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/flow-builder-diagram.png" alt="flow-builder-diagram" /&gt;&lt;/p&gt;
+
+&lt;p&gt;StepBuilder의 구조는 다음과 같다. StepBuilderFactory가 StepBuilder를 생성한다. StepBuilder는 SimpleStepBuilder, TaskletStepBuilder, JobStepBuilder, FlowStepBuiler, PartitionStepBuilder를 생성한다. FaultTolerantStepBuilder는 SimpleStepBuilder를 상속한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/step-builder-diagram.png" alt="step-builder-diagram" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch4_2"&gt;&lt;/a&gt;  &lt;/p&gt;
+
+&lt;h3 id=""&gt;설계 및 구현&lt;/h3&gt;
+
+&lt;p&gt;Spring Batch Kotlin DSL이 다루는 것은 Spring Batch Builder이다. 그래서 구조를 기존과 유사하도록 설계했다. BatchDsl이라는 시작 클래스가 JobBuilderDsl, StepBuilderDsl, FlowBuilderDsl을 생성하고 각각 DSL에서 세부 Builder인 SimpleJobBuilderDsl, TaskletStepBuilderDsl 등을 생성할 수 있게 설계했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/spring-batch-plus-diagram.png" alt="spring-batch-plus-diagram" /&gt;&lt;/p&gt;
+
+&lt;p&gt;구현을 어떻게 할지 정하기 위해 스프링 생태계에서 기존에 어떻게 하는지 살펴보았다. &lt;a href="https://docs.spring.io/spring-framework/docs/5.0.0.RELEASE/spring-framework-reference/kotlin.html#bean-definition-dsl"&gt;Spring Bean DSL&lt;/a&gt;에서는 다음과 같은 방식으로 DSL을 구성했다. beans라는 함수를 사용해서 Function literals with Receiver를 활용해서 bean이라는 함수를 연달아 정의하는 것을 확인할 수 있었다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;// definition
+fun beans() = beans {  
+    bean&amp;lt;UserHandler&amp;gt;()
+    bean&amp;lt;Routes&amp;gt;()
+    ...
+}
+
+val context = GenericApplicationContext().apply {  
+    beans().invoke(this) // to register bean
+    refresh()
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;코드를 살펴보니 앞서 소개한 Html을 생성하는 DSL과 유사하게 구현되어 있는 것을 확인할 수 있었다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;fun beans(init: BeanDefinitionDsl.() -&amp;gt; Unit) = BeanDefinitionDsl(init)
+
+...
+
+open class BeanDefinitionDsl {  
+    ...
+
+    inline fun &amp;lt;reified T : Any&amp;gt; bean(name: String? = null,
+                                      scope: Scope? = null,
+                                      isLazyInit: Boolean? = null,
+                                      isPrimary: Boolean? = null,
+                                      isAutowireCandidate: Boolean? = null,
+                                      initMethodName: String? = null,
+                                      destroyMethodName: String? = null,
+                                      description: String? = null,
+                                      role: Role? = null) {
+    ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;또 다른 Spring 컴포넌트인 Spring Security에도 Kotlin DSL이 이미 있다. 다음은 Spring Security에서 ServerHttpSecurity를 생성하는 예이다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt; @Bean
+ fun springWebFilterChain(http: ServerHttpSecurity): SecurityWebFilterChain {
+        return http {
+            authorizeExchange {
+                authorize("/public", permitAll)
+                authorize(anyExchange, authenticated)
+            }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;이번에는 조금 다르게 Bean으로 객체를 받아서 호출한다. 코드를 살펴보니 invoke 함수를 호출하는 것을 확인할 수 있었다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;operator fun ServerHttpSecurity.invoke(httpConfiguration: ServerHttpSecurityDsl.() -&amp;gt; Unit): SecurityWebFilterChain =  
+        ServerHttpSecurityDsl(this, httpConfiguration).build()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Spring Batch Kotlin DSL에서 어떤 방식을 채택할지 고민이 많았다. 각 방식은 장단점이 있었다. Bean DSL 방식은 간단하게 함수 호출만으로 깔끔하게 작성할 수 있지만 실제 ApplicationContext와 연동하는 코드가 필요했다. Spring Security 방식은 가독성은 Bean DSL에 비해 떨어지지만 Bean으로 받은 객체의 값을 활용할 수 있다는 장점이 있었다.&lt;/p&gt;
+
+&lt;p&gt;Spring Batch Kotlin DSL을 만들려고 할 때 고려 사항이 다음과 같았다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;JobBuilderFactory, StepBuilderFactory를 직접 쓰지 않는다.&lt;/li&gt;
+&lt;li&gt;Bean에서도 이름으로 값을 가져오고 싶다.&lt;/li&gt;
+&lt;li&gt;Nested된 경우에도 유연하게 잘 처리될 수 있게 한다.&lt;/li&gt;
+&lt;li&gt;기존에 되던 설정은 다 되게 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Spring Batch는 보통 Bean으로 등록된 JobBuilderFactory, StepBuilderFactory를 가져와서 사용한다. 또한 Bean을 가져오기 위해서는 BeanFactory를 사용해야 한다. 이런 이유로 Spring Batch Kotlin DSL에서는 Bean으로 등록된 객체를 invoke하는 Spring Security 방식을 채택했다. 다음과 같은 모습을 생각하고 구현했다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;// before
+@Bean
+open fun testJob(  
+    jobBuilderFactory: JobBuilderFactory,
+    stepBuilderFactory: StepBuilderFactory
+): Job {
+    return jobBuilderFactory.get("testJob")
+        .start(
+            stepBuilderFactory.get("testStep1")
+                .tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.get("testStep2")
+                .tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.get("testStep3")
+                .tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .next(
+            stepBuilderFactory.get("testStep4")
+                .tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+                .build()
+        )
+        .build()
+}
+
+// after
+@Bean
+open fun testJob(  
+    batch: BatchDsl
+): Job = batch {
+    job("testJob") {
+        step("testStep1") {
+            tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+        }
+        step("testStep2") {
+            tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+        }
+        step("testStep3") {
+            tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+        }
+        step("testStep4") {
+            tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;구현은 Spring Batch에서 제공하는 Builder 클래스의 구조를 따라가면 되어 의외로 간단했다. 핵심 클래스인 BatchDsl의 코드를 살펴보면 다음과 같다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;@BatchDslMarker
+class BatchDsl internal constructor(  
+    private val dslContext: DslContext,
+) {
+    constructor(
+        beanFactory: BeanFactory,
+        jobBuilderFactory: JobBuilderFactory,
+        stepBuilderFactory: StepBuilderFactory
+    ) : this(
+        DslContext(
+            beanFactory,
+            jobBuilderFactory,
+            stepBuilderFactory
+        )
+    )
+
+    operator fun &amp;lt;T : Any&amp;gt; invoke(init: BatchDsl.() -&amp;gt; T): T = init()
+
+    fun job(name: String, init: JobBuilderDsl.() -&amp;gt; Unit): Job {
+        val jobBuilderFactory = this.dslContext.jobBuilderFactory
+        val jobBuilder = jobBuilderFactory.get(name)
+        return JobBuilderDsl(this.dslContext, jobBuilder).apply(init).build()
+    }
+
+    fun step(name: String, init: StepBuilderDsl.() -&amp;gt; Step): Step {
+        val stepBuilderFactory = this.dslContext.stepBuilderFactory
+        val stepBuilder = stepBuilderFactory.get(name)
+        return StepBuilderDsl(this.dslContext, stepBuilder).let(init)
+    }
+
+    fun flow(name: String, init: FlowBuilderDsl&amp;lt;Flow&amp;gt;.() -&amp;gt; Unit): Flow {
+        val flowBuilder = FlowBuilder&amp;lt;Flow&amp;gt;(name)
+        return ConcreteFlowBuilderDsl(this.dslContext, flowBuilder).apply(init).build()
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;BeanFactory, JobBuilderFactory, StepBuilderFactory를 담기 위해 DslContext라는 클래스를 만들었다. invoke 함수를 정의해서 BatchDsl 자체를 호출할 수 있게 했다. invoke 함수의 인자로는 BatchDsl 클래스를 receiver 타입으로 하는 Function literals with Receiver를 받아서 job, step, flow를 호출할 수 있게 했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch4_3"&gt;&lt;/a&gt;  &lt;/p&gt;
+
+&lt;h3 id=""&gt;네이버페이 정산 프로젝트에 적용&lt;/h3&gt;
+
+&lt;p&gt;앞서 정산 프로젝트의 subJob의 문제를 살펴보았다. Kotlin DSL을 활용하여 Job-subJob 구조를 정의하면 다음과 같다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;open fun testJob(batch: BatchDsl): Job = batch {  
+    job("testJob") {
+        step("subJob1Step") {
+            jobBean("subJob1")
+        }
+        step("subJob2Step") {
+            jobBean("subJob2")
+        }
+    }
+}
+
+@Bean
+open fun subJob1(batch: BatchDsl): Job = batch {  
+    job("subJob1") {
+        step("subJob1 - step1") {
+            tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+        }
+        step("subJob1 - step2") {
+            tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+        }
+    }
+}
+
+@Bean
+open fun subJob2(batch: BatchDsl): Job = batch {  
+    job("subJob2") {
+        step("subJob2 - step1") {
+            tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+        }
+        step("subJob2 - step2") {
+            tasklet { _, _ -&amp;gt; RepeatStatus.FINISHED }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Kotlin DSL을 통해 build, JobStepBuilderFactory, StepBuilderFactory 같은 보일러플레이트 코드를 제거하고 Kotlin스럽게 선언형으로 작성했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch5"&gt;&lt;/a&gt;  &lt;/p&gt;
+
+&lt;h2 id=""&gt;오픈 과정&lt;/h2&gt;
+
+&lt;p&gt;어느 정도 안정화가 된 후 DSL의 경우 Spring Batch에 직접 기여하면 되지 않을까 해서 &lt;a href="https://github.com/spring-projects/spring-batch/issues/3984"&gt;Issue&lt;/a&gt;를 생성해서 Spring Batch Maintainer에게 의견을 물었다. 하지만 Maintainer는 내부 논의 결과 이런 기능은 포함시키지 않기로 이전에 결정했다고 &lt;a href="https://github.com/spring-projects/spring-batch-extensions"&gt;Spring Batch Extension&lt;/a&gt;에 등록하라고 답변했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2023/01/issue-response.png" alt="issue-response" /&gt;&lt;/p&gt;
+
+&lt;p&gt;그래서 정산 배치 모듈에 있는 Spring Batch 개선 코드를 정리하여 Spring Batch Extension에 &lt;a href="https://github.com/spring-projects/spring-batch-extensions/pull/80"&gt;PR&lt;/a&gt;을 등록했다.&lt;/p&gt;
+
+&lt;p&gt;하지만 1년이 지나도 해당 GitHub 저장소 운영자의 응답이 없었고 결국 &lt;a href="https://github.com/naver/spring-batch-plus"&gt;별도의 오픈소스 프로젝트&lt;/a&gt;로 진행하기로 했다. 이름은 조직 내에서 이미 나온 &lt;a href="https://github.com/naver/spring-jdbc-plus"&gt;Spring Jdbc Plus&lt;/a&gt;의 이름을 따서 Spring Batch Plus로 지었다. Spring Batch Plus라는 이름답게 Kotlin DSL, ItemStreamReaderProcessorWriter뿐만 아니라 프로젝트 진행 과정에서 사용한 다른 기능도 포함시켰다. 자세한 기능은 &lt;a href="https://github.com/naver/spring-batch-plus/blob/main/doc/ko/README.md"&gt;공식 문서&lt;/a&gt;에서 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch6"&gt;&lt;/a&gt;  &lt;/p&gt;
+
+&lt;h2 id=""&gt;마치며&lt;/h2&gt;
+
+&lt;p&gt;Spring Batch Plus가 무엇을 해결하고자 했고 어떤 과정을 통해 세상에 나왔는지 살펴보았다. Spring Batch Plus를 작성함으로써 네이버페이 정산 플랫폼을 신규 시스템으로 전환하는 코드 작성을 보다 깔끔하게 할 수 있었다.&lt;/p&gt;
+
+&lt;p&gt;Spring Batch Plus는 연간 52조 규모의 거래액을 다루는 네이버페이 정산의 83개 Job과, 네이버페이 포인트의 29개 Job에 실제 사용된 라이브러리이다. Spring Batch의 Builder를 Kotlin스럽게 작성하고 싶거나 단일 클래스에서 ItemReader, ItemProcessor, ItemWriter를 작성하고 싶다면 Spring Batch Plus 사용을 고려해 볼 수 있다. 이 글 작성 기준으로 Spring Batch Plus는 Spring Batch 4.3.x 버전과 호환되고, 간단히 다음을 참고하여 의존성만 추가하면 사용 가능하다. 자세한 호환 정보는 &lt;a href="https://github.com/naver/spring-batch-plus#compatibility"&gt;Compatibility&lt;/a&gt;를 참고하길 바란다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;implementation("org.springframework.batch:spring-batch-core:4.3.7")  
+implementation("com.navercorp.spring:spring-boot-starter-batch-plus-kotlin:0.2.0")  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Spring Batch Plus는 이름에서 알 수 있듯이 Spring Batch에 여러 유용한 기능을 추가한다는 취지의 라이브러리이다. Spring Batch를 사용면서 이런 기능이 있으면 좋겠는데 Spring Batch에 넣기는 애매하다 싶으면 &lt;a href="https://github.com/naver/spring-batch-plus"&gt;Spring Batch Plus GitHub 저장소&lt;/a&gt;에 PR이나 Issue를 등록해주길 바란다.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>D2 CAMPUS PARTNER SEMINAR가 진행되었습니다.</title>
+    <link rel="alternate" href="https://d2.naver.com/news/3851561" />
+    <category term="news" />
+    <id>https://d2.naver.com/news/3851561</id>
+    <updated>2023-02-16T16:08:41Z</updated>
+    <content type="html">&lt;p&gt;&lt;img src="/content/images/2022/11/-----------2022-11-29------1-57-56.png" alt="" /&gt;
+&lt;span class="caption"&gt;&amp;lt;2022 D2 CAMPUS PARTNER SEMINAR 현장 스케치&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;2022 D2 CAMPUS PARTNER로 활동 중인 IT 동아리가 지난주 네이버 1784에 모여 기술 세미나를 진행했습니다.&lt;/p&gt;
+
+&lt;p&gt;개발하면서 겪었던 어려움과 마침내 찾아낸 해결 방법 등 개발 경험기부터 경진대회를 준비하며 겪었던 어려움, 다른 파트너들이 궁금해할 보안 동아리 속 이야기까지 풍성한 다섯 개의 세션이 마련되었습니다. 이에 더해 함께 IT를 공부하고 미래를 준비하는 대학생으로서 서로의 고민도 나누는 시간을 가졌는데요. 모두 다 본인의 고민처럼 생각을 나눠 주시기도 하였습니다.&lt;/p&gt;
+
+&lt;p&gt;특히, PARTNER 모임에 빠질 수 없는 네트워킹 시간!
+참석하셨던 많은 분들이 이 네트워킹 시간을 기다리고 계셨는데요, 머뭇머뭇하다가도 금세 인사를 나누고, 기술 이야기로 꽃을 피우는 시간이었습니다. 지난 PARTNERS DAY보다 더 많은 분들이 모일 수 있어서 더 다채로운 대화가 이루어졌습니다.&lt;/p&gt;
+
+&lt;p&gt;그날 진행되었던 상세 세션 내용과 발표 자료는 아래에서 보실 수 있습니다.&lt;br/&gt;
+&lt;a href="https://github.com/D2CAMPUS-PARTNER/2022-SEMINAR/issues"&gt;https://github.com/D2CAMPUS-PARTNER/2022-SEMINAR/issues&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;앞으로도 더 많은 대학생 개발자분들의 기술 성장을 위해 D2가 함께하겠습니다!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/11/-----------2022-11-29------1-49-43.png" alt="" /&gt;
+&lt;span class="caption"&gt;&amp;lt;2022 D2 CAMPUS PARTNER분들과 함께&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;D2 CAMPUS PARTNER?&lt;br/&gt;
+  대학생 기술 동아리를 지원하는 D2 프로그램으로 학생 개발자들의 기술력 향상을 위해 필요한 부분을 지원하고, 그 기술 산출물을 많은 학생개발자 분들이 보실 수 있도록 공유하고 있습니다. 다음 D2 CAMPUS PARTNER는 내년 여름 새로 모집 예정입니다.&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+  </entry>
+  <entry>
+    <title>DEVIEW 2023 연사 모집을 시작합니다.</title>
+    <link rel="alternate" href="https://d2.naver.com/news/4000662" />
+    <category term="news" />
+    <id>https://d2.naver.com/news/4000662</id>
+    <updated>2022-10-19T20:28:52Z</updated>
+    <content type="html">&lt;p&gt;&lt;img src="/content/images/2022/10/0a710ba9-82aa-13f3-8183-e3c716ff2185.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;최고의 기술과 경험을 공유하며 개발자들이 함께 성장하는 자리,&lt;br/&gt;
+3년만에 오프라인으로 진행되는 DEVIEW 2023 컨퍼런스를 빛내주실 연사 모집을 시작합니다.&lt;/p&gt;
+
+&lt;p&gt;중고급 개발자들에게 새로운 시각을 제시하는 앞선 시선을 나누고,&lt;br/&gt;
+경험을 통해 얻은 성공과 실패에 대한 진솔한 노하우를 공유 해 주세요.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;지원 안내&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;연사지원｜&lt;a href="https://deview.kr/2023/cfs"&gt;https://deview.kr/2023/cfs&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;모집기간｜10.20 (목) ~ 11.10 (목)&lt;/li&gt;
+&lt;li&gt;문의 : dl_deveiw@navercorp.com&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;DEVIEW 2023 컨퍼런스 일정&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;연사 지원 기간 ｜ 2022년 10.20(목) ~ 11월 10(목)&lt;/li&gt;
+&lt;li&gt;연사 결과 안내 ｜ 2022년 12.1(목)&lt;/li&gt;
+&lt;li&gt;연사 사전 워크샵 ｜ 2022년 12월 中&lt;/li&gt;
+&lt;li&gt;DEVIEW 2023 ｜ 2023년 2.27(월) ~ 2.28(화), 코엑스&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>NAVER Tech Talk: Flutter meetup (2022)</title>
+    <link rel="alternate" href="https://d2.naver.com/news/1554376" />
+    <category term="news" />
+    <id>https://d2.naver.com/news/1554376</id>
+    <updated>2022-10-06T18:40:17Z</updated>
+    <content type="html">&lt;p&gt;Flutter(플러터)는 Google에서 개발한 크로스 플랫폼(모바일, 웹, 데스크탑 등) 개발 프레임워크인데요. 작년에 이어 올해도 NAVER에서 Flutter에 대한 다양한 주제들로 구성된 meetup을 진행했습니다. 해당 밋업에서 발표자의 공개 동의를 얻은 영상을 공유합니다.&lt;/p&gt;
+
+&lt;h3 id="fluttermeetup"&gt;Flutter meetup&lt;/h3&gt;
+
+&lt;h4 id=""&gt;강의 대상&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;모바일 크로스 플랫폼에 관심 있는 개발자분들&lt;/li&gt;
+&lt;li&gt;Flutter 플랫폼에 관심 있는 개발자분들&lt;/li&gt;
+&lt;li&gt;Flutter 플랫폼 개발을 고민하고 계신분들&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;안드로이드 개발자가 플러터 개발하기&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;발표 영상: &lt;a href="https://tv.naver.com/v/29724205"&gt;https://tv.naver.com/v/29724205&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;발표자: 김민규 (카카오뱅크)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;유니티 개발자가 경험해본 플러터 개발 사례&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;발표 영상: &lt;a href="https://tv.naver.com/v/29724020"&gt;https://tv.naver.com/v/29724020&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;발표자: 양보람 (NAVER Z)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="flutterbloc"&gt;Flutter 를 위한 BLoC 아키텍처&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;발표 영상: &lt;a href="https://tv.naver.com/v/29721159"&gt;https://tv.naver.com/v/29721159&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;발표자: 강윤식 (Grab)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="flutter"&gt;Flutter 성능 최적화 사례&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;발표 영상: &lt;a href="https://tv.naver.com/v/29723398"&gt;https://tv.naver.com/v/29723398&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;발표자: 최성환 (NAVER 지식인)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="flutter3"&gt;지식인 앱 Flutter 3 대응기&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;발표 영상: &lt;a href="https://tv.naver.com/v/29723326"&gt;https://tv.naver.com/v/29723326&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;발표자: 남궁은경 (NAVER 지식인)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;의존성 주입과 서비스 로케이터&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;발표 영상: &lt;a href="https://tv.naver.com/v/29723803"&gt;https://tv.naver.com/v/29723803&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;발표자: 임태규 (Presto Labs)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=""&gt;관련 글&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://d2.naver.com/news/9527890"&gt;NAVER Tech Talk: Flutter meetup (2021)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://d2.naver.com/helloworld/3384599"&gt;지식iN 앱을 Flutter로 개발하는 이유&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>D2 CAMPUS PARTNERS DAY가 열렸습니다.</title>
+    <link rel="alternate" href="https://d2.naver.com/news/4512690" />
+    <category term="news" />
+    <id>https://d2.naver.com/news/4512690</id>
+    <updated>2022-09-28T12:58:44Z</updated>
+    <content type="html">&lt;p&gt;&lt;img src="/content/images/2022/09/-----------2022-09-28------12-47-47.png" alt="" /&gt;
+&lt;span class="caption"&gt;&amp;lt;2022 D2 CAMPUS PARTNER분들과 함께&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;올해 &lt;a href="https://d2.naver.com/news/6671933" target="_blank"&gt;공개 모집&lt;/a&gt;을 통해 선발된 총 10곳의 2022 D2 CAMPUS PARTNER(대학생 IT 동아리)가 온라인 킥오프를 거쳐 드디어 네이버 1784에 모두 모였습니다.&lt;/p&gt;
+
+&lt;p&gt;처음 만나는 자리인 만큼 각 동아리 소개와 더불어 자유롭게 이야기 나누는 자리도 가졌는데, 
+그간 코로나로 대화와 소통에 목말라 있던 학생 개발자분들답게 어느 때보다 활발한 네트워킹이 이루어졌습니다. 특히 PARTNER 출신이신 네이버 유호균 님도 함께 자리해 주셨는데요, 
+학생 개발자로서 했던 진로 고민에 대해 본인의 이야기를 들려주시는 시간도 가졌습니다. &lt;/p&gt;
+
+&lt;p&gt;1년간 D2 CAMPUS PARTNER 분들께서 보여주실 다양한 기술 활동과 산출물 등은 D2 홈페이지에 공개될 예정이니 많은 응원과 관심 부탁드리겠습니다.&lt;/p&gt;
+
+&lt;p&gt;앞으로도 더 많은 대학생 개발자 분들의 기술 성장을 위해 D2가 함께하겠습니다!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/09/-----------2022-09-28------12-49-06.png" alt="" /&gt;
+&lt;span class="caption"&gt;&amp;lt;2022 D2 CAMPUS PARTNERS DAY 현장 스케치&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;D2 CAMPUS PARTNER? &lt;br/&gt;
+  대학생 기술 동아리를 지원하는 D2 프로그램으로 학생 개발자들의 기술력 향상을 위해 필요한 부분을 지원하고, 그 기술 산출물을 많은 학생개발자 분들이 보실 수 있도록 공유하고 있습니다. 다음 D2 CAMPUS PARTNER는 내년 여름 새로 모집 예정입니다.&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+  </entry>
+  <entry>
+    <title>올해 DEVIEW를 내년 상반기로 연기합니다.</title>
+    <link rel="alternate" href="https://d2.naver.com/news/3524742" />
+    <category term="news" />
+    <id>https://d2.naver.com/news/3524742</id>
+    <updated>2022-08-18T09:22:29Z</updated>
+    <content type="html">&lt;p&gt;&lt;img src="/content/images/2022/08/0a710ba9-82aa-13f3-8182-ae50b93507b1.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;올해 연말에 진행 예정이었던 DEVIEW 컨퍼런스를 내년 상반기로 연기하게 되었습니다.
+DEVIEW를 기대하고 준비하셨을 많은 분들께 안내가 늦어져 죄송하다는 말씀드립니다.&lt;/p&gt;
+
+&lt;p&gt;DEVIEW는 많은 개발자분들의 관심과 기여 덕분에 매년 더 좋은 기술 행사로 성장할 수 있었습니다. &lt;br /&gt;
+지난 2년간 팬데믹으로 인해 DEVIEW를 온라인으로 진행하며 다양한 컨텐츠를 다룰 수 있게 된 반면,
+동시에 DEVIEW의 핵심 가치이기도 한 개발자 간 소통 측면에서는 다소 아쉬운 부분 역시 있었습니다.
+이에 개발자분들과 조금 더 안전하게 오프라인에서 소통할 수 있는 시기를 고민하여 내년 상반기로 연기하게 되었습니다.&lt;/p&gt;
+
+&lt;p&gt;자세한 일정은 추후 공지를 통해 말씀드릴 예정이며,
+DEVIEW를 기대하고 계셨을 많은 개발자분들의 너그러운 양해 부탁드립니다. &lt;br /&gt;
+앞으로도 많은 관심과 참여 부탁드립니다.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>@webtoon/psd 라이브러리 개발기</title>
+    <link rel="alternate" href="https://d2.naver.com/helloworld/6631477" />
+    <category term="hello world" />
+    <id>https://d2.naver.com/helloworld/6631477</id>
+    <updated>2022-06-28T16:18:30Z</updated>
+    <content type="html">&lt;p&gt;@webtoon/psd 라이브러리는 TypeScript로 작성한 Adobe Photoshop(이하 포토샵) 파일 파싱 라이브러리로, 브라우저 및 NodeJS 환경에서 포토샵 파일 정보를 읽어와 레이어 이미지를 비롯한 다양한 메타데이터를 추출할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;필자는 네이버 웹툰에서 포토샵 파일을 활용하는 웹 애플리케이션을 개발하고 있습니다. 그 과정에서 요구 조건을 만족하는 라이브러리가 없어서 직접 개발했습니다. 이 글에서는 라이브러리를 개발하면서 얻은 지식과 경험을 공유합니다.&lt;/p&gt;
+
+&lt;p&gt;@webtoon/psd 라이브러리 코드는 GitHub에 공개되어 있으며 NPM 또는 Yarn에서 다운로드할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://www.npmjs.com/package/@webtoon/psd"&gt;&lt;img src="https://camo.githubusercontent.com/d47f4cce105284cff7c4b5953e0a4b2acf1a42421c10e98422cc4e330d303880/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f40776562746f6f6e2f707364" alt="Package on NPM" title="" style="display:inline;"&gt;&lt;/a&gt; &lt;a href="https://bundlephobia.com/package/@webtoon/psd"&gt;&lt;img src="https://camo.githubusercontent.com/a5fd4f41f20da7e59eb20bef80a71a93601de101a999c574dcd878c0d357391e/68747470733a2f2f696d672e736869656c64732e696f2f62756e646c6570686f6269612f6d696e2f40776562746f6f6e2f707364" alt="Minified size" title="" style="display:inline;"&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/webtoon/psd"&gt;&lt;img src="https://img.shields.io/badge/GitHub-webtoon%2Fpsd-00d564?logo=github&amp;amp;logoColor=%23FFF" alt="go github" title="" style="display:inline;"&gt;&lt;/a&gt; &lt;a href="https://github.com/webtoon/psd"&gt;&lt;img src="https://img.shields.io/github/stars/webtoon/psd?style=social" alt="stars - @webtoon/psd" title="" style="display:inline;"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=""&gt;라이브러리 개발 배경&lt;/h2&gt;
+
+&lt;p&gt;웹툰 작가가 작품을 창작할 때 사용하는 도구에는 여러 가지가 있지만 그중 포토샵을 빼놓을 수 없다. &lt;code&gt;.psd&lt;/code&gt; 확장자 파일은 포토샵에서 작업한 결과물을 저장할 때 생성되는 파일로, 이미지 데이터를 비롯한 다양한 메타데이터를 포함하고 있다.&lt;/p&gt;
+
+&lt;p&gt;웹 애플리케이션에서 포토샵 파일 정보를 활용하고 싶다면 두 가지 방법이 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;로컬에서 선택한 파일을 서버에 업로드하여 분석, 이미지 및 메타데이터를 추출한 뒤 다운로드&lt;/li&gt;
+&lt;li&gt;브라우저에서 바로 포토샵 파일을 분석, 이미지 및 메타데이터 추출&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;작가가 작업한 포토샵 파일은 크게는 몇백 MB로, 파일을 서버에 업로드하여 분석하는 과정을 거친다면 파일 정보 파악에 시간이 오래 걸린다. 따라서 웹 애플리케이션에서 직접 포토샵 파일을 열어 데이터를 분석해야 한다.&lt;/p&gt;
+
+&lt;p&gt;오픈소스로 공개된 라이브러리 중에는 이미 JavaScript 기반 포토샵 파일 파싱 라이브러리가 있다. 바로 &lt;code&gt;PSD.js&lt;/code&gt;라는 라이브러리로, JavaScript 런타임 환경에서 포토샵 파일을 다뤄야 할 때 대부분 사용하고 있다. 하지만 PSD.js는 다음과 같은 항목이 우리의 요구 사항에 부합하지 않아 사용할 수 없었다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;한글 미지원: 알파벳 문자만 지원하며 한국어 및 특수문자로 된 데이터를 파싱할 수 없음&lt;/li&gt;
+&lt;li&gt;퍼포먼스 이슈: 대용량 이미지 데이터를 처리할 때 퍼포먼스 이슈 발생&lt;/li&gt;
+&lt;li&gt;대용량 파일 미지원: 포토샵 대용량 파일(&lt;code&gt;.psb&lt;/code&gt;)을 파싱할 수 없음&lt;/li&gt;
+&lt;li&gt;소스코드 파일 크기: 다양한 라이브러리에 의존성이 있어 최종 번들링된 파일이 상대적으로 큼&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;특히 한글(한자) 텍스트 데이터는 동양권 작가가 편집한 포토샵 파일에서 반드시 추출해야 하는 정보였기에 한글 미지원 문제는 반드시 해결해야 했고, 결국 직접 라이브러리를 개발해야 한다는 결론에 다다랐다.&lt;/p&gt;
+
+&lt;h2 id=""&gt;포토샵 파일 구조&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;.psd&lt;/code&gt; 또는 &lt;code&gt;.psb&lt;/code&gt; 확장자의 바이너리 파일은 다음과 같이 다섯 가지 섹션으로 나뉘어 정보를 담고 있다. 각 섹션에 대한 자세한 정보와 세부 데이터 내용은 Adobe에서 공개한 &lt;a href="https://www.adobe.com/devnet-apps/photoshop/fileformatashtml"&gt;File Formats Specification 문서&lt;/a&gt;에서 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/06/6234ecc6-2fe3-4498-856d-43d8dcf5cd83.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;FileHeader&lt;/strong&gt;: 정상적인 포토샵 파일인지 판별할 수 있는 signature 정보와 이미지의 가로, 세로 길이 색상 타입 등 메타데이터 정보를 담고 있다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ColorModeData&lt;/strong&gt;: Duotone 컬러 또는 인덱싱된 컬러값 정보를 담고 있다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ImageResources&lt;/strong&gt;: 포토샵에서 활용하는 편집 상태 값 정보를 담고 있다.(예: GuideLine, Slices, EXIF Data 등)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LayerAndMaskInformation&lt;/strong&gt;: 레이어(그룹)와 레이어 이미지 픽셀, 그리고 레이어(그룹)에 적용된 효과 정보를 담고 있다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ImageData&lt;/strong&gt;: 포토샵 파일을 저장할 때 '호환성 최대화' 옵션을 사용한 경우 최종 합성된 포토샵 파일의 미리보기 이미지 데이터가 담긴다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;만약 포토샵 파일의 미리보기 이미지를 추출하기 위해 검색하다가 이 글을 발견했다면, ImageData 섹션을 찾아서 추출하기 바란다. 간단하게 최종 합성된 미리보기 이미지를 획득할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=""&gt;바이너리 파일 읽기&lt;/h2&gt;
+
+&lt;p&gt;브라우저에서 파일을 열었을 때 ArrayBuffer 바이너리 데이터 객체가 주어지는데, 이 객체는 Typed Array API의 DataView 클래스를 사용해 탐색할 수 있다. DataView는 다양한 형식의 값을 읽고 쓸 수 있으며 엔디안을 직접 선택할 수 있기 때문에 PSD와 같은 바이너리 파일을 읽기에 알맞다. 반면 Typed Arrays API의 Uint8Array, Uint16Array와 같은 자료 구조는 한 가지 타입을 읽고 쓰는 용도로 최적화되어 있으며 현재 플랫폼의 엔디안을 따르기 때문에 형식이 정해진 바이너리 파일을 읽고 쓰기에는 부적합하다.&lt;/p&gt;
+
+&lt;p&gt;아래 내용부터는 데이터를 읽는 과정을 표현할 때 편의상 '배열'을 읽었다고 하겠다.&lt;/p&gt;
+
+&lt;p&gt;각 섹션에 어떤 정보가 저장되어 있고 어떻게 읽는지 알아보자. 간단히 FileHeader 섹션을 읽어보겠다. PSD File Formats Specification 문서에 따르면 FileHeader 섹션의 구조는 다음과 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/06/b9c22a6c-5f2d-4ba7-8d54-2bf11130b6a0.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 표의 일부분을 배열로 표현하면 다음과 같다. 아래 그림에서 첫 번째 줄은 각 바이트가 담고 있는 블록을 도식화한 배열이고 두 번째 줄은 각 바이트에 담긴 값의 예다. 마지막 세 번째 줄은 첫 번째 바이트에 담겨있는 데이터를 비트 단위로 표현한 예다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/06/39df2dc7-78d6-49d6-8d3f-9de1ce2c3d2d.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h3 id="signature"&gt;signature 블록 읽기(문자열 블록)&lt;/h3&gt;
+
+&lt;p&gt;signature 블록은 4바이트로 구성되어 있으며 문자열 타입으로 읽어야 한다. 각 바이트에 저장된 값을 ASCII 코드표에 대입하여 문자열을 완성할 수 있다. JavaScript 언어에서는 String 객체에 내장 함수를 제공하여 간단히 ASCII 코드를 그에 해당하는 문자열로 변환할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ts"&gt;const signature = [56, 66, 80, 83];  
+const value = signature  
+  .map((num) =&amp;gt; String.fromCharCode(num))
+  .join(‘’);
+
+console.log(value); // "8BPS"  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;만약 위 4바이트 블록을 읽은 결과물이 문자열로 "8BPS"가 아니라면 해당 바이너리 파일은 포토샵 파일이 아니므로 적절히 예외로 처리하는 코드를 파싱 라이브러리에 추가한다.&lt;/p&gt;
+
+&lt;h3 id="height"&gt;height 블록 읽기(숫자 블록)&lt;/h3&gt;
+
+&lt;p&gt;signature 블록은 문자열을 읽으면 되므로 각 바이트를 ASCII 테이블에 대입, 문자열 하나로 변환했다. 하지만 동일한 4바이트를 숫자로 읽으려면 다른 방식으로 읽어야 한다. 연속된 4바이트에 기록된 숫자를 읽을 땐 시프트 연산자를 사용한다. 배열의 각 칸을 방문하면서 칸의 인덱스와 숫자 값을 수식에 대입해 전체 숫자를 계산할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ts"&gt;const height = [0,0,5,0];  
+const value = height  
+  .map((num, idx, {length}) =&amp;gt; num &amp;lt;&amp;lt; (length - idx - 1) * 8)
+  .reduce((acc, cur) =&amp;gt; acc + cur, 0);
+
+console.log(value); // 1280  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;시프트 연산을 하는 수식에서 8을 곱하는 이유는 1바이트가 8비트이기 때문이다.&lt;/p&gt;
+
+&lt;p&gt;참고로, height 블록을 읽을 때는 음수를 고려하지 않았다. 높이, 너비는 음수일 수 없기 때문에 height 블록에 담겨있는 비트는 Unsigned type으로 읽었다. 하지만 X, Y 좌표와 같이 음수일 가능성이 있는 블록에 담겨있는 값은 Signed type으로 취급해야 한다. Signed type은 비트 배열에서 가장 앞에 위치한 비트를 기준으로 양수/음수를 판별할 수 있으며 0이면 양수, 1이면 음수임을 의미한다. 예를 들어, "10100101"이라는 값은 Signed type으로 취급하느냐, Unsigned type으로 취급하느냐에 따라 다른 값으로 읽을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/06/1c50829e-9853-4df6-9894-57cd073e12dd.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ts"&gt;parseInt("10100101"); // 151  
+parseInt("01011011"); // 91  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;이진수 "01011011"을 십진수로 변환한 값은 91이며, 가장 앞자리 비트의 값이 1이었으므로 최종 값은 -91이 된다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;2의 보수에 대한 자세한 설명은 위키백과의 &lt;a href="https://ko.wikipedia.org/wiki/2%EC%9D%98_%EB%B3%B4%EC%88%98"&gt;2의 보수&lt;/a&gt;를 참고한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;다음과 같이 메서드를 공통화하여 작성해두면 바이트 단위로 숫자를 읽을 때 호출하여 간단히 십진수 값을 구할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ts"&gt;const unsignedToSigned = (x, bitLength)=&amp;gt; {  
+  if(x &amp;gt;= Math.pow(2, bitLength - 1))
+    return x - Math.pow(2, bitLength);
+
+  return xl
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=""&gt;길이가 유동적인 블록 읽기&lt;/h3&gt;
+
+&lt;p&gt;앞서 살펴본 블럭들은 각각 차지하는 바이트 길이가 고정되어, 배열에서 해당 길이만큼 가져와 읽기 동작을 수행하면 되었다. 하지만 작가가 직접 입력하는 데이터인 '레이어 이름'과 같은 항목은 길이가 유동적일 수밖에 없다. 레이어 이름의 최대 길이는 정해져 있지만 짧은 문자열을 입력해도 최대 길이만큼 비트를 비워두는 것은 비효율적이다.&lt;/p&gt;
+
+&lt;p&gt;문서에서 길이가 유동적인 데이터는 다음과 같은 형태로 안내하고 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/06/83560e0a-834a-4466-8a54-96a8df420532.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;먼저 길이가 정해진 숫자 블록이 있고 이 블록은 뒤따라오는 블록의 크기 값을 저장하고 있다. 따라서 먼저 앞 블록을 읽어서 크기 정보를 알아낸 뒤 해당 길이만큼 뒤 칸의 정보를 읽어내면 레이어 이름을 알 수 있다.&lt;/p&gt;
+
+&lt;p&gt;위 표를 그림으로 그려보면 다음과 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/06/af0404d2-ee01-4638-b5d8-1b0c16e6e7af.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;먼저 2바이트로 길이가 고정된 블록인 length 블록을 읽어서 길잇값 10을 얻는다. 그리고 그 뒤에 길이가 유동적인 블록 data 블록을 10바이트 읽어서 문자열 "layer name"을 얻을 수 있다.&lt;/p&gt;
+
+&lt;h3 id="cursor"&gt;Cursor 객체 사용하기&lt;/h3&gt;
+
+&lt;p&gt;앞서 signature 블록, height 블록, 길이가 유동적인 블록을 읽는 방법을 살펴보았다. 이처럼 데이터를 읽는 과정은 문서를 참고하여 특정 블록을 떼어와 의미있는 정보로 변환하는 작업의 연속이다. 하지만 개발자가 직접 배열에 접근하여 i 번째 위치부터 j 번째 위치까지 N개의 비트를 떼어오는 과정을 하나하나 지정하기는 너무 번거로우며 번거로운 작업에서는 필연적으로 버그가 발생한다.&lt;/p&gt;
+
+&lt;p&gt;따라서 배열에서 현재까지 읽은 위칫값을 저장하고 데이터를 읽을 때마다 위칫값을 갱신해주는 Cursor 객체를 둔다면 보다 수월하게 바이너리 데이터를 읽을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;하드디스크 장치를 열어보면 디스크에 저장된 데이터를 읽어오기 위해서 head라는 부품이 플레이트에 얹어져 자성을 읽도록 되어있는데, 이러한 구조를 소프트웨어적으로 모방했다고 보면 이해가 쉽다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/06/7f4f235c-a0f2-4e59-8583-65a2e0e9b658.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-ts"&gt;class Cursor {  
+  constructor(
+    public arr: Array&amp;lt;number&amp;gt;,
+    public position: number
+  ) { }
+
+  read(type: "i8" | "u8"): number {
+    ... position += 1;
+  }
+
+  readString(length: number): string {
+    ... position += length;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Cursor 객체를 위와 같이 만들어 위치 정보를 갖게 한다. 메서드가 호출되었을 때 현재 위치부터 지정된 길이까지 데이터 블록을 읽고 위치를 갱신한 뒤 변환된 데이터를 반환한다. 개발자는 배열 속 현재 위치에 신경 쓰지 않고 문서에 나열된 순서에 따라 포토샵 파일 정보를 읽고 변환하는 코드를 작성할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;readNumber 또는 readString 메서드를 호출하여 같은 1바이트를 읽더라도 Unsigned number type으로 읽을지, Signed number type으로 읽을지, String 타입으로 읽을지 선택할 수 있으며, 각각의 메서드 반환 값이 다르다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/06/10817abb-3b07-41ba-9e38-c09fb8ba24c9.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h2 id=""&gt;이미지 데이터 디코딩하기&lt;/h2&gt;
+
+&lt;p&gt;포토샵 파일을 읽는 목적은 궁극적으로 파일에 담긴 각 이미지 데이터를 얻는 것이다. 포토샵 파일에는 각 레이어 이미지 데이터와 미리보기 이미지 데이터가 존재한다. 이미지 데이터는 효율적으로 저장 공간을 차지하기 위해 기본적으로 런 렝스 부호화(run-length encoding) 압축 기술을 사용하여 저장된다.&lt;/p&gt;
+
+&lt;p&gt;런 렝스 부호화는 데이터에서 같은 값이 연속되어 나타날 경우 그 값과 반복되는 횟수로 표현하는 방법이다. 가령, "AAABB" 문자열을 런 렝스 부호화로 압축할 경우 "3A2B" 으로 압축할 수 있다. 이미지 데이터는 &lt;code&gt;RGBA&lt;/code&gt; 값으로 표현되는데, 각각 red(R), green(G), blue(B), alpha(A)를 나타낸다. 연속된 숫자, 즉 동일한 색상이 많을수록 반복 횟수로 표현할 수 있는 데이터가 많아지고 압축률이 높아진다.&lt;/p&gt;
+
+&lt;p&gt;포토샵 파일은 이미지를 구성하는 각 픽셀의 R, G, B, A 값을 별도의 채널로 모아서 압축하여 보관한다. 따라서 각 채널의 내용을 해독하여 R, G, B, A 값을 하나로 모아 각 픽셀을 복원하는 과정을 거쳐야 우리가 원하는 이미지 데이터를 얻을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/06/3036c08c-1f0f-4052-bd74-06062db95eb9.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;R이 모두 출현한 뒤 G, B, 그리고 A가 모여있는 형태의 배열에서 RGBARGBA 값들이 반복되도록 이미지 픽셀 데이터를 복구한다.&lt;/p&gt;
+
+&lt;p&gt;이미지 데이터를 디코딩하는 과정은 반복문을 순회하면서 RGBA 데이터를 취합하고 연결하는 작업의 연속이다. 이런 반복 작업은 WebAssembly를 사용하면 성능을 더욱 끌어올릴 수 있는데, 해당 내용은 2편에 이어서 작성하겠다.&lt;/p&gt;
+
+&lt;h2 id=""&gt;마치며&lt;/h2&gt;
+
+&lt;p&gt;지금까지 포토샵 파일을 웹 애플리케이션 환경에서 읽어내는 과정을 살펴보았다. 라이브러리를 개발하며 처음 언급했던 문제를 모두 해결할 수 있었다.&lt;/p&gt;
+
+&lt;p&gt;의존성 라이브러리 없이 개발했기에 최종 번들링된 소스코드 파일 크기도 작고, 한글과 특수문자, 이모티콘 문자열도 모두 지원한다. 또한 대용량 포토샵 파일(.psb)도 적절히 분기 처리해 완벽히 데이터를 읽을 수 있다. 무엇보다도, 데이터를 읽는 속도와 디코딩하는 속도가 빠르다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/06/f04ef792-3d20-419b-85d6-514328fd3f27.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;v0.1.2 기준으로 벤치마킹을 실행해 보았더니 타 라이브러리와 비교했을 때 파일 크기는 대략 17분의 1 크기로 줄었고, 데이터 읽기 속도는 대략 7배 빨라졌다. 특히 이미지를 디코딩하는 속도가 대폭 개선된 것을 확인했다.&lt;/p&gt;
+
+&lt;p&gt;이미지 데이터와 레이어 메타데이터를 파싱하는 기능만 오픈소스로 배포했지만, 계속해서 폰트 데이터를 비롯한 다양한 데이터를 파싱할 수 있도록 기능을 추가할 계획이다. 이 포스트를 읽는 분 중 바이너리 파일을 다루는 데에 관심이 있는 분이 있었다면 도움이 되었길 바란다.&lt;/p&gt;
+
+&lt;p&gt;포토샵 파일을 다루는 상황에 있다면 @webtoon/psd 라이브러리 사용을 적극 추천한다. 부족한 기능이 있다면 직접 구현도 해보자. Pull Request는 언제나 환영이다!&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>학생 개발자를 위한 D2 CAMPUS PARTNER에 지원하세요!</title>
+    <link rel="alternate" href="https://d2.naver.com/news/6671933" />
+    <category term="news" />
+    <id>https://d2.naver.com/news/6671933</id>
+    <updated>2022-09-28T12:57:46Z</updated>
+    <content type="html">&lt;p&gt;&lt;img src="/content/images/2022/06/69001509_1855141437922762_1305931479758405632_n.jpg" alt="" /&gt;
+&lt;span class="caption"&gt;&amp;lt;지난 D2 CAMPUS PARTNER 운영진 모임&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;프로그래밍과 개발에 열정적이고 여러분들의 기술 개발 결과를 다른 개발자들에게 공유할 준비가 되었다면 D2 CAMPUS PARTNER에 지원하세요. 2022-2023을 위한 PARTNER &lt;a href="https://naver.me/5IVk1QbY"&gt;지원 신청서&lt;/a&gt;가 오픈되었습니다!&lt;/p&gt;
+
+&lt;p&gt;아래 내용을 읽어보신 후 궁금한 사항이 있으시다면 naver_d2@naver.com로 이메일 보내주세요 :)&lt;/p&gt;
+
+&lt;h3 id="d2campuspartner"&gt;D2 CAMPUS PARTNER는?&lt;/h3&gt;
+
+&lt;p&gt;D2 CAMPUS PARTNER는 실력 있는 학생 개발자들의 다양한 개발 지식과 경험의 나눔을 통해 기술 성장과 기술 공유문화 활성화를 위해 IT 스터디 그룹을 지원하는 활동입니다. 프로그래밍, 알고리즘, 보안 등 학생 개발자에게 필요한 분야라면 동아리, 스터디그룹, 커뮤니티, 소모임 등 모두 신청 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;내부 심사를 통해 선발 된 D2 CAMPUS PARTNER 팀에는&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;장소, 서버, 도서, 운영비 등 스터디/기술 행사에 필요한 사항들을 지원해 드리며&lt;/li&gt;
+&lt;li&gt;네이버에서 주최하는 세미나/컨퍼런스/미팅 등 기술 행사에 초대권을 드리며&lt;/li&gt;
+&lt;li&gt;다른 학생 개발자들과 함께 소통하고 교류할 수 있는 D2 CAMPUS PARTNER 모임에도 참가하실 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이 외에도 네이버 현업 개발자들과의 만남, 네이버 그린팩토리 &amp;amp; 1784 사옥 초대 등 다양한 혜택을 제공해 드릴 예정입니다.&lt;/p&gt;
+
+&lt;h3 id="d2campuspartner"&gt;D2 CAMPUS PARTNER 지원 일정&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;온라인 지원서 신청 기간: 2022년 6월 13일(월) ~ 7월 8일(금)&lt;/li&gt;
+&lt;li&gt;인터뷰 및 결과 발표: 2022년 8월 중&lt;/li&gt;
+&lt;li&gt;D2 CAMPUS PARTNER 활동 및 지원 기간 : 2022년 9월 ~ 2023년 8월(1년)&lt;/li&gt;
+&lt;li&gt;각 단계별 결과는 개별 통보하며 위의 일정은 변동될 수 있습니다.&lt;/li&gt;
+&lt;li&gt;D2 CAMPUS PARTNER 신청: &lt;a href="https://d2.naver.com/program"&gt;https://d2.naver.com/program&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=""&gt;이런 모임들의 참여를 기다립니다.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;컴퓨터 프로그래밍과 소프트웨어 엔지니어링 기술개발에 열정적인 모임&lt;/li&gt;
+&lt;li&gt;기술개발 결과들을 다른 개발자들과 공유하며 교류하고 싶은 모임&lt;/li&gt;
+&lt;li&gt;기술 성장과 함께 기술 공유문화를 경험하고 싶은 모임&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="d2campuspartner"&gt;D2 CAMPUS PARTNER 기존 멤버들의 소소한 후기&lt;/h4&gt;
+
+&lt;p&gt;"네이버 현업 개발자분들을 직접 만나서 이야기 할 수 있어서 좋았습니다."&lt;br/&gt;
+"다른 학교 학생개발자들과 만나서 이야기를 나눌 수 있는 부분이 큰 도움이 되었습니다."&lt;br/&gt;
+"저희 모임이 개발에 대한 열정만 가득한 작은 동아리일 때, 공간과 예산 지원을 해 주셔서 이렇게 큰 동아리로 발전 할 수 있었습니다."&lt;br/&gt;
+"예산 지원 후 과도한 증빙을 하지 않아도 되는 등 최대한 자율성을 보장 해줘서 너무 좋았습니다!"&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://d2.naver.com/program" target="_blank"&gt;&lt;img src="/content/images/2022/06/D2------_---_---_--.jpg" alt="" title="" /&gt;&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>AI 플랫폼과 데이터 플랫폼을 이어주는 Alluxio 적용기</title>
+    <link rel="alternate" href="https://d2.naver.com/helloworld/3863967" />
+    <category term="hello world" />
+    <id>https://d2.naver.com/helloworld/3863967</id>
+    <updated>2022-05-27T11:42:57Z</updated>
+    <content type="html">&lt;p&gt;고성능의 AI 모델을 개발하기 위해서는 좋은 알고리즘만큼이나 양질의 데이터가 중요합니다. 그렇기 때문에 대규모 데이터를 전처리하여 양질의 데이터로 만든 후 AI 플랫폼에서 이를 사용하는 것이 일반적입니다.&lt;/p&gt;
+
+&lt;p&gt;네이버 검색에서는 어떻게 하고 있을까요? 네이버의 대규모 데이터는 데이터 저장소인 &lt;a href="https://deview.kr/2017/schedule/188"&gt;Cuve&lt;/a&gt;에 저장되어 있으며, Apache Hadoop 기반의 데이터 처리 플랫폼 &lt;a href="https://deview.kr/2018/schedule/231"&gt;C3&lt;/a&gt;에서 데이터를 처리합니다. 그리고 AI 학습 또는 서빙을 위해서는 Kubernetes 기반의 AI 플랫폼인 &lt;a href="https://deview.kr/2021/sessions/465"&gt;AiSuite&lt;/a&gt;를 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;즉, 네이버 검색에서 AI 서비스를 위한 데이터 흐름은 다음과 같습니다(&lt;a href="https://naver-career.gitbook.io/kr/service/search/ai-and-data-platform"&gt;AI&amp;amp;Data Platform&lt;/a&gt; 참고).&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;데이터 저장 플랫폼 Cuve에서 대규모의 원본 데이터 관리  &lt;/li&gt;
+&lt;li&gt;데이터 처리 플랫폼 C3에서 데이터 저장 플랫폼 Cuve의 데이터를 가공하여 HDFS에 저장  &lt;/li&gt;
+&lt;li&gt;AiSuite는 데이터 처리 플랫폼 C3의 HDFS에 저장된 데이터를 사용&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;결국 원활한 AI 파이프라인 개발을 위해서는 AiSuite에서 데이터 처리 플랫폼 C3의 HDFS에 빠르고 쉽게 접근할 수 있어야 합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/57b1eb10-57ad-4785-8021-99aa5d9d1ade.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;본 문서에서는 Kubernetes 기반의 AI 플랫폼인 AiSuite에서 &lt;a href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html"&gt;HDFS&lt;/a&gt;에 쉽고 빠르게 접근하기 위해 고민했던 내용을 공유합니다.&lt;/p&gt;
+
+&lt;h2 id=""&gt;요구 사항&lt;/h2&gt;
+
+&lt;h3 id=""&gt;사용 편이성&lt;/h3&gt;
+
+&lt;p&gt;Kubernetes에서 HDFS에 접근하기 위해서는 어떻게 해야 할까?&lt;/p&gt;
+
+&lt;p&gt;단순하게 생각해보면 HDFS를 사용하는 방법은 어렵지 않다. Apache Hadoop 패키지, 클러스터 설정 파일을 배포하고 Kerberos 인증을 제공한 후 HDFS CLI, REST, Java API를 사용하여 접근할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;하지만 이는 Kubernetes에서 HDFS에 접근하려는 모든 컨테이너에 Apache Hadoop 패키지, 설정, 인증이 필요하다는 의미이다. 사용자가 매번 HDFS에 접근이 가능한 이미지를 직접 빌드하고 인증 방법을 마련해야 한다면 굉장히 번거로울 것이다. 그뿐만 아니라, HDFS CLI, REST, Java API 등을 이용한 HDFS 접근을 위한 코드 작성도 필요하다.&lt;/p&gt;
+
+&lt;p&gt;따라서 HDFS를 사용하더라도 추가적인 개발이 없도록 지원해야 한다.&lt;/p&gt;
+
+&lt;h3 id=""&gt;이식성&lt;/h3&gt;
+
+&lt;p&gt;AiSuite는 Kubernetes 기반에서 Kubeflow, Knative, KServe 등의 다양한 소프트웨어를 활용하여 MLOps 환경을 제공한다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 다양한 소프트웨어에서 스토리지가 필요하다면 어떻게 지원할까? Kubernetes에서는 PersistentVolume을 마운트하여 사용하는 것이 일반적인 스토리지 사용 방법이다. HDFS를 스토리지로 사용하는 경우에도 이러한 방식을 지원한다면 Kubernetes에서 실행되는 어떠한 소프트웨어에서도 자연스럽게 HDFS를 사용할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=""&gt;성능&lt;/h3&gt;
+
+&lt;p&gt;AiSuite의 GPU 노드는 여러 IDC에 걸쳐 분산되어 있으며, HDFS가 구축된 IDC와 다를 수 있다. 이러한 환경에서 항상 HDFS에 접근하는 경우 다량의 IDC 간 트래픽이 수시로 발생하며 데이터 전송이 지연된다.&lt;/p&gt;
+
+&lt;p&gt;GPU를 활용하는 AI 작업에서 데이터 전송 지연은 단순히 오래 걸리는 것 이상의 비용이 발생한다. 일반적으로 GPU가 할당된 후 학습 또는 서빙에 필요한 데이터를 원격의 저장소로부터 가져오기 때문에, 데이터 전송이 지연된다면 그만큼 고비용의 GPU 자원을 낭비하는 것과 같다.&lt;/p&gt;
+
+&lt;p&gt;따라서 한 번 읽은 데이터는 캐싱하여 효율적으로 접근하는 방법이 필요하다.&lt;/p&gt;
+
+&lt;h3 id="kuberneteshdfs"&gt;Kubernetes 저장소로 HDFS 활용&lt;/h3&gt;
+
+&lt;p&gt;클라우드 환경에서는 AWS S3, GCS와 같은 스토리지 서비스를 사용하여 안정적인 데이터 보관이 가능하다. 하지만 on-premise Kubernetes에서 영구적인 데이터 저장 스토리지는 어떻게 마련할 수 있을까?&lt;/p&gt;
+
+&lt;p&gt;간단한 방법으로 &lt;a href="https://kubernetes.io/docs/concepts/storage/storage-classes/#nfs"&gt;nfs&lt;/a&gt;, &lt;a href="https://kubernetes.io/docs/concepts/storage/volumes/#local"&gt;local&lt;/a&gt;, &lt;a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath"&gt;hostpath&lt;/a&gt; 등을 생각할 수 있으나 고가용성 부족, 스케줄링 제한, 보안 취약 등의 문제가 있다. 안정적인 지원을 위해서는 &lt;a href="https://ceph.com/en/"&gt;Ceph&lt;/a&gt;, &lt;a href="https://www.gluster.org/"&gt;gluster&lt;/a&gt; 등의 분산 스토리지를 직접 구축하고 운영해야 하는 부담이 생긴다.&lt;/p&gt;
+
+&lt;p&gt;이미 네이버에서는 데이터 처리 플랫폼 C3에서 지원하는 HDFS를 데이터 저장 용도로 사용하고 있다. 따라서 AiSuite에서 생성한 데이터를 HDFS에 저장한다면 별도의 분산 스토리지 도입 없이 안정적인 데이터 보관이 가능하다.&lt;/p&gt;
+
+&lt;h2 id="alluxio"&gt;Alluxio&lt;/h2&gt;
+
+&lt;h3 id="alluxio"&gt;Alluxio란&lt;/h3&gt;
+
+&lt;p&gt;이러한 요구 사항을 위해 &lt;a href="https://www.alluxio.io"&gt;Alluxio&lt;/a&gt;를 검토했다.&lt;/p&gt;
+
+&lt;p&gt;Alluxio는 Data Orchestration layer로 소개되며 다음과 같은 이점이 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;물리적으로 멀리 떨어져 있거나 느린 저장매체에 저장된 데이터를 캐싱&lt;/li&gt;
+&lt;li&gt;HDFS, AWS S3, GCS, Ceph 등의 다양한 스토리지에 원하는 인터페이스로 접근&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href="https://www.alluxio.io/use-cases/"&gt;Alluxio&lt;/a&gt;는 주로 여러 클라우드 또는 내부 저장소의 데이터에 쉽고 빠르게 접근하기 위해 활용되고 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;AWS S3에 저장된 데이터를 Spark, Presto 등에서 빠르게 처리&lt;/li&gt;
+&lt;li&gt;on-premise HDFS 데이터를 AWS, GCP 등의 클라우드에서 빠르게 접근&lt;/li&gt;
+&lt;li&gt;AWS S3, GCS, Azure 등 여러 클라우드에 저장된 데이터 접근 방식을 일원화&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0d52ccea-15ad-459c-b096-80830b11a8d9.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h3 id="alluxio"&gt;Alluxio의 아키텍처&lt;/h3&gt;
+
+&lt;p&gt;Alluxio는 파일의 메타 데이터를 관리하는 master와 데이터 블럭을 저장하는 다수의 worker로 구성되며, 이러한 구조는 HDFS와 유사하다. 하지만 데이터를 안정적으로 보관하는 용도라기보다는 캐싱과 다양한 인터페이스를 지원하여 데이터를 빠르고 쉽게 사용하는 데 목적이 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/e0e881b4-4be9-486b-a1f5-7b8d60d1477c.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;출처: &lt;a href="https://docs.alluxio.io/os/user/stable/en/overview/Architecture.html"&gt;https://docs.alluxio.io/os/user/stable/en/overview/Architecture.html&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;데이터를 처음으로 읽는 경우에는 원본 저장소로부터 데이터를 가져오지만 이후에는 로컬 또는 다른 worker에 캐싱된 데이터를 가져오는 것이 기본적인 동작이다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;local cache hit: 동일 노드의 worker에 캐싱된 데이터를 읽음(로컬 파일 시스템 속도)&lt;/li&gt;
+&lt;li&gt;remote cache hit: 다른 노드의 worker에 캐싱된 데이터를 읽음(private network 속도)&lt;/li&gt;
+&lt;li&gt;cache miss: 캐싱되어 있지 않은 경우 원본 저장소에서 데이터를 읽고 캐싱(원본 저장소 속도)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/c0f0b247-cfbd-4c89-b3c5-ca69a98e4f77.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;출처: &lt;a href="https://docs.alluxio.io/os/user/stable/en/overview/Architecture.html"&gt;https://docs.alluxio.io/os/user/stable/en/overview/Architecture.html&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;데이터를 쓰는 경우에도 용도에 따라 다양한 방식을 지원한다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MUST_CACHE: 임시 캐싱만 수행. 빠르지만 데이터 유실 가능&lt;/li&gt;
+&lt;li&gt;CACHE_THROUGH: 원본 저장소로 저장한 이후 종료. 느리지만 안전한 데이터 보관&lt;/li&gt;
+&lt;li&gt;ASYNC_THROUGH: 캐싱 후 종료. 이후 비동기적으로 원본 저장소에 저장. 빠르지만 데이터 유실 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/b4c3235d-a362-43a0-95bf-ece4f8116f86.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;출처: &lt;a href="https://docs.alluxio.io/os/user/stable/en/overview/Architecture.html"&gt;https://docs.alluxio.io/os/user/stable/en/overview/Architecture.html&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;본 문서에서는 Alluxio 설치, 튜닝 방법 등의 상세한 내용을 다루지는 않는다. 자세한 내용은 &lt;a href="https://www.alluxio.io"&gt;alluxio.io&lt;/a&gt;을 참고하시기 바란다. 이후로는 AiSuite에 Alluxio를 도입하기 위해 고려했던 내용을 위주로 설명한다.&lt;/p&gt;
+
+&lt;h2 id="kuberneteshdfs"&gt;Kubernetes 저장소로 HDFS 활용&lt;/h2&gt;
+
+&lt;h3 id="alluxiofuse"&gt;Alluxio FUSE&lt;/h3&gt;
+
+&lt;p&gt;Alluxio는 데이터 접근을 위한 다양한 인터페이스를 지원하며, &lt;a href="https://github.com/libfuse/libfuse"&gt;Linux FUSE&lt;/a&gt; 기반의 Alluxio FUSE를 사용하여 POSIX API를 지원한다. 즉, 별도의 Alluxio 라이브러리가 필요하지 않고 일반적인 파일 시스템과 동일하게 사용할 수 있다. 예를 들어, HDFS 접근 시에도 ls, mkdir, cat 등을 그대로 사용할 수 있으며, 데이터를 읽어오는 기존에 작성된 코드를 변경없이 사용할 수 있다. 이는 위의 요구 사항 중 사용 편이성, 이식성을 위해 필요하다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/b37ecd6f-028c-43b3-b589-a0a7ae26b7fe.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;출처: &lt;a href="https://docs.alluxio.io/os/user/edge/en/api/POSIX-API.html#choose-posix-api-implementation"&gt;https://docs.alluxio.io/os/user/edge/en/api/POSIX-API.html#choose-posix-api-implementation&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;그렇다면 Alluxio FUSE를 Kubernetes에서 어떻게 지원해야 할까? 쉽게 떠오르는 것은 Kubernetes 모든 노드의 특정 경로에 Alluxio FUSE를 마운트하고 &lt;a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath"&gt;hostPath&lt;/a&gt;로 사용하는 것이다.&lt;/p&gt;
+
+&lt;p&gt;하지만 AiSuite와 같이 여러 사용자가 함께 사용하는 다중 테넌트(multi-tenant) 환경에서는 다음과 같은 문제가 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;하나의 FUSE 마운팅 포인트를 여러 사용자가 공유함으로서 성능 영향&lt;/li&gt;
+&lt;li&gt;사용자별 HDFS 권한에 따른 접근 제어가 어려움&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;그뿐만 아니라, hostPath는 보안 이슈를 일으킬 수 있어 부득이한 경우를 제외하면 사용하지 않도록 권고하고 있다. Kubernetes에서 스토리지는 &lt;a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/"&gt;PersistentVolume&lt;/a&gt;으로 사용하는 것이 일반적인 방식이다. Alluxio 파일 시스템에 접근하는 경우에도 이러한 방식을 지원하는 것이 필요하다.&lt;/p&gt;
+
+&lt;h3 id=""&gt;컨테이너 스토리지 인터페이스&lt;/h3&gt;
+
+&lt;p&gt;Kubernetes에서 PersistentVolume은 어떻게 지원할 수 있을까?&lt;/p&gt;
+
+&lt;p&gt;컨테이너 스토리지 인터페이스(이하 CSI)는 컨테이너 오케스트레이션 시스템(Kubernetes, swarm, mesos 등)에서 다양한 스토리지를 지원하기 위한 인터페이스를 정의한다. 이전에는 스토리지 지원을 위한 플러그인들이 컨테이너 오케스트레이션 시스템에 종속적이었다. 예를 들어, 스토리지 플러그인을 추가하거나 업데이트하려면 Kubernetes와 같이 컴파일 또는 배포되어야 했다. 하지만 CSI가 소개되면서 플러그인을 독립적으로 배포하고 관리할 수 있게 되었다. 즉, 스토리지 벤더측에서 CSI를 준수하는 스토리지 플러그인을 제공한다면 Kubernetes에 이를 배포하는 것으로 스토리지를 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/6d5cf107-f274-4f33-a44d-ef4898d80207.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;출처: &lt;a href="https://kubernetes.io/blog/2018/08/02/dynamically-expand-volume-with-csi-and-kubernetes/"&gt;https://kubernetes.io/blog/2018/08/02/dynamically-expand-volume-with-csi-and-kubernetes/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;CSI에 대한 자세한 내용은 &lt;a href="https://github.com/container-storage-interface/spec/blob/master/spec.md"&gt;CSI spec&lt;/a&gt;을 참고하기 바란다.&lt;/p&gt;
+
+&lt;h3 id="alluxiocsi"&gt;Alluxio CSI&lt;/h3&gt;
+
+&lt;p&gt;따라서 Alluxio 파일 시스템에 대한 CSI 스토리지 플러그인을 개발해야 한다는 걸 알 수 있다.&lt;/p&gt;
+
+&lt;p&gt;AiSuite를 위한 플러그인은 아래와 같이 동작하도록 구현했다. 아래는 구현된 부분을 강조한 대략적인 흐름이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/e7e3ead7-d015-4026-aa09-143a3ff7ec13.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;(1) 사용자는 PVC(PersistentVolumeClaim), Pod 요청. 원하는 HDFS 경로를 PVC의 &lt;code&gt;hdfs/namespace&lt;/code&gt;, &lt;code&gt;hdfs/path&lt;/code&gt;로 명시&lt;/p&gt;
+
+&lt;p&gt;(2.1) csi-provisioner에 의해 &lt;code&gt;CreateVolume&lt;/code&gt;이 플러그인으로 요청&lt;/p&gt;
+
+&lt;p&gt;(2.2) 플러그인은 PVC에 설정된 HDFS 경로를 Alluxio 파일 시스템과 마운트&lt;/p&gt;
+
+&lt;p&gt;(3.1) Pod이 스케줄링되면, csi-attacher에 의해 &lt;code&gt;ControllerPublishVolume&lt;/code&gt;이 플러그인으로 요청&lt;/p&gt;
+
+&lt;p&gt;(3.2) 플러그인은 사용자가 PVC에 설정된 HDFS 경로에 대한 권한이 있는지 Ranger에 요청하여 확인&lt;/p&gt;
+
+&lt;p&gt;(3.3) 플러그인은 HDFS와 Alluxio 파일 시스템과의 메타데이터 동기화 요청&lt;/p&gt;
+
+&lt;p&gt;(4.1) 스케줄링된 노드의 kubelet은 &lt;code&gt;NodePublishVolume&lt;/code&gt;을 플러그인으로 요청&lt;/p&gt;
+
+&lt;p&gt;(4.2) 플러그인은 Alluxio 파일 시스템을 Pod 하위 경로에 Alluxio FUSE를 마운트하여 제공&lt;/p&gt;
+
+&lt;p&gt;Alluxio에서도 &lt;a href="https://github.com/Alluxio/alluxio-csi"&gt;Alluxio/alluxio-csi&lt;/a&gt;를 지원하지만, 다중 테넌트 환경에서 HDFS와 연동하기 위한 목적인 AiSuite에서는 다음과 같은 개발이 추가로 필요했다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;사용자가 필요한 HDFS 경로를 직접 PVC에 설정하여 요청(1)&lt;/li&gt;
+&lt;li&gt;여러 사용자가 공유하는 Alluxio 파일 시스템의 효율적인 사용을 위해 필요한 HDFS 경로만 캐싱(2.2)&lt;/li&gt;
+&lt;li&gt;HDFS 접근 권한을 관리하는 Ranger와 연동하여 사용자 접근 제한(3.2)&lt;/li&gt;
+&lt;li&gt;HDFS 네임노드로의 부하를 줄이기 위해 Pod 사용 시점에 한 번만 매뉴얼한 동기화 요청(3.3)(&lt;a href="#alluxio와-hdfs-간-동기화"&gt;Alluxio와 HDFS 간 동기화&lt;/a&gt; 참고)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;결국 Alluxio CSI를 개발하여 HDFS를 일반적인 Kubernetes 스토리지와 동일한 방식으로 사용할 수 있게 되었다.&lt;/p&gt;
+
+&lt;h2 id="alluxio"&gt;Alluxio의 읽기 성능&lt;/h2&gt;
+
+&lt;p&gt;Alluxio 캐싱으로 인한 효과를 살펴보기 위해 여러 가지 조건에서 6.4GB 파일을 읽어 보았다. 테스트는 Alluxio 2.4.1에서 &lt;a href="https://docs.alluxio.io/ee/user/stable/en/overview/Architecture.html?q=short-circuit%20reads#local-cache-hit"&gt;short-circuit read&lt;/a&gt;와 같은 성능 최적화 없이 진행되었다. 측정된 시간은 IDC 위치, 저장매체, Alluxio 버전 또는 설정 등에 영향을 받기 때문에 절대적인 것은 아니다.&lt;/p&gt;
+
+&lt;p&gt;위에서 살펴본 대로 우리는 &lt;a href="#alluxio-fuse"&gt;Alluxio FUSE&lt;/a&gt;가 필요하므로, Alluxio FUSE를 사용한 테스트를 진행했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/5d9bfc75-8c30-43d4-b75d-287db1024080.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Alluxio FUSE로 캐싱되지 않은 파일을 읽는 경우(3), HDFS Client를 사용해 읽는 것(2)보다도 15% 가량 느려졌다. FUSE는 여러번 kernel-user 간 컨텍스트 스위칭이 발생하는데 이에 대한 오버헤드이다.&lt;/li&gt;
+&lt;li&gt;Alluxio FUSE로 동일 노드에 캐싱된 파일을 읽는 경우(4), 캐싱되지 않는 파일을 읽는 경우(3)에 비해 5배 빠르게 읽어온다(short-circuit read 설정으로 더 빠른 속도도 기대할 수 있다).&lt;/li&gt;
+&lt;li&gt;Alluxio FUSE로 다른 노드에 캐싱된 파일을 읽는 경우(5)에도 동일 노드에 캐싱된 파일을 읽는 경우(4)에 근사한 시간이 소요되었다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Alluxio 측에서도 Fuse 성능 개선에 노력하고 있으며, Alluxio 2.5.0부터는 성능을 개선한 &lt;a href="https://docs.alluxio.io/os/user/edge/en/api/POSIX-API.html#choose-posix-api-implementation"&gt;JNI-Fuse&lt;/a&gt;를 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;파일을 쓰는 경우에 대한 성능은 평가하지 않았다. AiSuite에서 Alluxio 파일을 쓰는 것은 HDFS를 안정적인 스토리지로 사용하기 위함이며, 따라서 HDFS로의 저장을 보장하는 &lt;a href="https://docs.alluxio.io/ee/user/stable/en/overview/Architecture.html?q=CACHE_THROUGH#write-through-to-ufs-cache_through"&gt;CACHE&lt;em&gt;THROUGH&lt;/a&gt; 방식을 사용한다. 따라서, 일반적인 HDFS Client를 사용하는 것과 비슷한 시간이 소요된다. 만약 데이터 유실을 감수할 수 있는 임시 데이터 보관이 목적이라면 &lt;a href="https://docs.alluxio.io/ee/user/stable/en/overview/Architecture.html?q=CACHE_THROUGH#write-to-alluxio-only-must_cache"&gt;MUST&lt;/em&gt;CACHE&lt;/a&gt;를 사용하여 빠른 쓰기 성능을 기대할 수 있다.&lt;/p&gt;
+
+&lt;h2 id="locality"&gt;Locality&lt;/h2&gt;
+
+&lt;p&gt;AiSuite에 포함된 노드는 여러 IDC에 걸쳐 분산되어 있다. 데이터에 접근할 때 가능하면 IDC를 벗어나지 않고 근거리에서 데이터를 가져올 수 있어야 한다. 다른 IDC의 노드에서 데이터를 가져오는 경우, 느릴 뿐만 아니라 IDC 간 네트워크 트래픽 비용이 발생한다.&lt;/p&gt;
+
+&lt;p&gt;Alluxio에서는 client, master, worker에 대해 &lt;a href="https://docs.alluxio.io/os/user/stable/en/operation/Tiered-Locality.html"&gt;locality&lt;/a&gt;를 부여하는 방법을 제공한다. Alluxio 파일 시스템에 접근하려는 client의 locality에 따라 어떤 worker로부터 캐싱된 데이터를 가져올지 결정할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;AiSuite에서는 node, zone, idc 순서로 locality를 고려하여 캐싱 데이터에 접근하도록 설정한다. zone은 용도에 따른 노드들의 그룹으로, 물리적으로 가까이 위치한다. 각 노드에는 node, zone, idc에 대한 &lt;a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes/#add-a-label-to-a-node"&gt;Kubernetes node-label&lt;/a&gt;을 설정해두고, client, master, worker가 구동될 때 다음과 같은 alluxio.locality 설정이 반영되도록 했다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;alluxio.locality.order=node,zone,idc&lt;/li&gt;
+&lt;li&gt;alluxio.locality.node={노드의 호스트명}&lt;/li&gt;
+&lt;li&gt;alluxio.locality.zone={노드가 소속된 zone명}&lt;/li&gt;
+&lt;li&gt;alluxio.locality.idc={노드가 위치한 idc명}&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;다음은 node=node1, zone=web, idc=seoul인 client에서 캐싱 데이터에 접근하는 예이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/94fc248a-a3c7-441f-b9b0-efe61a16c23f.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;같은 노드 node1에 캐싱된 데이터  &lt;/li&gt;
+&lt;li&gt;같은 zone인 web에 캐싱된 데이터  &lt;/li&gt;
+&lt;li&gt;같은 idc인 seoul에 캐싱된 데이터  &lt;/li&gt;
+&lt;li&gt;그 외 다른 idc에 캐싱된 데이터&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;만약 IDC 간 전송이 너무 느리거나 많은 비용이 발생한다면 어떻게 해야 할까? 다른 IDC에 캐싱된 데이터를 가져오는 것(위의 4번)보다, 같은 IDC의 HDFS에서 데이터를 가져오는 게 유리할 수 있다. 이 경우 &lt;code&gt;alluxio.locality.idc.strict=true&lt;/code&gt;를 설정할 수 있다. 다른 IDC로의 요청 대신 HDFS로부터 데이터를 가져온다.&lt;/p&gt;
+
+&lt;h2 id="alluxiohdfs"&gt;Alluxio와 HDFS 간 동기화&lt;/h2&gt;
+
+&lt;p&gt;Alluxio는 HDFS 메타데이터(파일, 디렉터리 등의 정보)를 캐싱하여 빠르고 효율적으로 데이터를 사용하게 한다. 그뿐만 아니라, 메타데이터를 캐싱하여 HDFS 네임노드로의 불필요한 요청을 줄이는 이점도 있다.&lt;/p&gt;
+
+&lt;p&gt;하지만 캐싱은 원본 저장소와의 불일치를 유발하기도 한다. Alluxio를 이용하여 파일, 디렉터리를 생성하는 경우에는 Alluxio 파일 시스템에 반영된다. 하지만 외부로부터 가해지는 HDFS 변경을 알 수는 없다. 예를 들어, Alluxio에서 /data/20220401을 캐싱하고 있는데 만약 Hive를 이용해 HDFS에 /data/20220402가 생성된다면 Alluxio는 알 수 없다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/09f330e6-04dd-4cab-9f5b-034aa803d248.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;출처: &lt;a href="https://www.alluxio.io/blog/two-ways-to-keep-files-in-sync-between-alluxio-and-hdfs"&gt;https://www.alluxio.io/blog/two-ways-to-keep-files-in-sync-between-alluxio-and-hdfs&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;이를 위해 Alluxio에서는 얼마나 자주 HDFS와 &lt;a href="https://docs.alluxio.io/os/user/stable/en/core-services/Unified-Namespace.html#ufs-metadata-sync"&gt;메타데이터 동기화&lt;/a&gt;를 해야 하는지 client 측에 설정할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;alluxio.user.file.metadata.sync.interval=-1&lt;/code&gt;는 한 번 캐싱한 이후로는 동기화하지 않는다. HDFS 네임노드로의 부담은 줄어들지만 동기화 문제가 발생할 수 있다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;alluxio.user.file.metadata.sync.interval=0&lt;/code&gt;은 파일 접근이 있을 때마다 HDFS 메타데이터를 동기화한다. 동기화 문제는 없지만, HDFS 네임노드로 항상 &lt;a href="https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/fs/FileSystem.html#listStatus-org.apache.hadoop.fs.Path"&gt;listStatus&lt;/a&gt; 요청이 발생하여 네임노드에 부담을 준다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;alluxio.user.file.metadata.sync.interval=1m&lt;/code&gt;는 1분마다 HDFS 메타데이터와 동기화한다. 1분마다 주기적으로 &lt;a href="https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/fs/FileSystem.html#listStatus-org.apache.hadoop.fs.Path"&gt;listStatus&lt;/a&gt; 요청이 발생한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;우리가 사용하는 C3S HDFS는 수많은 사용자가 있다. 따라서 무엇보다도 네임노드 부담을 줄이기 위한 방안이 필요하므로 &lt;code&gt;alluxio.user.file.metadata.sync.interval=-1&lt;/code&gt;를 기본으로 사용한다. 다만, HDFS의 변경 사항이 반영되지 않는 문제를 보완하기 위해 Pod의 초기화 시점에 다음과 같이 매뉴얼한 동기화를 한 번 실행한다. 관련된 내용은 &lt;a href="#alluxio_csi"&gt;Alluxio CSI&lt;/a&gt;(3.3)를 참고하기 바란다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ./bin/alluxio fs ls -R -Dalluxio.user.file.metadata.sync.interval=0 /path/to/sync
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;출처: &lt;a href="https://docs.alluxio.io/os/user/stable/en/core-services/Unified-Namespace.html#periodic-metadata-sync"&gt;https://docs.alluxio.io/os/user/stable/en/core-services/Unified-Namespace.html#periodic-metadata-sync&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;사용 패턴에 따라서는 Pod이 초기화된 이후에도 항상 HDFS와 동기화가 필요할 수 있다. 이런 경우에는 &lt;code&gt;alluxio.user.file.metadata.sync.interval=0&lt;/code&gt;를 설정할 수 있다. 다만, 네임노드 부담이 얼마나 가해지는지 모니터링해야 한다.&lt;/p&gt;
+
+&lt;h2 id=""&gt;도입 효과&lt;/h2&gt;
+
+&lt;p&gt;AiSuite에서는 Alluxio 도입으로 요구 사항을 모두 해결할 수 있었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/1a3217d7-ee29-4696-a576-1bd9757021b0.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;사용 편이성, 이식성: 일반적인 Kubernetes의 PersistentVolume 사용 방식에 따라 HDFS를 사용할 수 있다. 사용자는 HDFS 사용을 위한 러닝커브가 없으며, 기존의 소프트웨어에서도 별도의 개발없이 HDFS 사용이 가능하다.&lt;/li&gt;
+&lt;li&gt;성능: 여러 IDC에 분산된 노드 사이의 IDC 간 트래픽을 줄이고 HDFS에 빠르게 접근할 수 있다.&lt;/li&gt;
+&lt;li&gt;Kubernetes 저장소로 HDFS 활용: AiSuite에서 생성한 AI 모델, 로그 등의 데이터를 안정적으로 보관하는 스토리지로서 HDFS를 사용할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=""&gt;도입 시 고려 사항&lt;/h2&gt;
+
+&lt;p&gt;Alluxio 운영은 간단하지 않다. master, worker, CSI 등의 Alluxio 컴포넌트 관리뿐만 아니라, HDFS 네임노드로 얼마나 많은 요청이 가해지는지, 효과적인 캐싱 정책은 무엇인지 등의 다양한 고민이 생긴다.&lt;/p&gt;
+
+&lt;p&gt;사용 방식 또는 환경에 따라서는 Alluxio가 도움이 되지 못할 수 있다. 이 경우 불필요한 운영 부담만 생길 수 있다.&lt;/p&gt;
+
+&lt;h3 id="alluxioimmutable"&gt;Alluxio 파일은 immutable하다&lt;/h3&gt;
+
+&lt;p&gt;HDFS 데이터를 읽기 위해 Alluxio를 사용하다면 대부분 잘 작동한다. 하지만 Alluxio를 통해 HDFS로 데이터를 쓰는 경우, Alluxio 파일은 immutable함을 이해하고 사용해야 한다. 즉, 이미 저장된 파일에 대한 변경(append, truncate)은 금지된다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-shell"&gt;bash-5.0$ cd /data/  
+bash-5.0$ echo "appended" &amp;gt;&amp;gt; myfile.txt  
+bash: echo: write error: File exists  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;이러한 제약으로 인해 기존에 잘 작동하던 코드가 Alluxio 마운트 경로를 지정하면 작동하지 않을 수도 있다.&lt;/p&gt;
+
+&lt;p&gt;AiSuite에서는 작업 중 생성되는 임시 데이터는 &lt;a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#resource-emphemeralstorage-consumption"&gt;Emphemeral Storage&lt;/a&gt;를 사용하고, 최종 결과를 영구적으로 HDFS에 저장하기 위해 Alluxio를 사용한다.&lt;/p&gt;
+
+&lt;h3 id=""&gt;캐싱 효과가 얼마나 있을까&lt;/h3&gt;
+
+&lt;p&gt;Alluxio 캐싱 효과를 위해서는 HDFS로부터 읽어들인 데이터가 여러 작업에서 사용되어야 한다. 항상 새로운 데이터를 사용하는 방식이라면 캐싱 효과를 얻기가 어렵다. &lt;br /&gt;
+또한 HDFS가 느린 저장매체에 저장되어 있거나 물리적으로 멀리 떨어진 경우에 효과적이다.&lt;/p&gt;
+
+&lt;p&gt;AiSuite는 다중 테넌트 환경이므로 여러 사용자가 동일한 데이터를 활용하는 경우가 많다. 그뿐만 아니라, AiSuite의 노드들은 HDFS보다 빠른 저장매체를 가지면서 여러 IDC에 분산되어 있어 캐싱으로 인한 충분한 성능 향상을 기대할 수 있었다.&lt;/p&gt;
+
+&lt;h2 id=""&gt;마치며&lt;/h2&gt;
+
+&lt;p&gt;지금까지 Kubernetes 기반의 AI 플랫폼과 Apache Hadoop 기반의 데이터 플랫폼 간의 데이터 연결을 위해 Alluxio를 도입한 과정을 살펴보았다.&lt;/p&gt;
+
+&lt;p&gt;Alluxio를 활용하면 다양한 인터페이스로 빠르게 HDFS에 접근할 수 있다. 하지만 AiSuite의 요구 사항에 따라 Alluxio CSI 개발, Locality 적용, HDFS 동기화 등의 검토가 필요했다.&lt;/p&gt;
+
+&lt;p&gt;AiSuite에서의 Alluxio 도입은 HDFS에 빠르고 쉽게 접근하는 것이 목적이었다. 하지만 Alluxio는 HDFS뿐만 아니라 AWS S3, GCS, Ceph 등의 다양한 스토리지를 지원한다. 앞으로 AiSuite에서는 HDFS 외의 스토리지도 검토하려고 한다. 여기저기 흩어져 있는 AI 데이터를 통합하고 일관된 인터페이스로 접근하여 더 편리하게 AI 파이프라인을 구축하도록 지원할 계획이다.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>웹 3D 모델 최적화 기법 소개</title>
+    <link rel="alternate" href="https://d2.naver.com/helloworld/6152907" />
+    <category term="hello world" />
+    <id>https://d2.naver.com/helloworld/6152907</id>
+    <updated>2022-05-25T10:48:45Z</updated>
+    <content type="html">&lt;p&gt;이 글에서는 웹에서 주로 사용되는 3D 모델 형식인 glTF(GL Transmission Format)를 대상으로 적용할 수 있는 최적화 기법을 소개합니다. 이를 통해 웹에서 3D 모델을 사용할 때 발생할 수 있는 지연 시간과 관련된 문제를 해결하는 방법에 대해서 알아보겠습니다.&lt;/p&gt;
+
+&lt;h2 id="3dgltf"&gt;3D 모델과 glTF&lt;/h2&gt;
+
+&lt;p&gt;웹에서 3D 모델을 사용하는 것은 이미지나 비디오와 같은 다른 형태의 멀티미디어 콘텐츠를 사용하는 것과 별반 다르지 않다. 다만, 3D 모델을 웹페이지에서 표시하기 위해서는 다른 콘텐츠에 비해 몇 가지 더 고려할 사항이 있다.&lt;/p&gt;
+
+&lt;p&gt;먼저, 3D 모델은 이미지나 비디오처럼 웹 브라우저에 &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt;나 &lt;code&gt;&amp;lt;video&amp;gt;&lt;/code&gt;와 같은 태그로 &lt;code&gt;src&lt;/code&gt; 특성만 지정하는 형태로 바로 사용하는 것이 불가능하다. 3D 모델을 WebGL을 통해 렌더링하려면 &lt;code&gt;&amp;lt;canvas&amp;gt;&lt;/code&gt; 태그를 사용하여 WebGL 컨텍스트를 받아와 렌더링하는 코드를 직접 작성할 필요가 있으며, 3D 모델 파일(glTF, FBX, OBJ 등) 또한 일종의 인코딩된 형태이기 때문에 실제 사용할 데이터를 받아오려면 파일을 로드하여 디코딩하는 과정을 거쳐야 한다. 이 과정은 &lt;a href="https://threejs.org/"&gt;Three.js&lt;/a&gt;나 &lt;a href="https://www.babylonjs.com/"&gt;Babylon.js&lt;/a&gt;와 같이 각종 3D 형식의 로드 및 디코딩을 지원하는 라이브러리를 사용하거나, &lt;a href="https://naver.github.io/egjs-view3d/"&gt;View3D&lt;/a&gt;와 같은 3D 뷰어 컴포넌트를 활용하면 단순화할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;또한 3D 모델은 일반적으로 다른 콘텐츠에 비해 파일 크기가 큰 편이고, 데이터를 스트리밍하여 받아오기도 어렵기 때문에 상대적으로 최적화가 더 필요한 편이다. 물론 3D 모델 간에도 상대적인 차이는 있다. 예를 들어 4K 비디오와 480p 동영상의 파일 크기가 다르듯이, 3D 모델도 어떻게 구성하느냐에 따라서 파일 크기가 천차만별일 수 있다.&lt;/p&gt;
+
+&lt;p&gt;3D 모델의 종류에는 여러 가지가 있지만, 대표적으로 polygonal mesh 형태의 3D 모델이 가장 많이 사용된다. &lt;br /&gt;
+polygonal mesh 3D 모델을 구성하는 데이터를 간략히 나눠보면 크게 &lt;strong&gt;형태(geometry)&lt;/strong&gt;, &lt;strong&gt;재질(material)&lt;/strong&gt;, &lt;strong&gt;동작(animation)&lt;/strong&gt;으로 나눠볼 수 있으며 그 밖에 장면 구성 데이터(빛, 카메라) 등이 있다. 각 요소를 살펴보면서, 어떠한 데이터가 3D 모델의 파일 크기를 차지하는지 알아보겠다.&lt;/p&gt;
+
+&lt;h3 id="geometry"&gt;형태(geometry)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710dbd-80ac-1c4e-8180-b76681de6853.gif" alt="geometry.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;polygonal mesh 3D 모델은 정점(vertex), 정점들을 잇는 선(edge), 그리고 그 선들이 합쳐져 만들어지는 면(face)들로 이루어져 있다. 점 하나에 들어가는 데이터를 생각해보면, 먼저 각 점마다 3차원 좌표(x, y, z)가 반드시 포함되며 그 밖에 텍스처 데이터를 매핑하는 2차원 좌표인 UV 좌표, 점마다의 색상을 나타내는 3차원 데이터(r, g, b), 법선 방향을 나타내는 3차원 벡터 등이 포함될 수 있다.&lt;/p&gt;
+
+&lt;p&gt;정점의 개수는 3D 모델의 디테일에 따라 다르며, 몇백~몇천 개부터 몇십~몇백만 개까지 사용될 수 있다. 이는 3D 모델을 생성하는 과정과 연관이 깊은데, 3D sculpting 프로그램을 통해 생성된 모델은 추가 처리를 하지 않을 경우 일반적으로 정점의 개수가 굉장히 많으며, 이 밖에 Subdivision Surface와 같은 modifier를 통해 정점의 개수와 디테일을 늘리고 표면을 더 부드럽게 만드는 방식 등이 많이 사용되고 있다.&lt;/p&gt;
+
+&lt;h3 id="material"&gt;재질(material)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710dbd-80ac-1c4e-8180-b76831276b5c.png" alt="image-20220512-173502-797.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;3D 모델이 어떤 색상을 갖는지, 빛을 비췄을 때는 어떤 특성을 갖고 있는지와 같이, 모델 표면의 성질을 나타내는 것이 재질(material)이다. 재질을 표현하기 위해 텍스처(texture)가 사용되는데, 일반적으로 2D 이미지 형태로 3D 모델에 저장된다.&lt;/p&gt;
+
+&lt;p&gt;텍스처 이미지는 웹에서 사용되는 JPG나 PNG 형식 등이 사용되며, 지원 여부에 따라 WebP 형식을 사용하는 경우도 있다. 텍스처 이미지는 일반적으로 1024x1024, 2048x2048 등 2의 배수 크기를 사용하며, 2D 이미지를 사용하기 때문에 일반적으로 2D 이미지에 사용하는 것과 동일한 이미지 최적화 기법을 적용할 수 있다.&lt;/p&gt;
+
+&lt;h3 id="animations"&gt;동작(animations)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710dbd-80ac-1c4e-8180-b769015e0edc.gif" alt="animation.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;3D 모델을 움직이게 하기 위해 일반적으로 3D 모델 내부에 뼈대를 심어 그 뼈대를 움직이는 skeletal animation(rigging) 방식을 사용한다. 실제로 사용되는 데이터의 경우 여러 저장 방식이 있으나, 대표적으로 정점마다 영향받는 뼈대의 id와 영향받는 정도(weight)를 같이 저장하는 방식이 있다. 이 경우 뼈대별로 offset matrix, 그리고 키프레임별로 애니메이션을 적용할 뼈대의 position, rotation, scale, 그리고 키프레임 간의 interpolation 방법 등이 같이 저장된다.&lt;/p&gt;
+
+&lt;h3 id="gltfgltransmissionformat"&gt;glTF(GL Transmission Format)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710dbd-80ac-1c4e-8180-b773dd3562b6.png" alt="image-20220512-174747-792.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/KhronosGroup/glTF"&gt;glTF&lt;/a&gt;는 3D 모델을 저장하는 형식 중 하나로, 빠르고 효율적인 데이터 구조를 갖고 있어 웹에서 많이 사용되고 있다. 추가로, glTF는 물리 기반 렌더링, Skeletal Animation 등 현 세대에서 사용하는 많은 기능을 지원함은 물론 extension을 통해 다양한 기능을 추가로 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;glTF는 메인이 되는 JSON 형식의 glTF 파일, 그리고 형태ㆍ동작 등 버퍼 데이터가 저장되는 바이너리 파일(.bin), 그리고 모델마다 상이하지만 다수의 텍스처 이미지로 구성된다. 혹은 이를 전부 합하여 하나의 바이너리 파일로 구성할 수도 있으며, 이 경우 glb 형식을 사용한다.&lt;/p&gt;
+
+&lt;h2 id="geometry"&gt;Geometry 최적화&lt;/h2&gt;
+
+&lt;p&gt;Geometry 최적화는 폴리곤 개수 감소와 Geometry Compression의 두 가지 측면에서 접근할 수 있다. 폴리곤 개수 감소는 정점 및 폴리곤의 개수를 감소시키는 방식으로 실제 데이터 양을 줄이는 것이기 때문에 모델의 디테일은 감소할 수 있으나 처리할 데이터의 절대적인 양이 감소하므로 모델 파일 크기을 줄일 뿐만 아니라 런타임 성능을 높일 수도 있다. Geometry Compression은 데이터를 압축하는 방법으로, 폴리곤 개수 감소에 더해 추가로 적용할 수 있다.&lt;/p&gt;
+
+&lt;h3 id="retopology"&gt;Retopology&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710dbd-80ac-1c4e-8180-b7743be962c4.png" alt="image-20220512-174812-002.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;이미지 출처: &lt;a href="http://people.wku.edu/joon.sung/edu/anim/3d/modeling/retopology/retopology.html"&gt;http://people.wku.edu/joon.sung/edu/anim/3d/modeling/retopology/retopology.html&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Retopology는 대표적으로 폴리곤 개수를 감소시키는 방법으로, Sculpting 등을 통해 생성된 Highpoly 모델을 원본 형태는 최대한 유지하면서 폴리곤의 개수는 더 적어지도록 수정한다. 이 방식의 경우 폴리곤의 절대적인 개수가 줄어들기 때문에 원본에 비해 디테일이 떨어지는 것은 사실이지만, 원본, 즉 Highpoly 상태에서 노멀맵을 생성한 후 Retopology가 적용된 모델에 생성된 노멀맵을 적용하여 원본의 디테일을 살리는 방법을 사용할 수 있다.&lt;/p&gt;
+
+&lt;h3 id="runtimemeshsimplification"&gt;Runtime Mesh Simplification&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710dbd-80ac-1c4e-8180-b776279f656b.png" alt="image-20220512-175017-879.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;3D 모델 출처: &lt;a href="https://sketchfab.com/3d-models/juvenile-teratophoneus-curriei-2d7c4e880c2e45289ebbade3ec479979"&gt;https://sketchfab.com/3d-models/juvenile-teratophoneus-curriei-2d7c4e880c2e45289ebbade3ec479979&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;이 방식은 이름 그대로, 런타임에 geometry mesh를 단순화해 원본 모델의 형태를 최대한 유지하는 선에서 폴리곤 개수를 감소시키는 방식이다. 이 경우 Retopology와 동일한 효능을 얻을 수 있으나, 웹에서는 원본 3D 모델을 동일하게 다운로드해야 한다는 문제가 있다. 따라서 런타임 성능의 문제로 병목이 생기는 경우가 아니라면 원본 모델을 사용하는 것이 낫고, 이 방식을 사용하면 디테일만 낮출 뿐이라는 한계가 있다.&lt;/p&gt;
+
+&lt;h3 id="dracomeshcompression"&gt;Draco Mesh Compression&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710dbd-80ac-1c4e-8180-b7827e6e1de8.png" alt="image-20220512-180346-572.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="caption"&gt;이미지 출처: &lt;a href="https://opensource.googleblog.com/2017/01/introducing-draco-compression-for-3d.html"&gt;https://opensource.googleblog.com/2017/01/introducing-draco-compression-for-3d.html&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/google/draco"&gt;Draco&lt;/a&gt;는 Google이 만든 mesh/point cloud compression 라이브러리로, 형태와 관련된 데이터를 높은 효율로 압축하는 것이 가능하다. 다만 Draco는 애니메이션 관련 데이터나 텍스처 데이터를 압축하지는 못하기 때문에 모델 내에서 형태 데이터가 차지하는 비율에 따라 그 영향이 달라질 수 있다. 일반적으로 굉장히 작은 크기의 텍스처를 사용하거나, 텍스처를 사용하지 않고 애니메이션을 사용하지 않는 경우 Draco가 가장 높은 압축 성능을 보인다.&lt;/p&gt;
+
+&lt;p&gt;Draco는 glTF 형식에 &lt;a href="https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_draco_mesh_compression/README.md"&gt;KHR&lt;em&gt;draco&lt;/em&gt;mesh_compression&lt;/a&gt; extension을 사용하여 적용할 수 있다.&lt;/p&gt;
+
+&lt;h3 id="meshoptcompression"&gt;Meshopt Compression&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710dbd-80ac-1c4e-8180-b783796f2a01.png" alt="image-20220512-180450-831.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/zeux/meshoptimizer"&gt;Meshoptimizer&lt;/a&gt;는 Draco에 비해 더 lightweight한 라이브러리로 단순히 3D 모델의 파일 크기를 줄이는 것 뿐만 아니라 GPU 캐시를 더 활용하기 좋은 형태로 데이터를 가공하는데도 초점이 맞춰저 있어 런타임 성능을 증가시키는 데도 도움을 줄 수 있다.
+또한, Meshopt는 Geometry 뿐만 아니라 모든 바이너리 데이터에 대해 적용되며, 애니메이션이 포함된 경우에도 관련 데이터들을 압축할 수 있다.
+추가로, Meshopt를 통해 압축된 데이터는 gzip이나 brotli와 같은 encoding을 적용 가능하도록 구성되어 있기 때문에, 추가로 gzip 등을 이용하여 압축해야 높은 성능을 보인다.
+Meshoptimizer는 glTF 형식에 &lt;a href="https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Vendor/EXT_meshopt_compression/README.md"&gt;EXT&lt;em&gt;meshopt&lt;/em&gt;compression&lt;/a&gt; extension을 사용하여 적용할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=""&gt;텍스처 최적화&lt;/h2&gt;
+
+&lt;p&gt;텍스처는 일반적으로 2D 이미지 형태로 3D 모델과 함께 저장되며, 색상/법선 방향 등 여러 데이터에 해당하는 다수의 이미지를 사용할 수 있다. 텍스처 이미지는 웹에서 사용되는 PNG나 JPG 등 일반적인 형식을 사용 가능하며, 보통 2의 배수 크기(1024x1024, 2048x2048 등)를 사용한다. 이와 같이 일반적인 이미지 형식을 사용하기 때문에, 동일한 이미지 압축 기법을 텍스처 이미지에도 적용할 수 있으며 이 밖에 이미지 크기를 변경하거나 전용 형식을 활용하여 최적화하는 것이 가능하다.&lt;/p&gt;
+
+&lt;h3 id=""&gt;텍스처 크기 선정&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710dbd-80ac-1c4e-8180-b783fbf82bdb.png" alt="image-20220512-180524-208.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;텍스처는 일반적으로 2의 배수 크기를 사용하기 때문에, 가로/세로 크기를 절반으로만 줄여도 전체 크기는 1/4로 감소한다. 즉, 그만큼 작은 크기의 텍스처를 사용하면 파일 크기도 크게 감소하는데, 두 가지 측면에서 작은 텍스처 크기를 사용하는 것이 유리하다. 먼저, 파일 크기 자체가 감소하기 때문에 네트워크 성능 면에서 이득이 있다. 그리고 네트워크에서 텍스처 이미지를 다운로드한 후에, GPU에서 참조하기 위해 텍스처의 압축을 해제하고 GPU에서 로드할 필요가 있는데 그 과정에서의 I/O 딜레이도 줄어들게 된다.&lt;/p&gt;
+
+&lt;p&gt;물론 텍스처의 크기가 작아지면 3D 모델의 디테일이 떨어지기 때문에 적절한 크기를 찾는 것이 중요하다. 일반적으로 현세대의 대부분의 기기에서는 최대 4096x4096의 텍스처 크기를 사용할 수 있다. 아이폰3GS 등 오래된 기기에서는 최대 2048x2048까지의 텍스처를 사용할 수 있으므로 지원할 환경에 따라 최대 텍스처 크기를 정해놓는 것이 좋다.&lt;/p&gt;
+
+&lt;p&gt;최대 텍스처 크기를 정한 후에는 3D 모델에 포함된 텍스처 이미지들의 크기를 조정하며 원본의 디테일을 잃지 않는 선에서 최대한 작은 크기의 텍스처를 사용하는 것이 좋다. glTF의 경우 메인 glTF 파일이 사람이 읽을 수 있는 JSON 형식이고 해당 파일 내부에서 다른 텍스처 이미지들을 참조하는 형태이기 때문에, 텍스처 이미지의 이름과 확장자만 동일하게 하면 쉽게 바꿀 수 있다. 따라서 크기가 다른 이미지로 바꾸면서 테스트해보고, 만약 디테일에 큰 차이가 없다면 작은 것을 사용하는 것이 성능 면에서 큰 이득을 가져다줄 수 있다.&lt;/p&gt;
+
+&lt;h3 id=""&gt;텍스처 형식 선정과 최적화&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710dbd-80ac-1c4e-8180-b7849b0730b1.png" alt="image-20220512-180604-943.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;텍스처 이미지는 웹에서 사용되는 PNG나 JPG 등 일반적인 형식을 사용 가능하다. GIF와 같이 애니메이션이 포함된 이미지도 사용할 수는 있으나 애니메이션이 동작하게 하기 위해서는 별도의 처리가 필요하다.&lt;/p&gt;
+
+&lt;p&gt;일반적으로 사용되는 이미지 형식인 PNG, JPG, WebP의 파일 크기를 비교해보면 같은 이미지일 때 보통 PNG가 가장 크고 WebP가 가장 작으므로 일반 이미지 형식 중에서는 WebP를 사용하는 것이 이득이 있다. 하지만 WebP는 iOS 14 이상에서만 사용할 수 있는 등 &lt;a href="https://caniuse.com/webp"&gt;환경 제약&lt;/a&gt;이 있으므로, WebP를 기본으로 사용하되 WebP를 사용할 수 없는 환경에서의 fallback으로 다른 이미지 형식을 사용하는 방식이 좋다. glTF에서는 &lt;a href="https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Vendor/EXT_texture_webp/README.md"&gt;EXT&lt;em&gt;texture&lt;/em&gt;webp&lt;/a&gt; extension을 통해 WebP 이미지를 사용할 수 있다. JPG는 파일 크기가 일반적으로 PNG보다 작지만 JPG는 알파 채널을 지원하지 않으며 손실 압축 방식을 사용하기 때문에 원본과 결과물이 달라질 수 있으므로 이러한 점을 고려하여 텍스처 형식을 선정해야 한다.&lt;/p&gt;
+
+&lt;p&gt;텍스처 이미지는 일반 이미지 형식을 사용하므로 각 형식별로 일반적으로 사용되는 최적화 기법을 적용할 수도 있다. JPG와 WebP의 경우 다양한 손실 압축 기법을 사용 가능하고, PNG 또한 일부 이미지의 경우 추가로 비손실 압축이 가능하다. JPG와 WebP는 손실 압축 기법 사용 시 원본 이미지와 색상이나 디테일에 차이가 발생할 수 있기 때문에, 실제 3D 모델에 추가 압축 기법을 적용한 텍스처를 사용하면서 확인해보는 것이 중요하다.&lt;/p&gt;
+
+&lt;h3 id="basisuniversal"&gt;Basis Universal 텍스처&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710dbd-80ac-1c4e-8180-b786089136cb.png" alt="image-20220512-180738-386.png" /&gt;
+&lt;span class="caption"&gt;이미지 출처: &lt;a href="https://www.khronos.org/ktx/"&gt;https://www.khronos.org/ktx/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;KTX2/basis는 &lt;a href="https://github.com/BinomialLLC/basis_universal"&gt;BasisU(Basis Universal) Supercompressed GPU Texture Codec&lt;/a&gt;을 사용하는 텍스처 이미지 형식으로, 높은 품질의 UASTC 모드와 낮은 품질의 ETC1S 모드가 있다. Basis Universal 텍스처는 PNG, JPG 등의 일반 이미지와 GPU에서 사용하는 데이터의 중간 단계로, 빠르게 다양한 GPU 압축 픽셀 형식으로 transcode될 수 있다. 특히 일반 이미지와 같은 크기일 때 GPU 내에서 훨씬 더 작은 메모리 용량을 차지하며 모바일/데스크톱 환경의 GPU가 각각 요구하는 적절한 형식으로 빠르게 변환될 수 있다. 이러한 특징 덕분에, 특히 ETC1S 모드는 일반적으로 파일 크기가 굉장히 작고 텍스처 이미지를 GPU에 업로드하기까지의 시간도 단축할 수 있으며 GPU 내에서의 메모리 사용량도 적다는 점 등 다양한 이점이 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710dbd-80ac-1c4e-8180-b786c92d3ac3.png" alt="image-20220512-180827-819.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;다만, ETC1S 모드 사용 시 사용 옵션 및 경우에 따라 원본 이미지의 디테일이 누락되는 경우가 발생하므로 이 점에 유의해서 사용할 필요가 있다.&lt;/p&gt;
+
+&lt;h2 id=""&gt;그 밖의 최적화 기법&lt;/h2&gt;
+
+&lt;h3 id="gltf"&gt;glTF 최적화&lt;/h3&gt;
+
+&lt;p&gt;glTF의 구조에서 설명했던 것처럼, glTF 모델은 메인 glTF 파일과 바이너리 데이터를 담는 bin, 그리고 텍스처 이미지들로 구성된다. 이 중 메인 glTF 파일은 JSON 형식과 같은 형식이기 때문에 일반적으로 JSON 형식에 적용되는 minify 방식을 동일하게 적용할 수 있다. 또한, 모델 생성 과정에서 중복되거나 사용하지 않는 데이터가 포함될 수도 있는데, &lt;a href="https://github.com/donmccurdy/glTF-Transform"&gt;gltf-transform&lt;/a&gt;과 같은 도구를 사용하여 이를 제거할 수 있다.&lt;/p&gt;
+
+&lt;h3 id="gzipbrotli"&gt;gzip/brotli&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710dbd-80ac-1c4e-8180-b787f6e05e57.png" alt="image-20220512-180945-088.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;다른 최적화 기법과 함께, gzip이나 brotli와 같은 일반적인 비손실 압축 방식을 사용할 수 있다. 실제 3D 모델을 대상으로 각 방식을 사용한 결과를 비교해보면 텍스처 이미지에는 상대적으로 효과가 약했지만 그 밖의 데이터는 상당한 정도를 추가로 압축할 수 있었으며 일반적으로 brotli가 gzip에 비해 더 높은 압축 효율을 보였다.&lt;/p&gt;
+
+&lt;h3 id="progressiveloading"&gt;Progressive Loading&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710dbd-80ac-1c4e-8180-b78bb5993297.gif" alt="pl.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;텍스처 이미지로 일반 2D 이미지를 사용하므로 Progressive Loading을 사용할 수 있다. 이는 원본 이미지에 비해 훨씬 더 작은 크기를 갖는 이미지를 별도로 준비한 후 이를 먼저 로드하고 그 후에 원본 이미지로 교체하는 방식이다. 이 방식은 원본 이미지만 사용하는 것에 비해 훨씬 더 빠르게 3D 모델을 표시할 수 있기 때문에 사용자가 인터랙트 가능하기까지의 시간을 줄이는 것이 가능하다.&lt;/p&gt;
+
+&lt;h2 id=""&gt;결과&lt;/h2&gt;
+
+&lt;p&gt;현재 네이버 &lt;a href="https://m.search.naver.com/search.naver?sm=mtp_hty.top&amp;amp;where=m&amp;amp;query=티라노사우루스"&gt;통합검색 페이지&lt;/a&gt; 및 &lt;a href="https://m.search.naver.com/p/n.search/csearch/content/eprender.nhn?q=티라노사우루스&amp;amp;where=m&amp;amp;pkid=698&amp;amp;key=DINO&amp;amp;u1=25900842&amp;amp;u2=&amp;amp;u3=&amp;amp;u4=csearch"&gt;지식 인터랙티브&lt;/a&gt; 서비스에서 사용하고 있는 티라노사우르스 모델을 대상으로, 위 방법들을 실제로 적용해본 결과를 공유한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710ba9-80ac-1f12-8180-e0a543971dfc.png" alt="image-20220512-181516-128.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/05/0a710ba9-80ac-1f12-8180-e0a57e721e00.png" alt="image-20220512-181456-806.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 글에서 다뤘던 최적화 기법을 전부 적용했을 때, 위의 표와 차트에 표시한 결과와 같이 원본이 60MB인 3D 모델의 파일 크기를 약 98~99% 감소시켜 1MB 가량이 되었고 로드 시간도 85% 정도 감소하는 것을 확인할 수 있었다.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>모던 프론트엔드 프로젝트 구성 기법 - 모노레포 도구 편</title>
+    <link rel="alternate" href="https://d2.naver.com/helloworld/7553804" />
+    <category term="hello world" />
+    <id>https://d2.naver.com/helloworld/7553804</id>
+    <updated>2022-05-09T16:32:42Z</updated>
+    <content type="html">&lt;p&gt;이 글에서는 모노레포 개념 편에 이어 Yarn, Lerna, Nx 그리고 Turborepo 도구에 대해 자세히 소개해 드리려고 합니다.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="#ch1"&gt;Yarn&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch2"&gt;Lerna&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch3"&gt;Nx&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch4"&gt;Turborepo&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a id="ch1"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="1yarn"&gt;1. Yarn&lt;/h2&gt;
+
+&lt;h3 id="yarn1x"&gt;Yarn 1.x&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="https://classic.yarnpkg.com/en/docs/cli/"&gt;https://classic.yarnpkg.com/en/docs/cli/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://classic.yarnpkg.com/lang/en/docs/workspaces/"&gt;Yarn(1.x)&lt;/a&gt; 또는 &lt;a href="https://docs.npmjs.com/cli/v7/using-npm/workspaces"&gt;npm(7.x)&lt;/a&gt;의 &lt;a href="https://yarnpkg.com/features/workspaces"&gt;workspaces&lt;/a&gt; 필드를 사용해 간단히 &lt;a href="https://yarnpkg.com/advanced/lexicon#monorepository"&gt;모노레포&lt;/a&gt;를 구성할 수 있다. &lt;a href="https://classic.yarnpkg.com/en/docs/cli/link"&gt;yarn link&lt;/a&gt; 또는 &lt;a href="https://docs.npmjs.com/cli/v8/commands/npm-link"&gt;npm link&lt;/a&gt; 기능을 선언적으로 사용하는 것으로 node_modules 디렉터리에 workspace에 대한 &lt;strong&gt;심볼릭 링크&lt;/strong&gt;가 생성된다. 이를 통해 하나의 저장소에 있는 여러 프로젝트가 서로 쉽게 상호 참조할 수 있다.&lt;/p&gt;
+
+&lt;h4 id=""&gt;용어&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;project
+&lt;ul&gt;&lt;li&gt;= 저장소&lt;/li&gt;
+&lt;li&gt;하나 이상의 worktree 포함&lt;/li&gt;
+&lt;li&gt;최소 한 개의 workspace(즉, 루트 workspace) 존재&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;workspace
+&lt;ul&gt;&lt;li&gt;= 모노레포 패키지&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;worktree
+&lt;ul&gt;&lt;li&gt;자식 workspace를 갖는 workspace&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="worktree"&gt;worktree 선언&lt;/h4&gt;
+
+&lt;p&gt;worktree를 구성하는 workspace의 위치를 glob 패턴의 배열로 나타낸다. 예를 들어 packages 폴더 내의 모든 폴더가 workspace가 되도록 하려면 다음과 같이 설정한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+    "private": true,
+    "workspaces": ["packages/*"]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Yarn 1.x에서는 &lt;code&gt;private: true&lt;/code&gt; 필드값이 필수지만 2.x 이상에서는 필수가 아니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id="workspace"&gt;workspace 추가&lt;/h4&gt;
+
+&lt;p&gt;그림과 같이 &lt;code&gt;client&lt;/code&gt;, &lt;code&gt;server&lt;/code&gt;, &lt;code&gt;common&lt;/code&gt; 세 개의 workspace를 추가하고 루트 경로에서 &lt;code&gt;yarn&lt;/code&gt; 명령을 실행하면 루트 경로에 &lt;code&gt;node_modules&lt;/code&gt; 디렉터리에 workspace들에 대한 &lt;strong&gt;심볼릭 링크&lt;/strong&gt;가 생성된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa4a463e5fbd.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h4 id="workspace"&gt;workspace에 대한 명령 실행&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="https://classic.yarnpkg.com/en/docs/cli/workspace"&gt;특정 workspace에 정의된 스크립트를 실행&lt;/a&gt;한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yarn workspace &amp;lt;WORKSPACE_NAME&amp;gt; &amp;lt;COMMAND_NAME&amp;gt;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id="workspace"&gt;workspace를 의존성으로 추가&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;client&lt;/code&gt; 패키지가 &lt;code&gt;common&lt;/code&gt; 패키지를 의존하게 하려면 package.json에 의존성을 명시하거나 바로 위에서 설명한 yarn workspace 명령을 이용하면 된다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yarn workspace client add common@1.0.0  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;npm 레지스트리에 publish된 &lt;code&gt;common&lt;/code&gt;이란 이름의 패키지가 있다 해도, 의존성 버전을 충족한다면 로컬에 존재하는 &lt;code&gt;common&lt;/code&gt; workspace를 우선하여 설치한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;client&lt;/code&gt;에서 &lt;code&gt;common&lt;/code&gt; 의존성을 잘 부르는지 확인하기 위해 다음 명령을 실행해 보면 &lt;code&gt;common&lt;/code&gt;의 &lt;code&gt;hello()&lt;/code&gt; 함수가 &lt;code&gt;client&lt;/code&gt;에서 잘 호출되는 것을 확인할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yarn workspace client run start  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa4ac5e45fcc.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h4 id="workspace"&gt;workspace 의존 관계 확인&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="https://classic.yarnpkg.com/en/docs/cli/workspaces"&gt;yarn workspace info&lt;/a&gt; 명령을 실행해 workspace들의 의존 관계를 알아볼 수 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Yarn 2.x 이후에는 &lt;a href="https://yarnpkg.com/cli/workspaces/list"&gt;yarn workspaces list&lt;/a&gt;를 사용한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;yarn workspaces info  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa4b386f670d.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h4 id="workspace"&gt;모든 workspace에 대해 명령 실행&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="https://classic.yarnpkg.com/en/docs/cli/workspaces"&gt;yarn workspaces run \&lt;command\&gt;&lt;/a&gt;를 사용하면 모든 workspace에 대해 명령을 실행할 수 있다. 다음 명령은 모든 workspace들을 순회하며 test 스크립트를 실행한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yarn workspaces run test  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Yarn 2.x 이후에는 &lt;a href="https://yarnpkg.com/cli/workspaces/foreach"&gt;yarn workspaces foreach \&lt;command\&gt;&lt;/a&gt;를 사용한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=""&gt;루트 프로젝트에 의존성 추가&lt;/h4&gt;
+
+&lt;p&gt;workspace가 아니라 루트 프로젝트에 의존성을 추가하려면 다음 명령을 실행한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yarn add &amp;lt;PACKAGE_NAME&amp;gt; -W  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=""&gt;호이스팅(의존성 끌어올리기)&lt;/h4&gt;
+
+&lt;p&gt;npm, yarn 등은 중복 의존성 설치를 방지하기 위해 &lt;a href="https://classic.yarnpkg.com/blog/2018/02/15/nohoist/"&gt;호이스팅(hosting)&lt;/a&gt; 기법을 사용한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa4cd0ca7890.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;(그림 출처: &lt;a href="https://classic.yarnpkg.com/blog/2018/02/15/nohoist/"&gt;https://classic.yarnpkg.com/blog/2018/02/15/nohoist/&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;모노레포에서의 구조는 다음과 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa4d9bce0677.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;일부 모듈 로더는 &lt;a href="https://github.com/facebook/metro/issues/1"&gt;심볼릭 링크&lt;/a&gt;를 지원하지 않기 때문에 B(2.0)을 탐색할 수 없다. 이때는 &lt;a href="https://classic.yarnpkg.com/blog/2018/02/15/nohoist/"&gt;nohoist&lt;/a&gt; 필드를 사용하면 된다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+    "workspaces": {
+        "packages": ["packages/*"],
+        "nohoist": [ "**/react-native" ]
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;그 외의 Yarn 1.x에 대한 명령어는 &lt;a href="https://classic.yarnpkg.com/en/docs/cli/"&gt;CLI Introduction&lt;/a&gt;에서 확인할 수 있다.&lt;/p&gt;
+
+&lt;h3 id="yarnberry2x3x"&gt;Yarn Berry (2.x, 3.x)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="https://yarnpkg.com/cli"&gt;https://yarnpkg.com/cli&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Yarn workspace를 도입하려고 할 때 성능면에서 Yarn Berry를 함께 검토해 볼 수 있다. Yarn Berry는 yarn의 두 번째 버전으로, 2018년 9월 yarn의 &lt;a href="https://github.com/yarnpkg/rfcs"&gt;RFC 저장소&lt;/a&gt;에서 시작되었다. Yarn 1.x의 주요 개발자인 Mael Nison에 의해 TypeScript로 개발되었고 2020년 1월 25일 &lt;a href="https://dev.to/arcanis/introducing-yarn-2-4eh1"&gt;정식 버전이 출시&lt;/a&gt;되었다. Yarn 1.x는 &lt;a href="https://github.com/yarnpkg/yarn"&gt;v1.22.17에서 코드 프리징&lt;/a&gt;되었고 &lt;a href="https://github.com/yarnpkg/berry"&gt;https://github.com/yarnpkg/berry&lt;/a&gt; 에서 2022.03.09 현재 v3.2.0이 출시되었다.&lt;/p&gt;
+
+&lt;h4 id="node_modules"&gt;node_modules의 문제점&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;의존성 탐색 알고리즘의 비효율&lt;/p&gt;
+
+&lt;p&gt;node.js에서 &lt;code&gt;require()&lt;/code&gt; 함수를 실행하면 모듈을 찾을 때까지 상위 node_modules 디렉터리를 순회한다. 이때 &lt;a href="https://github.com/nodejs/node/blob/24fc302eadf64d2518733a2ae40355916e6990f7/lib/internal/modules/cjs/loader.js#L321-L336"&gt;느린 디스크 I/O 동작&lt;/a&gt;이 경로의 깊이만큼 발생한다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;저장 공간과 설치 시간&lt;/p&gt;
+
+&lt;p&gt;node_modules 디렉터리는 흔히 매우 큰 공간을 필요로 하고, 그만큼 설치에도 오랜 시간이 걸린다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;유령 의존성(phantom dependency)&lt;/p&gt;
+
+&lt;p&gt;의존성 중복 방지를 위해 호이스팅 기법을 이용하는데 이것은 의도치 않은 side effect을 발생시킨다. 아래 그림에서 &lt;strong&gt;package-1은 B(1.0)을 설치한 적이 없지만 require('B')가 작동한다&lt;/strong&gt;. require('B')를 사용하는 경우 B(1.0)을 의존하던 패키지를 제거하면 B를 찾지 못하는 오류가 발생한다.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa4f08550681.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h4 id="yarnberrypnp"&gt;Yarn Berry의 해결 방법 PnP&lt;/h4&gt;
+
+&lt;p&gt;어떤 프로젝트를 구성하는 의존성은 결정적(deterministic)이다. Berry는 node_modules에 패키지 파일을 저장하는 대신 패키지의 압축 파일을 &lt;code&gt;.yarn/cache&lt;/code&gt; 폴더에 수평적으로 저장하는 방식으로 위 문제를 해결했다. 이 방식을 Yarn은 Plug’n’Play(PnP)라고 부른다. 압축 파일은 ZipFS를 이용하며 해당 모듈 로드가 필요할 때 메모리에서 압축을 해제하여 접근한다.&lt;/p&gt;
+
+&lt;h4 id="pnp"&gt;PnP로 얻는 것&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;빠른 의존성 검색&lt;/p&gt;
+
+&lt;p&gt;의존성이 &lt;code&gt;.yarn/cache&lt;/code&gt;에 수평적으로 존재하므로 모든 패키지에 대한 접근 시간이 O(1)이 된다. 따라서 &lt;code&gt;require()&lt;/code&gt;에 소요되는 시간이 크게 단축된다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;빠른 설치&lt;/p&gt;
+
+&lt;p&gt;압축 파일 단위로 설치되기 때문에 의존성을 구성하는 파일의 수가 절대적으로 감소한다. 여기에 &lt;a href="https://yarnpkg.com/features/zero-installs"&gt;zero-install&lt;/a&gt; 전략을 사용하면 아예 설치 과정을 생략할 수 있다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;유령 의존성 방지&lt;/p&gt;
+
+&lt;p&gt;호이스팅을 사용하지 않기 때문에 의도하지 않은 의존성이 발생하지 않는다.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="zeroinstall"&gt;zero-install 전략&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/yarnpkg/berry/tree/master/.yarn/cache"&gt;https://github.com/yarnpkg/berry/tree/master/.yarn/cache&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa4f85570687.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;하나의 압축 파일로 의존성을 관리하고 이 파일을 git으로 관리하면 설치 과정을 제거할 수 있는데 이와 같은 전략을 zero-install이라 한다. 이 전략의 장점은 다음과 같다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;다른 브랜치에서 새로운 의존성이 설치되었을 때 설치 과정 없이 바로 사용할 수 있다.&lt;/li&gt;
+&lt;li&gt;CI에서 의존성 설치에 드는 시간을 크게 줄일 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;오프라인 캐시&lt;/h4&gt;
+
+&lt;p&gt;네트워크가 다운되었을 때에도 Yarn이 제대로 작동하도록 하는 기능이다. 자세한 기능은 &lt;a href="https://yarnpkg.com/features/offline-cache"&gt;Offline Cache&lt;/a&gt;를 참고한다.&lt;/p&gt;
+
+&lt;h4 id=""&gt;사용 방법&lt;/h4&gt;
+
+&lt;p&gt;간단히 사용 방법을 살펴보자.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ npm install -g yarn
+$ cd ../path/to/your-package
+$ yarn init -y
+$ yarn set version berry
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;아래와 같은 초기 파일이 생성된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa4ff99a07dd.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;해당 디렉터리에서 Yarn 버전을 살펴보면&lt;/strong&gt; 1.x가 아닌 것을 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa503aca09ad.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;의존성을 추가하면 &lt;code&gt;.yarn/cache&lt;/code&gt; 경로에 추가된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa5088b009b5.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h4 id="pnpcjs"&gt;.pnp.cjs&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;.pnp.cjs&lt;/code&gt; 파일에는 모든 의존성에 대한 메타 정보(zip 경로, 의존성)와 함께 ZipFS에 대한 처리 코드가 들어있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa56ebc6393d.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;따라서 Berry 기반의 프로젝트는 &lt;code&gt;node src/main.js&lt;/code&gt;와 같은 명령으로는 실행할 수 없고 &lt;code&gt;yarn node src/main.js&lt;/code&gt;와 같이 Yarn을 통해서 실행해야 한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+    "scripts": {
+        "start": "node src/main.js"
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;위와 같이 package.json에 스크립트 명령을 작성한 경우에는 &lt;code&gt;yarn start&lt;/code&gt; 명령을 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch2"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="2lerna"&gt;2. Lerna&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://lerna.js.org/"&gt;https://lerna.js.org/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Lerna는 &lt;a href="https://www.npmjs.com/package/lerna/v/1.0.1"&gt;Babel 개발자&lt;/a&gt;에 의해 개발되어 2015년부터 &lt;a href="https://lerna.js.org/#users"&gt;다수의 프로젝트&lt;/a&gt;에서 모노레포 관리 도구로 사용되어 왔다. 2022년 5월 현재 Nx의 개발사인 &lt;a href="https://nrwl.io/"&gt;Nrwl&lt;/a&gt;이 &lt;a href="https://github.com/lerna/lerna/issues/3121"&gt;프로젝트 관리 권한을 인수&lt;/a&gt;했다.&lt;/p&gt;
+
+&lt;p&gt;Lerna는 저수준의 Yarn, npm 위에 있는 고수준 레이어로 볼 수 있다. Yarn으로 모노레포를 구성할 수는 있지만 여러 workspace의 버전 관리, 테스트, 빌드, 배포, 게시 등의 작업은 일일이 구성해야 한다. Lerna는 이러한 작업을 최적화한다.&lt;/p&gt;
+
+&lt;h3 id="lerna"&gt;Lerna 기반 프로젝트 생성&lt;/h3&gt;
+
+&lt;p&gt;CLI를 쉽게 사용하기 위해 글로벌로 설치한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install --global lerna  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;프로젝트를 Lerna로 초기화한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd path/to/your-project  
+lerna init  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa5745f246a6.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;다음과 같이 초기 디렉터리가 구성된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa57954a46ac.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h3 id="lernajson"&gt;lerna.json&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;version&lt;/code&gt;: 각 workspace에 대한 버전을 관리할 수 있다. 개별로 관리하고자 할 때는 "independent"를 입력한다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npmClient&lt;/code&gt;: "npm" 또는 "yarn"&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;useWorkspaces&lt;/code&gt;: npmClient의 workspace로 관리되도록 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="workspace"&gt;workspace 추가&lt;/h3&gt;
+
+&lt;p&gt;다음 명령을 실행해 새로운 workspace를 스캐폴딩할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lerna create &amp;lt;PACKAGE-NAME&amp;gt;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;다음과 같이 &lt;code&gt;client&lt;/code&gt; workspace를 생성할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lerna create client  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa587ca8631f.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h3 id="workspace"&gt;workspace에 의존성 추가&lt;/h3&gt;
+
+&lt;p&gt;아래와 같이 &lt;code&gt;client&lt;/code&gt; workspace에 react 패키지를 설치할 수 있다. &lt;code&gt;--scope&lt;/code&gt; 없이 사용하면 모든 workspace에 추가한다. 추가하려는 의존성이 workspace라면 해당 workspace를 제외한 모든 workspace에 추가된다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;현재 &lt;a href="https://github.com/lerna/lerna/issues/2004"&gt;여러 의존성을 한번에 추가&lt;/a&gt;하는 기능은 지원되지 않는다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code&gt;client&lt;/code&gt; workspace에 react 패키지를 추가한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lerna add react --scope=client  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;client&lt;/code&gt; workspace에 &lt;code&gt;common&lt;/code&gt; workspace를 추가한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lerna add common@0.0.0 --scope=client  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa58f1f3035c.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h3 id=""&gt;루트 프로젝트에 의존성 추가&lt;/h3&gt;
+
+&lt;p&gt;아래와 같이 lodash를 루트 프로젝트에 설치할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yarn add lodash --ignore-workspace-root-check  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa5951d30362.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h3 id="workspacenpm"&gt;모든 workspace에 대해 npm 스크립트 실행&lt;/h3&gt;
+
+&lt;p&gt;해당 스크립트가 포함된 각 workspace에서 npm 스크립트를 실행한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lerna run &amp;lt;COMMAND_NAME&amp;gt; -- [..args]  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;다음은 모든 workspace에 대해 test를 실행한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lerna run test  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa59fc4d0468.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h3 id="workspace"&gt;모든 workspace에 대해 임의 명령 실행&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;lerna exec -- &amp;lt;COMMAND&amp;gt; [..args]  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;다음은 모든 workspace 하위의 node_modules 폴더를 지운다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lerna exec -- rm -rf ./node_modules  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="npmpublish"&gt;npm publish&lt;/h3&gt;
+
+&lt;p&gt;자세한 옵션은 &lt;a href="https://github.com/lerna/lerna/tree/main/commands/publish#readme"&gt;공식 문서&lt;/a&gt;를 참고한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lerna publish               ## 마지막 릴리스 이후 변경된 패키지 publish  
+lerna publish from-git      ## 현재 커밋에 태그가 지정된 패키지를 명시적으로 publish  
+lerna publish from-package  ## 레지스트리에 최신 버전이 없는 패키지를 명시적으로 publish  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="changelog"&gt;버전 관리 및 CHANGELOG 작성 자동화&lt;/h3&gt;
+
+&lt;p&gt;workspace에 변경을 가하고 나서 &lt;code&gt;lerna version&lt;/code&gt;을 실행하면 각 workspace의 package.json에 명시된 버전을 자동으로 올리고 git에 tag를 남기고 변경에 대한 CHANGELOG도 작성한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;더 많은 기능은 &lt;a href="https://github.com/lerna/lerna-changelog"&gt;lerna-changelog&lt;/a&gt;를 참고한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;lerna version  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa5a75592126.png" alt="" /&gt;
+&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa5ab28d2276.png" alt="" /&gt;
+&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa5ae6982381.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;changelogPreset&lt;/code&gt; 필드를 이용하면 &lt;code&gt;git commit message&lt;/code&gt;를 이용해 CHANGELOG를 자동으로 생성할 수 있다. 예시에서는 &lt;a href="https://www.npmjs.com/package/conventional-changelog-conventionalcommits"&gt;conventional-changelog-conventionalcommits&lt;/a&gt; 프리셋을 이용했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa5b7e6d2423.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa5bb8b2245b-4.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h3 id="lerna"&gt;Lerna 명령어&lt;/h3&gt;
+
+&lt;p&gt;그 외에도 변경 사항을 알아내거나 workspace 목록을 얻거나 lerna, npmClient, OS 등의 환경을 알아내는 등
+다양한 기능을 제공한다. Lerna의 자세한 명령어는 다음을 참고한다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/lerna/lerna/tree/main/commands/publish#readme"&gt;&lt;code&gt;lerna publish&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lerna/lerna/tree/main/commands/version#readme"&gt;&lt;code&gt;lerna version&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lerna/lerna/tree/main/commands/bootstrap#readme"&gt;&lt;code&gt;lerna bootstrap&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lerna/lerna/tree/main/commands/list#readme"&gt;&lt;code&gt;lerna list&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lerna/lerna/tree/main/commands/changed#readme"&gt;&lt;code&gt;lerna changed&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lerna/lerna/tree/main/commands/diff#readme"&gt;&lt;code&gt;lerna diff&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lerna/lerna/tree/main/commands/exec#readme"&gt;&lt;code&gt;lerna exec&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lerna/lerna/tree/main/commands/run#readme"&gt;&lt;code&gt;lerna run&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lerna/lerna/tree/main/commands/init#readme"&gt;&lt;code&gt;lerna init&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lerna/lerna/tree/main/commands/add#readme"&gt;&lt;code&gt;lerna add&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lerna/lerna/tree/main/commands/clean#readme"&gt;&lt;code&gt;lerna clean&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lerna/lerna/tree/main/commands/import#readme"&gt;&lt;code&gt;lerna import&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lerna/lerna/tree/main/commands/link#readme"&gt;&lt;code&gt;lerna link&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lerna/lerna/tree/main/commands/create#readme"&gt;&lt;code&gt;lerna create&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lerna/lerna/tree/main/commands/info#readme"&gt;&lt;code&gt;lerna info&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id="ch3"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="3nx"&gt;3. Nx&lt;/h2&gt;
+
+&lt;p&gt;다음은 구글 개발자들이 만든 오픈소스 프로젝트인 &lt;a href="https://nx.dev/"&gt;Nx&lt;/a&gt;이다. Nx는 모노레포 구성을 위한 다양한 개발 도구를 제공하고 Angular, React와 같은 프런트엔드 프레임워크 기반의 개발 환경 구성뿐 아니라 Express, &lt;a href="https://nestjs.com/"&gt;Nest.js&lt;/a&gt;와 같은 백엔드 기술 기반의 개발까지 폭넓게 지원하고 있다. 이뿐만 아니라 workspace 생성 시 Cypress, Jest 등을 기반으로 한 테스트 환경까지 설정해주기 때문에, 초기 모노레포 개발 환경 구축 비용을 크게 줄여준다.&lt;/p&gt;
+
+&lt;p&gt;그럼 Nx를 사용해서 간단하게 모노레포를 구성해 보고, 그 특징을 몇 가지 살펴보겠다.&lt;/p&gt;
+
+&lt;h3 id="nxworkspace"&gt;새로운 Nx workspace 생성하기&lt;/h3&gt;
+
+&lt;p&gt;아래의 명령을 입력해 새로운 Nx workspace 생성을 시작할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npx create-nx-workspace  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nx는 workspace 생성을 완료하기 위해, 다음과 같이 추가로 몇 가지 항목을 입력하도록 요구한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Nx Cloud의 경우 필수는 아니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;Workspace name (e.g., org name)     My-Workspace  
+What to create in the new workspace angular  
+Application name                    my-app  
+Default stylesheet format           CSS  
+Use Nx Cloud?                       No  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;이 항목을 입력하고 나면 다음과 같은 구조의 Nx workspace가 생성된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa5c2cd82663.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;생성된 workspace 구조에서 이를 구성하는 디렉터리의 특징을 간단히 알아보겠다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;apps/*&lt;/code&gt;: 애플리케이션 프로젝트들이 위치한다. 우리가 처음에 생성한 애플리케이션도 여기에 들어있는 것을 볼 수 있다. Angular 기반으로 workspace를 생성했어도 꼭 Angular 프로젝트만 이 디렉터리에 들어갈 필요는 없으며 React 등 다른 프레임워크 기반의 코드도 공존할 수 있다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;libs/*&lt;/code&gt;: 애플리케이션 전반에서 공통으로 사용할 코드를 여기에 작성한다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tools/*&lt;/code&gt;: 개발에 필요한 tooling script가 위치한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이제 생성한 애플리케이션을 실행해 보겠다. 애플리케이션은 다음과 같은 명령으로 실행할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npx nx serve &amp;lt;APP_NAME&amp;gt; // 주의: workspace 이름이 아닌 애플리케이션 이름  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;만약 전역(global)에 Nx가 설치되어 있다면 다음과 같은 명령으로 애플리케이션을 실행할 수도 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;nx serve &amp;lt;APP_NAME&amp;gt;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;전역에 Nx 설치하기: &lt;code&gt;npm install -g nx&lt;/code&gt; 또는 &lt;code&gt;yarn global add nx&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;위의 명령 실행이 완료되었다면, &lt;code&gt;localhost:4200&lt;/code&gt;에 접속해서 애플리케이션을 확인해 볼 수 있다.&lt;/p&gt;
+
+&lt;h4 id="nxclivsangularcli"&gt;Nx CLI vs Angular CLI&lt;/h4&gt;
+
+&lt;p&gt;Angular 프로젝트 개발 경험이 있다면 Angular CLI(aka. ng)에 익숙할 것이다. 실제로, Angular 기반의 Nx workspace를 생성한 경우 대부분의 Nx 명령어는 &lt;code&gt;ng ...&lt;/code&gt; 로 대체가 가능하고(예: &lt;code&gt;ng serve&lt;/code&gt;) 그 결과 또한 동일하다.&lt;/p&gt;
+
+&lt;p&gt;하지만 Nx에서는 Nx CLI 사용을 권장한다. 그 이유는 Nx가 Nx CLI를 통해 제공하는 몇몇 기능이 있기 때문이다. 그 기능 중 하나인 Computation Cache에 대해선 나중에 살펴보겠다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;"Use Nx CLI over Angular CLI" - Nx.dev -&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=""&gt;라이브러리 추가해보기&lt;/h3&gt;
+
+&lt;p&gt;이번엔 애플리케이션 전반에서 사용할 수 있는 &lt;a href="https://nx.dev/angular/library"&gt;라이브러리&lt;/a&gt;를 추가해보겠다.&lt;/p&gt;
+
+&lt;p&gt;라이브러리는 목적과 특성에 따라 다음과 같이 네 가지로 나눌 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;feature 라이브러리&lt;/li&gt;
+&lt;li&gt;UI 라이브러리&lt;/li&gt;
+&lt;li&gt;data-access 라이브러리&lt;/li&gt;
+&lt;li&gt;utility 라이브러리&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;여기서는 간단하게 UI 라이브러리를 추가해 보겠다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npx nx g @nrwl/angular:lib ui // ui: 라이브러리 이름  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;npx nx g @nrwl/react:lib ui // React의 경우  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;위 명령으로 &lt;code&gt;ui&lt;/code&gt;라는 이름의 Angular 컴포넌트가 라이브러리에 추가되어 다음과 같은 구조가 만들어진다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa5cc8762692.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 생성된 UI 라이브러리 구조에 실제 View 역할을 할 컴포넌트를 추가하겠다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npx nx g component first-lib --project=ui --export  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;다음 그림과 같이 &lt;code&gt;ui&lt;/code&gt; 라이브러리 아래에 우리가 선언한 &lt;code&gt;first-lib&lt;/code&gt; 컴포넌트 파일이 추가되었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa5e669b2c95.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h3 id="ui"&gt;생성한 UI 라이브러리 사용해보기&lt;/h3&gt;
+
+&lt;p&gt;그럼 이제 라이브러리를 애플리케이션에서 사용하는 방법을 알아보겠다.&lt;/p&gt;
+
+&lt;h4 id="1uiappmoduleimport"&gt;1. UI 모듈을 AppModule에 import하기&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class="language-js"&gt;// in AppModule
+...
+
+import { UiModule } from '@my-workspace/ui'; // Import UiModule
+
+...
+
+@NgModule({
+  ...
+
+  imports: [BrowserModule, UiModule], // Add UiModule in the importing list
+
+  ...
+})
+export class AppModule {}  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;이때 라이브러리를 import하는 구문은 다음과 같다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import &amp;lt;UI_MODULE_NAME&amp;gt; from @&amp;lt;WORKSPACE_NAME&amp;gt;/&amp;lt;LIBRARY_NAME&amp;gt;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nx는 라이브러리가 추가될 때마다 &lt;code&gt;tsconfig.base.json&lt;/code&gt; 파일에 TS 경로를 매핑하기 때문에 위와 같이 참조할 수 있다.&lt;/p&gt;
+
+&lt;h4 id="2applicationtemplateui"&gt;2. Application Template에서 UI 라이브러리 컴포넌트 사용하기&lt;/h4&gt;
+
+&lt;p&gt;1번에서 모듈을 import했다면, 생성한 라이브러리의 컴포넌트를 Application Template에서 다음과 같이 사용할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;!-- in Application Template --&amp;gt;  
+&amp;lt;my-workspace-first-lib&amp;gt;&amp;lt;/my-workspace-first-lib&amp;gt;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=""&gt;라이브러리 생성 및 사용 시 주의할 점&lt;/h4&gt;
+
+&lt;p&gt;에디터로 Visual Studio Code(이하 VS Code)를 사용하는 경우, 라이브러리를 생성 및 참조할 때 컴파일 오류가 발생하는 경우가 있다. 이는 VS Code의 TS 서버가 새로운 라이브러리를 바로 인식하는 데 실패하는 경우로, 이때는 VS Code를 재시작하는 것을 권장한다. 또한 새로운 라이브러리를 추가할 때마다 Nx 서버를 재시작해야 한다는 점을 주의한다.&lt;/p&gt;
+
+&lt;h3 id="nx"&gt;Nx가 제공하는 도구&lt;/h3&gt;
+
+&lt;p&gt;지금까지 Nx workspace의 생성, 라이브러리 추가와 사용에 대해서 간단히 알아보았다. 이어서 Nx가 제공하는 몇 가지 기능을 소개하겠다.&lt;/p&gt;
+
+&lt;h4 id="1projectgraph"&gt;1. Project Graph&lt;/h4&gt;
+
+&lt;p&gt;첫 번째는 Project Graph이다. 대부분의 프로젝트는 성장하면서 수많은 애플리케이션과 라이브러리가 생겨나고 점차 그 구성 요소 간의 의존 관계가 복잡해져 개발자 입장에서는 그 의존 관계를 파악하기가 점점 어려워진다. Nx는 이를 시각화하여 프로젝트 구성 요소 간의 관계를 파악하기 쉽도록 하는 Project Graph를 제공한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npx nx graph  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;위의 명령을 실행하여 현재 workspace의 전체 Project Graph를 확인할 수 있고, Nx가 제공하는 인터페이스를 통해 다양한 필터링도 가능하다. 아래는 위에서 진행한 예시 workspace의 Project Graph이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa60537a3c8e.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h4 id="2computationcaching"&gt;2. Computation Caching&lt;/h4&gt;
+
+&lt;p&gt;Nx는 Nx CLI를 통해 내부적으로 Computation Caching을 제공한다. 이를 확인해보기 위해 &lt;code&gt;nx build [appName]&lt;/code&gt; 명령을 실행해 보겠다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa609e2d3c9c.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;빌드가 완료된 후, 위와 동일한 명령을 한 번 더 실행해 보았다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa60f1c13ca6.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;이번에는 빌드가 바로 완료됨(21ms)을 볼 수 있고, 맨 아래 텍스트에서 볼 수 있는 것처럼 Nx는 로컬 캐시에
+해당 Artifact가 존재하는 경우 가져다 쓰는 걸 알 수 있다. 단, 캐싱은 Nx CLI에서만 동작하기 때문에, Angular CLI를 사용하는 경우엔 Computation Caching이 적용되지 않는다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href="https://nx.dev/using-nx/caching"&gt;Computation Caching 더 알아보기&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id="3affected"&gt;3. Affected&lt;/h4&gt;
+
+&lt;p&gt;다음은 Affected 스크립트이다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npx nx affected  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nx는 코드를 수정했을 때 workspace의 어떤 부분이 영향을 받는지 알려주는 명령을 제공한다. Affected 스크립트는 필요에 따라 다음과 같이 다양하게 사용할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;npx nx affected:apps&lt;/code&gt;: 수정한 부분이 어떤 애플리케이션에 영향을 주었는지 표시한다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npx nx affected:libs&lt;/code&gt;: 수정한 부분이 어떤 라이브러리에 영향을 주었는지 표시한다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npx nx affected:test&lt;/code&gt;: 코드 수정에 의해 영향을 받은 부분에 대해서만 테스트를 실행한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;다음은 UI 라이브러리를 수정한 뒤 위 명령을 실행한 모습이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa614fa13cf6.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h4 id="4vscodenxconsole"&gt;4. VS Code용 Nx Console&lt;/h4&gt;
+
+&lt;p&gt;마지막으로 Nx Console이다. Nx Console은 VS Code에서 Nx를 쉽게 사용하기 위한 GUI 도구다. Nx Command로 하는 모든 작업을 Nx Console로도 할 수 있도록 구성되어 있다. VS Code를 사용 중이라면 Nx Console을 사용하는 것을 추천한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console"&gt;VS Code에 Nx Console 설치하기&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;다음은 VS Code에 Nx Console을 설치한 모습이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa61bac843a8.png" alt="image-20220321-115005-809.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch4"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="4turborepo"&gt;4. Turborepo&lt;/h2&gt;
+
+&lt;p&gt;Turborepo는 대규모 모노레포 프로젝트 관리에서 오는 피로감과 부수적인 툴링에 대한 부담을 줄이면서, Google이나 Facebook과 같은 큰 기업에서 사용하는 수준의 개발 경험을 주는 데 포커싱한, Vercel에서(&lt;a href="https://vercel.com/blog/vercel-acquires-turborepo"&gt;2021년 12월에 인수&lt;/a&gt;) 개발 및 운영하고 있는 JavaScript/TypeScript를 위한 모노레포 빌드 시스템이다.&lt;/p&gt;
+
+&lt;p&gt;Turborepo는 증분 빌드(incremental build), 원격 캐싱, 병렬 처리 기법을 통해 빌드 성능을 끌어올리고, &lt;code&gt;Pipeline&lt;/code&gt;의 쉬운 설정과 profiling, trace 등 다양한 시각화 기능을 제공해 관리 편의성을 높인 것이 특징이다.&lt;/p&gt;
+
+&lt;p&gt;그리고 기존의 모노레포 프로젝트에 점진적으로 Turborepo를 적용할 수 있으며, 쉽게 Turborepo로 구성된 새 모노레포 프로젝트를 생성할 수 있도록 스캐폴딩 기능을 제공한다. 또한 패키지 매니저로 &lt;code&gt;yarn&lt;/code&gt;, &lt;code&gt;npm&lt;/code&gt;, &lt;code&gt;pnpm&lt;/code&gt;와 함께 잘 동작하므로 프로젝트 상황에 맞게 선택해 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;Turborepo가 어떻게 구성되어 있는지 먼저 살펴보고, 앞서 언급한 특징을 설명하면서, 어떻게 사용하는지 설명하겠다.&lt;/p&gt;
+
+&lt;h3 id="createturbo"&gt;create-turbo 구성 확인하기&lt;/h3&gt;
+
+&lt;p&gt;아래의 명령어를 통해 새 모노레포 프로젝트를 생성해 보자.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ npx create-turbo@latest &amp;lt;PACKAGE_NAME&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa6222a443d1.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 그림과 같이 &lt;code&gt;/app&lt;/code&gt; 하위에 &lt;code&gt;docs&lt;/code&gt;, &lt;code&gt;web&lt;/code&gt; 앱과 공통 패키지인 &lt;code&gt;/packages&lt;/code&gt; 하위의 &lt;code&gt;ui&lt;/code&gt;, &lt;code&gt;config&lt;/code&gt; 패키지가 있는 프로젝트가 생성된다. 이 구조는 일반적인 모노레포 프로젝트 구조와 유사해 쉽게 Turborepo를 사용할 수 있도록 한다.&lt;/p&gt;
+
+&lt;p&gt;Vercel사에서 운영하는 프로젝트답게 앱은 기본적으로 &lt;code&gt;Next.js(react)&lt;/code&gt;로 설정된다. 그외에 &lt;code&gt;Express&lt;/code&gt;, &lt;code&gt;Remix&lt;/code&gt;, &lt;code&gt;pnpm&lt;/code&gt; 등 다양한 기술 스택으로 이루어진 &lt;a href="https://github.com/vercel/turborepo/tree/main/examples"&gt;예시&lt;/a&gt;도 제공하고 있으므로 필요에 따라 참고할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=""&gt;캐싱&lt;/h3&gt;
+
+&lt;p&gt;이미 계산한 것들은 다시는 계산하지 않는다는 핵심 컨셉 아래 캐싱이 이루어지고 있다. 이전에 실행한 파일 및 로그를 캐싱해, 만약 현재 실행 태스크에 이미 완료한 작업이 있다면 이것을 건너뛰기 때문에 작업 실행 시간을 효과적으로 줄일 수 있다.&lt;/p&gt;
+
+&lt;p&gt;앞서 만든 프로젝트에서 빌드를 진행해 보자.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-sh"&gt;$ yarn turbo run build
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa628ae343e6.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;그 다음 위 명령어로 다시 빌드를 하면 다음과 같이 시간이 대폭 줄어든 것을 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa62cccd43f2.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;그렇다면 이 캐시들은 어떻게 저장되고 있을까?&lt;/p&gt;
+
+&lt;p&gt;빌드를 하면 &lt;code&gt;/app&lt;/code&gt; 하위 패키지들의 &lt;code&gt;.turbo&lt;/code&gt; 디렉터리에 각각 로그 파일이 생기고 이 로그에는 해당 빌드에 대한 hash가 저장된다.(Turborepo는 빌드해야 할 항목을 파악하기 위해 타임스탬프를 확인하고 활용하는 대신 파일의 내용에 따른 hash 정책을 사용한다.) 이 hash 값들은 아래 이미지와 같이 &lt;code&gt;node_modules/.cache/turbo&lt;/code&gt; 하위에 hash로 구분된 스냅샷 폴더와 매칭된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa633331443c.png" alt="" /&gt;
+&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa6373234447.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;이렇게 모든 작업에 대한 캐싱을 진행하기 때문에 변화된 부분만 재빌드하고 나머지는 캐싱한 것을 사용하면서 Turborepo는 작업 속도를 높일 수 있다.&lt;/p&gt;
+
+&lt;h3 id=""&gt;원격 캐싱&lt;/h3&gt;
+
+&lt;p&gt;위에서 설명한 캐시는 로컬 환경에서만 유효하다는 한계가 있다. 그러나 Turborepo는 이 한계를 극복하는 &lt;strong&gt;원격 캐싱&lt;/strong&gt;이라는 강력한 기능을 제공한다.&lt;/p&gt;
+
+&lt;p&gt;더 빠른 빌드를 위해 빌드 캐시를 클라우드에 올려서 팀원 및 CI/CD시스템이 공유해 사용할 수 있어 대규모 프로젝트에서 다수의 팀이 협업하는 환경에서 개발 효율성을 높일 수 있다.&lt;/p&gt;
+
+&lt;p&gt;실제로 원격 캐싱을 한 상태에서 빌드를 실행하면 "Remote computation caching enable" 문구와 함께 빌드 시간이 9초에서 3초로 비약적으로 감소하는 것을 확인해볼 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;로컬 캐시가 없는 상태에서의 빌드 시간&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa63c2224451.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa6401b8448b.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;로컬 캐시는 없고 원격 캐시가 있는 상태에서의 빌드 시간&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa6442a6449a.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;다만 이 기능은 현재 experimental(beta) 상태이며 Vercel 클라우드를 활용하기 때문에 Vercel의 계정이 필요하다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href="https://turborepo.org/docs/features/remote-caching"&gt;공식 문서&lt;/a&gt;를 참고해 원격 캐싱 방법을 참고해 볼 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id="pipelinepackagetask"&gt;Pipeline Package Task&lt;/h3&gt;
+
+&lt;p&gt;Pipeline은 각 패키지의 package.json 스크립트(태스크) 간 작업 관계를 정의한다. 이를 통해 새로 들어온 개발자도 작업 관계를 쉽게 이해할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;Pipeline 설정은 Turborepo turbo.json에서 확인할 수 있다.(package.json에도 설정 가능하나 turbo.json에 설정하도록 권장하고 있다.)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "dependsOn": ["^build"]
+    },
+    "deploy": {
+      "dependsOn": ["build", "test", "lint"]
+    },
+    "lint": {}
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;위 설정에서 &lt;code&gt;dependOn&lt;/code&gt;은 &lt;code&gt;pipeline&lt;/code&gt; key에 해당하는 작업이 의존하는 작업을 의미한다. 이 부분에 접두사 &lt;code&gt;^&lt;/code&gt;가 붙으면 각 패키지에 있는 작업을 의미한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;lint&lt;/code&gt;는 의존 관계와 상관없이 언제나 수행될 수 있으며, &lt;code&gt;deploy&lt;/code&gt;는 Pipeline에서 &lt;code&gt;build&lt;/code&gt;, &lt;code&gt;test&lt;/code&gt;, &lt;code&gt;lint&lt;/code&gt;가 선행되어야 수행됨을 의미한다.&lt;/p&gt;
+
+&lt;p&gt;Pipeline으로 인해 Turborepo의 스케줄러는 기존의 모노레포에 비해 성능이 강력하다. 한 번에 한 테스크씩 수행되는 기존 방식과 다르게 의존성이 없는 작업은 유휴 CPU에서 실행되기 때문에 빌드 시간이 긴 경우에 작업 성능이 비약적으로 높아진다.&lt;/p&gt;
+
+&lt;p&gt;다음 그림을 살펴보자.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/227eaf62-bf35-4e48-a45a-aede9108a23f.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;A, B, C 세 개의 패키지로 구성된 프로젝트가 있다. A와 C는 B에 의존한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;lint&lt;/code&gt;, &lt;code&gt;build&lt;/code&gt;, &lt;code&gt;test&lt;/code&gt;, &lt;code&gt;deploy&lt;/code&gt; 작업을 순차적으로 수행한다고 했을 때 Lerna의 경우에 A, C 패키지는 B의 &lt;code&gt;build&lt;/code&gt;가 끝날 때까지 &lt;code&gt;build&lt;/code&gt;를 수행할 수 없다.&lt;/p&gt;
+
+&lt;p&gt;이에 반해 Turborepo는 &lt;code&gt;build&lt;/code&gt;에 의존 관계가 없는 &lt;code&gt;test&lt;/code&gt; 작업이 병렬적으로 수행된다.&lt;/p&gt;
+
+&lt;h3 id="profile"&gt;Profile&lt;/h3&gt;
+
+&lt;p&gt;위에서 언급한 멀티 스레드를 활용한 병렬 작업 처리가 실제로 어떻게 CPU 스레드를 사용해서 작업을 처리하는지 &lt;code&gt;--profile&lt;/code&gt; 플래그를 통해 시각화해 확인할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language- sh"&gt;## 이미 작업을 진행한 경우 더 명확한 profiling을 위해 --force 플래그를 추가한다.
+$ yarn turbo run build lint --profile [--force]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;위 명령을 실행하면 루트 디렉터리에 &lt;code&gt;****-profile.json&lt;/code&gt; 파일이 생성된다. 이 파일을 Chrome 개발자 도구의 Performance 탭에 업로드해 스레드에서 작업이 어떤 순서로 얼마만큼의 시간이 걸리는지 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa64a13144a5-1.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 밖에도 &lt;code&gt;--trace&lt;/code&gt;,  &lt;code&gt;--heap&lt;/code&gt;, &lt;code&gt;--cpuprofile&lt;/code&gt; 등의 플래그를 사용해 다양한 부분에서 profiling이 가능하다. 자세한 사용 방법은 &lt;a href="https://turborepo.org/docs/reference/command-line-reference#--trace"&gt;공식 문서&lt;/a&gt;에서 확인할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=""&gt;의존성 그래프 시각화&lt;/h3&gt;
+
+&lt;p&gt;Nx와 마찬가지로 Turborepo도 프로젝트 내 패키지 간 작업 관계를 쉽게 파악할 수 있게 시각화하는 기능을 제공한다. 기본적으로 JPEG 형식의 이미지로 그래프가 그려지며 SVG, HTML, JSON, PDF 등 다양한 형식의 산출물을 지원한다.&lt;/p&gt;
+
+&lt;p&gt;먼저 &lt;a href="https://graphviz.org/download/"&gt;graphviz&lt;/a&gt;가 설치되어 있어야 한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ turbo run build --graph
+$ turbo run build test lint --graph=my-graph.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;다음은 위 명령어를 각각 실행해 얻은, 패키지 간 작업 관계를 시각화한 이미지다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa650f84469d.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa65565d46b5.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 밖에도 CPU trace, heap trace, CPU profile에 대한 시각화 기능도 제공한다. 자세한 내용은 &lt;a href="https://turborepo.org/docs/reference/command-line-reference#--trace"&gt;CLI Reference&lt;/a&gt;를 참고한다.&lt;/p&gt;
+
+&lt;h2 id="5"&gt;5. 마치며&lt;/h2&gt;
+
+&lt;p&gt;위에 소개한 Yarn, Lerna, Nx 그리고 Turborepo를 간단히 비교하면 다음 표와 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710dbd-7f96-14ab-817f-aa65aea54d30.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;표에서 보이는 것처럼 Yarn은 다른 모노레포 도구에 비해 지원하는 것들이 많지는 않지만, 모노레포 사용의 목적이 &lt;strong&gt;단순히 공통 요소를 공유&lt;/strong&gt;하는 것이라면 Yarn으로 workspace을 구성해서 개발을 진행하는 것을 추천한다.&lt;/p&gt;
+
+&lt;p&gt;하지만 단순한 코드의 공유 외에 &lt;strong&gt;패키지 간 의존성 관리 및 테스트, 배포&lt;/strong&gt; 등의 작업에 대한 더 나은 무언가를 필요로 한다면 Lerna를 함께 사용해보는 것도 좋은 선택지가 될 것이다.&lt;/p&gt;
+
+&lt;p&gt;그리고 프로젝트가 성장하면서 개발, 관리에 유용한 더 많은 기능이 필요하다면 Nx와 Turborepo를 고려해보면 좋을 것 같다. Nx와 Turborepo는 모두 &lt;strong&gt;캐싱&lt;/strong&gt; 기능을 지원해서 빌드 측면에서 우수한 속도를 자랑하고, &lt;strong&gt;의존성 그래프 시각화&lt;/strong&gt; 기능을 통해 프로젝트의 구성 요소들이 서로 어떤 의존관계를 갖고있는 지 한눈에 파악이 가능하도록 해준다.&lt;/p&gt;
+
+&lt;p&gt;둘 중 좀더 가벼운 시작을 원한다면, &lt;strong&gt;Zero Config&lt;/strong&gt;를 지향해 초기 설정이 상대적으로 쉬운 Turborepo를 시도하는 것도 좋을 것이다. 상대적으로 출시된 지 오래되어 관련 레퍼런스, 지원하는 IDE 플러그인 등의 &lt;strong&gt;풍부한 생태계&lt;/strong&gt;가 형성되어 있는 Nx 또한 좋은 선택지가 될 수 있다.&lt;/p&gt;
+
+&lt;p&gt;위의 네 가지 도구 모두 상황에 따라 좋은 선택지가 될 수 있으니, 현재 프로젝트 상황에 맞는 좋은 도구를 선택하여 즐겁게 개발하길 바란다.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>모던 프론트엔드 프로젝트 구성 기법 - 모노레포 개념 편</title>
+    <link rel="alternate" href="https://d2.naver.com/helloworld/0923884" />
+    <category term="hello world" />
+    <id>https://d2.naver.com/helloworld/0923884</id>
+    <updated>2022-05-04T15:13:33Z</updated>
+    <content type="html">&lt;p&gt;새로운 프로젝트를 설계하거나 기존 프로젝트가 성장하면서 규모가 커질 때 우리는 효율적인 프로젝트 구조를 고민합니다. &lt;a href="https://github.com/pinpoint-apm/pinpoint"&gt;핀포인트 프로젝트&lt;/a&gt;의 프론트엔드 구조를 개선하면서 검토하고 조사했던 모노레포(monorepo)의 개념과 프로젝트 구성 기법들을 두 편으로 나누어 공유하고자 합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://qeunit.com/blog/how-google-does-monorepo/"&gt;Google&lt;/a&gt;, &lt;a href="https://buck.build/"&gt;Facebook&lt;/a&gt;, &lt;a href="https://rushjs.io/"&gt;Microsoft&lt;/a&gt;, Uber, Airbnb, 그리고 &lt;a href="https://www.pantsbuild.org/docs/welcome-to-pants"&gt;Twitter&lt;/a&gt; 등 글로벌 테크 회사들은 이미 각자 자신들의 운영 전략 아래 대규모 모노레포를 운영하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;이번 개념 편에서는 다음과 같은 내용을 알아보겠습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="#ch1"&gt;모노레포의 등장 배경&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch2"&gt;모노레포가 해결하는 문제&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch3"&gt;모노레포를 구축할 때 고려할 측면&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="#ch4"&gt;모노레포 구축을 도와주는 도구&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;그리고 다음 도구 편에서는 각 도구의 사용법을 예시를 통해 자세히 알아보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch1"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="1"&gt;1. 모노레포의 등장 배경&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Monorepo"&gt;위키백과&lt;/a&gt;에 따르면 모노레포의 정의는 다음과 같다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;모노레포란 버전 관리 시스템에서 두 개 이상의 프로젝트 코드가 동일한 저장소에 저장되는 소프트웨어 개발 전략&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;이 개발 전략은 고전적 소프트웨어 개발 방식인 &lt;a href="https://en.wikipedia.org/wiki/Monolithic_application"&gt;모놀리식 애플리케이션(monolithic application)&lt;/a&gt;의 한계에 대한 비판에서 출발한다.&lt;/p&gt;
+
+&lt;h3 id=""&gt;모놀리식 애플리케이션의 한계&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;"&lt;em&gt;소프트웨어 엔지니어링에서 모놀리식 애플리케이션은 모듈화 없이 설계된 소프트웨어 애플리케이션을 말한다.&lt;/em&gt;"&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e0ae025d1b.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;우리가 네이버와 같은 거대 서비스를 개발할 때, 소스 코드가 모듈화 없이 하나의 프로젝트로 구성된다면 어떻게 될까? 코드가 서로 직접적으로 의존하며 단 하나의 버전으로 관리되면서 &lt;a href="https://ko.wikipedia.org/wiki/%EA%B4%80%EC%8B%AC%EC%82%AC_%EB%B6%84%EB%A6%AC"&gt;관심 분리(separation of concerns)&lt;/a&gt;가 어려워지고, 설계, 리팩터링, 배포 등의 작업을 매번 거대한 단위로 처리해야 하므로 개발상 많은 제약과 비효율이 있을 것이다.&lt;/p&gt;
+
+&lt;h3 id=""&gt;모듈화와 재사용성&lt;/h3&gt;
+
+&lt;p&gt;이러한 모놀리식 구조의 한계는 &lt;a href="https://en.wikipedia.org/wiki/Modularity"&gt;모듈화(modularity)&lt;/a&gt;를 통해 해결할 수 있다. 일반적으로 &lt;a href="https://en.wikipedia.org/wiki/Modular_programming"&gt;모듈식 프로그래밍(modular programming)&lt;/a&gt;은 애플리케이션 로직의 일부를 재사용할 수 있도록 지원하고 전체 교체 없이 애플리케이션의 일부를 수정 또는 교체할 수 있게 해 유지 관리를 용이하게 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e0fa095e41.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;그런데 이렇게 만든 모듈이 다른 애플리케이션에도 사용될 수 있다면 소스를 어디에 위치시켜야 할까? 아마도 해당 모듈을 위한 독자적인 저장소가 있다면 좀 더 관리하기 쉬울 것이다. 이 구조가 바로 멀티레포(multirepo)다.&lt;/p&gt;
+
+&lt;h3 id=""&gt;멀티레포&lt;/h3&gt;
+
+&lt;p&gt;멀티레포 구조는 폴리레포(polyrepo) 구조라고도 부른다. 앞선 예시의 분리된 각 모듈은 멀티레포 구조에서 고유한 저장소가 있는 독자적 프로젝트가 된다. 각 프로젝트는 자율성이 높으며 독립적인 개발, 린트, 테스트, 빌드, 게시, 배포 파이프라인이 존재한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e13d875e4e.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;멀티레포는 현재 대부분의 애플리케이션을 개발하는 표준적인 방법이다. 업계는 &lt;strong&gt;팀의 자율성&lt;/strong&gt;이라는 큰 이유 때문에 이 방식을 선호한다. 팀은 애플리케이션 개발의 라이프사이클을 스스로 결정하기를 원한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e17ec25e73.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;좋은 일인데 무엇이 문제일까? 양날의 검처럼 이 &lt;strong&gt;&lt;a href="https://monorepo.tools/#polyrepo-concept"&gt;자율성은 고립(isolation)에 의해 제공되고 고립은 협업을 방해한다&lt;/a&gt;&lt;/strong&gt;. 멀티레포를 통해 모놀리식 구조의 문제를 해결했지만 다음과 같은 새로운 문제가 생긴다.&lt;/p&gt;
+
+&lt;h3 id=""&gt;멀티레포의 문제&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;번거로운 프로젝트 생성&lt;/p&gt;
+
+&lt;p&gt;새로운 공유 패키지를 생성할 때마다 다음과 같이 번거로운 과정을 거쳐야 한다.&lt;/p&gt;
+
+&lt;p&gt;저장소 생성 &gt; 커미터 추가 &gt; 개발 환경 구축 &gt; CI/CD 구축 &gt; 빌드 &gt; 패키지 저장소에 publish&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e1c3aa6129-1.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;패키지의 중복 코드 가능성&lt;/p&gt;
+
+&lt;p&gt;위의 번거로움을 피하기 위해 각 프로젝트에서 공통 구성 요소를 자체적으로 작성한다면, 초기 시간을 아낄 수 있지만 시간이 지날수록 보안 및 품질 관리 부담을 증가시킨다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;관리 포인트 증가&lt;/p&gt;
+
+&lt;p&gt;늘어난 프로젝트 저장소의 수만큼 관리 포인트가 늘어난다. 린트, 테스트, 개발 모드 실행, 빌드, 게시, 배포 등의 과정을 저장소의 수만큼 반복해야 한다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;일관성 없는 개발자 경험(DX)&lt;/p&gt;
+
+&lt;p&gt;각 프로젝트는 테스트 실행, 빌드, 테스트, 린트, 배포 등을 위해 고유한 명령 집합을 사용한다.
+이러한 불일치는 여러 프로젝트에서 사용할 명령을 기억해야 하는 정신적 오버헤드를 만든다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;다른 패키지의 변경 사항 파악&lt;/p&gt;
+
+&lt;p&gt;관련 패키지의 변화를 지켜보거나 통지받지 않으면 문제가 발생할 수 있다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;교차 저장소의 리팩터링 비용&lt;/p&gt;
+
+&lt;p&gt;관련 패키지의 변화가 있을 때 여러 저장소에 걸쳐 변화를 반영하는 것은 쉬운 일이 아닐 것이다. 또한 이렇게 리팩터링된 각 패키지의 버전은 어떻게 관리해야 할까.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;그렇다면 모듈을 적절히 분리하여 관심 분리를 이루면서, 동시에 분리된 모듈을 쉽게 참조하고 테스트, 빌드, 배포 과정도 쉽게 한 번에 할 수는 없을까? 이제 모노레포가 출동할 시간이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="ch2"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="2"&gt;2. 모노레포가 해결하는 문제&lt;/h2&gt;
+
+&lt;h3 id=""&gt;모노레포의 특징&lt;/h3&gt;
+
+&lt;p&gt;모노레포(monorepo) 구조는 두 개 이상의 프로젝트가 동일한 저장소에 저장되는 소프트웨어 개발 전략이다. 앞선 예시의 분리된 모듈들은 모노레포에서 여전히 독자 프로젝트로 존재하지만 저장소는 같은 곳을 사용한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e20998613f.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;모노레포의 또 다른 중요한 특징 중 하나는 &lt;strong&gt;프로젝트 간의 관계&lt;/strong&gt;다. 단순히 여러 프로젝트가 하나의 저장소를 사용한다고 해서 모노레포 구조라고 부르기에는 부족하다. 흔히 모노레포에서는 프로젝트 사이에 의존성이 존재하거나 같은 제품군이거나 하는 정의된 관계가 존재한다. 아래에서 소개할 모노레포 관리 도구는 모두 이러한 &lt;strong&gt;관계를 효율적으로 관리해 주는 도구&lt;/strong&gt;라고 할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=""&gt;모노레포가 해결하는 멀티레포의 문제&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;더 쉬운 프로젝트 생성&lt;/p&gt;
+
+&lt;p&gt;멀티레포에서 공유 패키지를 만들 때 다음과 같은 과정을 거친다.&lt;/p&gt;
+
+&lt;p&gt;저장소 생성 &gt; 커미터 추가 &gt; 개발환경 구축 &gt; CI/CD 구축 &gt; 빌드 &gt; 패키지 저장소에 publish&lt;/p&gt;
+
+&lt;p&gt;모노레포에서는 저장소 생성 및 커미터 추가 과정이 필요 없고, 개발 환경, CI/CD, 빌드, 게시 등의 과정에 기존 DevOps를 이용하므로 새 프로젝트 생성에 대한 오버헤드가 없다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;더 쉬운 의존성 관리&lt;/p&gt;
+
+&lt;p&gt;의존성 패키지가 같은 저장소에 있으므로 버전이 지정된 패키지를 npm registry와 같은 곳에 publish할 필요가 없다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;단일화된 관리 포인트&lt;/p&gt;
+
+&lt;p&gt;개발환경 및 DevOps에 대한 업데이트를 한 번에 반영할 수 있다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;일관된 개발자 경험 제공&lt;/p&gt;
+
+&lt;p&gt;애플리케이션을 일관되게 구축하고 테스트할 수 있다. 개발자는 다른 팀의 애플리케이션에 자신 있게 기여하고 변경 사항이 안전한지 확인할 수 있다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;프로젝트들에 걸친 원자적 커밋&lt;/p&gt;
+
+&lt;p&gt;커밋할 때마다 모든 것이 함께 작동한다. 변경 사항의 영향을 받는 조직에서 쉽게 변화를 확인할 수 있다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;서로 의존하는 저장소들의 리팩터링 비용 감소&lt;/p&gt;
+
+&lt;p&gt;모노레포는 대규모 변경을 훨씬 더 간단하게 만든다. 100개의 라이브러리로 만든 10개의 앱을 리팩터링하고 변경을 커밋하기 전에 모두 작동하는지 확인할 수 있다.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=""&gt;그 밖의 모노레포의 특징&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;테스트 및 빌드 범위 최소화&lt;/p&gt;
+
+&lt;p&gt;소스 변경 시 모든 프로젝트를 다시 빌드하거나 다시 테스트하지 않는다. 대신 변경 사항의 영향을 받는 프로젝트만 다시 테스트하고 빌드한다.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=""&gt;모노레포에 대한 오해&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;다른 팀이 내가 모르는 사이에 내 코드를 변경한다면?&lt;/p&gt;
+
+&lt;p&gt;GitHub에는 &lt;a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners"&gt;CODEOWNERS&lt;/a&gt;와 같은 기능을 사용하여 폴더 기반으로 소유권을 구성할 수 있다.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;@global-owner1 @global-owner2 ## 이 저장소에 대한 모든 PR을 소유자에게 리뷰받아야 머지할 수 있다.
+packages/todo-api/* @john @jane ## todo-api 경로는 john과 jane에게 리뷰받아야 한다.  
+packages/i18n/* @michael ## i18n은 michael에게 리뷰받아야 한다.  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;모노레포가 멀티레포보다 항상 나은 방법인가?&lt;/p&gt;
+
+&lt;p&gt;그렇지 않다. 멀티레포의 단점이 모노레포의 장점이고 장단점이 교차하기 때문에 적절한 상황에서 사용해야 한다.&lt;/p&gt;
+
+&lt;p&gt;모노레포의 핵심적 특징은 프로젝트 사이의 관계이고, 모노레포가 적절한 상황은 다음과 같다.&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;유사한 제품의 집합&lt;/li&gt;
+&lt;li&gt;여러 프로젝트의 변화를 한눈에 파악해야 할 때&lt;/li&gt;
+&lt;li&gt;호스트 애플리케이션을 플러그인 등으로 확장할 때&lt;/li&gt;
+&lt;li&gt;공통 기능을 재사용하는 관련된 프로젝트의 집합&lt;/li&gt;
+&lt;li&gt;유사한 DevOps로 구성된 프로젝트의 집합&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id="ch3"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="3"&gt;3. 모노레포를 구축할 때 고려할 측면&lt;/h2&gt;
+
+&lt;p&gt;모노레포를 구축하려고 할 때 &lt;strong&gt;관리 용이성&lt;/strong&gt;, &lt;strong&gt;속도&lt;/strong&gt; 그리고 &lt;strong&gt;프로젝트 구조 관리&lt;/strong&gt; 측면에서 다음과 같은 사항을 고려해야 한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;분류 기준은 &lt;a href="https://monorepo.tools/#monorepo-features"&gt;Monorepo features&lt;/a&gt;를 참고했다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=""&gt;관리 측면&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;코드 공유: 서로 다른 프로젝트 간에 쉽게 소스 코드를 공유&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;일관성 있는 도구: 서로 다른 프로젝트들(심지어 서로 다른 프레임워크를 사용하더라도)에서 일관된 개발 경험을 제공&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;스케폴딩: 새로운 프로젝트를 생성할 때 초기 코드를 쉽게 생성&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;프로젝트 제약 및 가시성(visibility): 저장소 내에서 의존 관계를 제한하는 규칙 정의 지원. 예를 들어, 일부 프로젝트를 팀 전용으로 표시하거나 특정 프레임워크을 사용 중임을 기술.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=""&gt;속도 측면&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;로컬 캐싱: 같은 머신에서 같은 것을 두 번 빌드하거나 테스트하지 않음&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;분산 캐싱: 다양한 환경에서 캐시 아티팩트를 공유. 즉, 조직 단위로 여러 CI 환경에 걸쳐 같은 것을 두 번 빌드, 테스트하지 않음&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;로컬 작업 오케스트레이션: 빌드 및 테스트 등의 작업을 순서에 맞게 병렬로 실행&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;분산 작업 실행: 단일 시스템에서 실행되어 여러 시스템에 명령을 전달&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;변화에 영향을 받는 프로젝트 감지: 변경의 영향을 받을 수 있는 항목을 결정하여 영향을 받는 프로젝트만 빌드/테스트&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=""&gt;구조 파악 측면&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;워크스페이스 분석: 추가 구성 없이 주어진 워크 스페이스의 의존성 관계를 분석&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;의존성 그래프 시각화: 프로젝트 및 작업 간의 종속 관계를 시각화&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id="ch4"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="4"&gt;4. 모노레포 구축을 도와주는 도구&lt;/h2&gt;
+
+&lt;p&gt;그럼 어떤 도구를 통해 위에 고려한 측면을 구축하고 지원받을 수 있을까? &lt;a href="https://2021.stateofjs.com/en-US/libraries/monorepo-tools"&gt;2021.stateofjs.com&lt;/a&gt; 기준으로 인기있는 도구를 살펴보면 다음과 같다.&lt;/p&gt;
+
+&lt;h3 id=""&gt;얼마나 사용되는가&lt;/h3&gt;
+
+&lt;p&gt;Lerna, Yarn, npm, pnpm, Nx 등이 많이 사용되었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e2763b61e3.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h3 id=""&gt;얼마나 만족하는가&lt;/h3&gt;
+
+&lt;p&gt;pnpm, Turborepo, Nx, npm, Yarn 등을 훌륭하게 평가하였다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/content/images/2022/04/0a710ba9-7e47-1064-817f-86e2aa2861ea.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;h3 id=""&gt;누가 사용하는가&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Yarn
+&lt;ul&gt;&lt;li&gt;&lt;a href="https://github.com/facebook/react/blob/b9de50d2f9ad6ff8caae0729976c3cc9a69c176e/package.json#L3-L5"&gt;React&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/remix-run/react-router/blob/7dca9dc38c837ed94796325b1e0582aa72a9313f/package.json#L63-L73"&gt;React-router&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/babel/babel/blob/24f0944e2d5b83dac4cba80e1b33c8098c613dc7/package.json#L20"&gt;Babel&lt;/a&gt; (Yarn Berry)&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Lerna + Yarn
+&lt;ul&gt;&lt;li&gt;&lt;a href="https://github.com/vercel/next.js/blob/21994ce591be70b03176a2512c7304381d52e629/lerna.json#L1-L20"&gt;Next.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/babel/babel/blob/v7.12.12/lerna.json"&gt;Babel&lt;/a&gt; (v7.12.12)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/facebook/jest/blob/54420eb51baecaba7dff293770f8cb2579825731/lerna.json#L1-L7"&gt;Jest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/facebook/create-react-app/blob/fd8c5f7b1b1d19d10d24cc2f9fdfc110585dc030/lerna.json#L1-L19"&gt;Create React App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/storybookjs/storybook/blob/275406ad764d9d02ff41ad7eb8983b52cf22faa0/lerna.json"&gt;Storybook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/vuejs/vue-cli/blob/f7dc46d0692c2d8a07f5c8b0580177de81c150b0/lerna.json#L2"&gt;Vue-cli&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/nuxt/framework/blob/a55c7874e6c22a8a927027cbf5f4149a8711525a/lerna.json#L3"&gt;Nuxt.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/webpack/webpack-cli/blob/2f5e331f8786fbb21e349df3a7518886ac6deaa1/lerna.json#L5"&gt;Webpack-cli&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lerna.js.org/#users"&gt;모든 레퍼런스&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Lerna + Npm
+&lt;ul&gt;&lt;li&gt;&lt;a href="https://github.com/apollographql/apollo-server/blob/90069be053f28deb9fc6b605f2008fc54909c255/lerna.json#L2"&gt;Apollo-server&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Nx
+&lt;ul&gt;&lt;li&gt;&lt;a href="https://github.com/storybookjs/storybook/blob/275406ad764d9d02ff41ad7eb8983b52cf22faa0/nx.json#L1"&gt;Storybook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/microsoft/fluentui/blob/605d53a436a9dfb24075fdb39bb4c4823ee0b9ba/nx.json#L1"&gt;FluentUI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/ngrx/platform/blob/1d3e33735f5e438eab27e36681e04c0649ce48ac/nx.json#L1"&gt;NgRx&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Turborepo
+&lt;ul&gt;&lt;li&gt;&lt;a href="https://vercel.com/"&gt;Vercel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lattice.com/"&gt;Lattice&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://spri.ng/"&gt;TeeSpring&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://makeswift.com/"&gt;MakeSwift&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://beondeck.com/"&gt;On Deck&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://astro.build/"&gt;Astro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/vercel/turborepo/discussions/103"&gt;모든 레퍼런스&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Pnpm
+&lt;ul&gt;&lt;li&gt;&lt;a href="https://github.com/vuejs/core/blob/1070f127a78bfe7da6fe550cc272ef11a1f434a0/pnpm-workspace.yaml#L1"&gt;Vue 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pnpm.io/users"&gt;모든 레퍼런스&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=""&gt;마치며&lt;/h2&gt;
+
+&lt;p&gt;다음 편에서는 위의 도구 중 Yarn, Lerna, Nx 그리고 Turborepo에 대해 자세히 알아보겠다.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>[CLOVA] 사람을 위한 AI를 만드는 사람들 - 백엔드 엔지니어 정미니 님</title>
+    <link rel="alternate" href="https://d2.naver.com/news/7455366" />
+    <category term="news" />
+    <id>https://d2.naver.com/news/7455366</id>
+    <updated>2022-03-24T12:22:50Z</updated>
+    <content type="html">&lt;p&gt;&lt;a href="https://engineering.clova.ai/" target="_blank"&gt;클로바 엔지니어링 블로그&lt;/a&gt;에 올라온 클로바 백엔드 엔지니어 정미니 님의 인터뷰를 공유합니다. AI 모델과 사람의 연결고리를 더 많이 만드는 데 중요한 역할을 하고 있는 클로바의 서비스 개발자 이야기를 들어보실 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://engineering.clova.ai/posts/2022/03/people-in-clova-1?fbclid=IwAR1ZJ8bR3jyUWIqN-omcQONRXQQAhiXVduaMnCyyAX9ctULVWPbOj2EGwxQ" target="_blank"&gt;&lt;img src="/content/images/2022/03/276041945_2748363732138845_2920444228847830066_n.png" alt="" title="" /&gt; &lt;br /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://engineering.clova.ai/posts/2022/03/people-in-clova-1?fbclid=IwAR1ZJ8bR3jyUWIqN-omcQONRXQQAhiXVduaMnCyyAX9ctULVWPbOj2EGwxQ" target="_blank"&gt; 본문 &lt;/a&gt; 인터뷰 중 발췌&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id="q"&gt;Q: 백엔드 커리어를 선택하신 이유는 무엇일까요?&lt;/h4&gt;
+
+&lt;p&gt;미니 : 시스템 아키텍처나 기능 구현에 관심이 많아서 자연스럽게 이 길을 걷게 된 거 같아요. 사용자와 가장 가까이서 커뮤니케이션할 수 있는 프론트엔드도 매력적이지만, 서비스의 흐름을 구현해 나가는 게 재미있어서 백엔드 직무를 선택하게 되었어요.&lt;/p&gt;
+
+&lt;h4 id="qclova"&gt;Q: CLOVA에서는 다양한 제품들이 출시되고 있는데요, 간단히 업무 진행과정을 들어 볼 수 있을까요?&lt;/h4&gt;
+
+&lt;p&gt;미니 : 신규 프로젝트가 릴리즈 되기까지의 플로우를 말씀드리자면, 처음에는 기획팀에서 신규 프로젝트에 대한 기획안을 가지고 모델팀과 저희와 다 같이 미팅을 해요. 어떤 데이터가 필요하고 어떻게 학습이 이루어져야 하는지 고민이 이루어진다면, 저희는 모델링에서 필요한 데이터 ETL 와 같은 데이터 파이프라이닝부터 제품/서비스의 설계/구현을 진행하게 됩니다. 프론트엔드와 UI/UX 담당자분들과 논의하여 인터페이스의 설계가 완료되면 그것을 토대로 API 서버를 만들어요. API 서버를 프론트엔드로 전달드리면 로깅과 모니터링처럼 운영 관련된 툴도 저희 팀에서 구축하고 있습니다. 그리고 이를 토대로 QA 팀에서 전체적으로 품질 테스트를 해주시는 흐름입니다.&lt;/p&gt;
+
+&lt;h4 id="qclova"&gt;Q: 그럼 이 기회를 빌려 외부 개발자들에게 CLOVA에 대해 꼭 알려주고 싶으신 것 있으실까요?&lt;/h4&gt;
+
+&lt;p&gt;미니 : CLOVA는 연구만 하는 조직은 아니고 연구까지도 하는 조직이라고 말씀드리고 싶어요. AI 서비스에 관심 있는 분이라면 CLOVA에서 성장할 기회가 많을 거라 생각합니다. AI 모델에 대한 지식을 알고 있으면 서빙 업무에 플러스 효과가 있지만, 경험이 없어도 docker, kubernetes container 기반 서비스 운영 능력을 갖췄거나 ML pipeline 운영에 익숙하신 분이라면 충분한 역량을 가지고 있다 생각합니다.&lt;/p&gt;
+
+&lt;h4 id="qclova"&gt;Q: CLOVA는 연구만 하는 조직은 아니고 연구까지도 하는 조직이다. 이 부분 추가 설명해 주실 수 있을까요?&lt;/h4&gt;
+
+&lt;p&gt;미니 : 저도 입사 전에는 CLOVA를 연구 조직으로 알고 있었고 AI 모르면 갈 수가 없다, 이런 얘기를 많이 들었어요. 입사할 때까지는 AI나 ML에 대한 도메인 지식이 없었지만 여느 도메인처럼 공부하면서 동료들이랑 같이 업무를 진행하다 보니 자연스럽게 체득되고 적응되더라고요. 서비스 전반적인 경험을 할 수 있고, AI 모델을 모르더라도 여러 서비스에서 접하면서 배울 수가 있어요. AI 모델과 사람의 연결 고리를 더 많이 만들기 위해서는 서비스 개발자 역할이 굉장히 중요합니다.&lt;/p&gt;
+
+&lt;h4 id="qclova"&gt;Q: 서비스 개발자들의 역할이 더욱 중요해지겠네요. 서비스 개발자들이 CLOVA에서 어떻게 성장할 수 있을까요?&lt;/h4&gt;
+
+&lt;p&gt;미니 : 저희는 연결 고리를 어떻게 하면 더 효율적으로 만들어서 제공할 수 있을까 고민하는 개발자예요. CLOVA의 수많은 모델들을 서비스 개발자가 다양하게 제품 및 서비스화하고 있기 때문에, 서비스 엔지니어들이 일반적으로 진행하는 설계 및 개발을 모두 경험해 볼 수 있을 뿐만 아니라 데이터 관리나 AI 모델에 대한 경험도 할 수 있습니다. CLOVA에서 AI 모델 서빙부터 ML pipeline, 배포와 운영까지 경험하면서 서비스를 거시적으로 보고 설계할 수 있는 AI 엔지니어로 성장할 수 있을 거라 생각합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&gt;&gt; 전체 인터뷰 내용은 &lt;a href="https://engineering.clova.ai/" target="_blank"&gt; 클로바 엔지니어링 블로그&lt;/a&gt; 에서 보실 수 있습니다.&lt;/strong&gt;&lt;/p&gt;</content>
+  </entry>
+</feed>

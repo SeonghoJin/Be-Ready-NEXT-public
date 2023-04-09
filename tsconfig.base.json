@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@./batch-util": ["packages/batch-util/src/index.ts"],
+      "@./common": ["packages/common/src/index.ts"],
+      "@./fetcher": ["packages/fetcher/src/index.ts"],
+      "@./front-config": ["packages/front-config/src/index.ts"],
+      "@./inspector": ["packages/inspector/src/index.ts"],
+      "@./repository": ["packages/repository/src/index.ts"],
+      "@./serve-config": ["packages/serve-config/src/index.ts"]
+    },
+    "typeRoots": ["index.d.ts", "node_modules/@types"]
+  },
+  "exclude": ["node_modules", "tmp"]
+}
